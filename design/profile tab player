@@ -1,0 +1,66 @@
+{
+	player : {
+		name: string;
+		avatar: string;
+		full_name: string;
+		positions: string [];
+		height: number;
+		weight: number;
+		date_of_birth: string;
+		foot: string;
+	},
+	
+	team : {
+		id: string;
+		acronym: string;
+		avatar: string;
+		name: string;
+	},
+
+	current_season: {
+		season_id: string;
+		season_description: string;
+		season_description: string;
+		stats : {
+			games: number;
+			goals: number;
+			yellow_cards: number;
+			red_cards: number;
+			minutes_played: number;
+		}
+	},
+
+	media : {
+		
+	},
+
+	skill_set : [
+		{
+			name : string;
+			avatar : string;
+			endorsements: number;
+		}
+	],
+
+	recomendations : {
+		total_recomendations: number;
+		last_recomendations: [
+			{
+				author:{
+					name : string;
+					id: string;
+					avatar: string;
+					team : {
+						id: string;
+						acronym: string;
+						avatar: string;
+						name: string;	
+					};
+				} 
+				text: string;
+
+			}
+		];
+	}
+
+}
