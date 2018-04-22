@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/vis/dist/vis.min.css';
+@import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../node_modules/bootstrap-grid-only/bootstrap.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+[hidden], template {
+  display: none !important;
+}
+
+.default-input{
+  margin: 0px !important;
+  height: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.vis-item.vis-selected {
+  border-color: #97b0f8 !important;
+  background-color: #d5ddf6 !important;
+  z-index: 1 !important;
+}
+
+.vis-item {
+  cursor: pointer;
+}
+
+.vis-item .vis-item-overflow {
+  overflow: visible;
+}
+
+.dz-success-mark {
+  background-color: red;
+  border-radius: 100%;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: red;
+}
+
+.mat-sort-header-button:focus {
+  background-color: transparent !important;
+}
+
+.selectize-control .selectize-input.disabled {
+  opacity: 1 !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.selectize-control .selectize-input.disabled input {
+  height: 0px;
+}
+
+.selectize-control.multi .selectize-input.disabled > div, .selectize-control.multi .selectize-input.disabled > div.active {
+  text-shadow: 0 1px 0 rgba(0, 51, 83, 0.3) !important;
+  border-radius: 3px !important;
+  background-color: #d3d3d3 !important;
+  background-repeat: repeat-x !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.03) !important;
+}
+
+.selectize-control.multi .selectize-input.disabled [data-value] {
+  display: block;
+  color: #ffffff !important;
+  text-shadow: 0 1px 0 rgba(0, 51, 83, 0.3) !important;
+  border-radius: 3px !important;
+  background-color: #888888 !important;
+  background-image: none !important;
+  background-repeat: repeat-x !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.03) !important;
+  border: none;
+}
+
+.selectize-control.multi .selectize-input [data-value] {
+  display: block;
+  color: #ffffff !important;
+  text-shadow: 0 1px 0 rgba(0, 51, 83, 0.3) !important;
+  border-radius: 3px !important;
+  background-color: #888888 !important;
+  background-image: none !important;
+  background-repeat: repeat-x !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.03) !important;
+  border: none !important;
+}
+
+.selectize-control.single .selectize-input.disabled:after{
+  display: none;
+}
+
+.mydp .selection {
+  background-color: transparent !important;
+}
+
+.mydp .selection:focus {
+  border-bottom: inherit !important;
+  box-shadow: none !important;
+}
+
+.app-nav{
+  position: relative;
+}
+
+.mobilar-background{
+  background-color: #e83d30 !important;
+}
+
+.sc-background-org{
+  background-color: #041BC1 !important;
+}
+
+.sc-background{
+  background-color: #171a42 !important;
+}
+
+.app-title{
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.app-logo{
+  height: 55px;
+  margin: 10px;
+}
+
+.mobiliar-navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  color:white;
+  margin-bottom: 15px;
+}
+
+.sc-navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  color:white;
+  margin-bottom: 15px;
+}
+
+title-grey{
+  color: #53433F;
+}
+
+grey{
+  color: #5D4D49;
+}
+
+

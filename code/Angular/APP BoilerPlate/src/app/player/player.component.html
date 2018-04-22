@@ -1,0 +1,15 @@
+<div class="row"> 
+  <div class="col-md-6">
+    <div class="player-header__info">
+      <img [src]="viewModel.info.avatar"/> <!--<img [src]="viewModel.team.avatar"/> -->
+      <span>{{viewModel.info.full_name}}</span> <!-- <span>{{viewModel.team.name}}</span -->
+      <div class="positions">
+        <span *ngFor="let position of viewModel.info.positions">
+          {{position}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
