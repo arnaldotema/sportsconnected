@@ -1,4 +1,4 @@
-var PlayerModel = require('../models/player.js');
+var PlayerModel = require('../models/football_user_info.js');
 
 /**
  * player_controller.js
