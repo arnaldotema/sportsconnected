@@ -1,4 +1,4 @@
-var TeamModel = require('../models/team.js');
+var TeamModel = require('../models/football_team.js');
 
 /**
  * team_controller.js

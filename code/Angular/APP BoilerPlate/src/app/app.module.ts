@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { PlayerComponent } from './player/player.component';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { NgSelectizeModule } from 'ng-selectize';
 import { MyDatePickerModule } from 'angular4-datepicker/src/my-date-picker';
 import { ScrollToModule } from 'ng2-scroll-to-el';
