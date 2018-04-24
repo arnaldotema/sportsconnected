@@ -1,4 +1,4 @@
-var CompetitionModel  = require('../models/competition.js');
+var CompetitionModel  = require('../models/football_competition.js');
 
 /**
  * competition_controller.js

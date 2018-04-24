@@ -1,4 +1,4 @@
-var UserModel = require('../models/user.js');
+var UserModel = require('../models/football_user.js');
 
 /**
  * user_controller.js
