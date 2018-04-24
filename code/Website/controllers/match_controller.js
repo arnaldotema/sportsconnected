@@ -1,4 +1,4 @@
-var MatchModel = require('../models/match.js');
+var MatchModel = require('../models/football_match.js');
 
 /**
  * match_controller.js
