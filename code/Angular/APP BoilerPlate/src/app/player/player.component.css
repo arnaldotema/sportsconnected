@@ -1,0 +1,149 @@
+.callout {
+  border: 0;
+}
+
+.player .meta .player-image {
+  float: left;
+  width: 45%;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: #f2c7c8 center center no-repeat;
+}
+
+.player .meta .player-image .shadow {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to left,rgba(46,47,50,1) 0,rgba(46,47,50,0.9) 10%,rgba(46,47,50,0) 40%);
+}
+
+.player .meta .personal {
+  float: left;
+  width: 55%;
+}
+
+.player .meta .personal .rankings-container {
+  background: white;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.player .meta .personal .data {
+  padding: 0 1rem;
+  font-family: "Museo Sans";
+  font-weight: 300;
+  font-size: .9375rem;
+}
+
+.player .player-header-placeholder {
+  width: 100%;
+  height: 80px;
+  background: white;
+}
+
+.player .meta .personal .data div {
+  margin: .375rem 0;
+}
+
+.player .meta .personal .data div strong {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.spacer {
+  clear: both;
+}
+
+.player .player-header{
+  border-radius: 0;
+  height: 80px;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background: rgba(255,255,255,.9);
+}
+
+.player>.meta {
+  border-radius: 0;
+  padding: 0 !important;
+  background: #2e2f32;
+  color: white;
+  height: 500px;
+  margin: 0;
+}
+
+.player .meta .player-image .shadow {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to left,rgba(46,47,50,1) 0,rgba(46,47,50,0.9) 10%,rgba(46,47,50,0) 40%);
+}
+
+.player .player-header .row {
+  background: transparent;
+}
+
+.player .player-info {
+  float: left;
+  width: 45%;
+  line-height: 1;
+  padding-left: 1rem;
+}
+
+.player .team {
+  float: left;
+  padding: .5rem;
+  height: 80px;
+  width: 80px;
+}
+
+.player .team img{
+  width: 50px;
+}
+
+.player .player-team{
+  font-weight: 900;
+  color: #b8bac0;
+  text-transform: uppercase;
+  font-size: 1.4375rem;
+  font-family: "Museo Sans";
+}
+
+.player .player-header .player-info .player-team a {
+  color: #b8bac0;
+}
+
+.player .player-header .player-info .player-team a.current {
+  color: darkred;
+}
+
+.player .player-menu{
+  float: left;
+  width: 55%;
+}
+
+.player .player-menu a{
+  color: #2e2f32;
+  display: inline-block;
+  line-height: 80px;
+  height: 80px;
+  padding: 0 .75rem;
+  font-size: .875rem;
+  font-family: "Museo Sans";
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.player .player-menu a.current {
+  background: #b3b5bb;
+}
+
+.header-placeholder {
+  width: 100%;
+  height: 79px;
+  transition: height 1s;
+}
