@@ -15,19 +15,19 @@ export class PlayerService {
     {
       info: {
         name: 'Arnaldo Tema',
-        avatar: 'http://www.lagence.pt/models/1239/_b1r6288.jpg',
-        full_name: 'Demasiado complexo para o teu entendimento limitado',
-        positions: ['kamasutra', 'guarda-redes'],
-        height: 300,
-        weight: 120,
+        avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t31.0-8/737573_3721618258054_1335345760_o.jpg?_nc_cat=0&oh=b8811d417cd3af60691bd6400227ef8d&oe=5B994BB8',
+        full_name: 'Arnaldo Lucien da Trindade Tema',
+        positions: ['Avançado', 'Guarda-redes'],
+        height: 191,
+        weight: 87,
         date_of_birth: '',
         foot: 'Tripé',
-      }/*
+      }
       ,
       team: {
         id: '0',
         acronym: 'ODB',
-        avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/14380056_10154311412654457_4755765822824052414_o.jpg?_nc_cat=0&oh=676b7cdb8ead747250117393f4a72620&oe=5B715385',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
         name: 'Os do Basquetebol'
       },
       current_season: {
@@ -96,14 +96,12 @@ export class PlayerService {
                 acronym: 'N',
                 avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/14380056_10154311412654457_4755765822824052414_o.jpg?_nc_cat=0&oh=676b7cdb8ead747250117393f4a72620&oe=5B715385',
                 name: 'Namoradas'
-              },
+              }
+            },
               text: 'O meu GRANDÃO <3'
             }
-          }
         ]
       }
-
-      */
     }
   ];
 
