@@ -1,15 +1,115 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="player-header__info">
-      <img [src]="viewModel.info.avatar"/> <!--<img [src]="viewModel.team.avatar"/> -->
-      <span>{{viewModel.info.full_name}}</span> <!-- <span>{{viewModel.team.name}}</span -->
-      <div class="positions">
-        <span *ngFor="let position of viewModel.info.positions">
-          {{position}}
-        </span>
+<div style="overflow: hidden">
+  <div class="player">
+    <div class="player-header">
+      <div class="row">
+        <div class="player-info">
+          <div class="team">
+            <a href="#" title="Cavaliers">
+              <img [src]="viewModel.team.avatar" [title]="viewModel.team.name" [alt]="viewModel.team.acronym">
+            </a>
+          </div>
+          <h1>
+            {{viewModel.info.name}}
+          </h1>
+          <div class="player-team">
+            <a href="#" [title]="viewModel.team.name">
+              {{viewModel.team.name}}
+            </a>
+          </div>
+        </div>
+        <div class="player-menu">
+          <a href="#" title="{{viewModel.info.name}} full profile" class="current">Profile</a>
+          <a href="#" title="{{viewModel.info.name}} videos" class="">Videos</a>
+          <a href="#" title="{{viewModel.info.name}} awards" class="">Awards</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="player-header-placeholder"></div>
+
+    <div class="callout meta ">
+      <div class="row">
+        <div class="player-image">
+          <img [src]="viewModel.info.avatar" class="old" alt="LeBron James profile"
+               title="LeBron James profile" style="left: -241.5px;">
+          <div class="shadow"></div>
+        </div>
+
+        <div class="personal">
+          <div class="data small-12 medium-6 column">
+            <div>
+              <strong>Height:</strong> 6'8" (203 cm)
+            </div>
+            <div>
+              <strong>Weight:</strong> 245 lbs (111 kg)
+            </div>
+            <div>
+              <strong>Age:</strong> 33
+            </div>
+            <div>
+              <strong>Position:</strong> SF
+            </div>
+            <div>
+              <strong>Jerseys:</strong> #23
+            </div>
+            <div>
+              <strong>Relatives:</strong>
+              father
+              of
+              <a href="/profile/lebron-james-jr-109341/" title="LeBron James Jr DraftExpress Profile"> LeBron James Jr
+              </a></div>
+
+            <div>
+              <strong>High School:</strong> St. Vincent-St. Mary High School
+              (Ohio)
+            </div>
+
+            <div>
+              <strong>Hometown:</strong> Akron, OH
+              <div class="flag-icon flag-icon-us"></div>
+            </div>
+          </div>
+
+          <div class="data small-12 medium-6 column">
+            <div>
+              <strong>Agent:</strong> <a href="/agents/Rich-Paul-267/" title="Rich Paul">Rich Paul</a>
+            </div>
+
+            <div>
+              <strong>AAU:</strong> <a href="/clubhouse/King-James-Shooting-Stars-2499"
+                                       title="King James Shooting Star">King James Shooting Stars</a>
+            </div>
+
+
+            <div>
+              <strong>Current Team:</strong> <a href="/clubhouse/Cavaliers-7" title="Cavaliers">Cavaliers</a>
+            </div>
+
+            <div>
+              <strong>Win - Loss:</strong> 1 - 4
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-  </div>
 </div>
+
+<!--
+  <div class="row">
+    <div class="col-md-6">
+      <div class="player-header__info">
+        <img [src]="viewModel.info.avatar"/>
+        <span>{{viewModel.info.name}}</span>
+        <div class="positions">
+        <span *ngFor="let position of viewModel.info.positions">
+          {{position}}
+        </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+-->

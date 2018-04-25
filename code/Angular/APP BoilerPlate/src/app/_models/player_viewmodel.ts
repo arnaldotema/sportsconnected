@@ -10,7 +10,7 @@ export class PlayerViewModel{
     weight: number;
     date_of_birth: string;
     foot: string;
-  }/*;
+  };
   team : {
     id: string;
     acronym: string;
@@ -41,5 +41,5 @@ export class PlayerViewModel{
   recommendations : {
     total_recommendations: number;
     last_recommendations: Recommendation[];
-  };*/
+  };
 }
