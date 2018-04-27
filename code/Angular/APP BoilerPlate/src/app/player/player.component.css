@@ -2,9 +2,16 @@
   border: 0;
 }
 
+.player .player-header .player-info h1 {
+  font-size: 2.125rem;
+  margin: .75rem 0 0 !important;
+  height: 2.125rem;
+  overflow: hidden;
+}
+
 .player .meta .player-image {
   float: left;
-  width: 45%;
+  width: 30%;
   position: relative;
   height: 500px;
   overflow: hidden;
@@ -20,8 +27,9 @@
 }
 
 .player .meta .personal {
-  float: left;
-  width: 55%;
+  margin: 10px;
+  float: right;
+  width: 20%;
 }
 
 .player .meta .personal .rankings-container {
@@ -31,7 +39,7 @@
 
 .player .meta .personal .data {
   padding: 0 1rem;
-  font-family: "Museo Sans";
+  font-family: "Museo Sans", sans-serif;
   font-weight: 300;
   font-size: .9375rem;
 }
@@ -70,17 +78,9 @@
   border-radius: 0;
   padding: 0 !important;
   background: #2e2f32;
-  color: white;
+  color: #929292;
   height: 500px;
   margin: 0;
-}
-
-.player .meta .player-image .shadow {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(to left,rgba(46,47,50,1) 0,rgba(46,47,50,0.9) 10%,rgba(46,47,50,0) 40%);
 }
 
 .player .player-header .row {
@@ -110,7 +110,7 @@
   color: #b8bac0;
   text-transform: uppercase;
   font-size: 1.4375rem;
-  font-family: "Museo Sans";
+  font-family: "Museo Sans", sans-serif;
 }
 
 .player .player-header .player-info .player-team a {
@@ -133,7 +133,7 @@
   height: 80px;
   padding: 0 .75rem;
   font-size: .875rem;
-  font-family: "Museo Sans";
+  font-family: "Museo Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -147,3 +147,58 @@
   height: 79px;
   transition: height 1s;
 }
+
+h1 {
+  font-family: "Museo Sans", sans-serif;
+  background: transparent;
+  color: #2e2f32;
+  font-size: 2.375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 !important;
+  margin: 0 0 .5rem 0 !important;
+  line-height: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  background: #fefefe;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.player .meta .sportsmagazine-client-detail {
+  float: left;
+  width: 20%;
+  margin: 10px
+;
+}
+
+.player .meta .sportsmagazine-client-detail tr > td figure ~ .player-stats-text {
+  margin: 4px 0px 0px 32px;
+  line-height: 0.6;
+}
+
+.player .meta .sportsmagazine-client-detail tr > td {
+  border: none;
+  border-bottom: none;
+  border-top: none;
+  padding: 5px 5px 5px 5px;
+  text-align: left;
+  font-size: 12px;
+  color: #929292;
+}
+
