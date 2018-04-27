@@ -28,7 +28,7 @@ export class PlayerService {
         id: '0',
         acronym: 'ODB',
         avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Os do Basquetebol'
+        name: 'Seixal FC'
       },
       current_season: {
         name: '17/18',
