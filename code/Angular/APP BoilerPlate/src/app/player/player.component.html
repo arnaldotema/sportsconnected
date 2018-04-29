@@ -19,8 +19,8 @@
         </div>
         <div class="player-menu">
           <a href="#" title="{{viewModel.info.name}} full profile" class="current">Perfil</a>
-          <a href="#" title="{{viewModel.info.name}} videos" class="">Media</a>
-          <a href="#" title="{{viewModel.info.name}} awards" class="">Estatísticas</a>
+          <a href="#" title="{{viewModel.info.name}} videos" class="">Estatísticas</a>
+          <a href="#" title="{{viewModel.info.name}} awards" class="">Notícias</a>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="callout meta ">
       <div class="row">
         <div class="player-image">
-          <div class="shadow"></div>
+          <!--<div class="right-shadow"></div>-->
           <img [src]="viewModel.info.avatar" class="old" alt="LeBron James profile"
                title="LeBron James profile" style="left: -241.5px;">
         </div>
@@ -40,6 +40,9 @@
           <tr class="table_header">
             <th>Liga</th>
             <th>Jogos</th>
+            <th>Vitórias</th>
+            <th>Derrotas</th>
+            <th>Empates</th>
             <th>Golos</th>
             <th>Assis.</th>
             <th>CA</th>
@@ -52,11 +55,14 @@
               <div class="player-stats-text">
               </div>
             </td>
-            <td><span>23</span></td>
+            <td>23</td>
+            <td>19</td>
+            <td>2</td>
+            <td>2</td>
             <td>20</td>
             <td>2</td>
             <td>2</td>
-            <td>-</td>
+            <td>0</td>
             <td>454''</td>
           </tr>
           <tr>
@@ -65,11 +71,14 @@
               <div class="player-stats-text">
               </div>
             </td>
-            <td><span>7</span></td>
+            <td>7</td>
+            <td>7</td>
+            <td>0</td>
+            <td>0</td>
             <td>1</td>
             <td>2</td>
-            <td>-</td>
-            <td>-</td>
+            <td>0</td>
+            <td>0</td>
             <td>45''</td>
           </tr>
           <tr>
@@ -78,40 +87,74 @@
               <div class="player-stats-text">
               </div>
             </td>
-            <td><span>12</span></td>
+            <td>12</td>
+            <td>12</td>
+            <td>0</td>
+            <td>0</td>
             <td>2</td>
             <td>1</td>
-            <td>-</td>
-            <td>-</td>
+            <td>0</td>
+            <td>0</td>
             <td>154''</td>
           </tr>
           </tbody>
         </table>
         <div class="personal">
-          <div class="data small-12 medium-6 column">
+          <div class="data">
             <div>
-              <strong>Idade:</strong> 24
+              <strong>Idade</strong>
             </div>
             <div>
-              <strong>D. Nascimento:</strong> 27 de Agosto de 1993
+              <strong>D. Nascimento</strong>
             </div>
             <div>
-              <strong>Posição:</strong> Médio Centro
+              <strong>Posição</strong>
             </div>
             <div>
-              <strong>Pé Dominante:</strong> Direito
+              <strong>Pé Dominante</strong>
             </div>
             <div>
-              <strong>Altura:</strong> 191 cm
+              <strong>Altura</strong>
             </div>
             <div>
-              <strong>Peso:</strong> 87 kg
+              <strong>Peso</strong>
             </div>
             <div>
-              <strong>Residência:</strong> Lisboa
+              <strong>Residência</strong>
+            </div>
+            <div>
+              <strong>Nacionalidade</strong>
+            </div>
+          </div>
+
+          <div class="data">
+            <div>
+              24
+            </div>
+            <div>
+              27 Ago 1993
+            </div>
+            <div>
+              Médio Centro
+            </div>
+            <div>
+              Direito
+            </div>
+            <div>
+              191 cm
+            </div>
+            <div>
+              87 kg
+            </div>
+            <div>
+              Lisboa
+            </div>
+            <div>
+              Portugal
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
