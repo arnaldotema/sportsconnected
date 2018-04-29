@@ -15,7 +15,7 @@ export class PlayerService {
     {
       info: {
         name: 'Arnaldo Tema',
-        avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t31.0-8/737573_3721618258054_1335345760_o.jpg?_nc_cat=0&oh=b8811d417cd3af60691bd6400227ef8d&oe=5B994BB8',
+        avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',// https://instagram.flis6-1.fna.fbcdn.net/vp/84bab3a03bdb6a25f601411c863cce50/5B627DFE/t51.2885-15/e35/17663460_302726650145190_6548337581656899584_n.jpg',
         full_name: 'Arnaldo Lucien da Trindade Tema',
         positions: ['Avançado', 'Guarda-redes'],
         height: 191,
