@@ -3,33 +3,52 @@
 }
 
 .player .player-header .player-info h1 {
-  font-size: 2.125rem;
+  font-size: 1.125rem;
   margin: .75rem 0 0 !important;
-  height: 2.125rem;
+  height: 1.125rem;
   overflow: hidden;
 }
 
 .player .meta .player-image {
+  margin : 10px 5px 10px 10px;
   float: left;
   width: 30%;
   position: relative;
-  height: 500px;
+  height: 350px;
   overflow: hidden;
-  background: #f2c7c8 center center no-repeat;
+  background: white center center no-repeat;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+
 }
 
-.player .meta .player-image .shadow {
+.player .meta .player-image img{
+  object-fit: cover;
+  min-height: 100%;
+}
+
+
+.player .meta .player-image .right-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
   height: 500px;
-  background: linear-gradient(to left,rgba(46,47,50,1) 0,rgba(46,47,50,0.9) 10%,rgba(46,47,50,0) 40%);
+  background: linear-gradient(to left,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
+}
+
+
+.player .meta .player-image .left-shadow {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to right,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
 }
 
 .player .meta .personal {
-  margin: 10px;
+  margin: 10px 10px 10px 10px;
   float: right;
-  width: 20%;
+  width: 21%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
 }
 
 .player .meta .personal .rankings-container {
@@ -42,11 +61,13 @@
   font-family: "Museo Sans", sans-serif;
   font-weight: 300;
   font-size: .9375rem;
+  width: 50%;
+  float: left;
 }
 
 .player .player-header-placeholder {
   width: 100%;
-  height: 80px;
+  height: 50px;
   background: white;
 }
 
@@ -55,7 +76,6 @@
 }
 
 .player .meta .personal .data div strong {
-  text-transform: uppercase;
   font-weight: 900;
 }
 
@@ -65,7 +85,7 @@
 
 .player .player-header{
   border-radius: 0;
-  height: 80px;
+  height: 50px;
   margin: 0 auto !important;
   padding: 0 !important;
   position: fixed;
@@ -77,8 +97,8 @@
 .player>.meta {
   border-radius: 0;
   padding: 0 !important;
-  background: #2e2f32;
-  color: #929292;
+  background: white;
+  color: black;
   height: 500px;
   margin: 0;
 }
@@ -97,19 +117,18 @@
 .player .team {
   float: left;
   padding: .5rem;
-  height: 80px;
-  width: 80px;
+  height: 50px;
 }
 
 .player .team img{
-  width: 50px;
+  width: auto;
+  height: 35px;
 }
 
 .player .player-team{
   font-weight: 900;
   color: #b8bac0;
   text-transform: uppercase;
-  font-size: 1.4375rem;
   font-family: "Museo Sans", sans-serif;
 }
 
@@ -129,8 +148,8 @@
 .player .player-menu a{
   color: #2e2f32;
   display: inline-block;
-  line-height: 80px;
-  height: 80px;
+  line-height: 50px;
+  height: 50px;
   padding: 0 .75rem;
   font-size: .875rem;
   font-family: "Museo Sans", sans-serif;
@@ -183,8 +202,8 @@ body {
 .player .meta .sportsmagazine-client-detail {
   float: left;
   width: 20%;
-  margin: 10px
-;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
 }
 
 .player .meta .sportsmagazine-client-detail tr > td figure ~ .player-stats-text {
