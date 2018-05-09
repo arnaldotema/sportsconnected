@@ -1,3 +1,163 @@
-<p>
-  team works!
-</p>
+<div style="overflow: hidden">
+  <div class="player">
+    <div class="player-header">
+      <div class="row">
+        <div class="player-info">
+          <div class="team">
+            <a href="#" title="Cavaliers">
+              <img [src]="viewModel.avatar.type" [title]="viewModel.full_name" [alt]="viewModel.name">
+            </a>
+          </div>
+          <h1>
+            {{viewModel.full_name}}
+          </h1>
+        </div>
+        <div class="player-menu">
+          <a href="#" title="{{viewModel.full_name}} full profile" class="current">Perfil</a>
+          <a href="#" title="{{viewModel.full_name}} videos" class="">Estatísticas</a>
+          <a href="#" title="{{viewModel.full_name}} awards" class="">Notícias</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="player-header-placeholder"></div>
+
+    <div class="callout meta ">
+      <div class="row">
+        <div class="team-image">
+          <!--<div class="right-shadow"></div>-->
+          <img [src]="viewModel.avatar.type" class="old" alt="profile img"
+               title="profile" style="left: -241.5px;">
+        </div>
+
+        <table class="sportsmagazine-client-detail">
+          <tbody>
+          <tr class="table_header">
+            <th>Liga</th>
+            <th>Jogos</th>
+            <th>Vitórias</th>
+            <th>Derrotas</th>
+            <th>Empates</th>
+            <th>Golos</th>
+            <th>Assis.</th>
+            <th>CA</th>
+            <th>CV</th>
+            <th>Mins.</th>
+          </tr>
+          <tr>
+            <td>
+              <img class = "league" src="./../../assets/Liga_Portugal_logo.png" alt="">
+              <div class="player-stats-text">
+              </div>
+            </td>
+            <td>23</td>
+            <td>19</td>
+            <td>2</td>
+            <td>2</td>
+            <td>20</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0</td>
+            <td>454''</td>
+          </tr>
+          <tr>
+            <td>
+              <img class = "league" src="./../../assets/9_imgbank_tp.png" alt="">
+              <div class="player-stats-text">
+              </div>
+            </td>
+            <td>7</td>
+            <td>7</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>45''</td>
+          </tr>
+          <tr>
+            <td>
+              <img class = "league" src="./../../assets/Tacadaligalogo.png" alt="">
+              <div class="player-stats-text">
+              </div>
+            </td>
+            <td>12</td>
+            <td>12</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>154''</td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="personal">
+          <div class="data">
+            <div>
+              <strong>Idade</strong>
+            </div>
+            <div>
+              <strong>D. Nascimento</strong>
+            </div>
+            <div>
+              <strong>Posição</strong>
+            </div>
+            <div>
+              <strong>Pé Dominante</strong>
+            </div>
+            <div>
+              <strong>Altura</strong>
+            </div>
+            <div>
+              <strong>Peso</strong>
+            </div>
+            <div>
+              <strong>Residência</strong>
+            </div>
+            <div>
+              <strong>Nacionalidade</strong>
+            </div>
+          </div>
+          <div class="data">
+            <div>
+              24
+            </div>
+            <div>
+              27 Ago 1993
+            </div>
+            <div>
+              Médio Centro
+            </div>
+            <div>
+              Direito
+            </div>
+            <div>
+              191 cm
+            </div>
+            <div>
+              87 kg
+            </div>
+            <div>
+              Lisboa
+            </div>
+            <div>
+              Portugal
+            </div>
+          </div>
+        </div>
+
+        <div class="skills">
+          <div class="data">
+            <div *ngIf="chart">
+              <canvas id="radar" style="display: block; width: 600px; height: 260px;"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
