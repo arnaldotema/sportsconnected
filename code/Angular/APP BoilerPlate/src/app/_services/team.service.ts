@@ -9,66 +9,19 @@ import {catchError, retry} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
 
 @Injectable()
-export class teamService {
+export class TeamService {
 
   mockTeams: TeamViewModel[] = [
     {
-      info: {
-        name: 'Arnaldo Tema',
-        avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',// https://instagram.flis6-1.fna.fbcdn.net/vp/84bab3a03bdb6a25f601411c863cce50/5B627DFE/t51.2885-15/e35/17663460_302726650145190_6548337581656899584_n.jpg',
-        full_name: 'Arnaldo Lucien da Trindade Tema',
-        positions: ['Avançado', 'Guarda-redes'],
-        height: 191,
-        weight: 87,
-        date_of_birth: '',
-        foot: 'Tripé',
-      }
-      ,
-      team: {
-        id: '0',
-        acronym: 'ODB',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC'
+      acronym: 'SFC',
+      avatar: {
+        type: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
       },
-      current_season: {
-        name: '17/18',
-        id: '0',
-        stats: {
-          games: 200,
-          goals: 4343,
-          minutes_played: 6666,
-          yellow_cards: 0,
-          red_cards: 10
-        }
-      },
-      media: {},
-      skill_set: [
-        {
-          name: 'Basquetebol',
-          avatar: 'https://seeklogo.com/images/B/bola-copa-brasil-2014-logo-2E974327EF-seeklogo.com.png',
-          endorsements: 10000
-        },
-        {
-          name: 'Grandade',
-          avatar: 'https://seeklogo.com/images/B/bola-copa-brasil-2014-logo-2E974327EF-seeklogo.com.png',
-          endorsements: 1000
-        },
-        {
-          name: 'Seriedade',
-          avatar: 'https://seeklogo.com/images/B/bola-copa-brasil-2014-logo-2E974327EF-seeklogo.com.png',
-          endorsements: 100000
-        },
-        {
-          name: 'Abananços',
-          avatar: 'https://seeklogo.com/images/B/bola-copa-brasil-2014-logo-2E974327EF-seeklogo.com.png',
-          endorsements: 10
-        },
-        {
-          name: 'Calorias',
-          avatar: 'https://seeklogo.com/images/B/bola-copa-brasil-2014-logo-2E974327EF-seeklogo.com.png',
-          endorsements: 100
-        }
-      ],
+      name: 'Seixal FC',
+      full_name: 'Seixal Futebol Clube',
+
+
       recommendations: {
         total_recommendations: 300,
         last_recommendations: [
@@ -84,7 +37,7 @@ export class teamService {
                 name: 'Programadores Autistas'
               }
             },
-            text: 'O meu BFF que me ensina social skills! E ginásio! Mas ele é facilmente stressado e cheira a bufo constante'
+            text: 'O meu BFF que me ensina social skills! E ginásio! Mas ele é facilmente stressado.'
           },
           {
             author: {
@@ -98,8 +51,8 @@ export class teamService {
                 name: 'Namoradas'
               }
             },
-              text: 'O meu GRANDÃO <3'
-            }
+            text: 'O meu GRANDÃO <3'
+          }
         ]
       }
     }
@@ -119,7 +72,7 @@ export class teamService {
 
   requestOptions;
 
-  constructor (){
+  constructor() {
     this.requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'

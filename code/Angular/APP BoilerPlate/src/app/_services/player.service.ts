@@ -25,7 +25,7 @@ export class PlayerService {
       }
       ,
       team: {
-        id: '0',
+        id: 'team',
         acronym: 'ODB',
         avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
         name: 'Seixal FC'
@@ -146,5 +146,4 @@ export class PlayerService {
     return new ErrorObservable(
       'Something bad happened; please try again later.');
   };
-
 }

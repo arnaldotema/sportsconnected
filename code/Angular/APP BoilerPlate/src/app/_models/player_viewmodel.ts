@@ -113,7 +113,7 @@ export class PlayerViewModel{
             endorsements: [{type: Schema.Types.ObjectId, ref: 'FootballUserInfo'}],
         }
     ],
-    recomendations: {
+    recommendations: {
         list: [{type: Schema.Types.ObjectId, ref: 'FootballUserInfo'}],
         top_5: [
             {
