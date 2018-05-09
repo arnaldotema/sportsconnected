@@ -53,6 +53,8 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
 }
 
+
+
 .player .meta .personal .rankings-container {
   background: white;
   margin: 1rem 1rem 1rem 0;
@@ -216,3 +218,16 @@ img {
   color: #929292;
 }
 
+.skills {
+  margin: 10px 10px 10px 10px;
+  float: left;
+  height: 200px;
+  width: 45%;
+}
+
+.skills .data {
+  padding: 0 1rem;
+  font-family: "Museo Sans", sans-serif;
+  font-weight: 300;
+  font-size: .9375rem;
+}
