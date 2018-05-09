@@ -55,7 +55,7 @@ import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { TeamComponent } from './team/team.component';
 import { MatchComponent } from './match/match.component';
 import { CompetitionComponent } from './competition/competition.component';
-import { UserInfoComponent } from './userInfo/userInfo.component';
+import { User_infoComponent } from './user_info/user_info.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -71,7 +71,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     TeamComponent,
     MatchComponent,
     CompetitionComponent,
-    UserInfoComponent
+    User_infoComponent
   ],
   imports: [
     BrowserModule,
