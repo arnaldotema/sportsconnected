@@ -8,7 +8,7 @@ var FootballCompetitionSchema = new Schema({
         standings : Array,
         stats : Array
 	},
-	previous_seasons: [{type: Schema.Types.ObjectId, ref: 'FootballCompetitionSeason'}]
+	previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_competition_season'}]
 });
 
-module.exports = mongoose.model('FootballCompetition', FootballCompetitionSchema);
+module.exports = mongoose.model('football_competition', FootballCompetitionSchema);

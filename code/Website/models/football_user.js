@@ -6,7 +6,7 @@ var FootballUserSchema = new Schema({
 	password : { type: String, required: true },
 	last_login : Date,
 	subscription_expiration : Date,
-	player : { type: Schema.Types.ObjectId, ref: 'FootballUserInfo' }
+	player : { type: Schema.Types.ObjectId, ref: 'football_user_info' }
 });
 
-module.exports = mongoose.model('FootballUser', FootballUserSchema);
+module.exports = mongoose.model('football_user', FootballUserSchema);
