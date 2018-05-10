@@ -2,10 +2,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FootballUserInfoSchema = new Schema({
-    user_id: {type: Schema.Types.ObjectId, ref: 'FootballUser'},
+    user_id: {type: Schema.Types.ObjectId, ref: 'football_user'},
     personal_info: {
         name: {type: String, default: Date.now},
-        avatar: {type: String, default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'},
+        avatar: {
+            type: String,
+            default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
+        },
         full_name: String,
         positions: [String],
         height: Number,
@@ -18,10 +21,10 @@ var FootballUserInfoSchema = new Schema({
         zerozero: String,
     },
     current_season: {
-        season_id: {type: Schema.Types.ObjectId, ref: 'FootballSeason'},
+        season_id: {type: Schema.Types.ObjectId, ref: 'football_season'},
         name: String,
         team: {
-            id: {type: Schema.Types.ObjectId, ref: 'FootballTeam'},
+            id: {type: Schema.Types.ObjectId, ref: 'football_team'},
             acronym: String,
             avatar: String,
             name: String,
@@ -34,9 +37,9 @@ var FootballUserInfoSchema = new Schema({
             red_cards: {type: Number, default: 0},
             minutes_played: {type: Number, default: 0},
         },
-        games: [{type: Schema.Types.ObjectId, ref: 'FootballMatch'}]
+        games: [{type: Schema.Types.ObjectId, ref: 'football_match'}]
     },
-    previous_seasons: [{type: Schema.Types.ObjectId, ref: 'FootballUserInfoSeason'}],
+    previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_user_info_season'}],
     media: [
         {
             title: {type: String, required: true},
@@ -47,15 +50,15 @@ var FootballUserInfoSchema = new Schema({
             references: {
                 leagues: [{
                     name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'FootballCompetition'}
+                    id: {type: Schema.Types.ObjectId, ref: 'football_competition'}
                 }],
                 team: [{
                     name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'FootballTeam'}
+                    id: {type: Schema.Types.ObjectId, ref: 'football_team'}
                 }],
                 player: [{
                     name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'FootballUserInfo'}
+                    id: {type: Schema.Types.ObjectId, ref: 'football_user_info'}
                 }],
             }
         }
@@ -64,16 +67,16 @@ var FootballUserInfoSchema = new Schema({
         {
             name: {type: String, required: true, unique: true},
             avatar: String,
-            endorsements: [{type: Schema.Types.ObjectId, ref: 'FootballUserInfo'}],
+            endorsements: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         }
     ],
     recomendations: {
-        list: [{type: Schema.Types.ObjectId, ref: 'FootballUserInfo'}],
+        list: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         top_5: [
             {
                 author: {
                     name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'FootballUserInfo', required: true},
+                    id: {type: Schema.Types.ObjectId, ref: 'football_user_info', required: true},
                     avatar: String,
                     team: {
                         id: String,
@@ -91,5 +94,5 @@ var FootballUserInfoSchema = new Schema({
     updated_at: {type: Date, default: Date.now}
 });
 
-module.exports = mongoose.model('FootballUserInfo', FootballUserInfoSchema);
+module.exports = mongoose.model('football_user_info', FootballUserInfoSchema);
 

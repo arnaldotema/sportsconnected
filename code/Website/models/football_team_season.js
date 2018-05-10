@@ -11,4 +11,4 @@ var FootballTeamSeasonSchema = new Schema({
     full_name: { type: String, unique: true}
 });
 
-module.exports = mongoose.model('Team', FootballTeamSeasonSchema);
+module.exports = mongoose.model('football_team_season', FootballTeamSeasonSchema);
