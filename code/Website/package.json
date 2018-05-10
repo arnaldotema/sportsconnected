@@ -8,14 +8,18 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "crawler": "^1.1.2",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "string-template": "^1.0.0",
+    "underscore": "^1.9.0",
+    "winston": "^3.0.0-rc5"
   },
   "author": "Diogo Pires",
   "license": "ISC"

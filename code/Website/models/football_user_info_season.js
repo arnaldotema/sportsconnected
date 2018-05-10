@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FootballUserSeasonSchema = new Schema({
-    season_id: {type: Schema.Types.ObjectId, ref: 'FootballSeason'},
+    season_id: {type: Schema.Types.ObjectId, ref: 'football_season'},
     name: String,
     team: {
-        id: {type: Schema.Types.ObjectId, ref: 'FootballTeam'},
+        id: {type: Schema.Types.ObjectId, ref: 'football_team'},
         acronym: String,
         avatar: String,
         name: String,
@@ -18,8 +18,8 @@ var FootballUserSeasonSchema = new Schema({
         red_cards: {type: Number, default: 0},
         minutes_played: {type: Number, default: 0},
     },
-    games: [{type: Schema.Types.ObjectId, ref: 'FootballMatch'}]
+    games: [{type: Schema.Types.ObjectId, ref: 'football_match'}]
 });
 
-module.exports = mongoose.model('FootballUserInfoSeason', FootballUserSeasonSchema);
+module.exports = mongoose.model('football_user_info_season', FootballUserSeasonSchema);
 

@@ -10,4 +10,4 @@ var FootballCompetitionSeasonSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('FootballCompetitionSeason', FootballCompetitionSeasonSchema);
+module.exports = mongoose.model('football_competition_season', FootballCompetitionSeasonSchema);

@@ -15,6 +15,9 @@ const players = require('./routes/player_routes');
 const teams = require('./routes/team_routes');
 const competitions = require('./routes/competition_routes');
 
+//Logging
+const logger = require('./logging');
+
 //Server
 const app = express();
 const port = 3000;
@@ -37,6 +40,7 @@ mongoose.connect(config.database);
 
 mongoose.connection.on('connected', function(){
     console.log("im connected to " + config.database);
+    var lol = require('./crawlers/zerozero/crawler')
 })
 
 mongoose.connection.on('error', function(err){
