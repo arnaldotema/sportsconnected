@@ -2,8 +2,8 @@
 export class CompetitionSeason{
   name : string;
   current_season: {
-    matchdays : [],
-    standings : [],
-    stats : []
+    matchdays : number[];
+    standings : number[];
+    stats : number[]
   }
 }

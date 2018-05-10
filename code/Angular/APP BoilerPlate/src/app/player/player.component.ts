@@ -42,7 +42,7 @@ export class PlayerComponent implements OnInit,AfterViewInit {
       }
     };
 
-    this.chart = new Chart('radar', {
+    this.chart = new Chart('graph', {
       type: 'horizontalBar',
       data: this.data,
       options: this.options

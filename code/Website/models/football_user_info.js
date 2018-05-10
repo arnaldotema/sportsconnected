@@ -5,10 +5,7 @@ var FootballUserInfoSchema = new Schema({
     user_id: {type: Schema.Types.ObjectId, ref: 'FootballUser'},
     personal_info: {
         name: {type: String, default: Date.now},
-        avatar: {
-            type: String,
-            default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-        },
+        avatar: {type: String, default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'},
         full_name: String,
         positions: [String],
         height: Number,
