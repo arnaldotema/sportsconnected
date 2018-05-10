@@ -12,7 +12,7 @@ import {MatchViewModel} from '../_models/match_viewmodel';
 export class MatchService {
 
   mockMatches: MatchViewModel[] = [
-    {}
+    new MatchViewModel()
   ];
 
   requestOptions;
