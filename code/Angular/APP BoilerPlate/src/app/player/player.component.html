@@ -1,23 +1,23 @@
 <div style="overflow: hidden">
   <div class="player">
-    <div class="team-header">
+    <div class="player-header">
       <div class="row">
-        <div class="team-info">
+        <div class="player-info">
           <div class="team">
-            <a href="{{viewModel.team.id}}" title="Cavaliers">
+            <a href="#" title="Cavaliers">
               <img [src]="viewModel.team.avatar" [title]="viewModel.team.name" [alt]="viewModel.team.acronym">
             </a>
           </div>
           <h1>
             {{viewModel.info.name}}
           </h1>
-          <div class="team-team">
-            <a href="{{viewModel.team.id}}" [title]="viewModel.team.name">
+          <div class="player-team">
+            <a href="#" [title]="viewModel.team.name">
               {{viewModel.team.name}}
             </a>
           </div>
         </div>
-        <div class="team-menu">
+        <div class="player-menu">
           <a href="#" title="{{viewModel.info.name}} full profile" class="current">Perfil</a>
           <a href="#" title="{{viewModel.info.name}} videos" class="">Estatísticas</a>
           <a href="#" title="{{viewModel.info.name}} awards" class="">Notícias</a>
@@ -25,14 +25,14 @@
       </div>
     </div>
 
-    <div class="team-header-placeholder"></div>
+    <div class="player-header-placeholder"></div>
 
     <div class="callout meta ">
       <div class="row">
-        <div class="team-image">
+        <div class="player-image">
           <!--<div class="right-shadow"></div>-->
-          <img [src]="viewModel.info.avatar" class="old" alt="profile img"
-               title="profile" style="left: -241.5px;">
+          <img [src]="viewModel.info.avatar" class="old" alt="LeBron James profile"
+               title="LeBron James profile" style="left: -241.5px;">
         </div>
 
         <table class="sportsmagazine-client-detail">
@@ -52,7 +52,7 @@
           <tr>
             <td>
               <img class = "league" src="./../../assets/Liga_Portugal_logo.png" alt="">
-              <div class="team-stats-text">
+              <div class="player-stats-text">
               </div>
             </td>
             <td>23</td>
@@ -68,7 +68,7 @@
           <tr>
             <td>
               <img class = "league" src="./../../assets/9_imgbank_tp.png" alt="">
-              <div class="team-stats-text">
+              <div class="player-stats-text">
               </div>
             </td>
             <td>7</td>
@@ -84,7 +84,7 @@
           <tr>
             <td>
               <img class = "league" src="./../../assets/Tacadaligalogo.png" alt="">
-              <div class="team-stats-text">
+              <div class="player-stats-text">
               </div>
             </td>
             <td>12</td>
@@ -126,6 +126,7 @@
               <strong>Nacionalidade</strong>
             </div>
           </div>
+
           <div class="data">
             <div>
               24
@@ -154,23 +155,23 @@
           </div>
         </div>
 
+
         <div class="skills">
           <div class="data">
             <div *ngIf="chart">
-              <canvas id="radar" style="display: block; width: 600px; height: 260px;"></canvas>
+              <canvas id="graph" style="display: block; width: 600px; height: 260px;"></canvas>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-
   </div>
 
   <!--
     <div class="row">
       <div class="col-md-6">
-        <div class="team-header__info">
+        <div class="player-header__info">
           <img [src]="viewModel.info.avatar"/>
           <span>{{viewModel.info.name}}</span>
           <div class="positions">

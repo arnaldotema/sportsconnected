@@ -14,6 +14,7 @@ export class User_infoService {
     user_id: 1,
     personal_info: {
       name: 'Diogo Pires',
+      age: 25,
       avatar: {
         type: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
         default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
@@ -23,6 +24,8 @@ export class User_infoService {
       height: 165,
       weight: 90,
       date_of_birth: '30-01-1993',
+      nationality: 'Portuguesa',
+      residence: 'Lisboa',
       foot: 'Direito',
       updated_at: '8-05-2018'
     },
@@ -39,13 +42,47 @@ export class User_infoService {
         name: 'Seixal FC',
         full_name: 'Seixal Futebol Clube'
       },
-      stats: {
-        games: 20,
-        goals: 15,
-        yellow_cards: 2,
-        red_cards: 0,
-        minutes_played: 1400
-      },
+      stats: [
+        {
+          competition_name: 'Liga Portuguesa',
+          competition_avatar: "./../../assets/Liga_Portugal_logo.png",
+          games: 15,
+          wins: 14,
+          losses: 0,
+          draws: 1,
+          goals: 13,
+          assists: 4,
+          yellow_cards: 1,
+          red_cards: 0,
+          minutes_played: 1050
+        },
+        {
+          competition_name: 'Taça de Portugal',
+          competition_avatar : './../../assets/Liga_Portugal_logo.png',
+          games: 4,
+          wins: 1,
+          losses: 1,
+          draws: 1,
+          goals: 4,
+          assists: 1,
+          yellow_cards: 0,
+          red_cards: 0,
+          minutes_played: 280
+        },
+        {
+          competition_name: 'Super Taça',
+          competition_avatar: './../../assets/9_imgbank_tp.png', //./../../assets/Tacadaligalogo.png
+          games: 1,
+          wins: 1,
+          losses: 0,
+          draws: 0,
+          goals: 2,
+          assists: 1,
+          yellow_cards: 0,
+          red_cards: 0,
+          minutes_played: 90
+        }
+      ],
       games: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     },
     previous_seasons: [],
@@ -102,7 +139,7 @@ export class User_infoService {
       },
     ],
     recommendations: {
-      list: [1,2,3],
+      list: [1, 2, 3],
       top_5: [
         {
           author: {
