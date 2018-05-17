@@ -8,6 +8,8 @@ const baseUris = require('./base_uris');
 
 let zerozero = new Crawler({
     rateLimit: 5000
+    // search for worker threads implementation
+    // default worker threads = 10, but accordingly to the 5000 rateLimit, it will only use 1 worker thread
 });
 
 const proxies = [
