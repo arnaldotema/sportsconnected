@@ -9,16 +9,21 @@
   overflow: hidden;
 }
 
-.player .meta .player-image {
-  margin : 10px 10px 10px 10px;
+.player-profile{
+  width: 25%;
+  height: 450px;
   float: left;
-  width: 29%;
+  position: relative;
+}
+
+.player .meta .player-image {
+  margin : 10px;
+  float: left;
   position: relative;
   height: 350px;
   overflow: hidden;
   background: white center center no-repeat;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
-
 }
 
 .player .meta .player-image img{
@@ -209,14 +214,21 @@ img {
 }
 
 .player .meta .sportsmagazine-client-detail tr > td {
-  border: none;
-  border-bottom: none;
-  border-top: none;
+  border-style: none;
   padding: 5px 5px 5px 5px;
   text-align: left;
   font-size: 12px;
   color: #929292;
 }
+
+.player .meta .sportsmagazine-client-detail tbody > tr > td {
+  border-style: none;
+  padding: 5px 5px 5px 5px;
+  text-align: left;
+  font-size: 12px;
+  color: #929292;
+}
+
 
 .skills {
   margin: 10px 10px 10px 10px;
@@ -230,4 +242,95 @@ img {
   font-family: "Museo Sans", sans-serif;
   font-weight: 300;
   font-size: .9375rem;
+}
+
+.card-sc {
+}
+
+.card-sc img{
+  width: 50px;
+  float: left;
+  margin: 10px;
+}
+
+.card-sc .recommendation_name {
+  float: right;
+  width: 66%;
+  margin: 15px 5px 5px 5px;
+  text-align: left;
+}
+
+.card-sc p{
+  padding: 10px;
+}
+
+.card-sc .title {
+  color: grey;
+  font-size: 18px;
+}
+
+.card-sc button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card-sc a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.card-sc button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+.card-sc .profile-image {
+  background-size: cover;
+  height: 60px;
+  width: 50px;
+}
+
+.card-sc .headers {
+  margin-bottom: 5px;
+}
+
+.row-center {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-buttons {
+  float: left;
+  margin: 10px 10px 10px 10%;
+}
+
+.button-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 35px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.profile-media {
+  margin: 10px 10px 10px 10px;
+  float: left;
+  width: 45%;
 }

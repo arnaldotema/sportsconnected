@@ -12,6 +12,7 @@ module.exports = {
         res.$('#edition_table tbody tr .text a').each(function() {
             teamIds.push(res.$(this).attr('href').match(/\d+/g)[0]);
         });
+
         logger.info("Edition Teams: " + teamIds);
 
         footballTeam.getMissingTeams(teamIds, function(err, teams) {
