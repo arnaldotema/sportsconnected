@@ -1,0 +1,201 @@
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=109369 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=109369","level":"info"}
+{"message":"Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"Missing Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=16 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=4 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=15 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=31 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=20 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=12 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=18 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=5 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=4336 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=3 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=33 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=7 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=6 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1728 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=13 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1734 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=35 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=9&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=16","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=16&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=4","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=4&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=15","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=15&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=31","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=31&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=20","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=20&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=12","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=12&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=18","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=18&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=5","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=5&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=4336","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=4336&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=3","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=3&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=33","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=33&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=7","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=7&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=6","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=6&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=1728","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=1728&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=13","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=13&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=1734","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=1734&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=35&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/team_matches.php?id=9&epoca_id=","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=109369 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=109369","level":"info"}
+{"message":"Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"Missing Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=16 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=4 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=15 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=31 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=20 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=12 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=18 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=5 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=4336 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=3 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=33 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=7 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=6 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1728 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=13 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1734 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=35 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=9&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=16","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=16&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=4","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=4&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=15","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=15&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=31","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=31&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=20","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=20&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=12","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=12&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=18","level":"info"}
+{"errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"message":"Path `{PATH}` is required.","type":"required","path":"name","value":""},"kind":"required","path":"name","value":"","$isValidatorError":true}},"_message":"football_team validation failed","message":"football_team validation failed: name: Path `name` is required.","name":"ValidationError","level":"error"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=5","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=5&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=4336","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=4336&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=3","level":"info"}
+{"errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"message":"Path `{PATH}` is required.","type":"required","path":"name","value":""},"kind":"required","path":"name","value":"","$isValidatorError":true}},"_message":"football_team validation failed","message":"football_team validation failed: name: Path `name` is required.","name":"ValidationError","level":"error"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=33","level":"info"}
+{"errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"message":"Path `{PATH}` is required.","type":"required","path":"name","value":""},"kind":"required","path":"name","value":"","$isValidatorError":true}},"_message":"football_team validation failed","message":"football_team validation failed: name: Path `name` is required.","name":"ValidationError","level":"error"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=7","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=109369 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=109369","level":"info"}
+{"message":"Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"Missing Edition Teams: 18,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=18 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=3 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=33 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=7 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=6 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1728 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=13 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1734 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=35 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=18","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=18&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=3","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=3&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=33","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=33&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=7","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=109369 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=109369","level":"info"}
+{"message":"Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"Missing Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=16 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=4 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=31 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=20 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=12 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=18 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=5 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=4336 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=3 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=33 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=7 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=6 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1728 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=13 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1734 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=35 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=9&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=16","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=16&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=4","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=4&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=15","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=15&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=31","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=31&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=20","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=20&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=12","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=12&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=18","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=18&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=5","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=5&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=4336","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=4336&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=3","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=3&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=33","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=33&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=7","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=7&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=6","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=6&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=1728","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=1728&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=13","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=13&epoca_id= to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=1734","level":"info"}
+{"errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"message":"Path `{PATH}` is required.","type":"required","path":"name","value":""},"kind":"required","path":"name","value":"","$isValidatorError":true}},"_message":"football_team validation failed","message":"football_team validation failed: name: Path `name` is required.","name":"ValidationError","level":"error"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=35","level":"info"}
+{"errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"message":"Path `{PATH}` is required.","type":"required","path":"name","value":""},"kind":"required","path":"name","value":"","$isValidatorError":true}},"_message":"football_team validation failed","message":"football_team validation failed: name: Path `name` is required.","name":"ValidationError","level":"error"}
+{"message":"CRAWLING http://www.zerozero.pt/team_matches.php?id=9&epoca_id=","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=109369 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=109369","level":"info"}
+{"message":"Edition Teams: 9,16,4,15,31,20,12,18,5,4336,3,33,7,6,1728,13,1734,35","level":"info"}
+{"message":"Missing Edition Teams: 1734,35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=1734 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=35 to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=1734","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=1734&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=35","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/team_matches.php?id=35&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/team_matches.php?id=1734&epoca_id=","level":"info"}
