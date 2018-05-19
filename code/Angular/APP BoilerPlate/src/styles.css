@@ -148,6 +148,7 @@
   max-width: 100%;
   background: #2e2f32;
   border-bottom: 10px solid #b3b5bb;
+  position: fixed;
 
 }
 
@@ -192,8 +193,8 @@ body {
   background-color: whitesmoke !important;
 }
 
-.player .player-header-placeholder {
+.player-header-placeholder {
   width: 100%;
-  height: 50px;
-  background: white;
+  height: 85px;
+  background: transparent;
 }
