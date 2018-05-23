@@ -3,15 +3,13 @@ import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {User_infoService} from '../_services/user_info.service';
 import { Chart } from 'chart.js';
 import {Sort} from '@angular/material';
-import {forEach} from '@angular/router/src/utils/collection';
-
-
 @Component({
-  selector: 'app-user-info-media',
-  templateUrl: './user-info-media.component.html',
-  styleUrls: ['./user-info-media.component.css']
+  selector: 'app-user-info-stats',
+  templateUrl: './user-info-stats.component.html',
+  styleUrls: ['./user-info-stats.component.css']
 })
-export class User_infoMediaComponent implements OnInit,AfterViewInit{
+
+export class User_infoStatsComponent implements OnInit,AfterViewInit{
 
   viewModel: UserInfoViewModel;
   userInfoService : User_infoService;
@@ -55,3 +53,4 @@ export class User_infoMediaComponent implements OnInit,AfterViewInit{
 function compare(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
+
