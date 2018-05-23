@@ -19,108 +19,40 @@
           </div>
         </div>
         <div class="player-menu">
-          <a routerLink="/userInfo" routerLinkActive="active" title="{{viewModel.personal_info.name}}" class="">Perfil</a>
-          <a routerLink="/userMedia" routerLinkActive="active" title="{{viewModel.personal_info.name}}" class="current">Notícias</a>
-          <a routerLink="/userInfo" routerLinkActive="active" title="{{viewModel.personal_info.name}}" class="">Estatísticas</a>
+          <a routerLink="/userInfo" routerLinkActive="active" title="{{viewModel.personal_info.name}}"
+             class="">Perfil</a>
+          <a routerLink="/userMedia" routerLinkActive="active" title="{{viewModel.personal_info.name}}" class="current">Media</a>
+          <a routerLink="/userStats" routerLinkActive="active" title="{{viewModel.personal_info.name}}" class="">Estatísticas</a>
         </div>
       </div>
     </div>
     <div class="player-header-placeholder"></div>
-    <div class="player-header-placeholder-small"></div>
     <div class="inner-page player">
-      <div class="col-md-6 col-xs-12 column ">
+
+      <table class="table-order-center" matSort (matSortChange)="sortData($event)">
+        <tr>
+          <th mat-sort-header="Recente">Recente</th>
+          <th mat-sort-header="Popular">Popular</th>
+          <th mat-sort-header="Gostos">Gostos</th>
+        </tr>
+      </table>
+
+      <div class="col-md-6 col-xs-12 column " *ngFor="let med of sortedData">
         <div class="callout small articles-big">
           <div class="video">
-            <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0" allowfullscreen=""></iframe>
+            <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
+                    allowfullscreen=""></iframe>
           </div>
           <div class="description">
             <p class="title">
               <br>
-              <a href="/video/11523/" title="Diogo Pires é bastante parecido com Thierry Henry">Diogo Pires é bastante parecido com Thierry Henry</a>
-            </p>
-            <div class="authors">
-              <span class="author">Mike Schmitz</span>                                    </div>
-            <div class="date">3 years ago</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xs-12 column ">
-        <div class="callout small articles-big">
-          <div class="video">
-            <iframe width="100%" height="360" src="//www.youtube.com/embed/_jBfu0FHzjU" frameborder="0" allowfullscreen=""></iframe>
-          </div>
-          <div class="description">
-            <p class="title">
+              <a href="/video/11523/" title="{{med.title}}">{{med.title}}</a>
               <br>
-              <a href="/video/11523/" title="Diogo Pires é bastante parecido com Thierry Henry">Diogo Pires é bastante parecido com Thierry Henry</a>
+              {{med.text}}
             </p>
             <div class="authors">
-              <span class="author">Sports Connected</span>                                    </div>
-            <div class="date">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xs-12 column ">
-        <div class="callout small articles-big">
-          <div class="video">
-            <iframe width="100%" height="360" src="//www.youtube.com/embed/ZqhwMw8XNR8" frameborder="0" allowfullscreen=""></iframe>
-          </div>
-          <div class="description">
-            <p class="title">
-              <br>
-              <a href="/video/11523/" title="Diogo Pires é bastante parecido com Thierry Henry">Diogo Pires é bastante parecido com Thierry Henry</a>
-            </p>
-            <div class="authors">
-              <span class="author">Sports Connected</span>                                    </div>
-            <div class="date">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xs-12 column ">
-        <div class="callout small articles-big">
-          <div class="video">
-            <iframe width="100%" height="360" src="//www.youtube.com/embed/dGgQoq69NPY" frameborder="0" allowfullscreen=""></iframe>
-          </div>
-          <div class="description">
-            <p class="title">
-              <br>
-              <a href="/video/11523/" title="Diogo Pires é bastante parecido com Thierry Henry">Diogo Pires é bastante parecido com Thierry Henry</a>
-            </p>
-            <div class="authors">
-              <span class="author">Sports Connected</span>                                    </div>
-            <div class="date">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xs-12 column ">
-        <div class="callout small articles-big">
-          <div class="video">
-            <iframe width="100%" height="360" src="//www.youtube.com/embed/a2e0lokMiV0" frameborder="0" allowfullscreen=""></iframe>
-          </div>
-          <div class="description">
-            <p class="title">
-              <br>
-              <a href="/video/11523/" title="Diogo Pires é bastante parecido com Thierry Henry">Diogo Pires é bastante parecido com Thierry Henry</a>
-            </p>
-            <div class="authors">
-              <span class="author">Sports Connected</span>                                    </div>
-            <div class="date">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xs-12 column end">
-        <div class="callout small articles-big">
-          <div class="video">
-            <iframe width="100%" height="360" src="//www.youtube.com/embed/YOY8kJcMyf4" frameborder="0" allowfullscreen=""></iframe>
-          </div>
-          <div class="description">
-            <p class="title">
-              <br>
-              <a href="/video/11523/" title="Diogo Pires é bastante parecido com Thierry Henry">Diogo Pires é bastante parecido com Thierry Henry</a>
-            </p>
-            <div class="authors">
-              <span class="author">Sports Connected</span>                                    </div>
-            <div class="date">&nbsp;</div>
+              <span class="author">{{med.author}}</span></div>
+            <div class="date">{{med.date}}</div>
           </div>
         </div>
       </div>
