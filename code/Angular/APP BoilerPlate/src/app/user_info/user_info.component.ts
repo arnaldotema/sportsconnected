@@ -52,8 +52,19 @@ export class User_infoComponent implements OnInit,AfterViewInit{
         display: false
       },
       scales: {
-        display: false,
-        yAxes: [{ticks: {mirror: true}}]
+        xAxes: [{
+          gridLines: {
+            display:false
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            mirror: true
+          },
+          gridLines: {
+            display:false
+          }
+        }]
       }
     };
 

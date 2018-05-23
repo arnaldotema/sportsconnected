@@ -88,10 +88,14 @@ export class User_infoService {
     previous_seasons: [],
     media: [
       {
-        title: 'Hat trick em jogo decisivo.',
+        title: 'Diogo Pires marca Hat-trick em jogo decisivo',
         author: 'A Bola.',
         date: '08-05-2018',
         image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+        views: 53,
+        shares: 8,
+        likes: 20,
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
         references: {
           leagues: [
@@ -109,7 +113,143 @@ export class User_infoService {
             id: 1
           }],
         }
-      }
+      },
+      {
+        title: 'Arnaldo faz 25 anos!',
+        author: 'A Bola.',
+        date: '27-08-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+        views: 1200,
+        shares: 12,
+        likes: 0,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci.',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portuguesa',
+              id: 1,
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: 1
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: 1
+          }],
+        }
+      },
+      {
+        title: 'Melhores momentos',
+        author: 'A Bola.',
+        date: '08-09-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+        views: 93,
+        shares: 45,
+        likes: 90,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portuguesa',
+              id: 1,
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: 1
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: 1
+          }],
+        }
+      },
+      {
+        title: '15 Golos em 10 jogos.',
+        author: 'A Bola.',
+        date: '03-11-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+        views: 200,
+        shares: 12,
+        likes: 20,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portuguesa',
+              id: 1,
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: 1
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: 1
+          }],
+        }
+      },
+      {
+        title: 'Campeão da Supermacia',
+        author: 'A Bola.',
+        date: '08-02-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+        views: 2,
+        shares: 0,
+        likes: 0,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portuguesa',
+              id: 1,
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: 1
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: 1
+          }],
+        }
+      },
+      {
+        title: 'Diogo falha final da Taça de Portugal',
+        author: 'A Bola.',
+        date: '28-05-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+        views: 40,
+        shares: 40,
+        likes: 13,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portuguesa',
+              id: 1,
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: 1
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: 1
+          }],
+        }
+      },
+
     ],
     skill_set: [
       {

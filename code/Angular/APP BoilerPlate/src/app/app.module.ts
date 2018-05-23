@@ -57,6 +57,7 @@ import { MatchComponent } from './match/match.component';
 import { CompetitionComponent } from './competition/competition.component';
 import { User_infoComponent } from './user_info/user_info.component';
 import { User_infoMediaComponent } from './user-info-media/user-info-media.component';
+import { User_infoStatsComponent } from './user-info-stats/user-info-stats.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -72,7 +73,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MatchComponent,
     CompetitionComponent,
     User_infoComponent,
-    User_infoMediaComponent
+    User_infoMediaComponent,
+    User_infoStatsComponent
   ],
   imports: [
     BrowserModule,
