@@ -18,9 +18,6 @@ export class TeamRosterComponent implements OnInit, AfterViewInit  {
 
   viewModel: TeamViewModel;
   teamService: TeamService;
-  chart = [];
-  data = {};
-  options = {};
 
   constructor() { }
 
@@ -29,42 +26,6 @@ export class TeamRosterComponent implements OnInit, AfterViewInit  {
     this.teamService.getTeam('0')
       .subscribe(team => this.viewModel = team);
   }
-
   ngAfterViewInit(){
-    this.data = {
-      labels: ['Ataque', 'Tática', 'Defesa', 'Meio Campo', 'Bolas paradas'],
-      datasets: [{
-        data: [19, 18, 14, 15, 23]
-      }]
-    };
-
-    this.options = {
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display:false
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            mirror: true
-          },
-          gridLines: {
-            display:false
-          }
-        }]
-      }
-    };
-
-    this.chart = new Chart('radar', {
-      type: 'horizontalBar',
-      data: this.data,
-      options: this.options
-    });
   }
-
-
 }
