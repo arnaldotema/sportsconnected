@@ -58,6 +58,7 @@ import { CompetitionComponent } from './competition/competition.component';
 import { User_infoComponent } from './user_info/user_info.component';
 import { User_infoMediaComponent } from './user-info-media/user-info-media.component';
 import { User_infoStatsComponent } from './user-info-stats/user-info-stats.component';
+import { TeamRosterComponent } from './team-roster/team-roster.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -74,7 +75,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     CompetitionComponent,
     User_infoComponent,
     User_infoMediaComponent,
-    User_infoStatsComponent
+    User_infoStatsComponent,
+    TeamRosterComponent
   ],
   imports: [
     BrowserModule,
