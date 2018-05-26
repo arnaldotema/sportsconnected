@@ -20,8 +20,6 @@ export class TeamService {
       },
       name: 'Seixal FC',
       full_name: 'Seixal Futebol Clube',
-
-
       recommendations: {
         total_recommendations: 300,
         last_recommendations: [
@@ -54,7 +52,16 @@ export class TeamService {
             text: 'O meu GRANDÃO <3'
           }
         ]
+      },
+      roster: {
+        players: [
+
+        ],
+        staff: {
+          
+        }
       }
+
     }
   ];
 

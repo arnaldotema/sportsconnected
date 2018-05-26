@@ -114,7 +114,7 @@
 }
 
 .sc-background{
-  background-color: #171a42 !important;
+  background-color: #032f4f !important;
 }
 
 .app-title{
@@ -179,10 +179,16 @@ html {
 td, th {
   padding: 5px !important;
   text-align: center !important;
+  font-weight: normal !important;
 }
 
 .table_header{
-  color : black;
+  color: white;
+  background-color: #032f4f;
+}
+
+.table_header td,th {
+  height: auto !important;
 }
 
 body {
@@ -197,4 +203,35 @@ body {
   width: 100%;
   height: 85px;
   background: transparent;
+}
+
+.tr-odd {
+  background-color: white;
+}
+
+.tr-pair {
+  background-color: transparent;
+}
+
+.th-td-first {
+  width: 80px;
+}
+
+.th-td-last {
+  width: 80px !important;
+}
+
+.row-center {
+  width: 45%;
+  margin: 30px auto;
+}
+
+.row-right {
+  width: 25%;
+  float: right;
+  margin: 30px auto;
+}
+
+.roster{
+
 }
