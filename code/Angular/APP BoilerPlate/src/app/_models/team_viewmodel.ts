@@ -13,7 +13,7 @@ export class TeamViewModel {
     last_recommendations: Recommendation[];
   };
   roster: {
-    playes: [{
+    players: [{
         user_id: string;
         name: string;
         avatar: string;
