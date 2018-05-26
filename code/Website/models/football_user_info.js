@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var FootballUserInfoSchema = new Schema({
     user_id: {type: Schema.Types.ObjectId, ref: 'football_user'},
     personal_info: {
-        name: {type: String, default: Date.now},
+        name: String,
         avatar: {
             type: String,
             default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
@@ -15,10 +15,11 @@ var FootballUserInfoSchema = new Schema({
         weight: Number,
         date_of_birth: Date,
         foot: String,
+        nationality: String,
         updated_at: {type: Date, default: Date.now}
     },
     external_ids: {
-        zerozero: String,
+        zerozero: {type: Number, required: true, unique: true, index: true},
     },
     current_season: {
         season_id: {type: Schema.Types.ObjectId, ref: 'football_season'},
@@ -65,7 +66,7 @@ var FootballUserInfoSchema = new Schema({
     ],
     skill_set: [
         {
-            name: {type: String, required: true, unique: true},
+            name: {type: String},
             avatar: String,
             endorsements: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         }

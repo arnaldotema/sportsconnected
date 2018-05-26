@@ -1,27 +1,25 @@
 // LIBS
 const Crawler = require("crawler");
 const logger = require('../../logging');
+const proxyHandler = require('./proxy_handler');
 var format = require("string-template");
 
 // CRAWLER RELATED
 const baseUris = require('./base_uris');
 
 let zerozero = new Crawler({
-    rateLimit: 5000
-    // search for worker threads implementation
-    // default worker threads = 10, but accordingly to the 5000 rateLimit, it will only use 1 worker thread
+    rateLimit: 5000,
+    jQuery: {
+        name: 'cheerio',
+        options: {
+            normalizeWhitespace: true,
+            xmlMode: true
+        }
+    }
 });
 
-const proxies = [
-    "http://94.23.56.95:8080"
-];
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
-
 zerozero.on('schedule',function(options){
-    options.proxy = proxies[getRandomInt(proxies.length)];
+    options.proxy = proxyHandler.getProxy();
     logger.info("ADDED " + options.uri + " to the queue: PROXY = " + options.proxy);
 });
 
@@ -29,16 +27,27 @@ zerozero.on('request',function(options){
     logger.info("CRAWLING " + options.uri);
 });
 
-module.exports = zerozero;
+zerozero.on('drain',function(options){
+    logger.info("NO MORE REQUESTS! DRAINED!");
+});
 
+zerozero.proxyFailCallback = function (err, res, done){
+    zerozero.queue(res.options);
+    done();
+}
+
+module.exports = zerozero;
 
 //Testing
 
-const competition = require('./functions/football_competition');
+const footballTeamCrawler = require('./functions/football_team');
 
 logger.info("Testing the editions...");
 
 zerozero.queue({
-    uri:format(baseUris.COMPETITION_EDITION, { id_edition: 109369 }),
-    callback: competition.updateCompetitionTeams
+    uri:format(baseUris.TEAM_INFO, { team_id: 9 }),
+    callback: proxyHandler.crawl,
+    successCallback: footballTeamCrawler.updateTeamInfo,
+    proxyFailCallback: zerozero.proxyFailCallback,
+    zerozeroId: 9
 });
