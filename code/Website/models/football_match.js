@@ -8,4 +8,6 @@ var FootballMatchSchema = new Schema({
 	away_team : Array
 });
 
+FootballMatchSchema.statics = require('../services/football_match_service');
+
 module.exports = mongoose.model('football_match', FootballMatchSchema);
