@@ -96,7 +96,6 @@ export class UserInfoViewModel {
           },
         },
         text: string,
-
       }
       ],
   };

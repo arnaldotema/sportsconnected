@@ -9,9 +9,24 @@ export class TeamViewModel {
   name: string;
   full_name: string;
   recommendations: {
-    total_recommendations: number;
-    last_recommendations: Recommendation[];
-  };
+    list: number[],
+    top_5: [
+      {
+        author: {
+          name: string,
+          id: number,
+          avatar: string,
+          team: {
+            id: string,
+            acronym: string,
+            avatar: string,
+            name: string,
+          },
+        },
+        text: string,
+      }
+      ],
+  }
   roster: {
     players: [{
         user_id: string;
@@ -40,6 +55,4 @@ export class TeamViewModel {
       residence: string;
     }]
   };
-
-
 }
