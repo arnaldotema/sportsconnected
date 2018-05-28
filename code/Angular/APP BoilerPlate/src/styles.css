@@ -235,3 +235,20 @@ body {
 .roster{
 
 }
+
+.even {
+  background-color: transparent;
+}
+
+.odd {
+  background-color: white;
+}
+
+.sc-media {
+  margin: 10px;
+}
+
+.recommenations{
+  margin: 20px 5px;
+  display: inline-block;
+}
