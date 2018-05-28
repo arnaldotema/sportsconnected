@@ -252,3 +252,21 @@ body {
   margin: 20px 5px;
   display: inline-block;
 }
+
+.btn-follow{
+  color: white !important;
+  background-color: #032f4f;
+  font-family: "Museo Sans", sans-serif;
+  margin-right: 5px;
+}
+
+.btn-recommend{
+  background-color: white;
+  color: black !important;
+  font-family: "Museo Sans", sans-serif;
+}
+
+.profile-buttons {
+  float: left;
+  margin: 10px 10px 10px 10%;
+}
