@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
+import {MatDialog} from '@angular/material';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class TeamComponent implements OnInit,AfterViewInit  {
   data = {};
   options = {};
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.teamService = new TeamService();
@@ -58,6 +59,23 @@ export class TeamComponent implements OnInit,AfterViewInit  {
       type: 'horizontalBar',
       data: this.data,
       options: this.options
+    });
+  }
+
+  openCreateDialog(event): void {
+    const dialogRef = this.dialog.open(RecommendationModalComponent,
+      {
+        data: {requirement: requirement, edit: true, create: true}
+      });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        this.ibbService.createRequirement(result).subscribe()
+        {
+          this.requirementsDataSource.data.push(result);
+          this.requirementsDataSource.filter = this.filterString;
+        }
+      }
     });
   }
 
