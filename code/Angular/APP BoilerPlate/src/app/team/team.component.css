@@ -102,6 +102,7 @@
 }
 
 .player .player-header{
+  box-shadow: 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   border-radius: 0;
   height: 50px;
   margin: 0 auto !important;
@@ -215,17 +216,22 @@ img {
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
+.player .meta .sc-stats-table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: 1px solid #e4e4e4;
+}
+
 .player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
   margin: 4px 0px 0px 32px;
   line-height: 0.6;
 }
 
 .player .meta .sc-stats-table tr > th,td {
-  max-width: 90px !important;
   min-width: 35px !important;
   padding: 5px 7px !important;
   font-size: 12px;
-  text-transform: uppercase;
   height: 60px;
 }
 
@@ -241,7 +247,6 @@ img {
 
 .skills {
   margin: 10px 10px 10px 10px;
-  height: 200px;
 }
 
 .skills .data {
@@ -258,19 +263,15 @@ img {
 }
 
 .row-left {
-  width: 15%;
+  width: 20%;
   float: left;
   margin: 30px auto;
 }
 
 .row-right {
-  width: 35%;
-  float: left;
-  margin: 30px auto;
+  width: 30%;
+  margin: 30px 10px 20px auto;
 }
-
-
-
 
 .goalkeeper_bg {
   background-color: #4384a8 !important;
@@ -301,11 +302,9 @@ table .number_move {
 table .list_number {
   width: 24px;
   height: 24px;
-  border-radius: 12px;
   padding-top: 4px;
   color: #fff;
   font-weight: bold;
-  background-color: #003555;
   text-align: center;
   display: inline-block;
 }
@@ -332,24 +331,15 @@ table .hauptlink {
   position: relative !important;
 }
 
-table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-  display: table-cell;
-  font-size: 12px;
-  line-height: 15px;
-  border: 1px solid #e4e4e4;
+.roster thead {
+  font-size: 12px !important;
 }
 
-table thead tr th, table tfoot tr td {
-  padding: 8px 8px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #333;
-  border: 1px solid #ddd;
-  border-top: 0px;
-  background: #f2f2f2;
+.roster table tbody > tr >td, td{
+  text-align: center !important;
 }
 
-table .inline-table {
+.roster table .inline-table {
   margin: 0;
   border: 0;
   width: auto;
@@ -357,39 +347,198 @@ table .inline-table {
   box-shadow: none;
 }
 
-table .inline-table tbody tr td {
+.roster .inline-table tbody > tr >td ,td{
+  padding: 0px 5px 0px 5px !important;
+  text-align: left;
+
+}
+
+.roster table .inline-table tbody tr td {
+  font-size: 12px !important;
   color: #333;
   padding: 0 0 0 5px !important;
+  height: 0px !important;
+  min-width: 0px !important;
+  max-width: 150px !important;
   vertical-align: middle;
   -moz-border: none;
   -moz-border-radius: 0;
   border-width: 0;
 }
 
-table .inline-table img {
+.roster table .inline-table img {
   vertical-align: bottom;
 }
 
-table .hauptlink {
-  font-weight: bold;
+.roster table .hauptlink {
+  font-weight: bold !important;
 }
 
-.roster a{
-  color: #1d75a3;
-  text-decoration: none;
-  line-height: inherit;
-}
-
-.di {
+.roster .di {
   display: inline !important;
 }
 
-.nowrap {
+.roster .nowrap {
   white-space: nowrap;
 }
 
-.grid-view table th {
+.roster .grid-view table th {
   background-color: #f2f2f2;
   color: #000;
   border-top: 0;
+}
+
+.roster-table {
+  margin: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+
+.card-sc {
+  margin: 10px 0px 10px 0px;
+}
+
+.card-sc img{
+  width: 50px;
+  float: left;
+  margin: 10px;
+}
+
+.card-sc .recommendation_name {
+  float: right;
+  width: 66%;
+  margin: 15px 5px 5px 5px;
+  text-align: left;
+}
+
+.card-sc p{
+  padding: 10px;
+}
+
+.card-sc .title {
+  color: grey;
+  font-size: 18px;
+}
+
+.card-sc button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card-sc a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.card-sc button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+.card-sc .profile-image {
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+}
+
+.card-sc .headers {
+  margin-bottom: 5px;
+}
+
+.button-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 35px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.profile-media {
+  margin: 10px 10px 10px 10px;
+  float: left;
+  width: 45%;
+}
+
+.video {
+  color: #2e2f32;
+}
+
+
+.callout>:first-child {
+  margin-top: 0;
+}
+
+.articles-big .description {
+  font-family:   sans-serif;
+  line-height: 1.2;
+}
+
+.articles-big .description p.title {
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+
+.articles-big .description p.title a {
+  font-size: 1.125rem;
+  color: #2e2f32;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.articles-big .description .authors {
+  font-size: .9375rem;
+  color: #cc2027;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.articles-big .description .date {
+  font-size: .75rem;
+  color: #848484;
+  font-weight: 300;
+  margin-bottom: .5rem;
+}
+
+.callout.small {
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  height: 530px;
+  margin-bottom: 15px;
+}
+
+.left-col .callout {
+  margin: 0 0 1rem 0;
+}
+
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+  float: right;
+}
+
+.column.end:last-child:last-child, .end.columns:last-child:last-child {
+  float: left;
+}
+
+.table-order-center {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 15px auto 15px auto;
 }
