@@ -46,8 +46,7 @@ export class UserInfoViewModel {
     games: number[]
   };
   previous_seasons: number[];
-  media: [
-    {
+  media: [{
       title: string,
       author: string,
       date: string,
@@ -71,8 +70,7 @@ export class UserInfoViewModel {
           id: number
         }],
       }
-    }
-    ];
+    }];
   skill_set: [
     {
       name: string,
