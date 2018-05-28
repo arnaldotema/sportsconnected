@@ -30,19 +30,23 @@
     <div class="callout meta ">
       <div class="row">
         <div class="row-left">
-            <div class="player-image">
-              <img [src]="viewModel.personal_info.avatar.type" alt="Profile image"
-                   title="Profile" style="left: -241.5px;">
-            </div>
-            <div class="profile-buttons">
-              <button mat-fab class="button-image"
-                      style=" background-image :url('./../../assets/strong.png');"></button>
-              <button mat-fab class="button-image"
-                      style=" background-image :url('./../../assets/dribble.png');"></button>
-              <button mat-fab class="button-image" style=" background-image :url('./../../assets/fast.png');"></button>
-              <button mat-fab class="button-image"
-                      style=" background-image :url('./../../assets/scorer.png');"></button>
-            </div>
+          <div class="player-image">
+            <img [src]="viewModel.personal_info.avatar.type" alt="Profile image"
+                 title="Profile" style="left: -241.5px;">
+          </div>
+          <div class="profile-buttons">
+            <button mat-raised-button class="btn-follow">Seguir</button>
+            <button mat-raised-button class="btn-recommend">Recomendar</button>
+          </div>
+          <div class="profile-buttons">
+            <button mat-fab class="button-image"
+                    style=" background-image :url('./../../assets/strong.png');"></button>
+            <button mat-fab class="button-image"
+                    style=" background-image :url('./../../assets/dribble.png');"></button>
+            <button mat-fab class="button-image" style=" background-image :url('./../../assets/fast.png');"></button>
+            <button mat-fab class="button-image"
+                    style=" background-image :url('./../../assets/scorer.png');"></button>
+          </div>
         </div>
         <div class="row-center">
           <table class="sc-stats-table" style="display: none;">
