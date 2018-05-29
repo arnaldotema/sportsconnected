@@ -62,6 +62,7 @@ export class TeamComponent implements OnInit,AfterViewInit  {
     });
   }
 
+  /*
   openCreateDialog(event): void {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
@@ -78,6 +79,6 @@ export class TeamComponent implements OnInit,AfterViewInit  {
       }
     });
   }
-
+*/
 
 }
