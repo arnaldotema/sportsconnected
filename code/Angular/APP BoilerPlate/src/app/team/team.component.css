@@ -294,6 +294,9 @@ table .centered {
 table .number_move {
   width: 60px;
 }
+table .role_move{
+  width: 50%;
+}
 
 .centered {
   text-align: center;
@@ -309,9 +312,15 @@ table .list_number {
   display: inline-block;
 }
 
+table .list_role {
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
 .list_flag {
-  border: 1px solid #585859;
   min-width: 14px;
+  max-width: 30px;
   min-height: 9px;
 }
 
@@ -441,13 +450,6 @@ table .hauptlink {
 
 .card-sc button:hover, a:hover {
   opacity: 0.7;
-}
-
-
-.card-sc .profile-image {
-  background-size: cover;
-  height: 60px;
-  width: 60px;
 }
 
 .card-sc .headers {

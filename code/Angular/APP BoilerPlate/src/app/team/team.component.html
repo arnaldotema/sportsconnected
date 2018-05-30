@@ -29,8 +29,8 @@
                  title="profile" style="left: -241.5px;">
           </div>
           <div class="profile-buttons">
-            <button mat-raised-button class="btn-follow">Seguir</button>
-            <button mat-raised-button class="btn-recommend">Recomendar</button>
+            <button mat-raised-button  class="btn-follow">Seguir</button>
+            <button mat-raised-button (click)="openCreateDialog($event)" class="btn-recommend">Recomendar</button>
           </div>
         </div>
         <div class="row-center-team">
@@ -99,7 +99,7 @@
             </tbody>
           </table>
           <div class="sc-media">
-            <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,2)">
+            <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,3)">
               <div class="callout small articles-big">
                 <div class="video">
                   <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
@@ -120,60 +120,17 @@
             </div>
           </div>
           <div class="recommenations">
-            <mat-card class="card-sc">
+            <mat-card class="card-sc" *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
               <mat-card-header>
-                <div mat-card-avatar class="profile-image"
-                     [ngStyle]="{'background-image':  'url(' + viewModel.recommendations.top_5[0].author.avatar + ')' }"></div>
-                <mat-card-title class="headers">{{viewModel.recommendations.top_5[0].author.name}}</mat-card-title>
-                <mat-card-subtitle class="headers">{{viewModel.recommendations.top_5[0].author.team.name}}
+                <div mat-card-avatar class="profile-small-image"
+                     [ngStyle]="{'background-image':  'url(' + recommendation.author.avatar + ')' }"></div>
+                <mat-card-title class="headers">{{recommendation.author.name}}</mat-card-title>
+                <mat-card-subtitle class="headers">{{recommendation.author.team.name}}
                 </mat-card-subtitle>
               </mat-card-header>
               <mat-card-content>
                 <p>
-                  {{viewModel.recommendations.top_5[0].text}}
-                </p>
-              </mat-card-content>
-            </mat-card>
-            <mat-card class="card-sc">
-              <mat-card-header>
-                <div mat-card-avatar class="profile-image"
-                     [ngStyle]="{'background-image':  'url(' + viewModel.recommendations.top_5[1].author.avatar + ')' }"></div>
-                <mat-card-title class="headers">{{viewModel.recommendations.top_5[1].author.name}}</mat-card-title>
-                <mat-card-subtitle class="headers">{{viewModel.recommendations.top_5[1].author.team.name}}
-                </mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  {{viewModel.recommendations.top_5[1].text}}
-                </p>
-              </mat-card-content>
-
-            </mat-card>
-            <mat-card class="card-sc">
-              <mat-card-header>
-                <div mat-card-avatar class="profile-image"
-                     [ngStyle]="{'background-image':  'url(' + viewModel.recommendations.top_5[1].author.avatar + ')' }"></div>
-                <mat-card-title class="headers">{{viewModel.recommendations.top_5[2].author.name}}</mat-card-title>
-                <mat-card-subtitle class="headers">{{viewModel.recommendations.top_5[2].author.team.name}}
-                </mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  {{viewModel.recommendations.top_5[2].text}}
-                </p>
-              </mat-card-content>
-            </mat-card>
-            <mat-card class="card-sc">
-              <mat-card-header>
-                <div mat-card-avatar class="profile-image"
-                     [ngStyle]="{'background-image':  'url(' + viewModel.recommendations.top_5[3].author.avatar + ')' }"></div>
-                <mat-card-title class="headers">{{viewModel.recommendations.top_5[3].author.name}}</mat-card-title>
-                <mat-card-subtitle class="headers">{{viewModel.recommendations.top_5[3].author.team.name}}
-                </mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  {{viewModel.recommendations.top_5[3].text}}
+                  {{recommendation.text}}
                 </p>
               </mat-card-content>
             </mat-card>
@@ -185,542 +142,98 @@
               <thead class="table_header">
               <tr>
                 <th class="centered">Nmr.</th>
-                <th>Jogadores</th>
+                <th>Jogador</th>
                 <th class="centered">Idade</th>
-                <th class="centered">Nacionalidade</th>
+                <th class="centered country-col">País</th>
                 <th class="centered">Golos</th>
               </tr>
               </thead>
               <tbody>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
+              <tr *ngFor="let player of viewModel.roster.players" class="tr-odd">
+                <td title="{{player.positions[0]}}" class="centered number_move goalkeeper_bg">
+                  <div class="list_number">{{player.number}}</div>
                 </td>
                 <td title="" class="posrela">
                   <table class="inline-table" title="">
                     <tbody>
                     <tr>
                       <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
+                        <a href="/user-info/{{player.user_id}}">
+                          <div mat-card-avatar class="profile-small-image"
+                               [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                         </a>
                       </td>
                       <td class="hauptlink">
                         <a
-                          href="/keylor-navas/profil/spieler/79422">
-                          Diogo Pires
+                          href="/user-info/{{player.user_id}}">
+                          {{player.name}}
                         </a>
                       </td>
                     </tr>
                     <tr>
-                      <td>Guarda-Redes</td>
+                      <td>{{player.positions[0]}}</td>
                     </tr>
                     </tbody>
                   </table>
                 </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
+                <td class="centered">{{player.age}}</td>
                 <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
-                        </a></td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                            <a
-                              href="/keylor-navas/profil/spieler/79422">
-                              Diogo Pires
-                            </a>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
-                        </a></td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                            <a
-                              href="/keylor-navas/profil/spieler/79422">
-                              Diogo Pires
-                            </a>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
-                        </a></td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                            <a
-                              href="/keylor-navas/profil/spieler/79422">
-                              Diogo Pires
-                            </a>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
-                        </a></td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                            <a
-                              href="/keylor-navas/profil/spieler/79422">
-                              Diogo Pires
-                            </a>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
-                        </a></td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                            <a
-                              href="/keylor-navas/profil/spieler/79422">
-                              Diogo Pires
-                            </a>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-
-              </tr>
-              <tr class="odd">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">1</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/79422-1413205936.jpg?lm=1433144964"
-                            title="Diogo Pires" alt="Diogo Pires" class="bilderrahmen-fixed">
-                        </a></td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                            <a
-                              href="/keylor-navas/profil/spieler/79422">
-                              Diogo Pires
-                            </a>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered"><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/36.png?lm=1520611569" title="Costa Rica"
-                  alt="Costa Rica" class="list_flag"><br><img
-                  src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                  alt="Espanha" class="list_flag"></td>
-                <td class="centered">40</td>
-              </tr>
-              <tr class="even">
-                <td title="Guarda-redes" class="centered number_move goalkeeper_bg">
-                  <div class="list_number">13</div>
-                </td>
-                <td title="" class="posrela">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td rowspan="2" class="">
-                        <a href="Nmr.">
-                          <img
-                            src="https://tmssl.akamaized.net//images/portrait/small/27486-1454600580.jpg?lm=1454600554"
-                            title="Kiko Casilla" alt="Kiko Casilla" class="bilderrahmen-fixed">
-                        </a>
-                      </td>
-                      <td class="hauptlink">
-                        <div class="di nowrap">
-                            <span class="hide-for-small">
-                              <a href="/kiko-casilla/profil/spieler/27486">Kiko Casilla</a>
-                            </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Guarda-Redes</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">25</td>
-                <td class="centered">
-                  <img src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569" title="Espanha"
-                       alt="Espanha" class="list_flag">
-                </td>
-                <td class="centered">40</td>
-
+                  <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
+                  alt="{{player.nationality}}" class="list_flag">
+                  </td>
+                <td class="centered">{{player.stats.goals}}</td>
               </tr>
               </tbody>
             </table>
           </div>
+          <br>
+          <br>
+
+          <div class="roster">
+            <table class="roster-table">
+              <thead class="table_header">
+              <tr>
+                <th class="centered">Cargo</th>
+                <th>Técnico</th>
+                <th class="centered">Idade</th>
+                <th class="centered country-col">País</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let staff of viewModel.roster.staff" class="tr-odd">
+                <td title="{{staff.position}}" class="centered goalkeeper_bg">
+                  <div class="list_role">{{staff.position}}</div>
+                </td>
+                <td title="" class="posrela">
+                  <table class="inline-table" title="">
+                    <tbody>
+                    <tr>
+                      <td rowspan="2" class="">
+                        <a href="/user-info/{{staff.user_id}}">
+                          <div mat-card-avatar class="profile-small-image"
+                               [ngStyle]="{'background-image':  'url(' + staff.avatar + ')'}"></div>
+                        </a>
+                      </td>
+                      <td class="hauptlink">
+                        <a
+                          href="/user-info/{{staff.user_id}}">
+                          {{staff.name}}
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td class="centered">{{staff.age}}</td>
+                <td class="centered">
+                  <img src="/assets/flags/pt.svg" title="{{staff.nationality}}"
+                       alt="{{staff.nationality}}" class="list_flag">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="contacts">
             <div class="data">
               Contactos

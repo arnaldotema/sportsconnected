@@ -24,7 +24,7 @@ export class User_infoService {
       height: 165,
       weight: 90,
       date_of_birth: '30-01-1993',
-      nationality: 'Portuguesa',
+      nationality: 'Portugal',
       residence: 'Lisboa',
       foot: 'Direito',
       updated_at: '8-05-2018'
@@ -44,7 +44,7 @@ export class User_infoService {
       },
       stats: [
         {
-          competition_name: 'Liga Portuguesa',
+          competition_name: 'Liga Portugal',
           competition_avatar: "./../../assets/Liga_Portugal_logo.png",
           games: 15,
           wins: 14,
@@ -100,7 +100,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -127,7 +127,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -154,7 +154,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -181,7 +181,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -208,7 +208,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -235,7 +235,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
