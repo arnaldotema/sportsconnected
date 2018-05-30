@@ -3,6 +3,7 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
 import {MatDialog} from '@angular/material';
+import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 
 
 @Component({
@@ -14,16 +15,30 @@ export class TeamComponent implements OnInit,AfterViewInit  {
 
   viewModel: TeamViewModel;
   teamService : TeamService;
+  mockAuthor;
   chart = [];
   data = {};
   options = {};
 
-  constructor(public dialog: MatDialog) { }
+  constructor(/*private teamService: TeamService, */public dialog: MatDialog) { }
 
   ngOnInit() {
     this.teamService = new TeamService();
     this.teamService.getTeam('0')
       .subscribe(team => this.viewModel = team);
+
+    this.mockAuthor = {
+      name: 'Sports Connected',
+      id: '-1',
+      avatar: '/assets/default-profile.png',
+      team: {
+        id: '-1',
+        acronym: 'SCT',
+        avatar: '/assets/SP_Logo_Black.png',
+        name: 'Sports Connected Team',
+      }
+    }
+
   }
 
   ngAfterViewInit(){
@@ -62,23 +77,30 @@ export class TeamComponent implements OnInit,AfterViewInit  {
     });
   }
 
-  /*
+
   openCreateDialog(event): void {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
-        data: {requirement: requirement, edit: true, create: true}
+        data: {
+          team: this.viewModel,
+          author: this.mockAuthor,
+          edit: false,
+          create: true
+        }
       });
 
     dialogRef.afterClosed().subscribe(result => {
+      debugger;
       if (result !== undefined) {
-        this.ibbService.createRequirement(result).subscribe()
+        this.teamService.createRecommendation('0',result).subscribe()
         {
-          this.requirementsDataSource.data.push(result);
-          this.requirementsDataSource.filter = this.filterString;
+          debugger;
+          // Todo: Add to the real team recommendation's list instead of the top 5
+          this.viewModel.recommendations.top_5.push(result);
+          //this.recommendationDataSource.filter = this.filterString;
         }
       }
     });
   }
-*/
 
 }

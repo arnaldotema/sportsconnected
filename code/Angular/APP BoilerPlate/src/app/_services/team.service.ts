@@ -7,6 +7,7 @@ import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/c
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
+import {Recommendation} from '../_models/recommendation';
 
 @Injectable()
 export class TeamService {
@@ -102,8 +103,9 @@ export class TeamService {
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
             age: 25,
+            number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -118,9 +120,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -135,9 +137,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -152,9 +154,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -169,9 +171,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -186,9 +188,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -203,9 +205,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -220,9 +222,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -237,9 +239,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -254,9 +256,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -271,9 +273,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -288,9 +290,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -305,9 +307,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -322,9 +324,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -339,9 +341,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -356,9 +358,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -373,9 +375,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -390,9 +392,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -407,9 +409,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -424,9 +426,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -445,7 +447,7 @@ export class TeamService {
             avatar: 'https://cdn.images.dailystar.co.uk/dynamic/58/photos/763000/620x/Jose-Mourinho-644644.jpg',
             age: 50,
             position: 'Treinador principal',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Manchester',
           },
           {
@@ -454,7 +456,7 @@ export class TeamService {
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             age: 49,
             position: 'Treinador adjunto',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
           },
           {
@@ -463,7 +465,7 @@ export class TeamService {
             avatar: 'https://openminds.swissre.com/static//images/profile-default.png',
             age: 35,
             position: 'Treinador adjunto',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
           },
           {
@@ -472,7 +474,7 @@ export class TeamService {
             avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/15541052_10212069863200855_2889012374229061166_o.jpg?_nc_cat=0&oh=5b128be1ebf4151ec5aa2afb671b72d0&oe=5B8C9375',
             age: 27,
             position: 'Preparador físico',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
           },
         ]
@@ -491,7 +493,7 @@ export class TeamService {
           references: {
             leagues: [
               {
-                name: 'Liga Portuguesa',
+                name: 'Liga Portugal',
                 id: 1,
               }
             ],
@@ -518,7 +520,7 @@ export class TeamService {
           references: {
             leagues: [
               {
-                name: 'Liga Portuguesa',
+                name: 'Liga Portugal',
                 id: 1,
               }
             ],
@@ -545,7 +547,7 @@ export class TeamService {
           references: {
             leagues: [
               {
-                name: 'Liga Portuguesa',
+                name: 'Liga Portugal',
                 id: 1,
               }
             ],
@@ -572,7 +574,7 @@ export class TeamService {
           references: {
             leagues: [
               {
-                name: 'Liga Portuguesa',
+                name: 'Liga Portugal',
                 id: 1,
               }
             ],
@@ -599,7 +601,7 @@ export class TeamService {
           references: {
             leagues: [
               {
-                name: 'Liga Portuguesa',
+                name: 'Liga Portugal',
                 id: 1,
               }
             ],
@@ -626,7 +628,7 @@ export class TeamService {
           references: {
             leagues: [
               {
-                name: 'Liga Portuguesa',
+                name: 'Liga Portugal',
                 id: 1,
               }
             ],
@@ -669,6 +671,11 @@ export class TeamService {
 
   getTeam(id: string): Observable<TeamViewModel> {
     return of(this.mockTeams[id]);
+  };
+
+  createRecommendation (id: string, recommendation: Recommendation): Observable<Recommendation> {
+    this.mockTeams[id].recommendations.top_5.push(recommendation);
+    return of(recommendation);
   };
 
   private handleError(error: HttpErrorResponse) {

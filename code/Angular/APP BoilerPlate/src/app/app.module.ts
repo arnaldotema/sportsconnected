@@ -59,6 +59,7 @@ import { User_infoComponent } from './user_info/user_info.component';
 import { User_infoMediaComponent } from './user-info-media/user-info-media.component';
 import { User_infoStatsComponent } from './user-info-stats/user-info-stats.component';
 import { TeamRosterComponent } from './team-roster/team-roster.component';
+import { RecommendationModalComponent } from './_modals/recommendation-modal/recommendation-modal.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -76,7 +77,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     User_infoComponent,
     User_infoMediaComponent,
     User_infoStatsComponent,
-    TeamRosterComponent
+    TeamRosterComponent,
+    RecommendationModalComponent
   ],
   imports: [
     BrowserModule,
@@ -128,6 +130,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
       useValue: DEFAULT_DROPZONE_CONFIG
     }],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [
+    RecommendationModalComponent
+  ]
 })
 export class AppModule { }

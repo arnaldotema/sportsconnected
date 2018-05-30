@@ -251,6 +251,7 @@ body {
 .recommenations{
   margin: 20px 5px;
   display: inline-block;
+  width: 100%;
 }
 
 .btn-follow{
@@ -269,4 +270,18 @@ body {
 .profile-buttons {
   float: left;
   margin: 10px 10px 10px 10%;
+}
+
+.roster-img{
+  max-width: 60px !important;
+}
+
+.profile-small-image{
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+}
+
+.country-col{
+  min-width: 50px;
 }
