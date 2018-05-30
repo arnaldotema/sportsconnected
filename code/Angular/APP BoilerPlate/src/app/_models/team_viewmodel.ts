@@ -33,6 +33,7 @@ export class TeamViewModel {
         name: string;
         avatar: string;
         age: number;
+        number: number;
         positions: string[];
         nationality: string;
         residence: string;
@@ -54,30 +55,30 @@ export class TeamViewModel {
       nationality: string;
       residence: string;
     }];
-    media: [{
-      title: string,
-      author: string,
-      date: string,
-      image: string,
-      ref: string, //Todo: Added ref for videos or other things alike
-      views: number, //Todo: Added
-      shares: number, //Todo: Added
-      likes: number, //Todo: Added
-      text: string,
-      references: {
-        leagues: [{
-          name: string,
-          id: number,
-        }],
-        team: [{
-          name: string,
-          id: number
-        }],
-        player: [{
-          name: string,
-          id: number
-        }],
-      }
-    }];
   };
+  media: [{
+    title: string,
+    author: string,
+    date: string,
+    image: string,
+    ref: string, //Todo: Added ref for videos or other things alike
+    views: number, //Todo: Added
+    shares: number, //Todo: Added
+    likes: number, //Todo: Added
+    text: string,
+    references: {
+      leagues: [{
+        name: string,
+        id: number,
+      }],
+      team: [{
+        name: string,
+        id: number
+      }],
+      player: [{
+        name: string,
+        id: number
+      }],
+    }
+  }];
 }
