@@ -300,13 +300,6 @@ img {
   opacity: 0.7;
 }
 
-
-.card-sc .profile-image {
-  background-size: cover;
-  height: 60px;
-  width: 60px;
-}
-
 .card-sc .headers {
   margin-bottom: 5px;
 }
