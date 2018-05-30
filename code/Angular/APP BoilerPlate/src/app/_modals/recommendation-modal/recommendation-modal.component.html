@@ -1,0 +1,16 @@
+<h2 *ngIf="create">Faz uma recomendação</h2>
+<h2 *ngIf="!create && edit">Edita a tua recomendação</h2>
+<mat-dialog-content>
+  <h3>Recomendação a {{team.name}}</h3>
+  <div class="row">
+    <mat-form-field class="col-sm-12">
+      <textarea matInput placeholder="Faz uma recomendação" matTextareaAutosize matAutosizeMinRows="3"
+                [(ngModel)]="text" ></textarea>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<br/>
+<mat-dialog-actions>
+  <button mat-raised-button style="color: #032f4f" (click)="onCreateClick()">{{edit? 'Alterar' : 'Recomendar'}}</button>
+  <button mat-button (click)="onNoClick()" mat-button>Cancelar</button>
+</mat-dialog-actions>
