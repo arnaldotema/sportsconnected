@@ -179,36 +179,6 @@ img {
   margin-right: auto;
 }
 
-.player .meta .sc-stats-table {
-  float: left;
-  width: 45%;
-  margin: 10px;
-  background-color: white;
-  height: 210px;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-
-.player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
-  margin: 4px 0px 0px 32px;
-  line-height: 0.6;
-}
-
-.player .meta .sc-stats-table tr > td {
-  border-style: none;
-  padding: 5px 5px 5px 5px;
-  text-align: left;
-  font-size: 12px;
-  color: #929292;
-}
-
-.player .meta .sc-stats-table tbody > tr > td {
-  border-style: none;
-  padding: 5px 5px 5px 5px;
-  text-align: left;
-  font-size: 12px;
-  color: #929292;
-}
-
 .card-sc {
   margin: 10px 0px 10px 0px;
 }
@@ -263,8 +233,9 @@ img {
 }
 
 .row-center {
-  width: 45%;
+  width: 50%;
   margin: 30px auto;
+  float: left;
 }
 
 .row-left {
@@ -274,8 +245,8 @@ img {
 }
 
 .row-right {
-  width: 25%;
-  float: right;
+  width: 20%;
+  float: left;
   margin: 30px auto;
 }
 
@@ -422,10 +393,6 @@ img {
 
 .nba-stat-table tbody tr:nth-Child(odd) {
   background-color: #fff;
-}
-
-.sc-stats-table{
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 .nba-stat-table table tbody tr td {
@@ -632,37 +599,6 @@ img {
   margin-right: auto;
 }
 
-.player .meta .sc-stats-table {
-  float: left;
-  width: 45%;
-  margin: 10px;
-  background-color: white;
-  height: 210px;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-
-.player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
-  margin: 4px 0px 0px 32px;
-  line-height: 0.6;
-}
-
-.player .meta .sc-stats-table tr > td {
-  border-style: none;
-  padding: 5px 5px 5px 5px;
-  text-align: left;
-  font-size: 12px;
-  color: #929292;
-}
-
-.player .meta .sc-stats-table tbody > tr > td {
-  border-style: none;
-  padding: 5px 5px 5px 5px;
-  text-align: left;
-  font-size: 12px;
-  color: #929292;
-}
-
-
 .skills {
   margin: 10px 10px 10px 10px;
 }
@@ -826,4 +762,19 @@ img {
 
 .stats {
   margin: 10px;
+}
+
+table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: none;
+  border: 1px solid #e4e4e4;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
 }
