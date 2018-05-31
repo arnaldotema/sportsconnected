@@ -48,7 +48,6 @@ export class TeamComponent implements OnInit,AfterViewInit  {
         data: [19, 18, 14, 15, 23]
       }]
     };
-
     this.options = {
       legend: {
         display: false
@@ -69,7 +68,6 @@ export class TeamComponent implements OnInit,AfterViewInit  {
         }]
       }
     };
-
     this.chart = new Chart('radar', {
       type: 'horizontalBar',
       data: this.data,
@@ -77,12 +75,11 @@ export class TeamComponent implements OnInit,AfterViewInit  {
     });
   }
 
-
   openCreateDialog(event): void {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
-          team: this.viewModel,
+          name: this.viewModel.name,
           author: this.mockAuthor,
           edit: false,
           create: true

@@ -10,25 +10,25 @@
 }
 
 .player .meta .player-image {
-  margin : 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
   float: left;
   width: 29%;
   position: relative;
   height: 350px;
   overflow: hidden;
   background: white center center no-repeat;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 
 }
 
 .player .meta .team-image {
   max-height: 150px;
-  margin : 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
   position: relative;
   overflow: hidden;
 }
 
-.player .meta .team-image img{
+.player .meta .team-image img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -37,37 +37,47 @@
   min-height: 100%;
 }
 
-
-.player .meta .player-image img{
+.player .meta .player-image img {
   object-fit: cover;
   min-height: 100%;
 }
-
 
 .player .meta .player-image .right-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
   height: 500px;
-  background: linear-gradient(to left,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 255) 0, rgba(255, 255, 255, 255) 10%, rgba(46, 47, 50, 0) 40%);
 }
-
 
 .player .meta .player-image .left-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
   height: 500px;
-  background: linear-gradient(to right,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 255) 0, rgba(255, 255, 255, 255) 10%, rgba(46, 47, 50, 0) 40%);
 }
 
 .player .meta .contacts {
   margin: 10px 10px 10px 10px;
   background-color: white;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
+.player .meta .presidents {
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
 
+.player .meta .presidents .data {
+  padding: 0 1rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: .9375rem;
+  width: 50%;
+  float: left;
+}
 
 .player .meta .personal .rankings-container {
   background: white;
@@ -76,7 +86,7 @@
 
 .player .meta .contacts .data {
   padding: 0 1rem;
-  font-family:   sans-serif;
+  font-family: sans-serif;
   font-weight: 300;
   font-size: .9375rem;
   width: 50%;
@@ -101,8 +111,8 @@
   clear: both;
 }
 
-.player .player-header{
-  box-shadow: 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+.player .player-header {
+  box-shadow: 0 1px 1px -2px rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   border-radius: 0;
   height: 50px;
   margin: 0 auto !important;
@@ -110,10 +120,10 @@
   position: fixed;
   z-index: 999;
   width: 100%;
-  background: rgba(255,255,255,.9);
+  background: rgba(255, 255, 255, .9);
 }
 
-.player>.meta {
+.player > .meta {
   border-radius: 0;
   padding: 0 !important;
   color: black;
@@ -138,16 +148,16 @@
   height: 50px;
 }
 
-.player .team img{
+.player .team img {
   width: auto;
   height: 35px;
 }
 
-.player .player-team{
+.player .player-team {
   font-weight: 900;
   color: #b8bac0;
   text-transform: uppercase;
-  font-family:   sans-serif;
+  font-family: sans-serif;
 }
 
 .player .player-header .player-info .player-team a {
@@ -158,19 +168,19 @@
   color: darkred;
 }
 
-.player .player-menu{
+.player .player-menu {
   float: left;
   width: 55%;
 }
 
-.player .player-menu a{
+.player .player-menu a {
   color: #2e2f32;
   display: inline-block;
   line-height: 50px;
   height: 50px;
   padding: 0 .75rem;
   font-size: .875rem;
-  font-family:   sans-serif;
+  font-family: sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -186,7 +196,7 @@
 }
 
 h1 {
-  font-family:   sans-serif;
+  font-family: sans-serif;
   background: transparent;
   color: #2e2f32;
   font-size: 2.375rem;
@@ -209,13 +219,6 @@ img {
   margin-right: auto;
 }
 
-.player .meta .sc-stats-table {
-  margin: 10px;
-  background-color: transparent;
-  height: 210px;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-
 .player .meta .sc-stats-table tbody tr td {
   color: #57585A;
   padding: 4px 3px;
@@ -228,7 +231,7 @@ img {
   line-height: 0.6;
 }
 
-.player .meta .sc-stats-table tr > th,td {
+.player .meta .sc-stats-table tr > th, td {
   min-width: 35px !important;
   padding: 5px 7px !important;
   font-size: 12px;
@@ -251,7 +254,7 @@ img {
 
 .skills .data {
   padding: 0 1rem;
-  font-family:   sans-serif;
+  font-family: sans-serif;
   font-weight: 300;
   font-size: .9375rem;
 }
@@ -273,12 +276,6 @@ img {
   margin: 30px 10px 20px auto;
 }
 
-.goalkeeper_bg {
-  background-color: #4384a8 !important;
-  color: #fff;
-  cursor: help;
-}
-
 table tbody tr td {
   color: #57585A;
   padding: 4px 3px;
@@ -294,7 +291,8 @@ table .centered {
 table .number_move {
   width: 60px;
 }
-table .role_move{
+
+table .role_move {
   width: 50%;
 }
 
@@ -340,74 +338,11 @@ table .hauptlink {
   position: relative !important;
 }
 
-.roster thead {
-  font-size: 12px !important;
-}
-
-.roster table tbody > tr >td, td{
-  text-align: center !important;
-}
-
-.roster table .inline-table {
-  margin: 0;
-  border: 0;
-  width: auto;
-  border-collapse: collapse;
-  box-shadow: none;
-}
-
-.roster .inline-table tbody > tr >td ,td{
-  padding: 0px 5px 0px 5px !important;
-  text-align: left;
-
-}
-
-.roster table .inline-table tbody tr td {
-  font-size: 12px !important;
-  color: #333;
-  padding: 0 0 0 5px !important;
-  height: 0px !important;
-  min-width: 0px !important;
-  max-width: 150px !important;
-  vertical-align: middle;
-  -moz-border: none;
-  -moz-border-radius: 0;
-  border-width: 0;
-}
-
-.roster table .inline-table img {
-  vertical-align: bottom;
-}
-
-.roster table .hauptlink {
-  font-weight: bold !important;
-}
-
-.roster .di {
-  display: inline !important;
-}
-
-.roster .nowrap {
-  white-space: nowrap;
-}
-
-.roster .grid-view table th {
-  background-color: #f2f2f2;
-  color: #000;
-  border-top: 0;
-}
-
-.roster-table {
-  margin: 10px;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-
-
 .card-sc {
   margin: 10px 0px 10px 0px;
 }
 
-.card-sc img{
+.card-sc img {
   width: 50px;
   float: left;
   margin: 10px;
@@ -420,7 +355,7 @@ table .hauptlink {
   text-align: left;
 }
 
-.card-sc p{
+.card-sc p {
   padding: 10px;
 }
 
@@ -481,13 +416,12 @@ table .hauptlink {
   color: #2e2f32;
 }
 
-
-.callout>:first-child {
+.callout > :first-child {
   margin-top: 0;
 }
 
 .articles-big .description {
-  font-family:   sans-serif;
+  font-family: sans-serif;
   line-height: 1.2;
 }
 
@@ -520,7 +454,7 @@ table .hauptlink {
 .callout.small {
   padding: 1rem;
   background: white;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   height: 530px;
   margin-bottom: 15px;
 }
