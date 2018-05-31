@@ -15,12 +15,86 @@ export class TeamService {
   mockTeams: TeamViewModel[] = [
     {
       acronym: 'SFC',
-      avatar: {
-        type: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-      },
+      avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
       name: 'Seixal FC',
       full_name: 'Seixal Futebol Clube',
+      current_season: {
+        season_id: '1',
+        name: '17/18',
+        stats: [
+          {
+            competition_name: 'Liga Portugesa',
+            competition_avatar: '/assets/Liga_Portugal_logo.png',
+            games: 20,
+            classification: '1',
+            wins: 17,
+            losses: 1,
+            draws: 2,
+          },
+          {
+            competition_name: 'Taça de Portugal',
+            competition_avatar: '/assets/9_imgbank_tp.png',
+            games: 4,
+            classification: null,
+            wins: 4,
+            losses: 0,
+            draws: 0,
+          },
+          {
+            competition_name: 'Taça da Liga',
+            competition_avatar: '/assets/Tacadaligalogo.png',
+            games: 5,
+            classification: null,
+            wins: 5,
+            losses: 0,
+            draws: 0,
+          }
+        ]
+      },
+      tryouts: [
+        {
+          address: 'R. Dona Maria II 17, Seixal',
+          age_group: 'Séniores',
+          days: '6, 7, 10 de Agosto',
+          time: '20h30',
+          requirements: 'Devem vir acompanhados do c. cidadão',
+        },
+        {
+          address: 'R. Dona Maria II 17, Seixal',
+          age_group: 'Juniores 1999-2001',
+          days: '9, 13, 14 de Agosto',
+          time: '18h30',
+          requirements: 'Devem vir acompanhados do c. cidadão',
+        },
+        {
+          address: 'R. Dona Maria II 17, Seixal',
+          age_group: 'Infantis 2005-2006',
+          days: '6, 7, 10 de Agosto',
+          time: '18h00',
+          requirements: 'Devem vir acompanhados do c. cidadão',
+        }
+      ],
+      personal_info: {
+        site: 'www.seixalfc.pt',
+        email: 'seixalfc@seixal.pt',
+        phone_number: '+351 214 444 294',
+        address: 'R. Dona Maria II 17, Seixal',
+        president: 'Maria Teresa Andrade',
+        vice_president: 'Manuel Coisinha',
+        sports_director: 'Caíta Moreira',
+        number_of_teams: 5,
+        number_of_athletes: 134,
+        number_of_coaches: 8,
+        number_of_physiotherapists: 12,
+        number_of_grass_fields: 1,
+        number_of_synthetic_fields: 0,
+        number_of_locker_rooms: 5,
+        sponsors: [{
+          link: 'https://www.tripadvisor.pt/Restaurant_Review-g4995953-d12242638-Reviews-Mundet_Factory-Seixal_Lisbon_District_Central_Portugal.html',
+          name: 'Mundet Factory'
+        }],
+        other_sports: ['Basquetebol', 'Hóquei Patins']
+      },
       recommendations: {
         list: [1, 2, 3],
         top_5: [
@@ -669,11 +743,56 @@ export class TeamService {
     };
   }
 
+
+  /*
+  *
+  *                 <tr class="tr-odd">
+                  <td title="Dias" class="centered goalkeeper_bg">
+                    <div class="list_role">Dias</div>
+                  </td>
+                  <td class="posrela">
+                  <td rowspan="2" class="">
+                    {{tryout.days}}
+                  </td>
+                  </td>
+                </tr>
+                <tr class="tr-odd">
+                  <td title="Horários" class="centered goalkeeper_bg">
+                    <div class="list_role">Horários</div>
+                  </td>
+                  <td class="posrela">
+                  <td rowspan="2" class="">
+                    {{tryout.time}}
+                  </td>
+                  </td>
+                </tr>
+                <tr class="tr-odd">
+                  <td title="Morada" class="centered goalkeeper_bg">
+                    <div class="list_role">Morada</div>
+                  </td>
+                  <td class="posrela">
+                  <td rowspan="2" class="">
+                    {{tryout.address}}
+                  </td>
+                  </td>
+                </tr>
+                <tr class="tr-odd">
+                  <td title="Requerimentos" class="centered goalkeeper_bg">
+                    <div class="list_role">Requerimentos</div>
+                  </td>
+                  <td class="posrela">
+                  <td rowspan="2" class="">
+                    {{tryout.requirements}}
+                  </td>
+                  </td>
+                </tr>
+  * */
+
   getTeam(id: string): Observable<TeamViewModel> {
     return of(this.mockTeams[id]);
   };
 
-  createRecommendation (id: string, recommendation: Recommendation): Observable<Recommendation> {
+  createRecommendation(id: string, recommendation: Recommendation): Observable<Recommendation> {
     this.mockTeams[id].recommendations.top_5.push(recommendation);
     return of(recommendation);
   };
