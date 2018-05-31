@@ -5,7 +5,7 @@
         <div class="player-info">
           <div class="team">
             <a href="Nmr." title="Cavaliers">
-              <img [src]="viewModel.avatar.type" [title]="viewModel.full_name" [alt]="viewModel.name">
+              <img [src]="viewModel.avatar" [title]="viewModel.full_name" [alt]="viewModel.name">
             </a>
           </div>
           <h1>
@@ -16,7 +16,7 @@
           <a href="/team" title="{{viewModel.full_name}} full profile" class="current">Perfil</a>
           <a href="/teamMedia" title="{{viewModel.full_name}} videos" class="">Media</a>
           <a href="/teamStats" title="{{viewModel.full_name}} awards" class="">Estatísticas</a>
-          <a href="/teamRosters" title="{{viewModel.full_name}} awards" class="">Plantel</a>
+          <a href="/teamRoster" title="{{viewModel.full_name}} awards" class="">Plantel</a>
         </div>
       </div>
     </div>
@@ -25,13 +25,66 @@
       <div class="row">
         <div class="row-left">
           <div class="team-image">
-            <img [src]="viewModel.avatar.type" class="old" alt="profile img"
+            <img [src]="viewModel.avatar" class="old" alt="profile img"
                  title="profile" style="left: -241.5px;">
           </div>
           <div class="profile-buttons">
-            <button mat-raised-button  class="btn-follow">Seguir</button>
+            <button mat-raised-button class="btn-follow">Seguir</button>
             <button mat-raised-button (click)="openCreateDialog($event)" class="btn-recommend">Recomendar</button>
           </div>
+          <br>
+          <br>
+          <div class="roster">
+            <table class="tryout-table">
+              <caption class="centered caption">
+                Captações
+              </caption>
+              <tbody *ngFor="let tryout of viewModel.tryouts; let idx = index" class="auto-height">
+              <tr class="tr-odd">
+                <td title="Escalão" class="centered goalkeeper_bg">
+                  <div class="list_role">Escalão</div>
+                </td>
+                <td class="posrela">
+                  {{tryout.age_group}}
+                </td>
+              </tr>
+              <tr class="tr-odd">
+                <td title="Dias" class="centered goalkeeper_bg">
+                  <div class="list_role">Dias</div>
+                </td>
+                <td class="posrela">
+                  {{tryout.days}}
+                </td>
+              </tr>
+              <tr class="tr-odd">
+                <td title="Horários" class="centered goalkeeper_bg">
+                  <div class="list_role">Horários</div>
+                </td>
+                <td class="posrela">
+                  {{tryout.time}}
+                </td>
+              </tr>
+              <tr class="tr-odd">
+                <td title="Morada" class="centered goalkeeper_bg">
+                  <div class="list_role">Morada</div>
+                </td>
+                <td class="posrela">
+                  {{tryout.address}}
+                </td>
+              </tr>
+              <tr class="tr-odd">
+                <td title="Requerimentos" class="centered goalkeeper_bg">
+                  <div class="list_role">Requerimentos</div>
+                </td>
+                <td class="posrela">
+                  {{tryout.requirements}}
+                </td>
+              </tr>
+              <br *ngIf="idx < viewModel.tryouts.length-1">
+              </tbody>
+            </table>
+          </div>
+
         </div>
         <div class="row-center-team">
           <table class="sc-stats-table">
@@ -39,32 +92,28 @@
             <tr class="table_header">
               <th class="th-td-first">Liga</th>
               <th>Jogos</th>
+              <th>Class.</th>
               <th>Vitórias</th>
               <th>Derrotas</th>
               <th>Empates</th>
-              <th>Golos</th>
-              <th>Assis.</th>
-              <th>CA</th>
-              <th>CV</th>
-              <th class="th-td-last">Min</th>
             </tr>
-            <tr class="tr-odd">
+            <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+                class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
               <td>
-                <img class="league" src="./../../assets/Liga_Portugal_logo.png" alt="">
+                <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
                 <div class="player-stats-text">
                 </div>
               </td>
-              <td>23</td>
-              <td>19</td>
-              <td>2</td>
-              <td>2</td>
-              <td>20</td>
-              <td>2</td>
-              <td>2</td>
-              <td>0</td>
-              <td>454''</td>
+              <td>{{stat.games}}</td>
+              <td>
+                <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
+                <div *ngIf="stat.classification == null">-</div>
+              </td>
+              <td>{{stat.wins}}</td>
+              <td>{{stat.losses}}</td>
+              <td>{{stat.draws}}</td>
             </tr>
-            <tr class="tr-pair">
+            <!--<tr class="tr-even">
               <td>
                 <img class="league" src="./../../assets/9_imgbank_tp.png" alt="">
                 <div class="player-stats-text">
@@ -95,11 +144,11 @@
               <td>0</td>
               <td>0</td>
               <td>154''</td>
-            </tr>
+            </tr>-->
             </tbody>
           </table>
           <div class="sc-media">
-            <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,3)">
+            <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,2)">
               <div class="callout small articles-big">
                 <div class="video">
                   <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
@@ -120,7 +169,8 @@
             </div>
           </div>
           <div class="recommenations">
-            <mat-card class="card-sc" *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
+            <mat-card class="card-sc"
+                      *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
               <mat-card-header>
                 <div mat-card-avatar class="profile-small-image"
                      [ngStyle]="{'background-image':  'url(' + recommendation.author.avatar + ')' }"></div>
@@ -179,8 +229,8 @@
                 <td class="centered">{{player.age}}</td>
                 <td class="centered">
                   <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
-                  alt="{{player.nationality}}" class="list_flag">
-                  </td>
+                       alt="{{player.nationality}}" class="list_flag">
+                </td>
                 <td class="centered">{{player.stats.goals}}</td>
               </tr>
               </tbody>
@@ -233,10 +283,95 @@
               </tbody>
             </table>
           </div>
-
+          <div class="presidents">
+            <div class="data">
+              <div>
+                <strong>Presidente</strong>
+              </div>
+              <div>
+                <strong>V. Presidente</strong>
+              </div>
+              <div>
+                <strong>Diret. Desportivo</strong>
+              </div>
+            </div>
+            <div class="data">
+              <div>
+                {{viewModel.personal_info.president}}
+              </div>
+              <div>
+                {{viewModel.personal_info.vice_president}}
+              </div>
+              <div>
+                {{viewModel.personal_info.sports_director}}
+              </div>
+            </div>
+          </div>
           <div class="contacts">
             <div class="data">
-              Contactos
+              <div>
+                <strong>Nº equipas</strong>
+              </div>
+              <div>
+                <strong>Nº atletas</strong>
+              </div>
+              <div>
+                <strong>Nº treinadores</strong>
+              </div>
+              <div>
+                <strong>Nº campos relvado</strong>
+              </div>
+              <div>
+                <strong>Nº campos sintético</strong>
+              </div>
+              <div>
+                <strong>Belneários</strong>
+              </div>
+              <div>
+                <strong>Patrocinadores</strong>
+              </div>
+              <div>
+                <strong>Outras modalidades</strong>
+              </div>
+            </div>
+            <div class="data">
+              <div>
+                {{viewModel.personal_info.number_of_teams}}
+              </div>
+              <div>
+                {{viewModel.personal_info.number_of_athletes}}
+              </div>
+              <div>
+                {{viewModel.personal_info.number_of_coaches}}
+              </div>
+              <div>
+                {{viewModel.personal_info.number_of_grass_fields}}
+              </div>
+              <div>
+                {{viewModel.personal_info.number_of_synthetic_fields}}
+              </div>
+              <div>
+                {{viewModel.personal_info.number_of_locker_rooms}}
+              </div>
+              <div>
+                <div *ngFor="let brand of viewModel.personal_info.sponsors">
+                  <a href="{{brand.link}}">{{brand.name}}</a>
+                </div>
+              </div>
+              <div>
+                <div *ngFor="let sport of viewModel.personal_info.other_sports">
+                  {{sport}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="contacts">
+            <div class="data">
+              <div>
+                <strong>Site</strong>
+              </div>
               <div>
                 <strong>E-mail</strong>
               </div>
@@ -249,13 +384,16 @@
             </div>
             <div class="data">
               <div>
-                seixalfc@seixal.pt
+                {{viewModel.personal_info.site}}
               </div>
               <div>
-                +351 213 222 102
+                {{viewModel.personal_info.email}}
               </div>
               <div>
-                Rua Sociedade Filarmónica nº10 Seixal 2045-119
+                {{viewModel.personal_info.phone_number}}
+              </div>
+              <div>
+                {{viewModel.personal_info.address}}
               </div>
             </div>
           </div>

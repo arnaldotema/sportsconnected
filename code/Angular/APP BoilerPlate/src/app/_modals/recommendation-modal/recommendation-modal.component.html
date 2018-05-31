@@ -1,7 +1,7 @@
 <h2 *ngIf="create">Faz uma recomendação</h2>
 <h2 *ngIf="!create && edit">Edita a tua recomendação</h2>
 <mat-dialog-content>
-  <h3>Recomendação a {{team.name}}</h3>
+  <h3>Recomendação a {{name}}</h3>
   <div class="row">
     <mat-form-field class="col-sm-12">
       <textarea matInput placeholder="Faz uma recomendação" matTextareaAutosize matAutosizeMinRows="3"
