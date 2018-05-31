@@ -14,14 +14,14 @@ export class RecommendationModalComponent implements OnInit {
   recommendationIdx: string;
   edit: false;
   create: true;
-  team: TeamViewModel;
+  name: string;
   author;
 
   constructor(
     public dialogRef: MatDialogRef<RecommendationModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
 
-    this.team = this.data.team;
+    this.name = this.data.name;
     debugger;
     if (this.data.author != null)
       this.author = this.data.author;
@@ -31,7 +31,7 @@ export class RecommendationModalComponent implements OnInit {
     if (this.data.recommendationIdx != null) {
       this.edit = true;
       this.recommendationIdx = this.data.recommendationIdx;
-      this.text = this.data.team.recommendations[this.data.recommendationIdx];
+      this.text = this.data.recommendations[this.data.recommendationIdx];
     }
     */
   }

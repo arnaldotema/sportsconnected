@@ -209,7 +209,7 @@ body {
   background-color: white;
 }
 
-.tr-pair {
+.tr-even {
   background-color: transparent;
 }
 
@@ -224,6 +224,7 @@ body {
 .row-center {
   width: 45%;
   margin: 30px auto;
+  float: left;
 }
 
 .row-right {
@@ -233,7 +234,10 @@ body {
 }
 
 .roster{
+}
 
+.auto-height td{
+  height: auto !important;
 }
 
 .even {
@@ -269,7 +273,7 @@ body {
 
 .profile-buttons {
   float: left;
-  margin: 10px 10px 10px 10%;
+  margin: 10px 10px 20px 10%;
 }
 
 .roster-img{
@@ -284,4 +288,170 @@ body {
 
 .country-col{
   min-width: 50px;
+}
+
+.background-message{
+  font-size: xx-large;
+  color: #b3b5bb;
+  margin-left: 30%;
+}
+
+.player .meta .sc-stats-table {
+  margin: 10px auto 20px auto;
+  background-color: transparent;
+  height: 210px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.sc-stats-table{
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.player .meta .sc-stats-table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: 1px solid #e4e4e4;
+}
+
+.player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
+  margin: 4px 0px 0px 32px;
+  line-height: 0.6;
+}
+
+.player .meta .sc-stats-table tr > th, td {
+  min-width: 35px !important;
+  padding: 5px 7px !important;
+  font-size: 12px;
+  height: 60px;
+}
+
+.player .meta .sc-stats-table tr > td {
+  border: none;
+  border-bottom: none;
+  border-top: none;
+  padding: 5px;
+  text-align: left;
+  font-size: 12px !important;
+  color: #929292;
+}
+
+.roster-table .caption {
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  color: #032f4f;
+  padding: 10px;
+}
+
+.roster thead {
+  font-size: 12px !important;
+}
+
+.roster table tbody > tr > td, td {
+  text-align: center !important;
+}
+
+.roster table .inline-table {
+  margin: 0;
+  border: 0;
+  width: auto;
+  border-collapse: collapse;
+  box-shadow: none;
+}
+
+.roster .inline-table tbody > tr > td, td {
+  padding: 0px 5px 0px 5px !important;
+  text-align: left;
+
+}
+
+.roster table .inline-table tbody tr td {
+  font-size: 12px !important;
+  color: #333;
+  padding: 0 0 0 5px !important;
+  height: 0px !important;
+  min-width: 0px !important;
+  max-width: 150px !important;
+  vertical-align: middle;
+  -moz-border: none;
+  -moz-border-radius: 0;
+  border-width: 0 !important;
+}
+
+.roster table .inline-table img {
+  vertical-align: bottom;
+}
+
+.roster table .hauptlink {
+  font-weight: bold !important;
+}
+
+.roster .di {
+  display: inline !important;
+}
+
+.roster .nowrap {
+  white-space: nowrap;
+}
+
+.roster .grid-view table th {
+  background-color: #f2f2f2;
+  color: #000;
+  border-top: 0;
+}
+
+.roster-table {
+  margin: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+
+
+.tryout-table {
+  margin: 10px;
+}
+
+.tryout-table td {
+  padding: 5px !important;
+}
+
+.tryout-table tbody{
+}
+
+.tryout-table .caption {
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  color: #032f4f;
+  padding: 10px;
+}
+
+.personal-table {
+  margin: 10px auto;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.personal-table td {
+  padding: 10px !important;
+}
+
+.personal-table tbody{
+}
+
+.personal-table .caption {
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  color: #032f4f;
+  padding: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 0px 0px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.goalkeeper_bg {
+  background-color: #4384a8 !important;
+  color: white !important;
+}
+
+.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: #4383a882;
 }
