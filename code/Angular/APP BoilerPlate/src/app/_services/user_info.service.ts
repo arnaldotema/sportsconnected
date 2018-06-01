@@ -16,10 +16,7 @@ export class User_infoService {
     personal_info: {
       name: 'Diogo Pires',
       age: 25,
-      avatar: {
-        type: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-      },
+      avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       full_name: 'Diogo César Pontes Pires',
       positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
       height: 165,
