@@ -3,10 +3,7 @@ export class UserInfoViewModel {
   personal_info: {
     name: string,
     age: number,
-    avatar: {
-      type: string, // TODO: Change like the other ones
-      default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-    },
+    avatar: string,
     full_name: string,
     positions: string[],
     height: number,
