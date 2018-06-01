@@ -125,7 +125,12 @@
 
 .app-logo{
   height: 55px;
-  margin: 10px 10px 15px 20px;
+  margin: 10px 20px 15px 20px;
+}
+
+.footer-logo{
+  height: 55px;
+  margin: 0px 10px 0px 0px;
 }
 
 .mobiliar-navbar{
@@ -484,4 +489,8 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 .py-3 {
   padding-top: 1rem!important;
   padding-bottom: 1rem!important;
+}
+
+.footer-links a{
+  color: white;
 }
