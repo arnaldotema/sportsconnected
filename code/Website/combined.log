@@ -444,3 +444,390 @@
 {"message":"Successfully updated User_Info 217215","level":"info"}
 {"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5c463881b0a3c600fb7"}],"ok":1},"level":"info"}
 {"message":"NO MORE REQUESTS! DRAINED!","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528023905980,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Pedro Malheiro de S&#xE1;","avatar":"https://www.zerozero.pt/img/jogadores/60/164860_20180602160420_jose_sa.png","positions":["Guarda Redes"],"height":"192","weight":"78","date_of_birth":"1993-01-17T00:00:00.000Z","foot":"Direito","updated_at":1528023909694,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 164860","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=241528, PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528024016377,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Pedro Malheiro de S&#xE1;","avatar":"https://www.zerozero.pt/img/jogadores/60/164860_20180602160420_jose_sa.png","positions":["Guarda Redes"],"height":"192","weight":"78","date_of_birth":"1993-01-17T00:00:00.000Z","foot":"Direito","updated_at":1528024185404,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 164860","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=241528, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Vanailson Luciano de Souza Alves","avatar":"https://www.zerozero.pt/img/jogadores/28/241528_20180602160909_vana_alves.png","positions":["Guarda Redes"],"height":"194","weight":"86","date_of_birth":"1991-04-25T00:00:00.000Z","foot":"Direito","updated_at":1528024208185,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 241528","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=39151, PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528024480816,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Pedro Malheiro de S&#xE1;","avatar":"https://www.zerozero.pt/img/jogadores/60/164860_20180602160420_jose_sa.png","positions":["Guarda Redes"],"height":"192","weight":"78","date_of_birth":"1993-01-17T00:00:00.000Z","foot":"Direito","updated_at":1528024504235,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 164860","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=241528, PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528025258889,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528025380455,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Pedro Malheiro de S&#xE1;","avatar":"https://www.zerozero.pt/img/jogadores/60/164860_20180602160420_jose_sa.png","positions":["Guarda Redes"],"height":"192","weight":"78","date_of_birth":"1993-01-17T00:00:00.000Z","foot":"Direito","updated_at":1528025397407,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 164860","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=241528, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Vanailson Luciano de Souza Alves","avatar":"https://www.zerozero.pt/img/jogadores/28/241528_20180602160909_vana_alves.png","positions":["Guarda Redes"],"height":"194","weight":"86","date_of_birth":"1991-04-25T00:00:00.000Z","foot":"Direito","updated_at":1528025402332,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 241528","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=39151, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Fabiano Ribeiro de Freitas","avatar":"https://www.zerozero.pt/img/jogadores/51/39151_20180602161217_fabiano.png","positions":["Guarda Redes"],"height":"197","weight":"89","date_of_birth":"1988-02-29T00:00:00.000Z","foot":"Direito","updated_at":1528025407039,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 39151","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=160894, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jo&#xE3;o Paulo Santos da Costa","avatar":"https://www.zerozero.pt/img/jogadores/94/160894_20180526125001_joao_costa.jpg","positions":["Guarda Redes"],"height":"185","weight":"77","date_of_birth":"1996-02-02T00:00:00.000Z","foot":"Direito","updated_at":1528025412117,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 160894","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=34664, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Victorio Maximiliano Pereira P&#xE1;ez","avatar":"https://www.zerozero.pt/img/jogadores/64/34664_20180603013341_maxi_pereira.jpg","positions":["Defesa (Defesa Direito)"],"height":"173","weight":"70","date_of_birth":"1984-06-08T00:00:00.000Z","foot":"Direito","updated_at":1528025418045,"nationality":"Uruguai"}},"level":"info"}
+{"message":"Successfully updated User_Info 34664","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=404035, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Yordan Hernando Osorio Paredes","avatar":"https://www.zerozero.pt/img/jogadores/35/404035_20180602162159_yordan_osorio.png","positions":["Defesa (Defesa Central)"],"height":"189","weight":"83","date_of_birth":"1994-05-10T00:00:00.000Z","foot":"Direito","updated_at":1528025422263,"nationality":"Venezuela"}},"level":"info"}
+{"message":"Successfully updated User_Info 404035","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=36773, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iv&#xE1;n Marcano Sierra","avatar":"https://www.zerozero.pt/img/jogadores/73/36773_20180603013407_ivan_marcano.jpg","positions":["Defesa (Defesa Central)"],"height":"189","weight":"82","date_of_birth":"1987-06-23T00:00:00.000Z","foot":"Esquerdo","updated_at":1528025428105,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 36773","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=176439, PROXY = undefined","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Alex Nicolao Telles","avatar":"https://www.zerozero.pt/img/jogadores/39/176439_20180602162239_alex_telles.png","positions":["Defesa (Defesa Esquerdo)"],"height":"181","weight":"66","date_of_birth":"1992-12-15T00:00:00.000Z","foot":"Esquerdo","updated_at":1528025434841,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 176439","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=56579, PROXY = http://47.89.241.103:8080","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528025514643,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Pedro Malheiro de S&#xE1;","avatar":"https://www.zerozero.pt/img/jogadores/60/164860_20180602160420_jose_sa.png","positions":["Guarda Redes"],"height":"192","weight":"78","date_of_birth":"1993-01-17T00:00:00.000Z","foot":"Direito","updated_at":1528025530339,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 164860","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=241528, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Vanailson Luciano de Souza Alves","avatar":"https://www.zerozero.pt/img/jogadores/28/241528_20180602160909_vana_alves.png","positions":["Guarda Redes"],"height":"194","weight":"86","date_of_birth":"1991-04-25T00:00:00.000Z","foot":"Direito","updated_at":1528025537504,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 241528","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=39151, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Fabiano Ribeiro de Freitas","avatar":"https://www.zerozero.pt/img/jogadores/51/39151_20180602161217_fabiano.png","positions":["Guarda Redes"],"height":"197","weight":"89","date_of_birth":"1988-02-29T00:00:00.000Z","foot":"Direito","updated_at":1528025542965,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 39151","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=160894, PROXY = http://34.213.199.191:80","level":"info"}
