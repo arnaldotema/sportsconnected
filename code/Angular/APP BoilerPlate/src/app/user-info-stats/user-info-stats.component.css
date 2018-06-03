@@ -80,11 +80,6 @@
   background: transparent;
 }
 
-.player-header-placeholder-small {
-  width: 100%;
-  height: 25px;
-  background: transparent;
-}
 
 .player .meta .personal .data div {
   margin: .375rem 0;
@@ -294,13 +289,6 @@ img {
 .card-sc .headers {
   margin-bottom: 5px;
 }
-
-.row-center-stats {
-  width: 45%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 .button-image {
   background-repeat: no-repeat;

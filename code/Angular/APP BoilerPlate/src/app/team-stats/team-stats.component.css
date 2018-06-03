@@ -2,72 +2,91 @@
   border: 0;
 }
 
-.player .player-header .player-info h1 {
+.player-header .player-info h1 {
   font-size: 1.125rem;
-  margin: .75rem 0 0 !important;
+  margin: 1rem 0 0 !important;
   height: 1.125rem;
   overflow: hidden;
 }
 
-.player-profile{
-  width: 25%;
-  height: 450px;
+.meta .player-image {
+  margin: 10px 10px 10px 10px;
   float: left;
-  position: relative;
-}
-
-.player .meta .player-image {
-  margin : 10px;
-  float: left;
+  width: 29%;
   position: relative;
   height: 350px;
   overflow: hidden;
   background: white center center no-repeat;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+
 }
 
-.player .meta .player-image img{
+.meta .team-image {
+  max-height: 150px;
+  margin: 10px 10px 10px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.meta .team-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 150px;
   object-fit: cover;
   min-height: 100%;
 }
 
+.meta .player-image img {
+  object-fit: cover;
+  min-height: 100%;
+}
 
-.player .meta .player-image .right-shadow {
+.meta .player-image .right-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
   height: 500px;
-  background: linear-gradient(to left,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 255) 0, rgba(255, 255, 255, 255) 10%, rgba(46, 47, 50, 0) 40%);
 }
 
-
-.player .meta .player-image .left-shadow {
+.meta .player-image .left-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
   height: 500px;
-  background: linear-gradient(to right,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 255) 0, rgba(255, 255, 255, 255) 10%, rgba(46, 47, 50, 0) 40%);
 }
 
-.player .meta .personal {
+.meta .contacts {
   margin: 10px 10px 10px 10px;
-  float: right;
-  height: 210px;
-  width: 21%;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
+.meta .presidents {
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
 
+.meta .presidents .data {
+  padding: 0 1rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: .9375rem;
+  width: 50%;
+  float: left;
+}
 
-.player .meta .personal .rankings-container {
+.meta .personal .rankings-container {
   background: white;
   margin: 1rem 1rem 1rem 0;
 }
 
-.player .meta .personal .data {
+.meta .contacts .data {
   padding: 0 1rem;
-  font-family:   sans-serif;
+  font-family: sans-serif;
   font-weight: 300;
   font-size: .9375rem;
   width: 50%;
@@ -77,14 +96,14 @@
 .player-header-placeholder {
   width: 100%;
   height: 50px;
-  background: transparent;
+  background: white;
 }
 
-.player .meta .personal .data div {
+.meta .personal .data div {
   margin: .375rem 0;
 }
 
-.player .meta .personal .data div strong {
+.meta .personal .data div strong {
   font-weight: 900;
 }
 
@@ -92,8 +111,8 @@
   clear: both;
 }
 
-.player .player-header{
-  box-shadow: 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+.player-header {
+  box-shadow: 0 1px 1px -2px rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   border-radius: 0;
   height: 50px;
   margin: 0 auto !important;
@@ -101,10 +120,10 @@
   position: fixed;
   z-index: 999;
   width: 100%;
-  background: rgba(255,255,255,.9);
+  background: rgba(255, 255, 255, .9);
 }
 
-.player>.meta {
+.meta {
   border-radius: 0;
   padding: 0 !important;
   color: black;
@@ -112,61 +131,61 @@
   margin: 0;
 }
 
-.player .player-header .row {
+.player-header .row {
   background: transparent;
 }
 
-.player .player-info {
+.player-info {
   float: left;
   width: 45%;
   line-height: 1;
   padding-left: 1rem;
 }
 
-.player .team {
+.team {
   float: left;
   padding: .5rem;
   height: 50px;
 }
 
-.player .team img{
+.team img {
   width: auto;
   height: 35px;
 }
 
-.player .player-team{
+.player-team {
   font-weight: 900;
   color: #b8bac0;
   text-transform: uppercase;
-  font-family:   sans-serif;
+  font-family: sans-serif;
 }
 
-.player .player-header .player-info .player-team a {
+.player-header .player-info .player-team a {
   color: #b8bac0;
 }
 
-.player .player-header .player-info .player-team a.current {
+.player-header .player-info .player-team a.current {
   color: darkred;
 }
 
-.player .player-menu{
+.player-menu {
   float: left;
   width: 55%;
 }
 
-.player .player-menu a{
+.player-menu a {
   color: #2e2f32;
   display: inline-block;
   line-height: 50px;
   height: 50px;
   padding: 0 .75rem;
   font-size: .875rem;
-  font-family:   sans-serif;
+  font-family: sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.player .player-menu a.current {
+.player-menu a.current {
   background: #b3b5bb;
 }
 
@@ -177,7 +196,7 @@
 }
 
 h1 {
-  font-family:   sans-serif;
+  font-family: sans-serif;
   background: transparent;
   color: #2e2f32;
   font-size: 2.375rem;
@@ -200,47 +219,130 @@ img {
   margin-right: auto;
 }
 
-.player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
+.meta .sc-stats-table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: 1px solid #e4e4e4;
+}
+
+.meta .sc-stats-table tr > td figure ~ .player-stats-text {
   margin: 4px 0px 0px 32px;
   line-height: 0.6;
 }
 
-.player .meta .sc-stats-table tr > td {
-  border-style: none;
-  padding: 5px 5px 5px 5px;
-  text-align: left;
+.meta .sc-stats-table tr > th, td {
+  min-width: 35px !important;
+  padding: 5px 7px !important;
   font-size: 12px;
-  color: #929292;
+  height: 60px;
 }
 
-.player .meta .sc-stats-table tbody > tr > td {
-  border-style: none;
-  padding: 5px 5px 5px 5px;
+.meta .sc-stats-table tr > td {
+  border: none;
+  border-bottom: none;
+  border-top: none;
+  padding: 5px;
   text-align: left;
-  font-size: 12px;
+  font-size: 12px !important;
   color: #929292;
 }
-
 
 .skills {
   margin: 10px 10px 10px 10px;
-  float: left;
-  height: 200px;
-  width: 45%;
 }
 
 .skills .data {
   padding: 0 1rem;
-  font-family:   sans-serif;
+  font-family: sans-serif;
   font-weight: 300;
   font-size: .9375rem;
+}
+
+.row-center-team {
+  width: 45%;
+  float: left;
+  margin: 30px auto;
+}
+
+.row-left {
+  width: 20%;
+  float: left;
+  margin: 30px auto;
+}
+
+.row-right {
+  width: 30%;
+  margin: 30px 10px 20px auto;
+}
+
+table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: none;
+  border: 1px solid #e4e4e4;
+}
+
+table .centered {
+  text-align: center;
+}
+
+table .number_move {
+  width: 60px;
+}
+
+table .role_move {
+  width: 50%;
+}
+
+.centered {
+  text-align: center;
+}
+
+table .list_number {
+  width: 24px;
+  height: 24px;
+  padding-top: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+table .list_role {
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
+.list_flag {
+  min-width: 14px;
+  max-width: 30px;
+  min-height: 9px;
+}
+
+table tbody .rechts {
+  padding-right: 10px;
+}
+
+table .rechts {
+  text-align: right;
+}
+
+table .hauptlink {
+  font-weight: bold;
+}
+
+.posrela {
+  position: relative !important;
 }
 
 .card-sc {
   margin: 10px 0px 10px 0px;
 }
 
-.card-sc img{
+.card-sc img {
   width: 50px;
   float: left;
   margin: 10px;
@@ -253,7 +355,7 @@ img {
   text-align: left;
 }
 
-.card-sc p{
+.card-sc p {
   padding: 10px;
 }
 
@@ -289,12 +391,6 @@ img {
   margin-bottom: 5px;
 }
 
-.row-center {
-  width: 45%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .button-image {
   background-repeat: no-repeat;
   background-position: center center;
@@ -320,13 +416,12 @@ img {
   color: #2e2f32;
 }
 
-
-.callout>:first-child {
+.callout > :first-child {
   margin-top: 0;
 }
 
 .articles-big .description {
-  font-family:   sans-serif;
+  font-family: sans-serif;
   line-height: 1.2;
 }
 
@@ -359,7 +454,7 @@ img {
 .callout.small {
   padding: 1rem;
   background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   height: 530px;
   margin-bottom: 15px;
 }

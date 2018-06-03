@@ -1,31 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import {UserInfoViewModel} from '../_models/user_info_viewmodel';
-import {User_infoService} from '../_services/user_info.service';
-import { Chart } from 'chart.js';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {TeamViewModel} from '../_models/team_viewmodel';
 import {Sort} from '@angular/material';
-
+import {TeamService} from '../_services/team.service';
 
 @Component({
-  selector: 'app-user-info-media',
-  templateUrl: './user-info-media.component.html',
-  styleUrls: ['./user-info-media.component.css']
+  selector: 'app-team-stats',
+  templateUrl: './team-stats.component.html',
+  styleUrls: ['./team-stats.component.css']
 })
-export class User_infoMediaComponent implements OnInit{
+export class TeamStatsComponent implements OnInit,AfterViewInit {
 
-  viewModel: UserInfoViewModel;
-  userInfoService : User_infoService;
+  viewModel: TeamViewModel;
+  teamService : TeamService;
   sortedData;
   constructor() {
   }
 
   ngOnInit() {
 
-    this.userInfoService = new User_infoService();
-    this.userInfoService.getUserInfo('0')
-      .subscribe(userInfo => {
-        this.sortedData = userInfo.media.slice();
-        return this.viewModel = userInfo
+    this.teamService = new TeamService();
+    this.teamService.getTeam('0')
+      .subscribe(team => {
+        this.sortedData = team.media.slice();
+        return this.viewModel = team;
       });
+  }
+
+  ngAfterViewInit(){
   }
 
   sortData(sort: Sort) {
@@ -51,3 +52,4 @@ export class User_infoMediaComponent implements OnInit{
 function compare(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
+
