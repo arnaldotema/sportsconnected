@@ -6,6 +6,7 @@ import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/c
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry} from 'rxjs/operators';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
+import {Recommendation} from '../_models/recommendation';
 
 @Injectable()
 export class User_infoService {
@@ -15,16 +16,13 @@ export class User_infoService {
     personal_info: {
       name: 'Diogo Pires',
       age: 25,
-      avatar: {
-        type: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-      },
+      avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       full_name: 'Diogo César Pontes Pires',
       positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
       height: 165,
       weight: 90,
       date_of_birth: '30-01-1993',
-      nationality: 'Portuguesa',
+      nationality: 'Portugal',
       residence: 'Lisboa',
       foot: 'Direito',
       updated_at: '8-05-2018'
@@ -44,8 +42,8 @@ export class User_infoService {
       },
       stats: [
         {
-          competition_name: 'Liga Portuguesa',
-          competition_avatar: "./../../assets/Liga_Portugal_logo.png",
+          competition_name: 'Liga Portugal',
+          competition_avatar: "/assets/Liga_Portugal_logo.png",
           games: 15,
           wins: 14,
           losses: 0,
@@ -58,7 +56,7 @@ export class User_infoService {
         },
         {
           competition_name: 'Taça de Portugal',
-          competition_avatar : './../../assets/Liga_Portugal_logo.png',
+          competition_avatar : '/assets/Tacadaligalogo.png',
           games: 4,
           wins: 1,
           losses: 1,
@@ -71,7 +69,7 @@ export class User_infoService {
         },
         {
           competition_name: 'Super Taça',
-          competition_avatar: './../../assets/9_imgbank_tp.png', //./../../assets/Tacadaligalogo.png
+          competition_avatar: '/assets/9_imgbank_tp.png',
           games: 1,
           wins: 1,
           losses: 0,
@@ -100,7 +98,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -127,7 +125,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -154,7 +152,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -181,7 +179,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -208,7 +206,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -235,7 +233,7 @@ export class User_infoService {
         references: {
           leagues: [
             {
-              name: 'Liga Portuguesa',
+              name: 'Liga Portugal',
               id: 1,
             }
           ],
@@ -369,6 +367,11 @@ export class User_infoService {
 
   getUserInfo(id: string): Observable<UserInfoViewModel> {
     return of(this.mockUserInfo[id]);
+  };
+
+  createRecommendation(id: string, recommendation: Recommendation): Observable<Recommendation> {
+    this.mockUserInfo[id].recommendations.top_5.push(recommendation);
+    return of(recommendation);
   };
 
   private handleError(error: HttpErrorResponse) {
