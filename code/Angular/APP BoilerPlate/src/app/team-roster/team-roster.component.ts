@@ -8,12 +8,6 @@ import { Chart } from 'chart.js';
   templateUrl: './team-roster.component.html',
   styleUrls: ['./team-roster.component.css']
 })
-
-@Component({
-  selector: 'app-team-roster',
-  templateUrl: './team-roster.component.html',
-  styleUrls: ['./team-roster.component.css']
-})
 export class TeamRosterComponent implements OnInit, AfterViewInit  {
 
   viewModel: TeamViewModel;
@@ -23,8 +17,6 @@ export class TeamRosterComponent implements OnInit, AfterViewInit  {
 
   ngOnInit() {
     this.teamService = new TeamService();
-    this.teamService.getTeam('0')
-      .subscribe(team => this.viewModel = team);
   }
   ngAfterViewInit(){
   }
