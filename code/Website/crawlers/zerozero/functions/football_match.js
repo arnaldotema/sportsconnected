@@ -6,6 +6,16 @@ var format = require("string-template");
 const footballMatch = require('../../../models/football_match');
 
 const processMatchInfo = function (err, res, done){
+    const team = new footballTeam({
+        acronym: acronym,
+        avatar: avatar,
+        name: name,
+        full_name: fullName,
+        external_ids: {
+            zerozero: res.options.zerozeroId,
+        }
+    });
+
     const acronym = res.$("#page_header .factsheet .name").html() ?
         res.$("#page_header .factsheet .name").html():
         '';
@@ -21,16 +31,6 @@ const processMatchInfo = function (err, res, done){
     const fullName = res.$("#entity_bio .bio")[0] ?
         res.$("#entity_bio .bio")[0].children[1].data:
         '';
-
-    const team = new footballTeam({
-        acronym: acronym,
-        avatar: avatar,
-        name: name,
-        full_name: fullName,
-        external_ids: {
-            zerozero: res.options.zerozeroId,
-        }
-    });
 
     logger.info("Team Info:")
     logger.info(team);
