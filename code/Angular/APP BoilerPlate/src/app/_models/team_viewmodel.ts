@@ -12,7 +12,7 @@ export class TeamViewModel {
       competition_name: string,
       competition_avatar: string,
       games: number,
-      classification: string,
+      classification: number,
       wins: number,
       losses: number,
       draws: number,

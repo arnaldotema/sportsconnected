@@ -1,0 +1,339 @@
+<div class="callout meta ">
+  <div class="row">
+    <div class="row-left">
+      <div class="team-image">
+        <img [src]="viewModel.avatar" class="old" alt="profile img"
+             title="profile" style="left: -241.5px;">
+      </div>
+      <div class="profile-buttons">
+        <button mat-raised-button class="btn-follow">Seguir</button>
+        <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar</button>
+      </div>
+      <div class="roster">
+        <table class="tryout-table">
+          <caption class="centered caption">
+            Captações
+          </caption>
+          <tbody *ngFor="let tryout of viewModel.tryouts; let idx = index" class="auto-height">
+          <tr class="tr-odd">
+            <td title="Escalão" class="centered first-td">
+              <div class="list_role">Escalão</div>
+            </td>
+            <td class="posrela">
+              {{tryout.age_group}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Dias" class="centered first-td">
+              <div class="list_role">Dias</div>
+            </td>
+            <td class="posrela">
+              {{tryout.days}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Horários" class="centered first-td">
+              <div class="list_role">Horários</div>
+            </td>
+            <td class="posrela">
+              {{tryout.time}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Morada" class="centered first-td">
+              <div class="list_role">Morada</div>
+            </td>
+            <td class="posrela">
+              {{tryout.address}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Requerimentos" class="centered first-td">
+              <div class="list_role">Requerimentos</div>
+            </td>
+            <td class="posrela">
+              {{tryout.requirements}}
+            </td>
+          </tr>
+          <br *ngIf="idx < viewModel.tryouts.length-1">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row-center-team">
+      <table class="sc-stats-table">
+        <tbody>
+        <tr class="table_header">
+          <th class="th-td-first">Liga</th>
+          <th>Jogos</th>
+          <th>Class.</th>
+          <th>Vitórias</th>
+          <th>Derrotas</th>
+          <th>Empates</th>
+        </tr>
+        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+            class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
+          <td>
+            <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
+            <div class="player-stats-text">
+            </div>
+          </td>
+          <td>{{stat.games}}</td>
+          <td>
+            <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
+            <div *ngIf="stat.classification == null">-</div>
+          </td>
+          <td>{{stat.wins}}</td>
+          <td>{{stat.losses}}</td>
+          <td>{{stat.draws}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="sc-media">
+        <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,2)">
+          <div class="callout small articles-big">
+            <div class="video">
+              <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
+                      allowfullscreen=""></iframe>
+            </div>
+            <div class="description">
+              <p class="title">
+                <br>
+                <a href="/video/11523/" title="{{med.title}}">{{med.title}}</a>
+                <br>
+                {{med.text}}
+              </p>
+              <div class="authors">
+                <span class="author">{{med.author}}</span></div>
+              <div class="date">{{med.date}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recommenations">
+        <mat-card class="card-sc"
+                  *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
+          <mat-card-header>
+            <div mat-card-avatar class="profile-small-image"
+                 [ngStyle]="{'background-image':  'url(' + recommendation.author.avatar + ')' }"></div>
+            <mat-card-title class="headers">{{recommendation.author.name}}</mat-card-title>
+            <mat-card-subtitle class="headers">{{recommendation.author.team.name}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{recommendation.text}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row-right">
+      <div class="roster">
+        <table class="roster-table">
+          <thead class="table_header">
+          <tr>
+            <th class="centered">Nmr.</th>
+            <th>Jogador</th>
+            <th class="centered">Idade</th>
+            <th class="centered country-col">País</th>
+            <th class="centered">Golos</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let player of viewModel.roster.players" class="tr-odd">
+            <td title="{{player.positions[0]}}" class="centered number_move first-td">
+              <div class="list_number">{{player.number}}</div>
+            </td>
+            <td title="" class="posrela">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{player.user_id}}">
+                      <div mat-card-avatar class="profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="hauptlink">
+                    <a
+                      href="/user-info/{{player.user_id}}">
+                      {{player.name}}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{player.positions[0]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">{{player.age}}</td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
+                   alt="{{player.nationality}}" class="list_flag">
+            </td>
+            <td class="centered">{{player.stats.goals}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roster">
+        <table class="roster-table">
+          <thead class="table_header">
+          <tr>
+            <th class="centered">Cargo</th>
+            <th>Técnico</th>
+            <th class="centered">Idade</th>
+            <th class="centered country-col">País</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let staff of viewModel.roster.staff" class="tr-odd">
+            <td title="{{staff.position}}" class="centered first-td">
+              <div class="list_role">{{staff.position}}</div>
+            </td>
+            <td title="" class="posrela">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{staff.user_id}}">
+                      <div mat-card-avatar class="profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + staff.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="hauptlink">
+                    <a
+                      href="/user-info/{{staff.user_id}}">
+                      {{staff.name}}
+                    </a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">{{staff.age}}</td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{staff.nationality}}"
+                   alt="{{staff.nationality}}" class="list_flag">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="presidents">
+        <div class="data">
+          <div>
+            <strong>Presidente</strong>
+          </div>
+          <div>
+            <strong>V. Presidente</strong>
+          </div>
+          <div>
+            <strong>Diret. Desportivo</strong>
+          </div>
+        </div>
+        <div class="data">
+          <div>
+            {{viewModel.personal_info.president}}
+          </div>
+          <div>
+            {{viewModel.personal_info.vice_president}}
+          </div>
+          <div>
+            {{viewModel.personal_info.sports_director}}
+          </div>
+        </div>
+      </div>
+      <div class="contacts">
+        <div class="data">
+          <div>
+            <strong>Nº equipas</strong>
+          </div>
+          <div>
+            <strong>Nº atletas</strong>
+          </div>
+          <div>
+            <strong>Nº treinadores</strong>
+          </div>
+          <div>
+            <strong>Nº campos relvado</strong>
+          </div>
+          <div>
+            <strong>Nº campos sintético</strong>
+          </div>
+          <div>
+            <strong>Belneários</strong>
+          </div>
+          <div>
+            <strong>Patrocinadores</strong>
+          </div>
+          <div>
+            <strong>Outras modalidades</strong>
+          </div>
+        </div>
+        <div class="data">
+          <div>
+            {{viewModel.personal_info.number_of_teams}}
+          </div>
+          <div>
+            {{viewModel.personal_info.number_of_athletes}}
+          </div>
+          <div>
+            {{viewModel.personal_info.number_of_coaches}}
+          </div>
+          <div>
+            {{viewModel.personal_info.number_of_grass_fields}}
+          </div>
+          <div>
+            {{viewModel.personal_info.number_of_synthetic_fields}}
+          </div>
+          <div>
+            {{viewModel.personal_info.number_of_locker_rooms}}
+          </div>
+          <div>
+            <div *ngFor="let brand of viewModel.personal_info.sponsors">
+              <a href="{{brand.link}}">{{brand.name}}</a>
+            </div>
+          </div>
+          <div>
+            <div *ngFor="let sport of viewModel.personal_info.other_sports">
+              {{sport}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contacts">
+        <div class="data">
+          <div>
+            <strong>Site</strong>
+          </div>
+          <div>
+            <strong>E-mail</strong>
+          </div>
+          <div>
+            <strong>Telefone</strong>
+          </div>
+          <div>
+            <strong>Morada</strong>
+          </div>
+        </div>
+        <div class="data">
+          <div>
+            {{viewModel.personal_info.site}}
+          </div>
+          <div>
+            {{viewModel.personal_info.email}}
+          </div>
+          <div>
+            {{viewModel.personal_info.phone_number}}
+          </div>
+          <div>
+            {{viewModel.personal_info.address}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

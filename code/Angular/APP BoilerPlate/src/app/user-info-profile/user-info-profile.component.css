@@ -2,37 +2,19 @@
   border: 0;
 }
 
-.player .player-header .player-info h1 {
+.player-header .player-info h1 {
   font-size: 1.125rem;
   margin: .75rem 0 0 !important;
   height: 1.125rem;
   overflow: hidden;
 }
 
-.player .meta .player-image img{
+.meta .player-image img{
   object-fit: cover;
   min-height: 100%;
 }
 
-
-.player .meta .player-image .right-shadow {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(to left,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
-}
-
-
-.player .meta .player-image .left-shadow {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(to right,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
-}
-
-.player .meta .personal {
+.meta .personal {
   margin: 0px 10px 10px 10px;
   height: 210px;
   background-color: white;
@@ -41,7 +23,7 @@
 
 
 
-.player .meta .personal .rankings-container {
+.meta .personal .rankings-container {
   background: white;
   margin: 1rem 1rem 1rem 0;
 }
@@ -52,11 +34,11 @@
   background: transparent;
 }
 
-.player .meta .personal .data div {
+.meta .personal .data div {
   margin: .375rem 0;
 }
 
-.player .meta .personal .data div strong {
+.meta .personal .data div strong {
   font-weight: 900;
 }
 
@@ -64,7 +46,7 @@
   clear: both;
 }
 
-.player .player-header{
+.player-header{
   box-shadow: 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   border-radius: 0;
   height: 50px;
@@ -76,57 +58,49 @@
   background: rgba(255,255,255,.9);
 }
 
-.player>.meta {
-  border-radius: 0;
-  padding: 0 !important;
-  color: black;
-  height: 500px;
-  margin: 0;
-}
-
-.player .player-header .row {
+.player-header .row {
   background: transparent;
 }
 
-.player .player-info {
+.player-info {
   float: left;
   width: 45%;
   line-height: 1;
   padding-left: 1rem;
 }
 
-.player .team {
+.team {
   float: left;
   padding: .5rem;
   height: 50px;
 }
 
-.player .team img{
+.team img{
   width: auto;
   height: 35px;
 }
 
-.player .player-team{
+.player-team{
   font-weight: 900;
   color: #b8bac0;
   text-transform: uppercase;
   font-family:   sans-serif;
 }
 
-.player .player-header .player-info .player-team a {
+.player-header .player-info .player-team a {
   color: #b8bac0;
 }
 
-.player .player-header .player-info .player-team a.current {
+.player-header .player-info .player-team a.current {
   color: darkred;
 }
 
-.player .player-menu{
+.player-menu{
   float: left;
   width: 55%;
 }
 
-.player .player-menu a{
+.player-menu a{
   color: #2e2f32;
   display: inline-block;
   line-height: 50px;
@@ -138,7 +112,7 @@
   font-weight: 700;
 }
 
-.player .player-menu a.current {
+.player-menu a.current {
   background: #b3b5bb;
 }
 
@@ -413,14 +387,14 @@ img {
   border: 0;
 }
 
-.player .player-header .player-info h1 {
+ .player-header .player-info h1 {
   font-size: 1.125rem;
   margin: .75rem 0 0 !important;
   height: 1.125rem;
   overflow: hidden;
 }
 
-.player .meta .player-image {
+.player-image {
   margin: 0px 10px;
   position: relative;
   height: 350px;
@@ -429,7 +403,7 @@ img {
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
-.player .meta .player-image .right-shadow {
+.player-image .right-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
@@ -438,7 +412,7 @@ img {
 }
 
 
-.player .meta .player-image .left-shadow {
+.player-image .left-shadow {
   position: absolute;
   z-index: 2;
   width: 100%;
@@ -446,12 +420,12 @@ img {
   background: linear-gradient(to right,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
 }
 
-.player .meta .personal .rankings-container {
+.personal .rankings-container {
   background: white;
   margin: 1rem 1rem 1rem 0;
 }
 
-.player .meta .personal .data {
+.personal .data {
   padding: 0 1rem;
   font-family:   sans-serif;
   font-weight: 300;
@@ -466,11 +440,11 @@ img {
   background: transparent;
 }
 
-.player .meta .personal .data div {
+.personal .data div {
   margin: .375rem 0;
 }
 
-.player .meta .personal .data div strong {
+.personal .data div strong {
   font-weight: 900;
 }
 
@@ -478,7 +452,7 @@ img {
   clear: both;
 }
 
-.player .player-header{
+.player-header{
   box-shadow: 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   border-radius: 0;
   height: 50px;
@@ -490,7 +464,7 @@ img {
   background: rgba(255,255,255,.9);
 }
 
-.player>.meta {
+.meta {
   border-radius: 0;
   padding: 0 !important;
   color: black;
@@ -498,49 +472,49 @@ img {
   margin: 0;
 }
 
-.player .player-header .row {
+.player-header .row {
   background: transparent;
 }
 
-.player .player-info {
+.player-info {
   float: left;
   width: 45%;
   line-height: 1;
   padding-left: 1rem;
 }
 
-.player .team {
+.team {
   float: left;
   padding: .5rem;
   height: 50px;
 }
 
-.player .team img{
+.team img{
   width: auto;
   height: 35px;
 }
 
-.player .player-team{
+.player-team{
   font-weight: 900;
   color: #b8bac0;
   text-transform: uppercase;
   font-family:   sans-serif;
 }
 
-.player .player-header .player-info .player-team a {
+.player-header .player-info .player-team a {
   color: #b8bac0;
 }
 
-.player .player-header .player-info .player-team a.current {
+.player-header .player-info .player-team a.current {
   color: darkred;
 }
 
-.player .player-menu{
+.player-menu{
   float: left;
   width: 55%;
 }
 
-.player .player-menu span{
+.player-menu a{
   color: #2e2f32;
   display: inline-block;
   line-height: 50px;
@@ -550,10 +524,9 @@ img {
   font-family:   sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  cursor: pointer;
 }
 
-.player .player-menu span.current {
+.player-menu a.current {
   background: #b3b5bb;
 }
 
@@ -761,3 +734,4 @@ img {
   -ms-interpolation-mode: bicubic;
   display: inline-block;
 }
+
