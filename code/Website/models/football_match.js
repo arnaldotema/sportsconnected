@@ -2,22 +2,26 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var FootballMatchSchema = new Schema({
+    played: {type: Boolean, required: true, index: true},
 	external_ids: {
 		zerozero: Number
 	},
-	date : Date,
+	date : {type: Date, required: true},
 	duration : Number,
 	phase: String,
 	stadium: String,
 	referee: String,
 	competition: {
 		name: String,
+        avatar: String,
 		id: String,
 		external_ids:{
 			zerozero: Number
 		}
 	},
 	home_team : {
+        name: String,
+        avatar: String,
 		main_lineup:[
 			{
                 name: String,
