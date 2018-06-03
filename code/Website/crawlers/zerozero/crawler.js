@@ -2,13 +2,23 @@
 const Crawler = require("crawler");
 const logger = require('../../logging');
 const proxyHandler = require('./proxy_handler');
-var format = require("string-template");
+const request = require('request');
+const format = require("string-template");
 
 // CRAWLER RELATED
 const baseUris = require('./base_uris');
 
+var j = request.jar();
+var cookie = request.cookie('jcenable=1');
+var url = 'http://www.zerozero.pt';
+j.setCookie(cookie, url);
+request({url: url, jar: j}, function () {
+    request('http://images.google.com')
+})
+
 let zerozero = new Crawler({
     rateLimit: 5000,
+    jar: j,
     jQuery: {
         name: 'cheerio',
         options: {
