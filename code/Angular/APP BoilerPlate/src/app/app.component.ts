@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Generic_UserService} from './_services/generic_user.service';
+import {AuthenticationService} from './_services/authentication.service';
+import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +12,11 @@ export class AppComponent {
 
   genericService : Generic_UserService;
   userList;
+  httpHandler = new HttpHandler();
+  http = new HttpClient(this.httpHandler);
+  private authenticationService: AuthenticationService;
   constructor() {
-
+    this.authenticationService = new AuthenticationService(this.http);
   }
 
   searchFor(searchString) {
@@ -22,6 +27,10 @@ export class AppComponent {
     // else call your api to search for
     this.genericService.searchUser('',searchString)
       .subscribe(list => this.userList = list);
+  }
+
+  isAuthenticated(){
+    return this.authenticationService.isLogged();
   }
 
 }
