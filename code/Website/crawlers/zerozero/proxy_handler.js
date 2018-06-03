@@ -8,7 +8,7 @@ function getRandomInt(max) {
 
 const crawl = function (err, res, done) {
     if(res.$(".zztext").length > 0){
-        logger.error("Proxy failed at request: " + res.options.uri);
+        logger.error("Proxy failed at request: " + res.options.uri + " with PROXY: " + res.options.proxy);
         res.options.proxyFailCallback(err, res, done);
     }
     else{
