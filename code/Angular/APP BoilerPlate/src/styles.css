@@ -1,16 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import '../node_modules/vis/dist/vis.min.css';
 @import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '../node_modules/bootstrap-grid-only/bootstrap.css';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-
 [hidden], template {
   display: none !important;
 }
 
-.default-input{
+.default-input {
   margin: 0px !important;
   height: auto !important;
   border: none !important;
@@ -61,7 +59,7 @@
   border-radius: 3px !important;
   background-color: #d3d3d3 !important;
   background-repeat: repeat-x !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.03) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.03) !important;
 }
 
 .selectize-control.multi .selectize-input.disabled [data-value] {
@@ -72,7 +70,7 @@
   background-color: #888888 !important;
   background-image: none !important;
   background-repeat: repeat-x !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.03) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.03) !important;
   border: none;
 }
 
@@ -84,11 +82,11 @@
   background-color: #888888 !important;
   background-image: none !important;
   background-repeat: repeat-x !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.03) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.03) !important;
   border: none !important;
 }
 
-.selectize-control.single .selectize-input.disabled:after{
+.selectize-control.single .selectize-input.disabled:after {
   display: none;
 }
 
@@ -101,47 +99,44 @@
   box-shadow: none !important;
 }
 
-.app-nav{
+.app-nav {
   position: relative;
 }
 
-.mobilar-background{
-  background-color: #e83d30 !important;
-}
-
-.sc-background-org{
-  background-color: #041BC1 !important;
-}
-
-.sc-background{
+.sc-background {
   background-color: #032f4f !important;
 }
 
-.app-title{
+.app-title {
   font-size: 18px;
   font-weight: bold;
   margin-right: 15px;
 }
 
-.app-logo{
+.app-logo {
   height: 55px;
-  margin: 10px;
+  margin: 10px 20px 15px 20px;
 }
 
-.mobiliar-navbar{
+.footer-logo {
+  height: 55px;
+  margin: 0px 10px 0px 0px;
+}
+
+.mobiliar-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-  color:white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  color: white;
   margin-bottom: 15px;
 }
 
-.sc-navbar{
+.sc-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color:white;
+  color: white;
 
   z-index: 1000;
   width: 100%;
@@ -152,7 +147,7 @@
 
 }
 
-title-grey{
+title-grey {
   color: #53433F;
 }
 
@@ -161,10 +156,9 @@ table {
   border-collapse: collapse;
 }
 
-grey{
+grey {
   color: #5D4D49;
 }
-
 
 html {
   font-size: 15px !important;
@@ -182,12 +176,12 @@ td, th {
   font-weight: normal !important;
 }
 
-.table_header{
+.table_header {
   color: white;
   background-color: #032f4f;
 }
 
-.table_header td,th {
+.table_header td, th {
   height: auto !important;
 }
 
@@ -209,7 +203,7 @@ body {
   background-color: white;
 }
 
-.tr-pair {
+.tr-even {
   background-color: transparent;
 }
 
@@ -224,6 +218,7 @@ body {
 .row-center {
   width: 45%;
   margin: 30px auto;
+  float: left;
 }
 
 .row-right {
@@ -232,6 +227,297 @@ body {
   margin: 30px auto;
 }
 
-.roster{
+.roster {
+}
 
+.auto-height td {
+  height: auto !important;
+}
+
+.even {
+  background-color: transparent;
+}
+
+.odd {
+  background-color: white;
+}
+
+.sc-media {
+  margin: 10px;
+}
+
+.recommenations {
+  margin: 20px 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+.btn-follow {
+  color: white !important;
+  background-color: #032f4f;
+  font-family: "Museo Sans", sans-serif;
+  margin-right: 5px;
+}
+
+.btn-recommend {
+  background-color: white;
+  color: black !important;
+  font-family: "Museo Sans", sans-serif;
+}
+
+.profile-buttons {
+  float: left;
+  margin: 10px 10px 20px 10%;
+}
+
+.roster-img {
+  max-width: 60px !important;
+}
+
+.profile-small-image {
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+}
+
+.country-col {
+  min-width: 50px;
+}
+
+.background-message {
+  font-size: xx-large;
+  color: #b3b5bb;
+  margin-left: 30%;
+}
+
+.player .meta .sc-stats-table {
+  margin: 10px auto 20px auto;
+  background-color: transparent;
+  height: 210px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.sc-stats-table {
+  margin-bottom: 20px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.player .meta .sc-stats-table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: 1px solid #e4e4e4;
+}
+
+.player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
+  margin: 4px 0px 0px 32px;
+  line-height: 0.6;
+}
+
+.player .meta .sc-stats-table tr > th {
+  font-weight: bold !important;
+}
+
+.player .meta .sc-stats-table tr > th, td {
+  min-width: 35px !important;
+  padding: 5px 7px !important;
+  font-size: 12px;
+  height: 60px;
+}
+
+.player .meta .sc-stats-table tr > td {
+  border: none;
+  border-bottom: none;
+  border-top: none;
+  padding: 5px;
+  text-align: left;
+  font-size: 12px !important;
+  color: #929292;
+}
+
+.roster-table .caption {
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  color: #032f4f;
+  padding: 10px;
+}
+
+.roster thead {
+  font-size: 12px !important;
+}
+
+.roster table tbody > tr > td, td {
+  text-align: center !important;
+}
+
+.roster table .inline-table {
+  margin: 0;
+  border: 0;
+  width: auto;
+  border-collapse: collapse;
+  box-shadow: none;
+}
+
+.roster .inline-table tbody > tr > td, td {
+  padding: 0px 5px 0px 5px !important;
+  text-align: left;
+
+}
+
+.roster table .inline-table tbody tr td {
+  font-size: 12px !important;
+  color: #333;
+  padding: 0 0 0 5px !important;
+  height: 0px !important;
+  min-width: 0px !important;
+  max-width: 150px !important;
+  vertical-align: middle;
+  -moz-border: none;
+  -moz-border-radius: 0;
+  border-width: 0 !important;
+}
+
+.roster table .inline-table img {
+  vertical-align: bottom;
+}
+
+.roster table .hauptlink {
+  font-weight: bold !important;
+}
+
+.roster .di {
+  display: inline !important;
+}
+
+.roster .nowrap {
+  white-space: nowrap;
+}
+
+.roster .grid-view table th {
+  background-color: #f2f2f2;
+  color: #000;
+  border-top: 0;
+}
+
+.roster-table {
+  margin: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.tryout-table {
+  margin: 10px;
+}
+
+.tryout-table td {
+  padding: 5px !important;
+}
+
+.tryout-table tbody {
+}
+
+.tryout-table .caption {
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  color: #032f4f;
+  padding: 10px;
+}
+
+.personal-table {
+  margin: 10px auto;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.personal-table td {
+  padding: 10px !important;
+}
+
+.personal-table tbody {
+}
+
+.personal-table .caption {
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  color: #032f4f;
+  padding: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 0px 0px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.first-td {
+  background-color: #4384a8 !important;
+  color: white !important;
+  max-width: 80px;
+}
+
+.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: #4383a882;
+}
+
+.documentation footer {
+  padding-left: 0;
+}
+
+.pt-4 {
+  padding-top: 1.5rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.dark-gray {
+  background-color: #b3b5bb !important;
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.text-md-left {
+  text-align: left !important;
+}
+
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.footer-links a {
+  color: white;
+}
+
+.mat-form-field {
+  color: white;
+}
+
+.navbar-search {
+  color: white;
+}
+
+.player-header-placeholder-small {
+  width: 100%;
+  height: 25px;
+  background: transparent;
+}
+
+.over {
+  font-size: initial !important;
+}
+
+.stats {
+  margin: 10px;
+}
+
+.row-center-stats {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.soon-msg{
+  font-size: xx-large;
+  margin: 100px auto;
+  color: #b3b5bb;
+  text-align: center;
 }
