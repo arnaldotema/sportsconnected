@@ -199,3 +199,248 @@
 {"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=35","level":"info"}
 {"message":"ADDED http://www.zerozero.pt/team_matches.php?id=35&epoca_id= to the queue: PROXY = http://94.23.56.95:8080","level":"info"}
 {"message":"CRAWLING http://www.zerozero.pt/team_matches.php?id=1734&epoca_id=","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"Successfully created team 9","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://18.188.165.157:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,105518,106851,216241,216233,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284035,284011,505790,217215","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180517122144_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428355142,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab50363881b0a3c600f91"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Pedro Malheiro de S&#xE1;","avatar":"https://www.zerozero.pt/img/jogadores/60/164860_20180513161315_jose_sa.png","positions":["Guarda Redes"],"height":"192","weight":"78","date_of_birth":"1993-01-17T00:00:00.000Z","foot":"Direito","updated_at":1527428360449,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 164860","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab50863881b0a3c600f92"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=241528","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Vanailson Luciano de Souza Alves","avatar":"https://www.zerozero.pt/img/jogadores/28/241528_20180513161332_vana_alves.png","positions":["Guarda Redes"],"height":"194","weight":"86","date_of_birth":"1991-04-25T00:00:00.000Z","foot":"Direito","updated_at":1527428365238,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 241528","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab50d63881b0a3c600f93"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=39151","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Fabiano Ribeiro de Freitas","avatar":"https://www.zerozero.pt/img/jogadores/51/39151_20180122122510_fabiano.png","positions":["Guarda Redes"],"height":"197","weight":"89","date_of_birth":"1988-02-29T00:00:00.000Z","foot":"Direito","updated_at":1527428368982,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 39151","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab51063881b0a3c600f94"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=160894","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jo&#xE3;o Paulo Santos da Costa","avatar":"https://www.zerozero.pt/img/jogadores/94/160894_20180526125001_joao_costa.jpg","positions":["Guarda Redes"],"height":"185","weight":"77","date_of_birth":"1996-02-02T00:00:00.000Z","foot":"Direito","updated_at":1527428374142,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 160894","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab51663881b0a3c600f95"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=34664","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Victorio Maximiliano Pereira P&#xE1;ez","avatar":"https://www.zerozero.pt/img/jogadores/64/34664_20180513161512_maxi_pereira.png","positions":["Defesa (Defesa Direito)"],"height":"173","weight":"70","date_of_birth":"1984-06-08T00:00:00.000Z","foot":"Direito","updated_at":1527428380080,"nationality":"Uruguai"}},"level":"info"}
+{"message":"Successfully updated User_Info 34664","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab51c63881b0a3c600f96"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=404035","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Yordan Hernando Osorio Paredes","avatar":"https://www.zerozero.pt/img/jogadores/35/404035_20180513161526_yordan_osorio.png","positions":["Defesa (Defesa Central)"],"height":"189","weight":"83","date_of_birth":"1994-05-10T00:00:00.000Z","foot":"Direito","updated_at":1527428387960,"nationality":"Venezuela"}},"level":"info"}
+{"message":"Successfully updated User_Info 404035","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab52363881b0a3c600f97"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=36773","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iv&#xE1;n Marcano Sierra","avatar":"https://www.zerozero.pt/img/jogadores/73/36773_20180513161545_ivan_marcano.png","positions":["Defesa (Defesa Central)"],"height":"189","weight":"82","date_of_birth":"1987-06-23T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428390022,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 36773","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab52663881b0a3c600f98"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=176439","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Alex Nicolao Telles","avatar":"https://www.zerozero.pt/img/jogadores/39/176439_20180513161603_alex_telles.png","positions":["Defesa (Defesa Esquerdo)"],"height":"181","weight":"66","date_of_birth":"1992-12-15T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428394857,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 176439","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab52a63881b0a3c600f99"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=56579","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Ricardo Domingos Barbosa Pereira","avatar":"https://www.zerozero.pt/img/jogadores/79/56579_20180513161614_ricardo_pereira.png","positions":["Defesa (Defesa Direito)","Avan&#xE7;ado (Extremo Direito)"],"height":"175","weight":"65","date_of_birth":"1993-10-06T00:00:00.000Z","foot":"Direito","updated_at":1527428398908,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 56579","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab52e63881b0a3c600f9a"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=163617","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Diego Antonio Reyes Rosales","avatar":"https://www.zerozero.pt/img/jogadores/17/163617_20180513161634_diego_reyes.png","positions":["Defesa (Defesa Central)","M&#xE9;dio (M&#xE9;dio Defensivo)"],"height":"189","weight":"69","date_of_birth":"1992-09-19T00:00:00.000Z","foot":"Direito","updated_at":1527428403963,"nationality":"M&#xE9;xico"}},"level":"info"}
+{"message":"Successfully updated User_Info 163617","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab53363881b0a3c600f9b"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=176145","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Felipe Augusto de Almeida Monteiro ","avatar":"https://www.zerozero.pt/img/jogadores/45/176145_20180513161648_felipe.png","positions":["Defesa (Defesa Central)"],"height":"191","weight":"86","date_of_birth":"1989-05-16T00:00:00.000Z","foot":"Direito","updated_at":1527428408883,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 176145","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab53863881b0a3c600f9c"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=284416","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jos&#xE9; Diogo Dalot Teixeira","avatar":"https://www.zerozero.pt/img/jogadores/16/284416_20180513161705_diogo_dalot.png","positions":["Defesa (Defesa Esquerdo)","Defesa (Defesa Direito)"],"height":"184","weight":"78","date_of_birth":"1999-03-18T00:00:00.000Z","foot":"Direito","updated_at":1527428415301,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 284416","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab53f63881b0a3c600f9d"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=105518","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Lu&#xED;s Rafael Soares Alves","avatar":"https://www.zerozero.pt/img/jogadores/01/457301__20180204180901_rafa_soares.jpg","positions":["Defesa (Defesa Esquerdo)"],"height":"178","weight":"71","date_of_birth":"1995-05-09T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428420185,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 105518","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab54463881b0a3c600f9e"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=106851","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Miguel Arturo Lay&#xFA;n Prado","avatar":"https://www.zerozero.pt/img/jogadores/51/106851_20180208181207_miguel_layun.jpg","positions":["Defesa (Defesa Direito)","Defesa (Defesa Esquerdo)"],"height":"179","weight":"69","date_of_birth":"1988-06-25T00:00:00.000Z","foot":"Direito","updated_at":1527428424712,"nationality":"M&#xE9;xico"}},"level":"info"}
+{"message":"Successfully updated User_Info 106851","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab54863881b0a3c600f9f"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=216241","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jorge Filipe Oliveira Fernandes","avatar":"https://www.zerozero.pt/img/jogadores/41/216241_20180526125926_jorge_fernandes.jpg","positions":["Defesa (Defesa Central)"],"height":"193","weight":"79","date_of_birth":"1997-04-02T00:00:00.000Z","foot":"Direito","updated_at":1527428430003,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 216241","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab54e63881b0a3c600fa0"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=216233","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Lu&#xED;s Carlos Machado Mata","avatar":"https://www.zerozero.pt/img/jogadores/33/216233_20180519110525_luis_mata.jpg","positions":["Defesa (Defesa Esquerdo)","Avan&#xE7;ado (Extremo Esquerdo)"],"height":"180","weight":"66","date_of_birth":"1997-06-06T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428434777,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 216233","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab55263881b0a3c600fa1"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=240739","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Paulo Henrique Soares dos Santos","avatar":"https://www.zerozero.pt/img/jogadores/39/240739_20180513161921_paulinho.png","positions":["M&#xE9;dio (M&#xE9;dio Ofensivo)","Avan&#xE7;ado (Extremo Direito)"],"height":"169","weight":"62","date_of_birth":"1994-07-10T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428438888,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 240739","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab55663881b0a3c600fa2"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=260081","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"&#xD3;liver Torres Mu&#xF1;oz","avatar":"https://www.zerozero.pt/img/jogadores/81/260081_20180513161933_oliver_torres.png","positions":["M&#xE9;dio (M&#xE9;dio Centro)","M&#xE9;dio (M&#xE9;dio Ofensivo)"],"height":"174","weight":"66","date_of_birth":"1994-11-10T00:00:00.000Z","foot":"Direito","updated_at":1527428446022,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 260081","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab55e63881b0a3c600fa3"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=211935","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"H&#xE9;ctor Miguel Herrera L&#xF3;pez ","avatar":"https://www.zerozero.pt/img/jogadores/35/211935_20180513161955_hector_herrera.png","positions":["M&#xE9;dio (M&#xE9;dio Centro)","M&#xE9;dio (M&#xE9;dio Ofensivo)"],"height":"180","weight":"73","date_of_birth":"1990-04-19T00:00:00.000Z","foot":"Direito","updated_at":1527428450113,"nationality":"M&#xE9;xico"}},"level":"info"}
+{"message":"Successfully updated User_Info 211935","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab56263881b0a3c600fa4"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=31173","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Andr&#xE9; Filipe Br&#xE1;s Andr&#xE9;","avatar":"https://www.zerozero.pt/img/jogadores/73/31173_20180513162006_andre_andre.png","positions":["M&#xE9;dio (M&#xE9;dio Centro)"],"height":"174","weight":"67","date_of_birth":"1989-08-26T00:00:00.000Z","foot":"Direito","updated_at":1527428455103,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 31173","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab56763881b0a3c600fa5"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=74722","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Danilo Lu&#xED;s H&#xE9;lio Pereira","avatar":"https://www.zerozero.pt/img/jogadores/22/74722_20180513162027_danilo_pereira.png","positions":["M&#xE9;dio (M&#xE9;dio Defensivo)"],"height":"188","weight":"80","date_of_birth":"1991-09-09T00:00:00.000Z","foot":"Direito","updated_at":1527428459771,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 74722","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab56b63881b0a3c600fa6"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=74743","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"S&#xE9;rgio Miguel Relvas de Oliveira","avatar":"https://www.zerozero.pt/img/jogadores/43/74743_20180513162036_sergio_oliveira.png","positions":["M&#xE9;dio (M&#xE9;dio Defensivo)"],"height":"181","weight":"73","date_of_birth":"1992-06-02T00:00:00.000Z","foot":"Direito","updated_at":1527428465279,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 74743","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab57163881b0a3c600fa7"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=547866","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Luiz Gustavo Novaes Palhares","avatar":"https://www.zerozero.pt/img/jogadores/66/547866_20180519110715_luizao.jpg","positions":["M&#xE9;dio (M&#xE9;dio Centro)"],"height":"184","weight":"66","date_of_birth":"1998-02-20T00:00:00.000Z","foot":"Direito","updated_at":1527428468905,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 547866","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab57463881b0a3c600fa8"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=96062","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Rui Filipe Ara&#xFA;jo Moreira","avatar":"https://www.zerozero.pt/img/jogadores/62/96062_20180519110802_rui_moreira.jpg","positions":["M&#xE9;dio (M&#xE9;dio Centro)","Defesa (Defesa Esquerdo)"],"height":"172","weight":"62","date_of_birth":"1996-05-31T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428474990,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 96062","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab57b63881b0a3c600fa9"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=446667","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Federico Nicol&#xE1;s Varela","avatar":"https://www.zerozero.pt/img/jogadores/74/455674__20180129120202_fede_varela.png","positions":["M&#xE9;dio (M&#xE9;dio Ofensivo)","Avan&#xE7;ado (Extremo Esquerdo)"],"height":"175","weight":"59","date_of_birth":"1996-05-07T00:00:00.000Z","foot":"Direito","updated_at":1527428478958,"nationality":"Argentina"}},"level":"info"}
+{"message":"Successfully updated User_Info 446667","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab57e63881b0a3c600faa"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=159904","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Hern&#xE2;ni Jorge Santos Fortes","avatar":"https://www.zerozero.pt/img/jogadores/04/159904_20180513162343_hernani.png","positions":["Avan&#xE7;ado (Extremo Direito)","Avan&#xE7;ado (Extremo Esquerdo)"],"height":"180","weight":"66","date_of_birth":"1991-08-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428483944,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 159904","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab58363881b0a3c600fab"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=64507","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Yacine Nasr Eddine Brahimi","avatar":"https://www.zerozero.pt/img/jogadores/07/64507_20180513162353_yacine_brahimi.png","positions":["Avan&#xE7;ado (Extremo Esquerdo)","M&#xE9;dio (M&#xE9;dio Ofensivo)"],"height":"175","weight":"68","date_of_birth":"1990-02-08T00:00:00.000Z","foot":"Direito","updated_at":1527428489157,"nationality":"Arg&#xE9;lia"}},"level":"info"}
+{"message":"Successfully updated User_Info 64507","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab58963881b0a3c600fac"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=141345","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Vincent Aboubakar","avatar":"https://www.zerozero.pt/img/jogadores/45/141345_20180513162412_vincent_aboubakar.png","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)"],"height":"184","weight":"79","date_of_birth":"1992-01-22T00:00:00.000Z","foot":"Direito","updated_at":1527428495139,"nationality":"Camar&#xF5;es"}},"level":"info"}
+{"message":"Successfully updated User_Info 141345","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab58f63881b0a3c600fad"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=280401","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Moussa Marega","avatar":"https://www.zerozero.pt/img/jogadores/01/280401_20180513162419_moussa_marega.png","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)","Avan&#xE7;ado (Extremo Direito)"],"height":"183","weight":"80","date_of_birth":"1991-04-14T00:00:00.000Z","foot":"Direito","updated_at":1527428500098,"nationality":"Mali"}},"level":"info"}
+{"message":"Successfully updated User_Info 280401","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab59463881b0a3c600fae"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=74894","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Gon&#xE7;alo Mendes Paci&#xEA;ncia","avatar":"https://www.zerozero.pt/img/jogadores/94/74894_20180130124359_goncalo_paciencia.png","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)"],"height":"184","weight":"79","date_of_birth":"1994-08-01T00:00:00.000Z","foot":"Direito","updated_at":1527428505092,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 74894","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab59963881b0a3c600faf"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=155294","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Jes&#xFA;s Manuel Corona Ru&#xED;z","avatar":"https://www.zerozero.pt/img/jogadores/94/155294_20180513162502_jesus_corona.png","positions":["Avan&#xE7;ado (Extremo Direito)","Avan&#xE7;ado (Extremo Esquerdo)"],"height":"173","weight":"66","date_of_birth":"1993-01-06T00:00:00.000Z","foot":"Direito","updated_at":1527428509848,"nationality":"M&#xE9;xico"}},"level":"info"}
+{"message":"Successfully updated User_Info 155294","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab59d63881b0a3c600fb0"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=134497","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Abdul Majeed Waris","avatar":"https://www.zerozero.pt/img/jogadores/97/134497_20180513162507_majeed_waris.png","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)","Avan&#xE7;ado (Extremo Esquerdo)"],"height":"172","weight":"64","date_of_birth":"1991-09-19T00:00:00.000Z","foot":"Direito","updated_at":1527428516560,"nationality":"Gana"}},"level":"info"}
+{"message":"Successfully updated User_Info 134497","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5a463881b0a3c600fb1"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=276060","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Ot&#xE1;vio Edmilson da Silva Monteiro","avatar":"https://www.zerozero.pt/img/jogadores/60/276060_20180513162528_otavio.png","positions":["Avan&#xE7;ado (Extremo Direito)","Avan&#xE7;ado (Extremo Esquerdo)"],"height":"172","weight":"59","date_of_birth":"1995-02-09T00:00:00.000Z","foot":"Direito","updated_at":1527428520706,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 276060","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5a863881b0a3c600fb2"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=137670","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Francisco das Chagas Soares dos Santos","avatar":"https://www.zerozero.pt/img/jogadores/70/137670_20180513162535_soares.png","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)"],"height":"187","weight":"79","date_of_birth":"1991-01-17T00:00:00.000Z","foot":"Direito","updated_at":1527428523944,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 137670","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5ab63881b0a3c600fb3"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=284035","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Rui Pedro da Silva e Sousa","avatar":"https://www.zerozero.pt/img/jogadores/35/284035_20171028210143_rui_pedro.jpg","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)"],"height":"182","weight":"76","date_of_birth":"1998-03-20T00:00:00.000Z","foot":"Direito","updated_at":1527428530058,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 284035","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5b263881b0a3c600fb4"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=284011","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Bruno Xavier Almeida Costa","avatar":"https://www.zerozero.pt/img/jogadores/93/447193__20171212194752_bruno_costa.jpg","positions":["Avan&#xE7;ado (Extremo Esquerdo)","M&#xE9;dio (M&#xE9;dio Ofensivo)"],"height":"174","weight":"66","date_of_birth":"1997-04-19T00:00:00.000Z","foot":"Direito/Esquerdo","updated_at":1527428534036,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 284011","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5b663881b0a3c600fb5"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=505790","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Wenderson Rodrigues do Nascimento Galeno","avatar":"https://www.zerozero.pt/img/jogadores/75/455675__20180129120203_wenderson_galeno.png","positions":["Avan&#xE7;ado (Extremo Esquerdo)","Avan&#xE7;ado (Extremo Direito)"],"height":"182","weight":"66","date_of_birth":"1997-10-22T00:00:00.000Z","foot":"Direito","updated_at":1527428539681,"nationality":"Brasil"}},"level":"info"}
+{"message":"Successfully updated User_Info 505790","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5bb63881b0a3c600fb6"}],"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=217215","level":"info"}
+{"message":"Proxy failed at request: http://www.zerozero.pt/player.php?id=217215","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=217215","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Andr&#xE9; Filipe Ferreira Coelho Pereira","avatar":"https://www.zerozero.pt/img/jogadores/15/217215_20180202223447_andre_pereira.jpg","positions":["Avan&#xE7;ado (Ponta de Lan&#xE7;a)"],"height":"188","weight":"82","date_of_birth":"1995-05-05T00:00:00.000Z","foot":"Esquerdo","updated_at":1527428548894,"nationality":"Portugal"}},"level":"info"}
+{"message":"Successfully updated User_Info 217215","level":"info"}
+{"message":{"n":1,"nModified":0,"upserted":[{"index":0,"_id":"5b0ab5c463881b0a3c600fb7"}],"ok":1},"level":"info"}
+{"message":"NO MORE REQUESTS! DRAINED!","level":"info"}
