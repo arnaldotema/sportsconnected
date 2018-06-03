@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
+import {MatDialog} from '@angular/material';
 
 
 @Component({
@@ -9,15 +10,12 @@ import { Chart } from 'chart.js';
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
-export class TeamComponent implements OnInit,AfterViewInit  {
+export class TeamComponent implements OnInit  {
 
   viewModel: TeamViewModel;
   teamService : TeamService;
-  chart = [];
-  data = {};
-  options = {};
 
-  constructor() { }
+  constructor(/*private teamService: TeamService, */public dialog: MatDialog) { }
 
   ngOnInit() {
     this.teamService = new TeamService();
@@ -25,41 +23,23 @@ export class TeamComponent implements OnInit,AfterViewInit  {
       .subscribe(team => this.viewModel = team);
   }
 
-  ngAfterViewInit(){
-    this.data = {
-      labels: ['Ataque', 'Tática', 'Defesa', 'Meio Campo', 'Bolas paradas'],
-      datasets: [{
-        data: [19, 18, 14, 15, 23]
-      }]
-    };
-
-    this.options = {
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display:false
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            mirror: true
-          },
-          gridLines: {
-            display:false
-          }
-        }]
-      }
-    };
-
-    this.chart = new Chart('radar', {
-      type: 'horizontalBar',
-      data: this.data,
-      options: this.options
-    });
+  hasClass(elementId, className) {
+    let elem = document.getElementById(elementId);
+    return (' ' + elem.className + ' ').indexOf(' ' + className+ ' ') > -1;
   }
 
+  over(event, isOver){
+    let elem = event.target;
+    let newClassName = ' '+ 'over'+ ' ';
+    isOver? elem.className += newClassName: elem.classList.remove('over');
+  }
+
+  changeTab(tabId){
+    let newClassName = ' '+'current'+' ';
+    if(document.getElementsByClassName('current')[0]){
+      document.getElementsByClassName('current')[0].classList.remove('current');
+      document.getElementById(tabId).className += newClassName;
+    }
+  }
 
 }

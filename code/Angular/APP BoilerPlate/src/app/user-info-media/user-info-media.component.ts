@@ -1,9 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {User_infoService} from '../_services/user_info.service';
 import { Chart } from 'chart.js';
 import {Sort} from '@angular/material';
-import {forEach} from '@angular/router/src/utils/collection';
 
 
 @Component({
@@ -11,7 +10,7 @@ import {forEach} from '@angular/router/src/utils/collection';
   templateUrl: './user-info-media.component.html',
   styleUrls: ['./user-info-media.component.css']
 })
-export class User_infoMediaComponent implements OnInit,AfterViewInit{
+export class User_infoMediaComponent implements OnInit{
 
   viewModel: UserInfoViewModel;
   userInfoService : User_infoService;
@@ -27,9 +26,6 @@ export class User_infoMediaComponent implements OnInit,AfterViewInit{
         this.sortedData = userInfo.media.slice();
         return this.viewModel = userInfo
       });
-  }
-
-  ngAfterViewInit(){
   }
 
   sortData(sort: Sort) {
