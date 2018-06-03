@@ -63,6 +63,8 @@ import { RecommendationModalComponent } from './_modals/recommendation-modal/rec
 import { UserInfoProfileComponent } from './user-info-profile/user-info-profile.component';
 import { TeamProfileComponent } from './team-profile/team-profile.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -84,7 +86,9 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     RecommendationModalComponent,
     UserInfoProfileComponent,
     TeamProfileComponent,
-    TeamStatsComponent
+    TeamStatsComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
