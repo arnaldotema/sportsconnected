@@ -24,7 +24,7 @@ zerozero.on('schedule',function(options){
 });
 
 zerozero.on('request',function(options){
-    logger.info("CRAWLING " + options.uri);
+    logger.info("CRAWLING " + options.uri + ", PROXY = " + options.proxy);
 });
 
 zerozero.on('drain',function(options){

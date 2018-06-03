@@ -27,6 +27,10 @@ const updateCompetitionTeams = function (err, res, done){
     done();
 }
 
+updateCompetitionMatches = function (err, res, done){
+    
+}
+
 module.exports = {
     updateCompetitionTeams: updateCompetitionTeams
 }
