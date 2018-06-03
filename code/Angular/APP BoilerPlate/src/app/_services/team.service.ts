@@ -7,6 +7,7 @@ import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/c
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
+import {Recommendation} from '../_models/recommendation';
 
 @Injectable()
 export class TeamService {
@@ -14,12 +15,86 @@ export class TeamService {
   mockTeams: TeamViewModel[] = [
     {
       acronym: 'SFC',
-      avatar: {
-        type: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-      },
+      avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
       name: 'Seixal FC',
       full_name: 'Seixal Futebol Clube',
+      current_season: {
+        season_id: '1',
+        name: '17/18',
+        stats: [
+          {
+            competition_name: 'Liga Portugesa',
+            competition_avatar: '/assets/Liga_Portugal_logo.png',
+            games: 20,
+            classification: 1,
+            wins: 17,
+            losses: 1,
+            draws: 2,
+          },
+          {
+            competition_name: 'Taça de Portugal',
+            competition_avatar: '/assets/9_imgbank_tp.png',
+            games: 4,
+            classification: null,
+            wins: 4,
+            losses: 0,
+            draws: 0,
+          },
+          {
+            competition_name: 'Taça da Liga',
+            competition_avatar: '/assets/Tacadaligalogo.png',
+            games: 5,
+            classification: null,
+            wins: 5,
+            losses: 0,
+            draws: 0,
+          }
+        ]
+      },
+      tryouts: [
+        {
+          address: 'R. Dona Maria II 17, Seixal',
+          age_group: 'Séniores',
+          days: '6, 7, 10 de Agosto',
+          time: '20h30',
+          requirements: 'Devem vir acompanhados do c. cidadão',
+        },
+        {
+          address: 'R. Dona Maria II 17, Seixal',
+          age_group: 'Juniores 1999-2001',
+          days: '9, 13, 14 de Agosto',
+          time: '18h30',
+          requirements: 'Devem vir acompanhados do c. cidadão',
+        },
+        {
+          address: 'R. Dona Maria II 17, Seixal',
+          age_group: 'Infantis 2005-2006',
+          days: '6, 7, 10 de Agosto',
+          time: '18h00',
+          requirements: 'Devem vir acompanhados do c. cidadão',
+        }
+      ],
+      personal_info: {
+        site: 'www.seixalfc.pt',
+        email: 'seixalfc@seixal.pt',
+        phone_number: '+351 214 444 294',
+        address: 'R. Dona Maria II 17, Seixal',
+        president: 'Maria Teresa Andrade',
+        vice_president: 'Manuel Coisinha',
+        sports_director: 'Caíta Moreira',
+        number_of_teams: 5,
+        number_of_athletes: 134,
+        number_of_coaches: 8,
+        number_of_physiotherapists: 12,
+        number_of_grass_fields: 1,
+        number_of_synthetic_fields: 0,
+        number_of_locker_rooms: 5,
+        sponsors: [{
+          link: 'https://www.tripadvisor.pt/Restaurant_Review-g4995953-d12242638-Reviews-Mundet_Factory-Seixal_Lisbon_District_Central_Portugal.html',
+          name: 'Mundet Factory'
+        }],
+        other_sports: ['Basquetebol', 'Hóquei Patins']
+      },
       recommendations: {
         list: [1, 2, 3],
         top_5: [
@@ -102,8 +177,9 @@ export class TeamService {
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
             age: 25,
+            number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -118,9 +194,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -135,9 +211,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -152,9 +228,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -169,9 +245,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -186,9 +262,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -203,9 +279,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -220,9 +296,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -237,9 +313,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -254,9 +330,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -271,9 +347,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -288,9 +364,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -305,9 +381,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -322,9 +398,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -339,9 +415,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -356,9 +432,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -373,9 +449,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -390,9 +466,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -407,9 +483,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -424,9 +500,9 @@ export class TeamService {
             user_id: '1',
             name: 'Diogo Pires',
             avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
-            age: 25,
+            age: 25, number: 30,
             positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
             stats: {
               games: 15,
@@ -445,7 +521,7 @@ export class TeamService {
             avatar: 'https://cdn.images.dailystar.co.uk/dynamic/58/photos/763000/620x/Jose-Mourinho-644644.jpg',
             age: 50,
             position: 'Treinador principal',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Manchester',
           },
           {
@@ -454,7 +530,7 @@ export class TeamService {
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             age: 49,
             position: 'Treinador adjunto',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
           },
           {
@@ -463,7 +539,7 @@ export class TeamService {
             avatar: 'https://openminds.swissre.com/static//images/profile-default.png',
             age: 35,
             position: 'Treinador adjunto',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
           },
           {
@@ -472,11 +548,176 @@ export class TeamService {
             avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/15541052_10212069863200855_2889012374229061166_o.jpg?_nc_cat=0&oh=5b128be1ebf4151ec5aa2afb671b72d0&oe=5B8C9375',
             age: 27,
             position: 'Preparador físico',
-            nationality: 'Portuguesa',
+            nationality: 'Portugal',
             residence: 'Lisboa',
           },
         ]
-      }
+      },
+      media: [
+        {
+          title: 'Diogo Pires marca Hat-trick em jogo decisivo',
+          author: 'A Bola.',
+          date: '08-05-2018',
+          image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+          ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+          views: 53,
+          shares: 8,
+          likes: 20,
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+          references: {
+            leagues: [
+              {
+                name: 'Liga Portugal',
+                id: 1,
+              }
+            ],
+            team: [{
+              name: 'Seixal FC',
+              id: 1
+            }],
+            player: [{
+              name: 'Diogo Pires',
+              id: 1
+            }],
+          }
+        },
+        {
+          title: 'Arnaldo faz 25 anos!',
+          author: 'A Bola.',
+          date: '27-08-2018',
+          image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+          ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+          views: 1200,
+          shares: 12,
+          likes: 0,
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci.',
+          references: {
+            leagues: [
+              {
+                name: 'Liga Portugal',
+                id: 1,
+              }
+            ],
+            team: [{
+              name: 'Seixal FC',
+              id: 1
+            }],
+            player: [{
+              name: 'Diogo Pires',
+              id: 1
+            }],
+          }
+        },
+        {
+          title: 'Melhores momentos',
+          author: 'A Bola.',
+          date: '08-09-2018',
+          image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+          ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+          views: 93,
+          shares: 45,
+          likes: 90,
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+          references: {
+            leagues: [
+              {
+                name: 'Liga Portugal',
+                id: 1,
+              }
+            ],
+            team: [{
+              name: 'Seixal FC',
+              id: 1
+            }],
+            player: [{
+              name: 'Diogo Pires',
+              id: 1
+            }],
+          }
+        },
+        {
+          title: '15 Golos em 10 jogos.',
+          author: 'A Bola.',
+          date: '03-11-2018',
+          image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+          ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+          views: 200,
+          shares: 12,
+          likes: 20,
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+          references: {
+            leagues: [
+              {
+                name: 'Liga Portugal',
+                id: 1,
+              }
+            ],
+            team: [{
+              name: 'Seixal FC',
+              id: 1
+            }],
+            player: [{
+              name: 'Diogo Pires',
+              id: 1
+            }],
+          }
+        },
+        {
+          title: 'Campeão da Supermacia',
+          author: 'A Bola.',
+          date: '08-02-2018',
+          image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+          ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+          views: 2,
+          shares: 0,
+          likes: 0,
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+          references: {
+            leagues: [
+              {
+                name: 'Liga Portugal',
+                id: 1,
+              }
+            ],
+            team: [{
+              name: 'Seixal FC',
+              id: 1
+            }],
+            player: [{
+              name: 'Diogo Pires',
+              id: 1
+            }],
+          }
+        },
+        {
+          title: 'Diogo falha final da Taça de Portugal',
+          author: 'A Bola.',
+          date: '28-05-2018',
+          image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+          ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+          views: 40,
+          shares: 40,
+          likes: 13,
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+          references: {
+            leagues: [
+              {
+                name: 'Liga Portugal',
+                id: 1,
+              }
+            ],
+            team: [{
+              name: 'Seixal FC',
+              id: 1
+            }],
+            player: [{
+              name: 'Diogo Pires',
+              id: 1
+            }],
+          }
+        },
+
+      ],
     }
   ];
 
@@ -504,6 +745,11 @@ export class TeamService {
 
   getTeam(id: string): Observable<TeamViewModel> {
     return of(this.mockTeams[id]);
+  };
+
+  createRecommendation(id: string, recommendation: Recommendation): Observable<Recommendation> {
+    this.mockTeams[id].recommendations.top_5.push(recommendation);
+    return of(recommendation);
   };
 
   private handleError(error: HttpErrorResponse) {
