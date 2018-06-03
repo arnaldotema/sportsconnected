@@ -26,7 +26,7 @@ export class TeamService {
             competition_name: 'Liga Portugesa',
             competition_avatar: '/assets/Liga_Portugal_logo.png',
             games: 20,
-            classification: '1',
+            classification: 1,
             wins: 17,
             losses: 1,
             draws: 2,
@@ -742,51 +742,6 @@ export class TeamService {
       })
     };
   }
-
-
-  /*
-  *
-  *                 <tr class="tr-odd">
-                  <td title="Dias" class="centered goalkeeper_bg">
-                    <div class="list_role">Dias</div>
-                  </td>
-                  <td class="posrela">
-                  <td rowspan="2" class="">
-                    {{tryout.days}}
-                  </td>
-                  </td>
-                </tr>
-                <tr class="tr-odd">
-                  <td title="Horários" class="centered goalkeeper_bg">
-                    <div class="list_role">Horários</div>
-                  </td>
-                  <td class="posrela">
-                  <td rowspan="2" class="">
-                    {{tryout.time}}
-                  </td>
-                  </td>
-                </tr>
-                <tr class="tr-odd">
-                  <td title="Morada" class="centered goalkeeper_bg">
-                    <div class="list_role">Morada</div>
-                  </td>
-                  <td class="posrela">
-                  <td rowspan="2" class="">
-                    {{tryout.address}}
-                  </td>
-                  </td>
-                </tr>
-                <tr class="tr-odd">
-                  <td title="Requerimentos" class="centered goalkeeper_bg">
-                    <div class="list_role">Requerimentos</div>
-                  </td>
-                  <td class="posrela">
-                  <td rowspan="2" class="">
-                    {{tryout.requirements}}
-                  </td>
-                  </td>
-                </tr>
-  * */
 
   getTeam(id: string): Observable<TeamViewModel> {
     return of(this.mockTeams[id]);

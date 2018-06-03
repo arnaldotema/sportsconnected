@@ -1,0 +1,171 @@
+<div class="callout meta ">
+  <div class="row">
+    <div class="row-left">
+      <div class="player-image">
+        <img [src]="viewModel.personal_info.avatar" alt="Profile image"
+             title="Profile" style="left: -241.5px;">
+      </div>
+      <div class="profile-buttons">
+        <button mat-raised-button class="btn-follow">Seguir</button>
+        <button mat-raised-button (click)="openCreateDialog($event)" class="btn-recommend">Recomendar</button>
+      </div>
+    </div>
+    <div class="row-center">
+      <table class="sc-stats-table">
+        <tbody>
+        <tr class="table_header">
+          <th class="th-td-first">Liga</th>
+          <th>Jogos</th>
+          <th>Vitórias</th>
+          <th>Derrotas</th>
+          <th>Empates</th>
+          <th>Golos</th>
+          <th>Assis.</th>
+          <th>CA</th>
+          <th>CV</th>
+          <th class="th-td-last">Min</th>
+        </tr>
+        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+            class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
+          <td>
+            <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
+          </td>
+          <td>{{stat.games}}</td>
+          <td>{{stat.wins}}</td>
+          <td>{{stat.losses}}</td>
+          <td>{{stat.draws}}</td>
+          <td>{{stat.goals}}</td>
+          <td>{{stat.assists}}</td>
+          <td>{{stat.yellow_cards}}</td>
+          <td>{{stat.red_cards}}</td>
+          <td>{{stat.minutes_played}}''</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="profile-buttons">
+        <button mat-fab class="button-image" title="Força" style=" background-image :url('/assets/strong.png');"></button>
+        <button mat-fab class="button-image" title="Drible" style=" background-image :url('/assets/dribble.png');"></button>
+        <button mat-fab class="button-image" title="Rapidez" style=" background-image :url('/assets/fast.png');"></button>
+        <button mat-fab class="button-image" title="Goleador" style=" background-image :url('/assets/scorer.png');"></button>
+      </div>
+      <div class="skills">
+        <div class="data">
+          <div *ngIf="chart">
+            <canvas id="graph" style="display: block; width: 600px; height: 260px;"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,2)">
+        <div class="callout small articles-big">
+          <div class="video">
+            <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
+                    allowfullscreen=""></iframe>
+          </div>
+          <div class="description">
+            <p class="title">
+              <br>
+              <a href="/video/11523/" title="{{med.title}}">{{med.title}}</a>
+              <br>
+              {{med.text}}
+            </p>
+            <div class="authors">
+              <span class="author">{{med.author}}</span></div>
+            <div class="date">{{med.date}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="recommenations">
+        <mat-card class="card-sc"
+                  *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
+          <mat-card-header>
+            <div mat-card-avatar class="profile-small-image"
+                 [ngStyle]="{'background-image':  'url(' + recommendation.author.avatar + ')' }"></div>
+            <mat-card-title class="headers">{{recommendation.author.name}}</mat-card-title>
+            <mat-card-subtitle class="headers">{{recommendation.author.team.name}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{recommendation.text}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row-right">
+      <div class="roster">
+        <table class="personal-table">
+          <caption class="centered caption">
+            Dados Pessoais
+          </caption>
+          <tbody class="auto-height">
+          <tr class="tr-odd">
+            <td title="Idade" class="centered first-td">
+              <div class="list_role">Idade</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.age}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="D. Nascimento" class="centered first-td">
+              <div class="list_role">D. Nascimento</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.date_of_birth}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Posição" class="centered first-td">
+              <div class="list_role">Posição</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.positions[0]}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Pé dominante" class="centered first-td">
+              <div class="list_role">Pé dominante</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.foot}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Altura" class="centered first-td">
+              <div class="list_role">Altura</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.height}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Peso" class="centered first-td">
+              <div class="list_role">Peso</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.weight}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="Residência" class="centered first-td">
+              <div class="list_role">Residência</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.residence}}
+            </td>
+          </tr>
+          <tr class="tr-odd">
+            <td title="País" class="centered first-td">
+              <div class="list_role">País</div>
+            </td>
+            <td class="posrela">
+              {{viewModel.personal_info.nationality}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

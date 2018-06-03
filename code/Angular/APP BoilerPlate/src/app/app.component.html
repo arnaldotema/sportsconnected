@@ -1,32 +1,28 @@
 <nav>
-  <!-- Navbar -->
   <div class="nav-wrapper sc-background app-nav sc-navbar">
     <img src="/assets/SP_Logo_White.png" class="brand-logo app-logo"/>
-    <ul id="nav-mobile" class="right hide-on-med-and-down app-title">
-    </ul>
+
+    <mat-form-field color="primary">
+      <input class="default-input navbar-search" matInput (keyup)="searchFor($event.target.value)" placeholder="Pesquisar">
+      <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
+    </mat-form-field>
+
   </div>
-  <!-- Navbar -->
 </nav>
 <div class="player-header-placeholder"></div>
 <router-outlet></router-outlet>
 
 
-<!--Footer-->
 <footer class="page-footer dark-gray pt-4 mt-4">
 
-  <!--Footer Links-->
   <div class="container-fluid text-center text-md-left">
     <div class="row">
 
-      <!--First column-->
       <div class="col-md-6">
         <img src="/assets/SP_Logo_White.png" class="footer-logo">
         <h5 class="title">Sports Connected</h5>
         <p>Rede social desportiva que publicita e interliga atletas e organizações.</p>
       </div>
-      <!--/.First column-->
-
-      <!--Second column-->
       <div class="col-md-6">
         <h5 class="title">Links</h5>
         <ul class="list-unstyled footer-links">
@@ -36,18 +32,12 @@
           <li><a href="#">Acerca de</a></li>
         </ul>
       </div>
-      <!--/.Second column-->
     </div>
   </div>
-  <!--/.Footer Links-->
-
-  <!--Copyright-->
   <div class="footer-copyright text-center py-3">
     <div class="container-fluid">
       © 2018 Copyright: <a href="https://www.MDBootstrap.com"> www.sportsconnected.pt</a>
     </div>
   </div>
-  <!--/.Copyright-->
 </footer>
-<!--/.Footer-->
 
