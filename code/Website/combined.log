@@ -831,3 +831,552 @@
 {"message":"Successfully updated User_Info 39151","level":"info"}
 {"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
 {"message":"CRAWLING http://www.zerozero.pt/player.php?id=160894, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"User Info:","level":"info"}
+{"message":{"personal_info":{"name":"Iker Casillas Fern&#xE1;ndez","avatar":"https://www.zerozero.pt/img/jogadores/03/1003_20180602160317_iker_casillas.png","positions":["Guarda Redes"],"height":"182","weight":"76","date_of_birth":"1981-05-20T00:00:00.000Z","foot":"Esquerdo","updated_at":1528028225248,"nationality":"Espanha"}},"level":"info"}
+{"message":"Successfully updated User_Info 1003","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = undefined","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = undefined","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=<tr><th/><th class=\"double\">Date</th><th class=\"double\">Hora</th><th class=\"text home\">Casa</th><th class=\"resultado\" style=\"width:80px;\"/><th class=\"text away\">Fora</th><th style=\"width:60px;\">Fase</th><th style=\"width:38px;\"/><th style=\"width:38px;\"/><th style=\"width:38px;\"/><th style=\"width:50px;\"/></tr> to the queue: PROXY = undefined","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = http://118.193.26.18:8080","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=Date to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = undefined","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=2017-08-06 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"message":"Successfully updated team 9","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=2017-08-06 18:00 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/equipa.php?id=9 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/edition_matches.php?id=109369 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/equipa.php?id=9, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"Team Info:","level":"info"}
+{"message":{"acronym":"FC Porto","avatar":"","name":"FC Porto","full_name":"Futebol Clube do Porto","external_ids":{"zerozero":9}},"level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=1003 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=164860 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=241528 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=39151 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=160894 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=34664 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=404035 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=36773 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176439 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=56579 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=163617 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=176145 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284416 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216233 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=105518 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=106851 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=216241 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=240739 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=260081 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=211935 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=31173 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74722 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74743 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=547866 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=96062 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=446667 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=159904 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=64507 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=141345 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=280401 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=74894 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=155294 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=134497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=276060 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=137670 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284011 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=284035 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=505790 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/player.php?id=217215 to the queue: PROXY = undefined","level":"info"}
+{"message":"Team Player IDs in processing: 1003,164860,241528,39151,160894,34664,404035,36773,176439,56579,163617,176145,284416,216233,105518,106851,216241,240739,260081,211935,31173,74722,74743,547866,96062,446667,159904,64507,141345,280401,74894,155294,134497,276060,137670,284011,284035,505790,217215","level":"info"}
+{"name":"MongoError","message":"E11000 duplicate key error collection: SportsConnected.football_teams index: name_1 dup key: { : \"FC Porto\" }","driver":true,"index":0,"code":11000,"errmsg":"E11000 duplicate key error collection: SportsConnected.football_teams index: name_1 dup key: { : \"FC Porto\" }","level":"error"}
+{"message":"CRAWLING http://www.zerozero.pt/edition_matches.php?id=109369, PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442462 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442470 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442466 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442464 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442465 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442469 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442468 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442463 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442467 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442479 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442477 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442471 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442472 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442475 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442473 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442478 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442474 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442476 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442488 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442486 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442482 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442483 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442485 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442487 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442480 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442484 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442481 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442489 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442493 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442492 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442491 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442495 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442494 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442496 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442490 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442497 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442501 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442499 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442506 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442502 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442505 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442504 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442503 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442500 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442498 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442510 to the queue: PROXY = undefined","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442512 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442513 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442511 to the queue: PROXY = http://66.119.180.101:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id=5442507 to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/jogo.php?id= to the queue: PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=1003, PROXY = http://34.213.199.191:80","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/player.php?id=164860, PROXY = undefined","level":"info"}
