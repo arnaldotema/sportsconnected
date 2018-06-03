@@ -1,6 +1,6 @@
 const logger = require('../../logging');
 
-const proxies = ["http://34.213.199.191:80", "http://18.188.165.157:80", undefined];
+const proxies = ["http://34.213.199.191:80", "http://118.193.26.18:8080", undefined];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
