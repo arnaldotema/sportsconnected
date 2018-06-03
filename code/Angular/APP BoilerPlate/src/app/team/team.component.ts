@@ -3,7 +3,6 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
 import {MatDialog} from '@angular/material';
-import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 
 
 @Component({
@@ -11,14 +10,10 @@ import {RecommendationModalComponent} from '../_modals/recommendation-modal/reco
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
-export class TeamComponent implements OnInit,AfterViewInit  {
+export class TeamComponent implements OnInit  {
 
   viewModel: TeamViewModel;
   teamService : TeamService;
-  mockAuthor;
-  chart = [];
-  data = {};
-  options = {};
 
   constructor(/*private teamService: TeamService, */public dialog: MatDialog) { }
 
@@ -26,78 +21,25 @@ export class TeamComponent implements OnInit,AfterViewInit  {
     this.teamService = new TeamService();
     this.teamService.getTeam('0')
       .subscribe(team => this.viewModel = team);
+  }
 
-    this.mockAuthor = {
-      name: 'Sports Connected',
-      id: '-1',
-      avatar: '/assets/default-profile.png',
-      team: {
-        id: '-1',
-        acronym: 'SCT',
-        avatar: '/assets/SP_Logo_Black.png',
-        name: 'Sports Connected Team',
-      }
+  hasClass(elementId, className) {
+    let elem = document.getElementById(elementId);
+    return (' ' + elem.className + ' ').indexOf(' ' + className+ ' ') > -1;
+  }
+
+  over(event, isOver){
+    let elem = event.target;
+    let newClassName = ' '+ 'over'+ ' ';
+    isOver? elem.className += newClassName: elem.classList.remove('over');
+  }
+
+  changeTab(tabId){
+    let newClassName = ' '+'current'+' ';
+    if(document.getElementsByClassName('current')[0]){
+      document.getElementsByClassName('current')[0].classList.remove('current');
+      document.getElementById(tabId).className += newClassName;
     }
-
-  }
-
-  ngAfterViewInit(){
-    this.data = {
-      labels: ['Ataque', 'Tática', 'Defesa', 'Meio Campo', 'Bolas paradas'],
-      datasets: [{
-        data: [19, 18, 14, 15, 23]
-      }]
-    };
-    this.options = {
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display:false
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            mirror: true
-          },
-          gridLines: {
-            display:false
-          }
-        }]
-      }
-    };
-    this.chart = new Chart('radar', {
-      type: 'horizontalBar',
-      data: this.data,
-      options: this.options
-    });
-  }
-
-  openCreateDialog(event): void {
-    const dialogRef = this.dialog.open(RecommendationModalComponent,
-      {
-        data: {
-          name: this.viewModel.name,
-          author: this.mockAuthor,
-          edit: false,
-          create: true
-        }
-      });
-
-    dialogRef.afterClosed().subscribe(result => {
-      debugger;
-      if (result !== undefined) {
-        this.teamService.createRecommendation('0',result).subscribe()
-        {
-          debugger;
-          // Todo: Add to the real team recommendation's list instead of the top 5
-          this.viewModel.recommendations.top_5.push(result);
-          //this.recommendationDataSource.filter = this.filterString;
-        }
-      }
-    });
   }
 
 }
