@@ -88,7 +88,7 @@ var FootballTeamSchema = new Schema({
         }]
     },
     external_ids: {
-        zerozero: String,
+        zerozero: {type: Number, required: true, unique: true, index: true},
     }
 });
 
