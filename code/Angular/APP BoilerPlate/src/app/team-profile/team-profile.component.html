@@ -48,14 +48,14 @@
             </td>
           </tr>
           <tr class="tr-odd">
-            <td title="Requerimentos" class="centered first-td">
-              <div class="list_role">Requerimentos</div>
+            <td title="Notas" class="centered first-td">
+              <div class="list_role">Notas</div>
             </td>
             <td class="posrela">
               {{tryout.requirements}}
             </td>
           </tr>
-          <br *ngIf="idx < viewModel.tryouts.length-1">
+          <div *ngIf="idx < viewModel.tryouts.length-1" class="small-border"></div>
           </tbody>
         </table>
       </div>
@@ -133,7 +133,7 @@
         <table class="roster-table">
           <thead class="table_header">
           <tr>
-            <th class="centered">Nmr.</th>
+            <th class="centered">#</th>
             <th>Jogador</th>
             <th class="centered">Idade</th>
             <th class="centered country-col">País</th>

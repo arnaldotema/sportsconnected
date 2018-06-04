@@ -167,15 +167,21 @@ html {
   max-height: 50px !important;
 }
 
-td, th {
+td{
   padding: 5px !important;
   text-align: center !important;
   font-weight: normal !important;
 }
 
+th {
+  padding: 5px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
 .table_header {
-  color: white;
-  background-color: #032f4f;
+  color: #032f4f ;
+  background-color: white;
 }
 
 .table_header td, th {
@@ -414,9 +420,10 @@ body {
 
 .tryout-table .caption {
   font-weight: bold;
-  background-color: white;
-  border: 1px solid #e4e4e4;
-  color: #032f4f;
+  background-color: seagreen;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: white;
   padding: 10px;
 }
 
@@ -445,6 +452,7 @@ body {
   background-color: #4384a8 !important;
   color: white !important;
   max-width: 80px;
+  font-weight: bold !important;
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
@@ -563,4 +571,8 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .mat-select-disabled .mat-select-arrow{
   color: white !important;
+}
+
+.small-border{
+  border: 2px solid transparent;
 }
