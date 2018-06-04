@@ -51,10 +51,12 @@ const updateTeamInfo = function (err, res, done){
             else {
                 logger.info("Successfully updated team " + res.options.zerozeroId);
             }
-
-            processAllTeamPlayers(err, res, done);
         }
     });
+
+    processAllTeamPlayers(err, res, null);
+
+    done();
 };
 
 
@@ -77,7 +79,9 @@ const processAllTeamPlayers = function (err, res, done){
 
     logger.info("Team Player IDs in processing: " + playerIds);
 
-    done();
+    if(done) {
+        done();
+    }
 
 }
 
