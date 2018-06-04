@@ -7,91 +7,282 @@
 </table>
 
 <div class="row-center-matches">
-  <div id="nba-scoreboard" class="team-stats-games">
+  <div id="sc-scoreboard" class="team-stats-matches">
     <section>
-      <span>
-        <a class="score-tile-wrapper" href="/match">
-          <div  class="score-tile score-tile-final" data-game-id="0021700106" role="status">
-            <div  class="score-tile-min__wrapper">
-              <div  class="score-tile__top">
-                <div  class="state-wrapper">
-                  <div  class="score-tile__status">
-                    <span  class="score-tile__time">
-                      <span  class="score-tile__period">
-                        27-03-2018
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                <div  class="score-tile-broadcaster">
-                  <span  class="show-for-sr">Game is broadcasting on</span>
-                  <div>
-                    <span  class="broadcaster lp">
-                      <span  class="broadcaster">II Liga</span>
-                    </span>
-                  </div>
-                </div>
+      <a class="score-tile-wrapper" href="/match">
+        <div class="score-tile score-tile-final" role="status">
+          <div class="score-tile-min__wrapper">
+            <div class="score-tile__top">
+              27-03-2018
+              <div class="score-tile-broadcaster">
+                <span class="broadcaster lp">II Liga</span>
               </div>
-              <span>
-                <div class="team-game-score team-game-score--visitor row small-collapse">
-                  <div  class="team-game-score__logo column small-2">
-                    <img  alt="Pacers Logo" class="team-logo" src="//cdn.nba.net/assets/logos/teams/secondary/web/IND.svg">
-                  </div>
-                  <div  class="team-game-score__name-record column small-8">
-                    <div  class="name-record__wrapper">
-                      <div  class="score-tile__team-name">Seixal FC</div>
-                      <div  class="team-record">
-                        <span>(48' 34')</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div  class="team-game-score__score column small-2">
-                    <div  class="team-score">
-                      <div  aria-atomic="true" aria-live="polite" class="team-score__number">
-                        3
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </span>
-              <span>
-                <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
-                  <div  class="team-game-score__logo column small-2">
-                    <img  alt="Cavaliers Logo" class="team-logo" src="//cdn.nba.net/assets/logos/teams/secondary/web/CLE.svg">
-                  </div>
-                  <div  class="team-game-score__name-record column small-8">
-                    <div  class="name-record__wrapper">
-                      <div  class="score-tile__team-name">SL Benfica</div>
-                      <div  class="team-record">(35')</div>
-                    </div>
-                  </div>
-                  <div  class="team-game-score__score column small-2">
-                    <div  class="team-score">
-                      <div  aria-atomic="true" aria-live="polite" class="team-score__number">1</div>
-                    </div>
-                  </div>
-                </div>
-              </span>
             </div>
-            <span>
-              <div class="score__tile--nugget-show">
-                <span >Pacers hand Cavs 4th loss in a row</span>
+
+            <div class="team-game-score team-game-score--visitor row small-collapse">
+              <div class="team-game-score__logo column small-2">
+                <img alt="{{viewModel.name}} Logo" class="team-logo" src="{{viewModel.avatar}}">
               </div>
-            </span>
-            <button  class="button-dock"><span  button="watch" class="score-tile-button">
-              <a class="score-tile-anchor radius" href="/games/20171101/INDCLE?ss=watch">Watch</a>
-            </span>
-              <span  button="listen" class="score-tile-button">
-                <a  class="score-tile-anchor radius" href="/games/20171101/INDCLE#/boxscore">Boxscore</a>
-              </span>
-              <span  button="gamedetail" class="score-tile-button">
-                <a  class="score-tile-anchor radius" href="/games/20171101/INDCLE">Game Detail</a>
-              </span>
-            </button>
-            <p  class="show-for-sr">Watch the full or condensed game here</p>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">{{viewModel.name}}</div>
+                  <div class="team-record">(48' 34' 56' 59')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">4</div>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
+              <div class="team-game-score__logo column small-2">
+                <img alt="SLB Logo" class="team-logo" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">SL Benfica</div>
+                  <div class="team-record">(35')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">1</div>
+              </div>
+            </div>
           </div>
-        </a>
-      </span>
+          <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+        </div>
+      </a>
+
+    </section>
+    <section>
+      <a class="score-tile-wrapper" href="/match">
+        <div class="score-tile score-tile-final" role="status">
+          <div class="score-tile-min__wrapper">
+            <div class="score-tile__top">
+              27-03-2018
+              <div class="score-tile-broadcaster">
+                <span class="broadcaster lp">II Liga</span>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--visitor row small-collapse">
+              <div class="team-game-score__logo column small-2">
+                <img alt="{{viewModel.name}} Logo" class="team-logo" src="{{viewModel.avatar}}">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">{{viewModel.name}}</div>
+                  <div class="team-record">(48' 34' 56' 59')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">4</div>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
+              <div class="team-game-score__logo column small-2">
+                <img alt="SLB Logo" class="team-logo" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">SL Benfica</div>
+                  <div class="team-record">(35')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">1</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+        </div>
+      </a>
+
+    </section>
+    <section>
+      <a class="score-tile-wrapper" href="/match">
+        <div class="score-tile score-tile-final" role="status">
+          <div class="score-tile-min__wrapper">
+            <div class="score-tile__top">
+              27-03-2018
+              <div class="score-tile-broadcaster">
+                <span class="broadcaster lp">II Liga</span>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--visitor row small-collapse">
+              <div class="team-game-score__logo column small-2">
+                <img alt="{{viewModel.name}} Logo" class="team-logo" src="{{viewModel.avatar}}">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">{{viewModel.name}}</div>
+                  <div class="team-record">(48' 34' 56' 59')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">4</div>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
+              <div class="team-game-score__logo column small-2">
+                <img alt="SLB Logo" class="team-logo" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">SL Benfica</div>
+                  <div class="team-record">(35')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">1</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+        </div>
+      </a>
+
+    </section>
+    <section>
+      <a class="score-tile-wrapper" href="/match">
+        <div class="score-tile score-tile-final" role="status">
+          <div class="score-tile-min__wrapper">
+            <div class="score-tile__top">
+              27-03-2018
+              <div class="score-tile-broadcaster">
+                <span class="broadcaster lp">II Liga</span>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--visitor row small-collapse">
+              <div class="team-game-score__logo column small-2">
+                <img alt="{{viewModel.name}} Logo" class="team-logo" src="{{viewModel.avatar}}">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">{{viewModel.name}}</div>
+                  <div class="team-record">(48' 34' 56' 59')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">4</div>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
+              <div class="team-game-score__logo column small-2">
+                <img alt="SLB Logo" class="team-logo" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">SL Benfica</div>
+                  <div class="team-record">(35')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">1</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+        </div>
+      </a>
+
+    </section>
+    <section>
+      <a class="score-tile-wrapper" href="/match">
+        <div class="score-tile score-tile-final" role="status">
+          <div class="score-tile-min__wrapper">
+            <div class="score-tile__top">
+              27-03-2018
+              <div class="score-tile-broadcaster">
+                <span class="broadcaster lp">II Liga</span>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--visitor row small-collapse">
+              <div class="team-game-score__logo column small-2">
+                <img alt="{{viewModel.name}} Logo" class="team-logo" src="{{viewModel.avatar}}">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">{{viewModel.name}}</div>
+                  <div class="team-record">(48' 34' 56' 59')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">4</div>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
+              <div class="team-game-score__logo column small-2">
+                <img alt="SLB Logo" class="team-logo" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">SL Benfica</div>
+                  <div class="team-record">(35')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">1</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+        </div>
+      </a>
+
+    </section>
+    <section>
+      <a class="score-tile-wrapper" href="/match">
+        <div class="score-tile score-tile-final" role="status">
+          <div class="score-tile-min__wrapper">
+            <div class="score-tile__top">
+              27-03-2018
+              <div class="score-tile-broadcaster">
+                <span class="broadcaster lp">II Liga</span>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--visitor row small-collapse">
+              <div class="team-game-score__logo column small-2">
+                <img alt="{{viewModel.name}} Logo" class="team-logo" src="{{viewModel.avatar}}">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">{{viewModel.name}}</div>
+                  <div class="team-record">(48' 34' 56' 59')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">4</div>
+              </div>
+            </div>
+
+            <div class="team-game-score team-game-score--home row small-collapse team-game-score--loser">
+              <div class="team-game-score__logo column small-2">
+                <img alt="SLB Logo" class="team-logo" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
+              </div>
+              <div class="team-game-score__name-record column small-8">
+                <div class="name-record__wrapper">
+                  <div class="score-tile__team-name">SL Benfica</div>
+                  <div class="team-record">(35')</div>
+                </div>
+              </div>
+              <div class="team-game-score__score column small-2">
+                <div class="team-score">1</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+        </div>
+      </a>
+
     </section>
   </div>
 </div>
