@@ -5,6 +5,8 @@ const baseUris = require('../base_uris');
 const format = require("string-template");
 const footballTeam = require('../../../models/football_team');
 const footballTeamCrawler = require('./football_team');
+const footballMatch = require('../../../models/football_match');
+const footballMatchCrawler = require('./football_match');
 
 const updateCompetitionTeams = function (err, res, done){
     let teamIds = [];
@@ -27,6 +29,40 @@ const updateCompetitionTeams = function (err, res, done){
     done();
 }
 
+const updateCompetitionMatches = function (err, res, done){
+    let matchesToSchedule = [];
+
+    const test = res.$("#team_games tbody tr").each(function() {
+        const matchDate = new Date(res.$(this.children[1]).html() + " " + res.$(this.children[2]).html());
+        const matchId = res.$(this).attr("id");
+
+        if(matchDate + 0.5 > Date.now()){
+            matchesToSchedule.push({
+                played: false,
+                date: matchDate,
+                external_ids:{
+                    zerozero: matchId
+                }
+            })
+        }
+        else{
+            zerozero.queue({
+                uri:format(baseUris.MATCH_INFO, { match_id: matchId }),
+                callback: proxyHandler.crawl,
+                successCallback: footballMatchCrawler.processMatchInfo(),
+                zerozeroId: matchId,
+                matchDate: matchDate
+            });
+        }
+    });
+
+    footballMatch.insertMany(matchesToSchedule, function (err, matches) {
+        console.log(matches);
+        done();
+    });
+}
+
 module.exports = {
-    updateCompetitionTeams: updateCompetitionTeams
+    updateCompetitionTeams: updateCompetitionTeams,
+    updateCompetitionMatches: updateCompetitionMatches
 }

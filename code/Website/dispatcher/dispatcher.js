@@ -1,32 +1,10 @@
 // LIBS
 const Crawler = require("crawler");
-const logger = require('../../logging');
-const proxyHandler = require('./proxy_handler');
-const request = require('request');
+const logger = require('../logging');
 const format = require("string-template");
+const baseUris = require('../crawlers/zerozero/base_uris');
 
-// CRAWLER RELATED
-const baseUris = require('./base_uris');
 
-var j = request.jar();
-var cookie = request.cookie('jcenable=1');
-var url = 'http://www.zerozero.pt';
-j.setCookie(cookie, url);
-request({url: url, jar: j}, function () {
-    request('http://images.google.com')
-})
-
-let zerozero = new Crawler({
-    rateLimit: 5000,
-    jar: j,
-    jQuery: {
-        name: 'cheerio',
-        options: {
-            normalizeWhitespace: true,
-            xmlMode: true
-        }
-    }
-});
 
 zerozero.on('schedule',function(options){
     options.proxy = proxyHandler.getProxy();
