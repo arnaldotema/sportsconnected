@@ -12,11 +12,10 @@ export class AppComponent {
 
   genericService : Generic_UserService;
   userList;
-  httpHandler = new HttpHandler();
-  http = new HttpClient(this.httpHandler);
+  http;
   private authenticationService: AuthenticationService;
   constructor() {
-    this.authenticationService = new AuthenticationService(this.http);
+    //this.authenticationService = new AuthenticationService(this.http);
   }
 
   searchFor(searchString) {
@@ -30,7 +29,7 @@ export class AppComponent {
   }
 
   isAuthenticated(){
-    return this.authenticationService.isLogged();
+    return true;//this.authenticationService.isLogged();
   }
 
 }
