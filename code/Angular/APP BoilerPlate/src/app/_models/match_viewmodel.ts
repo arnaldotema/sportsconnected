@@ -1,3 +1,4 @@
+import {TeamMatch} from './team_match';
 
 export class MatchViewModel{
   played: boolean;
@@ -17,94 +18,6 @@ export class MatchViewModel{
       zerozero: number
     }
   };
-  home_team : {
-    name: string;
-    avatar: string;
-    main_lineup:[
-      {
-        name: string;
-        id: string;
-        external_ids:{
-          zerozero: number
-        };
-        number: number;
-        goals: number[];
-        assists: number[];
-        yellow_cards: number[];
-        red_cards: number[];
-        minutes_played: number;
-        go_in:number[];
-        go_out:number[]
-      }
-      ];
-    reserves:[
-      {
-        name: string;
-        id: string;
-        external_ids:{
-          zerozero: number
-        };
-        number: number;
-        goals: number[];
-        assists: number[];
-        yellow_cards: number[];
-        red_cards: number[];
-        minutes_played: number;
-        go_in:number[];
-        go_out:number[]
-      }
-      ];
-    coach:{
-      name: string;
-      id: string;
-      external_ids:{
-        zerozero: number
-      }
-    }
-  };
-  away_team : {
-    name: string;
-    avatar: string;
-    main_lineup:[
-      {
-        name: string;
-        id: string;
-        external_ids:{
-          zerozero: number
-        };
-        number: number;
-        goals: number[];
-        assists: number[];
-        yellow_cards: number[];
-        red_cards: number[];
-        minutes_played: number;
-        go_in:number[];
-        go_out:number[]
-      }
-      ];
-    reserves:[
-      {
-        name: string;
-        id: string;
-        external_ids:{
-          zerozero: number
-        };
-        number: number;
-        goals: number[];
-        assists: number[];
-        yellow_cards: number[];
-        red_cards: number[];
-        minutes_played: number;
-        go_in:number[];
-        go_out:number[]
-      }
-      ];
-    coach:{
-      name: string;
-      id: string;
-      external_ids:{
-        zerozero: number
-      }
-    }
-  }
+  home_team : TeamMatch;
+  away_team : TeamMatch;
 }
