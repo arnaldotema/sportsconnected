@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import {User_infoService} from '../_services/user_info.service';
 import { Chart } from 'chart.js';
 import {MatDialog} from '@angular/material';
 import {MatchViewModel} from '../_models/match_viewmodel';
@@ -14,12 +13,14 @@ export class MatchComponent implements OnInit, AfterViewInit {
 
   viewModel: MatchViewModel;
   matchService : MatchService;
-  constructor(/*private userInfoService: User_infoService, */public dialog: MatDialog) {
-    this.matchService = new MatchService();
-    this.viewModel = this.matchService.getMatch('0');
-  }
 
-  ngOnInit() {}
+  constructor(/*private userInfoService: User_infoService, */public dialog: MatDialog) {}
+
+  ngOnInit() {
+    this.matchService = new MatchService();
+    this.matchService.getMatch('0')
+      .subscribe(match => this.viewModel = match);
+  }
 
   ngAfterViewInit(){}
 }
