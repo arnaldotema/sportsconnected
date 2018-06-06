@@ -137,17 +137,14 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-
   z-index: 1000;
   width: 100%;
   max-width: 100%;
   background: #2e2f32;
-  border-bottom: 10px solid #b3b5bb;
   position: fixed;
-
 }
 
-title-grey {
+.title-grey {
   color: #53433F;
 }
 
@@ -156,7 +153,7 @@ table {
   border-collapse: collapse;
 }
 
-grey {
+.grey {
   color: #5D4D49;
 }
 
@@ -170,15 +167,21 @@ html {
   max-height: 50px !important;
 }
 
-td, th {
+td{
   padding: 5px !important;
   text-align: center !important;
   font-weight: normal !important;
 }
 
+th {
+  padding: 5px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
 .table_header {
-  color: white;
-  background-color: #032f4f;
+  color: #032f4f ;
+  background-color: white;
 }
 
 .table_header td, th {
@@ -195,7 +198,7 @@ body {
 
 .player-header-placeholder {
   width: 100%;
-  height: 85px;
+  height: 80px;
   background: transparent;
 }
 
@@ -417,9 +420,10 @@ body {
 
 .tryout-table .caption {
   font-weight: bold;
-  background-color: white;
-  border: 1px solid #e4e4e4;
-  color: #032f4f;
+  background-color: seagreen;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: white;
   padding: 10px;
 }
 
@@ -448,6 +452,7 @@ body {
   background-color: #4384a8 !important;
   color: white !important;
   max-width: 80px;
+  font-weight: bold !important;
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
@@ -466,8 +471,9 @@ body {
   margin-top: 1.5rem !important;
 }
 
-.dark-gray {
-  background-color: #b3b5bb !important;
+.sc-footer {
+  background-color: white !important;
+  border-top: 1px solid #333333;
 }
 
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -484,14 +490,14 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .footer-links a {
-  color: white;
-}
-
-.mat-form-field {
-  color: white;
+  color: #032f4f;
 }
 
 .navbar-search {
+  margin: auto 30px auto 100px;
+}
+
+.navbar-search .input{
   color: white;
 }
 
@@ -502,7 +508,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .over {
-  font-size: initial !important;
+  text-decoration: underline;
 }
 
 .stats {
@@ -511,8 +517,20 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .row-center-stats {
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.row-right-stats {
+  width: 35%;
+  margin-left: auto !important;
+  margin-right: 30px !important;
+}
+
+.row-center-matches {
+  width: 55%;
+  margin-left: 100px !important;
+  margin-right: 100px !important;
 }
 
 .soon-msg{
@@ -520,4 +538,41 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   margin: 100px auto;
   color: #b3b5bb;
   text-align: center;
+}
+
+.player .player-menu span.current {
+  background: #032f4f;
+  color: white !important;
+}
+
+.login-form{
+  margin: 0px 100px;
+}
+
+.login-form .mat-form-field {
+  color: white;
+}
+
+.login-form .button {
+  margin-left: 10px;
+}
+
+.mat-form-field-disabled .mat-form-field-underline {
+  display: none !important;
+}
+
+.mat-input-element:disabled {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mat-select-disabled .mat-select-value {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mat-select-disabled .mat-select-arrow{
+  color: white !important;
+}
+
+.small-border{
+  border: 2px solid transparent;
 }

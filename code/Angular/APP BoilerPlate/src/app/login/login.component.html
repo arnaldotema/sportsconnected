@@ -1,0 +1,15 @@
+<form class="login-form">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nome de usuário" id="username" name="username"
+           required [(ngModel)]="model.username">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Palavra-passe" id="password" name="password"
+           required type="password" [(ngModel)]="model.password">
+  </mat-form-field>
+
+  <button [disabled]="model.username == null" (click)="login()" type="submit" class="btn btn-success">Entrar</button>
+</form>
+
