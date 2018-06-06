@@ -8,55 +8,76 @@ const footballMatchCrawler = require('../functions/football_match');
 const footballUserInfoCrawler = require('../functions/football_user_info');
 
 const updateTeamInfo = function (err, res, done){
-    const acronym = res.$("#page_header .factsheet .name").html() ?
-        res.$("#page_header .factsheet .name").html():
-        '';
-
-    const avatar = res.$("#page_header .logo img").attr("src") ?
-        'https://www.zerozero.pt/' + res.$("#page_header .logo img").attr("src") :
-        '';
-
-    const name = res.$("#page_header .factsheet .name").html() ?
-        res.$("#page_header .factsheet .name").html():
-        '';
-
-    const fullName = res.$("#entity_bio .bio")[0] ?
-        res.$("#entity_bio .bio")[0].children[1].data:
-        '';
 
     const team = {
-        acronym: acronym,
-        avatar: avatar,
-        name: name,
-        full_name: fullName,
+        acronym: '',
+        avatar: '',
+        name: '',
+        full_name: '',
         external_ids: {
-            zerozero: res.options.zerozeroId,
+            zerozero: res.options.zerozeroId
         }
     };
 
-    logger.info("Team Info:")
-    logger.info(team);
+    team.acronym = res.$("#page_header .factsheet .name").html() ?
+        res.$("#page_header .factsheet .name").html():
+        '';
 
-    let query = {"external_ids.zerozero": res.options.zerozeroId};
+    team.avatar = res.$("#page_header .logo img").attr("src") ?
+        'https://www.zerozero.pt/' + res.$("#page_header .logo img").attr("src") :
+        '';
 
-    footballTeam.update(query, team, { upsert:true, setDefaultsOnInsert: true }, function (err, result) {
+    team.name = res.$("#page_header .factsheet .name").html() ?
+        res.$("#page_header .factsheet .name").html():
+        '';
+
+    team.fullName = res.$("#entity_bio .bio")[0] ?
+        res.$("#entity_bio .bio")[0].children[1].data:
+        '';
+
+    logger.info("Team Info:", team);
+
+    const query = {"external_ids.zerozero": res.options.zerozeroId};
+
+    footballTeam.findOneAndUpdate(query, team, { upsert:true, new:true, setDefaultsOnInsert: true }, function (err, result) {
         if (err) {
             logger.error(err);
             done();
         }
         else {
-            if(result.upserted){
-                logger.info("Successfully created team " + res.options.zerozeroId);
-            }
-            else {
-                logger.info("Successfully updated team " + res.options.zerozeroId);
-            }
+            logger.info("Successfully updated team " + res._doc);
+
+            res.options.teamId = result._doc._id;
+
+            processAllTeamPlayers(err, res, done);
         }
     });
 
-    processAllTeamPlayers(err, res, null);
+    if(res.options.competition){
 
-    done();
+        const query = {
+            "external_ids.zerozero": res.options.zerozeroId,
+            "current_season.standings.id": { $ne: res.options.competition._id }
+        };
+
+        var update = {
+            $addToSet: { "current_season.standings": {
+                    id: res.options.competition._id,
+                    name: res.options.competition.name,
+                    avatar: res.options.competition.avatar,
+                }
+            }
+        }
+
+        footballTeam.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true }, function (err, result) {
+            if (err) {
+                logger.error("Team was already at competition");
+            }
+            else {
+                logger.info("Successfully updated team competition");
+            }
+        });
+    }
 };
 
 
@@ -71,7 +92,8 @@ const processAllTeamPlayers = function (err, res, done){
             callback: proxyHandler.crawl,
             successCallback: footballUserInfoCrawler.updateUserInfo,
             proxyFailCallback: zerozero.proxyFailCallback,
-            zerozeroId: playerId
+            zerozeroId: playerId,
+            teamId: res.options.teamId
         });
 
         playerIds.push(playerId);
@@ -79,9 +101,7 @@ const processAllTeamPlayers = function (err, res, done){
 
     logger.info("Team Player IDs in processing: " + playerIds);
 
-    if(done) {
-        done();
-    }
+    done();
 
 }
 
