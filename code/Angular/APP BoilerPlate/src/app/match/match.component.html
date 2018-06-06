@@ -1,3 +1,243 @@
-<p>
-  match works!
-</p>
+<div class="match">
+  <div class="result-info col-md-10">
+    <a class="match-competition" href="/competition">
+      <img *ngIf="viewModel.competition.avatar != null || viewModel.competition.avatar != ''"
+           src="{{viewModel.competition.avatar}}">
+      <div *ngIf="viewModel.competition.avatar == null || viewModel.competition.avatar == ''">
+        {{viewModel.competition.name}}
+      </div>
+    </a>
+    <div class="game-info">
+      <div class="date">{{viewModel.date}}</div>
+      <div class="info">
+        {{viewModel.stadium}}
+        {{viewModel.phase}}
+      </div>
+    </div>
+    <div class="match-team-info">
+      <div class="home-team col-md-5">
+        <a href="/team/{{viewModel.home_team.id}}">
+          <img src="{{viewModel.home_team.avatar}}" class="col-md-4">
+        </a>
+        <table class="col-md-6">
+          <tbody>
+          <tr>
+            <a href="/team/{{viewModel.home_team.id}}">
+              {{viewModel.home_team.name}}
+            </a>
+          </tr>
+          <tr class="team-goals">
+            <ng-container *ngFor="let goal_time of viewModel.home_team.goals">
+              {{goal_time}}'
+            </ng-container>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class=" col-md-2 result">
+        {{viewModel.home_team.goals.length}} - {{viewModel.away_team.goals.length}}
+      </div>
+      <div class="away-team col-md-5">
+        <table class="col-md-6">
+          <tbody>
+          <tr>
+            <a href="/team/{{viewModel.away_team.id}}">
+              {{viewModel.away_team.name}}
+            </a>
+          </tr>
+          <tr class="team-goals">
+            <ng-container *ngFor="let goal_time of viewModel.away_team.goals">
+              {{goal_time}}'
+            </ng-container>
+          </tr>
+          </tbody>
+        </table>
+        <a href="/team/{{viewModel.home_team.id}}">
+          <img src="{{viewModel.away_team.avatar}}" class="col-md-4">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4 home-row">
+      <div class="roster">
+        <table class="roster-table">
+          <thead class="table_header">
+          <tr>
+            <th class="centered">#</th>
+            <th>Jogador</th>
+            <th class="centered country-col">País</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let player of viewModel.home_team.main_lineup" class="tr-odd">
+            <td title="{{player.positions[0]}}" class="centered number_move first-td">
+              <div class="list_number">{{player.number}}</div>
+            </td>
+            <td title="" class="posrela">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{player.id}}">
+                      <div mat-card-avatar class="profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="hauptlink">
+                    <a
+                      href="/user-info/{{player.id}}">
+                      {{player.name}}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{player.positions[0]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
+                   alt="{{player.nationality}}" class="list_flag">
+            </td>
+            <td class="centered">G: {{player.goals[0]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roster">
+        <table class="roster-table">
+          <thead class="table_header">
+          <tr>
+            <th class="centered">Cargo</th>
+            <th>Técnico</th>
+            <th class="centered country-col">País</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td title="{{viewModel.home_team.coach.name}}" class="centered first-td">
+              <div class="list_role">Treinador principal</div>
+            </td>
+            <td class="posrela">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{viewModel.home_team.coach.id}}">
+                      <div mat-card-avatar class="profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + viewModel.home_team.coach.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="hauptlink">
+                    <a
+                      href="/user-info/{{viewModel.home_team.coach.id}}">
+                      {{viewModel.home_team.coach.name}}
+                    </a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{staff.nationality}}"
+                   alt="{{staff.nationality}}" class="list_flag">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class=" col-md-4 away-row">
+      <div class="roster">
+        <table class="roster-table">
+          <thead class="table_header">
+          <tr>
+            <th class="centered">#</th>
+            <th>Jogador</th>
+            <th class="centered country-col">País</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let player of viewModel.away_team.main_lineup" class="tr-odd">
+            <td title="{{player.positions[0]}}" class="centered number_move first-td">
+              <div class="list_number">{{player.number}}</div>
+            </td>
+            <td title="" class="posrela">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{player.id}}">
+                      <div mat-card-avatar class="profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="hauptlink">
+                    <a
+                      href="/user-info/{{player.id}}">
+                      {{player.name}}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{player.positions[0]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
+                   alt="{{player.nationality}}" class="list_flag">
+            </td>
+            <td class="centered">G: {{player.goals[0]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roster">
+        <table class="roster-table">
+          <thead class="table_header">
+          <tr>
+            <th class="centered">Cargo</th>
+            <th>Técnico</th>
+            <th class="centered country-col">País</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td title="{{viewModel.away_team.coach.name}}" class="centered first-td">
+              <div class="list_role">Treinador principal</div>
+            </td>
+            <td class="posrela">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{viewModel.away_team.coach.id}}">
+                      <div mat-card-avatar class="profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + viewModel.away_team.coach.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="hauptlink">
+                    <a
+                      href="/user-info/{{viewModel.away_team.coach.id}}">
+                      {{viewModel.away_team.coach.name}}
+                    </a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{viewModel.away_team.coach.nationality}}"
+                   alt="{{viewModel.away_team.coach.nationality}}" class="list_flag">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
