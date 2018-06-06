@@ -1,5 +1,5 @@
 .result-info{
-  margin: 0 auto 20px auto;
+  margin: 20px auto;
   display: table;
 }
 
@@ -33,6 +33,11 @@
 
 .match-team-info{
   margin: 0 90px;
+}
+
+.referee{
+  margin: 0 90px;
+  text-align: center;
 }
 
 .match-team-info .result{
@@ -82,8 +87,8 @@
 
 .match{
   overflow: hidden;
-  margin: 30px auto;
-  width: 960px;
+  margin: 0 auto;
+  width: 1128px;
 }
 
 .match .home-row{
@@ -96,4 +101,8 @@
 
 .match .center{
   margin: 0 auto;
+}
+
+.achievements{
+  margin: 10px 0;
 }
