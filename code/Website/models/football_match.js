@@ -8,24 +8,26 @@ var FootballMatchSchema = new Schema({
 	},
 	date : {type: Date, required: true},
 	duration : Number,
-	phase: String,
 	stadium: String,
 	referee: String,
 	competition: {
 		name: String,
         avatar: String,
-		id: String,
+		id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
+        phase: String,
 		external_ids:{
 			zerozero: Number
 		}
 	},
 	home_team : {
+        id: {type: Schema.Types.ObjectId, ref: 'football_team'},
         name: String,
         avatar: String,
+        goals: [String],
 		main_lineup:[
 			{
                 name: String,
-                id: String,
+                info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 external_ids:{
                     zerozero: Number
                 },
@@ -42,7 +44,7 @@ var FootballMatchSchema = new Schema({
 		reserves:[
             {
                 name: String,
-				id: String,
+				info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
 				external_ids:{
                 	zerozero: Number
 				},
@@ -58,17 +60,21 @@ var FootballMatchSchema = new Schema({
 		],
 		coach:{
 			name: String,
-			id: String,
+			id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
 			external_ids:{
 				zerozero: Number
 			}
 		}
 	},
 	away_team : {
+        id: {type: Schema.Types.ObjectId, ref: 'football_team'},
+        name: String,
+        avatar: String,
+        goals: [String],
         main_lineup:[
             {
                 name: String,
-                id: String,
+                info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 external_ids:{
                     zerozero: Number
                 },
@@ -85,7 +91,7 @@ var FootballMatchSchema = new Schema({
         reserves:[
             {
                 name: String,
-                id: String,
+                info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 external_ids:{
                     zerozero: Number
                 },
@@ -101,7 +107,7 @@ var FootballMatchSchema = new Schema({
         ],
         coach:{
             name: String,
-            id: String,
+            id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
             external_ids:{
                 zerozero: Number
             }

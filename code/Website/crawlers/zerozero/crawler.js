@@ -5,6 +5,8 @@ const proxyHandler = require('./proxy_handler');
 const request = require('request');
 const format = require("string-template");
 
+const footballTeam = require("../../models/football_team");
+
 // CRAWLER RELATED
 const baseUris = require('./base_uris');
 
@@ -56,17 +58,9 @@ const competitionCrawler = require('./functions/football_competition');
 logger.info("Testing the editions...");
 
 zerozero.queue({
-    uri:format(baseUris.TEAM_INFO, { team_id: 9 }),
+    uri:format(baseUris.COMPETITION_EDITION, { edition_id: 98399 }),
     callback: proxyHandler.crawl,
-    successCallback: footballTeamCrawler.updateTeamInfo,
+    successCallback: competitionCrawler.updateCompetitionInfo,
     proxyFailCallback: zerozero.proxyFailCallback,
-    zerozeroId: 9
-});
-
-zerozero.queue({
-    uri:format(baseUris.COMPETITION_EDITION_MATCHES, { edition_id: 109369 }),
-    callback: proxyHandler.crawl,
-    successCallback: competitionCrawler.updateCompetitionMatches,
-    proxyFailCallback: zerozero.proxyFailCallback,
-    zerozeroId: 109369
+    zerozeroId: 98399
 });

@@ -9,15 +9,20 @@ var FootballTeamSchema = new Schema({
     current_season: {
         season_id: String,
         name: String,
-        stats: [{
-            competition_name: String,
-            competition_avatar: String,
-            games: Number,
-            classification: String,
-            wins: Number,
-            losses: Number,
-            draws: Number,
-        }]
+        standings : [
+            {
+                id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
+                name: String,
+                avatar: String,
+                position: Number,
+                matches: {type: Number, default: 0},
+                wins: {type: Number, default: 0},
+                draws: {type: Number, default: 0},
+                losses: {type: Number, default: 0},
+                goals: {type: Number, default: 0},
+                goals_taken: {type: Number, default: 0}
+            }
+        ]
     },
     tryouts: [{
         address: String,
@@ -48,15 +53,17 @@ var FootballTeamSchema = new Schema({
         other_sports: [String]
     },
     recommendations: {
-        list: [Number],
-            top_5: [
+        list: [
+            {type: Schema.Types.ObjectId, ref: 'football_recommendations'}
+        ],
+        top_5: [
             {
                 author: {
                     name: String,
-                    id: Number,
+                    info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                     avatar: String,
                     team: {
-                        id: String,
+                        id: {type: Schema.Types.ObjectId, ref: 'football_team'},
                         acronym: String,
                         avatar: String,
                         name: String,
@@ -65,27 +72,6 @@ var FootballTeamSchema = new Schema({
                 text: String,
             }
         ],
-    },
-    roster: {
-        players: [{
-            user_id: String,
-            name: String,
-            avatar: String,
-            age: Number,
-            Number: Number,
-            positions: [String],
-            nationality: String,
-            residence: String
-        }],
-        staff: [{
-            user_id: String,
-            name: String,
-            avatar: String,
-            age: Number,
-            position: String,
-            nationality: String,
-            residence: String
-        }]
     },
     external_ids: {
         zerozero: {type: Number, required: true, unique: true, index: true},
