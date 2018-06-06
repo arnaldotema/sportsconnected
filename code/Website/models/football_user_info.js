@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var FootballUserInfoSchema = new Schema({
     user_id: {type: Schema.Types.ObjectId, ref: 'football_user'},
+    type: {type: Number, required: true, index: true},
     personal_info: {
         name: String,
         avatar: {
@@ -57,7 +58,7 @@ var FootballUserInfoSchema = new Schema({
                     name: String,
                     id: {type: Schema.Types.ObjectId, ref: 'football_team'}
                 }],
-                player: [{
+                user: [{
                     name: String,
                     id: {type: Schema.Types.ObjectId, ref: 'football_user_info'}
                 }],
@@ -77,17 +78,16 @@ var FootballUserInfoSchema = new Schema({
             {
                 author: {
                     name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'football_user_info', required: true},
+                    id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                     avatar: String,
                     team: {
-                        id: String,
+                        id: {type: Schema.Types.ObjectId, ref: 'football_team'},
                         acronym: String,
                         avatar: String,
                         name: String,
                     },
                 },
-                text: String,
-
+                text: String
             }
         ],
     },
