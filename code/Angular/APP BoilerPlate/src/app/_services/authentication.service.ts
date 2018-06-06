@@ -10,6 +10,7 @@ export class AuthenticationService {
   public token: string;
   public admin: boolean;
   public testing: boolean = true;
+  private logged: boolean = true;
 
   constructor(private http: HttpClient) {
     // set token if saved in local storage
@@ -66,6 +67,11 @@ export class AuthenticationService {
     // clear token remove user from local storage to log user out
     this.token = null;
     this.admin = null;
+    this.logged = false;
     localStorage.removeItem('currentUser');
+  }
+
+  isLogged(): boolean {
+    return this.logged;
   }
 }
