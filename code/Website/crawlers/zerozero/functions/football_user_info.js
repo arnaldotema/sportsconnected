@@ -24,8 +24,6 @@ const updateUserInfo = function (err, res, done){
         }
     };
 
-    const test = res.$("#page_header .logo img")[0];
-
     const avatar_link = res.$("#page_header .logo img")[0].attribs["data-cfsrc"];
     user_info.personal_info.avatar = "https://www.zerozero.pt" + avatar_link;
 
@@ -85,7 +83,9 @@ const updateUserInfo = function (err, res, done){
     logger.info("User Info:")
     logger.info(user_info);
 
-    footballUserInfo.update({"external_ids.zerozero": res.options.zerozeroId}, user_info, { upsert:true, setDefaultsOnInsert: true }, function (err, info) {
+    const query = {"external_ids.zerozero": res.options.zerozeroId};
+
+    footballUserInfo.update(query, user_info, { upsert:true, setDefaultsOnInsert: true, new: true }, function (err, info) {
         if (err) {
             logger.error(err);
             done();
