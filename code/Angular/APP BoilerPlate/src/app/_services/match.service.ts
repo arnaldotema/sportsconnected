@@ -40,7 +40,10 @@ export class MatchService {
           id: '1',
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
-          avatar: '/assets/scorer'
+          user_name: 'Pedro Alves',
+          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_positions: ['Médio Ofensivo'],
+          avatar: '/assets/scorer.png'
         }],
         main_lineup: [
           {
@@ -212,36 +215,6 @@ export class MatchService {
         ],
         reserves: [
           {
-            name: 'Romário Andrade',
-            id: '4',
-            external_ids: {
-              zerozero: 1
-            },
-            number: 0, positions: ['Médio Centro'],
-            goals: [],
-            assists: [],
-            yellow_cards: ['85'],
-            red_cards: [],
-            minutes_played: 12,
-            go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
-          },
-          {
-            name: 'Lima Pereira',
-            id: '4',
-            external_ids: {
-              zerozero: 1
-            },
-            number: 0, positions: ['Médio Centro'],
-            goals: [],
-            assists: [],
-            yellow_cards: [],
-            red_cards: [],
-            minutes_played: 12,
-            go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
-          },
-          {
             name: 'Lima Pereira',
             id: '4',
             external_ids: {
@@ -332,12 +305,7 @@ export class MatchService {
         name: 'U. Madeira',
         avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
         goals: ['11'],
-        achievements: [{
-          id: '2',
-          name: '10 jogos consecutivos sem sofrer golo.',
-          user_id: '1',
-          avatar: '/assets/goal-keeper.png'
-        }],
+        achievements: [],
         main_lineup: [
           {
             name: 'José Chastre',
