@@ -5,6 +5,7 @@ const baseUris = require('../base_uris');
 var format = require("string-template");
 const footballTeam = require('../../../models/football_team');
 const footballMatchCrawler = require('../functions/football_match');
+const footballCompetition = require('../../../models/football_competition');
 const footballUserInfoCrawler = require('../functions/football_user_info');
 
 const updateTeamInfo = function (err, res, done){
@@ -49,35 +50,62 @@ const updateTeamInfo = function (err, res, done){
 
             res.options.teamId = result._doc._id;
 
+            if(res.options.competition){
+
+                //Add competition to team
+
+                let query = {
+                    "external_ids.zerozero": res.options.zerozeroId,
+                    "current_season.standings.id": { $ne: res.options.competition._id }
+                };
+
+                let update = {
+                    $addToSet: { "current_season.standings": {
+                            id: res.options.competition._id,
+                            name: res.options.competition.name,
+                            avatar: res.options.competition.avatar,
+                        }
+                    }
+                };
+
+                footballTeam.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true },  function (err, result) {
+                    if (err) {
+                        logger.error("Error when adding competition to team:", err);
+                    }
+                    else {
+                        logger.info("Successfully added competition " + res.options.competition.name + "to team " + result._doc.name);
+                    }
+                });
+
+                //Add team to competition
+
+                query = {
+                    "_id": res.options.competition._id,
+                    "current_season.standings.id": { $ne: result._doc._id }
+                };
+
+                update = {
+                    $addToSet: { "current_season.standings": {
+                            id: result._doc._id,
+                            name: result._doc.name,
+                            avatar: result._doc.avatar,
+                        }
+                    }
+                }
+
+                footballCompetition.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true }, function (err, result) {
+                    if (err) {
+                        logger.error("Error when adding team to competition:", err);
+                    }
+                    else {
+                        logger.info("Successfully added team " + result._doc.name + " to competition " + res.options.competition.name);
+                    }
+                });
+            }
+
             processAllTeamPlayers(err, res, done);
         }
     });
-
-    if(res.options.competition){
-
-        const query = {
-            "external_ids.zerozero": res.options.zerozeroId,
-            "current_season.standings.id": { $ne: res.options.competition._id }
-        };
-
-        var update = {
-            $addToSet: { "current_season.standings": {
-                    id: res.options.competition._id,
-                    name: res.options.competition.name,
-                    avatar: res.options.competition.avatar,
-                }
-            }
-        }
-
-        footballTeam.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true }, function (err, result) {
-            if (err) {
-                logger.error("Team was already at competition");
-            }
-            else {
-                logger.info("Successfully updated team competition");
-            }
-        });
-    }
 };
 
 

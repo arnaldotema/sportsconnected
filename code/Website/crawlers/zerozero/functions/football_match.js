@@ -64,85 +64,60 @@ function processTeams(match, res){
         res.$(".info .away .team a").attr("href").match(/equipa\.php\?id=\d+/g)[0].split("=")[1] :
         0;
 
-    footballTeam.findOneAndUpdate(
-        {
-            "external_ids.zerozero": homeZeroZeroId,
-            "current_season.standings.id": res.options.competitionId
-        },
-        {
-            $set: {
-                "current_season.standings.$.name": match.competition.name,
-                "current_season.standings.$.avatar": match.competition.avatar,
-                "current_season.standings.$.position": res.options.homePosition,
+    footballTeam.bulkWrite(
+        [
+            {
+                updateOne: {
+                    filter: {
+                        "external_ids.zerozero": homeZeroZeroId,
+                        "current_season.standings.id": res.options.competitionId
+                    },
+                    update: {
+                        $set: {
+                            "current_season.standings.$.position": res.options.homePosition,
+                        },
+                        $inc : {
+                            "current_season.standings.$.matches" : 1,
+                            "current_season.standings.$.wins" : home_goals > away_goals ? 1 : 0,
+                            "current_season.standings.$.draws" : home_goals == away_goals ? 1 : 0,
+                            "current_season.standings.$.losses" : home_goals < away_goals ? 1 : 0,
+                            "current_season.standings.$.goals" : home_goals,
+                            "current_season.standings.$.goals_taken" : away_goals
+                        }
+                    }
+                }
             },
-            $inc : {
-                "current_season.standings.$.matches" : 1,
-                "current_season.standings.$.wins" : home_goals > away_goals ? 1 : 0,
-                "current_season.standings.$.draws" : home_goals == away_goals ? 1 : 0,
-                "current_season.standings.$.losses" : home_goals < away_goals ? 1 : 0,
-                "current_season.standings.$.goals" : home_goals,
-                "current_season.standings.$.goals_taken" : away_goals
+            {
+                updateOne: {
+                    filter: {
+                        "external_ids.zerozero": awayZeroZeroId,
+                        "current_season.standings.id": res.options.competitionId
+                    },
+                    update: {
+                        $set: {
+                            "current_season.standings.$.position": res.options.awayPosition,
+                        },
+                        $inc : {
+                            "current_season.standings.$.matches" : 1,
+                            "current_season.standings.$.wins" : away_goals > home_goals ? 1 : 0,
+                            "current_season.standings.$.draws" : away_goals == home_goals ? 1 : 0,
+                            "current_season.standings.$.losses" : away_goals < home_goals ? 1 : 0,
+                            "current_season.standings.$.goals" : away_goals,
+                            "current_season.standings.$.goals_taken" : home_goals
+                        }
+                    }
+                }
             }
-        },
+        ],
         {},
         function (err, result) {
             if (err) {
                 logger.error(err);
             }
             else {
-                logger.info("Successfully updated team game");
+                logger.info("Successfully updated team game", result);
             }
-        });
-
-    // footballTeam.bulkWrite(
-    //     [
-    //         {
-    //             updateOne: {
-    //                 filter: {
-    //                     //"external_ids.zerozero": homeZeroZeroId,
-    //                     "current_season.standings.id": res.options.competitionId
-    //                 },
-    //                 update: {
-    //                     "current_season.standings.$.name": match.competition.name,
-    //                     "current_season.standings.$.avatar": match.competition.avatar,
-    //                     "current_season.standings.$.position": res.options.homePosition,
-    //                     $inc : {
-    //                         "current_season.standings.$.matches" : 1,
-    //                         "current_season.standings.$.wins" : home_goals > away_goals ? 1 : 0,
-    //                         "current_season.standings.$.draws" : home_goals == away_goals ? 1 : 0,
-    //                         "current_season.standings.$.losses" : home_goals < away_goals ? 1 : 0,
-    //                         "current_season.standings.$.goals" : home_goals,
-    //                         "current_season.standings.$.goals_taken" : away_goals
-    //                     }
-    //                 }
-    //             }
-    //         },
-    //         {
-    //             updateOne: {
-    //                 filter: {
-    //                     //"external_ids.zerozero": awayZeroZeroId,
-    //                     "current_season.standings.id": res.options.competitionId
-    //                 },
-    //                 update: {
-    //                     "current_season.standings.$.name": match.competition.name,
-    //                     "current_season.standings.$.avatar": match.competition.avatar,
-    //                     "current_season.standings.$.position": res.options.awayPosition,
-    //                     $inc : {
-    //                         "current_season.standings.$.matches" : 1,
-    //                         "current_season.standings.$.wins" : away_goals > home_goals ? 1 : 0,
-    //                         "current_season.standings.$.draws" : away_goals == home_goals ? 1 : 0,
-    //                         "current_season.standings.$.losses" : away_goals < home_goals ? 1 : 0,
-    //                         "current_season.standings.$.goals" : away_goals,
-    //                         "current_season.standings.$.goals_taken" : home_goals
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     ],
-    //     { upsert:true, setDefaultsOnInsert: true, new: true },
-    //     function (err, result) {
-    //         console.log(result);
-    // });
+    });
 }
 
 function processCompetition(match, res){
