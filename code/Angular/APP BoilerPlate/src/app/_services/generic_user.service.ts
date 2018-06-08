@@ -4,13 +4,11 @@ import {of} from 'rxjs/observable/of';
 import {AuthenticationService} from './authentication.service';
 import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
-import {catchError, retry} from 'rxjs/operators';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
-import {Recommendation} from '../_models/recommendation';
 import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
 
 @Injectable()
-export class Generic_UserService {
+export class GenericUserService {
 
   mockUserInfo: UserInfoViewModel[] = [{
     user_id: 1,
@@ -383,16 +381,7 @@ export class Generic_UserService {
     };
   }
 
-  getUserInfo(id: string): Observable<UserInfoViewModel> {
-    return of(this.mockUserInfo[id]);
-  };
-
-  createRecommendation(id: string, recommendation: Recommendation): Observable<Recommendation> {
-    this.mockUserInfo[id].recommendations.top_5.push(recommendation);
-    return of(recommendation);
-  };
-
-  searchUser(id: string, name: string): Observable<Search_entity_viewmodel[]> {
+  searchUser(id: string, name: string, type: string): Observable<Search_entity_viewmodel[]> {
 
     let search_obj = [
       {
@@ -429,10 +418,66 @@ export class Generic_UserService {
         id: '5',
         type: 'player',
         avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F3129895%2Fimage_59de1731ae51b.jpg&w=400&h=400&t=square&q=40',
+      },
+      {
+        name: 'Seixal FC',
+        team: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        team: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        team: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      {
+        name: 'Seixal FC',
+        team: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        team: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        team: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      {
+        name: 'Seixal FC',
+        team: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        team: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
       }
     ];
 
-    return of(search_obj.filter(user => user.name.includes(name)));
+    return of(search_obj.filter(item => item.name.includes(name) && (type == ''  || item.type == type)));
   }
 
   private handleError(error: HttpErrorResponse) {
