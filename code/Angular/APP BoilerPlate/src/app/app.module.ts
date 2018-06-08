@@ -11,7 +11,7 @@ import { ScrollToModule } from 'ng2-scroll-to-el';
 import { AuthGuard } from './_guards/auth.guard';
 import { AdminGuard} from './_guards/admin.guard';
 import { AuthenticationService} from './_services/authentication.service';
-import { Generic_UserService } from "./_services/generic_user.service";
+import { GenericUserService } from "./_services/generic_user.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -144,7 +144,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AuthGuard,
     AdminGuard,
     AuthenticationService,
-    Generic_UserService,
+    GenericUserService,
     {
       provide: DROPZONE_CONFIG,
       useValue: DEFAULT_DROPZONE_CONFIG
