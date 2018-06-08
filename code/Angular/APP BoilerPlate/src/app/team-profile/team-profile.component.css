@@ -223,7 +223,7 @@ img {
   color: #57585A;
   padding: 4px 3px;
   vertical-align: middle;
-  border: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .meta .sc-stats-table tr > td figure ~ .player-stats-text {

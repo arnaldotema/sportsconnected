@@ -1,4 +1,5 @@
 import {Recommendation} from './recommendation';
+import {Achievement} from './achievement';
 
 export class TeamViewModel {
   acronym: string;
@@ -119,4 +120,6 @@ export class TeamViewModel {
       }],
     }
   }];
+  achievements: Achievement[];
+
 }
