@@ -1,3 +1,5 @@
+import {Achievement} from './achievement';
+
 export class UserInfoViewModel {
   user_id: number;
   personal_info: {
@@ -68,17 +70,14 @@ export class UserInfoViewModel {
         }],
       }
     }];
-  skill_set: [
-    {
+  skill_set: [{
       name: string,
       avatar: string,
-      endorsements: number,
-    }
-    ];
+      endorsements: number[],
+    }];
   recommendations: {
     list: number[],
-    top_5: [
-      {
+    top_5: [{
         author: {
           name: string,
           id: number,
@@ -91,9 +90,9 @@ export class UserInfoViewModel {
           },
         },
         text: string,
-      }
-      ],
+      }],
   };
+  achievements: Achievement[];
   created_at: string;
   updated_at: string;
 }
