@@ -10,7 +10,7 @@ import {Recommendation} from '../_models/recommendation';
 import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
 
 @Injectable()
-export class Generic_UserService {
+export class GenericUserService {
 
   mockUserInfo: UserInfoViewModel[] = [{
     user_id: 1,
