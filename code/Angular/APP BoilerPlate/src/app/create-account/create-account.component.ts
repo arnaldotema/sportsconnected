@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TeamService} from '../_services/team.service';
 import {UserInfoService} from '../_services/user_info.service';
 import {GenericUserService} from '../_services/generic_user.service';
@@ -13,33 +13,57 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 export class CreateAccountComponent implements OnInit {
 
   teamService: TeamService;
+  chosenPlayer;
+  chosenLeague;
+  chosenTeam;
   genericUserService: GenericUserService;
   userInfoService: UserInfoService;
   teams: Search_entity_viewmodel[];
-  team: TeamViewModel;
+  leagues;
+  players: Search_entity_viewmodel[];
   user;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
-    this.genericUserService.searchUser('','','team')
+    this.leagues = [
+      {
+        id: '2',
+        name: 'Liga Portuguesa'
+      },
+      {
+        id: '3',
+        name: 'II Liga'
+      },
+      {
+        id: '2',
+        name: 'AF Lisboa 1ª Divisão Série 1 2017/18'
+      },
+    ];
+  }
+
+  loadTeam() {
+    // Todo: Get Team based on chosenLeague
+    this.genericUserService.searchUser('', '', 'team')
       .subscribe(teams => this.teams = teams);
   }
 
-  getPlayer(id: string){
-    this.userInfoService.getUserInfo(id)
-      .subscribe(user => this.user = user);
+  loadPlayers() {
+    // Todo: Get Players based on chosenTeam
+    this.genericUserService.searchUser('', '', 'player')
+      .subscribe(players => this.players = players);
   }
 
-  getTeam (id: string){
-    this.teamService.getTeam(id)
-      .subscribe(team => this.team = team);
+  getTeam() {
+    this.genericUserService.searchUser('', '', 'team')
+      .subscribe(teams => this.teams = teams);
   }
 
-  createPlayer (){
+  createPlayer() {
 
   }
 
