@@ -22,7 +22,9 @@ var FootballTeamSchema = new Schema({
                 goals: {type: Number, default: 0},
                 goals_taken: {type: Number, default: 0}
             }
-        ]
+        ],
+        players: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
+        staff: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}]
     },
     tryouts: [{
         address: String,
