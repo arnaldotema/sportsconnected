@@ -392,9 +392,9 @@ export class Generic_UserService {
     return of(recommendation);
   };
 
-  searchUser(id: string, name: string): Observable<Search_entity_viewmodel[]> {
+  searchUser(id: string, name: string, type: string): Observable<Search_entity_viewmodel[]> {
 
-    let search_obj = [{
+    let search_obj_user = [{
       name: 'Diogo Pires',
       id: '1',
       type: 'player',
@@ -426,7 +426,99 @@ export class Generic_UserService {
       }
     ];
 
-    return of(search_obj);
+    let search_obj_team = [{
+      name: 'Seixal FC',
+      id: '1',
+      type: 'team',
+      avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+    },
+      {
+        name: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      {
+        name: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      {
+        name: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      {
+        name: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      {
+        name: 'Seixal FC',
+        id: '1',
+        type: 'team',
+        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+      },
+      {
+        name: 'SL Benfica',
+        id: '2',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      {
+        name: 'FC Porto',
+        id: '3',
+        type: 'team',
+        avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      }
+    ];
+
+    return of(type == 'team' ? search_obj_team: search_obj_user);
   }
 
   private handleError(error: HttpErrorResponse) {
