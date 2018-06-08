@@ -400,35 +400,35 @@ export class Generic_UserService {
         team: 'Seixal FC',
         id: '1',
         type: 'player',
-        avatar: 'https://www.thoughtco.com/best-soccer-players-in-the-world-3557613'
+        avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F125944%2Fimage_5975f423b7033.jpg&w=400&h=400&t=square&q=40'
       },
       {
         name: 'Arnaldo Tema',
         team: 'Seixal FC',
         id: '2',
         type: 'player',
-        avatar: 'https://specials-images.forbesimg.com/imageserve/517595882/640x434.jpg?fit=scale&background=000000',
+        avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F2302574%2F1520172295_0.jpg&w=400&h=400&t=square&q=40',
       },
       {
         name: 'Arnaldo Trindade',
         team: 'Renegados FC',
         id: '3',
         type: 'player',
-        avatar: 'http://www.colombia.co/en/wp-content/uploads/sites/2/2017/07/Faustino_Asprilla_-_Parma_AC_1992-93.jpg',
+        avatar: 'https://www.rochdaleafc.co.uk/api/image/cropandgreyscale/d5a90991-e926-4846-811f-6869cca31725/?preset=square&greyscale=false',
       },
       {
         name: 'Arnaldo da Trindade Tema',
         team: 'Irmandade FC',
         id: '4',
         type: 'player',
-        avatar: 'https://sites.duke.edu/wcwp/files/2016/02/sergio-kun-aguero-most-overrated-soccer-player-bulge-images-2014.jpg',
+        avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F850305%2F1433704548_9318.jpg&w=800&h=800&t=square&q=25',
       },
       {
         name: 'Diogo César',
         team: 'Irmandade FC',
         id: '5',
         type: 'player',
-        avatar: 'http://www.trbimg.com/img-5a5fc426/turbine/hc-sp-all-courant-girls-soccer-player-20180109',
+        avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F3129895%2Fimage_59de1731ae51b.jpg&w=400&h=400&t=square&q=40',
       }
     ];
 
