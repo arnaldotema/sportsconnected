@@ -1,0 +1,21 @@
+<nav>
+  <div class="nav-wrapper sc-background app-nav sc-navbar">
+    <img src="/assets/SP_Logo_White.png" class="brand-logo app-logo"/>
+    <app-login *ngIf="!isAuthenticated(); then search_bar"></app-login>
+    <div #search_bar  *ngIf="isAuthenticated()" class="header-search__input-container">
+      <input class="header-search__input" (keyup)="searchFor($event.target.value)" placeholder="Pesquisar">
+      <mat-icon matSuffix>search</mat-icon>
+      <div *ngIf="searchResults.length > 0" class="header-search__item-list-container">
+        <mat-list>
+          <mat-list-item class="header-search__item" *ngFor="let user of searchResults">
+            <img [src]="user.avatar">
+            <h4 mat-line>{{user.name}}</h4>
+            <p mat-line> {{user.team}} </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="player-header-placeholder"></div>
