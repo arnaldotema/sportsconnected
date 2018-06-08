@@ -9,6 +9,16 @@
         <button mat-raised-button class="btn-follow">Seguir</button>
         <button mat-raised-button (click)="openCreateDialog($event)" class="btn-recommend">Recomendar</button>
       </div>
+      <div class="achievements" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
+        <div *ngFor="let achievement of viewModel.achievements">
+          <table class="roster-table">
+            <caption class="centered caption col-md-12">
+              <img src="{{achievement.avatar}}" class="col-md-4">
+              <div class="col-md-7">{{achievement.name}}</div>
+            </caption>
+          </table>
+        </div>
+      </div>
     </div>
     <div class="row-center">
       <table class="sc-stats-table">
@@ -43,10 +53,12 @@
         </tbody>
       </table>
       <div class="profile-buttons">
-        <button mat-fab class="button-image" title="Força" style=" background-image :url('/assets/strong.png');"></button>
-        <button mat-fab class="button-image" title="Drible" style=" background-image :url('/assets/dribble.png');"></button>
-        <button mat-fab class="button-image" title="Rapidez" style=" background-image :url('/assets/fast.png');"></button>
-        <button mat-fab class="button-image" title="Goleador" style=" background-image :url('/assets/scorer.png');"></button>
+        <button mat-fab class="button-image" (click)="voteSkill($event)" title="Força" style=" background-image :url('/assets/strong.png');"></button>
+        <button mat-fab class="button-image" (click)="voteSkill($event)" title="Drible" style=" background-image :url('/assets/dribble.png');"></button>
+        <button mat-fab class="button-image" (click)="voteSkill($event)" title="Rapidez" style=" background-image :url('/assets/fast.png');"></button>
+        <button mat-fab class="button-image" (click)="voteSkill($event)" title="Goleador" style=" background-image :url('/assets/scorer.png');"></button>
+        <button mat-fab class="button-image" (click)="voteSkill($event)"title="Passador" style=" background-image :url('/assets/passer.png');"></button>
+        <button mat-fab class="button-image" (click)="voteSkill($event)" title="Muralha defensiva" style=" background-image :url('/assets/defender.png');"></button>
       </div>
       <div class="skills">
         <div class="data">

@@ -58,32 +58,70 @@
       </div>
     </div>
 
-    <div class="col-md-4 home-row">
+    <div class="col-md-5 home-row">
       <div class="roster">
         <table class="roster-table">
-          <thead class="table_header">
-          <tr>
-            <th class="centered">#</th>
-            <th>Jogador</th>
-            <th class="centered country-col">País</th>
-          </tr>
-          </thead>
+          <caption class="centered caption">
+            11 Inicial
+          </caption>
           <tbody>
           <tr *ngFor="let player of viewModel.home_team.main_lineup" class="tr-odd">
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td title="" class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{player.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
-                  <td class="hauptlink">
+                  <td class="table-link">
+                    <a
+                      href="/user-info/{{player.id}}">
+                      {{player.name}}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{player.positions[0]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
+                   alt="{{player.nationality}}" class="list_flag">
+            </td>
+            <td class="centered">G: {{player.goals[0]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roster">
+        <table class="roster-table">
+          <caption class="centered caption">
+            Suplentes
+          </caption>
+          <tbody>
+          <tr *ngFor="let player of viewModel.home_team.reserves" class="tr-odd">
+            <td title="{{player.positions[0]}}" class="centered number_move first-td">
+              <div class="list_number">{{player.number}}</div>
+            </td>
+            <td title="" class="roster-name-td">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{player.id}}">
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="table-link">
                     <a
                       href="/user-info/{{player.id}}">
                       {{player.name}}
@@ -119,17 +157,17 @@
             <td title="{{viewModel.home_team.coach.name}}" class="centered first-td">
               <div class="list_role">Treinador principal</div>
             </td>
-            <td class="posrela">
+            <td class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{viewModel.home_team.coach.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.home_team.coach.avatar + ')'}"></div>
                     </a>
                   </td>
-                  <td class="hauptlink">
+                  <td class="table-link">
                     <a
                       href="/user-info/{{viewModel.home_team.coach.id}}">
                       {{viewModel.home_team.coach.name}}
@@ -140,41 +178,103 @@
               </table>
             </td>
             <td class="centered">
-              <img src="/assets/flags/pt.svg" title="{{staff.nationality}}"
-                   alt="{{staff.nationality}}" class="list_flag">
+              <img src="/assets/flags/pt.svg" title="{{viewModel.home_team.coach.nationality}}"
+                   alt="{{viewModel.home_team.coach.nationality}}" class="list_flag">
             </td>
           </tr>
           </tbody>
         </table>
       </div>
+
+      <div class="achievements" *ngIf="viewModel.home_team.achievements && viewModel.home_team.achievements.length > 0">
+        <div *ngFor="let achievement of viewModel.home_team.achievements">
+          <table class="roster-table">
+            <caption class="centered table-link caption col-md-12">
+              <a href="/user-info/{{achievement.user_id}}">
+                <div mat-card-avatar class="col-md-4 sc-mat-card-avatar big-profile-small-image"
+                     [ngStyle]="{'background-image':  'url(' + achievement.user_avatar + ')'}"></div>
+              </a>
+              <div class="col-md-8">
+                <a class="achievement-player" href="/user-info/{{achievement.user_id}}">
+                  {{achievement.user_name}}
+                </a>
+                <br>
+                {{achievement.user_positions[0]}}
+              </div>
+            </caption>
+            <caption class="centered caption col-md-12">
+              <img src="{{achievement.avatar}}" class="col-md-4">
+              <div class="col-md-7">{{achievement.name}}</div>
+            </caption>
+          </table>
+        </div>
+      </div>
     </div>
 
-    <div class=" col-md-4 away-row">
+    <div class=" col-md-5 away-row">
       <div class="roster">
         <table class="roster-table">
-          <thead class="table_header">
-          <tr>
-            <th class="centered">#</th>
-            <th>Jogador</th>
-            <th class="centered country-col">País</th>
-          </tr>
-          </thead>
+          <caption class="centered caption">
+            11 Inicial
+          </caption>
           <tbody>
           <tr *ngFor="let player of viewModel.away_team.main_lineup" class="tr-odd">
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td title="" class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{player.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
-                  <td class="hauptlink">
+                  <td class="table-link">
+                    <a
+                      href="/user-info/{{player.id}}">
+                      {{player.name}}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{player.positions[0]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="centered">
+              <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
+                   alt="{{player.nationality}}" class="list_flag">
+            </td>
+            <td class="centered">G: {{player.goals[0]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roster">
+        <table class="roster-table">
+          <caption class="centered caption">
+            Suplentes
+          </caption>
+          <tbody>
+          <tr *ngFor="let player of viewModel.away_team.reserves" class="tr-odd">
+            <td title="{{player.positions[0]}}" class="centered number_move first-td">
+              <div class="list_number">{{player.number}}</div>
+            </td>
+            <td title="" class="roster-name-td">
+              <table class="inline-table" title="">
+                <tbody>
+                <tr>
+                  <td rowspan="2" class="">
+                    <a href="/user-info/{{player.id}}">
+                      <div class="sc-mat-card-avatar profile-small-image"
+                           [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
+                    </a>
+                  </td>
+                  <td class="table-link">
                     <a
                       href="/user-info/{{player.id}}">
                       {{player.name}}
@@ -210,17 +310,17 @@
             <td title="{{viewModel.away_team.coach.name}}" class="centered first-td">
               <div class="list_role">Treinador principal</div>
             </td>
-            <td class="posrela">
+            <td class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{viewModel.away_team.coach.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.away_team.coach.avatar + ')'}"></div>
                     </a>
                   </td>
-                  <td class="hauptlink">
+                  <td class="table-link">
                     <a
                       href="/user-info/{{viewModel.away_team.coach.id}}">
                       {{viewModel.away_team.coach.name}}
@@ -238,6 +338,32 @@
           </tbody>
         </table>
       </div>
+
+      <div class="achievements" *ngIf="viewModel.away_team.achievements && viewModel.away_team.achievements.length > 0">
+        <div *ngFor="let achievement of viewModel.away_team.achievements">
+          <table class="roster-table">
+            <tr>
+              <td rowspan="2" class="table-link">
+                <a href="/user-info/{{achievement.user_id}}">
+                  <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
+                       [ngStyle]="{'background-image':  'url(' + achievement.user_avatar + ')'}"></div>
+                  {{achievement.user_name}}
+                </a>
+              </td>
+            </tr>
+            <caption class="centered caption">
+              <img src="{{achievement.avatar}}" class="col-md-4">
+              <div class="col-md-7">{{achievement.name}}</div>
+            </caption>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="referee">
+      <strong>Árbitro</strong>
+      <br>
+      {{viewModel.referee}}
     </div>
   </div>
 </div>
