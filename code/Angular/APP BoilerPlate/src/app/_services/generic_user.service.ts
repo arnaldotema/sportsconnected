@@ -254,27 +254,27 @@ export class Generic_UserService {
       {
         name: 'Goleador',
         avatar: '/assets/scorer.png',
-        endorsements: 33,
+        endorsements: [33, 2, 2, 2, 2, 2, 2],
       },
       {
         name: 'Drible',
         avatar: '/assets/dribble.png',
-        endorsements: 20,
+        endorsements: [33, 1, 2, 3, 4, 5, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
       },
       {
         name: 'Rapidez',
         avatar: '/assets/fast.png',
-        endorsements: 12,
+        endorsements: [33, 1, 2, 3, 4, 5, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
       },
       {
         name: 'Passe',
         avatar: '/assets/passer.png',
-        endorsements: 55,
+        endorsements: [33, 1, 2, 3, 4, 5, 3, 2, 22, 2, 2],
       },
       {
         name: 'Força',
         avatar: '/assets/strong.png',
-        endorsements: 70,
+        endorsements: [33, 1, 2, 3, 4, 5, 3, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 44, , 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 42, 2, 2, 2, 2, 2, 2, 2, 2],
       },
     ],
     recommendations: {
@@ -352,6 +352,24 @@ export class Generic_UserService {
         }
       ],
     },
+    achievements: [{
+      id: '1',
+      name: '5 jogos consecutivos a marcar golo.',
+      user_id: '1',
+      user_name: 'Pedro Alves',
+      user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+      user_positions: ['Médio Ofensivo'],
+      avatar: '/assets/scorer.png'
+    },
+      {
+        id: '1',
+        name: '3 hat-tricks numa época.',
+        user_id: '1',
+        user_name: 'Pedro Alves',
+        user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+        user_positions: ['Médio Ofensivo'],
+        avatar: '/assets/scorer.png'
+      }],
     created_at: '8-05-2018',
     updated_at: '9-05-2018'
   }];
