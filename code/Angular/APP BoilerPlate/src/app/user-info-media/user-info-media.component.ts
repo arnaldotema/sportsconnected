@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
-import {User_infoService} from '../_services/user_info.service';
+import {UserInfoService} from '../_services/user_info.service';
 import { Chart } from 'chart.js';
 import {Sort} from '@angular/material';
 
@@ -13,14 +13,14 @@ import {Sort} from '@angular/material';
 export class User_infoMediaComponent implements OnInit{
 
   viewModel: UserInfoViewModel;
-  userInfoService : User_infoService;
+  userInfoService : UserInfoService;
   sortedData;
   constructor() {
   }
 
   ngOnInit() {
 
-    this.userInfoService = new User_infoService();
+    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => {
         this.sortedData = userInfo.media.slice();

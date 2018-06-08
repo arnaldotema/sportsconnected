@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Generic_UserService} from './_services/generic_user.service';
+import { GenericUserService} from './_services/generic_user.service';
 import {AuthenticationService} from './_services/authentication.service';
 import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
 
@@ -10,7 +10,7 @@ import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
 })
 export class AppComponent {
 
-  genericService : Generic_UserService;
+  genericService : GenericUserService;
   userList;
   http;
   private authenticationService: AuthenticationService;
