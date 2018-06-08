@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {User_infoService} from '../_services/user_info.service';
-import { Chart } from 'chart.js';
+import {Chart} from 'chart.js';
 import {forEach} from '@angular/router/src/utils/collection';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
@@ -11,9 +11,9 @@ import {RecommendationModalComponent} from '../_modals/recommendation-modal/reco
   templateUrl: './user-info-profile.component.html',
   styleUrls: ['./user-info-profile.component.css']
 })
-export class UserInfoProfileComponent implements OnInit,AfterViewInit{
+export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   viewModel: UserInfoViewModel;
-  userInfoService : User_infoService;
+  userInfoService: User_infoService;
   mockAuthor;
   chart;
   colours;
@@ -21,7 +21,9 @@ export class UserInfoProfileComponent implements OnInit,AfterViewInit{
   options;
   labels;
   skill_values;
-  constructor(/*private userInfoService: User_infoService, */public dialog: MatDialog) { }
+
+  constructor(/*private userInfoService: User_infoService, */public dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.chart = [];
@@ -50,13 +52,13 @@ export class UserInfoProfileComponent implements OnInit,AfterViewInit{
         avatar: '/assets/SP_Logo_Black.png',
         name: 'Sports Connected Team',
       }
-    }
+    };
   }
 
-  ngAfterViewInit(){
-    this.viewModel.skill_set.forEach((skill)=>{
+  ngAfterViewInit() {
+    this.viewModel.skill_set.forEach((skill) => {
       this.labels.push(skill.name);
-      this.skill_values.push(skill.endorsements);
+      this.skill_values.push(skill.endorsements.length);
     });
 
     this.data = {
@@ -72,7 +74,7 @@ export class UserInfoProfileComponent implements OnInit,AfterViewInit{
       scales: {
         xAxes: [{
           gridLines: {
-            display:false
+            display: false
           }
         }],
         yAxes: [{
@@ -80,7 +82,7 @@ export class UserInfoProfileComponent implements OnInit,AfterViewInit{
             mirror: true
           },
           gridLines: {
-            display:false
+            display: false
           }
         }]
       },
@@ -105,17 +107,61 @@ export class UserInfoProfileComponent implements OnInit,AfterViewInit{
       });
 
     dialogRef.afterClosed().subscribe(result => {
-      debugger;
       if (result !== undefined) {
-        this.userInfoService.createRecommendation('0',result).subscribe()
+        this.userInfoService.createRecommendation('0', result).subscribe();
         {
-          debugger;
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.recommendations.top_5.push(result);
           //this.recommendationDataSource.filter = this.filterString;
         }
       }
     });
+  }
+
+
+  voteSkill(event): void {
+    let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
+    this.userInfoService.voteForSkill(skillName, this.mockAuthor.id).subscribe();
+    {
+      this.labels.forEach(label => {
+        if (label == skillName)
+          ++this.skill_values[1];
+      });
+
+
+      this.data = {
+        labels: this.labels, //['Dribble', 'Golos', 'Rapidez', 'Livres', 'Passe'],
+        datasets: [{
+          data: this.skill_values, //[19, 18, 14, 15, 23]
+        }]
+      };
+      this.options = {
+        legend: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: false
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              mirror: true
+            },
+            gridLines: {
+              display: false
+            }
+          }]
+        },
+        colours: this.colours
+      };
+      this.chart = new Chart('graph', {
+        type: 'horizontalBar',
+        data: this.data,
+        options: this.options
+      });
+    }
   }
 
 }

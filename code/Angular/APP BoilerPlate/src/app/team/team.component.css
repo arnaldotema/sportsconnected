@@ -219,7 +219,7 @@ img {
   color: #57585A;
   padding: 4px 3px;
   vertical-align: middle;
-  border: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
@@ -277,7 +277,7 @@ table tbody tr td {
   padding: 4px 3px;
   vertical-align: middle;
   border: none;
-  border: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 table .centered {
@@ -328,10 +328,6 @@ table .rechts {
 
 table .table-link {
   font-weight: bold;
-}
-
-.posrela {
-  position: relative !important;
 }
 
 .card-sc {
