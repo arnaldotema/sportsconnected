@@ -1,6 +1,6 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
-import {User_infoService} from '../_services/user_info.service';
+import {UserInfoService} from '../_services/user_info.service';
 import {Chart} from 'chart.js';
 import {forEach} from '@angular/router/src/utils/collection';
 import {MatDialog} from '@angular/material';
@@ -13,7 +13,7 @@ import {RecommendationModalComponent} from '../_modals/recommendation-modal/reco
 })
 export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   viewModel: UserInfoViewModel;
-  userInfoService: User_infoService;
+  userInfoService: UserInfoService;
   mockAuthor;
   chart;
   colours;
@@ -22,7 +22,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   labels;
   skill_values;
 
-  constructor(/*private userInfoService: User_infoService, */public dialog: MatDialog) {
+  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -38,7 +38,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
       highlightStroke: 'rgba(4, 132, 71, 0.8)',
     }];
 
-    this.userInfoService = new User_infoService();
+    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
 
