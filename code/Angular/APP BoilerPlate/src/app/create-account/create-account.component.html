@@ -1,17 +1,48 @@
 <div class="row-center-stats centered">
-  <h1>Em que competição jogas? </h1>
-  <mat-form-field>
-    <mat-select [(value)]="selectedLeague" placeholder="Campeonato">
-      <mat-option *ngFor="let team of teams" [value]="team">{{team.name}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div>
+    <h1>Escolhe a tua competição</h1>
+    <mat-form-field>
+      <mat-select [(ngModel)]="chosenLeague" (change)="loadTeam()" placeholder="Campeonato">
+        <mat-option *ngFor="let league of leagues" [value]="league">{{league.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-  <h1>Escolhe a tua equipa</h1>
-  <mat-form-field>
-    <mat-select [(value)]="selectedTeam" placeholder="Equipa">
-      <mat-option *ngFor="let team of teams" [value]="team">
-        {{team.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div *ngIf="teams != null">
+    <h1>Escolhe a tua equipa</h1>
+    <mat-form-field>
+      <mat-select [(ngModel)]="chosenTeam" (change)="loadPlayers()" placeholder="Equipa">
+        <mat-option *ngFor="let team of teams" [value]="team">
+          {{team.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div *ngIf="players != null">
+    <h1>Escolhe-te a ti!</h1>
+    <mat-form-field>
+      <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+        <mat-option *ngFor="let player of players" [value]="player">
+          {{player.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="chosenPlayer != null">
+    <button mat-raised-button class="btn-follow">Iniciar</button>
+
+    <section class="form-body">
+    <span class="agreement">
+      Não te encontras na lista?
+      <br>
+      Certifica-te que escolheste o campeonato e equipa correta.
+      <br>
+      Se ainda assim não estás na lista,
+      <a href="#">cria um novo jogador.</a>
+    </span>
+    </section>
+  </div>
 </div>

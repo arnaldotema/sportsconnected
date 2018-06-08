@@ -72,6 +72,6 @@ export class AuthenticationService {
   }
 
   isLogged(): boolean {
-    return this.logged;
+    return true;
   }
 }
