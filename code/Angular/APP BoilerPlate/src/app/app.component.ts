@@ -1,7 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Generic_UserService} from './_services/generic_user.service';
-import {AuthenticationService} from './_services/authentication.service';
-import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,26 +7,9 @@ import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
 })
 export class AppComponent {
 
-  genericService : Generic_UserService;
-  userList;
-  http;
-  private authenticationService: AuthenticationService;
-  constructor() {
+  constructor(
+  ){
     //this.authenticationService = new AuthenticationService(this.http);
-  }
-
-  searchFor(searchString) {
-    // Return if inputed less than 3 characteres
-    if (searchString.length < 3)
-      return;
-
-    // else call your api to search for
-    this.genericService.searchUser('',searchString)
-      .subscribe(list => this.userList = list);
-  }
-
-  isAuthenticated(){
-    return true;//this.authenticationService.isLogged();
   }
 
 }

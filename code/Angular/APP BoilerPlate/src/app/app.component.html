@@ -1,18 +1,2 @@
-<!-- Navbar -->
-<nav>
-  <div class="nav-wrapper sc-background app-nav sc-navbar">
-    <div class="col-md-2">
-      <img src="/assets/SP_Logo_White.png" class="brand-logo app-logo"/>
-    </div>
-
-    <app-login *ngIf="!isAuthenticated()"></app-login>
-    <mat-form-field  *ngIf="isAuthenticated()" color="primary" class="col-md-4 navbar-search">
-      <input class="default-input navbar-search" matInput (keyup)="searchFor($event.target.value)" placeholder="Pesquisar">
-      <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
-    </mat-form-field>
-  </div>
-</nav>
-<div class="player-header-placeholder"></div>
-<!-- End of Navbar -->
-
+<app-header></app-header>
 <router-outlet></router-outlet>
