@@ -145,7 +145,7 @@
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td class="posrela">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
@@ -155,7 +155,7 @@
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
-                  <td class="hauptlink">
+                  <td class="table-link">
                     <a
                       href="/user-info/{{player.user_id}}">
                       {{player.name}}
@@ -197,13 +197,13 @@
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
-                  <td rowspan="2" class="">
+                  <td rowspan="2">
                     <a href="/user-info/{{staff.user_id}}">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + staff.avatar + ')'}"></div>
                     </a>
                   </td>
-                  <td class="hauptlink">
+                  <td class="table-link">
                     <a
                       href="/user-info/{{staff.user_id}}">
                       {{staff.name}}

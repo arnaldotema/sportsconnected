@@ -231,6 +231,15 @@ body {
 }
 
 .roster {
+
+}
+
+.away-row .roster{
+  float: right;
+}
+
+.home-row .roster{
+  float: left;
 }
 
 .auto-height td {
@@ -277,10 +286,30 @@ body {
   max-width: 60px !important;
 }
 
+.roster-table .profile-small-image {
+  background-size: cover;
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.big-profile-small-image {
+  background-size: cover;
+  height: 60px !important;
+  width: 60px !important;
+}
+
 .profile-small-image {
   background-size: cover;
-  height: 60px;
-  width: 60px;
+  height: 60px !important;
+  width: 60px !important;
+}
+
+
+.sc-mat-card-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .country-col {
@@ -309,7 +338,7 @@ body {
   color: #57585A;
   padding: 4px 3px;
   vertical-align: middle;
-  border: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .player .meta .sc-stats-table tr > td figure ~ .player-stats-text {
@@ -384,7 +413,7 @@ body {
   vertical-align: bottom;
 }
 
-.roster table .hauptlink {
+.roster table .table-link {
   font-weight: bold !important;
 }
 
@@ -439,13 +468,23 @@ body {
 .personal-table tbody {
 }
 
-.personal-table .caption {
+table .caption {
   font-weight: bold;
   background-color: white;
-  border: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
   color: #032f4f;
   padding: 10px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 0px 0px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.achievement-player{
+  font-size: larger;
+}
+
+table .caption img{
+  height: 60px;
+  width: auto;
+  margin: 0 5px 0 0;
 }
 
 .first-td {
@@ -575,4 +614,105 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .small-border{
   border: 2px solid transparent;
+}
+
+table tbody tr td {
+  color: #57585A;
+  padding: 4px 3px;
+  vertical-align: middle;
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+
+table .centered {
+  text-align: center;
+}
+
+table .number_move {
+  width: 60px;
+}
+
+table .role_move {
+  width: 50%;
+}
+
+.centered {
+  text-align: center;
+}
+
+table .list_number {
+  width: 24px;
+  height: 24px;
+  padding-top: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+table .list_role {
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
+
+table .centered {
+  text-align: center;
+}
+
+table .number_move {
+  width: 60px;
+}
+
+table .role_move {
+  width: 50%;
+}
+
+.centered {
+  text-align: center;
+}
+
+table .list_number {
+  width: 24px;
+  height: 24px;
+  padding-top: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+table .list_role {
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
+
+table tbody .rechts {
+  padding-right: 10px;
+}
+
+table .rechts {
+  text-align: right;
+}
+
+table .table-link {
+  font-weight: bold;
+}
+
+.table-order-center {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 15px auto 15px auto;
+}
+
+.roster-name-td {
+  width: 160px;
+  overflow: hidden;
+  text-align: center;
 }
