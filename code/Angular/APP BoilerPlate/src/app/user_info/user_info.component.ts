@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
-import {User_infoService} from '../_services/user_info.service';
+import {UserInfoService} from '../_services/user_info.service';
 
 @Component({
   selector: 'app-user-info',
@@ -10,11 +10,11 @@ import {User_infoService} from '../_services/user_info.service';
 export class User_infoComponent implements OnInit{
 
   viewModel: UserInfoViewModel;
-  userInfoService : User_infoService;
+  userInfoService : UserInfoService;
   constructor() { }
 
   ngOnInit() {
-    this.userInfoService = new User_infoService();
+    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
   }

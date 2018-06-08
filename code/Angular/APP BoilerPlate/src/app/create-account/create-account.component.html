@@ -1,12 +1,17 @@
-<mat-form-field>
-  <mat-select [(value)]="selectedTeam" placeholder="Equipa">
-    <mat-option>Nenhuma</mat-option>
-    <mat-option *ngFor="let team of teams" [value]="team">{{team.full_name}}</mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-select placeholder="Jogador">
-    <mat-option>Nenhum</mat-option>
-    <mat-option *ngFor="let player of team.roster" [value]="player">{{player.name}}</mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="row-center-stats centered">
+  <h1>Em que competição jogas? </h1>
+  <mat-form-field>
+    <mat-select [(value)]="selectedLeague" placeholder="Campeonato">
+      <mat-option *ngFor="let team of teams" [value]="team">{{team.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <h1>Escolhe a tua equipa</h1>
+  <mat-form-field>
+    <mat-select [(value)]="selectedTeam" placeholder="Equipa">
+      <mat-option *ngFor="let team of teams" [value]="team">
+        {{team.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

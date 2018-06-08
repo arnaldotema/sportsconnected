@@ -15,7 +15,7 @@ export class CreateAccountComponent implements OnInit {
   teamService: TeamService;
   genericUserService: GenericUserService;
   userInfoService: UserInfoService;
-  teams: Search_entity_viewmodel;
+  teams: Search_entity_viewmodel[];
   team: TeamViewModel;
   user;
 
