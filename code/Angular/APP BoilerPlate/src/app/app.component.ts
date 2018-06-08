@@ -24,7 +24,7 @@ export class AppComponent {
       return;
 
     // else call your api to search for
-    this.genericService.searchUser('',searchString)
+    this.genericService.searchUser('',searchString, '')
       .subscribe(list => this.userList = list);
   }
 
