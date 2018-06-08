@@ -8,6 +8,7 @@ import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import {Recommendation} from '../_models/recommendation';
+import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
 
 @Injectable()
 export class TeamService {
@@ -753,7 +754,7 @@ export class TeamService {
   }
 
   getTeam(id: string): Observable<TeamViewModel> {
-    return of(this.mockTeams[id]);
+    return of(this.mockTeams[0]); //use id
   };
 
   createRecommendation(id: string, recommendation: Recommendation): Observable<Recommendation> {

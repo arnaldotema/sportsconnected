@@ -5,6 +5,7 @@ import { User_infoComponent } from "./user_info/user_info.component";
 import {TeamComponent} from './team/team.component';
 import {HomeComponent} from './home/home.component';
 import {MatchComponent} from './match/match.component';
+import {CreateAccountComponent} from './create-account/create-account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'team', component: TeamComponent },
   { path: 'home', component: HomeComponent },
   { path: 'match', component: MatchComponent },
+  { path: 'create-account', component: CreateAccountComponent},
 ];
 
 @NgModule({

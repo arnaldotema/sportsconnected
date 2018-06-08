@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Generic_UserService} from '../_services/generic_user.service';
+import { GenericUserService} from '../_services/generic_user.service';
 import {AuthenticationService} from '../_services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import {Search_entity_viewmodel} from "../_models/search_entity_viewmodel";
@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private genericService : Generic_UserService
+    private genericService : GenericUserService
   )
   {
 
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchFor(searchString) {
-    this.genericService.searchUser('',searchString)
+    this.genericService.searchUser('',searchString,'')
       .subscribe(list => this.searchResults = list);
   }
 

@@ -14,7 +14,7 @@ export class MatchComponent implements OnInit, AfterViewInit {
   viewModel: MatchViewModel;
   matchService : MatchService;
 
-  constructor(/*private userInfoService: User_infoService, */public dialog: MatDialog) {}
+  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {}
 
   ngOnInit() {
     this.matchService = new MatchService();
