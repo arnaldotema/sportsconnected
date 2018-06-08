@@ -9,7 +9,7 @@ import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {Recommendation} from '../_models/recommendation';
 
 @Injectable()
-export class User_infoService {
+export class UserInfoService {
 
   mockUserInfo: UserInfoViewModel[] = [{
     user_id: 1,
