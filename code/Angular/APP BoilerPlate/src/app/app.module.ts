@@ -11,10 +11,13 @@ import { ScrollToModule } from 'ng2-scroll-to-el';
 import { AuthGuard } from './_guards/auth.guard';
 import { AdminGuard} from './_guards/admin.guard';
 import { AuthenticationService} from './_services/authentication.service';
+import { Generic_UserService } from "./_services/generic_user.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
+
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 
 import {
   MatAutocompleteModule,
@@ -66,6 +69,7 @@ import { TeamStatsComponent } from './team-stats/team-stats.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { HeaderComponent } from './header/header.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -90,9 +94,11 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     TeamStatsComponent,
     HomeComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    HeaderComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ScrollToModule.forRoot(),
@@ -134,9 +140,11 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     DropzoneModule
   ],
   providers: [
+    HttpClient,
     AuthGuard,
     AdminGuard,
     AuthenticationService,
+    Generic_UserService,
     {
       provide: DROPZONE_CONFIG,
       useValue: DEFAULT_DROPZONE_CONFIG
