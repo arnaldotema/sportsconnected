@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 home-row">
+    <div class="col-md-5 home-row">
       <div class="roster">
         <table class="roster-table">
           <caption class="centered caption">
@@ -69,13 +69,13 @@
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td title="" class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{player.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
@@ -111,13 +111,13 @@
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td title="" class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{player.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
@@ -157,13 +157,13 @@
             <td title="{{viewModel.home_team.coach.name}}" class="centered first-td">
               <div class="list_role">Treinador principal</div>
             </td>
-            <td class="posrela">
+            <td class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{viewModel.home_team.coach.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.home_team.coach.avatar + ')'}"></div>
                     </a>
                   </td>
@@ -191,7 +191,7 @@
           <table class="roster-table">
             <caption class="centered table-link caption col-md-12">
               <a href="/user-info/{{achievement.user_id}}">
-                <div mat-card-avatar class="col-md-4 profile-small-image"
+                <div mat-card-avatar class="col-md-4 sc-mat-card-avatar big-profile-small-image"
                      [ngStyle]="{'background-image':  'url(' + achievement.user_avatar + ')'}"></div>
               </a>
               <div class="col-md-8">
@@ -211,7 +211,7 @@
       </div>
     </div>
 
-    <div class=" col-md-4 away-row">
+    <div class=" col-md-5 away-row">
       <div class="roster">
         <table class="roster-table">
           <caption class="centered caption">
@@ -222,13 +222,13 @@
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td title="" class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{player.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
@@ -264,13 +264,13 @@
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td title="" class="posrela">
+            <td title="" class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{player.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
@@ -310,13 +310,13 @@
             <td title="{{viewModel.away_team.coach.name}}" class="centered first-td">
               <div class="list_role">Treinador principal</div>
             </td>
-            <td class="posrela">
+            <td class="roster-name-td">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
                     <a href="/user-info/{{viewModel.away_team.coach.id}}">
-                      <div mat-card-avatar class="profile-small-image"
+                      <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.away_team.coach.avatar + ')'}"></div>
                     </a>
                   </td>
@@ -345,7 +345,7 @@
             <tr>
               <td rowspan="2" class="table-link">
                 <a href="/user-info/{{achievement.user_id}}">
-                  <div mat-card-avatar class="profile-small-image"
+                  <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                        [ngStyle]="{'background-image':  'url(' + achievement.user_avatar + ')'}"></div>
                   {{achievement.user_name}}
                 </a>

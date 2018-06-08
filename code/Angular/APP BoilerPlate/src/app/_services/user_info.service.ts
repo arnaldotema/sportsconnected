@@ -43,7 +43,7 @@ export class User_infoService {
       stats: [
         {
           competition_name: 'Liga Portugal',
-          competition_avatar: "/assets/Liga_Portugal_logo.png",
+          competition_avatar: '/assets/Liga_Portugal_logo.png',
           games: 15,
           wins: 14,
           losses: 0,
@@ -56,7 +56,7 @@ export class User_infoService {
         },
         {
           competition_name: 'Taça de Portugal',
-          competition_avatar : '/assets/Tacadaligalogo.png',
+          competition_avatar: '/assets/Tacadaligalogo.png',
           games: 4,
           wins: 1,
           losses: 1,
@@ -253,27 +253,27 @@ export class User_infoService {
       {
         name: 'Goleador',
         avatar: '/assets/scorer.png',
-        endorsements: 33,
+        endorsements: [33,2,2,2,2,2,2],
       },
       {
         name: 'Drible',
         avatar: '/assets/dribble.png',
-        endorsements: 20,
+        endorsements: [33,1,2,3,4,5,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1],
       },
       {
         name: 'Rapidez',
         avatar: '/assets/fast.png',
-        endorsements: 12,
+        endorsements: [33,1,2,3,4,5,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
       },
       {
         name: 'Passe',
         avatar: '/assets/passer.png',
-        endorsements: 55,
+        endorsements: [33,1,2,3,4,5,3,2,22,2,2],
       },
       {
         name: 'Força',
         avatar: '/assets/strong.png',
-        endorsements: 70,
+        endorsements: [33,1,2,3,4,5,3,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,44,4,4,4,4,4,4,4,4,4,4,4,4,4,42,2,2,2,2,2,2,2,2],
       },
     ],
     recommendations: {
@@ -351,6 +351,24 @@ export class User_infoService {
         }
       ],
     },
+    achievements: [{
+      id: '1',
+      name: '5 jogos consecutivos a marcar golo.',
+      user_id: '1',
+      user_name: 'Pedro Alves',
+      user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+      user_positions: ['Médio Ofensivo'],
+      avatar: '/assets/scorer.png'
+    },
+      {
+        id: '1',
+        name: '3 hat-tricks numa época.',
+        user_id: '1',
+        user_name: 'Pedro Alves',
+        user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+        user_positions: ['Médio Ofensivo'],
+        avatar: '/assets/scorer.png'
+      }],
     created_at: '8-05-2018',
     updated_at: '9-05-2018'
   }];
@@ -373,6 +391,17 @@ export class User_infoService {
     this.mockUserInfo[id].recommendations.top_5.push(recommendation);
     return of(recommendation);
   };
+
+  voteForSkill (skillName: string, authorId: string): Observable<boolean>{
+    let done = false;
+    this.mockUserInfo[0].skill_set.forEach(skill =>{
+      if(skill.name == skillName){
+        skill.endorsements.push(/*authorId*/1); // Todo convert endorsments to string[]
+        done = true;
+      }
+    });
+    return of(done);
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
