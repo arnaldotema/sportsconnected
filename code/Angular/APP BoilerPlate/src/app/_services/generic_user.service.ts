@@ -394,39 +394,45 @@ export class Generic_UserService {
 
   searchUser(id: string, name: string): Observable<Search_entity_viewmodel[]> {
 
-    let search_obj = [{
-      name: 'Diogo Pires',
-      id: '1',
-      type: 'player',
-      avatar: 'https://www.thoughtco.com/best-soccer-players-in-the-world-3557613',
-    },
+    let search_obj = [
+      {
+        name: 'Diogo Pires',
+        team: 'Seixal FC',
+        id: '1',
+        type: 'player',
+        avatar: 'https://www.thoughtco.com/best-soccer-players-in-the-world-3557613'
+      },
       {
         name: 'Arnaldo Tema',
+        team: 'Seixal FC',
         id: '2',
         type: 'player',
         avatar: 'https://specials-images.forbesimg.com/imageserve/517595882/640x434.jpg?fit=scale&background=000000',
       },
       {
         name: 'Arnaldo Trindade',
+        team: 'Renegados FC',
         id: '3',
         type: 'player',
         avatar: 'http://www.colombia.co/en/wp-content/uploads/sites/2/2017/07/Faustino_Asprilla_-_Parma_AC_1992-93.jpg',
       },
       {
         name: 'Arnaldo da Trindade Tema',
+        team: 'Irmandade FC',
         id: '4',
         type: 'player',
         avatar: 'https://sites.duke.edu/wcwp/files/2016/02/sergio-kun-aguero-most-overrated-soccer-player-bulge-images-2014.jpg',
       },
       {
         name: 'Diogo César',
+        team: 'Irmandade FC',
         id: '5',
         type: 'player',
         avatar: 'http://www.trbimg.com/img-5a5fc426/turbine/hc-sp-all-courant-girls-soccer-player-20180109',
       }
     ];
 
-    return of(search_obj);
+    return of(search_obj.filter(user => user.name.includes(name)));
   }
 
   private handleError(error: HttpErrorResponse) {
