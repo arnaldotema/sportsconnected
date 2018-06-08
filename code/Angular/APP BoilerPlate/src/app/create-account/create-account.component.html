@@ -2,7 +2,7 @@
   <div>
     <h1>Escolhe a tua competição</h1>
     <mat-form-field>
-      <mat-select [(ngModel)]="chosenLeague" (change)="loadTeam()" placeholder="Campeonato">
+      <mat-select [(ngModel)]="chosenLeague" (change)="loadTeam()" placeholder="Competição">
         <mat-option *ngFor="let league of leagues" [value]="league">{{league.name}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -32,13 +32,13 @@
   </div>
 
   <div *ngIf="chosenPlayer != null">
-    <button mat-raised-button class="btn-follow">Iniciar</button>
+    <button mat-raised-button class="btn-start">INICIAR</button>
 
     <section class="form-body">
     <span class="agreement">
       Não te encontras na lista?
       <br>
-      Certifica-te que escolheste o campeonato e equipa correta.
+      Certifica-te que escolheste a competição e equipa correta.
       <br>
       Se ainda assim não estás na lista,
       <a href="#">cria um novo jogador.</a>
