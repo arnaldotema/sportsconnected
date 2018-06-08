@@ -29,12 +29,12 @@ var FootballUserInfoSchema = new Schema({
             id: {type: Schema.Types.ObjectId, ref: 'football_team'},
             acronym: String,
             avatar: String,
-            name: String,
-            full_name: String
+            name: String
         },
         stats: {
             games: {type: Number, default: 0},
             goals: {type: Number, default: 0},
+            assists: {type: Number, default: 0},
             yellow_cards: {type: Number, default: 0},
             red_cards: {type: Number, default: 0},
             minutes_played: {type: Number, default: 0},
