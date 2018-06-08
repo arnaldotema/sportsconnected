@@ -270,6 +270,16 @@ body {
   margin-right: 5px;
 }
 
+.btn-start {
+  color: white !important;
+  background-color: #032f4f;
+  font-family: "Museo Sans", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 20px 5px !important;
+}
+
+
 .btn-recommend {
   background-color: white;
   color: black !important;
