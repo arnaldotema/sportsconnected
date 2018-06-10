@@ -5,7 +5,7 @@
     <div #search_bar  *ngIf="isAuthenticated()" class="sc-header-search__input-container">
       <input class="sc-header-search__input" (keyup)="searchFor($event.target.value)" placeholder="Pesquisar">
       <mat-icon matSuffix style="color:black">search</mat-icon>
-      <div *ngIf="searchResults.length > 0" class="sc-header-search__item-list-container">
+      <div *ngIf=" searchResults!= null && searchResults.length > 0" class="sc-header-search__item-list-container">
         <div class="sc-header-search__item-list">
           <div class="sc-header-search__item" *ngFor="let user of searchResults">
             <img class="sc-rounded-image" [src]="user.avatar">
