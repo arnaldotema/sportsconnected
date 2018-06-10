@@ -262,6 +262,7 @@ body {
 
 .sc-media {
   margin: 10px;
+  padding: 20px;
 }
 
 .recommendations {
@@ -275,11 +276,13 @@ body {
 .recommendations .header{
   color: white;
   margin: 20px 0;
+  display: -webkit-inline-box;
 }
 
 .recommendations .header .title{
-  margin: 5px 0;
+  margin: 5px auto 5px 0;
   padding: 0;
+  width: fit-content;
 }
 .btn-follow {
   color: white !important;
@@ -299,6 +302,7 @@ body {
   width: 100px;
   padding: 0 !important;
 }
+
 .btn-recommend {
   background-color: #032f4f;
   color: white !important;
@@ -306,13 +310,26 @@ body {
   font-weight: bold;
   font-size: 14px;
   padding: 0 10px !important;
-  width: 110px !important;
+  margin-right: 0;
+  margin-left: auto;
 }
+
+.btn-see-more {
+  color: white !important;
+  font-family: "Museo Sans", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0 10px !important;
+  margin-right: 0;
+  margin-left: auto;
+}
+
 
 
 .profile-buttons {
   margin: 10px auto;
-  width: fit-content;}
+  width: fit-content;
+}
 
 .roster-img {
   max-width: 60px !important;
@@ -358,11 +375,6 @@ body {
   margin: 10px auto 20px auto;
   background-color: transparent;
   height: 210px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-}
-
-.sc-stats-table {
-  margin-bottom: 20px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
@@ -490,7 +502,7 @@ body {
 }
 
 .personal-table {
-  margin: 10px auto;
+  float: none !important;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
@@ -498,7 +510,7 @@ body {
   padding: 10px !important;
 }
 
-.personal-table tbody {
+.-table tbody {
 }
 
 table .caption {

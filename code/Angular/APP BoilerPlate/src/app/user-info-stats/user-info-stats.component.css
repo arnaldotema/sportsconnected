@@ -49,16 +49,6 @@
   background: linear-gradient(to right,rgba(255,255,255,255) 0,rgba(255,255,255,255) 10%,rgba(46,47,50,0) 40%);
 }
 
-.player .meta .personal {
-  margin: 10px 10px 10px 10px;
-  float: right;
-  height: 210px;
-  width: 21%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
-}
-
-
 
 .player .meta .personal .rankings-container {
   background: white;
@@ -220,21 +210,6 @@ img {
   text-align: left;
   font-size: 12px;
   color: #929292;
-}
-
-
-.skills {
-  margin: 10px 10px 10px 10px;
-  float: left;
-  height: 200px;
-  width: 45%;
-}
-
-.skills .data {
-  padding: 0 1rem;
-  font-family:   sans-serif;
-  font-weight: 300;
-  font-size: .9375rem;
 }
 
 .card-sc {

@@ -99,4 +99,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
     });
   }
 
+  openRecomendationsDialog(): void {
+  }
+
 }
