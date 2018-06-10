@@ -5,8 +5,8 @@
     <th mat-sort-header="Gostos">Total</th>
   </tr>
 </table>
-
-<div class="row-center-matches">
+<!-- Hidden for deployment purposes -->
+<div class="row-center-matches" style="display: none">
   <div id="sc-scoreboard" class="team-stats-matches">
     <section>
       <a class="score-tile-wrapper" href="/match">
@@ -288,90 +288,6 @@
 </div>
 <div class="row-right-stats">
   <div class="stats">
-    <table class="sc-stats-table">
-      <tbody>
-      <tr class="table_header">
-        <th class="th-td-first">Liga</th>
-        <th>Jogos</th>
-        <th>Class.</th>
-        <th>Vitórias</th>
-        <th>Derrotas</th>
-        <th class="th-td-last">Empates</th>
-      </tr>
-      <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
-          class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
-        <td>
-          <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
-          <div class="player-stats-text">
-          </div>
-        </td>
-        <td>{{stat.games}}</td>
-        <td>
-          <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
-          <div *ngIf="stat.classification == null">-</div>
-        </td>
-        <td>{{stat.wins}}</td>
-        <td>{{stat.losses}}</td>
-        <td>{{stat.draws}}</td>
-      </tr>
-      </tbody>
-    </table>
-    <table class="sc-stats-table">
-      <tbody>
-      <tr class="table_header">
-        <th class="th-td-first">Liga</th>
-        <th>Jogos</th>
-        <th>Class.</th>
-        <th>Vitórias</th>
-        <th>Derrotas</th>
-        <th class="th-td-last">Empates</th>
-      </tr>
-      <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
-          class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
-        <td>
-          <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
-          <div class="player-stats-text">
-          </div>
-        </td>
-        <td>{{stat.games}}</td>
-        <td>
-          <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
-          <div *ngIf="stat.classification == null">-</div>
-        </td>
-        <td>{{stat.wins}}</td>
-        <td>{{stat.losses}}</td>
-        <td>{{stat.draws}}</td>
-      </tr>
-      </tbody>
-    </table>
-    <table class="sc-stats-table">
-      <tbody>
-      <tr class="table_header">
-        <th class="th-td-first">Liga</th>
-        <th>Jogos</th>
-        <th>Class.</th>
-        <th>Vitórias</th>
-        <th>Derrotas</th>
-        <th class="th-td-last">Empates</th>
-      </tr>
-      <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
-          class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
-        <td>
-          <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
-          <div class="player-stats-text">
-          </div>
-        </td>
-        <td>{{stat.games}}</td>
-        <td>
-          <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
-          <div *ngIf="stat.classification == null">-</div>
-        </td>
-        <td>{{stat.wins}}</td>
-        <td>{{stat.losses}}</td>
-        <td>{{stat.draws}}</td>
-      </tr>
-      </tbody>
-    </table>
     <table class="sc-stats-table">
       <tbody>
       <tr class="table_header">
