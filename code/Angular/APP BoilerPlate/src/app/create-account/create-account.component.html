@@ -32,7 +32,7 @@
   </div>
 
   <div *ngIf="chosenPlayer != null">
-    <button mat-raised-button class="btn-start">INICIAR</button>
+    <button mat-raised-button (click)="loadPlayer()" class="btn-start">INICIAR</button>
 
     <section class="form-body">
     <span class="agreement">

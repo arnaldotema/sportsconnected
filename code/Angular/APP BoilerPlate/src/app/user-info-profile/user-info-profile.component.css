@@ -199,24 +199,6 @@ img {
   margin-bottom: 5px;
 }
 
-.row-center {
-  width: 50%;
-  margin: 30px auto;
-  float: left;
-}
-
-.row-left {
-  width: 25%;
-  float: left;
-  margin: 30px auto;
-}
-
-.row-right {
-  width: 20%;
-  float: left;
-  margin: 30px auto;
-}
-
 .example-card {
   max-width: 400px;
 }

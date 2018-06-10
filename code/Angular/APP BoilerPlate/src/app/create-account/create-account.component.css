@@ -19,3 +19,22 @@
 .agreement{
   margin: 30px auto;
 }
+
+.search_item{
+  color: black;
+  display: flex;
+  height: 60px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px;
+  border-color: darkgray;
+  width: 95%;
+}
+
+.search_item img{
+  height: 50px;
+}
+
+.search_item .search-info{
+  margin-left: 10px;
+}
