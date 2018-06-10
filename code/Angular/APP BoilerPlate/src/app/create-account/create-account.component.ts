@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {TeamService} from '../_services/team.service';
 import {UserInfoService} from '../_services/user_info.service';
 import {GenericUserService} from '../_services/generic_user.service';
@@ -23,7 +24,7 @@ export class CreateAccountComponent implements OnInit {
   players: Search_entity_viewmodel[];
   user;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -56,6 +57,10 @@ export class CreateAccountComponent implements OnInit {
     // Todo: Get Players based on chosenTeam
     this.genericUserService.searchUser('', '', 'player')
       .subscribe(players => this.players = players);
+  }
+
+  loadPlayer(){
+    this.router.navigate(['/userInfo']);
   }
 
   getTeam() {
