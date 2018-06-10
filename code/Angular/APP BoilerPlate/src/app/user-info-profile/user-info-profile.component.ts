@@ -17,7 +17,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   userInfoService: UserInfoService;
   mockAuthor;
   chart;
-  colours;
+  colors;
   data;
   options;
   labels;
@@ -32,11 +32,13 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.options = {};
     this.labels = [];
     this.skill_values = [];
-    this.colours = [{
-      fillColor: 'rgba(47, 132, 71, 0.8)',
-      strokeColor: 'rgba(47, 000, 71, 0.8)',
-      highlightFill: 'rgba(47, 132, 0, 0.8)',
-      highlightStroke: 'rgba(4, 132, 71, 0.8)',
+    this.colors = [{
+      backgroundColor: 'rgba(77,83,96,0.2)',
+      pointBackgroundColor: 'rgba(77,83,96,1)',
+      pointHoverBackgroundColor: 'rgba(77,83,96,1)',
+      borderColor: 'rgba(77,83,96,1)',
+      pointBorderColor: '#fff',
+      pointHoverBorderColor: 'rgba(77,83,96,0.8)'
     }];
 
     this.userInfoService = new UserInfoService();
@@ -72,6 +74,13 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
       }]
     };
     this.options = {
+      color: [
+        'red',    // color for data at index 0
+        'blue',   // color for data at index 1
+        'green',  // color for data at index 2
+        'black',  // color for data at index 3
+        //...
+      ],
       legend: {
         display: false
       },
@@ -89,13 +98,13 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
             display: false
           }
         }]
-      },
-      colours: this.colours
+      }
     };
     this.chart = new Chart('graph', {
       type: 'horizontalBar',
       data: this.data,
-      options: this.options
+      options: this.options,
+      colors: this.colors
     });
   }
 
@@ -157,8 +166,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
               display: false
             }
           }]
-        },
-        colours: this.colours
+        }
       };
       this.chart = new Chart('graph', {
         type: 'horizontalBar',

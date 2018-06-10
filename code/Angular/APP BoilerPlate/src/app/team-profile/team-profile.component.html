@@ -2,7 +2,7 @@
   <div class="row">
     <div class="row-left">
       <div class="team-image">
-        <img [src]="viewModel.avatar" class="old" alt="profile img"
+        <img [src]="viewModel.avatar" class="old" alt="profile image"
              title="profile" style="left: -241.5px;">
       </div>
       <div class="profile-buttons">
@@ -89,7 +89,7 @@
         </tbody>
       </table>
       <div class="sc-media">
-        <div class="col-12 column " *ngFor="let med of viewModel.media.slice(0,2)">
+        <div *ngFor="let med of viewModel.media.slice(0,2)">
           <div class="callout small articles-big">
             <div class="video">
               <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
@@ -111,8 +111,8 @@
       </div>
       <div class="recommendations">
         <div class="header">
-          <h3 class="col-md-9 title">Recomendações</h3>
-          <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar</button>
+          <h3 class="title">Recomendações</h3>
+          <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar {{viewModel.name}}</button>
         </div>
         <mat-card class="card-sc"
                   *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
@@ -129,6 +129,9 @@
             </p>
           </mat-card-content>
         </mat-card>
+        <div class="footer">
+          <button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais recomendações</button>
+        </div>
       </div>
     </div>
     <div class="row-right">
