@@ -7,7 +7,6 @@
       </div>
       <div class="profile-buttons">
         <button mat-raised-button class="btn-follow">Seguir</button>
-        <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar</button>
       </div>
       <div class="roster">
         <table class="tryout-table">
@@ -112,7 +111,8 @@
       </div>
       <div class="recommendations">
         <div class="header">
-          <h3>Recomendações</h3>
+          <h3 class="col-md-9 title">Recomendações</h3>
+          <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar</button>
         </div>
         <mat-card class="card-sc"
                   *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
