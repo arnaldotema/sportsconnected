@@ -10,7 +10,7 @@
 }
 
 .meta .player-image {
-  margin: 10px 10px 10px 10px;
+  margin: 10px 0;
   float: left;
   width: 29%;
   position: relative;
@@ -248,19 +248,8 @@ img {
   color: #929292;
 }
 
-.skills {
-  margin: 10px 10px 10px 10px;
-}
-
-.skills .data {
-  padding: 0 1rem;
-  font-family: sans-serif;
-  font-weight: 300;
-  font-size: .9375rem;
-}
-
 .row-center-team {
-  width: 45%;
+  width: 50%;
   float: left;
   margin: 30px auto;
 }
