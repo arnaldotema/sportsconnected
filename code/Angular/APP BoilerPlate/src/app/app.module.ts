@@ -70,6 +70,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HeaderComponent } from './header/header.component';
+import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -95,7 +96,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     HomeComponent,
     LoginComponent,
     CreateAccountComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditUserInfoComponent
   ],
   imports: [
     HttpClientModule,

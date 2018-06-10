@@ -188,25 +188,16 @@
 
       <div class="achievements" *ngIf="viewModel.home_team.achievements && viewModel.home_team.achievements.length > 0">
         <div *ngFor="let achievement of viewModel.home_team.achievements">
-          <table class="roster-table">
-            <caption class="centered table-link caption col-md-12">
-              <a href="/user-info/{{achievement.user_id}}">
-                <div mat-card-avatar class="col-md-4 sc-mat-card-avatar big-profile-small-image"
-                     [ngStyle]="{'background-image':  'url(' + achievement.user_avatar + ')'}"></div>
-              </a>
-              <div class="col-md-8">
-                <a class="achievement-player" href="/user-info/{{achievement.user_id}}">
-                  {{achievement.user_name}}
-                </a>
-                <br>
-                {{achievement.user_positions[0]}}
-              </div>
-            </caption>
-            <caption class="centered caption col-md-12">
-              <img src="{{achievement.avatar}}" class="col-md-4">
-              <div class="col-md-7">{{achievement.name}}</div>
-            </caption>
-          </table>
+          <div class="sc-achievement-accomplished">
+            <div class="sc-achievement-accomplished__logos">
+              <img class="sc-rounded-image" [src]="achievement.user_avatar">
+              <img [src]="achievement.avatar">
+            </div>
+            <div class="sc-achievement-accomplished__headings">
+              <h4>{{achievement.user_name}}</h4>
+              <p>{{achievement.name}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -341,21 +332,16 @@
 
       <div class="achievements" *ngIf="viewModel.away_team.achievements && viewModel.away_team.achievements.length > 0">
         <div *ngFor="let achievement of viewModel.away_team.achievements">
-          <table class="roster-table">
-            <tr>
-              <td rowspan="2" class="table-link">
-                <a href="/user-info/{{achievement.user_id}}">
-                  <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
-                       [ngStyle]="{'background-image':  'url(' + achievement.user_avatar + ')'}"></div>
-                  {{achievement.user_name}}
-                </a>
-              </td>
-            </tr>
-            <caption class="centered caption">
-              <img src="{{achievement.avatar}}" class="col-md-4">
-              <div class="col-md-7">{{achievement.name}}</div>
-            </caption>
-          </table>
+          <div class="row sc-achievement-accomplished">
+            <div class="col-md-5 sc-achievement-accomplished__logos">
+              <img class="sc-rounded-image" [src]="achievement.user_avatar">
+              <img [src]="achievement.avatar">
+            </div>
+            <div class="col-md-7 sc-achievement-accomplished__headings">
+              <h4>{{achievement.user_name}}</h4>
+              <p>{{achievement.name}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -750,7 +750,68 @@ table .table-link {
   text-align: center;
 }
 
-.row {
-  margin: 0 auto;
-  width: 1200px;
+/*
+achievement-accomplished
+
+componente que mostra quando um jogador alcança um objectivo.
+
+Possiveis usos: notifications, match, feed
+ */
+
+.sc-achievement-accomplished{
+  display: inline-flex;
+  align-items: center;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.sc-achievement-accomplished__logos{
+  width: 140px;
+  display: inline-block;
+  height: 60px;
+}
+
+.sc-achievement-accomplished__logos img{
+  width: 60px;
+  height: 60px;
+}
+
+.sc-achievement-accomplished__logos img:first-of-type{
+  margin-right: 10px;
+}
+
+.sc-achievement-accomplished__headings{
+  width: calc(100% - 140px);
+  display: inline-block;
+  border-left: 1px solid lightgray;
+  padding-left: 10px;
+}
+
+.sc-achievement-accomplished__headings h4{
+  margin: 0px;
+  color: #337ab7;
+}
+
+.sc-achievement-accomplished__headings h4:hover{
+  color: #23527c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sc-achievement-accomplished__headings p{
+  margin: 0px;
+}
+
+/*
+MISC
+
+coisas transversais a toda a plataforma.
+ */
+
+.sc-rounded-image{
+  object-fit: cover;
+  border-radius: 100%;
 }
