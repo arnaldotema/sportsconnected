@@ -1,0 +1,14 @@
+Notas importantes referentes ao projecto:
+
+CSS:
+
+As classes feitas por nós, terao o prefixo "sc", exemplo:
+"sc-avatar-image"
+
+Isto ajuda a diferenciar classes que foram feitas por nos do angular material
+
+Todos os estilos referentes a uma pagina ESPECIFICA, tem de ficar no seu ficheiro CSS
+correspondente (dentro da pasta do componente que estamos a trabalhar)
+
+Dentro do ficheiro CSS "Global", isolar os componentes CSS entre comentarios.
+

@@ -2,14 +2,14 @@
   <div class="nav-wrapper sc-background app-nav sc-navbar">
     <img src="/assets/SP_Logo_White.png" class="brand-logo app-logo"/>
     <app-login *ngIf="!isAuthenticated(); then search_bar"></app-login>
-    <div #search_bar  *ngIf="isAuthenticated()" class="header-search__input-container">
-      <input class="header-search__input" (keyup)="searchFor($event.target.value)" placeholder="Pesquisar">
+    <div #search_bar  *ngIf="isAuthenticated()" class="sc-header-search__input-container">
+      <input class="sc-header-search__input" (keyup)="searchFor($event.target.value)" placeholder="Pesquisar">
       <mat-icon matSuffix style="color:black">search</mat-icon>
-      <div *ngIf="searchResults.length > 0" class="header-search__item-list-container">
-        <div class="header-search__item-list">
-          <div class="header-search__item" *ngFor="let user of searchResults">
-            <img [src]="user.avatar">
-            <div class="search-info">
+      <div *ngIf="searchResults.length > 0" class="sc-header-search__item-list-container">
+        <div class="sc-header-search__item-list">
+          <div class="sc-header-search__item" *ngFor="let user of searchResults">
+            <img class="sc-rounded-image" [src]="user.avatar">
+            <div class="sc-search-info">
               <h4>{{user.name}}</h4>
               <p> {{user.team}} </p>
             </div>
