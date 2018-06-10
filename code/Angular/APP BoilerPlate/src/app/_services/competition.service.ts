@@ -27,6 +27,10 @@ export class PlayerService {
     return of(this.mockCompetition[id]);
   };
 
+  getAllCompetitonsHeaders(): Observable<CompetitionViewModel[]> {
+    return of(this.mockCompetition);
+  };
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
