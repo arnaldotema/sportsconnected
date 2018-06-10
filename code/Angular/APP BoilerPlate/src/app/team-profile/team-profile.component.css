@@ -249,7 +249,7 @@ img {
 }
 
 .skills {
-  margin: 10px 10px 10px 10px;
+  margin: 10px auto;
 }
 
 .skills .data {
@@ -260,7 +260,7 @@ img {
 }
 
 .row-center-team {
-  width: 45%;
+  width: 50%;
   float: left;
   margin: 30px auto;
 }
