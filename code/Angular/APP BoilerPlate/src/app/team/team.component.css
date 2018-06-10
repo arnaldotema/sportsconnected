@@ -261,17 +261,6 @@ img {
   margin: 30px auto;
 }
 
-.row-left {
-  width: 20%;
-  float: left;
-  margin: 30px auto;
-}
-
-.row-right {
-  width: 30%;
-  margin: 30px 10px 20px auto;
-}
-
 table tbody tr td {
   color: #57585A;
   padding: 4px 3px;

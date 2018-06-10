@@ -1,6 +1,7 @@
 .result-info{
   margin: 20px auto;
   display: table;
+  float: none;
 }
 
 .result-info .game-info{
