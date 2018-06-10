@@ -4,7 +4,7 @@
       <div class="row">
         <div class="player-info">
           <div class="team">
-            <a href="{{viewModel.current_season.team.id}}" title="{{viewModel.current_season.team.id}}">
+            <a href="/team" title="{{viewModel.current_season.team.id}}">
               <img [src]="viewModel.current_season.team.avatar" [title]="viewModel.current_season.team.name"
                    [alt]="viewModel.current_season.team.acronym">
             </a>
@@ -13,7 +13,7 @@
             {{viewModel.personal_info.name}}
           </h1>
           <div class="player-team">
-            <a href="{{viewModel.current_season.team.id}}" [title]="viewModel.current_season.team.name">
+            <a href="/team" [title]="viewModel.current_season.team.name">
               {{viewModel.current_season.team.name}}
             </a>
           </div>
