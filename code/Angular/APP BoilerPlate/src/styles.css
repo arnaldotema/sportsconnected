@@ -265,7 +265,7 @@ body {
 }
 
 .recommendations {
-  padding: 20px 30px;
+  padding: 10px 30px;
   display: inline-block;
   width: 100%;
   background-color: #7a8b98;
@@ -274,9 +274,13 @@ body {
 
 .recommendations .header{
   color: white;
-  margin: 10px;
+  margin: 20px 0;
 }
 
+.recommendations .header .title{
+  margin: 5px 0;
+  padding: 0;
+}
 .btn-follow {
   color: white !important;
   background-color: #032f4f;
@@ -296,13 +300,13 @@ body {
   padding: 0 !important;
 }
 .btn-recommend {
-  background-color: white;
-  color: black !important;
+  background-color: #032f4f;
+  color: white !important;
   font-family: "Museo Sans", sans-serif;
   font-weight: bold;
   font-size: 14px;
-  width: 100px;
-  padding: 0 !important;
+  padding: 0 10px !important;
+  width: 110px !important;
 }
 
 
