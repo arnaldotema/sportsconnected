@@ -110,7 +110,10 @@
           </div>
         </div>
       </div>
-      <div class="recommenations">
+      <div class="recommendations">
+        <div class="header">
+          <h3>Recomendações</h3>
+        </div>
         <mat-card class="card-sc"
                   *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
           <mat-card-header>
@@ -137,7 +140,6 @@
             <th>Jogador</th>
             <th class="centered">Idade</th>
             <th class="centered country-col">País</th>
-            <th class="centered">Golos</th>
           </tr>
           </thead>
           <tbody>
@@ -173,7 +175,6 @@
               <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
                    alt="{{player.nationality}}" class="list_flag">
             </td>
-            <td class="centered">{{player.stats.goals}}</td>
           </tr>
           </tbody>
         </table>

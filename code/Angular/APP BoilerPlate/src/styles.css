@@ -218,16 +218,23 @@ body {
 }
 
 .row-center {
-  width: 45%;
+  width: 50%;
   margin: 30px auto;
   float: left;
 }
 
-.row-right {
+.row-left {
   width: 25%;
-  float: right;
+  float: left;
   margin: 30px auto;
 }
+
+.row-right {
+  width: 20%;
+  float: left;
+  margin: 30px auto;
+}
+
 
 .roster {
 
@@ -257,39 +264,51 @@ body {
   margin: 10px;
 }
 
-.recommenations {
-  margin: 20px 5px;
+.recommendations {
+  padding: 20px 30px;
   display: inline-block;
   width: 100%;
+  background-color: #7a8b98;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.recommendations .header{
+  color: white;
+  margin: 10px;
 }
 
 .btn-follow {
   color: white !important;
   background-color: #032f4f;
   font-family: "Museo Sans", sans-serif;
+  width: 100px;
   margin-right: 5px;
 }
 
+
 .btn-start {
-  color: white !important;
   background-color: #032f4f;
+  color: white !important;
   font-family: "Museo Sans", sans-serif;
   font-weight: bold;
   font-size: 14px;
-  margin: 20px 5px !important;
+  width: 100px;
+  padding: 0 !important;
 }
-
-
 .btn-recommend {
   background-color: white;
   color: black !important;
   font-family: "Museo Sans", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  width: 100px;
+  padding: 0 !important;
 }
 
+
 .profile-buttons {
-  float: left;
-  margin: 10px 10px 20px 10%;
-}
+  margin: 10px auto;
+  width: fit-content;}
 
 .roster-img {
   max-width: 60px !important;
@@ -441,6 +460,7 @@ body {
 }
 
 .roster-table {
+  width: 300px;
   margin: 10px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
@@ -724,4 +744,9 @@ table .table-link {
   width: 160px;
   overflow: hidden;
   text-align: center;
+}
+
+.row {
+  margin: 0 auto;
+  width: 1200px;
 }

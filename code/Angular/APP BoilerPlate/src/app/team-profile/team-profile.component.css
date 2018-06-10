@@ -273,7 +273,8 @@ img {
 
 .row-right {
   width: 30%;
-  margin: 30px 10px 20px auto;
+  float: right;
+  margin: 30px auto;
 }
 
 .list_flag {

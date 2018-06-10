@@ -5,6 +5,7 @@ import {Chart} from 'chart.js';
 import {forEach} from '@angular/router/src/utils/collection';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-user-info-profile',
@@ -21,7 +22,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   options;
   labels;
   skill_values;
-
+  show = false;
   constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {
   }
 
@@ -53,6 +54,9 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         name: 'Sports Connected Team',
       }
     };
+
+
+
   }
 
   ngAfterViewInit() {
