@@ -265,7 +265,11 @@ body {
 }
 
 .recommendations {
-  padding: 10px 30px;
+  margin: 10px;
+}
+
+.recommendations .content {
+  padding: 10px 20px;
   display: inline-block;
   width: 100%;
   background-color: #7a8b98;
@@ -852,3 +856,6 @@ coisas transversais a toda a plataforma.
   width: auto;
 }
 
+.profile-team-info{
+  background-color: #7a8b98;
+}
