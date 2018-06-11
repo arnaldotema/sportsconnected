@@ -58,7 +58,7 @@
           </tbody>
         </table>
       </div>
-      <div class="profile-team-info">
+      <!-- <div class="profile-team-info">
         <div class="contacts">
           <div class="data">
             <div>
@@ -161,6 +161,129 @@
             </div>
           </div>
         </div>
+      </div> -->
+      <div class="personal">
+        <table class="col-md-12 personal-table">
+          <tbody class="auto-height">
+          <tr>
+            <td class="first-td-padding" title="Presidente">
+              <strong>Presidente</strong>
+            </td>
+            <td class="first-td-padding">
+              {{viewModel.personal_info.president}}
+            </td>
+          </tr>
+          <tr>
+            <td title="V. Presidente">
+              <strong>V. Presidente</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.vice_president}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Diret. Desportivo">
+              <strong>Diret. Desportivo</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.sports_director}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Nº equipas">
+              <strong>Nº equipas</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.number_of_teams}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Nº atletas">
+              <strong>Nº atletas</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.number_of_athletes}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Nº treinadores">
+              <strong>Nº treinadores</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.number_of_coaches}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Nº campos relvado">
+              <strong>Nº campos relvado</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.number_of_grass_fields}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Nº campos sintético">
+              <strong>Nº campos sintético</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.number_of_synthetic_fields}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Patrocinadores">
+              <strong>Patrocinadores</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.sponsors[0].name}}
+            </td>
+          </tr>
+          <tr>
+            <td class="last-td-padding" title="Outras modalidades">
+              <strong>Outras modalidades</strong>
+            </td>
+            <td class=" last-td-padding">
+              {{viewModel.personal_info.other_sports}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="col-md-12 personal-table">
+          <tbody class="auto-height">
+          <tr>
+            <td class="first-td-padding" title="Site">
+              <strong>Site</strong>
+            </td>
+            <td class="first-td-padding">
+              {{viewModel.personal_info.site}}
+            </td>
+          </tr>
+          <tr>
+            <td title="E-mail">
+              <strong>E-mail</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.email}}
+            </td>
+          </tr>
+          <tr>
+            <td title="Telefone">
+              <strong>Telefone</strong>
+            </td>
+            <td>
+              {{viewModel.personal_info.phone_number}}
+            </td>
+          </tr>
+          <tr>
+            <td class="last-td-padding" title="Morada">
+              <strong>Morada</strong>
+            </td>
+            <td class="last-td-padding">
+              {{viewModel.personal_info.address}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="row-center-team">
@@ -217,7 +340,8 @@
         <div class="content">
           <div class="header">
             <h3 class="title">Recomendações</h3>
-            <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar {{viewModel.name}}</button>
+            <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar {{viewModel.name}}
+            </button>
           </div>
           <mat-card class="card-sc"
                     *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
