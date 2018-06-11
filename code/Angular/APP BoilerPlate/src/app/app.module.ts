@@ -19,6 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 
+import { LoadingPageModule } from 'angular-loading-page';         //Loading directive
+import { MaterialBarModule } from 'angular-loading-page';         //Loading animation component
 import {
   MatAutocompleteModule,
   MatButtonToggleModule,
@@ -138,8 +140,10 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MatToolbarModule,
     MatTooltipModule,
     BrowserAnimationsModule,
+    LoadingPageModule,
+    MaterialBarModule,
     NgSelectizeModule,
-    DropzoneModule
+    DropzoneModule,
   ],
   providers: [
     HttpClient,

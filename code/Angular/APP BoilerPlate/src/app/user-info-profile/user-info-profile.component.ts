@@ -22,6 +22,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   options;
   labels;
   skill_values;
+  chart_img;
   show = false;
   constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {
   }
@@ -32,14 +33,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.options = {};
     this.labels = [];
     this.skill_values = [];
-    this.colors = [{
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointHoverBackgroundColor: 'rgba(77,83,96,1)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,0.8)'
-    }];
+    this.colors = [];
 
     this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
@@ -56,9 +50,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         name: 'Sports Connected Team',
       }
     };
-
-
-
   }
 
   ngAfterViewInit() {
@@ -66,21 +57,24 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
       this.labels.push(skill.name);
       this.skill_values.push(skill.endorsements.length);
     });
-
     this.data = {
-      labels: this.labels, //['Dribble', 'Golos', 'Rapidez', 'Livres', 'Passe'],
+      labels: this.labels,
       datasets: [{
         data: this.skill_values, //[19, 18, 14, 15, 23]
+        backgroundColor: [
+          '#4383a882',
+          '#4383a882',
+          '#4383a882',
+          '#4383a882',
+          '#4383a882',
+        ]
       }]
     };
     this.options = {
-      color: [
-        'red',    // color for data at index 0
-        'blue',   // color for data at index 1
-        'green',  // color for data at index 2
-        'black',  // color for data at index 3
-        //...
-      ],
+      title: {
+        text: 'Skills',
+        display: true
+      },
       legend: {
         display: false
       },
@@ -141,14 +135,24 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
           ++this.skill_values[1];
       });
 
-
       this.data = {
-        labels: this.labels, //['Dribble', 'Golos', 'Rapidez', 'Livres', 'Passe'],
+        labels: this.labels,
         datasets: [{
           data: this.skill_values, //[19, 18, 14, 15, 23]
+          backgroundColor: [
+            '#4383a882',
+            '#4383a882',
+            '#4383a882',
+            '#4383a882',
+            '#4383a882',
+          ]
         }]
       };
       this.options = {
+        title: {
+          text: 'Skills',
+          display: true
+        },
         legend: {
           display: false
         },
