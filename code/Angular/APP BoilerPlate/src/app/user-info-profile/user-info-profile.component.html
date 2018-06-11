@@ -139,7 +139,8 @@
       <div class="skills">
         <div class="data">
           <div *ngIf="chart">
-            <canvas id="graph" class="chartjs-render-monitor" style="display: block; width: 600px; height: 260px;"></canvas>
+            <canvas id="graph" class="chartjs-render-monitor"
+                    style="display: block; width: 600px; height: 260px;"></canvas>
           </div>
         </div>
       </div>
@@ -166,29 +167,31 @@
       </div>
 
       <div class="recommendations">
-        <div class="header">
-          <h3 class="title">Recomendações</h3>
-          <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar
-            {{viewModel.personal_info.name}}
-          </button>
-        </div>
-        <mat-card class="card-sc"
-                  *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
-          <mat-card-header>
-            <div mat-card-avatar class="profile-small-image"
-                 [ngStyle]="{'background-image':  'url(' + recommendation.author.avatar + ')' }"></div>
-            <mat-card-title class="headers">{{recommendation.author.name}}</mat-card-title>
-            <mat-card-subtitle class="headers">{{recommendation.author.team.name}}
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <p>
-              {{recommendation.text}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-        <div class="footer">
-          <button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais recomendações</button>
+        <div class="content">
+          <div class="header">
+            <h3 class="title">Recomendações</h3>
+            <button mat-raised-button (click)="openCreateDialog()" class="btn-recommend">Recomendar
+              {{viewModel.personal_info.name}}
+            </button>
+          </div>
+          <mat-card class="card-sc"
+                    *ngFor="let recommendation of viewModel.recommendations.top_5.slice(viewModel.recommendations.top_5.length - 5,viewModel.recommendations.top_5.length - 1)">
+            <mat-card-header>
+              <div mat-card-avatar class="profile-small-image"
+                   [ngStyle]="{'background-image':  'url(' + recommendation.author.avatar + ')' }"></div>
+              <mat-card-title class="headers">{{recommendation.author.name}}</mat-card-title>
+              <mat-card-subtitle class="headers">{{recommendation.author.team.name}}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                {{recommendation.text}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+          <div class="footer">
+            <button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais recomendações</button>
+          </div>
         </div>
       </div>
     </div>
