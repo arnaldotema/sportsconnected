@@ -166,7 +166,7 @@ html {
   max-height: 50px !important;
 }
 
-td{
+td {
   padding: 5px !important;
   text-align: center !important;
   font-weight: normal !important;
@@ -179,7 +179,7 @@ th {
 }
 
 .table_header {
-  color: #032f4f ;
+  color: #032f4f;
   background-color: white;
 }
 
@@ -235,16 +235,15 @@ body {
   margin: 30px auto;
 }
 
-
 .roster {
 
 }
 
-.away-row .roster{
+.away-row .roster {
   float: right;
 }
 
-.home-row .roster{
+.home-row .roster {
   float: left;
 }
 
@@ -270,20 +269,21 @@ body {
   display: inline-block;
   width: 100%;
   background-color: #7a8b98;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-.recommendations .header{
+.recommendations .header {
   color: white;
   margin: 20px 0;
   display: flex;
 }
 
-.recommendations .header .title{
+.recommendations .header .title {
   margin: 5px auto 5px 0;
   padding: 0;
   width: fit-content;
 }
+
 .btn-follow {
   color: white !important;
   background-color: #032f4f;
@@ -291,7 +291,6 @@ body {
   width: 100px;
   margin-right: 5px;
 }
-
 
 .btn-start {
   background-color: #032f4f;
@@ -324,8 +323,6 @@ body {
   margin-left: auto;
 }
 
-
-
 .profile-buttons {
   margin: 10px auto;
   width: fit-content;
@@ -352,7 +349,6 @@ body {
   height: 60px !important;
   width: 60px !important;
 }
-
 
 .sc-mat-card-avatar {
   height: 40px;
@@ -529,11 +525,11 @@ table .caption {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 0px 0px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-.achievement-player{
+.achievement-player {
   font-size: larger;
 }
 
-table .caption img{
+table .caption img {
   height: 60px;
   width: auto;
   margin: 0 5px 0 0;
@@ -588,7 +584,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   margin: auto 30px auto 100px;
 }
 
-.navbar-search .input{
+.navbar-search .input {
   color: white;
 }
 
@@ -624,7 +620,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   margin-right: 100px !important;
 }
 
-.soon-msg{
+.soon-msg {
   font-size: xx-large;
   margin: 100px auto;
   color: #b3b5bb;
@@ -636,7 +632,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   color: white !important;
 }
 
-.login-form{
+.login-form {
   margin: 0px 100px;
 }
 
@@ -660,11 +656,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   color: rgba(0, 0, 0, 0.87) !important;
 }
 
-.mat-select-disabled .mat-select-arrow{
+.mat-select-disabled .mat-select-arrow {
   color: white !important;
 }
 
-.small-border{
+.small-border {
   border: 2px solid transparent;
 }
 
@@ -676,7 +672,6 @@ table tbody tr td {
   border-bottom: 1px solid #e4e4e4;
 }
 
-
 table .centered {
   text-align: center;
 }
@@ -709,7 +704,6 @@ table .list_role {
   display: inline-block;
 }
 
-
 table .centered {
   text-align: center;
 }
@@ -741,7 +735,6 @@ table .list_role {
   text-align: center;
   display: inline-block;
 }
-
 
 table tbody .rechts {
   padding-right: 10px;
@@ -777,7 +770,7 @@ componente que mostra quando um jogador alcança um objectivo.
 Possiveis usos: notifications, match, feed
  */
 
-.sc-achievement-accomplished{
+.sc-achievement-accomplished {
   display: inline-flex;
   align-items: center;
   width: 300px;
@@ -787,40 +780,40 @@ Possiveis usos: notifications, match, feed
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-.sc-achievement-accomplished__logos{
+.sc-achievement-accomplished__logos {
   width: 140px;
   display: inline-block;
   height: 60px;
 }
 
-.sc-achievement-accomplished__logos img{
+.sc-achievement-accomplished__logos img {
   width: 60px;
   height: 60px;
 }
 
-.sc-achievement-accomplished__logos img:first-of-type{
+.sc-achievement-accomplished__logos img:first-of-type {
   margin-right: 10px;
 }
 
-.sc-achievement-accomplished__headings{
+.sc-achievement-accomplished__headings {
   width: calc(100% - 140px);
   display: inline-block;
   border-left: 1px solid lightgray;
   padding-left: 10px;
 }
 
-.sc-achievement-accomplished__headings h4{
+.sc-achievement-accomplished__headings h4 {
   margin: 0px;
   color: #337ab7;
 }
 
-.sc-achievement-accomplished__headings h4:hover{
+.sc-achievement-accomplished__headings h4:hover {
   color: #23527c;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.sc-achievement-accomplished__headings p{
+.sc-achievement-accomplished__headings p {
   margin: 0px;
 }
 
@@ -830,12 +823,32 @@ MISC
 coisas transversais a toda a plataforma.
  */
 
-.sc-rounded-image{
+.sc-rounded-image {
   object-fit: cover;
   border-radius: 100%;
 }
 
-.row{
+.row {
   margin: 0 auto;
   width: 1200px;
 }
+
+.loading-page {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: auto;
+  height: fit-content;
+  position: fixed;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.loading-page img {
+  height: 100px;
+  width: auto;
+}
+
