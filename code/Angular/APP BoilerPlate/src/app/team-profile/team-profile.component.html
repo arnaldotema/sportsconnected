@@ -58,6 +58,110 @@
           </tbody>
         </table>
       </div>
+      <div class="profile-team-info">
+        <div class="contacts">
+          <div class="data">
+            <div>
+              <strong>Presidente</strong>
+            </div>
+            <div>
+              <strong>V. Presidente</strong>
+            </div>
+            <div>
+              <strong>Diret. Desportivo</strong>
+            </div>
+
+            <div>
+              <strong>Nº equipas</strong>
+            </div>
+            <div>
+              <strong>Nº atletas</strong>
+            </div>
+            <div>
+              <strong>Nº treinadores</strong>
+            </div>
+            <div>
+              <strong>Nº campos relvado</strong>
+            </div>
+            <div>
+              <strong>Nº campos sintético</strong>
+            </div>
+            <div>
+              <strong>Patrocinadores</strong>
+            </div>
+            <div>
+              <strong>Outras modalidades</strong>
+            </div>
+          </div>
+          <div class="data">
+            <div>
+              {{viewModel.personal_info.president}}
+            </div>
+            <div>
+              {{viewModel.personal_info.vice_president}}
+            </div>
+            <div>
+              {{viewModel.personal_info.sports_director}}
+            </div>
+
+            <div>
+              {{viewModel.personal_info.number_of_teams}}
+            </div>
+            <div>
+              {{viewModel.personal_info.number_of_athletes}}
+            </div>
+            <div>
+              {{viewModel.personal_info.number_of_coaches}}
+            </div>
+            <div>
+              {{viewModel.personal_info.number_of_grass_fields}}
+            </div>
+            <div>
+              {{viewModel.personal_info.number_of_synthetic_fields}}
+            </div>
+            <div>
+              <div *ngFor="let brand of viewModel.personal_info.sponsors">
+                <a href="{{brand.link}}">{{brand.name}}</a>
+              </div>
+            </div>
+            <div>
+              <div *ngFor="let sport of viewModel.personal_info.other_sports">
+                {{sport}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contacts">
+          <div class="data">
+            <div>
+              <strong>Site</strong>
+            </div>
+            <div>
+              <strong>E-mail</strong>
+            </div>
+            <div>
+              <strong>Telefone</strong>
+            </div>
+            <div>
+              <strong>Morada</strong>
+            </div>
+          </div>
+          <div class="data">
+            <div>
+              {{viewModel.personal_info.site}}
+            </div>
+            <div>
+              {{viewModel.personal_info.email}}
+            </div>
+            <div>
+              {{viewModel.personal_info.phone_number}}
+            </div>
+            <div>
+              {{viewModel.personal_info.address}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row-center-team">
       <table class="sc-stats-table">
@@ -227,116 +331,6 @@
           </tr>
           </tbody>
         </table>
-      </div>
-      <div class="profile-team-info">
-        <div class="contacts">
-          <div class="data">
-            <div>
-              <strong>Presidente</strong>
-            </div>
-            <div>
-              <strong>V. Presidente</strong>
-            </div>
-            <div>
-              <strong>Diret. Desportivo</strong>
-            </div>
-
-            <div>
-              <strong>Nº equipas</strong>
-            </div>
-            <div>
-              <strong>Nº atletas</strong>
-            </div>
-            <div>
-              <strong>Nº treinadores</strong>
-            </div>
-            <div>
-              <strong>Nº campos relvado</strong>
-            </div>
-            <div>
-              <strong>Nº campos sintético</strong>
-            </div>
-            <div>
-              <strong>Belneários</strong>
-            </div>
-            <div>
-              <strong>Patrocinadores</strong>
-            </div>
-            <div>
-              <strong>Outras modalidades</strong>
-            </div>
-          </div>
-          <div class="data">
-            <div>
-              {{viewModel.personal_info.president}}
-            </div>
-            <div>
-              {{viewModel.personal_info.vice_president}}
-            </div>
-            <div>
-              {{viewModel.personal_info.sports_director}}
-            </div>
-
-            <div>
-              {{viewModel.personal_info.number_of_teams}}
-            </div>
-            <div>
-              {{viewModel.personal_info.number_of_athletes}}
-            </div>
-            <div>
-              {{viewModel.personal_info.number_of_coaches}}
-            </div>
-            <div>
-              {{viewModel.personal_info.number_of_grass_fields}}
-            </div>
-            <div>
-              {{viewModel.personal_info.number_of_synthetic_fields}}
-            </div>
-            <div>
-              {{viewModel.personal_info.number_of_locker_rooms}}
-            </div>
-            <div>
-              <div *ngFor="let brand of viewModel.personal_info.sponsors">
-                <a href="{{brand.link}}">{{brand.name}}</a>
-              </div>
-            </div>
-            <div>
-              <div *ngFor="let sport of viewModel.personal_info.other_sports">
-                {{sport}}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contacts">
-          <div class="data">
-            <div>
-              <strong>Site</strong>
-            </div>
-            <div>
-              <strong>E-mail</strong>
-            </div>
-            <div>
-              <strong>Telefone</strong>
-            </div>
-            <div>
-              <strong>Morada</strong>
-            </div>
-          </div>
-          <div class="data">
-            <div>
-              {{viewModel.personal_info.site}}
-            </div>
-            <div>
-              {{viewModel.personal_info.email}}
-            </div>
-            <div>
-              {{viewModel.personal_info.phone_number}}
-            </div>
-            <div>
-              {{viewModel.personal_info.address}}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
