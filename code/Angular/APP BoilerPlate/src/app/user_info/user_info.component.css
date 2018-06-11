@@ -390,6 +390,7 @@ img {
 }
 
 .player .meta .player-image {
+  border-radius: 10px;
   margin: 0px 10px;
   position: relative;
   height: 350px;
