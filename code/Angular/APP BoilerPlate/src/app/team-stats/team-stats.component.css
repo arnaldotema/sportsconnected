@@ -58,25 +58,11 @@
   background: linear-gradient(to right, rgba(255, 255, 255, 255) 0, rgba(255, 255, 255, 255) 10%, rgba(46, 47, 50, 0) 40%);
 }
 
-.meta .contacts {
-  margin: 10px 10px 10px 10px;
-  background-color: white;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-}
-
 .meta .personal .rankings-container {
   background: white;
   margin: 1rem 1rem 1rem 0;
 }
 
-.meta .contacts .data {
-  padding: 0 1rem;
-  font-family: sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  width: 50%;
-  float: left;
-}
 
 .player-header-placeholder {
   width: 100%;
