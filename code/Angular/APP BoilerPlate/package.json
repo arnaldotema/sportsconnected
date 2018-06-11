@@ -27,6 +27,7 @@
     "@types/moment-business": "^0.1.4",
     "@types/vis": "^4.21.0",
     "angular-chart.js": "^1.1.1",
+    "angular-loading-page": "^0.6.0",
     "angular4-datepicker": "^1.0.1",
     "bootstrap-grid-only": "^1.0.0",
     "chart.js": "^2.7.2",
