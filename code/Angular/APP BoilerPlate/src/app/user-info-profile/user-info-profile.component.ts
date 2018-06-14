@@ -196,6 +196,7 @@ function myFunction() {
   let currOffset = personal.offsetTop;
 
   if (window.pageYOffset + 195 >= currOffset){
+    personal.parentElement.classList.add("row-left");
     personal.classList.add("sticky");
   }
 

@@ -185,14 +185,14 @@
       </div>
     </div>
     <div class="row-right">
-      <div class="badges sticky-achievements" id="achievements">
+      <div class="achievements sticky-achievements" id="achievements">
         <div class="content">
           <div class="header">
             <h3 class="title centered">Crachás de {{viewModel.personal_info.name}}</h3>
           </div>
-          <div *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
-            <div *ngFor="let achievement of viewModel.achievements">
-                <img src="{{achievement.avatar}}" class="col-md-4">
+          <div class="badges" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
+            <div class="image" *ngFor="let achievement of viewModel.achievements">
+                <img src="{{achievement.avatar}}">
             </div>
           </div>
           <div *ngIf=" viewModel.achievements.length > 6 " class="footer">
