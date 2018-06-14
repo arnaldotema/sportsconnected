@@ -78,14 +78,6 @@
           </tbody>
         </table>
       </div>
-      <div class="achievements" id="achievements" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
-        <div *ngFor="let achievement of viewModel.achievements">
-          <caption class="centered caption col-md-12">
-            <img src="{{achievement.avatar}}" class="col-md-4">
-            <div class="col-md-7">{{achievement.name}}</div>
-          </caption>
-        </div>
-      </div>
     </div>
     <div class="row-center">
       <table class="sc-stats-table">
@@ -192,6 +184,22 @@
         </div>
       </div>
     </div>
-    <div class="row-right"></div>
+    <div class="row-right">
+      <div class="badges sticky-achievements" id="achievements">
+        <div class="content">
+          <div class="header">
+            <h3 class="title centered">Crachás de {{viewModel.personal_info.name}}</h3>
+          </div>
+          <div *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
+            <div *ngFor="let achievement of viewModel.achievements">
+                <img src="{{achievement.avatar}}" class="col-md-4">
+            </div>
+          </div>
+          <div *ngIf=" viewModel.achievements.length > 6 " class="footer">
+            <button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais crachás</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
