@@ -288,11 +288,11 @@ body {
   width: fit-content;
 }
 
-.badges {
+.achievements {
   margin: 10px;
 }
 
-.badges .content {
+.achievements .content {
   max-height: 200px;
   border-radius: 10px;
   padding: 10px 20px;
@@ -302,20 +302,32 @@ body {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-.badges .content img{
+.achievements .content img{
   height: auto;
   padding-left: 0;
   padding-right: 5px;
+  max-height: 125px;
+  width: auto;
 }
 
-.badges .header {
+.achievements .content .badges{
+  display: flex;
+  width: fit-content;
+  margin: auto;
+}
+
+.achievements .content .badges .image{
+  max-width: 33.3%;
+}
+
+.achievements .header {
   color: darkgrey;
   margin: 10px 0;
   display: -ms-flexbox;
   text-align: center;
 }
 
-.badges .header .title {
+.achievements .header .title {
   margin: 5px auto 5px 0;
   padding: 0;
 }
@@ -915,4 +927,32 @@ coisas transversais a toda a plataforma.
 
 .profile-team-info{
   margin: 20px auto;
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 150px;
+  width: 19%;
+  max-width: 240px;
+}
+
+.sticky-achievements {
+  position: fixed;
+  width: 28%;
+  max-width: 354.19px;
+}
+
+.hidden-for-footer {
+  display: none;
+}
+
+
+/* Add some top padding to the page content to prevent sudden quick movement
+  (as the navigation bar gets a new position at the top of the page
+  (position:fixed and top:0)
+*/
+.sticky + .content {
+  padding-top: 60px;
 }
