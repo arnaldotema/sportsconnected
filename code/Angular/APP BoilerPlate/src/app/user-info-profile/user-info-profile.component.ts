@@ -25,6 +25,8 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   chart_img;
   show = false;
   constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
   }
 
   ngOnInit() {
@@ -179,5 +181,36 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
       });
     }
   }
+}
 
+
+// Add the sticky class to personal when you reach its scroll position.
+// Remove "sticky" when you leave the scroll position
+function myFunction() {
+
+  // Get the navbar
+  let personal = document.getElementById("personal");
+  let achievements = document.getElementById("achievements");
+
+  // Get the offset position of the personal
+  let currOffset = personal.offsetTop;
+
+  if (window.pageYOffset + 195 >= currOffset){
+    personal.classList.add("sticky");
+    achievements.classList.add("sticky-achievements")
+  }
+
+  if( window.pageYOffset < 240 ){
+    personal.classList.remove("sticky");
+    achievements.classList.remove("sticky-achievements");
+  }
+
+  if( window.pageYOffset > 2340){
+    personal.classList.add("hidden-for-footer");
+    achievements.classList.add("hidden-for-footer");
+  }
+  else{
+    personal.classList.remove("hidden-for-footer");
+    achievements.classList.remove("hidden-for-footer");
+  }
 }
