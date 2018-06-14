@@ -60,7 +60,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
   loadPlayer(){
-    this.router.navigate(['/userInfo']);
+    this.router.navigate(['/user-info']);
   }
 
   getTeam() {
