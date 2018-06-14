@@ -8,7 +8,7 @@
       <div class="profile-buttons">
         <button mat-raised-button class="btn-follow">Seguir</button>
       </div>
-      <div class="personal">
+      <div class="personal" id="personal">
         <table class="col-md-12 personal-table">
           <tbody class="auto-height">
           <tr>
@@ -78,7 +78,7 @@
           </tbody>
         </table>
       </div>
-      <div class="achievements" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
+      <div class="achievements" id="achievements" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
         <div *ngFor="let achievement of viewModel.achievements">
           <caption class="centered caption col-md-12">
             <img src="{{achievement.avatar}}" class="col-md-4">
@@ -93,14 +93,14 @@
         <tr class="table_header">
           <th class="th-td-first">Liga</th>
           <th>Jogos</th>
-          <th>Vitórias</th>
-          <th>Derrotas</th>
-          <th>Empates</th>
           <th>Golos</th>
           <th>Assis.</th>
           <th>CA</th>
           <th>CV</th>
-          <th class="th-td-last">Min</th>
+          <th>Min</th>
+          <th>Vitórias</th>
+          <th>Derrotas</th>
+          <th class="th-td-last">Empates</th>
         </tr>
         <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
             class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
@@ -108,14 +108,14 @@
             <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
           </td>
           <td>{{stat.games}}</td>
-          <td>{{stat.wins}}</td>
-          <td>{{stat.losses}}</td>
-          <td>{{stat.draws}}</td>
           <td>{{stat.goals}}</td>
           <td>{{stat.assists}}</td>
           <td>{{stat.yellow_cards}}</td>
           <td>{{stat.red_cards}}</td>
           <td>{{stat.minutes_played}}''</td>
+          <td>{{stat.wins}}</td>
+          <td>{{stat.losses}}</td>
+          <td>{{stat.draws}}</td>
         </tr>
         </tbody>
       </table>
