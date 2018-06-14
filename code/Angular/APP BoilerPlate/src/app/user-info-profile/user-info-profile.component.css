@@ -4,6 +4,12 @@
   margin: 30px auto;
 }
 
+.row-right {
+  width: 30%;
+  float: left;
+  margin: 30px auto;
+}
+
 .callout {
   border: 0;
 }
@@ -33,8 +39,7 @@
 
 .sticky-achievements {
   position: fixed;
-  top: 420px;
-  width: 19%;
+  width: 28%;
 }
 
 .hidden-for-footer {

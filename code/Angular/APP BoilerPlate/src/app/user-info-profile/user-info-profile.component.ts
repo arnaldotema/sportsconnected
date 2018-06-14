@@ -197,15 +197,13 @@ function myFunction() {
 
   if (window.pageYOffset + 195 >= currOffset){
     personal.classList.add("sticky");
-    achievements.classList.add("sticky-achievements")
   }
 
   if( window.pageYOffset < 240 ){
     personal.classList.remove("sticky");
-    achievements.classList.remove("sticky-achievements");
   }
 
-  if( window.pageYOffset > 2340){
+  if( window.pageYOffset > 2411){
     personal.classList.add("hidden-for-footer");
     achievements.classList.add("hidden-for-footer");
   }
