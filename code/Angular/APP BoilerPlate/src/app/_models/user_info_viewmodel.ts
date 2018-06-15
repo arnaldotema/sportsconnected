@@ -30,6 +30,7 @@ export class UserInfoViewModel {
       full_name: string
     },
     stats: [{
+      season: string,
       competition_name: string, // TODO: Criado um array para as diferentes competições na mesma season. Adicionados alguns campos novos
       competition_avatar: string,
       games: number,

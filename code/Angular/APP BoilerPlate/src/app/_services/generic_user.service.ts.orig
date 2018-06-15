@@ -41,6 +41,7 @@ export class GenericUserService {
       },
       stats: [
         {
+          season: '2017/18',
           competition_name: 'Liga Portugal',
           competition_avatar: '/assets/Liga_Portugal_logo.png',
           games: 15,
@@ -54,6 +55,7 @@ export class GenericUserService {
           minutes_played: 1050
         },
         {
+          season: '2017/18',
           competition_name: 'Taça de Portugal',
           competition_avatar: '/assets/Tacadaligalogo.png',
           games: 4,
@@ -67,6 +69,7 @@ export class GenericUserService {
           minutes_played: 280
         },
         {
+          season: '2017/18',
           competition_name: 'Super Taça',
           competition_avatar: '/assets/9_imgbank_tp.png',
           games: 1,

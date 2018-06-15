@@ -42,6 +42,7 @@ export class UserInfoService {
       },
       stats: [
         {
+          season: '2017/18',
           competition_name: 'Liga Portugal',
           competition_avatar: '/assets/Liga_Portugal_logo.png',
           games: 15,
@@ -55,6 +56,7 @@ export class UserInfoService {
           minutes_played: 1050
         },
         {
+          season: '2016/17',
           competition_name: 'Taça de Portugal',
           competition_avatar: '/assets/Tacadaligalogo.png',
           games: 4,
@@ -68,6 +70,63 @@ export class UserInfoService {
           minutes_played: 280
         },
         {
+          season: '2015/16',
+          competition_name: 'Super Taça',
+          competition_avatar: '/assets/9_imgbank_tp.png',
+          games: 1,
+          wins: 1,
+          losses: 0,
+          draws: 0,
+          goals: 2,
+          assists: 1,
+          yellow_cards: 0,
+          red_cards: 0,
+          minutes_played: 90
+        },
+        {
+          season: '2014/15',
+          competition_name: 'Super Taça',
+          competition_avatar: '/assets/9_imgbank_tp.png',
+          games: 1,
+          wins: 1,
+          losses: 0,
+          draws: 0,
+          goals: 2,
+          assists: 1,
+          yellow_cards: 0,
+          red_cards: 0,
+          minutes_played: 90
+        },
+        {
+          season: '2013/14',
+          competition_name: 'Super Taça',
+          competition_avatar: '/assets/9_imgbank_tp.png',
+          games: 1,
+          wins: 1,
+          losses: 0,
+          draws: 0,
+          goals: 2,
+          assists: 1,
+          yellow_cards: 0,
+          red_cards: 0,
+          minutes_played: 90
+        },
+        {
+          season: '2013/14',
+          competition_name: 'Super Taça',
+          competition_avatar: '/assets/9_imgbank_tp.png',
+          games: 1,
+          wins: 1,
+          losses: 0,
+          draws: 0,
+          goals: 2,
+          assists: 1,
+          yellow_cards: 0,
+          red_cards: 0,
+          minutes_played: 90
+        },
+        {
+          season: '2012/13',
           competition_name: 'Super Taça',
           competition_avatar: '/assets/9_imgbank_tp.png',
           games: 1,
