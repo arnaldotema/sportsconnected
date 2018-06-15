@@ -8,6 +8,7 @@ const footballMatchCrawler = require('../functions/football_match');
 const footballCompetition = require('../../../models/football_competition');
 const footballUserInfoCrawler = require('../functions/football_user_info');
 
+
 const updateTeamInfo = function (err, res, done){
 
     const team = {
@@ -48,68 +49,40 @@ const updateTeamInfo = function (err, res, done){
         else {
             logger.info("Successfully updated team " + res._doc);
 
-            res.options.teamId = result._doc._id;
-
             if(res.options.competition){
-
-                //Add competition to team
-
-                let query = {
-                    "external_ids.zerozero": res.options.zerozeroId,
-                    "current_season.standings.id": { $ne: res.options.competition._id }
-                };
-
-                let update = {
-                    $addToSet: { "current_season.standings": {
-                            id: res.options.competition._id,
-                            name: res.options.competition.name,
-                            avatar: res.options.competition.avatar,
-                        }
-                    }
-                };
-
-                footballTeam.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true },  function (err, result) {
-                    if (err) {
-                        logger.error("Error when adding competition to team:", err);
-                    }
-                    else {
-                        logger.info("Successfully added competition " + res.options.competition.name + "to team " + result._doc.name);
-                    }
-                });
-
-                //Add team to competition
-
-                query = {
-                    "_id": res.options.competition._id,
-                    "current_season.standings.id": { $ne: result._doc._id }
-                };
-
-                update = {
-                    $addToSet: { "current_season.standings": {
-                            id: result._doc._id,
-                            name: result._doc.name,
-                            avatar: result._doc.avatar,
-                        }
-                    }
-                }
-
-                footballCompetition.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true }, function (err, result) {
-                    if (err) {
-                        logger.error("Error when adding team to competition:", err);
-                    }
-                    else {
-                        logger.info("Successfully added team " + result._doc.name + " to competition " + res.options.competition.name);
-                    }
-                });
+                res.options.team = result._doc;
+                cascadeTeamUpdates(res);
             }
-
-            processAllTeamPlayers(err, res, done);
+            else{
+                done();
+            }
         }
     });
 };
 
+function cascadeTeamUpdates(res){
+    footballTeam.addCompetitionToTeam(res.options.team._id, res.options.competition,  function (err, result) {
+        if (err) {
+            logger.error("Error when adding competition to team:", err);
+        }
+        else {
+            logger.info("Successfully added competition " + res.options.competition.name + "to team " + res.options.team.name);
 
-const processAllTeamPlayers = function (err, res, done){
+            footballCompetition.addTeamToCompetition(res.options.competition._id, result._doc, function (err, result) {
+                if (err) {
+                    logger.error("Error when adding team to competition:", err);
+                }
+                else {
+                    logger.info("Successfully added team " + res.options.team.name + " to competition " + res.options.competition.name);
+                }
+
+                processAllTeamPlayers(err, res, done);
+            });
+        }
+    });
+}
+
+function processAllTeamPlayers(res, done){
     let playerIds = [];
 
     res.$("#team_squad .staff .name .micrologo_and_text .text a").each(function() {
@@ -121,7 +94,8 @@ const processAllTeamPlayers = function (err, res, done){
             successCallback: footballUserInfoCrawler.updateUserInfo,
             proxyFailCallback: zerozero.proxyFailCallback,
             zerozeroId: playerId,
-            teamId: res.options.teamId
+            competition: res.options.competition,
+            team: res.options.team
         });
 
         playerIds.push(playerId);
@@ -157,6 +131,5 @@ const processAllTeamGames = function (err, res, done){
 
 module.exports = {
     updateTeamInfo: updateTeamInfo,
-    processAllTeamGames: processAllTeamGames,
-    processAllTeamPlayers: processAllTeamPlayers
+    processAllTeamGames: processAllTeamGames
 }
