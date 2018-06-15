@@ -3,6 +3,11 @@ var Schema   = mongoose.Schema;
 
 var FootballMatchSchema = new Schema({
     played: {type: Boolean, required: true, index: true},
+    processed: {
+      teams: Boolean,
+      players: Boolean,
+      competition: Boolean
+    },
 	external_ids: {
 		zerozero: Number
 	},
