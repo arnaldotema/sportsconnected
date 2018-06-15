@@ -94,20 +94,19 @@
           <th>Derrotas</th>
           <th class="th-td-last">Empates</th>
         </tr>
-        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
-            class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
+        <tr class="tr-odd">
           <td>
-            <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
+            <img class="league" src="{{viewModel.current_season.stats[0].competition_avatar}}" alt="{{viewModel.current_season.stats[0].competition_name}}">
           </td>
-          <td>{{stat.games}}</td>
-          <td>{{stat.goals}}</td>
-          <td>{{stat.assists}}</td>
-          <td>{{stat.yellow_cards}}</td>
-          <td>{{stat.red_cards}}</td>
-          <td>{{stat.minutes_played}}''</td>
-          <td>{{stat.wins}}</td>
-          <td>{{stat.losses}}</td>
-          <td>{{stat.draws}}</td>
+          <td>{{viewModel.current_season.stats[0].games}}</td>
+          <td>{{viewModel.current_season.stats[0].goals}}</td>
+          <td>{{viewModel.current_season.stats[0].assists}}</td>
+          <td>{{viewModel.current_season.stats[0].yellow_cards}}</td>
+          <td>{{viewModel.current_season.stats[0].red_cards}}</td>
+          <td>{{viewModel.current_season.stats[0].minutes_played}}''</td>
+          <td>{{viewModel.current_season.stats[0].wins}}</td>
+          <td>{{viewModel.current_season.stats[0].losses}}</td>
+          <td>{{viewModel.current_season.stats[0].draws}}</td>
         </tr>
         </tbody>
       </table>
