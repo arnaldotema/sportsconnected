@@ -23,6 +23,27 @@ var FootballTeamSchema = new Schema({
                 goals_taken: {type: Number, default: 0}
             }
         ],
+        matches: [{
+            id: {type: Schema.Types.ObjectId, ref: 'football_match'},
+            date: Date,
+            competition:{
+                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
+                name: String,
+                avatar: String
+            },
+            home_team: {
+                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
+                name: String,
+                avatar: String,
+                goals: Number
+            },
+            away_team: {
+                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
+                name: String,
+                avatar: String,
+                goals: Number
+            }
+        }],
         players: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         staff: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}]
     },
