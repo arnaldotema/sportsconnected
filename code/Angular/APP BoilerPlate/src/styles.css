@@ -201,6 +201,20 @@ body {
   background: transparent;
 }
 
+.tr-current-season {
+  height: 180px;
+}
+
+.tr-current-season td {
+  font-size: large !important;
+  font-weight: bold !important;
+}
+
+.tr-current-season img {
+  max-width: 50px !important;
+  max-height: none !important;
+}
+
 .tr-odd {
   background-color: white;
 }
@@ -210,11 +224,11 @@ body {
 }
 
 .th-td-first {
-  width: 80px;
+  min-width: 80px !important;
 }
 
 .th-td-last {
-  width: 80px !important;
+  min-width: 80px !important;
 }
 
 .row-center {
@@ -507,7 +521,7 @@ body {
 }
 
 .player .meta .sc-stats-table tr > th, td {
-  min-width: 35px !important;
+  min-width: 35px;
   padding: 5px 7px;
   font-size: 12px;
   height: 60px;
