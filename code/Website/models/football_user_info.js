@@ -31,15 +31,38 @@ var FootballUserInfoSchema = new Schema({
             avatar: String,
             name: String
         },
-        stats: {
+        stats: [{
+            id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
+            name: String,
+            avatar: String,
             games: {type: Number, default: 0},
             goals: {type: Number, default: 0},
             assists: {type: Number, default: 0},
             yellow_cards: {type: Number, default: 0},
             red_cards: {type: Number, default: 0},
-            minutes_played: {type: Number, default: 0},
-        },
-        games: [{type: Schema.Types.ObjectId, ref: 'football_match'}]
+            minutes_played: {type: Number, default: 0}
+        }],
+        matches: [{
+            id: {type: Schema.Types.ObjectId, ref: 'football_match'},
+            date: Date,
+            competition:{
+                id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
+                name: String,
+                avatar: String
+            },
+            home_team: {
+                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
+                name: String,
+                avatar: String,
+                goals: Number
+            },
+            away_team: {
+                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
+                name: String,
+                avatar: String,
+                goals: Number
+            }
+        }]
     },
     previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_user_info_season'}],
     media: [
