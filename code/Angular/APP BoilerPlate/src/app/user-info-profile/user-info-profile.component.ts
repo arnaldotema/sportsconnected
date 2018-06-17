@@ -132,11 +132,12 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
     this.userInfoService.voteForSkill(skillName, this.mockAuthor.id).subscribe();
     {
-      this.labels.forEach(label => {
+      this.labels.forEach((label,key) => {
         if (label == skillName)
-          ++this.skill_values[1];
+          ++this.skill_values[key];
       });
 
+      /*
       this.data = {
         labels: this.labels,
         datasets: [{
@@ -179,6 +180,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         data: this.data,
         options: this.options
       });
+      */
     }
   }
 }
