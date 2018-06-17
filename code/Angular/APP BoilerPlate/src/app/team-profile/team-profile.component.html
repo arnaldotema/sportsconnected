@@ -297,7 +297,8 @@
           <th>Derrotas</th>
           <th>Empates</th>
         </tr>
-        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+        <!-- ALTT - BIG HAMMER DOWN HERE JUST TO TEST SOMETHING REAL QUICK!!-->
+        <tr *ngFor="let stat of viewModel.current_season.stats.splice(0,3); let _idx = index "
             class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
           <td>
             <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
