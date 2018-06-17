@@ -18,7 +18,6 @@ export class User_infoStatsComponent implements OnInit,AfterViewInit{
   }
 
   ngOnInit() {
-
     this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => {
