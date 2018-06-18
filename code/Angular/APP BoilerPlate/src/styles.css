@@ -8,6 +8,12 @@
   display: none !important;
 }
 
+.sc-btn{
+  width: 100px !important;
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+}
+
 .default-input {
   margin: 0px !important;
   height: auto !important;
@@ -237,6 +243,12 @@ body {
   float: left;
 }
 
+.row-center-edit-mode {
+  width: 80%;
+  margin: auto auto 30px auto;
+  float: left;
+}
+
 .row-left {
   width: 25%;
   float: left;
@@ -348,12 +360,16 @@ body {
 
 
 
-.btn-follow {
+.btn-sc-default {
   color: white !important;
   background-color: #032f4f;
   font-family: "Museo Sans", sans-serif;
-  width: 100px;
-  margin-right: 5px;
+}
+
+.btn-edit {
+  color: #032f4f !important;
+  background-color: white;
+  font-family: "Museo Sans", sans-serif;
 }
 
 .btn-start {
@@ -362,7 +378,6 @@ body {
   font-family: "Museo Sans", sans-serif;
   font-weight: bold;
   font-size: 14px;
-  width: 100px;
   padding: 0 !important;
 }
 
@@ -390,6 +405,12 @@ body {
 .profile-buttons {
   margin: 10px auto;
   width: fit-content;
+}
+
+.heading-buttons {
+  margin: 10px auto auto auto;
+  width: fit-content;
+  float: right;
 }
 
 .roster-img {
@@ -832,6 +853,11 @@ table .role_move {
 
 .centered {
   text-align: center;
+}
+
+.centered mat-form-field{
+  width: 24%;
+  padding: 0 5px;
 }
 
 table .list_number {
