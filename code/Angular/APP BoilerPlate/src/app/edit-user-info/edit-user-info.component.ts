@@ -7,6 +7,7 @@ import {
   PasswordValidator,
   ParentErrorStateMatcher
 } from '../validators';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-user-info',
@@ -22,36 +23,98 @@ export class EditUserInfoComponent  implements OnInit {
   accountDetailsForm: FormGroup;
 
   matching_passwords_group: FormGroup;
-  country_phone_group: FormGroup;
 
+  season;
 
   parentErrorStateMatcher = new ParentErrorStateMatcher();
 
+  seasons = [
+    {
+      id: '2',
+      name: '2017/18'
+    },
+    {
+      id: '3',
+      name: '2016/17'
+    },
+    {
+      id: '2',
+      name: '2015/16'
+    },
+    {
+      id: '2',
+      name: '2014/15'
+    },
+    {
+      id: '2',
+      name: '2013/14'
+    },
+    {
+      id: '2',
+      name: '2012/13'
+    },
+    {
+      id: '2',
+      name: '2011/12'
+    },
+  ];
+
   genders = [
-    "Male",
-    "Female",
-    "Other"
+    "Masculino",
+    "Feminino"
+  ];
+
+  positions = [
+    'Guarda-redes',
+    'Defesa Central',
+    'Defesa Esquerdo',
+    'Defesa Direito',
+    'Defesa',
+    'Médio Defensivo',
+    'Médio Ofensivo',
+    'Médio Esquerdo',
+    'Médio Direito',
+    'Médio Centro',
+    'Ala Esquerdo',
+    'Ala Direito',
+    'Avançado',
   ];
 
   countries = [
-    'Uruguay',
-    'United States',
-    'Argentina'
+    'Portugal',
+    'Cabo Verde',
+    'Angola',
+    'São Tomé e Príncipe',
+    'Brazil',
+    'Moçambique',
+    'Guiné Bissau'
   ];
 
+  feet = [
+    'Esquerdo',
+    'Direito',
+    'Ambos'
+  ];
+
+  cities = [
+    'Lisboa',
+    'Setúbal',
+    'Praia',
+    'Seixal',
+    'Porto',
+    'Faro',
+    'Coimbra'
+  ];
 
   validation_messages = {
     'fullname': [
-      { type: 'required', message: 'Full name is required' }
-    ],
-    'bio': [
-      { type: 'maxlength', message: 'Bio cannot be more than 256 characters long' },
+      { type: 'required', message: 'O nome é obrigatório' }
     ],
     'gender': [
       { type: 'required', message: 'Please select your gender' },
     ],
     'birthday': [
-      { type: 'required', message: 'Please insert your birthday' },
+      { type: 'required', message: 'Por favor, insere a tua data de nascimento' },
     ],
     'phone': [
       { type: 'required', message: 'Phone is required' },
@@ -85,7 +148,7 @@ export class EditUserInfoComponent  implements OnInit {
     ]
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router ) {
   }
 
   ngOnInit() {
@@ -97,6 +160,7 @@ export class EditUserInfoComponent  implements OnInit {
 
   createForms() {
     // matching passwords validation
+    /*
     this.matching_passwords_group = new FormGroup({
       password: new FormControl('', Validators.compose([
         Validators.minLength(5),
@@ -107,30 +171,20 @@ export class EditUserInfoComponent  implements OnInit {
     }, (formGroup: FormGroup) => {
       return PasswordValidator.areEqual(formGroup);
     });
-
-    // country & phone validation
-    let country = new FormControl(this.countries[0], Validators.required);
-
-    let phone = new FormControl('', {
-      validators: Validators.compose([
-        Validators.required
-      ])
-    });
-
-    this.country_phone_group = new FormGroup({
-      country: country,
-      phone: phone
-    });
+    */
 
     // user details form validations
     this.userDetailsForm = this.fb.group({
-      fullname: ['Homero Simpson', Validators.required ],
-      bio: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", Validators.maxLength(256)],
-      birthday: ['', Validators.required],
+      fullName: [this.viewModel.personal_info.full_name, Validators.required ],
+      birthday: [this.viewModel.personal_info.date_of_birth, Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
-      country_phone: this.country_phone_group
+      height: [this.viewModel.personal_info.height, Validators.required ],
+      weight: [this.viewModel.personal_info.weight, Validators.required ],
+      country: new FormControl(this.countries[0], Validators.required),
+      city: new FormControl(this.cities[0], Validators.required),
+      position: new FormControl(this.positions[0], Validators.required),
+      foot: new FormControl(this.feet[0], Validators.required),
     });
-
 
     // user links form validations
     this.accountDetailsForm = this.fb.group({
@@ -159,22 +213,17 @@ export class EditUserInfoComponent  implements OnInit {
     console.log(value);
   }
 
-  hasClass(elementId, className) {
-    let elem = document.getElementById(elementId);
-    return (' ' + elem.className + ' ').indexOf(' ' + className + ' ') > -1;
+  loadGames(){
+
   }
 
-  over(event, isOver) {
-    let elem = event.target;
-    let newClassName = ' ' + 'over' + ' ';
-    isOver ? elem.className += newClassName : elem.classList.remove('over');
+  save(){
+    // Todo: Saves current information to the user model and returns to user-info
+    this.router.navigate(['/user-info']);
   }
 
-  changeTab(tabId) {
-    let newClassName = ' ' + 'current' + ' ';
-    if (document.getElementsByClassName('current')[0]) {
-      document.getElementsByClassName('current')[0].classList.remove('current');
-      document.getElementById(tabId).className += newClassName;
-    }
+  discard(){
+    // Todo: Discards current information and returns to user-info
+    this.router.navigate(['/user-info']);
   }
 }

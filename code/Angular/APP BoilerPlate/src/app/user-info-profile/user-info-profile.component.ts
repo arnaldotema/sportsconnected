@@ -6,6 +6,7 @@ import {forEach} from '@angular/router/src/utils/collection';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {Observable} from 'rxjs/Observable';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-info-profile',
@@ -24,7 +25,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   skill_values;
   chart_img;
   show = false;
-  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {
+  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog, private router: Router ) {
     // When the user scrolls the page, execute myFunction
     window.onscroll = function() {myFunction()};
   }
@@ -102,6 +103,10 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
       options: this.options,
       colors: this.colors
     });
+  }
+
+  editPlayer(): void {
+    this.router.navigate(['/edit-user-info']);
   }
 
   openCreateDialog(event): void {
