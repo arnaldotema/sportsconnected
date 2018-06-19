@@ -43,11 +43,13 @@
           <h2>Dados pessoais</h2>
           <form [formGroup]="userDetailsForm">
             <mat-form-field>
-              <input matInput placeholder="Nome completo" formControlName="fullName" [(ngModel)]="viewModel.personal_info.full_name">
+              <input matInput placeholder="Nome completo" formControlName="fullName"
+                     [(ngModel)]="viewModel.personal_info.full_name">
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput placeholder="Altura" formControlName="height" [(ngModel)]="viewModel.personal_info.height">
+              <input matInput placeholder="Altura" formControlName="height"
+                     [(ngModel)]="viewModel.personal_info.height">
             </mat-form-field>
 
             <mat-form-field>
@@ -101,26 +103,74 @@
 
           </form>
         </div>
-        <div>
+
+        <div id="top">
           <h2>Estatística</h2>
           <mat-form-field>
-            <mat-select [(ngModel)]="season" (change)="loadGames()" placeholder="Época">
-              <mat-option *ngFor="let season of seasons" [value]="season">{{season.name}}</mat-option>
+            <mat-select [(ngModel)]="season.name" (change)="loadGames()" placeholder="Época">
+              <mat-option *ngFor="let season of seasons" [value]="season">
+                {{season.name}}
+              </mat-option>
             </mat-select>
           </mat-form-field>
+        </div>
+        <div *ngIf="player_matches != null">
+
+
+          <div class="event-list">
+            <mat-accordion multi="true">
+              <mat-expansion-panel *ngFor="let match of player_matches; let i = index"
+                                   (closed)="eventsToggled[match.id] = false"
+                                   (opened)="eventsToggled[match.id] = true">
+                <mat-expansion-panel-header class="event-list__header"> 27-08-1993 SLB 3 - 2 SFC 3 Golos 2 Assistências
+                  34''
+                </mat-expansion-panel-header>
+                <div class="event-info" [id]="match.id">
+                  <div class="event-info__section">
+                    <div class="row">
+                      <div class="col s4"><h5>Doctor</h5>
+                        <ng-selectize  [options]="availableStuff" [(ngModel)]="ngModelMockVar"></ng-selectize>
+                      </div>
+                      <div class="col s4"><h5>Clinic</h5>
+                        <ng-selectize  [options]="availableStuff" [(ngModel)]="ngModelMockVar"></ng-selectize>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s4"><h5>Reference</h5> <input
+                        [(ngModel)]="ngModelMockVar" matInput placeholder="Reference" type="number">
+                        <p [hidden]="this.matchesInEdit[match.id]"> Referência </p></div>
+                      <div class="col s4"><h5>Diseases/Disorders</h5>
+                        <ng-selectize [enabled]="this.matchesInEdit[match.id]" [options]="availableStuff"
+                                      [config]="selectizeConfig" [(ngModel)]="ngModelMockVar"></ng-selectize>
+                      </div>
+                      <div class="col s4"><h5>Medications</h5>
+                        <ng-selectize [enabled]="this.matchesInEdit[match.id]" [options]="availableStuff"
+                                      [config]="selectizeConfig" [(ngModel)]="ngModelMockVar"></ng-selectize>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s6">
+                        <button (click)="changeEditStatus(match.id)" mat-raised-button color="warn">
+                          <!-- {{this.matchesInEdit[match.id] ? "Confirmar" : "Editar"}} --> Confirmar
+                        </button>
+                      </div>
+                      <div class="col s2">
+                        <button (click)="goToTop(match.id)" mat-button>Voltar ao início</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+
+
+
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 <!--

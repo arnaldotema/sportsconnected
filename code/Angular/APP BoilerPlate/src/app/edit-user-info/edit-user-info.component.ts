@@ -1,20 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {
   UsernameValidator,
   PasswordValidator,
   ParentErrorStateMatcher
 } from '../validators';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatchService} from '../_services/match.service';
+import {MatchViewModel} from '../_models/match_viewmodel';
+import {ScrollToService} from 'ng2-scroll-to-el';
 
 @Component({
   selector: 'app-edit-user-info',
   templateUrl: './edit-user-info.component.html',
   styleUrls: ['./edit-user-info.component.css']
 })
-export class EditUserInfoComponent  implements OnInit {
+export class EditUserInfoComponent implements OnInit {
+
+  ngModelMockVar;
+
+  availableStuff = [
+    '2 Golos',
+    '2 Assistências',
+    '2 Cartões Vermelhos',
+    '3 Cartões Amarelos',
+  ]
+  matchesInEdit = {};
+  eventsToggled = {};
+  selectizeConfig = {
+    create: true,
+    valueField: 'id',
+    labelField: 'name',
+    searchField: 'name',
+    maxItems: null
+  };
+
+  matchService: MatchService;
+  player_matches: MatchViewModel[];
 
   viewModel: UserInfoViewModel;
   userInfoService: UserInfoService;
@@ -25,6 +49,7 @@ export class EditUserInfoComponent  implements OnInit {
   matching_passwords_group: FormGroup;
 
   season;
+  team;
 
   parentErrorStateMatcher = new ParentErrorStateMatcher();
 
@@ -60,8 +85,8 @@ export class EditUserInfoComponent  implements OnInit {
   ];
 
   genders = [
-    "Masculino",
-    "Feminino"
+    'Masculino',
+    'Feminino'
   ];
 
   positions = [
@@ -108,51 +133,58 @@ export class EditUserInfoComponent  implements OnInit {
 
   validation_messages = {
     'fullname': [
-      { type: 'required', message: 'O nome é obrigatório' }
+      {type: 'required', message: 'O nome é obrigatório'}
     ],
     'gender': [
-      { type: 'required', message: 'Please select your gender' },
+      {type: 'required', message: 'Please select your gender'},
     ],
     'birthday': [
-      { type: 'required', message: 'Por favor, insere a tua data de nascimento' },
-    ],
-    'phone': [
-      { type: 'required', message: 'Phone is required' },
-      { type: 'validCountryPhone', message: 'Phone incorrect for the country selected' }
+      {type: 'required', message: 'Por favor, insere a tua data de nascimento'},
     ]
   };
 
   account_validation_messages = {
     'username': [
-      { type: 'required', message: 'Username is required' },
-      { type: 'minlength', message: 'Username must be at least 5 characters long' },
-      { type: 'maxlength', message: 'Username cannot be more than 25 characters long' },
-      { type: 'pattern', message: 'Your username must contain only numbers and letters' },
-      { type: 'validUsername', message: 'Your username has already been taken' }
+      {type: 'required', message: 'Username is required'},
+      {type: 'minlength', message: 'Username must be at least 5 characters long'},
+      {type: 'maxlength', message: 'Username cannot be more than 25 characters long'},
+      {type: 'pattern', message: 'Your username must contain only numbers and letters'},
+      {type: 'validUsername', message: 'Your username has already been taken'}
     ],
     'email': [
-      { type: 'required', message: 'Email is required' },
-      { type: 'pattern', message: 'Enter a valid email' }
+      {type: 'required', message: 'Email is required'},
+      {type: 'pattern', message: 'Enter a valid email'}
     ],
     'confirm_password': [
-      { type: 'required', message: 'Confirm password is required' },
-      { type: 'areEqual', message: 'Password mismatch' }
+      {type: 'required', message: 'Confirm password is required'},
+      {type: 'areEqual', message: 'Password mismatch'}
     ],
     'password': [
-      { type: 'required', message: 'Password is required' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long' },
-      { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number' }
+      {type: 'required', message: 'Password is required'},
+      {type: 'minlength', message: 'Password must be at least 5 characters long'},
+      {type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number'}
     ],
     'terms': [
-      { type: 'pattern', message: 'You must accept terms and conditions' }
+      {type: 'pattern', message: 'You must accept terms and conditions'}
     ]
-  }
+  };
 
-  constructor(private fb: FormBuilder, private router: Router ) {
+  constructor(private fb: FormBuilder, private router: Router, private scrollService: ScrollToService) {
   }
 
   ngOnInit() {
+
+
+    this.season = {
+      id: '',
+      name: ''
+    };
+    this.team = {
+      id: '',
+      name: ''
+    };
     this.userInfoService = new UserInfoService();
+    this.matchService = new MatchService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
     this.createForms();
@@ -175,11 +207,11 @@ export class EditUserInfoComponent  implements OnInit {
 
     // user details form validations
     this.userDetailsForm = this.fb.group({
-      fullName: [this.viewModel.personal_info.full_name, Validators.required ],
+      fullName: [this.viewModel.personal_info.full_name, Validators.required],
       birthday: [this.viewModel.personal_info.date_of_birth, Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
-      height: [this.viewModel.personal_info.height, Validators.required ],
-      weight: [this.viewModel.personal_info.weight, Validators.required ],
+      height: [this.viewModel.personal_info.height, Validators.required],
+      weight: [this.viewModel.personal_info.weight, Validators.required],
       country: new FormControl(this.countries[0], Validators.required),
       city: new FormControl(this.cities[0], Validators.required),
       position: new FormControl(this.positions[0], Validators.required),
@@ -201,29 +233,44 @@ export class EditUserInfoComponent  implements OnInit {
       ])),
       matching_passwords: this.matching_passwords_group,
       terms: new FormControl(false, Validators.pattern('true'))
-    })
+    });
 
   }
 
-  onSubmitAccountDetails(value){
+  onSubmitAccountDetails(value) {
     console.log(value);
   }
 
-  onSubmitUserDetails(value){
+  onSubmitUserDetails(value) {
     console.log(value);
   }
 
-  loadGames(){
-
+  loadGames() {
+    this.matchService.getPlayerMatchByTeamSeason(this.viewModel.user_id, this.team.id, this.season.id)
+      .subscribe(player_matches => this.player_matches = player_matches);
   }
 
-  save(){
+  save() {
     // Todo: Saves current information to the user model and returns to user-info
     this.router.navigate(['/user-info']);
   }
 
-  discard(){
+  discard() {
     // Todo: Discards current information and returns to user-info
     this.router.navigate(['/user-info']);
   }
+
+  /* CClaims stuff*/
+
+  //------------------------Visual Interactions----------------------------  
+  changeEditStatus(index) {
+    this.matchesInEdit[index] ? this.matchesInEdit[index] = false : this.matchesInEdit[index] = true;
+  }
+
+
+  goToTop(index) {
+    this.scrollService.scrollTo('#top', 500, -100);
+    this.eventsToggled[index] = false;
+  }
+
 }
