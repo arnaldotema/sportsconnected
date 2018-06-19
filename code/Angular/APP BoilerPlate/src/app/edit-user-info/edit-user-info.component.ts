@@ -21,12 +21,14 @@ export class EditUserInfoComponent implements OnInit {
 
   ngModelMockVar;
 
+  currentMatchIdx;
+
   availableStuff = [
     '2 Golos',
     '2 Assistências',
     '2 Cartões Vermelhos',
     '3 Cartões Amarelos',
-  ]
+  ];
   matchesInEdit = {};
   eventsToggled = {};
   selectizeConfig = {
@@ -132,7 +134,7 @@ export class EditUserInfoComponent implements OnInit {
   ];
 
   validation_messages = {
-    'fullname': [
+    'name': [
       {type: 'required', message: 'O nome é obrigatório'}
     ],
     'gender': [
@@ -207,7 +209,7 @@ export class EditUserInfoComponent implements OnInit {
 
     // user details form validations
     this.userDetailsForm = this.fb.group({
-      fullName: [this.viewModel.personal_info.full_name, Validators.required],
+      name: [this.viewModel.personal_info.name, Validators.required],
       birthday: [this.viewModel.personal_info.date_of_birth, Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
       height: [this.viewModel.personal_info.height, Validators.required],
@@ -260,11 +262,12 @@ export class EditUserInfoComponent implements OnInit {
     this.router.navigate(['/user-info']);
   }
 
-  /* CClaims stuff*/
-
-  //------------------------Visual Interactions----------------------------  
-  changeEditStatus(index) {
-    this.matchesInEdit[index] ? this.matchesInEdit[index] = false : this.matchesInEdit[index] = true;
+  changedInput(inputType, event, isMatch) {
+    let value = event.target.value;
+    if (isMatch)
+      this.player_matches[this.currentMatchIdx].home_team.main_lineup[0][inputType] = value;
+    else
+      this.viewModel[inputType] = value;
   }
 
 
