@@ -1065,3 +1065,15 @@ coisas transversais a toda a plataforma.
 .sticky + .content {
   padding-top: 60px;
 }
+
+.btn-success {
+  color: #ffffff !important;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-danger {
+  color: #fff !important;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}

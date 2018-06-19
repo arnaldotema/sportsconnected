@@ -8,10 +8,10 @@ export class PlayerMatch {
   };
   number: number;
   positions: string[];
-  goals: string[];
-  assists: string[];
-  yellow_cards: string[];
-  red_cards: string[];
+  goals: number;
+  assists: number;
+  yellow_cards: number;
+  red_cards: number;
   minutes_played: number;
   go_in:string[];
   go_out:string[];
