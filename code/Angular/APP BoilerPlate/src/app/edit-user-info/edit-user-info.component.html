@@ -115,57 +115,55 @@
           </mat-form-field>
         </div>
         <div *ngIf="player_matches != null">
-
-
           <div class="event-list">
-            <mat-accordion multi="true">
-              <mat-expansion-panel *ngFor="let match of player_matches; let i = index"
-                                   (closed)="eventsToggled[match.id] = false"
-                                   (opened)="eventsToggled[match.id] = true">
-                <mat-expansion-panel-header class="event-list__header"> 27-08-1993 SLB 3 - 2 SFC 3 Golos 2 Assistências
-                  34''
+            <mat-accordion>
+              <mat-expansion-panel *ngFor="let match of player_matches;">
+                <mat-expansion-panel-header class="event-list__header">
+                  <mat-panel-title>
+                    {{match.date}}
+                  </mat-panel-title>
+                  <mat-panel-description class="match-description">
+
+                    <small>{{match.competition.name}}</small>
+
+                    <img src="{{match.home_team.avatar}}">
+                    <h4>{{match.home_team.name}}</h4>
+                    <div class="info">
+
+                      {{match.home_team.goals.length}}
+                      -
+                      {{match.away_team.goals.length}}
+                    </div>
+
+                    <h4>{{match.away_team.name}}</h4>
+                    <img src="{{match.away_team.avatar}}">
+                    <div class="info">
+                      {{match.home_team.main_lineup[0].goals.length}}<img src="/assets/ball.png">
+                      {{match.home_team.main_lineup[0].assists.length}}<img src="/assets/boots.png">
+                      {{match.home_team.main_lineup[0].minutes_played}}<img src="/assets/clock.png">
+                      {{match.home_team.main_lineup[0].yellow_cards.length}}<img src="/assets/yellow.png">
+                      {{match.home_team.main_lineup[0].red_cards.length}}<img src="/assets/red.png">
+                    </div>
+                  </mat-panel-description>
                 </mat-expansion-panel-header>
-                <div class="event-info" [id]="match.id">
-                  <div class="event-info__section">
-                    <div class="row">
-                      <div class="col s4"><h5>Doctor</h5>
-                        <ng-selectize  [options]="availableStuff" [(ngModel)]="ngModelMockVar"></ng-selectize>
-                      </div>
-                      <div class="col s4"><h5>Clinic</h5>
-                        <ng-selectize  [options]="availableStuff" [(ngModel)]="ngModelMockVar"></ng-selectize>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col s4"><h5>Reference</h5> <input
-                        [(ngModel)]="ngModelMockVar" matInput placeholder="Reference" type="number">
-                        <p [hidden]="this.matchesInEdit[match.id]"> Referência </p></div>
-                      <div class="col s4"><h5>Diseases/Disorders</h5>
-                        <ng-selectize [enabled]="this.matchesInEdit[match.id]" [options]="availableStuff"
-                                      [config]="selectizeConfig" [(ngModel)]="ngModelMockVar"></ng-selectize>
-                      </div>
-                      <div class="col s4"><h5>Medications</h5>
-                        <ng-selectize [enabled]="this.matchesInEdit[match.id]" [options]="availableStuff"
-                                      [config]="selectizeConfig" [(ngModel)]="ngModelMockVar"></ng-selectize>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col s6">
-                        <button (click)="changeEditStatus(match.id)" mat-raised-button color="warn">
-                          <!-- {{this.matchesInEdit[match.id] ? "Confirmar" : "Editar"}} --> Confirmar
-                        </button>
-                      </div>
-                      <div class="col s2">
-                        <button (click)="goToTop(match.id)" mat-button>Voltar ao início</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <mat-form-field>
+                  <input matInput placeholder="Golos">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Assistências">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Cartões Amarelo">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Cartões Vermelho">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Minutos jogados">
+                </mat-form-field>
               </mat-expansion-panel>
             </mat-accordion>
           </div>
-
-
-
         </div>
       </div>
     </div>
