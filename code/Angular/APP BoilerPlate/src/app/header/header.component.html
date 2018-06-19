@@ -19,6 +19,12 @@
         </div>
       </div>
     </div>
+    <div class="profile-menu">
+      <a href="/user-info">
+        <div mat-card-avatar class="profile-small-image"
+             [ngStyle]="{'background-image':  'url(' + viewModel.personal_info.avatar + ')' }"></div>
+      </a>
+    </div>
   </div>
 </nav>
 <div class="player-header-placeholder"></div>
