@@ -1,7 +1,7 @@
 import {Achievement} from './achievement';
 
 export class UserInfoViewModel {
-  user_id: number;
+  user_id: string;
   personal_info: {
     name: string,
     age: number,
