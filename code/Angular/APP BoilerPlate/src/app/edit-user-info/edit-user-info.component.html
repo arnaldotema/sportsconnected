@@ -43,34 +43,33 @@
           <h2>Dados pessoais</h2>
           <form [formGroup]="userDetailsForm">
             <mat-form-field>
-              <input matInput placeholder="Nome completo" formControlName="fullName"
-                     [(ngModel)]="viewModel.personal_info.full_name">
+              <input matInput placeholder="Nome completo" formControlName="name"
+                     [(ngModel)]="viewModel.personal_info.name"
+                     (change)="changedInput('name',$event, false)">
             </mat-form-field>
 
             <mat-form-field>
               <input matInput placeholder="Altura" formControlName="height"
-                     [(ngModel)]="viewModel.personal_info.height">
+                     [(ngModel)]="viewModel.personal_info.height"
+                     (change)="changedInput('height',$event, false)">
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput placeholder="Peso" formControlName="weight" [(ngModel)]="viewModel.personal_info.weight">
+              <input matInput placeholder="Peso" formControlName="weight"
+                     [(ngModel)]="viewModel.personal_info.weight"
+                     (change)="changedInput('weight',$event, false)">
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Data de nascimento" formControlName="birthday"
-                     required>
+              <input matInput [matDatepicker]="picker" placeholder="Data de nascimento"
+                     formControlName="birthday">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngFor="let validation of validation_messages.birthday">
-                <mat-error class="error-message"
-                           *ngIf="userDetailsForm.get('birthday').hasError(validation.type) && (userDetailsForm.get('birthday').dirty || userDetailsForm.get('birthday').touched)">
-                  {{validation.message}}
-                </mat-error>
-              </mat-error>
             </mat-form-field>
 
             <mat-form-field>
-              <mat-select formControlName="country" placeholder="País">
+              <mat-select formControlName="country" placeholder="País"
+                          (change)="changedInput('country',$event, false)">
                 <mat-option *ngFor="let country of countries" [value]="viewModel.personal_info.nationality">
                   {{country}}
                 </mat-option>
@@ -78,7 +77,8 @@
             </mat-form-field>
 
             <mat-form-field>
-              <mat-select formControlName="city" placeholder="Cidade">
+              <mat-select formControlName="city" placeholder="Cidade"
+                          (change)="changedInput('city',$event, false)">
                 <mat-option *ngFor="let city of cities" [value]="viewModel.personal_info.residence">
                   {{city}}
                 </mat-option>
@@ -86,15 +86,17 @@
             </mat-form-field>
 
             <mat-form-field>
-              <mat-select formControlName="position" placeholder="Posição">
-                <mat-option *ngFor="let position of positions" [value]="viewModel.personal_info.positions[0]">
+              <mat-select formControlName="position" placeholder="Posição"
+                          (change)="changedInput('position',$event, false)">
+              <mat-option *ngFor="let position of positions" [value]="viewModel.personal_info.positions[0]">
                   {{position}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
 
             <mat-form-field>
-              <mat-select formControlName="foot" placeholder="Pé dominante">
+              <mat-select formControlName="foot" placeholder="Pé dominante"
+                          (change)="changedInput('foot',$event, false)">
                 <mat-option *ngFor="let foot of feet" [value]="viewModel.personal_info.foot">
                   {{foot}}
                 </mat-option>
@@ -117,7 +119,7 @@
         <div *ngIf="player_matches != null">
           <div class="event-list">
             <mat-accordion>
-              <mat-expansion-panel *ngFor="let match of player_matches;">
+              <mat-expansion-panel *ngFor="let match of player_matches; let _idx = index" (opened)="currentMatchIdx = _idx">
                 <mat-expansion-panel-header class="event-list__header">
                   <mat-panel-title>
                     {{match.date}}
@@ -138,28 +140,38 @@
                     <h4>{{match.away_team.name}}</h4>
                     <img src="{{match.away_team.avatar}}">
                     <div class="info">
-                      {{match.home_team.main_lineup[0].goals.length}}<img src="/assets/ball.png">
-                      {{match.home_team.main_lineup[0].assists.length}}<img src="/assets/boots.png">
+                      {{match.home_team.main_lineup[0].goals}}<img src="/assets/ball.png">
+                      {{match.home_team.main_lineup[0].assists}}<img src="/assets/boots.png">
                       {{match.home_team.main_lineup[0].minutes_played}}<img src="/assets/clock.png">
-                      {{match.home_team.main_lineup[0].yellow_cards.length}}<img src="/assets/yellow.png">
-                      {{match.home_team.main_lineup[0].red_cards.length}}<img src="/assets/red.png">
+                      {{match.home_team.main_lineup[0].yellow_cards}}<img src="/assets/yellow.png">
+                      {{match.home_team.main_lineup[0].red_cards}}<img src="/assets/red.png">
                     </div>
                   </mat-panel-description>
                 </mat-expansion-panel-header>
                 <mat-form-field>
-                  <input matInput placeholder="Golos">
+                  <input matInput ngModel="{{match.home_team.main_lineup[0].goals}}"
+                         (change)="changedInput('goals',$event, true)"
+                         placeholder="Golos" value="{{match.home_team.main_lineup[0].goals}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Assistências">
+                  <input matInput ngModel="{{match.home_team.main_lineup[0].assists}}"
+                         (change)="changedInput('assists',$event, true)"
+                         placeholder="Assistências" value="{{match.home_team.main_lineup[0].assists}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Cartões Amarelo">
+                  <input matInput ngModel="{{match.home_team.main_lineup[0].yellow_cards}}"
+                         (change)="changedInput('yellow_cards',$event, true)"
+                         placeholder="Cartões Amarelo" value="{{match.home_team.main_lineup[0].yellow_cards}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Cartões Vermelho">
+                  <input matInput ngModel="{{match.home_team.main_lineup[0].red_cards}}"
+                         (change)="changedInput('red_cards',$event, true)"
+                         placeholder="Cartões Vermelho" value="{{match.home_team.main_lineup[0].red_cards}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Minutos jogados">
+                  <input matInput ngModel="{{match.home_team.main_lineup[0].minutes_played}}"
+                         (change)="changedInput('minutes_played',$event, true)"
+                         placeholder="Minutos jogados" value="{{match.home_team.main_lineup[0].minutes_played}}">
                 </mat-form-field>
               </mat-expansion-panel>
             </mat-accordion>
@@ -176,13 +188,13 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="section-title">{{viewModel.personal_info.full_name}}</h2>
+      <h2 class="section-title">{{viewModel.personal_info.name}}</h2>
       <form [formGroup]="userDetailsForm">
         <mat-form-field class="full-width">
-          <input matInput placeholder="Nome completo" formControlName="fullname" required>
-          <mat-error *ngFor="let validation of validation_messages.fullname">
+          <input matInput placeholder="Nome completo" formControlName="name" required>
+          <mat-error *ngFor="let validation of validation_messages.name">
             <mat-error class="error-message"
-                       *ngIf="userDetailsForm.get('fullname').hasError(validation.type) && (userDetailsForm.get('fullname').dirty || userDetailsForm.get('fullname').touched)">
+                       *ngIf="userDetailsForm.get('name').hasError(validation.type) && (userDetailsForm.get('name').dirty || userDetailsForm.get('name').touched)">
               {{validation.message}}
             </mat-error>
           </mat-error>
