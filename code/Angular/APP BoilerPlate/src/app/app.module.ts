@@ -21,6 +21,7 @@ import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http'
 
 import { LoadingPageModule } from 'angular-loading-page';         //Loading directive
 import { MaterialBarModule } from 'angular-loading-page';         //Loading animation component
+import { ClickOutsideModule } from 'ng-click-outside';
 import {
   MatAutocompleteModule,
   MatButtonToggleModule,
@@ -104,6 +105,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   imports: [
     HttpClientModule,
     BrowserModule,
+    ClickOutsideModule,
     FormsModule,
     ReactiveFormsModule,
     ScrollToModule.forRoot(),
