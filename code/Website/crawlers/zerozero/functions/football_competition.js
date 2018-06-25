@@ -20,7 +20,7 @@ const updateCompetitionInfo = function (err, res, done){
         '';
 
     competition.avatar = res.$('#page_header_container .logo img').length > 0 ?
-        "http://www.zerozero.pt" + res.$('#page_header_container .logo img').attr("src") :
+        "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
         '';
 
     logger.info("Competition info:", competition);
@@ -38,6 +38,7 @@ const updateCompetitionInfo = function (err, res, done){
 
             zerozero.queue({
                 uri:format(baseUris.COMPETITION_EDITION_MATCHES, { edition_id: res.options.zerozeroId }),
+                priority: 1,
                 callback: proxyHandler.crawl,
                 successCallback: updateCompetitionMatches,
                 zerozeroId: res.options.zerozeroId,
@@ -60,6 +61,7 @@ const updateCompetitionTeams = function (err, res, done){
 
         zerozero.queue({
             uri:format(baseUris.TEAM_INFO, { team_id: teamId }),
+            priority: 2,
             callback: proxyHandler.crawl,
             successCallback: footballTeamCrawler.updateTeamInfo,
             zerozeroId: teamId,
@@ -98,7 +100,7 @@ const updateCompetitionMatches = function (err, res, done){
                 zerozero.queue({
                     uri: format(baseUris.MATCH_INFO, {match_id: matchId}),
                     callback: proxyHandler.crawl,
-                    priority: 1,
+                    priority: 9,
                     successCallback: footballMatchCrawler.processMatchInfo,
                     zerozeroId: matchId,
                     matchDate: matchDate,
@@ -109,7 +111,7 @@ const updateCompetitionMatches = function (err, res, done){
     });
 
     footballMatch.insertMany(matchesToSchedule, function (err, matches) {
-        console.log(matches);
+        logger.info("Matches not played: ", matches);
         done();
     });
 }

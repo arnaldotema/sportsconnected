@@ -12,14 +12,33 @@ const addTeamToCompetition = function(id, team, cb) {
         $addToSet: { "current_season.standings": {
                 id: team._id,
                 name: team.name,
-                avatar: team.avatar,
+                avatar: team.avatar
             }
         }
     }
 
-    this.findOneAndUpdate(query, update, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
+    this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+};
+
+const addUserInfoToCompetition = function(id, user_info, cb) {
+    query = {
+        "_id": id,
+        "current_season.stats.id": { $ne: user_info._id }
+    };
+
+    update = {
+        $addToSet: { "current_season.stats": {
+                id: user_info._id,
+                name: user_info.personal_info.name,
+                avatar: user_info.personal_info.avatar
+            }
+        }
+    }
+
+    this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 module.exports = {
-    addTeamToCompetition: addTeamToCompetition
+    addTeamToCompetition: addTeamToCompetition,
+    addUserInfoToCompetition: addUserInfoToCompetition
 }
