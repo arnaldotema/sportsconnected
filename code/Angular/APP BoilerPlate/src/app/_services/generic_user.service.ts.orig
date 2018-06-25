@@ -11,7 +11,7 @@ import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
 export class GenericUserService {
 
   mockUserInfo: UserInfoViewModel[] = [{
-    user_id: 1,
+    user_id: '1',
     personal_info: {
       name: 'Diogo Pires',
       age: 25,

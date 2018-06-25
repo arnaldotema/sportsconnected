@@ -17,6 +17,8 @@ export class TeamViewModel {
       wins: number,
       losses: number,
       draws: number,
+      scored_goals: number,
+      suffered_goals: number,
     }]
   };
   tryouts: [{

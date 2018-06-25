@@ -6,6 +6,7 @@ import {forEach} from '@angular/router/src/utils/collection';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {Observable} from 'rxjs/Observable';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-info-profile',
@@ -24,7 +25,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   skill_values;
   chart_img;
   show = false;
-  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {
+  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog, private router: Router ) {
     // When the user scrolls the page, execute myFunction
     window.onscroll = function() {myFunction()};
   }
@@ -104,6 +105,10 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     });
   }
 
+  editPlayer(): void {
+    this.router.navigate(['/edit-user-info']);
+  }
+
   openCreateDialog(event): void {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
@@ -132,11 +137,12 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
     this.userInfoService.voteForSkill(skillName, this.mockAuthor.id).subscribe();
     {
-      this.labels.forEach(label => {
+      this.labels.forEach((label,key) => {
         if (label == skillName)
-          ++this.skill_values[1];
+          ++this.skill_values[key];
       });
 
+      /*
       this.data = {
         labels: this.labels,
         datasets: [{
@@ -179,6 +185,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         data: this.data,
         options: this.options
       });
+      */
     }
   }
 }
