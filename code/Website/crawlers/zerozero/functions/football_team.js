@@ -25,8 +25,8 @@ const updateTeamInfo = function (err, res, done){
         res.$("#page_header .factsheet .name").html():
         '';
 
-    team.avatar = res.$("#page_header .logo img").attr("src") ?
-        'https://www.zerozero.pt/' + res.$("#page_header .logo img").attr("src") :
+    team.avatar = res.$("#page_header .logo img") ?
+        'https://www.zerozero.pt/' + res.$("#page_header .logo img")[0].attribs["data-cfsrc"] :
         '';
 
     team.name = res.$("#page_header .factsheet .name").html() ?
@@ -47,11 +47,11 @@ const updateTeamInfo = function (err, res, done){
             done();
         }
         else {
-            logger.info("Successfully updated team " + res._doc);
+            logger.info("Successfully updated team " + result._doc);
 
             if(res.options.competition){
                 res.options.team = result._doc;
-                cascadeTeamUpdates(res);
+                cascadeTeamUpdates(res, done);
             }
             else{
                 done();
@@ -60,23 +60,24 @@ const updateTeamInfo = function (err, res, done){
     });
 };
 
-function cascadeTeamUpdates(res){
+function cascadeTeamUpdates(res, done){
     footballTeam.addCompetitionToTeam(res.options.team._id, res.options.competition,  function (err, result) {
         if (err) {
             logger.error("Error when adding competition to team:", err);
+            done();
         }
         else {
-            logger.info("Successfully added competition " + res.options.competition.name + "to team " + res.options.team.name);
+            logger.info("Successfully added competition " + res.options.competition.name + " to team " + res.options.team.name);
 
-            footballCompetition.addTeamToCompetition(res.options.competition._id, result._doc, function (err, result) {
+            footballCompetition.addTeamToCompetition(res.options.competition._id, res.options.team, function (err, result) {
                 if (err) {
                     logger.error("Error when adding team to competition:", err);
+                    done();
                 }
                 else {
                     logger.info("Successfully added team " + res.options.team.name + " to competition " + res.options.competition.name);
+                    processAllTeamPlayers(res, done);
                 }
-
-                processAllTeamPlayers(err, res, done);
             });
         }
     });
@@ -90,6 +91,7 @@ function processAllTeamPlayers(res, done){
 
         zerozero.queue({
             uri:format(baseUris.PLAYER_INFO, { player_id: playerId }),
+            priority: 3,
             callback: proxyHandler.crawl,
             successCallback: footballUserInfoCrawler.updateUserInfo,
             proxyFailCallback: zerozero.proxyFailCallback,
@@ -116,6 +118,7 @@ const processAllTeamGames = function (err, res, done){
 
         zerozero.queue({
             uri:format(baseUris.MATCH_INFO, { match_id: matchId }),
+            priority: 9,
             callback: proxyHandler.crawl,
             successCallback: footballMatchCrawler.processMatchInfo,
             zerozeroId: matchId

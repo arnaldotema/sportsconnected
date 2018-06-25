@@ -44,8 +44,20 @@ var FootballTeamSchema = new Schema({
                 goals: Number
             }
         }],
-        players: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
-        staff: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}]
+        players: [
+            {
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                name: String,
+                avatar: String
+            }
+        ],
+        staff: [
+            {
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                name: String,
+                avatar: String
+            }
+        ]
     },
     tryouts: [{
         address: String,
@@ -54,7 +66,7 @@ var FootballTeamSchema = new Schema({
         time: String,
         requirements: String,
     }],
-    personal_info: {
+    additional_info: {
         site: String,
         email: String,
         phone_Number: String,

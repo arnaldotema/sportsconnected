@@ -13,10 +13,13 @@ import {UserInfoService} from '../_services/user_info.service';
 })
 export class HeaderComponent implements OnInit {
 
-  searchString: String;
+  searchString: string;
   searchResults: Search_entity_viewmodel[];
   viewModel: UserInfoViewModel;
   userInfoService : UserInfoService;
+
+  show_notifications: boolean;
+  show_search: boolean;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -27,10 +30,13 @@ export class HeaderComponent implements OnInit {
     this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
+
+    this.show_notifications = false;
+    this.show_search = false;
   }
 
-  searchFor(searchString) {
-    this.genericService.searchUser('',searchString,'')
+  searchFor() {
+    this.genericService.searchUser('',this.searchString,'')
       .subscribe(list => this.searchResults = list);
   }
 
