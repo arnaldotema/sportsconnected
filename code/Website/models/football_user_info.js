@@ -118,5 +118,7 @@ var FootballUserInfoSchema = new Schema({
     updated_at: {type: Date, default: Date.now}
 });
 
+FootballUserInfoSchema.statics = require('../services/football_user_info_service');
+
 module.exports = mongoose.model('football_user_info', FootballUserInfoSchema);
 

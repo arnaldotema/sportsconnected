@@ -22,7 +22,7 @@ var FootballCompetitionSchema = new Schema({
 		],
         stats : [
             {
-                info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 name: String,
                 avatar: String,
                 goals: {type: Number, default: 0},
@@ -58,5 +58,7 @@ var FootballCompetitionSchema = new Schema({
         zerozero: {type: Number, required: true, unique: true, index: true},
     }
 });
+
+FootballCompetitionSchema.statics = require('../services/football_competition_service');
 
 module.exports = mongoose.model('football_competition', FootballCompetitionSchema);
