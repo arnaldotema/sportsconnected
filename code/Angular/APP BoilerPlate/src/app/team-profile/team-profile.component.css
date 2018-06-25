@@ -220,7 +220,7 @@ img {
 }
 
 .meta .sc-stats-table tr > th, td {
-  min-width: 35px !important;
+  min-width: 35px;
   padding: 5px 7px;
   font-size: 12px;
   height: 60px;
