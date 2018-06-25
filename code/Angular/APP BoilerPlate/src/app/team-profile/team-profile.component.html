@@ -6,7 +6,7 @@
              title="profile" style="left: -241.5px;">
       </div>
       <div class="profile-buttons">
-        <button mat-raised-button class="btn-follow">Seguir</button>
+        <button mat-raised-button class="sc-btn btn-sc-default">Seguir</button>
       </div>
       <div class="roster">
         <table class="tryout-table">
@@ -295,9 +295,10 @@
           <th>Class.</th>
           <th>Vitórias</th>
           <th>Derrotas</th>
-          <th>Empates</th>
+          <th class="th-td-last">Empates</th>
         </tr>
-        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+        <!-- ALTT - BIG HAMMER DOWN HERE JUST TO TEST SOMETHING REAL QUICK!!-->
+        <tr *ngFor="let stat of viewModel.current_season.stats.splice(0,3); let _idx = index "
             class="{{ _idx % 2 ? 'tr-even': 'tr-odd'  }}">
           <td>
             <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">

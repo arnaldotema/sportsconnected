@@ -12,7 +12,7 @@ import {Recommendation} from '../_models/recommendation';
 export class UserInfoService {
 
   mockUserInfo: UserInfoViewModel[] = [{
-    user_id: 1,
+    user_id: '1',
     personal_info: {
       name: 'Diogo Pires',
       age: 25,

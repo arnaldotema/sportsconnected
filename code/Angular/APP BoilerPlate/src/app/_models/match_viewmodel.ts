@@ -1,6 +1,7 @@
 import {TeamMatch} from './team_match';
 
 export class MatchViewModel{
+  id: string;
   played: boolean;
   external_ids: {
     zerozero: number
