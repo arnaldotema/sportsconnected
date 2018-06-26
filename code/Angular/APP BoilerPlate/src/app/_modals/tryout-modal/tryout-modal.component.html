@@ -2,40 +2,42 @@
 <h2 *ngIf="!create && edit">Edita a tua recomendação</h2>
 <div class="creation-modal">
   <div class="creation-modal__modal-header">
-    <span>Criar Recomendação</span>
+    <span>Criar Captação</span>
     <mat-icon (click)="onNoClick()">
       highlight_off
     </mat-icon>
   </div>
-  <div class="creation-modal__modal-description">
-    <img [src]="target.avatar">
-    <div class="target-info">
-      <h4>{{target.name}}</h4>
-      <h5>Primeira Liga Portuguesa</h5>
-    </div>
-  </div>
-  <div class="creation-modal__modal-form">
+  <form class="creation-modal__modal-form">
     <mat-form-field class="col-sm-12">
-      <mat-select [placeholder]="'Relação com ' + target.name">
-        <mat-option value="Adepto">
-          Adepto
+      <mat-select placeholder="Escalão" name="age_group" [(ngModel)]="age_group">
+        <mat-option value="Infantis">
+          Infantis
         </mat-option>
-        <mat-option value="Jogador">
-          Jogador
+        <mat-option value="Iniciados">
+          Iniciados
         </mat-option>
-        <mat-option value="Sócio">
-          Sócio
+        <mat-option value="Senior">
+          Senior
         </mat-option>
-        <mat-option value="Treinador">
-          Treinador
+        <mat-option value="Juvenis">
+          Juvenis
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field class="col-sm-12">
-        <textarea matInput placeholder="Faz uma recomendação" matTextareaAutosize matAutosizeMinRows="3"
-                  [(ngModel)]="text" ></textarea>
+      <input matInput placeholder="Morada" name="address" [(ngModel)]="address" >
     </mat-form-field>
-  </div>
+    <mat-form-field class="col-sm-12">
+      <input matInput placeholder="Dias" name="days" [(ngModel)]="days" >
+    </mat-form-field>
+    <mat-form-field class="col-sm-12">
+      <input matInput placeholder="Hora" name="time" [(ngModel)]="time" >
+    </mat-form-field>
+    <mat-form-field class="col-sm-12">
+        <textarea matInput placeholder="Notas / Requisitos" matTextareaAutosize matAutosizeMinRows="3"
+                  name="requirements" [(ngModel)]="requirements" ></textarea>
+    </mat-form-field>
+  </form>
   <div class="creation-modal__buttons">
     <button mat-raised-button (click)="onCreateClick()">Confirmar</button>
     <button mat-button (click)="onNoClick()" mat-button>Cancelar</button>
