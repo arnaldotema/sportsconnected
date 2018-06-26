@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -253,7 +239,7 @@
       <path value="$PROJECT_DIR$/code/Website/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="408" />
     <option name="y" value="277" />
     <option name="width" value="965" />
@@ -542,15 +528,15 @@
       <workItem from="1529050734966" duration="29900000" />
       <workItem from="1529491186050" duration="302000" />
       <workItem from="1529923918727" duration="12235000" />
-      <workItem from="1530028283866" duration="7368000" />
+      <workItem from="1530028283866" duration="7967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265218000" />
+    <option name="totallyTimeSpent" value="265817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
