@@ -4,28 +4,21 @@ import {TeamService} from '../../_services/team.service';
 import {TeamViewModel} from '../../_models/team_viewmodel';
 
 @Component({
-  selector: 'app-recommendation-modal',
-  templateUrl: './recommendation-modal.component.html',
-  styleUrls: ['./recommendation-modal.component.css']
+  selector: 'app-tryout-modal',
+  templateUrl: './tryout-modal.component.html',
+  styleUrls: ['./tryout-modal.component.css']
 })
-export class RecommendationModalComponent implements OnInit {
+export class TryoutModalComponent implements OnInit {
 
-  text: string;
-  recommendationIdx: string;
-  edit: false;
-  create: true;
-  target;
-  author;
+  address: string;
+  age_group: string;
+  days: string;
+  time: string;
+  requirements: string;
 
   constructor(
-    public dialogRef: MatDialogRef<RecommendationModalComponent>,
+    public dialogRef: MatDialogRef<TryoutModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-
-    this.target = this.data.target;
-    debugger;
-    if (this.data.author != null)
-      this.author = this.data.author;
-    this.text = '';
 
     /*
     if (this.data.recommendationIdx != null) {
@@ -40,10 +33,12 @@ export class RecommendationModalComponent implements OnInit {
   }
 
   onCreateClick(): void {
-    debugger;
     this.dialogRef.close({
-      author : this.author,
-      text: this.text
+      address: this.address,
+      age_group: this.age_group,
+      days: this.days,
+      time: this.time,
+      requirements: this.requirements
     });
   }
 

@@ -1020,6 +1020,10 @@ coisas transversais a toda a plataforma.
   width: 1200px;
 }
 
+.mat-dialog-container{
+  padding: 0px !important; /* Override default padding */
+}
+
 .loading-page {
   top: 0;
   bottom: 0;
