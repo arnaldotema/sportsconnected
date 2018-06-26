@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RecommendationModalComponent } from './recommendation-modal.component';
 
-describe('RecommendationModalComponent', () => {
+describe('TryoutModalComponent', () => {
   let component: RecommendationModalComponent;
   let fixture: ComponentFixture<RecommendationModalComponent>;
 
