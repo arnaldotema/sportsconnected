@@ -81,7 +81,7 @@
 
 .player .player-info {
   float: left;
-  width: 45%;
+  width: 35%;
   line-height: 1;
   padding-left: 1rem;
 }
@@ -390,7 +390,7 @@ img {
 }
 
 .player .meta .player-image {
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0px 10px;
   position: relative;
   height: 350px;
@@ -474,7 +474,7 @@ img {
 
 .player .player-info {
   float: left;
-  width: 45%;
+  width: 35%;
   line-height: 1;
   padding-left: 1rem;
 }
