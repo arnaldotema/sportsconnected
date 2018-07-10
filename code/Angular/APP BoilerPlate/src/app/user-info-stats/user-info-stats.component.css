@@ -17,7 +17,7 @@
 }
 
 .player .meta .player-image {
-  border-radius: 10px;
+  border-radius: 5px;
   margin : 10px;
   float: left;
   position: relative;
@@ -110,7 +110,7 @@
 
 .player .player-info {
   float: left;
-  width: 45%;
+  width: 35%;
   line-height: 1;
   padding-left: 1rem;
 }
