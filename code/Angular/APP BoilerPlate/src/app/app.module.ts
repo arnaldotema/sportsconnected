@@ -75,6 +75,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HeaderComponent } from './header/header.component';
 import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
+import { ToastModule } from 'ng2-toastr';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -149,6 +150,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MaterialBarModule,
     NgSelectizeModule,
     DropzoneModule,
+    ToastModule.forRoot()
   ],
   providers: [
     HttpClient,
