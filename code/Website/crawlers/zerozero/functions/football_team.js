@@ -114,10 +114,11 @@ const processAllTeamGames = function (err, res, done){
     let matchIds = [];
 
     res.$("#team_games table tr .result a").each(function() {
-        let matchId = res.$(this).attr('href').match(/\d+/g)[0]
+        let matchId = res.$(this).attr('href').match(/\d+/g)[0];
+        let seasonId = res.$(this).attr('href').match(/\d+/g)[1];
 
         zerozero.queue({
-            uri:format(baseUris.MATCH_INFO, { match_id: matchId }),
+            uri:format(baseUris.MATCH_INFO, { match_id: matchId, season_id: seasonId }),
             priority: 9,
             callback: proxyHandler.crawl,
             successCallback: footballMatchCrawler.processMatchInfo,

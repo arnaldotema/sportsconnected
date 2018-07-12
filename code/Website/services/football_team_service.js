@@ -46,8 +46,34 @@ const addPlayerToTeam = function(id, user_info, cb) {
     this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
+const getMatchTeamsByZeroZeroId = function(homeTeam, awayTeam, cb) {
+    let query = [
+        {
+            $facet: {
+                home_team: [
+                    {
+                        $match: {
+                            "external_ids.zerozero": homeTeam
+                        }
+                    }
+                ],
+                away_team: [
+                    {
+                        $match: {
+                            "external_ids.zerozero": awayTeam
+                        }
+                    }
+                ]
+            }
+        }
+    ];
+
+    this.aggregate(query, cb)
+};
+
 module.exports = {
     getMissingTeams: getMissingTeams,
     addCompetitionToTeam: addCompetitionToTeam,
-    addPlayerToTeam: addPlayerToTeam
+    addPlayerToTeam: addPlayerToTeam,
+    getMatchTeamsByZeroZeroId: getMatchTeamsByZeroZeroId
 }
