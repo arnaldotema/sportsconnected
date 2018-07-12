@@ -12,14 +12,15 @@ const baseUris = require('./base_uris');
 
 var j = request.jar();
 var cookie = request.cookie('jcenable=1');
+var captcha = request.cookie('cf_clearance=ffce9ae767f38d597cc9aaf347d6ebf58311e8f9-1530892002-3600');
+var user = request.cookie('zzptremember=6d888f3d2a03d081b16064e821f6abd1');
 var url = 'http://www.zerozero.pt';
 j.setCookie(cookie, url);
-request({url: url, jar: j}, function () {
-    request('http://images.google.com')
-})
+j.setCookie(captcha, url);
+j.setCookie(user, url);
 
 let zerozero = new Crawler({
-    rateLimit: 5000,
+    rateLimit: 50,
     jar: j,
     jQuery: {
         name: 'cheerio',
