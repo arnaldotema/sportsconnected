@@ -58,9 +58,10 @@ const updateCompetitionTeams = function (err, res, done){
 
     res.$('#edition_table tbody tr .text a').each(function() {
         let teamId = res.$(this).attr('href').match(/\d+/g)[0];
+        let seasonId = res.$(this).attr('href').match(/\d+/g)[1]
 
         zerozero.queue({
-            uri:format(baseUris.TEAM_INFO, { team_id: teamId }),
+            uri:format(baseUris.TEAM_INFO, { team_id: teamId, season_id: seasonId }),
             priority: 2,
             callback: proxyHandler.crawl,
             successCallback: footballTeamCrawler.updateTeamInfo,
@@ -84,6 +85,7 @@ const updateCompetitionMatches = function (err, res, done){
         const matchId = res.$(this).attr("id");
 
         if(matchId) {
+            //Dar meio dia para o jogo processar
             if (matchDate + 0.5 > Date.now()) {
                 matchesToSchedule.push({
                     played: false,
@@ -100,7 +102,7 @@ const updateCompetitionMatches = function (err, res, done){
                 zerozero.queue({
                     uri: format(baseUris.MATCH_INFO, {match_id: matchId}),
                     callback: proxyHandler.crawl,
-                    priority: 9,
+                    priority: 1,
                     successCallback: footballMatchCrawler.processMatchInfo,
                     zerozeroId: matchId,
                     matchDate: matchDate,
