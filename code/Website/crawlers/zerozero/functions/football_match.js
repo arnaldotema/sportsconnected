@@ -5,10 +5,147 @@ const baseUris = require('../base_uris');
 const format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
+const footballPlayer = require('../../../models/football_user_info');
 const footballMatch = require('../../../models/football_match');
 const footballTeam = require('../../../models/football_team');
 
-function processTeams(match, res){
+function initializeMatchModel(match, res, cb){
+
+    //Competition
+
+    let match = res.options.match;
+
+    match.competition.name = res.$("#matchedition .name span a").html() ?
+        res.$("#matchedition .name span a").html() :
+        '';
+
+    match.competition.phase = res.$("#matchedition .information span")[0] ?
+        res.$(res.$("#matchedition .information span")[0]).html():
+        '';
+
+    match.competition.avatar = res.$("#matchedition .profile_picture img") ?
+        "http://www.zerozero.pt" + res.$("#matchedition .profile_picture img").attr("href"):
+        '';
+
+    //Misc
+
+    match.referee = res.$(".frame .entity .text a") ?
+        res.$(".frame .entity .text a").html():
+        '';
+
+    match.stadium = res.$("#stadium .name a") ?
+        res.$("#stadium .name a").html() :
+        '';
+
+    //Duration (went to overtime?)
+
+    match.duration = res.$(".extratime").length == 0 ?
+        90 :
+        120;
+
+    // Teams
+
+    let homeZeroZeroId = res.$("#page_header .info .content .home .team a").length > 0 ?
+        res.$("#page_header .info .content .home .team a").attr('href').match(/\d+/g)[0] :
+        0;
+
+    let awayZeroZeroId = res.$("#page_header .info .content .away .team a").length > 0 ?
+        res.$("#page_header .info .content .away .team a").attr('href').match(/\d+/g)[0] :
+        0;
+
+    footballTeam.getMatchTeamsByZeroZeroId(homeZeroZeroId, awayZeroZeroId, function (err, result) {
+        if (err) {
+            logger.error(err);
+        }
+        else {
+            logger.info("Successfully fetched match teams", result);
+
+            let home_team = result[0].home_team;
+            let away_team = result[0].away_team;
+
+            if(home_team){
+                match.home_team.id = home_team._id;
+                match.home_team.name = home_team.name;
+                match.home_team.avatar = home_team.avatar;
+            }
+
+            if(away_team){
+                match.away_team.id = away_team._id;
+                match.away_team.name = away_team.name;
+                match.away_team.avatar = away_team.avatar;
+            }
+
+            cb(match, res);
+        }
+    })
+}
+
+function processMatchIds(match, res, cb){
+    // User_Infos
+
+    let homeTeam = {
+        main_lineup: [],
+        reserves: [],
+        staff: []
+    };
+
+    let awayTeam = {
+        main_lineup: [],
+        reserves: [],
+        staff: []
+    };
+
+    const report = res.$("#game_report .column_300");
+
+    if(report.length == 0){
+        logger.error("Match with zerozero id: " + res.options.zerozeroId + " has no report");
+    }
+    else{
+        res.$(report[0]).find(".player .name .text a").each(function() {
+            homeTeam.main_lineup.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+        res.$(report[1]).find(".player .name .text a").each(function() {
+            awayTeam.main_lineup.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+        res.$(report[2]).find(".player .name .text a").each(function() {
+            homeTeam.reserves.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+        res.$(report[3]).find(".player .name .text a").each(function() {
+            awayTeam.reserves.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+        res.$(report[4]).find(".player .name .text a").each(function() {
+            homeTeam.staff.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+        res.$(report[5]).find(".player .name .text a").each(function() {
+            awayTeam.staff.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+    }
+
+    match.home_team.main_lineup = homeTeam.main_lineup;
+    match.home_team.reserves = homeTeam.reserves;
+    match.home_team.staff = homeTeam.staff;
+
+    match.away_team.main_lineup = awayTeam.main_lineup;
+    match.away_team.reserves = awayTeam.reserves;
+    match.away_team.staff = awayTeam.staff;
+
+    footballPlayer.getMatchUserInfos(homeTeam, awayTeam, function (err, result) {
+        if (err) {
+            logger.error(err);
+        }
+        else {
+            logger.info("Successfully fetched match user infos", result);
+
+            cb(match, res);
+        }
+    })
+}
+
+function processMatchPlayers(match, res){
+
+}
+
+function processMatchTeams(match, res){
     let homeZeroZeroId = 0;
     let awayZeroZeroId = 0;
 
@@ -120,7 +257,7 @@ function processTeams(match, res){
     });
 }
 
-function processCompetition(match, res){
+function processMatchCompetition(match, res){
 
 }
 
@@ -171,41 +308,14 @@ const processMatchInfo = function (err, res, done){
         }
     };
 
-    //Competition
-
-    match.competition.name = res.$("#matchedition .name span a").html() ?
-        res.$("#matchedition .name span a").html() :
-        '';
-
-    match.competition.phase = res.$("#matchedition .information span")[0] ?
-        res.$(res.$("#matchedition .information span")[0]).html():
-        '';
-
-    match.competition.avatar = res.$("#matchedition .profile_picture img") ?
-        "http://www.zerozero.pt" + res.$("#matchedition .profile_picture img").attr("href"):
-        '';
-
-    //Misc
-
-    match.referee = res.$(".frame .entity .text a") ?
-        res.$(".frame .entity .text a").html():
-        '';
-
-    match.stadium = res.$("#stadium .name a") ?
-        res.$("#stadium .name a").html() :
-        '';
-
-    //Duration (went to overtime?)
-
-    match.duration = res.$(".extratime").length == 0 ?
-        90 :
-        120;
-
-    processCompetition(match, res);
-
-    processTeams(match, res);
-
-    done();
+    initializeMatchModel(match, res, function(match,res) {
+        processMatchIds(match, res, function(match,res) {
+            processMatchPlayers(match, res);
+            processMatchTeams(match, res);
+            processMatchCompetition(match, res);
+            done();
+        })
+    });
 }
 
 module.exports = {

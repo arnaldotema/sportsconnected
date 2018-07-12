@@ -4,9 +4,10 @@ var Schema   = mongoose.Schema;
 var FootballMatchSchema = new Schema({
     played: {type: Boolean, required: true, index: true},
     processed: {
-      teams: Boolean,
-      players: Boolean,
-      competition: Boolean
+        ids: Boolean,
+        teams: Boolean,
+        players: Boolean,
+        competition: Boolean
     },
 	external_ids: {
 		zerozero: Number
@@ -33,9 +34,6 @@ var FootballMatchSchema = new Schema({
 			{
                 name: String,
                 info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-                external_ids:{
-                    zerozero: Number
-                },
                 number: Number,
                 goals: [Number],
                 assists: [Number],
@@ -50,9 +48,6 @@ var FootballMatchSchema = new Schema({
             {
                 name: String,
 				info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-				external_ids:{
-                	zerozero: Number
-				},
                 number: Number,
                 goals: [Number],
                 assists: [Number],
@@ -63,13 +58,15 @@ var FootballMatchSchema = new Schema({
                 go_out:[Number]
             }
 		],
-		coach:{
-			name: String,
-			id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-			external_ids:{
-				zerozero: Number
-			}
-		}
+		staff:[
+            {
+                name: String,
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                external_ids: {
+                    zerozero: Number
+                }
+            }
+        ]
 	},
 	away_team : {
         id: {type: Schema.Types.ObjectId, ref: 'football_team'},
@@ -110,13 +107,15 @@ var FootballMatchSchema = new Schema({
                 go_out:[Number]
             }
         ],
-        coach:{
-            name: String,
-            id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-            external_ids:{
-                zerozero: Number
+        staff:[
+            {
+                name: String,
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                external_ids: {
+                    zerozero: Number
+                }
             }
-        }
+        ]
     }
 });
 
