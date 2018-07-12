@@ -5,7 +5,7 @@ module.exports = {
     COMPETITION_EDITION: 'http://www.zerozero.pt/edition.php?id={edition_id}',
     COMPETITION_EDITION_MATCHES: 'http://www.zerozero.pt/edition_matches.php?id={edition_id}',
     // TEAMS
-    TEAM_INFO: 'http://www.zerozero.pt/equipa.php?id={team_id}',
+    TEAM_INFO: 'http://www.zerozero.pt/equipa.php?id={team_id}&epoca_id={season_id}',
     TEAM_MATCHES: 'http://www.zerozero.pt/team_matches.php?id={team_id}&epoca_id={season_id}',
     //PLAYERS
     PLAYER_INFO: 'http://www.zerozero.pt/player.php?id={player_id}',
