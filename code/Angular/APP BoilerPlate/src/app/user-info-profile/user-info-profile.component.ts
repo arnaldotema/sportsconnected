@@ -1,4 +1,4 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit, ViewContainerRef} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 import {Chart} from 'chart.js';
@@ -7,6 +7,7 @@ import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
+import {ToastsManager} from 'ng2-toastr';
 
 @Component({
   selector: 'app-user-info-profile',
@@ -25,7 +26,10 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   skill_values;
   chart_img;
   show = false;
-  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog, private router: Router ) {
+  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog, private router: Router,
+              public toastr: ToastsManager, vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);
+
     // When the user scrolls the page, execute myFunction
     window.onscroll = function() {myFunction()};
   }
@@ -75,7 +79,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     };
     this.options = {
       title: {
-        text: 'Skills',
+        text: 'Vota nas "Skills" de ' + this.viewModel.personal_info.name,
         display: true
       },
       legend: {
@@ -104,6 +108,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
       colors: this.colors
     });
   }
+
 
   editPlayer(): void {
     this.router.navigate(['/edit-user-info']);
@@ -134,6 +139,9 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
 
   voteSkill(event): void {
+
+    this.toastr.success('Obrigado pelo voto!');
+
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
     this.userInfoService.voteForSkill(skillName, this.mockAuthor.id).subscribe();
     {
