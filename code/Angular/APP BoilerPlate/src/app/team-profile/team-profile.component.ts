@@ -4,6 +4,7 @@ import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
+import {TryoutModalComponent} from "../_modals/tryout-modal/tryout-modal.component";
 
 @Component({
   selector: 'app-team-profile',
@@ -78,7 +79,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
-          name: this.viewModel.name,
+          target: this.viewModel,
           author: this.mockAuthor,
           edit: false,
           create: true
@@ -93,6 +94,31 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
           debugger;
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.recommendations.top_5.push(result);
+          //this.recommendationDataSource.filter = this.filterString;
+        }
+      }
+    });
+  }
+
+  openTryoutDialog(): void {
+    const dialogRef = this.dialog.open(TryoutModalComponent,
+      {
+        data: {
+          target: this.viewModel,
+          author: this.mockAuthor,
+          edit: false,
+          create: true
+        }
+      });
+
+    dialogRef.afterClosed().subscribe(result => {
+      debugger;
+      if (result !== undefined) {
+        //this.teamService.createRecommendation('0',result).subscribe()
+        {
+          debugger;
+          // Todo: Add to the real team recommendation's list instead of the top 5
+          this.viewModel.tryouts.push(result);
           //this.recommendationDataSource.filter = this.filterString;
         }
       }
