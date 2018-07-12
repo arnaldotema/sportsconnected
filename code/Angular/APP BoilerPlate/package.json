@@ -40,6 +40,7 @@
     "ng-click-outside": "^4.0.0",
     "ng-selectize": "^1.1.1",
     "ng2-scroll-to-el": "^1.1.0",
+    "ng2-toastr": "^4.1.2",
     "ngx-dropzone-wrapper": "^5.3.1",
     "rxjs": "^5.5.2",
     "selectize": "^0.12.4",
