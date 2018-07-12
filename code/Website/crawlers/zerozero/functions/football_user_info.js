@@ -46,6 +46,14 @@ function cascadeUserInfoUpdates(res, done){
 const updateUserInfo = function (err, res, done){
 
     const user_info = {
+        current_season:{
+            team: {
+                id: res.options.team ? res.options.team.id : 0 ,
+                acronym: res.options.team ? res.options.team.acronym : '',
+                avatar: res.options.team ? res.options.team.avatar : '',
+                name: res.options.team ? res.options.team.name : ''
+            }
+        },
         personal_info: {
             name: '',
             avatar: '',
