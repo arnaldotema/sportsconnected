@@ -66,6 +66,7 @@ import { User_infoMediaComponent } from './user-info-media/user-info-media.compo
 import { User_infoStatsComponent } from './user-info-stats/user-info-stats.component';
 import { TeamRosterComponent } from './team-roster/team-roster.component';
 import { RecommendationModalComponent } from './_modals/recommendation-modal/recommendation-modal.component';
+import { TryoutModalComponent } from "./_modals/tryout-modal/tryout-modal.component";
 import { UserInfoProfileComponent } from './user-info-profile/user-info-profile.component';
 import { TeamProfileComponent } from './team-profile/team-profile.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
@@ -74,6 +75,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HeaderComponent } from './header/header.component';
 import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
+import { ToastModule } from 'ng2-toastr';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -93,6 +95,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     User_infoStatsComponent,
     TeamRosterComponent,
     RecommendationModalComponent,
+    TryoutModalComponent,
     UserInfoProfileComponent,
     TeamProfileComponent,
     TeamStatsComponent,
@@ -147,6 +150,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MaterialBarModule,
     NgSelectizeModule,
     DropzoneModule,
+    ToastModule.forRoot()
   ],
   providers: [
     HttpClient,
@@ -160,7 +164,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     }],
   bootstrap: [AppComponent],
   entryComponents: [
-    RecommendationModalComponent
+    RecommendationModalComponent,
+    TryoutModalComponent
   ]
 })
 export class AppModule { }
