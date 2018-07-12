@@ -1,13 +1,13 @@
 const logger = require('../../logging');
 
-const proxies = ["http://66.119.180.101:80", undefined];
+const proxies = [undefined];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
 const crawl = function (err, res, done) {
-    if(res.$(".zztext").length > 0){
+    if( res.$(".g-recaptcha").length > 0){
         logger.error("Proxy failed at request: " + res.options.uri + " with PROXY: " + res.options.proxy);
         res.options.proxyFailCallback(err, res, done);
     }
