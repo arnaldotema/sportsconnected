@@ -30,6 +30,7 @@ const updateCompetitionInfo = function (err, res, done){
     footballCompetition.findOneAndUpdate(query, competition, { upsert:true, new:true, setDefaultsOnInsert: true }, function (err, result) {
         if (err) {
             logger.error(err);
+            zerozero.proxyFailCallback()
             done();
         }
         else {
