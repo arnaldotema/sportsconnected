@@ -9,6 +9,12 @@
         <button mat-raised-button class="sc-btn btn-sc-default">Seguir</button>
         <button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button>
       </div>
+
+      <div class="indicators">
+        <div class="text"><strong>{{viewModel.followers.length}}</strong> Seguidores</div>
+        <div class="text"><strong>{{viewModel.recommendations.list.length}}</strong> Recomendações</div>
+      </div>
+
       <div class="personal" id="personal">
         <table class="col-md-12 personal-table">
           <tbody class="auto-height">
@@ -95,9 +101,10 @@
           <th>Derrotas</th>
           <th class="th-td-last">Empates</th>
         </tr>
-        <tr class="tr-odd">
+        <tr class="tr-even">
           <td>
-            <img class="league" src="{{viewModel.current_season.stats[0].competition_avatar}}" alt="{{viewModel.current_season.stats[0].competition_name}}">
+            <img class="league" src="{{viewModel.current_season.stats[0].competition_avatar}}"
+                 alt="{{viewModel.current_season.stats[0].competition_name}}">
           </td>
           <td>{{viewModel.current_season.stats[0].games}}</td>
           <td>{{viewModel.current_season.stats[0].goals}}</td>
@@ -192,7 +199,7 @@
           </div>
           <div class="badges" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
             <div class="image" *ngFor="let achievement of viewModel.achievements">
-                <img src="{{achievement.avatar}}">
+              <img src="{{achievement.avatar}}">
             </div>
           </div>
           <div *ngIf=" viewModel.achievements.length > 6 " class="footer">
@@ -200,6 +207,14 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
     </div>
   </div>
 </div>

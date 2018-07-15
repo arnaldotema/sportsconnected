@@ -318,6 +318,21 @@ body {
   margin: 10px;
 }
 
+.indicators {
+  margin: 20px;
+}
+
+.indicators .text{
+  margin: 5px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #03304f;
+}
+
+.indicators .text strong {
+  font-size: 16px;
+}
+
 .achievements .content {
   max-height: 200px;
   padding: 10px 20px;
@@ -859,6 +874,12 @@ table .role_move {
   padding: 0 5px;
 }
 
+.match-form mat-form-field{
+  width: 18%;
+  padding: 0 5px;
+}
+
+
 table .list_number {
   width: 24px;
   height: 24px;
@@ -1060,6 +1081,11 @@ coisas transversais a toda a plataforma.
   max-width: 354.19px;
 }
 
+.sticky-indicators {
+  position: fixed;
+  top: 320px;
+}
+
 .hidden-for-footer {
   display: none;
 }
@@ -1210,7 +1236,7 @@ coisas transversais a toda a plataforma.
 
 .player-info {
   float: left;
-  width: 35%;
+  width: 39%;
   line-height: 1;
   padding-left: 1rem;
 }
