@@ -20,7 +20,7 @@
           <th>G. Marcados</th>
           <th class="th-td-last">G. Sofridos</th>
         </tr>
-        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+        <tr *ngFor="let stat of viewModel.history_stats; let _idx = index "
             class="{{ _idx % 2 ? ' tr-even': 'tr-odd ' }} {{_idx == 0 ? ' tr-current-season ' : '' }}">
           <td>
             <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
