@@ -21,6 +21,17 @@ export class TeamViewModel {
       suffered_goals: number,
     }]
   };
+  history_stats: [{
+    competition_name: string,
+    competition_avatar: string,
+    games: number,
+    classification: number,
+    wins: number,
+    losses: number,
+    draws: number,
+    scored_goals: number,
+    suffered_goals: number,
+  }];
   tryouts: [{
     address: string;
     age_group: string;
