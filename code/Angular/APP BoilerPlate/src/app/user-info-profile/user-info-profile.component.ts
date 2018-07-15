@@ -206,6 +206,7 @@ function myFunction() {
   // Get the navbar
   let personal = document.getElementById("personal");
   let achievements = document.getElementById("achievements");
+  let indicators = document.getElementById("indicators");
 
   // Get the offset position of the personal
   let currOffset = personal.offsetTop;
@@ -215,16 +216,18 @@ function myFunction() {
     personal.classList.add("sticky");
   }
 
-  if( window.pageYOffset < 240 ){
+  if( window.pageYOffset < 286 ){
     personal.classList.remove("sticky");
   }
 
   if( window.pageYOffset > 2411){
     personal.classList.add("hidden-for-footer");
     achievements.classList.add("hidden-for-footer");
+    indicators.classList.add("hidden-for-footer");
   }
   else{
     personal.classList.remove("hidden-for-footer");
     achievements.classList.remove("hidden-for-footer");
+    indicators.classList.remove("hidden-for-footer");
   }
 }

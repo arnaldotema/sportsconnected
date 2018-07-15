@@ -118,7 +118,7 @@
         </div>
         <div *ngIf="player_matches != null">
           <div class="event-list">
-            <mat-accordion>
+            <mat-accordion class="match-form">
               <mat-expansion-panel *ngFor="let match of player_matches; let _idx = index" (opened)="currentMatchIdx = _idx">
                 <mat-expansion-panel-header class="event-list__header">
                   <mat-panel-title>
@@ -173,6 +173,7 @@
                          (change)="changedInput('minutes_played',$event, true)"
                          placeholder="Minutos jogados" value="{{match.home_team.main_lineup[0].minutes_played}}">
                 </mat-form-field>
+                <button mat-raised-button class="sc-btn btn-sc-default" (click)="goToMatch()">Ir para Jogo</button>
               </mat-expansion-panel>
             </mat-accordion>
           </div>
