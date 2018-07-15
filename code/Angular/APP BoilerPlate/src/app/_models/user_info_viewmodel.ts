@@ -16,6 +16,7 @@ export class UserInfoViewModel {
     residence: string,
     updated_at: string
   };
+  followers : number [];
   external_ids: {
     zerozero: string,
   };

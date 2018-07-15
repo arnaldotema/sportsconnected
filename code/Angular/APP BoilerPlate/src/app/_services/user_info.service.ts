@@ -27,6 +27,7 @@ export class UserInfoService {
       foot: 'Direito',
       updated_at: '8-05-2018'
     },
+    followers: [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10],
     external_ids: {
       zerozero: 'none',
     },
