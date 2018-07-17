@@ -327,6 +327,7 @@ body {
   text-align: center;
   font-size: 14px;
   color: #03304f;
+  cursor: pointer;
 }
 
 .indicators .text strong {
