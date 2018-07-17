@@ -38,3 +38,7 @@
 .search_item .search-info{
   margin-left: 10px;
 }
+
+mat-select {
+  text-align: center;
+}
