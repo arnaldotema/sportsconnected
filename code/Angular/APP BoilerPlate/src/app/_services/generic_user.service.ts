@@ -393,6 +393,7 @@ export class GenericUserService {
         team: 'Seixal FC',
         id: '1',
         type: 'player',
+
         avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F125944%2Fimage_5975f423b7033.jpg&w=400&h=400&t=square&q=40'
       },
       {

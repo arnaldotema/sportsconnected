@@ -6,6 +6,7 @@ export class TeamViewModel {
   avatar: string;
   name: string;
   full_name: string;
+  followers : number [];
   current_season: {
     season_id: string,
     name: string,

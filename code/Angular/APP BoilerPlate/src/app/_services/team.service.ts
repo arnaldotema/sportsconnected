@@ -19,6 +19,7 @@ export class TeamService {
       avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
       name: 'Seixal FC',
       full_name: 'Seixal Futebol Clube',
+      followers: [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10],
       current_season: {
         season_id: '1',
         name: '17/18',
