@@ -16,10 +16,14 @@ export class CreateAccountComponent implements OnInit {
   teamService: TeamService;
   chosenPlayer;
   chosenLeague;
+  chosenGender;
+  chosenAgeGroup;
   chosenTeam;
   genericUserService: GenericUserService;
   userInfoService: UserInfoService;
   teams: Search_entity_viewmodel[];
+  age_groups;
+  genders;
   leagues;
   players: Search_entity_viewmodel[];
   user;
@@ -31,6 +35,73 @@ export class CreateAccountComponent implements OnInit {
     this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
+    this.genders = [
+      {
+        id: '1',
+        name: 'Masculino',
+      },
+      {
+        id: '2',
+        name: 'Feminino',
+      }
+    ]
+  }
+
+  loadAgeGroups() {
+    // Todo: Get AgeGroups
+    this.age_groups = [
+      {
+        id: '1',
+        name: 'Petizes',
+      },
+      {
+        id: '2',
+        name: 'Traquinas',
+      },
+      {
+        id: '3',
+        name: 'Benjamins B',
+      },
+      {
+        id: '4',
+        name: 'Benjamins A',
+      },      {
+        id: '5',
+        name: 'Infantis B',
+      },
+      {
+        id: '6',
+        name: 'Infantis A',
+      },      {
+        id: '7',
+        name: 'Iniciados B',
+      },
+      {
+        id: '8',
+        name: 'Iniciados',
+      },      {
+        id: '9',
+        name: 'Juvenis B',
+      },
+      {
+        id: '10',
+        name: 'Juvenis',
+      },      {
+        id: '11',
+        name: 'Juniores B',
+      },
+      {
+        id: '12',
+        name: 'Juniores',
+      },      {
+        id: '13',
+        name: 'Seniores',
+      }
+    ]
+  }
+
+  loadLeagues() {
+    // Todo: Get Competitions
     this.leagues = [
       {
         id: '2',
@@ -44,8 +115,7 @@ export class CreateAccountComponent implements OnInit {
         id: '2',
         name: 'AF Lisboa 1ª Divisão Série 1 2017/18'
       },
-    ];
-  }
+    ];  }
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
