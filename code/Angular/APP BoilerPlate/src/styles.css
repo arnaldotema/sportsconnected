@@ -193,6 +193,10 @@ th {
   background-color: white;
 }
 
+.table_header tr{
+  height: 50px !important;
+}
+
 .table_header td, th {
   height: auto !important;
 }
@@ -737,7 +741,7 @@ table .caption img {
 }
 
 .first-td {
-  background-color: #4384a8 !important;
+  background-color: #798b97 !important;
   color: white !important;
   max-width: 80px;
   font-weight: bold !important;
