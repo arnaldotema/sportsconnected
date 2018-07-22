@@ -8,6 +8,10 @@
   display: none !important;
 }
 
+.sc-container {
+  margin: 20px auto;
+}
+
 .sc-btn{
   width: 100px !important;
   margin-right: 2px !important;
@@ -438,6 +442,12 @@ body {
   width: 40px !important;
 }
 
+.table-players-search .profile-small-image {
+  background-size: cover;
+  height: 40px !important;
+  width: 40px !important;
+}
+
 .big-profile-small-image {
   background-size: cover;
   height: 60px !important;
@@ -578,6 +588,13 @@ body {
   padding: 10px;
 }
 
+.table-players-search .caption {
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  color: #032f4f;
+  padding: 10px;
+}
+
 .roster thead {
   font-size: 12px !important;
 }
@@ -638,6 +655,12 @@ body {
 .roster-table {
   width: 300px;
   margin: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.table-players-search {
+  width: 100%;
+  margin: 20px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
