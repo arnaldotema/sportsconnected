@@ -6,8 +6,11 @@
              title="Profile" style="left: -241.5px;">
       </div>
       <div class="profile-buttons">
-        <button mat-raised-button class="sc-btn btn-sc-default">Seguir</button>
-        <button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button>
+        <button mat-raised-button class="sc-btn btn-sc-default" style="display: none">Seguir</button>
+        <!--<button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button> -->
+        <button mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon" (click)="editPlayer()">edit</mat-icon>
+        </button>
       </div>
 
       <div class="indicators">
