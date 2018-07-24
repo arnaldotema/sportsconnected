@@ -271,6 +271,7 @@ img {
 
 .posrela {
   position: relative !important;
+  display: grid;
 }
 
 .card-sc {
