@@ -1,0 +1,246 @@
+<div class="row">
+  <div class="row-center-stats">
+    <div class="centered">
+      <h1>Pesquisa de Jogadores</h1>
+    </div>
+    <div class="sc-forms">
+      <div class="col-md-2">
+        <h4>Nome</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenGender" (change)="loadAgeGroups()" placeholder="Género">
+            <mat-option *ngFor="let gender of genders" [value]="gender">{{gender.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Idade</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenAgeGroup" (change)="loadLeagues()" placeholder="Escalão">
+            <mat-option *ngFor="let age_group of age_groups" [value]="age_group">{{age_group.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Residência</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenLeague" (change)="loadTeam()" placeholder="Competição">
+            <mat-option *ngFor="let league of leagues" [value]="league">{{league.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Clube</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenTeam" placeholder="Equipa">
+            <mat-option *ngFor="let team of teams" [value]="team">
+              {{team.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Mobilidade</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Posição</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Altura</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Peso</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Votação SC</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Altura</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Número de Jogos</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Minutos</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Golos</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Assistências</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Classificação</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Atributos técnicos</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <h4>Atributos mentais</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+            <mat-option *ngFor="let player of players" [value]="player">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="centered col-md-12 sc-container">
+        <button mat-raised-button (click)="loadPlayers()" class="sc-btn btn-start">PESQUISAR</button>
+        <div *ngIf="players != null" class="roster">
+
+          <table class="table-order-center" matSort (matSortChange)="sortData($event)">
+            <tr>
+              <th mat-sort-header="Age">Idade</th>
+              <th mat-sort-header="Games">Jogos</th>
+              <th mat-sort-header="Goals">Golos</th>
+              <th mat-sort-header="Assists">Assistências</th>
+              <th mat-sort-header="Height">Altura</th>
+              <th mat-sort-header="Weight">Peso</th>
+              <th mat-sort-header="Recommendations">Recomendações</th>
+            </tr>
+          </table>
+
+          <table class="table-players-search">
+            <thead class="table_header">
+              <tr>
+              <th class="centered"></th>
+              <th>Jogador</th>
+              <th class="centered">Idade</th>
+              <th class="centered">Jogos</th>
+              <th class="centered">Golos</th>
+              <th class="centered">Assistências</th>
+              <th class="centered">Altura</th>
+              <th class="centered">Peso</th>
+              <th class="centered">Recomendações</th>
+              <th class="centered country-col">País</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let player of players" class="tr-odd">
+              <td class="centered number_move first-td">
+                <a href="/user-info">
+                  <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
+                       [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
+                  </div>
+                </a>
+              </td>
+              <td class="posrela">
+                <table class="inline-table" title="">
+                  <tbody>
+                  <tr>
+                    <td class="table-link">
+                      <a
+                        href="/user-info">
+                        {{player.personal_info.name}}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{{player.personal_info.positions[0]}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="centered">{{player.personal_info.age}}</td>
+              <td class="centered">{{player.current_season.games.length}}</td>
+              <td class="centered">{{player.current_season.stats[0].goals}}</td>
+              <td class="centered">{{player.current_season.stats[0].assists}}</td>
+              <td class="centered">{{player.personal_info.height}}</td>
+              <td class="centered">{{player.personal_info.weight}}</td>
+              <td class="centered">{{player.recommendations.list.length}}</td>
+              <td class="centered">
+                <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
+                     alt="{{player.personal_info.nationality}}" class="list_flag">
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
