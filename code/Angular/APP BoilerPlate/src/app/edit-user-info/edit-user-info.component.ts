@@ -262,6 +262,11 @@ export class EditUserInfoComponent implements OnInit {
     this.router.navigate(['/user-info']);
   }
 
+  goToMatch() {
+    // Todo: Discards current information and returns to user-info
+    this.router.navigate(['/match']);
+  }
+
   changedInput(inputType, event, isMatch) {
     let value = event.target.value;
     if (isMatch)

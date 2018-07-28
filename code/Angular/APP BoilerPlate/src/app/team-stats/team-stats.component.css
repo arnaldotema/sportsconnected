@@ -10,7 +10,6 @@
 }
 
 .meta .player-image {
-  border-radius: 5px;
   margin: 10px 0;
   float: left;
   width: 29%;
@@ -108,7 +107,7 @@
 
 .player-info {
   float: left;
-  width: 35%;
+  width: 39%;
   line-height: 1;
   padding-left: 1rem;
 }
@@ -285,6 +284,7 @@ table .table-link {
 
 .posrela {
   position: relative !important;
+  display: grid;
 }
 
 .card-sc {
