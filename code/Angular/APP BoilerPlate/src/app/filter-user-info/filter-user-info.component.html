@@ -1,0 +1,194 @@
+<div class="row">
+  <div class="row-center-stats">
+    <div class="centered">
+      <h1>Pesquisa de Jogadores</h1>
+    </div>
+    <div class="sc-forms">
+      <div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="personal_data_select" (change)="changed('personal_data')"
+                        placeholder="Dados Pessoais" multiple>
+              <mat-option *ngFor="let personal_field of personal_data" [value]="personal_field">
+                {{personal_field}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="stats_select" (change)="changed('personal_data')" placeholder="Estatística"
+                        multiple>
+              <mat-option *ngFor="let stats_field of stats" [value]="stats_field">
+                {{stats_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="physical_atts_select" (change)="changed('personal_data')"
+                        placeholder="Atributos Físicos" multiple>
+              <mat-option *ngFor="let physical_atts_field of physical_atts" [value]="physical_atts_field">
+                {{physical_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="technical_atts_select" (change)="changed('personal_data')"
+                        placeholder="Atributos Técnicos" multiple>
+              <mat-option *ngFor="let technical_atts_field of technical_atts" [value]="technical_atts_field">
+                {{technical_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="mental_atts_select" (change)="changed('personal_data')"
+                        placeholder="Atributos Mentais" multiple>
+              <mat-option *ngFor="let mental_atts_field of mental_atts" [value]="mental_atts_field">
+                {{mental_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="sc_atts_select" (change)="changed('personal_data')" placeholder="Sports Connected"
+                        multiple>
+              <mat-option *ngFor="let sc_atts_field of sc_atts" [value]="sc_atts_field">
+                {{sc_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="competition_select" (change)="changed('pe§rsonal_data')" placeholder="Competição"
+                        multiple>
+              <mat-option *ngFor="let competition_field of competitions" [value]="competition_field">
+                {{competition_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="filter-search-fields">
+        <table class="table table-bordered">
+          <tbody>
+          <tr *ngFor="let field of fieldArray; let i = index">
+            <td>
+              <mat-chip-list class="mat-chip-list-stacked">
+                <mat-chip [selectable]="selectable" (click)="deleteFieldValue(i)">
+                  Golos
+                  <mat-icon matChipRemove>cancel</mat-icon>
+                </mat-chip>
+              </mat-chip-list>
+            </td>
+            <td>
+              <mat-select [(ngModel)]="number_filter_select" placeholder="Filtragem">
+                <mat-option *ngFor="let number_filter_type of number_filter_types" [value]="number_filter_type">
+                  {{number_filter_type}}
+                </mat-option>
+              </mat-select>
+            </td>
+            <td>
+              <form *ngIf=" number_filter_select != 'Entre' ">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Introduz um algarismo">
+              </form>
+              <form *ngIf=" number_filter_select == 'Entre' ">
+                <nouislider [connect]="true" [min]="0" [max]="15" [(ngModel)]="sliderRange"></nouislider>
+              </form>
+              <form *ngIf=" number_filter_select == 'Igual a' ">
+                <mat-select [(ngModel)]="mock_value_select" placeholder="Filtragem">
+                  <mat-option *ngFor="let mock_value_type of mock_value_types" [value]="mock_value_type">
+                    {{mock_value_type}}
+                  </mat-option>
+                </mat-select>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="centered col-md-12 sc-container">
+        <button mat-raised-button (click)="loadPlayers()" class="sc-btn btn-start">PESQUISAR</button>
+        <div *ngIf="players != null" class="roster">
+
+          <table class="table-order-center" matSort (matSortChange)="sortData($event)">
+            <tr>
+              <th mat-sort-header="Age">Idade</th>
+              <th mat-sort-header="Games">Jogos</th>
+              <th mat-sort-header="Goals">Golos</th>
+              <th mat-sort-header="Assists">Assistências</th>
+              <th mat-sort-header="Height">Altura</th>
+              <th mat-sort-header="Weight">Peso</th>
+              <th mat-sort-header="Recommendations">Recomendações</th>
+            </tr>
+          </table>
+
+          <table class="table-players-search">
+            <thead class="table_header">
+            <tr>
+              <th class="centered"></th>
+              <th>Jogador</th>
+              <th class="centered">Idade</th>
+              <th class="centered">Jogos</th>
+              <th class="centered">Golos</th>
+              <th class="centered">Assistências</th>
+              <th class="centered">Altura</th>
+              <th class="centered">Peso</th>
+              <th class="centered">Recomendações</th>
+              <th class="centered country-col">País</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let player of players" class="tr-odd">
+              <td class="centered number_move first-td-img">
+                <a href="/user-info">
+                  <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
+                       [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
+                  </div>
+                </a>
+              </td>
+              <td class="posrela">
+                <table class="inline-table" title="">
+                  <tbody>
+                  <tr>
+                    <td class="table-link">
+                      <a
+                        href="/user-info">
+                        {{player.personal_info.name}}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{{player.personal_info.positions[0]}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="centered">{{player.personal_info.age}}</td>
+              <td class="centered">{{player.current_season.games.length}}</td>
+              <td class="centered">{{player.current_season.stats[0].goals}}</td>
+              <td class="centered">{{player.current_season.stats[0].assists}}</td>
+              <td class="centered">{{player.personal_info.height}}</td>
+              <td class="centered">{{player.personal_info.weight}}</td>
+              <td class="centered">{{player.recommendations.list.length}}</td>
+              <td class="centered">
+                <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
+                     alt="{{player.personal_info.nationality}}" class="list_flag">
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
