@@ -16,6 +16,7 @@ export class UserInfoViewModel {
     residence: string,
     updated_at: string
   };
+  followers : number [];
   external_ids: {
     zerozero: string,
   };
@@ -31,8 +32,8 @@ export class UserInfoViewModel {
     },
     stats: [{
       season: string,
-      competition_name: string, // TODO: Criado um array para as diferentes competições na mesma season. Adicionados alguns campos novos
-      competition_avatar: string,
+      name: string, // TODO: Criado um array para as diferentes competições na mesma season. Adicionados alguns campos novos
+      avatar: string,
       games: number,
       wins: number,
       losses: number,
