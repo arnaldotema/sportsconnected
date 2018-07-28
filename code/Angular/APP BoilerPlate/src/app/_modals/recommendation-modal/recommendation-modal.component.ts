@@ -22,7 +22,6 @@ export class RecommendationModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {
 
     this.target = this.data.target;
-    debugger;
     if (this.data.author != null)
       this.author = this.data.author;
     this.text = '';
@@ -40,7 +39,6 @@ export class RecommendationModalComponent implements OnInit {
   }
 
   onCreateClick(): void {
-    debugger;
     this.dialogRef.close({
       author : this.author,
       text: this.text

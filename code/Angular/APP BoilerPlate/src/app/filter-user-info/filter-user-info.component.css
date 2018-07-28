@@ -52,9 +52,8 @@ mat-select {
   min-height: 9px;
 }
 
-.posrela {
+.table-td {
   position: relative !important;
-  display: grid;
 }
 
 .sc-mat-card-avatar {
@@ -76,4 +75,27 @@ mat-select {
 
 .mat-chip {
   display: inline-flex !important;
+  border-radius: 5px !important;
+}
+
+.players-table-filter {
+
+}
+
+.search-button{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.filters {
+  margin: 20px auto !important;
+  padding: 25px;
+  background-color: #cad0d4;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  border-radius: 10px;
+}
+
+.mat-chip-list-stacked {
+  display: flex !important;
 }
