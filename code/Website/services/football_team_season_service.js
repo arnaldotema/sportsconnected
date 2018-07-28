@@ -10,17 +10,18 @@ const getMissingTeams = function(teamIds, cb) {
     });
 };
 
-const addCompetitionToTeam = function(id, competition, cb) {
+const addCompetitionToTeam = function(id, competition_season, cb) {
     let query = {
         _id: id,
-        "current_season.standings.id": { $ne: competition._id }
+        "standings.id": { $ne: competition_season._id }
     };
 
     let update = {
-        $addToSet: { "current_season.standings": {
-                id: competition._id,
-                name: competition.name,
-                avatar: competition.avatar,
+        $addToSet: { "standings": {
+                id: competition_season._id,
+                competition_id: competition_season.competition_id,
+                name: competition_season.name,
+                avatar: competition_season.avatar,
             }
         }
     };
@@ -28,17 +29,18 @@ const addCompetitionToTeam = function(id, competition, cb) {
     this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
-const addPlayerToTeam = function(id, user_info, cb) {
+const addPlayerToTeam = function(id, user_info_season, cb) {
     let query = {
         _id: id,
-        "current_season.players.id": { $ne: user_info._id }
+        "players.id": { $ne: user_info_season._id }
     };
 
     let update = {
-        $addToSet: { "current_season.players": {
-                id: user_info._id,
-                name: user_info.personal_info.name,
-                avatar: user_info.personal_info.avatar,
+        $addToSet: { "players": {
+                id: user_info_season._id,
+                user_info_id:  user_info_season.user_info_id,
+                name: user_info_season.name,
+                avatar: user_info_season.avatar,
             }
         }
     };
@@ -46,13 +48,14 @@ const addPlayerToTeam = function(id, user_info, cb) {
     this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
-const getMatchTeamsByZeroZeroId = function(homeTeam, awayTeam, cb) {
+const getMatchTeamsByZeroZeroId = function(season_id, homeTeam, awayTeam, cb) {
     let query = [
         {
             $facet: {
                 home_team: [
                     {
                         $match: {
+                            "season_id": season_id,
                             "external_ids.zerozero": +homeTeam
                         }
                     }
@@ -60,6 +63,7 @@ const getMatchTeamsByZeroZeroId = function(homeTeam, awayTeam, cb) {
                 away_team: [
                     {
                         $match: {
+                            "season_id": season_id,
                             "external_ids.zerozero": +awayTeam
                         }
                     }
@@ -71,9 +75,9 @@ const getMatchTeamsByZeroZeroId = function(homeTeam, awayTeam, cb) {
     this.aggregate(query, cb)
 };
 
-const updateTeamsStandings = function(match, homePositionDif, awayPositionDif, cb){
-    const home_goals = match.home_team.goals;
-    const away_goals = match.away_team.goals;
+const updateTeamsStandings = function(match, nestedMatch, cb){
+    const home_goals = match.home_team.goals.length;
+    const away_goals = match.away_team.goals.length;
 
     this.bulkWrite(
         [
@@ -81,20 +85,20 @@ const updateTeamsStandings = function(match, homePositionDif, awayPositionDif, c
                 updateOne: {
                     filter: {
                         "_id": match.home_team.id,
-                        "current_season.standings.id": match.competition.id,
-                        "current_season.matches.id": { $nin: [ match.id ] }
+                        "standings.id": match.competition_season.id,
+                        "matches.id": { $ne: match._id }
                     },
                     update: {
-                        $set: {
-                            "current_season.standings.$.position": homePositionDif,
-                        },
                         $inc : {
-                            "current_season.standings.$.matches" : 1,
-                            "current_season.standings.$.wins" : home_goals > away_goals ? 1 : 0,
-                            "current_season.standings.$.draws" : home_goals == away_goals ? 1 : 0,
-                            "current_season.standings.$.losses" : home_goals < away_goals ? 1 : 0,
-                            "current_season.standings.$.goals" : home_goals,
-                            "current_season.standings.$.goals_taken" : away_goals
+                            "standings.$.matches" : 1,
+                            "standings.$.wins" : home_goals > away_goals ? 1 : 0,
+                            "standings.$.draws" : home_goals == away_goals ? 1 : 0,
+                            "standings.$.losses" : home_goals < away_goals ? 1 : 0,
+                            "standings.$.goals" : home_goals,
+                            "standings.$.goals_taken" : away_goals
+                        },
+                        $push: {
+                            matches: nestedMatch
                         }
                     }
                 }
@@ -103,20 +107,20 @@ const updateTeamsStandings = function(match, homePositionDif, awayPositionDif, c
                 updateOne: {
                     filter: {
                         "_id": match.home_team.id,
-                        "current_season.standings.id": match.competition.id,
-                        "current_season.matches.id": { $nin: [ match.id ] }
+                        "standings.id": match.competition_season.id,
+                        "matches.id": { $ne: match._id }
                     },
                     update: {
-                        $set: {
-                            "current_season.standings.$.position": awayPositionDif,
-                        },
                         $inc : {
-                            "current_season.standings.$.matches" : 1,
-                            "current_season.standings.$.wins" : away_goals > home_goals ? 1 : 0,
-                            "current_season.standings.$.draws" : away_goals == home_goals ? 1 : 0,
-                            "current_season.standings.$.losses" : away_goals < home_goals ? 1 : 0,
-                            "current_season.standings.$.goals" : away_goals,
-                            "current_season.standings.$.goals_taken" : home_goals
+                            "standings.$.matches" : 1,
+                            "standings.$.wins" : away_goals > home_goals ? 1 : 0,
+                            "standings.$.draws" : away_goals == home_goals ? 1 : 0,
+                            "standings.$.losses" : away_goals < home_goals ? 1 : 0,
+                            "standings.$.goals" : away_goals,
+                            "standings.$.goals_taken" : home_goals
+                        },
+                        $push: {
+                            matches: nestedMatch
                         }
                     }
                 }
@@ -125,11 +129,63 @@ const updateTeamsStandings = function(match, homePositionDif, awayPositionDif, c
         {},
         cb
     );
+};
+
+const updateAndReturnByZeroZeroId = function(zerozero_id, season_id, team_season, cb) {
+    const query = {
+        "external_ids.zerozero": zerozero_id,
+        "season_id": season_id
+    };
+
+    this.findOneAndUpdate(query, team_season, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
+};
+
+const getByIds = function (ids, cb) {
+    const query = {
+        _id: { $in: ids }
+    }
+
+    this.find(query, cb)
+};
+
+const updateTeamsPositions = function(competition_season, seasons, cb){
+
+    let operations = [];
+
+    let placements = {};
+
+    competition_season.standings.forEach(function (team, index) {
+        placements[team.id] = index +1;
+    })
+
+    seasons.forEach(function(season){
+        let team_season = season._doc;
+
+        operations.push({
+            updateOne: {
+                filter: {
+                    "_id": team_season._id,
+                    "standings.id": competition_season._id
+                },
+                update: {
+                    $set : {
+                        "standings.$.position": placements[team_season._id]
+                    }
+                }
+            }
+        });
+    });
+
+    this.bulkWrite(operations, {}, cb);
 }
 
 module.exports = {
     getMissingTeams: getMissingTeams,
     addCompetitionToTeam: addCompetitionToTeam,
     addPlayerToTeam: addPlayerToTeam,
-    getMatchTeamsByZeroZeroId: getMatchTeamsByZeroZeroId
+    getMatchTeamsByZeroZeroId: getMatchTeamsByZeroZeroId,
+    updateTeamsStandings: updateTeamsStandings,
+    updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
+    getByIds: getByIds,
+    updateTeamsPositions: updateTeamsPositions
 }
