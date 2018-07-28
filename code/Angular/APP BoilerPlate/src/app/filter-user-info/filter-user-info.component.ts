@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GenericUserService} from '../_services/generic_user.service';
 import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
 import {Router} from '@angular/router';
@@ -15,36 +15,63 @@ import {Sort} from '@angular/material';
 export class FilterUserInfoComponent implements OnInit {
 
   teamService: TeamService;
-  chosenPlayer;
-  chosenLeague;
-  chosenGender;
-  chosenAgeGroup;
-  chosenTeam;
+
+  personal_data_select = [];
+  stats_select = [];
+  physical_atts_select;
+  technical_atts_select;
+  mental_atts_select;
+  sc_atts_select;
+  competition_select;
+  number_filter_select; //Todo : We need one of this for each filter
+  mock_value_select;
+
+
+  personal_data;
+  physical_atts;
+  technical_atts;
+  number_filter_types;
+  mock_value_types;
+  mental_atts;
+  sc_atts;
+  competitions;
+  seasons;
+  stats;
+
   genericUserService: GenericUserService;
   userInfoService: UserInfoService;
   teams: Search_entity_viewmodel[];
   age_groups;
-  genders;
   leagues;
   players: UserInfoSearch[];
   user;
 
-  constructor(private router: Router) {}
+  sortedData;
+  sliderRange;
+
+  private fieldArray: Array<any> = [];
+  private newAttribute: any = {};
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
-    this.genders = [
-      {
-        id: '1',
-        name: 'Masculino',
-      },
-      {
-        id: '2',
-        name: 'Feminino',
-      }
-    ]
+    this.personal_data = ['Nome', 'Data de Nascimento', 'Idade', 'Residência', 'Clube', 'Mobilidade', 'Posição'];
+    this.stats = ['Jogos', 'Minutos','Golos','Assistências','Classificação média','C. Amarelos','C. Vermelhos'];
+    this.physical_atts = ['Altura','Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
+    this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
+    this.mental_atts = ['Agressividade', 'Bravura', 'Antecipação', 'Concentração', 'Determinação', 'Compostura', 'Tomada de decisão', 'Criatividade', 'Jogo sem bola', 'Posicionamento', 'Velocidade Reação', 'Visão de Jogo', 'Disciplina', 'Ética de trabalho', 'Espírito de grupo', 'Liderança', 'Comunicação'];
+    this.sc_atts = ['Total de Badges', 'Total de Badges Época', 'Total de Badges Carreira'];
+    this.competitions = ['Escalão', 'Distrito', 'Divisão', 'Clube'];
+    this.seasons = ['Todas', '2018/2019', '2017/2018', '2016/2017' , '2015/2016' ,'2014/2015'];
+    this.number_filter_types = [
+      'Igual a','Pelo menos','No máximo','Entre'
+    ];
+
+  this.sliderRange = [4, 80];
   }
 
   loadAgeGroups() {
@@ -65,39 +92,39 @@ export class FilterUserInfoComponent implements OnInit {
       {
         id: '4',
         name: 'Benjamins A',
-      },      {
+      }, {
         id: '5',
         name: 'Infantis B',
       },
       {
         id: '6',
         name: 'Infantis A',
-      },      {
+      }, {
         id: '7',
         name: 'Iniciados B',
       },
       {
         id: '8',
         name: 'Iniciados',
-      },      {
+      }, {
         id: '9',
         name: 'Juvenis B',
       },
       {
         id: '10',
         name: 'Juvenis',
-      },      {
+      }, {
         id: '11',
         name: 'Juniores B',
       },
       {
         id: '12',
         name: 'Juniores',
-      },      {
+      }, {
         id: '13',
         name: 'Seniores',
       }
-    ]
+    ];
   }
 
   loadLeagues() {
@@ -115,7 +142,8 @@ export class FilterUserInfoComponent implements OnInit {
         id: '2',
         name: 'AF Lisboa 1ª Divisão Série 1 2017/18'
       },
-    ];  }
+    ];
+  }
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
@@ -127,6 +155,12 @@ export class FilterUserInfoComponent implements OnInit {
     // Todo: Get Players based on
     this.genericUserService.detailedSearchUser()
       .subscribe(players => this.players = players);
+  }
+
+  changed(form) {
+    // Todo: Get Players based on
+    if (form)
+      this.addFieldValue(form);
   }
 
   getTeam() {
@@ -144,12 +178,28 @@ export class FilterUserInfoComponent implements OnInit {
     this.sortedData = data.sort((a, b) => {
       let isAsc = sort.direction == 'asc';
       switch (sort.active) {
+        /*
         case 'Popular': return compare(+a.views, +b.views, isAsc);
         case 'Recente': return compare(a.date, b.date, isAsc);
         case 'Gostos': return compare(+a.likes, +b.likes, isAsc);
-        default: return 0;
+        */
+        default:
+          return 0;
       }
     });
   }
 
+  addFieldValue(form) {
+    this.fieldArray.push(this.newAttribute);
+    this.newAttribute = {};
+  }
+
+  deleteFieldValue(index) {
+    this.fieldArray.splice(index, 1);
+  }
+
+}
+
+function compare(a, b, isAsc) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
