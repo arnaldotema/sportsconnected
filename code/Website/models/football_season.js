@@ -4,8 +4,10 @@ var Schema   = mongoose.Schema;
 var FootballSeasonSchema = new Schema({
 	name : String,
     external_ids: {
-        zerozero: {type: Number, required: true, unique: true, index: true},
+        zerozero: Number,
     }
 });
+
+FootballSeasonSchema.statics = require('../services/football_season_service');
 
 module.exports = mongoose.model('football_season', FootballSeasonSchema);

@@ -1,117 +1,148 @@
 var FootballUserInfo = require('../models/football_user_info.js');
 var FootballUserInfoSeason = require('../models/football_user_info_season');
 
-/**
- * player_controller.js
- *
- * @description :: Server-side logic for managing Players.
- */
 module.exports = {
 
-    /**
-     * PlayerController.list()
-     */
+    search: function (req, res) {
+        let select = {
+            "_id": 1,
+            "user_info_id": 1,
+            "avatar": 1,
+            "name": 1,
+            "team": 1
+        };
+
+        let query = {};
+
+        if(req.query.season_id){
+            query["season_id"] = {$in: [].concat(req.query.season_id)};
+            select["season_id"] = 1;
+        }
+        if(req.query.name){
+            query["name"] = {$regex : req.query.name, $options : 'i'};
+        }
+        if(req.query.team_name){
+            query["team.name"] = {$regex : req.query.team_name, $options : 'i'};
+        }
+        if(req.query.goals){
+            query["stats.goals"] = {$gt : req.query.goals};
+            select["stats.goals"] = 1;
+        }
+        if(req.query.assists){
+            query["stats.assists"] = {$gt : req.query.assists};
+            select["stats.assists"] = 1;
+        }
+
+        FootballUserInfoSeason
+            .find(query)
+            .select(select)
+            .populate('current_season')
+            .populate('previous_seasons', 'stats')
+            .exec(function (err, user_infos) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting user_info.',
+                        error: err
+                    });
+                }
+                return res.json(user_infos);
+            });
+    },
+
     list: function (req, res) {
         FootballUserInfo
             .find()
             .populate('current_season')
+            .populate('previous_seasons', 'stats')
             .limit(5)
-            .exec(function (err, Players) {
+            .exec(function (err, user_infos) {
                 if (err) {
                     return res.status(500).json({
-                        message: 'Error when getting Player.',
+                        message: 'Error when getting user_info.',
                         error: err
                     });
                 }
-                return res.json(Players);
+                return res.json(user_infos);
             });
     },
 
-    /**
-     * PlayerController.show()
-     */
     show: function (req, res) {
         var id = req.params.id;
-        FootballUserInfo.findOne({_id: id}, function (err, Player) {
+        FootballUserInfo
+            .findOne({_id: id})
+            .populate('current_season')
+            .populate('previous_seasons', 'stats')
+            .exec(function (err, user_info) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting Player.',
+                    message: 'Error when getting user_info.',
                     error: err
                 });
             }
-            if (!Player) {
+            if (!user_info) {
                 return res.status(404).json({
-                    message: 'No such Player'
+                    message: 'No such user_info'
                 });
             }
-            return res.json(Player);
+            return res.json(user_info);
         });
     },
 
-    /**
-     * PlayerController.create()
-     */
     create: function (req, res) {
-        var Player = new FootballUserInfo({
+        var user_info = new FootballUserInfo({
 			user_id : req.body.user_id,
 			name : req.body.name
 
         });
 
-        Player.save(function (err, Player) {
+        user_info.save(function (err, user_info) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when creating Player',
+                    message: 'Error when creating user_info',
                     error: err
                 });
             }
-            return res.status(201).json(Player);
+            return res.status(201).json(user_info);
         });
     },
 
-    /**
-     * PlayerController.update()
-     */
     update: function (req, res) {
         var id = req.params.id;
-        FootballUserInfo.findOne({_id: id}, function (err, Player) {
+        FootballUserInfo.findOne({_id: id}, function (err, user_info) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting Player',
+                    message: 'Error when getting user_info',
                     error: err
                 });
             }
-            if (!Player) {
+            if (!user_info) {
                 return res.status(404).json({
-                    message: 'No such Player'
+                    message: 'No such user_info'
                 });
             }
 
-            Player.user_id = req.body.user_id ? req.body.user_id : Player.user_id;
-			Player.name = req.body.name ? req.body.name : Player.name;
+            user_info.user_id = req.body.user_id ? req.body.user_id : user_info.user_id;
+			user_info.name = req.body.name ? req.body.name : user_info.name;
 			
-            Player.save(function (err, Player) {
+            user_info.save(function (err, user_info) {
                 if (err) {
                     return res.status(500).json({
-                        message: 'Error when updating Player.',
+                        message: 'Error when updating user_info.',
                         error: err
                     });
                 }
 
-                return res.json(Player);
+                return res.json(user_info);
             });
         });
     },
 
-    /**
-     * PlayerController.remove()
-     */
     remove: function (req, res) {
         var id = req.params.id;
-        FootballUserInfo.findByIdAndRemove(id, function (err, Player) {
+        FootballUserInfo.findByIdAndRemove(id, function (err, user_info) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when deleting the Player.',
+                    message: 'Error when deleting the user_info.',
                     error: err
                 });
             }

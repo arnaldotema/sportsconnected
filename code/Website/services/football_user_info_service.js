@@ -1,78 +1,39 @@
 const logger = require('../logging');
 const _ = require('underscore');
 
-const addCompetitionToUserInfo = function(id, competition, cb) {
-    let query = {
-        _id: id,
-        "current_season.stats.id": { $ne: competition._id }
-    };
+const updateAndReturnByZeroZeroId = function(zerozero_id, user_info, cb) {
+    const query = {"external_ids.zerozero": zerozero_id};
 
-    let update = {
-        $addToSet: { "current_season.stats": {
-                id: competition._id,
-                name: competition.name,
-                avatar: competition.avatar,
-            }
-        }
-    };
-
-    this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+    this.findOneAndUpdate(query, user_info, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
 };
 
-const getMatchUserInfosByZeroZeroId = function(homeTeam, awayTeam, cb) {
-    let query = [
-        {
-            $facet: {
-                home_team: [
-                    {
-                        $match: {
-                            "external_ids.zerozero": { "$in": homeTeam.main_lineup }
-                        }
-                    }
-                ],
-                home_team_reserves: [
-                    {
-                        $match: {
-                            "external_ids.zerozero": { "$in": homeTeam.reserves }
-                        }
-                    }
-                ],
-                home_team_staff: [
-                    {
-                        $match: {
-                            "external_ids.zerozero": { "$in": homeTeam.staff }
-                        }
-                    }
-                ],
-                away_team: [
-                    {
-                        $match: {
-                            "external_ids.zerozero": { "$in": awayTeam.main_lineup }
-                        }
-                    }
-                ],
-                away_team_reserves: [
-                    {
-                        $match: {
-                            "external_ids.zerozero": { "$in": awayTeam.reserves }
-                        }
-                    }
-                ],
-                away_team_staff: [
-                    {
-                        $match: {
-                            "external_ids.zerozero": { "$in": awayTeam.staff }
-                        }
-                    }
-                ]
-            }
-        }
-    ];
+const updateUserInfosCurrentSeason = function (seasons, cb) {
+    let operations = [];
 
-    this.aggregate(query, cb)
-};
+    seasons.forEach(function(season){
+        let user_info_season = season._doc;
+
+        operations.push({
+            updateOne: {
+                filter: {
+                    "_id": user_info_season.user_info_id
+                },
+                update: {
+                    $set : {
+                        "current_season": user_info_season._id
+                    },
+                    $push : {
+                        "previous_seasons": user_info_season._id
+                    }
+                }
+            }
+        });
+    });
+
+    this.bulkWrite(operations, {}, cb);
+}
 
 module.exports = {
-    addCompetitionToUserInfo: addCompetitionToUserInfo,
-    getMatchUserInfosByZeroZeroId: getMatchUserInfosByZeroZeroId
+    updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
+    updateUserInfosCurrentSeason: updateUserInfosCurrentSeason
 }
