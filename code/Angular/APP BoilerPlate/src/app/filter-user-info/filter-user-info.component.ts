@@ -6,6 +6,8 @@ import {UserInfoService} from '../_services/user_info.service';
 import {TeamService} from '../_services/team.service';
 import {UserInfoSearch} from '../_models/user_info_search';
 import {Sort} from '@angular/material';
+import {forEach} from '@angular/router/src/utils/collection';
+
 
 @Component({
   selector: 'app-filter-user-info',
@@ -20,7 +22,7 @@ export class FilterUserInfoComponent implements OnInit {
   stats_select = [];
   physical_atts_select;
   technical_atts_select;
-  mental_atts_select;
+  //mental_atts_select;
   sc_atts_select;
   competition_select;
   number_filter_select; //Todo : We need one of this for each filter
@@ -49,8 +51,7 @@ export class FilterUserInfoComponent implements OnInit {
   sortedData;
   sliderRange;
 
-  private fieldArray: Array<any> = [];
-  private newAttribute: any = {};
+  private search_fields: Array<any> = [];
 
   constructor(private router: Router) {
   }
@@ -60,18 +61,21 @@ export class FilterUserInfoComponent implements OnInit {
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
     this.personal_data = ['Nome', 'Data de Nascimento', 'Idade', 'Residência', 'Clube', 'Mobilidade', 'Posição'];
-    this.stats = ['Jogos', 'Minutos','Golos','Assistências','Classificação média','C. Amarelos','C. Vermelhos'];
-    this.physical_atts = ['Altura','Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
+    this.stats = ['Jogos', 'Minutos', 'Golos', 'Assistências', 'Classificação média', 'C. Amarelos', 'C. Vermelhos'];
+    this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
     this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
     this.mental_atts = ['Agressividade', 'Bravura', 'Antecipação', 'Concentração', 'Determinação', 'Compostura', 'Tomada de decisão', 'Criatividade', 'Jogo sem bola', 'Posicionamento', 'Velocidade Reação', 'Visão de Jogo', 'Disciplina', 'Ética de trabalho', 'Espírito de grupo', 'Liderança', 'Comunicação'];
     this.sc_atts = ['Total de Badges', 'Total de Badges Época', 'Total de Badges Carreira'];
     this.competitions = ['Escalão', 'Distrito', 'Divisão', 'Clube'];
-    this.seasons = ['Todas', '2018/2019', '2017/2018', '2016/2017' , '2015/2016' ,'2014/2015'];
+    this.seasons = ['Todas', '2018/2019', '2017/2018', '2016/2017', '2015/2016', '2014/2015'];
     this.number_filter_types = [
-      'Igual a','Pelo menos','No máximo','Entre'
+      'Igual a', 'Pelo menos', 'No máximo', 'Entre'
+    ];
+    this.mock_value_types = [
+      'Valor 1', 'Valor 2', 'Valor 3', 'Valor 4'
     ];
 
-  this.sliderRange = [4, 80];
+    this.sliderRange = [4, 80];
   }
 
   loadAgeGroups() {
@@ -161,6 +165,7 @@ export class FilterUserInfoComponent implements OnInit {
     // Todo: Get Players based on
     if (form)
       this.addFieldValue(form);
+
   }
 
   getTeam() {
@@ -178,24 +183,26 @@ export class FilterUserInfoComponent implements OnInit {
     this.sortedData = data.sort((a, b) => {
       let isAsc = sort.direction == 'asc';
       switch (sort.active) {
-        /*
-        case 'Popular': return compare(+a.views, +b.views, isAsc);
-        case 'Recente': return compare(a.date, b.date, isAsc);
-        case 'Gostos': return compare(+a.likes, +b.likes, isAsc);
-        */
         default:
           return 0;
       }
     });
   }
 
-  addFieldValue(form) {
-    this.fieldArray.push(this.newAttribute);
-    this.newAttribute = {};
+  addFieldValue(form_values) {
+    form_values.forEach((form_value, key) => {
+      if (!this.search_fields.some(item => item.form == form_value))
+        this.search_fields.push({
+          form: form_value,
+          filter: {},
+          value: {}
+        });
+    });
+
   }
 
   deleteFieldValue(index) {
-    this.fieldArray.splice(index, 1);
+    this.search_fields.splice(index, 1);
   }
 
 }
