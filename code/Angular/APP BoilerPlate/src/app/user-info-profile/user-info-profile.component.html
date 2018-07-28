@@ -6,9 +6,18 @@
              title="Profile" style="left: -241.5px;">
       </div>
       <div class="profile-buttons">
-        <button mat-raised-button class="sc-btn btn-sc-default">Seguir</button>
-        <button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button>
+        <button mat-raised-button class="sc-btn btn-sc-default" style="display: none">Seguir</button>
+        <!--<button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button> -->
+        <button mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon" (click)="editPlayer()">edit</mat-icon>
+        </button>
       </div>
+
+      <div class="indicators">
+        <div class="text"><strong>{{viewModel.followers.length}}</strong> Seguidores</div>
+        <div class="text"><strong>{{viewModel.recommendations.list.length}}</strong> Recomendações</div>
+      </div>
+
       <div class="personal" id="personal">
         <table class="col-md-12 personal-table">
           <tbody class="auto-height">
@@ -95,9 +104,10 @@
           <th>Derrotas</th>
           <th class="th-td-last">Empates</th>
         </tr>
-        <tr class="tr-odd">
+        <tr class="tr-even">
           <td>
-            <img class="league" src="{{viewModel.current_season.stats[0].competition_avatar}}" alt="{{viewModel.current_season.stats[0].competition_name}}">
+            <img class="league" src="{{viewModel.current_season.stats[0].avatar}}"
+                 alt="{{viewModel.current_season.stats[0].name}}">
           </td>
           <td>{{viewModel.current_season.stats[0].games}}</td>
           <td>{{viewModel.current_season.stats[0].goals}}</td>
@@ -192,7 +202,7 @@
           </div>
           <div class="badges" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
             <div class="image" *ngFor="let achievement of viewModel.achievements">
-                <img src="{{achievement.avatar}}">
+              <img src="{{achievement.avatar}}">
             </div>
           </div>
           <div *ngIf=" viewModel.achievements.length > 6 " class="footer">
@@ -200,6 +210,14 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
     </div>
   </div>
 </div>

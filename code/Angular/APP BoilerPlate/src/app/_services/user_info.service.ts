@@ -27,6 +27,7 @@ export class UserInfoService {
       foot: 'Direito',
       updated_at: '8-05-2018'
     },
+    followers: [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10],
     external_ids: {
       zerozero: 'none',
     },
@@ -43,8 +44,8 @@ export class UserInfoService {
       stats: [
         {
           season: '2017/18',
-          competition_name: 'Liga Portugal',
-          competition_avatar: '/assets/Liga_Portugal_logo.png',
+          name: 'Liga Portugal',
+          avatar: '/assets/Liga_Portugal_logo.png',
           games: 15,
           wins: 14,
           losses: 0,
@@ -57,8 +58,8 @@ export class UserInfoService {
         },
         {
           season: '2016/17',
-          competition_name: 'Taça de Portugal',
-          competition_avatar: '/assets/Tacadaligalogo.png',
+          name: 'Taça de Portugal',
+          avatar: '/assets/Tacadaligalogo.png',
           games: 4,
           wins: 1,
           losses: 1,
@@ -71,8 +72,8 @@ export class UserInfoService {
         },
         {
           season: '2015/16',
-          competition_name: 'Super Taça',
-          competition_avatar: '/assets/9_imgbank_tp.png',
+          name: 'Super Taça',
+          avatar: '/assets/9_imgbank_tp.png',
           games: 1,
           wins: 1,
           losses: 0,
@@ -85,8 +86,8 @@ export class UserInfoService {
         },
         {
           season: '2014/15',
-          competition_name: 'Super Taça',
-          competition_avatar: '/assets/9_imgbank_tp.png',
+          name: 'Super Taça',
+          avatar: '/assets/9_imgbank_tp.png',
           games: 1,
           wins: 1,
           losses: 0,
@@ -99,8 +100,8 @@ export class UserInfoService {
         },
         {
           season: '2013/14',
-          competition_name: 'Super Taça',
-          competition_avatar: '/assets/9_imgbank_tp.png',
+          name: 'Super Taça',
+          avatar: '/assets/9_imgbank_tp.png',
           games: 1,
           wins: 1,
           losses: 0,
@@ -113,8 +114,8 @@ export class UserInfoService {
         },
         {
           season: '2013/14',
-          competition_name: 'Super Taça',
-          competition_avatar: '/assets/9_imgbank_tp.png',
+          name: 'Super Taça',
+          avatar: '/assets/9_imgbank_tp.png',
           games: 1,
           wins: 1,
           losses: 0,
@@ -127,8 +128,8 @@ export class UserInfoService {
         },
         {
           season: '2012/13',
-          competition_name: 'Super Taça',
-          competition_avatar: '/assets/9_imgbank_tp.png',
+          name: 'Super Taça',
+          avatar: '/assets/9_imgbank_tp.png',
           games: 1,
           wins: 1,
           losses: 0,
