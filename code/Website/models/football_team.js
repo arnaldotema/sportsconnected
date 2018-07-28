@@ -6,59 +6,8 @@ var FootballTeamSchema = new Schema({
     avatar: String,
     name: String,
     full_name: String,
-    current_season: {
-        season_id: String,
-        name: String,
-        standings : [
-            {
-                id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
-                name: String,
-                avatar: String,
-                position: Number,
-                matches: {type: Number, default: 0},
-                wins: {type: Number, default: 0},
-                draws: {type: Number, default: 0},
-                losses: {type: Number, default: 0},
-                goals: {type: Number, default: 0},
-                goals_taken: {type: Number, default: 0}
-            }
-        ],
-        matches: [{
-            id: {type: Schema.Types.ObjectId, ref: 'football_match'},
-            date: Date,
-            competition:{
-                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
-                name: String,
-                avatar: String
-            },
-            home_team: {
-                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
-                name: String,
-                avatar: String,
-                goals: Number
-            },
-            away_team: {
-                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
-                name: String,
-                avatar: String,
-                goals: Number
-            }
-        }],
-        players: [
-            {
-                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-                name: String,
-                avatar: String
-            }
-        ],
-        staff: [
-            {
-                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-                name: String,
-                avatar: String
-            }
-        ]
-    },
+    current_season: {type: Schema.Types.ObjectId, ref: 'football_team_season'},
+    previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_team_season'}],
     tryouts: [{
         address: String,
         age_group: String,
