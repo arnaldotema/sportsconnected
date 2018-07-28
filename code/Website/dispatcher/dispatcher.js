@@ -19,7 +19,7 @@ zerozero.on('drain',function(options){
     logger.info("NO MORE REQUESTS! DRAINED!");
 });
 
-zerozero.proxyFailCallback = function (err, res, done){
+zerozero.proxyFailCallback = function (res, done){
     zerozero.queue(res.options);
     done();
 }

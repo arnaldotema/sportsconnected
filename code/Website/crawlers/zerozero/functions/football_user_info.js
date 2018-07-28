@@ -7,33 +7,34 @@ var format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 const footballUserInfo = require('../../../models/football_user_info');
-const footballCompetition = require('../../../models/football_competition');
-const footballTeam = require('../../../models/football_team');
+const footballUserInfoSeason = require('../../../models/football_user_info_season');
+const footballCompetitionSeason = require('../../../models/football_competition_season');
+const footballTeamSeason = require('../../../models/football_team_season');
 const footballUserInfoCrawler = require('../functions/football_match');
 
-function cascadeUserInfoUpdates(res, done){
-    footballTeam.addPlayerToTeam(res.options.team._id, res.options.user_info, function (err, result) {
+function cascadeUserInfoSeasonUpdates(res, done){
+    footballTeamSeason.addPlayerToTeam(res.options.team_season._id, res.options.user_info_season, function (err, result) {
         if (err) {
             logger.error("Error when adding player to team:", err);
-            done();
+            zerozero.proxyFailCallback(res, done);
         }
         else {
-            logger.info("Successfully added player " + res.options.user_info.personal_info.name + " to team " + res.options.team.name);
-            footballUserInfo.addCompetitionToUserInfo(res.options.user_info._id, res.options.competition, function (err, result) {
+            logger.info("Successfully added player " + res.options.user_info_season.name + " to team " + res.options.team_season.name);
+            footballUserInfoSeason.addCompetitionToUserInfo(res.options.user_info_season._id, res.options.competition_season, function (err, result) {
                 if (err) {
                     logger.error("Error when adding competition to user info:", err);
-                    done();
+                    zerozero.proxyFailCallback(res, done);
                 }
                 else {
-                    logger.info("Successfully added competition " + res.options.competition.name + " to user info " + res.options.user_info.personal_info.name);
+                    logger.info("Successfully added competition " + res.options.competition_season.name + " to user info " + res.options.user_info_season.name);
 
-                    footballCompetition.addUserInfoToCompetition(res.options.competition._id, res.options.user_info, function (err, result) {
+                    footballCompetitionSeason.addUserInfoToCompetition(res.options.competition_season._id, res.options.user_info_season, function (err, result) {
                         if (err) {
                             logger.error("Error when adding user info to competition:", err);
-                            done();
+                            zerozero.proxyFailCallback(res, done);
                         }
                         else {
-                            logger.info("Successfully added user info " + res.options.user_info.personal_info.name + " to competition " + res.options.competition.name);
+                            logger.info("Successfully added user info " + res.options.user_info_season.name + " to competition " + res.options.competition_season.name);
                             done();
                         }
                     });
@@ -46,14 +47,6 @@ function cascadeUserInfoUpdates(res, done){
 const updateUserInfo = function (err, res, done){
 
     const user_info = {
-        current_season:{
-            team: {
-                id: res.options.team ? res.options.team.id : 0 ,
-                acronym: res.options.team ? res.options.team.acronym : '',
-                avatar: res.options.team ? res.options.team.avatar : '',
-                name: res.options.team ? res.options.team.name : ''
-            }
-        },
         personal_info: {
             name: '',
             avatar: '',
@@ -63,6 +56,9 @@ const updateUserInfo = function (err, res, done){
             date_of_birth: Date.now(),
             foot: '',
             updated_at: Date.now()
+        },
+        external_ids: {
+            zerozero: res.options.zerozeroId
         }
     };
 
@@ -125,27 +121,75 @@ const updateUserInfo = function (err, res, done){
 
     logger.info("User Info:", user_info);
 
-    const query = {"external_ids.zerozero": res.options.zerozeroId};
-
-    footballUserInfo.findOneAndUpdate(query, user_info, { upsert:true, setDefaultsOnInsert: true, new: true }, function (err, result) {
+    footballUserInfo.updateAndReturnByZeroZeroId(res.options.zerozeroId, user_info, function (err, result) {
         if (err) {
             logger.error(err);
-            done();
+            zerozero.proxyFailCallback(res, done);
         }
         else {
             logger.info("Successfully updated user info ", res.options.zerozeroId);
 
-            if(res.options.competition){
-                res.options.user_info = result._doc;
-                cascadeUserInfoUpdates(res, done);
-            }
-            else{
-                done();
-            }
+            res.options.user_info = result._doc;
+
+            updateUserInfoSeason(err, res, done);
         }
     });
 };
 
+const updateUserInfoSeason = function(err, res, done){
+    const user_info_season = {
+        user_info_id: res.options.user_info._id,
+        season_id: res.options.team_season.season_id,
+        name: res.options.user_info.personal_info.name,
+        avatar: res.options.user_info.personal_info.avatar,
+        number: res.options.player_number,
+        team: {
+            id: res.options.team_season ? res.options.team_season._id : 0 ,
+            team_id: res.options.team_season ? res.options.team_season.team_id : 0 ,
+            acronym: res.options.team_season ? res.options.team_season.acronym : '',
+            avatar: res.options.team_season ? res.options.team_season.avatar : '',
+            name: res.options.team_season ? res.options.team_season.name : ''
+        },
+        external_ids: {
+            zerozero: res.options.zerozeroId
+        }
+    };
+
+    footballUserInfoSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, user_info_season, function (err, result) {
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            res.options.user_info_season = result._doc;
+
+            cascadeUserInfoSeasonUpdates(res, done);
+        }
+    });
+};
+
+const updateUserInfoCurrentSeasons = function(err, res, done){
+    footballUserInfoSeason.getByTeamSeasonId(res.options.team_season._id, function(err, result){
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            footballUserInfo.updateUserInfosCurrentSeason(result, function (err, result) {
+                if (err) {
+                    logger.error(err);
+                    zerozero.proxyFailCallback(res, done);
+                }
+                else {
+                    done();
+                }
+            })
+        }
+    })
+}
+
 module.exports = {
-    updateUserInfo: updateUserInfo
+    updateUserInfo: updateUserInfo,
+    updateUserInfoSeason: updateUserInfoSeason,
+    updateUserInfoCurrentSeasons: updateUserInfoCurrentSeasons
 }
