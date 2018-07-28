@@ -3,9 +3,14 @@
 @import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '../node_modules/bootstrap-grid-only/bootstrap.css';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '../node_modules/nouislider/distribute/nouislider.css';
 
 [hidden], template {
   display: none !important;
+}
+
+.sc-container {
+  margin: 20px auto;
 }
 
 .sc-btn{
@@ -189,6 +194,10 @@ th {
   background-color: white;
 }
 
+.table_header tr{
+  height: 50px !important;
+}
+
 .table_header td, th {
   height: auto !important;
 }
@@ -318,9 +327,24 @@ body {
   margin: 10px;
 }
 
+.indicators {
+  margin: 20px;
+}
+
+.indicators .text{
+  margin: 5px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #03304f;
+  cursor: pointer;
+}
+
+.indicators .text strong {
+  font-size: 16px;
+}
+
 .achievements .content {
   max-height: 200px;
-  border-radius: 5px;
   padding: 10px 20px;
   display: inline-block;
   width: 100%;
@@ -418,6 +442,12 @@ body {
 }
 
 .roster-table .profile-small-image {
+  background-size: cover;
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.table-players-search .profile-small-image {
   background-size: cover;
   height: 40px !important;
   width: 40px !important;
@@ -563,6 +593,13 @@ body {
   padding: 10px;
 }
 
+.table-players-search .caption {
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  color: #032f4f;
+  padding: 10px;
+}
+
 .roster thead {
   font-size: 12px !important;
 }
@@ -626,6 +663,12 @@ body {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
+.table-players-search {
+  min-width: 80%;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  margin: 20px auto;
+}
+
 .tryout-table {
   margin: 10px;
 }
@@ -648,7 +691,6 @@ body {
 
 .personal-table {
   margin: 20px 0;
-  border-radius: 5px;
   background-color: #798b9757;
   float: none !important;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
@@ -700,10 +742,17 @@ table .caption img {
 }
 
 .first-td {
-  background-color: #4384a8 !important;
+  background-color: #798b97 !important;
   color: white !important;
   max-width: 80px;
   font-weight: bold !important;
+}
+
+first-td-img {
+  color: white !important;
+  max-width: 80px;
+  font-weight: bold !important;
+  padding: 5px 10px !important;
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
@@ -860,6 +909,12 @@ table .role_move {
   width: 24%;
   padding: 0 5px;
 }
+
+.match-form mat-form-field{
+  width: 18%;
+  padding: 0 5px;
+}
+
 
 table .list_number {
   width: 24px;
@@ -1062,6 +1117,11 @@ coisas transversais a toda a plataforma.
   max-width: 354.19px;
 }
 
+.sticky-indicators {
+  position: fixed;
+  top: 320px;
+}
+
 .hidden-for-footer {
   display: none;
 }
@@ -1212,7 +1272,7 @@ coisas transversais a toda a plataforma.
 
 .player-info {
   float: left;
-  width: 35%;
+  width: 39%;
   line-height: 1;
   padding-left: 1rem;
 }
