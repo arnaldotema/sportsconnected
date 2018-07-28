@@ -87,11 +87,9 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
       });
 
     dialogRef.afterClosed().subscribe(result => {
-      debugger;
       if (result !== undefined) {
         this.teamService.createRecommendation('0',result).subscribe()
         {
-          debugger;
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.recommendations.top_5.push(result);
           //this.recommendationDataSource.filter = this.filterString;
@@ -112,11 +110,9 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
       });
 
     dialogRef.afterClosed().subscribe(result => {
-      debugger;
       if (result !== undefined) {
         //this.teamService.createRecommendation('0',result).subscribe()
         {
-          debugger;
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.tryouts.push(result);
           //this.recommendationDataSource.filter = this.filterString;
