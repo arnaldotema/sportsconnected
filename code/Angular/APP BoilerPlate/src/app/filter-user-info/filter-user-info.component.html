@@ -4,169 +4,117 @@
       <h1>Pesquisa de Jogadores</h1>
     </div>
     <div class="sc-forms">
-      <div class="col-md-2">
-        <h4>Nome</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenGender" (change)="loadAgeGroups()" placeholder="Género">
-            <mat-option *ngFor="let gender of genders" [value]="gender">{{gender.name}}</mat-option>
-          </mat-select>
-        </mat-form-field>
+      <div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="personal_data_select" (change)="changed('personal_data')"
+                        placeholder="Dados Pessoais" multiple>
+              <mat-option *ngFor="let personal_field of personal_data" [value]="personal_field">
+                {{personal_field}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="stats_select" (change)="changed('personal_data')" placeholder="Estatística"
+                        multiple>
+              <mat-option *ngFor="let stats_field of stats" [value]="stats_field">
+                {{stats_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="physical_atts_select" (change)="changed('personal_data')"
+                        placeholder="Atributos Físicos" multiple>
+              <mat-option *ngFor="let physical_atts_field of physical_atts" [value]="physical_atts_field">
+                {{physical_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="technical_atts_select" (change)="changed('personal_data')"
+                        placeholder="Atributos Técnicos" multiple>
+              <mat-option *ngFor="let technical_atts_field of technical_atts" [value]="technical_atts_field">
+                {{technical_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="mental_atts_select" (change)="changed('personal_data')"
+                        placeholder="Atributos Mentais" multiple>
+              <mat-option *ngFor="let mental_atts_field of mental_atts" [value]="mental_atts_field">
+                {{mental_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="sc_atts_select" (change)="changed('personal_data')" placeholder="Sports Connected"
+                        multiple>
+              <mat-option *ngFor="let sc_atts_field of sc_atts" [value]="sc_atts_field">
+                {{sc_atts_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field>
+            <mat-select [(ngModel)]="competition_select" (change)="changed('pe§rsonal_data')" placeholder="Competição"
+                        multiple>
+              <mat-option *ngFor="let competition_field of competitions" [value]="competition_field">
+                {{competition_field.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
-      <div class="col-md-2">
-        <h4>Idade</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenAgeGroup" (change)="loadLeagues()" placeholder="Escalão">
-            <mat-option *ngFor="let age_group of age_groups" [value]="age_group">{{age_group.name}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Residência</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenLeague" (change)="loadTeam()" placeholder="Competição">
-            <mat-option *ngFor="let league of leagues" [value]="league">{{league.name}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Clube</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenTeam" placeholder="Equipa">
-            <mat-option *ngFor="let team of teams" [value]="team">
-              {{team.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Mobilidade</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Posição</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Altura</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Peso</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Votação SC</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Altura</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Número de Jogos</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Minutos</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Golos</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Assistências</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Classificação</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Atributos técnicos</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-md-2">
-        <h4>Atributos mentais</h4>
-        <mat-form-field>
-          <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
-            <mat-option *ngFor="let player of players" [value]="player">
-              {{player.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+
+
+      <div class="filter-search-fields">
+        <table class="table table-bordered">
+          <tbody>
+          <tr *ngFor="let field of fieldArray; let i = index">
+            <td>
+              <mat-chip-list class="mat-chip-list-stacked">
+                <mat-chip [selectable]="selectable" (click)="deleteFieldValue(i)">
+                  Golos
+                  <mat-icon matChipRemove>cancel</mat-icon>
+                </mat-chip>
+              </mat-chip-list>
+            </td>
+            <td>
+              <mat-select [(ngModel)]="number_filter_select" placeholder="Filtragem">
+                <mat-option *ngFor="let number_filter_type of number_filter_types" [value]="number_filter_type">
+                  {{number_filter_type}}
+                </mat-option>
+              </mat-select>
+            </td>
+            <td>
+              <form *ngIf=" number_filter_select != 'Entre' ">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Introduz um algarismo">
+              </form>
+              <form *ngIf=" number_filter_select == 'Entre' ">
+                <nouislider [connect]="true" [min]="0" [max]="15" [(ngModel)]="sliderRange"></nouislider>
+              </form>
+              <form *ngIf=" number_filter_select == 'Igual a' ">
+                <mat-select [(ngModel)]="mock_value_select" placeholder="Filtragem">
+                  <mat-option *ngFor="let mock_value_type of mock_value_types" [value]="mock_value_type">
+                    {{mock_value_type}}
+                  </mat-option>
+                </mat-select>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
       <div class="centered col-md-12 sc-container">
         <button mat-raised-button (click)="loadPlayers()" class="sc-btn btn-start">PESQUISAR</button>
@@ -186,7 +134,7 @@
 
           <table class="table-players-search">
             <thead class="table_header">
-              <tr>
+            <tr>
               <th class="centered"></th>
               <th>Jogador</th>
               <th class="centered">Idade</th>
