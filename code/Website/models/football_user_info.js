@@ -22,48 +22,7 @@ var FootballUserInfoSchema = new Schema({
     external_ids: {
         zerozero: {type: Number, required: true, unique: true, index: true},
     },
-    current_season: {
-        season_id: {type: Schema.Types.ObjectId, ref: 'football_season'},
-        name: String,
-        team: {
-            id: {type: Schema.Types.ObjectId, ref: 'football_team'},
-            acronym: String,
-            avatar: String,
-            name: String
-        },
-        stats: [{
-            id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
-            name: String,
-            avatar: String,
-            games: {type: Number, default: 0},
-            goals: {type: Number, default: 0},
-            assists: {type: Number, default: 0},
-            yellow_cards: {type: Number, default: 0},
-            red_cards: {type: Number, default: 0},
-            minutes_played: {type: Number, default: 0}
-        }],
-        matches: [{
-            id: {type: Schema.Types.ObjectId, ref: 'football_match'},
-            date: Date,
-            competition:{
-                id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
-                name: String,
-                avatar: String
-            },
-            home_team: {
-                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
-                name: String,
-                avatar: String,
-                goals: Number
-            },
-            away_team: {
-                id: {type: Schema.Types.ObjectId, ref: 'football_team'},
-                name: String,
-                avatar: String,
-                goals: Number
-            }
-        }]
-    },
+    current_season: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
     previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_user_info_season'}],
     media: [
         {

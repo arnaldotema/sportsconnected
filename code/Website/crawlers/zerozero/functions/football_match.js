@@ -5,26 +5,17 @@ const baseUris = require('../base_uris');
 const format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
-const footballPlayer = require('../../../models/football_user_info');
+const footballUserInfoSeason = require('../../../models/football_user_info_season');
+const footballCompetitionSeason = require('../../../models/football_competition_season');
 const footballMatch = require('../../../models/football_match');
-const footballTeam = require('../../../models/football_team');
+const footballTeamSeason = require('../../../models/football_team_season');
 
-function initializeMatchModel(match, res, cb){
+function initializeMatchModel(match, res, done, cb){
 
     //Competition
 
-    let match = res.options.match;
-
-    match.competition.name = res.$("#matchedition .name span a").html() ?
-        res.$("#matchedition .name span a").html() :
-        '';
-
-    match.competition.phase = res.$("#matchedition .information span")[0] ?
+    match.competition_season.phase = res.$("#matchedition .information span")[0] ?
         res.$(res.$("#matchedition .information span")[0]).html():
-        '';
-
-    match.competition.avatar = res.$("#matchedition .profile_picture img") ?
-        "http://www.zerozero.pt" + res.$("#matchedition .profile_picture img").attr("href"):
         '';
 
     //Misc
@@ -53,112 +44,6 @@ function initializeMatchModel(match, res, cb){
         res.$("#page_header .info .content .away .team a").attr('href').match(/\d+/g)[0] :
         0;
 
-    footballTeam.getMatchTeamsByZeroZeroId(homeZeroZeroId, awayZeroZeroId, function (err, result) {
-        if (err) {
-            logger.error(err);
-        }
-        else {
-            logger.info("Successfully fetched match teams", result);
-
-            let home_team = result[0].home_team;
-            let away_team = result[0].away_team;
-
-            if(home_team){
-                match.home_team.id = home_team._id;
-                match.home_team.name = home_team.name;
-                match.home_team.avatar = home_team.avatar;
-            }
-
-            if(away_team){
-                match.away_team.id = away_team._id;
-                match.away_team.name = away_team.name;
-                match.away_team.avatar = away_team.avatar;
-            }
-
-            cb(match, res);
-        }
-    })
-}
-
-function processMatchIds(match, res, cb){
-    // User_Infos
-
-    let homeTeam = {
-        main_lineup: [],
-        reserves: [],
-        staff: []
-    };
-
-    let awayTeam = {
-        main_lineup: [],
-        reserves: [],
-        staff: []
-    };
-
-    const report = res.$("#game_report .column_300");
-
-    if(report.length == 0){
-        logger.error("Match with zerozero id: " + res.options.zerozeroId + " has no report");
-    }
-    else{
-        res.$(report[0]).find(".player .name .text a").each(function() {
-            homeTeam.main_lineup.push(+res.$(this).attr('href').match(/\d+/g)[0]);
-        });
-        res.$(report[1]).find(".player .name .text a").each(function() {
-            awayTeam.main_lineup.push(+res.$(this).attr('href').match(/\d+/g)[0]);
-        });
-        res.$(report[2]).find(".player .name .text a").each(function() {
-            homeTeam.reserves.push(+res.$(this).attr('href').match(/\d+/g)[0]);
-        });
-        res.$(report[3]).find(".player .name .text a").each(function() {
-            awayTeam.reserves.push(+res.$(this).attr('href').match(/\d+/g)[0]);
-        });
-        res.$(report[4]).find(".player .name .text a").each(function() {
-            homeTeam.staff.push(+res.$(this).attr('href').match(/\d+/g)[0]);
-        });
-        res.$(report[5]).find(".player .name .text a").each(function() {
-            awayTeam.staff.push(+res.$(this).attr('href').match(/\d+/g)[0]);
-        });
-    }
-
-    match.home_team.main_lineup = homeTeam.main_lineup;
-    match.home_team.reserves = homeTeam.reserves;
-    match.home_team.staff = homeTeam.staff;
-
-    match.away_team.main_lineup = awayTeam.main_lineup;
-    match.away_team.reserves = awayTeam.reserves;
-    match.away_team.staff = awayTeam.staff;
-
-    footballPlayer.getMatchUserInfos(homeTeam, awayTeam, function (err, result) {
-        if (err) {
-            logger.error(err);
-        }
-        else {
-            logger.info("Successfully fetched match user infos", result);
-
-            cb(match, res);
-        }
-    })
-}
-
-function processMatchPlayers(match, res){
-
-}
-
-function processMatchTeams(match, res){
-    let homeZeroZeroId = 0;
-    let awayZeroZeroId = 0;
-
-    //Home team
-
-    match.home_team.name = res.$(".info .home .team a") ?
-        res.$(".info .home .team a").html().split(" <span")[0] :
-        '';
-
-    match.home_team.avatar = res.$("#logo_home img").attr("src") ?
-        "http://www.zerozero.pt" + res.$("#logo_home img").attr("href") :
-        '';
-
     res.$(".info .home .scorers .time").each(function(){
         var number = res.$(this).html().trim();
         if(number.split(" ").length > 0){
@@ -168,22 +53,6 @@ function processMatchTeams(match, res){
             match.home_team.goals = match.home_team.goals.push(number);
         }
     });
-
-    const home_goals = match.home_team.goals.length;
-
-    homeZeroZeroId = res.$(".info .home .team a") ?
-        res.$(".info .home .team a").attr("href").match(/equipa\.php\?id=\d+/g)[0].split("=")[1] :
-        0;
-
-    //Away team
-
-    match.away_team.name = res.$(".info .away .team a") ?
-        res.$(".info .away .team a").html().split(" <span")[0] :
-        '';
-
-    match.away_team.avatar = res.$("#logo_away img").attr("src") ?
-        "http://www.zerozero.pt" + res.$("#logo_away img").attr("href") :
-        '';
 
     res.$(".info .away .scorers .time").each(function(){
         var number = res.$(this).html().trim();
@@ -195,90 +64,321 @@ function processMatchTeams(match, res){
         }
     });
 
-    const away_goals = match.away_team.goals.length;
+    footballTeamSeason.getMatchTeamsByZeroZeroId(res.options.competition_season.season_id, homeZeroZeroId, awayZeroZeroId, function (err, result) {
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done)
+        }
+        else {
+            logger.info("Successfully fetched match teams", result);
 
-    awayZeroZeroId = res.$(".info .away .team a") ?
-        res.$(".info .away .team a").attr("href").match(/equipa\.php\?id=\d+/g)[0].split("=")[1] :
-        0;
+            let home_team = result[0].home_team[0];
+            let away_team = result[0].away_team[0];
 
-    footballTeam.bulkWrite(
-        [
-            {
-                updateOne: {
-                    filter: {
-                        "external_ids.zerozero": homeZeroZeroId,
-                        "current_season.standings.id": res.options.competitionId
-                    },
-                    update: {
-                        $set: {
-                            "current_season.standings.$.position": res.options.homePosition,
-                        },
-                        $inc : {
-                            "current_season.standings.$.matches" : 1,
-                            "current_season.standings.$.wins" : home_goals > away_goals ? 1 : 0,
-                            "current_season.standings.$.draws" : home_goals == away_goals ? 1 : 0,
-                            "current_season.standings.$.losses" : home_goals < away_goals ? 1 : 0,
-                            "current_season.standings.$.goals" : home_goals,
-                            "current_season.standings.$.goals_taken" : away_goals
-                        }
-                    }
-                }
-            },
-            {
-                updateOne: {
-                    filter: {
-                        "external_ids.zerozero": awayZeroZeroId,
-                        "current_season.standings.id": res.options.competitionId
-                    },
-                    update: {
-                        $set: {
-                            "current_season.standings.$.position": res.options.awayPosition,
-                        },
-                        $inc : {
-                            "current_season.standings.$.matches" : 1,
-                            "current_season.standings.$.wins" : away_goals > home_goals ? 1 : 0,
-                            "current_season.standings.$.draws" : away_goals == home_goals ? 1 : 0,
-                            "current_season.standings.$.losses" : away_goals < home_goals ? 1 : 0,
-                            "current_season.standings.$.goals" : away_goals,
-                            "current_season.standings.$.goals_taken" : home_goals
-                        }
-                    }
-                }
+            if(home_team){
+                match.home_team.id = home_team._id;
+                match.home_team.team_id = home_team.team_id;
+                match.home_team.name = home_team.name;
+                match.home_team.avatar = home_team.avatar;
             }
-        ],
-        {},
-        function (err, result) {
-            if (err) {
-                logger.error(err);
+
+            if(away_team){
+                match.away_team.id = away_team._id;
+                match.away_team.team_id = away_team.team_id;
+                match.away_team.name = away_team.name;
+                match.away_team.avatar = away_team.avatar;
             }
-            else {
-                logger.info("Successfully updated team game", result);
-            }
-    });
+
+            res.options.home_team = home_team;
+            res.options.away_team = away_team;
+
+            cb(match, res, done);
+        }
+    })
 }
 
-function processMatchCompetition(match, res){
+function _getEventsTimes(times){
+    let result = [];
 
+    let parsedTimes = times.html().match(/(\d+\+*\d*)/g);
+
+    if(parsedTimes != null) {
+        parsedTimes.forEach(function (time) {
+            if (time.includes('+')) {
+                let overtime = time.split('+');
+                result.push((+overtime[0]) + (+overtime[1] / 10));
+            }
+            else {
+                result.push(+time);
+            }
+        });
+    }
+    else{
+        times.html().split(' ').forEach(function() {
+            result.push('-1');
+        });
+    }
+
+    return result;
+}
+
+function _processPlayerEvents(match, res, player, starter, ids, team){
+        ids.push(+res.$(player).find(".name .text a").attr('href').match(/\d+/g)[0]);
+
+        const eventsLabels = res.$(player).find(".events span");
+        const eventsTimes = res.$(player).find(".events div");
+
+        let goIn = starter ? 0 : match.duration;
+        let goOut = match.duration;
+
+        let playerStats = {
+            number: +res.$(player).find(".number").html(),
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
+            minutes_played: 0,
+            go_in:[],
+            go_out:[]
+        }
+        /*
+
+        Events Mapping:
+
+            Goal ->  Q
+            Assist -> B
+
+            Red Cards -> R title="Vermelhos"
+            Yellow Cards -> R title="Amarelos"
+            Double Yellow -> S
+
+            Defend Penalti -> C
+            Miss Penalti -> A
+
+            Leave match -> 8
+            Enter match -> 7
+
+         */
+
+        for(let i = 0; i < eventsLabels.length ; i++){
+            const label = res.$(eventsLabels[i]);
+            const times = res.$(eventsTimes[i]);
+
+            switch(label.html()) {
+                case "Q":
+                    playerStats.goals = _getEventsTimes(times);
+                    break;
+                case "B":
+                    playerStats.assists = _getEventsTimes(times);
+                    break;
+                case "R":
+                    if(label.attr("title") == "Vermelhos") {
+                        playerStats.red_cards = _getEventsTimes(times);
+                    }
+                    else if(label.attr("title") == "Amarelos") {
+                        playerStats.yellow_cards = _getEventsTimes(times);
+                    }
+                    break;
+                case "S":
+                    playerStats.yellow_cards = playerStats.yellow_cards.concat(_getEventsTimes(times));
+                    i = eventsLabels.length;
+                    break;
+                case "C":
+                    //Not counted, may be in the future
+                    break;
+                case "A":
+                    //Not counted, may be in the future
+                    break;
+                case "8":
+                    playerStats.goOut = _getEventsTimes(times);
+                    goOut = playerStats.goOut[0];
+                    break;
+                case "7":
+                    playerStats.goIn = _getEventsTimes(times);
+                    goIn = playerStats.goIn[0];
+                    break;
+                default:
+            }
+        }
+
+        playerStats.minutes_played = goOut - goIn;
+
+        team.push(playerStats);
+}
+
+function processMatchIds(match, res, done, cb){
+    // User_Infos
+
+    let homeTeamIds = {
+        main_lineup: [],
+        reserves: [],
+        staff: []
+    };
+
+    let awayTeamIds = {
+        main_lineup: [],
+        reserves: [],
+        staff: []
+    };
+
+    const report = res.$("#game_report .column_300");
+
+
+    //Populate the players with events...
+
+    if(report.length == 0){
+        logger.error("Match with zerozero id: " + res.options.zerozeroId + " has no report");
+        zerozero.proxyFailCallback(res, done);
+    }
+    else{
+        res.$(report[0]).find(".player").each(function() {
+            _processPlayerEvents(match, res, this, true, homeTeamIds.main_lineup, match.home_team.main_lineup);
+        });
+        res.$(report[1]).find(".player").each(function() {
+            _processPlayerEvents(match, res, this, true, awayTeamIds.main_lineup, match.away_team.main_lineup);
+        });
+        res.$(report[2]).find(".player").each(function() {
+            _processPlayerEvents(match, res, this, false, homeTeamIds.reserves, match.home_team.reserves);
+        });
+        res.$(report[3]).find(".player").each(function() {
+            _processPlayerEvents(match, res, this, false, awayTeamIds.reserves, match.away_team.reserves);
+        });
+        res.$(report[4]).find(".player .name .text a").each(function() {
+            homeTeamIds.staff.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+        res.$(report[5]).find(".player .name .text a").each(function() {
+            awayTeamIds.staff.push(+res.$(this).attr('href').match(/\d+/g)[0]);
+        });
+    }
+
+    footballUserInfoSeason.getMatchUserInfosByZeroZeroId(res.options.competition_season.season_id, homeTeamIds, awayTeamIds, function (err, result) {
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            logger.info("Successfully fetched match user infos", result);
+
+            result[0].away_team.forEach(function (value, index) {
+                match.away_team.main_lineup[index].name = value.name;
+                match.away_team.main_lineup[index].id = value._id;
+                match.away_team.main_lineup[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].away_team_reserves.forEach(function (value, index) {
+                match.away_team.reserves[index].name = value.name;
+                match.away_team.reserves[index].id = value._id;
+                match.away_team.reserves[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].home_team.forEach(function (value, index) {
+                match.home_team.main_lineup[index].name = value.name;
+                match.home_team.main_lineup[index].id = value._id;
+                match.home_team.main_lineup[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].home_team_reserves.forEach(function (value, index) {
+                match.home_team.reserves[index].name = value.name;
+                match.home_team.reserves[index].id = value._id;
+                match.home_team.reserves[index].user_info_id = value.user_info_id;
+            });
+
+            footballMatch.updateAndReturnByZeroZeroId(res.options.zerozeroId, match, function (err, result) {
+                if (err) {
+                    logger.error(err);
+                    zerozero.proxyFailCallback(res, done)
+                }
+                else {
+                    logger.info("Successfully created match " + result._doc);
+
+                    res.options.match = result._doc;
+
+                    const embedMatch = {
+                        id: res.options.match._id,
+                        date: res.options.match.date,
+                        competition_season:{
+                            id: res.options.match.competition_season.id,
+                            competition_id: res.options.match.competition_season.competition_id,
+                            name: res.options.match.competition_season.name,
+                            avatar: res.options.match.competition_season.avatar
+                        },
+                        home_team: {
+                            id: res.options.match.home_team.id,
+                            name: res.options.match.home_team.name,
+                            avatar: res.options.match.home_team.avatar,
+                            goals: res.options.match.home_team.goals.length
+                        },
+                        away_team: {
+                            id: res.options.match.away_team.id,
+                            name: res.options.match.away_team.name,
+                            avatar: res.options.match.away_team.avatar,
+                            goals: res.options.match.away_team.goals.length
+                        }
+                    }
+                    cb(embedMatch, res, done);
+                }
+            });
+        }
+    })
+}
+
+function processMatchPlayers(nestedMatch, res, done){
+    footballUserInfoSeason.updateUserInfosStats(res.options.match, nestedMatch, function (err, result) {
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            logger.info("Successfully updated user infos game", result);
+
+            done();
+        }
+    })
+}
+
+function processMatchTeams(nestedMatch, res, done, cb){
+    footballTeamSeason.updateTeamsStandings(res.options.match, nestedMatch, function (err, result) {
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            logger.info("Successfully updated team game", result);
+
+            cb(nestedMatch, res, done);
+        }
+    })
+}
+
+function processMatchCompetition(nestedMatch, res, done, cb){
+    footballCompetitionSeason.updateCompetitionStandingsAndStats(res.options.match, nestedMatch, function(err, result){
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            logger.info("Successfully updated competition season", result);
+
+            cb(nestedMatch, res, done);
+        }
+    })
 }
 
 const processMatchInfo = function (err, res, done){
     let match = {
-        played: false,
-        players_processed: false,
-        competition_processed: false,
-        teams_processed: false,
+        played: true,
         external_ids: {
             zerozero: res.options.zerozeroId
         },
         date: res.options.matchDate,
-        duration: 90,
+        duration: 0,
         stadium: '',
         referee: '',
-        competition: {
-            name: '',
+        competition_season: {
+            name: res.options.competition_season.name,
             phase: '',
-            avatar: '',
-            id: res.options.competitionId
+            avatar: res.options.competition_season.avatar,
+            id: res.options.competition_season._id
         },
         home_team: {
             id: '',
@@ -308,13 +408,14 @@ const processMatchInfo = function (err, res, done){
         }
     };
 
-    initializeMatchModel(match, res, function(match,res) {
-        processMatchIds(match, res, function(match,res) {
-            processMatchPlayers(match, res);
-            processMatchTeams(match, res);
-            processMatchCompetition(match, res);
-            done();
-        })
+    initializeMatchModel(match, res, done, function(match, res, done) {
+        processMatchIds(match, res, done, function(nestedMatch, res, done) {
+            processMatchCompetition(nestedMatch, res, done, function (nestedMatch, res, done) {
+                processMatchTeams(nestedMatch, res, done, function (nestedMatch, res, done) {
+                    processMatchPlayers(nestedMatch, res, done);
+                });
+            });
+        });
     });
 }
 

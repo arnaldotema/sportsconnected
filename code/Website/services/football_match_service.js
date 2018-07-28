@@ -10,13 +10,18 @@ const getMissingMatches = function(matchIds, cb) {
     });
 }
 
-const initializeMatch = function(match, cb) {
-    const query = {"external_ids.zerozero": res.options.zerozeroId};
+const updateAndReturnByZeroZeroId = function(zerozero_id, match, cb) {
+    const query = {"external_ids.zerozero": zerozero_id};
 
-    return this.findOneAndUpdate(query, match, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
+    this.findOneAndUpdate(query, match, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
+}
+
+const insertFutureMaches = function(matches, cb){
+    this.insertMany(matches, cb);
 }
 
 module.exports = {
     getMissingMatches: getMissingMatches,
-    initializeMatch: initializeMatch
+    updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
+    insertFutureMaches: insertFutureMaches
 }
