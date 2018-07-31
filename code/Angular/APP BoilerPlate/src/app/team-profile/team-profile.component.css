@@ -407,3 +407,17 @@ img {
 .column.end:last-child:last-child, .end.columns:last-child:last-child {
   float: left;
 }
+
+
+.table_header {
+  color: #032f4f;
+  background-color: white;
+}
+
+.table_header tr{
+  height: 50px !important;
+}
+
+.table_header td, th {
+  height: auto !important;
+}

@@ -107,3 +107,17 @@
 .achievements{
   margin: 30px 0;
 }
+
+
+.table_header {
+  color: #032f4f;
+  background-color: white;
+}
+
+.table_header tr{
+  height: 50px !important;
+}
+
+.table_header td, th {
+  height: auto !important;
+}
