@@ -54,6 +54,7 @@ mat-select {
 
 .table-td {
   position: relative !important;
+  min-width: 90px !important;
 }
 
 .sc-mat-card-avatar {
@@ -79,7 +80,7 @@ mat-select {
 }
 
 .players-table-filter {
-
+  padding: 0px;
 }
 
 .search-button{
@@ -98,4 +99,36 @@ mat-select {
 
 .mat-chip-list-stacked {
   display: flex !important;
+}
+
+.table_header {
+  color: #032f4f;
+}
+
+.table_header tr{
+  height: 50px;
+}
+
+.table_header th {
+  font-size: larger;
+}
+
+.table_header th:hover {
+  color: white;
+}
+
+/* DO NOT DELETE THIS*/
+.player .meta .sc-stats-table tr > th, td {
+  min-width: 35px;
+  padding: 5px 7px;
+  font-size: 12px;
+  height: 40px;
+}
+
+.table-players-search {
+  min-width: 80%;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  margin: 20px auto;
+  background-color: #cad0d4;
+  border-radius: 10px;
 }
