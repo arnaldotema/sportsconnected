@@ -60,7 +60,7 @@ export class FilterUserInfoComponent implements OnInit {
     this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
-    this.personal_data = ['Nome', 'Data de Nascimento', 'Idade', 'Residência', 'Clube', 'Mobilidade', 'Posição'];
+    this.personal_data = ['Nome', 'D. de Nascimento', 'Idade', 'Residência', 'Clube', 'Mobilidade', 'Posição'];
     this.stats = ['Jogos', 'Minutos', 'Golos', 'Assistências', 'Classificação média', 'C. Amarelos', 'C. Vermelhos'];
     this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
     this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
