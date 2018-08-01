@@ -77,7 +77,6 @@ import {HeaderComponent} from './header/header.component';
 import {EditUserInfoComponent} from './edit-user-info/edit-user-info.component';
 import {ToastModule} from 'ng2-toastr';
 import {FilterUserInfoComponent} from './filter-user-info/filter-user-info.component';
-import {NouisliderModule} from 'ng2-nouislider';
 
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
@@ -154,7 +153,6 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MaterialBarModule,
     NgSelectizeModule,
     DropzoneModule,
-    NouisliderModule,
     ToastModule.forRoot()
   ],
   providers: [
