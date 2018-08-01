@@ -61,11 +61,11 @@ export class FilterUserInfoComponent implements OnInit {
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
     this.personal_data = ['Nome', 'D. de Nascimento', 'Idade', 'Residência', 'Clube', 'Mobilidade', 'Posição'];
-    this.stats = ['Jogos', 'Minutos', 'Golos', 'Assistências', 'Classificação média', 'C. Amarelos', 'C. Vermelhos'];
+    this.stats = ['Jogos', 'Minutos', 'Golos', 'Assistências', 'Class. média', 'C. Amarelos', 'C. Vermelhos'];
     this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
     this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
     this.mental_atts = ['Agressividade', 'Bravura', 'Antecipação', 'Concentração', 'Determinação', 'Compostura', 'Tomada de decisão', 'Criatividade', 'Jogo sem bola', 'Posicionamento', 'Velocidade Reação', 'Visão de Jogo', 'Disciplina', 'Ética de trabalho', 'Espírito de grupo', 'Liderança', 'Comunicação'];
-    this.sc_atts = ['Total de Badges', 'Total de Badges Época', 'Total de Badges Carreira'];
+    this.sc_atts = ['Badges', 'Badges Época', 'Badges Carreira'];
     this.competitions = ['Escalão', 'Distrito', 'Divisão', 'Clube'];
     this.seasons = ['Todas', '2018/2019', '2017/2018', '2016/2017', '2015/2016', '2014/2015'];
     this.number_filter_types = [
