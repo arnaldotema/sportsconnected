@@ -81,7 +81,7 @@
         <button mat-raised-button (click)="loadPlayers()" class="sc-btn btn-start centered">PESQUISAR</button>
       </div>
       <div class="filter-search-fields">
-        <div class="col-md-4">
+        <div class="col-md-5">
           <table class="table table-bordered">
             <tbody>
             <tr *ngFor="let field of search_fields; let i = index">
@@ -104,8 +104,8 @@
                 <form *ngIf=" field.filter == 'Pelo menos' || field.filter == 'No máximo' ">
                   <input type="text" class="form-control" id="exampleInputEmail1">
                 </form>
-                <form *ngIf=" field.filter == 'Entre' ">
-                  <nouislider [connect]="true" [min]="0" [max]="15" [(ngModel)]="sliderRange"></nouislider>
+                <form *ngIf=" field.filter == 'Entre' " class="range-form">
+                  de <input type="text" class="form-control small-form">até <input type="text" class="form-control small-form">
                 </form>
                 <form *ngIf=" field.filter == 'Igual a' ">
                   <mat-select [(ngModel)]="mock_value_select" placeholder="Valor">
@@ -119,7 +119,7 @@
             </tbody>
           </table>
         </div>
-        <div class="centered col-md-8 players-table-filter">
+        <div class="centered col-md-7 players-table-filter">
           <div *ngIf="players != null" class="roster">
 
             <table class=" table-players-search table-order-center" matSort (matSortChange)="sortData($event)">
