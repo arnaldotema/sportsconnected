@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="row-center-stats"xx>
+  <div class="row-center-stats" xx>
     <div class="centered">
       <h1>Pesquisa de Jogadores</h1>
     </div>
@@ -7,7 +7,8 @@
       <div class="row filters">
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="personal_data_select" (change)="changed(personal_data_select)" placeholder="Dados Pessoais" multiple>
+            <mat-select [(ngModel)]="personal_data_select" (change)="changed(personal_data_select)"
+                        placeholder="Dados Pessoais" multiple>
               <mat-option *ngFor="let personal_field of personal_data" [value]="personal_field">
                 {{personal_field}}
               </mat-option>
@@ -93,28 +94,121 @@
                   </mat-chip>
                 </mat-chip-list>
               </td>
-              <td>
-                <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
-                  <mat-option *ngFor="let number_filter_type of number_filter_types" [value]="number_filter_type">
-                    {{number_filter_type}}
-                  </mat-option>
-                </mat-select>
-              </td>
-              <td>
-                <form *ngIf=" field.filter == 'Pelo menos' || field.filter == 'No máximo' ">
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                </form>
-                <form *ngIf=" field.filter == 'Entre' " class="range-form">
-                  de <input type="text" class="form-control small-form">até <input type="text" class="form-control small-form">
-                </form>
-                <form *ngIf=" field.filter == 'Igual a' ">
-                  <mat-select [(ngModel)]="mock_value_select" placeholder="Valor">
-                    <mat-option *ngFor="let mock_value_type of mock_value_types" [value]="mock_value_type">
-                      {{mock_value_type}}
+              <div *ngIf="field.form == 'Jogos'">
+                <td>
+                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
+                    <mat-option *ngFor="let filter_type of games_filter_types" [value]="filter_type">
+                      {{filter_type}}
                     </mat-option>
                   </mat-select>
-                </form>
-              </td>
+                </td>
+                <td>
+                  <form *ngIf=" field.filter == 'Pelo menos' || field.filter == 'No máximo' ">
+                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                  <form *ngIf=" field.filter == 'Entre' " class="range-form">
+                    de
+                    <mat-select [(ngModel)]="field.values">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                    até
+                    <mat-select [(ngModel)]="field.values">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                  <form *ngIf=" field.filter == 'Exatamente' ">
+                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
+                      <mat-option *ngFor="let value_type of games_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                </td>
+              </div>
+              <div *ngIf="field.form == 'Posição'">
+                <td>
+                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
+                    <mat-option *ngFor="let filter_type of position_filter_types" [value]="filter_type">
+                      {{filter_type}}
+                    </mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <form>
+                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
+                      <mat-option *ngFor="let value_type of position_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                </td>
+              </div>
+              <div *ngIf="field.form == 'Residência'">
+                <td>
+                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
+                    <mat-option *ngFor="let filter_type of residence_filter_types" [value]="filter_type">
+                      {{filter_type}}
+                    </mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <form>
+                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
+                      <mat-option *ngFor="let value_type of residence_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                </td>
+              </div>
+              <div *ngIf="field.form != 'Jogos' && field.form != 'Posição' && field.form != 'Residência'">
+                <td>
+                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
+                    <mat-option *ngFor="let filter_type of number_filter_types" [value]="filter_type">
+                      {{filter_type}}
+                    </mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <form *ngIf=" field.filter == 'Pelo menos' || field.filter == 'No máximo' ">
+                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                  <form *ngIf=" field.filter == 'Entre' " class="range-form">
+                    de
+                    <mat-select [(ngModel)]="field.values">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                    até
+                    <mat-select [(ngModel)]="field.values">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+
+                  <form *ngIf=" field.filter == 'Exatamente' ">
+                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
+                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
+                        {{value_type}}
+                      </mat-option>
+                    </mat-select>
+                  </form>
+                </td>
+              </div>
             </tr>
             </tbody>
           </table>
@@ -124,8 +218,8 @@
 
             <table class=" table-players-search table-order-center" matSort (matSortChange)="sortData($event)">
               <thead class="table_header">
-              <tr>
-                <th class="centered"></th>
+              <tr class="centered">
+                <th></th>
                 <th>Jogador</th>
                 <th mat-sort-header="Age">Idade</th>
                 <th mat-sort-header="Games">Jogos</th>
@@ -134,7 +228,7 @@
                 <th mat-sort-header="Height">Altura</th>
                 <th mat-sort-header="Weight">Peso</th>
                 <th mat-sort-header="Recommendations">Rec.</th>
-                <th class="centered country-col">País</th>
+                <th class="country-col last-td">País</th>
               </tr>
               </thead>
               <tbody>
