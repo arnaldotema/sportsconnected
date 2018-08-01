@@ -25,15 +25,19 @@ export class FilterUserInfoComponent implements OnInit {
   //mental_atts_select;
   sc_atts_select;
   competition_select;
-  number_filter_select; //Todo : We need one of this for each filter
-  mock_value_select;
 
 
   personal_data;
   physical_atts;
   technical_atts;
   number_filter_types;
+  games_filter_types;
+  residence_filter_types;
+  position_filter_types;
   mock_value_types;
+  games_value_types;
+  position_value_types;
+  residence_value_types;
   mental_atts;
   sc_atts;
   competitions;
@@ -68,12 +72,49 @@ export class FilterUserInfoComponent implements OnInit {
     this.sc_atts = ['Badges', 'Badges Época', 'Badges Carreira'];
     this.competitions = ['Escalão', 'Distrito', 'Divisão', 'Clube'];
     this.seasons = ['Todas', '2018/2019', '2017/2018', '2016/2017', '2015/2016', '2014/2015'];
+
     this.number_filter_types = [
-      'Igual a', 'Pelo menos', 'No máximo', 'Entre'
+      'Exatamente', 'Pelo menos', 'No máximo', 'Entre'
     ];
     this.mock_value_types = [
-      'Valor 1', 'Valor 2', 'Valor 3', 'Valor 4'
+      '1', '2', '3', '4', '5','6','7', '8', '9', '10', '20', '25'
     ];
+
+
+    this.games_filter_types = [
+      'Exatamente', 'Pelo menos', 'No máximo', 'Entre'
+    ];
+    this.games_value_types = [
+      '1', '2', '3', '4', '5','6','7', '8', '9', '10', '20', '25'
+    ];
+
+
+    this.position_filter_types = [
+      'É natural como'
+    ];
+    this.position_value_types = [
+      'Guarda-redes',
+      'Defesa Central',
+      'Defesa Esquerdo',
+      'Defesa Direito',
+      'Defesa',
+      'Médio Defensivo',
+      'Médio Ofensivo',
+      'Médio Esquerdo',
+      'Médio Direito',
+      'Médio Centro',
+      'Ala Esquerdo',
+      'Ala Direito',
+      'Avançado',
+    ];
+    this.residence_filter_types = [
+      'Reside em'
+    ];
+
+    this.residence_value_types = [
+      'Lisboa', 'Seixal', 'Porto', 'Coimbra', 'Algarve'
+    ];
+
 
     this.sliderRange = [4, 80];
   }
@@ -166,7 +207,15 @@ export class FilterUserInfoComponent implements OnInit {
     if (form)
       this.addFieldValue(form);
 
+    // Reset the selected fileds
+    this.personal_data_select = undefined;
+    this.competition_select = undefined;
+    this.physical_atts_select= undefined;
+    this.sc_atts_select= undefined;
+    this.technical_atts_select = undefined;
+
   }
+
 
   getTeam() {
     this.genericUserService.searchUser('', '', 'team')
@@ -191,12 +240,13 @@ export class FilterUserInfoComponent implements OnInit {
 
   addFieldValue(form_values) {
     form_values.forEach((form_value, key) => {
-      if (!this.search_fields.some(item => item.form == form_value))
+      if (!this.search_fields.some(item => item.form == form_value)){
         this.search_fields.push({
           form: form_value,
           filter: {},
           value: {}
         });
+      }
     });
 
   }
