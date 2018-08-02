@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="row-center-stats" xx>
+  <div class="row-center-stats">
     <div class="centered">
       <h1>Pesquisa de Jogadores</h1>
     </div>
@@ -82,251 +82,245 @@
         <button mat-raised-button (click)="loadPlayers()" class="sc-btn btn-start centered">PESQUISAR</button>
       </div>
       <div class="filter-search-fields">
-        <div class="col-md-5">
-          <table class="table table-bordered">
-            <tbody>
-            <tr *ngFor="let field of search_fields; let i = index">
-              <td>
-                <mat-chip-list class="mat-chip-list-stacked">
-                  <mat-chip [selectable]="selectable" (click)="deleteFieldValue(i)">
-                    {{field.form}}
-                    <mat-icon matChipRemove>cancel</mat-icon>
-                  </mat-chip>
-                </mat-chip-list>
-              </td>
-              <div *ngIf="field.form == 'Jogos'">
-                <td>
-                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
-                    <mat-option *ngFor="let filter_type of games_filter_types" [value]="filter_type">
-                      {{filter_type}}
-                    </mat-option>
-                  </mat-select>
-                </td>
-                <td>
-                  <form *ngIf=" field.filter == 'Pelo menos' || field.filter == 'No máximo' ">
-                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                  <form *ngIf=" field.filter == 'Entre' " class="range-form">
-                    de
-                    <mat-select [(ngModel)]="field.values">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                    até
-                    <mat-select [(ngModel)]="field.values">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                  <form *ngIf=" field.filter == 'Exatamente' ">
-                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
-                      <mat-option *ngFor="let value_type of games_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                </td>
-              </div>
-              <div *ngIf="field.form == 'Posição'">
-                <td>
-                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
-                    <mat-option *ngFor="let filter_type of position_filter_types" [value]="filter_type">
-                      {{filter_type}}
-                    </mat-option>
-                  </mat-select>
-                </td>
-                <td>
-                  <form>
-                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
-                      <mat-option *ngFor="let value_type of position_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                </td>
-              </div>
-              <div *ngIf="field.form == 'Residência'">
-                <td>
-                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
-                    <mat-option *ngFor="let filter_type of residence_filter_types" [value]="filter_type">
-                      {{filter_type}}
-                    </mat-option>
-                  </mat-select>
-                </td>
-                <td>
-                  <form>
-                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
-                      <mat-option *ngFor="let value_type of residence_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                </td>
-              </div>
-              <div *ngIf="field.form != 'Jogos' && field.form != 'Posição' && field.form != 'Residência'">
-                <td>
-                  <mat-select [(ngModel)]="field.filter" placeholder="Filtragem">
-                    <mat-option *ngFor="let filter_type of number_filter_types" [value]="filter_type">
-                      {{filter_type}}
-                    </mat-option>
-                  </mat-select>
-                </td>
-                <td>
-                  <form *ngIf=" field.filter == 'Pelo menos' || field.filter == 'No máximo' ">
-                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                  <form *ngIf=" field.filter == 'Entre' " class="range-form">
-                    de
-                    <mat-select [(ngModel)]="field.values">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                    até
-                    <mat-select [(ngModel)]="field.values">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-
-                  <form *ngIf=" field.filter == 'Exatamente' ">
-                    <mat-select [(ngModel)]="field.values" placeholder="Valor">
-                      <mat-option *ngFor="let value_type of mock_value_types" [value]="value_type">
-                        {{value_type}}
-                      </mat-option>
-                    </mat-select>
-                  </form>
-                </td>
-              </div>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="centered col-md-7 players-table-filter">
-          <div *ngIf="players != null" class="roster">
-
-            <table class=" table-players-search table-order-center" matSort (matSortChange)="sortData($event)">
-              <thead class="table_header">
-              <tr class="centered">
-                <th></th>
-                <th>Jogador</th>
-                <th mat-sort-header="Age">Idade</th>
-                <th mat-sort-header="Games">Jogos</th>
-                <th mat-sort-header="Goals">Golos</th>
-                <th mat-sort-header="Assists">Assis.</th>
-                <th mat-sort-header="Height">Altura</th>
-                <th mat-sort-header="Weight">Peso</th>
-                <th mat-sort-header="Recommendations">Rec.</th>
-                <th class="country-col last-td">País</th>
-              </tr>
-              </thead>
+        <div class="row">
+          <div class="col-md-5">
+            <table class="table table-bordered">
               <tbody>
-              <tr *ngFor="let player of players">
-                <td class="centered number_move first-td-img">
-                  <a href="/user-info">
-                    <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
-                         [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
-                    </div>
-                  </a>
+              <tr *ngFor="let field of search_fields; let i = index">
+                <td>
+                  <mat-chip-list class="mat-chip-list-stacked">
+                    <mat-chip [selectable]="selectable" (click)="deleteFieldValue(i)">
+                      {{field.form}}
+                      <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
+                  </mat-chip-list>
                 </td>
-                <td class="table-td">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td class="table-link">
-                        <a
-                          href="/user-info">
-                          {{player.personal_info.name}}
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>{{player.personal_info.positions[0]}}</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">{{player.personal_info.age}}</td>
-                <td class="centered">{{player.current_season.games.length}}</td>
-                <td class="centered">{{player.current_season.stats[0].goals}}</td>
-                <td class="centered">{{player.current_season.stats[0].assists}}</td>
-                <td class="centered">{{player.personal_info.height}}</td>
-                <td class="centered">{{player.personal_info.weight}}</td>
-                <td class="centered">{{player.recommendations.list.length}}</td>
-                <td class="centered">
-                  <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
-                       alt="{{player.personal_info.nationality}}" class="list_flag">
-                </td>
+                <!--<div *ngIf="field.form == 'Jogos'">
+                  <td>
+                    <mat-select [(ngModel)]=" field.selected_filter" placeholder="Filtragem">
+                      <mat-option *ngFor="let filter_type of games_filter_types" [value]="filter_type">
+                        {{filter_type}}
+                      </mat-option>
+                    </mat-select>
+                  </td>
+                  <td>
+                    <form *ngIf=" field.selected_filter == 'Pelo menos' || field.selected_filter == 'No máximo' ">
+                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                    <form *ngIf=" field.selected_filter == 'Entre' " class="range-form">
+                      de
+                      <mat-select [(ngModel)]=" field.selected_value">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                      até
+                      <mat-select [(ngModel)]=" field.selected_value">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                    <form *ngIf=" field.selected_filter == 'Exatamente' ">
+                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                  </td>
+                </div>
+                <div *ngIf="field.form == 'Posição'">
+                  <td>
+                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
+                      <mat-option *ngFor="let filter_type of position_filter_types" [value]="filter_type">
+                        {{filter_type}}
+                      </mat-option>
+                    </mat-select>
+                  </td>
+                  <td>
+                    <form>
+                      <mat-select [(ngModel)]="field.selected_value" placeholder="Valor">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                  </td>
+                </div>
+                <div *ngIf="field.form == 'Residência'">
+                  <td>
+                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
+                      <mat-option *ngFor="let filter_type of residence_filter_types" [value]="filter_type">
+                        {{filter_type}}
+                      </mat-option>
+                    </mat-select>
+                  </td>
+                  <td>
+                    <form>
+                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
+                        <mat-option *ngFor="let value_type of residence_value_types" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                  </td>
+                </div>-->
+                <div>
+                  <td>
+                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
+                      <mat-option *ngFor="let filter_type of field.filters" [value]="filter_type">
+                        {{filter_type}}
+                      </mat-option>
+                    </mat-select>
+                  </td>
+                  <td>
+                    <form *ngIf=" field.selected_filter && field.selected_filter != 'Entre'">
+                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                    <form *ngIf=" field.selected_filter == 'Entre' " class="range-form">
+                      de
+                      <mat-select [(ngModel)]=" field.selected_value">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                      até
+                      <mat-select [(ngModel)]=" field.selected_value">
+                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
+                          {{value_type}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
+                  </td>
+                </div>
               </tr>
               </tbody>
             </table>
+          </div>
+          <div class="centered col-md-7 players-table-filter">
+            <div *ngIf="players != null" class="roster">
 
-            <!--<table class="table-players-search">
-              <thead class="table_header">
-              <tr>
-                <th class="centered"></th>
-                <th>Jogador</th>
-                <th class="centered">Idade</th>
-                <th class="centered">Jogos</th>
-                <th class="centered">Golos</th>
-                <th class="centered">Assistências</th>
-                <th class="centered">Altura</th>
-                <th class="centered">Peso</th>
-                <th class="centered">Recomendações</th>
-                <th class="centered country-col">País</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let player of players" class="tr-odd">
-                <td class="centered number_move first-td-img">
-                  <a href="/user-info">
-                    <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
-                         [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
-                    </div>
-                  </a>
-                </td>
-                <td class="table-td">
-                  <table class="inline-table" title="">
-                    <tbody>
-                    <tr>
-                      <td class="table-link">
-                        <a
-                          href="/user-info">
-                          {{player.personal_info.name}}
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>{{player.personal_info.positions[0]}}</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-                <td class="centered">{{player.personal_info.age}}</td>
-                <td class="centered">{{player.current_season.games.length}}</td>
-                <td class="centered">{{player.current_season.stats[0].goals}}</td>
-                <td class="centered">{{player.current_season.stats[0].assists}}</td>
-                <td class="centered">{{player.personal_info.height}}</td>
-                <td class="centered">{{player.personal_info.weight}}</td>
-                <td class="centered">{{player.recommendations.list.length}}</td>
-                <td class="centered">
-                  <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
-                       alt="{{player.personal_info.nationality}}" class="list_flag">
-                </td>
-              </tr>
-              </tbody>
-            </table>-->
+              <table class=" table-players-search table-order-center" matSort (matSortChange)="sortData($event)">
+                <thead class="table_header">
+                <tr class="centered">
+                  <th></th>
+                  <th>Jogador</th>
+                  <th mat-sort-header="Age">Idade</th>
+                  <th mat-sort-header="Games">Jogos</th>
+                  <th mat-sort-header="Goals">Golos</th>
+                  <th mat-sort-header="Assists">Assis.</th>
+                  <th mat-sort-header="Height">Altura</th>
+                  <th mat-sort-header="Weight">Peso</th>
+                  <th mat-sort-header="Recommendations">Rec.</th>
+                  <th class="country-col last-td">País</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let player of players">
+                  <td class="centered number_move first-td-img">
+                    <a href="/user-info">
+                      <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
+                           [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
+                      </div>
+                    </a>
+                  </td>
+                  <td class="table-td">
+                    <table class="inline-table" title="">
+                      <tbody>
+                      <tr>
+                        <td class="table-link">
+                          <a
+                            href="/user-info">
+                            {{player.personal_info.name}}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{player.personal_info.positions[0]}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td class="centered">{{player.personal_info.age}}</td>
+                  <td class="centered">{{player.current_season.games.length}}</td>
+                  <td class="centered">{{player.current_season.stats[0].goals}}</td>
+                  <td class="centered">{{player.current_season.stats[0].assists}}</td>
+                  <td class="centered">{{player.personal_info.height}}</td>
+                  <td class="centered">{{player.personal_info.weight}}</td>
+                  <td class="centered">{{player.recommendations.list.length}}</td>
+                  <td class="centered">
+                    <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
+                         alt="{{player.personal_info.nationality}}" class="list_flag">
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+              <!--<table class="table-players-search">
+                <thead class="table_header">
+                <tr>
+                  <th class="centered"></th>
+                  <th>Jogador</th>
+                  <th class="centered">Idade</th>
+                  <th class="centered">Jogos</th>
+                  <th class="centered">Golos</th>
+                  <th class="centered">Assistências</th>
+                  <th class="centered">Altura</th>
+                  <th class="centered">Peso</th>
+                  <th class="centered">Recomendações</th>
+                  <th class="centered country-col">País</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let player of players" class="tr-odd">
+                  <td class="centered number_move first-td-img">
+                    <a href="/user-info">
+                      <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
+                           [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
+                      </div>
+                    </a>
+                  </td>
+                  <td class="table-td">
+                    <table class="inline-table" title="">
+                      <tbody>
+                      <tr>
+                        <td class="table-link">
+                          <a
+                            href="/user-info">
+                            {{player.personal_info.name}}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{player.personal_info.positions[0]}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td class="centered">{{player.personal_info.age}}</td>
+                  <td class="centered">{{player.current_season.games.length}}</td>
+                  <td class="centered">{{player.current_season.stats[0].goals}}</td>
+                  <td class="centered">{{player.current_season.stats[0].assists}}</td>
+                  <td class="centered">{{player.personal_info.height}}</td>
+                  <td class="centered">{{player.personal_info.weight}}</td>
+                  <td class="centered">{{player.recommendations.list.length}}</td>
+                  <td class="centered">
+                    <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
+                         alt="{{player.personal_info.nationality}}" class="list_flag">
+                  </td>
+                </tr>
+                </tbody>
+              </table>-->
+            </div>
           </div>
         </div>
       </div>
