@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {GenericUserService} from '../_services/generic_user.service';
-import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
+import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {Router} from '@angular/router';
 import {UserInfoService} from '../_services/user_info.service';
-import {TeamService} from '../_services/team.service';
 import {UserInfoSearch} from '../_models/user_info_search';
 import {Sort} from '@angular/material';
-import {forEach} from '@angular/router/src/utils/collection';
+import {FilterSearch} from '../_models/filter_search';
 
 
 @Component({
@@ -16,7 +15,6 @@ import {forEach} from '@angular/router/src/utils/collection';
 })
 export class FilterUserInfoComponent implements OnInit {
 
-  teamService: TeamService;
 
   personal_data_select = [];
   stats_select = [];
@@ -30,14 +28,6 @@ export class FilterUserInfoComponent implements OnInit {
   personal_data;
   physical_atts;
   technical_atts;
-  number_filter_types;
-  games_filter_types;
-  residence_filter_types;
-  position_filter_types;
-  mock_value_types;
-  games_value_types;
-  position_value_types;
-  residence_value_types;
   mental_atts;
   sc_atts;
   competitions;
@@ -46,7 +36,7 @@ export class FilterUserInfoComponent implements OnInit {
 
   genericUserService: GenericUserService;
   userInfoService: UserInfoService;
-  teams: Search_entity_viewmodel[];
+  teams: SearchEntityViewmodel[];
   age_groups;
   leagues;
   players: UserInfoSearch[];
@@ -57,16 +47,15 @@ export class FilterUserInfoComponent implements OnInit {
 
   value_types;
 
-  private search_fields: Array<any> = [];
+  private search_fields: Array<FilterSearch> = [];
 
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-    this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
-    this.personal_data = ['D. de Nascimento', 'Idade', 'Residência', 'Mobilidade', 'Posição'];
+    this.personal_data = ['Pé Dominante','Idade','Posição','Residência', 'Mobilidade','D. de Nascimento', ];
     this.stats = ['Época', 'Jogos', 'Minutos', 'Golos', 'Assistências', 'Class. média', 'C. Amarelos', 'C. Vermelhos'];
     this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
     this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
@@ -80,6 +69,11 @@ export class FilterUserInfoComponent implements OnInit {
         unit: '',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
 
+      },
+      'foot': {
+        values: ['Direito', 'Esquerdo', 'Ambidestro'],
+        unit: '',
+        filters: ['Joga com']
       },
       'birth_date': {
         values: ['1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009'],
@@ -244,7 +238,7 @@ export class FilterUserInfoComponent implements OnInit {
 
   loadPlayers() {
     // Todo: Get Players based on
-    this.genericUserService.detailedSearchUser()
+    this.genericUserService.detailedSearchUser(this.search_fields)
       .subscribe(players => this.players = players);
   }
 
@@ -288,14 +282,13 @@ export class FilterUserInfoComponent implements OnInit {
     form_values.forEach((form_value, key) => {
       if (!this.search_fields.some(item => item.form == form_value)) {
         let mapped_var = mapVariable(form_value);
-        debugger;
         let obj = this.value_types[mapped_var] ? this.value_types[mapped_var] : this.value_types['default'];
         this.search_fields.push({
           form: form_value,
           filters: obj.filters,
           values: obj.values,
-          selected_filter: {},
-          selected_value: {}
+          selected_filter: '',
+          selected_value: ''
         });
       }
     });
@@ -305,13 +298,18 @@ export class FilterUserInfoComponent implements OnInit {
     this.search_fields.splice(index, 1);
   }
 
+
+
 }
 
 function mapVariable(text) {
   let translated = '';
 
   switch (text) {
-    case 'Posição':
+    case 'Pé Dominante':
+      translated = 'foot';
+      break;
+      case 'Posição':
       translated = 'position';
       break;
     case 'Idade':
