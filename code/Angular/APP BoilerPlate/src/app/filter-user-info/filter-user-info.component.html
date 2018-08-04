@@ -7,7 +7,7 @@
       <div class="row filters">
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="personal_data_select" (change)="changed(personal_data_select)"
+            <mat-select [(ngModel)]="personal_data_select" name ="personal_data_select" (change)="changed(personal_data_select)"
                         placeholder="Dados Pessoais" multiple>
               <mat-option *ngFor="let personal_field of personal_data" [value]="personal_field">
                 {{personal_field}}
@@ -95,81 +95,6 @@
                     </mat-chip>
                   </mat-chip-list>
                 </td>
-                <!--<div *ngIf="field.form == 'Jogos'">
-                  <td>
-                    <mat-select [(ngModel)]=" field.selected_filter" placeholder="Filtragem">
-                      <mat-option *ngFor="let filter_type of games_filter_types" [value]="filter_type">
-                        {{filter_type}}
-                      </mat-option>
-                    </mat-select>
-                  </td>
-                  <td>
-                    <form *ngIf=" field.selected_filter == 'Pelo menos' || field.selected_filter == 'No máximo' ">
-                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
-                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
-                          {{value_type}}
-                        </mat-option>
-                      </mat-select>
-                    </form>
-                    <form *ngIf=" field.selected_filter == 'Entre' " class="range-form">
-                      de
-                      <mat-select [(ngModel)]=" field.selected_value">
-                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
-                          {{value_type}}
-                        </mat-option>
-                      </mat-select>
-                      até
-                      <mat-select [(ngModel)]=" field.selected_value">
-                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
-                          {{value_type}}
-                        </mat-option>
-                      </mat-select>
-                    </form>
-                    <form *ngIf=" field.selected_filter == 'Exatamente' ">
-                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
-                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
-                          {{value_type}}
-                        </mat-option>
-                      </mat-select>
-                    </form>
-                  </td>
-                </div>
-                <div *ngIf="field.form == 'Posição'">
-                  <td>
-                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
-                      <mat-option *ngFor="let filter_type of position_filter_types" [value]="filter_type">
-                        {{filter_type}}
-                      </mat-option>
-                    </mat-select>
-                  </td>
-                  <td>
-                    <form>
-                      <mat-select [(ngModel)]="field.selected_value" placeholder="Valor">
-                        <mat-option *ngFor="let value_type of field.values" [value]="value_type">
-                          {{value_type}}
-                        </mat-option>
-                      </mat-select>
-                    </form>
-                  </td>
-                </div>
-                <div *ngIf="field.form == 'Residência'">
-                  <td>
-                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
-                      <mat-option *ngFor="let filter_type of residence_filter_types" [value]="filter_type">
-                        {{filter_type}}
-                      </mat-option>
-                    </mat-select>
-                  </td>
-                  <td>
-                    <form>
-                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
-                        <mat-option *ngFor="let value_type of residence_value_types" [value]="value_type">
-                          {{value_type}}
-                        </mat-option>
-                      </mat-select>
-                    </form>
-                  </td>
-                </div>-->
                 <div>
                   <td>
                     <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
@@ -180,7 +105,7 @@
                   </td>
                   <td>
                     <form *ngIf=" field.selected_filter && field.selected_filter != 'Entre'">
-                      <mat-select [(ngModel)]=" field.selected_value" placeholder="Valor">
+                      <mat-select [(ngModel)]=" field.selected_value" name ="selected_value"placeholder="Valor">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
                         </mat-option>
@@ -188,13 +113,13 @@
                     </form>
                     <form *ngIf=" field.selected_filter == 'Entre' " class="range-form">
                       de
-                      <mat-select [(ngModel)]=" field.selected_value">
+                      <mat-select [(ngModel)]=" field.selected_value" name ="selected_value" >
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
                         </mat-option>
                       </mat-select>
                       até
-                      <mat-select [(ngModel)]=" field.selected_value">
+                      <mat-select [(ngModel)]=" field.selected_value"  name ="selected_value" >
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
                         </mat-option>

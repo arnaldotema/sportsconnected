@@ -1,4 +1,4 @@
-import {Component, OnInit, AfterViewInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, AfterViewInit, ViewContainerRef, AfterViewChecked} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 import {Chart} from 'chart.js';
@@ -8,15 +8,15 @@ import {RecommendationModalComponent} from '../_modals/recommendation-modal/reco
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
 import {ToastsManager} from 'ng2-toastr';
+import {of} from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-user-info-profile',
   templateUrl: './user-info-profile.component.html',
   styleUrls: ['./user-info-profile.component.css']
 })
-export class UserInfoProfileComponent implements OnInit, AfterViewInit {
+export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterViewChecked {
   viewModel: UserInfoViewModel;
-  userInfoService: UserInfoService;
   mockAuthor;
   chart;
   colors;
@@ -24,28 +24,18 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   options;
   labels;
   skill_values;
-  chart_img;
-  show = false;
-  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog, private router: Router,
+
+  constructor(private userInfoService: UserInfoService, public dialog: MatDialog, private router: Router,
               public toastr: ToastsManager, vcr: ViewContainerRef) {
     this.toastr.setRootViewContainerRef(vcr);
-
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
   }
 
   ngOnInit() {
-    this.chart = [];
     this.data = {};
     this.options = {};
     this.labels = [];
     this.skill_values = [];
     this.colors = [];
-
-    this.userInfoService = new UserInfoService();
-    this.userInfoService.getUserInfo('0')
-      .subscribe(userInfo => this.viewModel = userInfo);
-
     this.mockAuthor = {
       name: 'Sports Connected',
       id: '-1',
@@ -57,9 +47,32 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         name: 'Sports Connected Team',
       }
     };
+
   }
 
   ngAfterViewInit() {
+    setTimeout(() =>{
+      this.userInfoService.getUserInfo('0')
+        .subscribe((userInfo) => {
+          this.viewModel = userInfo;
+          // When the user scrolls the page, execute myFunction
+          window.onscroll = function() {stickyScroll()};
+        });
+    },2000);
+  }
+
+  ngAfterViewChecked(){
+    if(this.viewModel && !this.chart){
+      this.loadChart();
+    }
+  }
+
+
+  editPlayer(): void {
+    this.router.navigate(['/edit-user-info']);
+  }
+
+  loadChart () {
     this.viewModel.skill_set.forEach((skill) => {
       this.labels.push(skill.name);
       this.skill_values.push(skill.endorsements.length);
@@ -101,17 +114,14 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         }]
       }
     };
-    this.chart = new Chart('graph', {
+    let ctx = document.getElementById('graph');
+    this.chart = new Chart(ctx, {
       type: 'horizontalBar',
       data: this.data,
       options: this.options,
       colors: this.colors
     });
-  }
-
-
-  editPlayer(): void {
-    this.router.navigate(['/edit-user-info']);
+    return true;
   }
 
   openCreateDialog(event): void {
@@ -149,7 +159,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         if (label == skillName)
           ++this.skill_values[key];
       });
-
       /*
       this.data = {
         labels: this.labels,
@@ -201,7 +210,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
 // Add the sticky class to personal when you reach its scroll position.
 // Remove "sticky" when you leave the scroll position
-function myFunction() {
+function stickyScroll() {
 
   // Get the navbar
   let personal = document.getElementById("personal");

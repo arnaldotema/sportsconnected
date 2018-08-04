@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {TeamService} from '../_services/team.service';
 import {UserInfoService} from '../_services/user_info.service';
 import {GenericUserService} from '../_services/generic_user.service';
-import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
+import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {TeamViewModel} from '../_models/team_viewmodel';
 
 @Component({
@@ -21,11 +21,11 @@ export class CreateAccountComponent implements OnInit {
   chosenTeam;
   genericUserService: GenericUserService;
   userInfoService: UserInfoService;
-  teams: Search_entity_viewmodel[];
+  teams: SearchEntityViewmodel[];
   age_groups;
   genders;
   leagues;
-  players: Search_entity_viewmodel[];
+  players: SearchEntityViewmodel[];
   user;
 
   constructor(private router: Router) {

@@ -14,18 +14,14 @@ import {TryoutModalComponent} from "../_modals/tryout-modal/tryout-modal.compone
 export class TeamProfileComponent implements OnInit, AfterViewInit {
 
   viewModel: TeamViewModel;
-  teamService : TeamService;
   mockAuthor;
   chart = [];
   data = {};
   options = {};
 
-  constructor(/*private teamService: TeamService, */public dialog: MatDialog) { }
+  constructor(private teamService: TeamService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.teamService = new TeamService();
-    this.teamService.getTeam('0')
-      .subscribe(team => this.viewModel = team);
 
     this.mockAuthor = {
       name: 'Sports Connected',
@@ -42,6 +38,13 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(){
+    setTimeout(() =>{
+      this.teamService.getTeam('0')
+        .subscribe(team => this.viewModel = team);
+    },2000);
+  }
+
+  loadChart() {
     this.data = {
       labels: ['Ataque', 'Tática', 'Defesa', 'Meio Campo', 'Bolas paradas'],
       datasets: [{
