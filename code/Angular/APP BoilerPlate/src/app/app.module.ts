@@ -77,6 +77,9 @@ import {HeaderComponent} from './header/header.component';
 import {EditUserInfoComponent} from './edit-user-info/edit-user-info.component';
 import {ToastModule} from 'ng2-toastr';
 import {FilterUserInfoComponent} from './filter-user-info/filter-user-info.component';
+import {UserInfoService} from './_services/user_info.service';
+import {MatchService} from './_services/match.service';
+import {TeamService} from './_services/team.service';
 
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
@@ -161,6 +164,9 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AdminGuard,
     AuthenticationService,
     GenericUserService,
+    UserInfoService,
+    TeamService,
+    MatchService,
     {
       provide: DROPZONE_CONFIG,
       useValue: DEFAULT_DROPZONE_CONFIG
