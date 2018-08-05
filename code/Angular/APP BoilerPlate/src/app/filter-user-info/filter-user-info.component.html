@@ -7,7 +7,8 @@
       <div class="row filters">
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="personal_data_select" name ="personal_data_select" (change)="changed(personal_data_select)"
+            <mat-select [(ngModel)]="personal_data_select" name="personal_data_select"
+                        (change)="changed(personal_data_select)"
                         placeholder="Dados Pessoais" multiple>
               <mat-option *ngFor="let personal_field of personal_data" [value]="personal_field">
                 {{personal_field}}
@@ -79,7 +80,10 @@
         </div>
       </div>
       <div class="search-button">
-        <button mat-raised-button (click)="loadPlayers()" class="sc-btn btn-start centered">PESQUISAR</button>
+        <button mat-raised-button (click)="loadPlayers()" [disabled]="search_fields.length <= 0" class="sc-btn btn-start centered">PESQUISAR</button>
+      </div>
+      <div [hidden]="search_fields && search_fields.length > 0" class="centered  ">
+        <h3>Escolhe em cima o que filtrar</h3>
       </div>
       <div class="filter-search-fields">
         <div class="row">
@@ -105,23 +109,26 @@
                   </td>
                   <td>
                     <form *ngIf=" field.selected_filter && field.selected_filter != 'Entre'">
-                      <mat-select [(ngModel)]=" field.selected_value" name ="selected_value"placeholder="Valor">
+                      <mat-select [(ngModel)]=" field.selected_value" name="selected_value" placeholder="Valor">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
+                          <span matSuffix>{{field.value_suffix}}</span>
                         </mat-option>
                       </mat-select>
                     </form>
                     <form *ngIf=" field.selected_filter == 'Entre' " class="range-form">
                       de
-                      <mat-select [(ngModel)]=" field.selected_value" name ="selected_value" >
+                      <mat-select [(ngModel)]=" field.selected_value" name="selected_value_start">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
+                          <span matSuffix>{{field.value_suffix}}</span>
                         </mat-option>
                       </mat-select>
                       até
-                      <mat-select [(ngModel)]=" field.selected_value"  name ="selected_value" >
+                      <mat-select [(ngModel)]=" field.selected_value_end" name="selected_value_end">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
+                          <span matSuffix>{{field.value_suffix}}</span>
                         </mat-option>
                       </mat-select>
                     </form>
@@ -132,25 +139,25 @@
             </table>
           </div>
           <div class="centered col-md-7 players-table-filter">
-            <div *ngIf="players != null" class="roster">
+            <div [hidden]="loading || search_fields.length <= 0" *ngIf="players" class="roster">
 
               <table class=" table-players-search table-order-center" matSort (matSortChange)="sortData($event)">
                 <thead class="table_header">
                 <tr class="centered">
                   <th></th>
                   <th>Jogador</th>
-                  <th mat-sort-header="Age">Idade</th>
-                  <th mat-sort-header="Games">Jogos</th>
-                  <th mat-sort-header="Goals">Golos</th>
-                  <th mat-sort-header="Assists">Assis.</th>
-                  <th mat-sort-header="Height">Altura</th>
-                  <th mat-sort-header="Weight">Peso</th>
-                  <th mat-sort-header="Recommendations">Rec.</th>
+                  <th mat-sort-header="age">Idade</th>
+                  <th mat-sort-header="games">Jogos</th>
+                  <th mat-sort-header="goals">Golos</th>
+                  <th mat-sort-header="assists">Assis.</th>
+                  <th mat-sort-header="height">Altura</th>
+                  <th mat-sort-header="weight">Peso</th>
+                  <th>Clube</th>
                   <th class="country-col last-td">País</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let player of players">
+                <tr *ngFor="let player of sortedData">
                   <td class="centered number_move first-td-img">
                     <a href="/user-info">
                       <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
@@ -181,7 +188,12 @@
                   <td class="centered">{{player.current_season.stats[0].assists}}</td>
                   <td class="centered">{{player.personal_info.height}}</td>
                   <td class="centered">{{player.personal_info.weight}}</td>
-                  <td class="centered">{{player.recommendations.list.length}}</td>
+                  <td class="centered">
+                    <a href="/team">
+                      <img src="{{player.team.avatar}}" title="{{player.team.name}}"
+                           alt="{{player.team.name}}" class="team-img">
+                    </a>
+                  </td>
                   <td class="centered">
                     <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
                          alt="{{player.personal_info.nationality}}" class="list_flag">
@@ -189,62 +201,9 @@
                 </tr>
                 </tbody>
               </table>
-
-              <!--<table class="table-players-search">
-                <thead class="table_header">
-                <tr>
-                  <th class="centered"></th>
-                  <th>Jogador</th>
-                  <th class="centered">Idade</th>
-                  <th class="centered">Jogos</th>
-                  <th class="centered">Golos</th>
-                  <th class="centered">Assistências</th>
-                  <th class="centered">Altura</th>
-                  <th class="centered">Peso</th>
-                  <th class="centered">Recomendações</th>
-                  <th class="centered country-col">País</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let player of players" class="tr-odd">
-                  <td class="centered number_move first-td-img">
-                    <a href="/user-info">
-                      <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
-                           [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
-                      </div>
-                    </a>
-                  </td>
-                  <td class="table-td">
-                    <table class="inline-table" title="">
-                      <tbody>
-                      <tr>
-                        <td class="table-link">
-                          <a
-                            href="/user-info">
-                            {{player.personal_info.name}}
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>{{player.personal_info.positions[0]}}</td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                  <td class="centered">{{player.personal_info.age}}</td>
-                  <td class="centered">{{player.current_season.games.length}}</td>
-                  <td class="centered">{{player.current_season.stats[0].goals}}</td>
-                  <td class="centered">{{player.current_season.stats[0].assists}}</td>
-                  <td class="centered">{{player.personal_info.height}}</td>
-                  <td class="centered">{{player.personal_info.weight}}</td>
-                  <td class="centered">{{player.recommendations.list.length}}</td>
-                  <td class="centered">
-                    <img src="/assets/flags/pt.svg" title="{{player.personal_info.nationality}}"
-                         alt="{{player.personal_info.nationality}}" class="list_flag">
-                  </td>
-                </tr>
-                </tbody>
-              </table>-->
+            </div>
+            <div [hidden]="!loading">
+              A carregar...
             </div>
           </div>
         </div>
