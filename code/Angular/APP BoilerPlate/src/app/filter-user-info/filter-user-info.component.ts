@@ -40,6 +40,7 @@ export class FilterUserInfoComponent implements OnInit {
   age_groups;
   leagues;
   players: UserInfoSearch[];
+  loading = false;
   user;
 
   sortedData;
@@ -55,7 +56,7 @@ export class FilterUserInfoComponent implements OnInit {
   ngOnInit() {
     this.genericUserService = new GenericUserService();
     this.userInfoService = new UserInfoService();
-    this.personal_data = ['Pé Dominante','Idade','Posição','Residência', 'Mobilidade','D. de Nascimento', ];
+    this.personal_data = ['Pé Dominante', 'Idade', 'Posição', 'Residência', 'Mobilidade', 'D. de Nascimento',];
     this.stats = ['Época', 'Jogos', 'Minutos', 'Golos', 'Assistências', 'Class. média', 'C. Amarelos', 'C. Vermelhos'];
     this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
     this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
@@ -66,94 +67,94 @@ export class FilterUserInfoComponent implements OnInit {
     this.value_types = {
       'default': {
         values: Array.apply(null, {length: 50}).map(Number.call, Number),
-        unit: '',
+        suffix: '',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
 
       },
       'foot': {
         values: ['Direito', 'Esquerdo', 'Ambidestro'],
-        unit: '',
+        suffix: '',
         filters: ['Joga com']
       },
       'birth_date': {
         values: ['1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009'],
-        unit: '',
+        suffix: '',
         filters: ['Exatamente', 'Desde', 'Até', 'Entre']
       },
       'age': {
         values: Array.apply(null, {length: 35}).map(Number.call, Number),
-        unit: 'anos',
+        suffix: 'anos',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'residence': {
         values: ['Lisboa', 'Porto', 'Coimbra', 'Algarve', 'Setúbal', 'Santarém', 'Viseu', 'Leiria'],
-        unit: '',
+        suffix: '',
         filters: ['Reside em']
       },
       'team': {
         values: ['Seixal FC', 'SL Benfica', 'FC Porto', 'Amora FC', 'Alcochetense', 'Montijo', 'Sporting CP'],
-        unit: '',
+        suffix: '',
         filters: ['Joga no']
       },
       'mobility': {
         values: ['Total', 'Regional', 'Distrital'],
-        unit: '',
+        suffix: '',
         filters: ['No máximo']
       },
       'position': {
         values: ['Guarda-redes', 'Defesa Central', 'Defesa Esquerdo', 'Defesa Direito', 'Defesa', 'Médio Defensivo', 'Médio Ofensivo', 'Médio Esquerdo', 'Médio Direito', 'Médio Centro', 'Ala Esquerdo', 'Ala Direito', 'Avançado',],
-        unit: '',
+        suffix: '',
         filters: ['É natural como'],
       },
       'games': {
         values: Array.apply(null, {length: 50}).map(Number.call, Number),
-        unit: 'jogos',
+        suffix: 'jogos',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'minutes': {
         values: Array.apply(null, {length: 90}).map(Number.call, Number),
-        unit: 'mins',
+        suffix: 'mins',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'goals': {
         values: Array.apply(null, {length: 100}).map(Number.call, Number),
-        unit: 'golos',
+        suffix: 'golos',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'assists': {
         values: Array.apply(null, {length: 100}).map(Number.call, Number),
-        unit: 'ass.',
+        suffix: 'ass.',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'height': {
         values: ['1,20', '1,50', '1,70', '1,80', '1,90', '2,00'],
-        unit: 'm',
+        suffix: 'm',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'weight': {
         values: ['50', '60', '70', '80', '90'],
-        unit: 'kg',
+        suffix: 'kg',
         filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'age_group': {
         values: ['Petizes', 'Traquinas', 'Benjamins B', 'Benjamins A', 'Infantis B', 'Infantis A', 'Iniciados B', 'Iniciados', 'Juvenis B', 'Juvenis', 'Juniores B', 'Juniores', 'Seniores'],
-        unit: '',
+        suffix: '',
         filters: ['Exatamente', 'Desde', 'Até', 'Entre']
       },
       'district': {
         values: ['Lisboa', 'Porto', 'Setúbal', 'Santarém', 'Faro'],
-        unit: '',
+        suffix: '',
         filters: ['Joga em/no']
       },
 
       'division': {
         values: ['Nacional', 'Regional', 'Distrital', '1ª Div', '2ª Div', '3ª Div'],
-        unit: '',
+        suffix: '',
         filters: ['Joga na']
       },
       'season': {
         values: ['2018/2019', '2017/2018', '2016/2017', '2015/2016', '2014/2015'],
-        unit: '',
+        suffix: '',
         filters: ['Exatamente', 'Desde', 'Até', 'Entre']
       }
     };
@@ -237,12 +238,26 @@ export class FilterUserInfoComponent implements OnInit {
   }
 
   loadPlayers() {
-    // Todo: Get Players based on
-    this.genericUserService.detailedSearchUser(this.search_fields)
-      .subscribe(players => this.players = players);
+    this.loading = true;
+    setTimeout(() =>{
+      this.genericUserService.detailedSearchUser(this.search_fields)
+        .subscribe(players => {
+            this.loading = false;
+            this.players = players;
+            this.sortedData = this.players.slice();
+          }
+        );
+    },2000);
+
   }
 
   changed(form) {
+
+    // Cleans current player list if the filters were cleaned
+    if(this.search_fields.length == 0){
+      this.players = undefined;
+    }
+
     // Todo: Get Players based on
     if (form)
       this.addFieldValue(form);
@@ -271,9 +286,15 @@ export class FilterUserInfoComponent implements OnInit {
 
     this.sortedData = data.sort((a, b) => {
       let isAsc = sort.direction == 'asc';
+      debugger;
       switch (sort.active) {
-        default:
-          return 0;
+        case 'age': return compare(+a.personal_info.age, +b.personal_info.age, !isAsc);
+        case 'games': return compare(+a.current_season.games.length, b.current_season.games.length, !isAsc);
+        case 'goals': return compare(+a.current_season.stats[0].goals, +b.current_season.stats[0].goals, !isAsc);
+        case 'assists': return compare(+a.current_season.stats[0].assists, +b.current_season.stats[0].assists, !isAsc);
+        case 'height': return compare(+a.personal_info.height, +b.personal_info.height,!isAsc);
+        case 'weight': return compare(+a.personal_info.weight, +b.personal_info.weight, !isAsc);
+        default: return 0;
       }
     });
   }
@@ -285,10 +306,13 @@ export class FilterUserInfoComponent implements OnInit {
         let obj = this.value_types[mapped_var] ? this.value_types[mapped_var] : this.value_types['default'];
         this.search_fields.push({
           form: form_value,
+          search_item: mapped_var,
           filters: obj.filters,
           values: obj.values,
           selected_filter: '',
-          selected_value: ''
+          selected_value: '',
+          selected_value_end: '',
+          value_suffix: obj.suffix
         });
       }
     });
@@ -297,9 +321,6 @@ export class FilterUserInfoComponent implements OnInit {
   deleteFieldValue(index) {
     this.search_fields.splice(index, 1);
   }
-
-
-
 }
 
 function mapVariable(text) {
@@ -309,7 +330,7 @@ function mapVariable(text) {
     case 'Pé Dominante':
       translated = 'foot';
       break;
-      case 'Posição':
+    case 'Posição':
       translated = 'position';
       break;
     case 'Idade':

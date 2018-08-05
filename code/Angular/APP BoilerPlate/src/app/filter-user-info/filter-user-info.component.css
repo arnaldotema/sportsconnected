@@ -153,3 +153,8 @@ mat-select {
   display: flex;
   align-items: center;
 }
+
+.team-img {
+  width: auto;
+  height: 35px;
+}
