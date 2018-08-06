@@ -12,13 +12,13 @@ import {Sort} from '@angular/material';
 export class User_infoStatsComponent implements OnInit,AfterViewInit{
 
   viewModel: UserInfoViewModel;
-  userInfoService : UserInfoService;
   sortedData;
-  constructor() {
+  constructor(
+    private userInfoService : UserInfoService
+  ) {
   }
 
   ngOnInit() {
-    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => {
         this.sortedData = userInfo.media.slice();

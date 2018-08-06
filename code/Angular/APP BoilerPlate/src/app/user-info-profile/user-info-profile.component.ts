@@ -16,7 +16,6 @@ import {ToastsManager} from 'ng2-toastr';
 })
 export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   viewModel: UserInfoViewModel;
-  userInfoService: UserInfoService;
   mockAuthor;
   chart;
   colors;
@@ -27,7 +26,8 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   chart_img;
   show = false;
   constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog, private router: Router,
-              public toastr: ToastsManager, vcr: ViewContainerRef) {
+              public toastr: ToastsManager, vcr: ViewContainerRef,
+              private userInfoService : UserInfoService) {
     this.toastr.setRootViewContainerRef(vcr);
 
     // When the user scrolls the page, execute myFunction
@@ -42,9 +42,57 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.skill_values = [];
     this.colors = [];
 
-    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
-      .subscribe(userInfo => this.viewModel = userInfo);
+      .subscribe(userInfo => {
+        this.viewModel = userInfo;
+        this.viewModel.skill_set.forEach((skill) => {
+          this.labels.push(skill.name);
+          this.skill_values.push(skill.endorsements.length);
+        });
+        this.data = {
+          labels: this.labels,
+          datasets: [{
+            data: this.skill_values, //[19, 18, 14, 15, 23]
+            backgroundColor: [
+              '#4383a882',
+              '#4383a882',
+              '#4383a882',
+              '#4383a882',
+              '#4383a882',
+            ]
+          }]
+        };
+        this.options = {
+          title: {
+            text: 'Vota nas "Skills" de ' + this.viewModel.personal_info.name,
+            display: true
+          },
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display: false
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                mirror: true
+              },
+              gridLines: {
+                display: false
+              }
+            }]
+          }
+        };
+        this.chart = new Chart('graph', {
+          type: 'horizontalBar',
+          data: this.data,
+          options: this.options,
+          colors: this.colors
+        });
+      });
 
     this.mockAuthor = {
       name: 'Sports Connected',
@@ -60,53 +108,53 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.viewModel.skill_set.forEach((skill) => {
-      this.labels.push(skill.name);
-      this.skill_values.push(skill.endorsements.length);
-    });
-    this.data = {
-      labels: this.labels,
-      datasets: [{
-        data: this.skill_values, //[19, 18, 14, 15, 23]
-        backgroundColor: [
-          '#4383a882',
-          '#4383a882',
-          '#4383a882',
-          '#4383a882',
-          '#4383a882',
-        ]
-      }]
-    };
-    this.options = {
-      title: {
-        text: 'Vota nas "Skills" de ' + this.viewModel.personal_info.name,
-        display: true
-      },
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: false
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            mirror: true
-          },
-          gridLines: {
-            display: false
-          }
-        }]
-      }
-    };
-    this.chart = new Chart('graph', {
-      type: 'horizontalBar',
-      data: this.data,
-      options: this.options,
-      colors: this.colors
-    });
+    // this.viewModel.skill_set.forEach((skill) => {
+    //   this.labels.push(skill.name);
+    //   this.skill_values.push(skill.endorsements.length);
+    // });
+    // this.data = {
+    //   labels: this.labels,
+    //   datasets: [{
+    //     data: this.skill_values, //[19, 18, 14, 15, 23]
+    //     backgroundColor: [
+    //       '#4383a882',
+    //       '#4383a882',
+    //       '#4383a882',
+    //       '#4383a882',
+    //       '#4383a882',
+    //     ]
+    //   }]
+    // };
+    // this.options = {
+    //   title: {
+    //     text: 'Vota nas "Skills" de ' + this.viewModel.personal_info.name,
+    //     display: true
+    //   },
+    //   legend: {
+    //     display: false
+    //   },
+    //   scales: {
+    //     xAxes: [{
+    //       gridLines: {
+    //         display: false
+    //       }
+    //     }],
+    //     yAxes: [{
+    //       ticks: {
+    //         mirror: true
+    //       },
+    //       gridLines: {
+    //         display: false
+    //       }
+    //     }]
+    //   }
+    // };
+    // this.chart = new Chart('graph', {
+    //   type: 'horizontalBar',
+    //   data: this.data,
+    //   options: this.options,
+    //   colors: this.colors
+    // });
   }
 
 
