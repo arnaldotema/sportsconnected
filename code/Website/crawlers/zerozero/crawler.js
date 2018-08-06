@@ -10,18 +10,8 @@ const footballTeam = require("../../models/football_team");
 // CRAWLER RELATED
 const baseUris = require('./base_uris');
 
-var j = request.jar();
-var cookie = request.cookie('jcenable=1');
-var captcha = request.cookie('cf_clearance=ffce9ae767f38d597cc9aaf347d6ebf58311e8f9-1530892002-3600');
-var user = request.cookie('zzptremember=f2d6a6fbc74f4fbb9d74b5ad4cceb600');
-var url = 'http://www.zerozero.pt';
-j.setCookie(cookie, url);
-j.setCookie(captcha, url);
-j.setCookie(user, url);
-
 let zerozero = new Crawler({
     rateLimit: 50,
-    jar: j,
     jQuery: {
         name: 'cheerio',
         options: {
@@ -32,7 +22,20 @@ let zerozero = new Crawler({
 });
 
 zerozero.on('schedule',function(options){
-    options.proxy = proxyHandler.getProxy();
+    let session = proxyHandler.getSession();
+
+    var j = request.jar();
+    var cookie = request.cookie('jcenable=1');
+    var captcha = request.cookie('cf_clearance=ffce9ae767f38d597cc9aaf347d6ebf58311e8f9-1530892002-3600');
+    var user = request.cookie('zzptremember=' + session.user);
+    var url = 'http://www.zerozero.pt';
+
+    j.setCookie(cookie, url);
+    j.setCookie(captcha, url);
+    j.setCookie(user, url);
+
+    options.proxy = session.proxy;
+    options.jar = j,
     logger.info("ADDED " + options.uri + " to the queue: PROXY = " + options.proxy);
 });
 
@@ -50,8 +53,6 @@ zerozero.proxyFailCallback = function (res, done){
 }
 
 module.exports = zerozero;
-
-//Testing
 
 // const footballTeamCrawler = require('./functions/football_team');
 // const competitionCrawler = require('./functions/football_competition');

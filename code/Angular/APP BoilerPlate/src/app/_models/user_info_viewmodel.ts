@@ -1,87 +1,25 @@
 import {Achievement} from './achievement';
+import {UserInfoSeason} from "./user_info_season";
+
+//NEW put correct information in "user_info_season"
 
 export class UserInfoViewModel {
+  _id: string;
   user_id: string;
-  personal_info: {
-    name: string,
-    age: number,
-    avatar: string,
-    full_name: string,
-    positions: string[],
-    height: number,
-    weight: number,
-    date_of_birth: string,
-    foot: string,
-    nationality: string,
-    residence: string,
-    updated_at: string
-  };
-  followers : number [];
-  external_ids: {
-    zerozero: string,
-  };
-  current_season: {
-    season_id: number,
-    name: string,
-    team: {
-      id: number,
-      acronym: string,
-      avatar: string,
-      name: string,
-      full_name: string
-    },
-    stats: [{
-      season: string,
-      name: string, // TODO: Criado um array para as diferentes competições na mesma season. Adicionados alguns campos novos
-      avatar: string,
-      games: number,
-      wins: number,
-      losses: number,
-      draws: number,
-      goals: number,
-      assists: number,
-      yellow_cards: number,
-      red_cards: number,
-      minutes_played: number
-    }],
-    games: number[]
-  };
-  previous_seasons: number[];
-  media: [{
-      title: string,
-      author: string,
-      date: string,
-      image: string,
-      ref: string, //Todo: Added ref for videos or other things alike
-      views: number, //Todo: Added
-      shares: number, //Todo: Added
-      likes: number, //Todo: Added
-      text: string,
-      references: {
-        leagues: [{
-          name: string,
-          id: number,
-        }],
-        team: [{
-          name: string,
-          id: number
-        }],
-        player: [{
-          name: string,
-          id: number
-        }],
-      }
-    }];
+  followers : string[];
+  current_season: UserInfoSeason
+  previous_seasons: UserInfoSeason[];
   skill_set: [{
       name: string,
       avatar: string,
-      endorsements: number[],
+      endorsements: string[],
     }];
   recommendations: {
     list: number[],
     top_5: [{
         author: {
           name: string,
+          relationship: string, //NEW Treinador, clube, adepto, etc...
           id: number,
           avatar: string,
           team: {

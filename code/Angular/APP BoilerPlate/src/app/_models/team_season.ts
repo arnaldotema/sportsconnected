@@ -1,16 +1,65 @@
-
 import {Recommendation} from "./recommendation";
+import {Media} from "./media";
 
-export class Team_Season{
-  acronym: string;
-  avatar: {
-    type: string,
-    default: string
-  };
+export class TeamSeason{
+  team_id: string;
+  season_id: string;
   name: string;
-  full_name: string;
-  recommendations : {
-    total_recommendations: number;
-    last_recommendations: Recommendation[];
-  };
+  avatar: string;
+  standings : [
+    {
+      id: string,
+      competition_id: string,
+      name: string,
+      avatar: string,
+      position: number,
+      matches: number,
+      wins: number,
+      draws: number,
+      losses: number,
+      goals: number,
+      goals_taken: number
+    }
+    ];
+  matches: [{
+    id: string,
+    date: string,
+    competition_season:{
+      id: string,
+      competition_id: string,
+      name: string,
+      avatar: string
+    },
+    home_team: {
+      id: string,
+      team_id: string,
+      name: string,
+      avatar: string,
+      goals: number
+    },
+    away_team: {
+      id: string,
+      team_id: string,
+      name: string,
+      avatar: string,
+      goals: number
+    }
+  }];
+  players: [
+    {
+      id: string,
+      user_info_id: string,
+      name: string,
+      avatar: string
+    }
+  ];
+  staff: [
+    {
+      id: string,
+      user_info_id: string,
+      name: string,
+      avatar: string
+    }
+  ];
+  media: Media[];
 }

@@ -1,11 +1,9 @@
 import {CompetitionSeason} from './competition_season';
 
 export class CompetitionViewModel{
+  _id: string;
   name : string;
-  current_season: {
-    matchdays : number[];
-    standings : number[];
-    stats : number[]
-  };
+  avatar: string;
+  current_season: CompetitionSeason
   previous_seasons: CompetitionSeason[]
 }

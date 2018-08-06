@@ -4,49 +4,9 @@ var Schema = mongoose.Schema;
 var FootballUserInfoSchema = new Schema({
     user_id: {type: Schema.Types.ObjectId, ref: 'football_user'},
     type: {type: Number, required: true, index: true},
-    personal_info: {
-        name: String,
-        avatar: {
-            type: String,
-            default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
-        },
-        full_name: String,
-        positions: [String],
-        height: Number,
-        weight: Number,
-        date_of_birth: Date,
-        foot: String,
-        nationality: String,
-        updated_at: {type: Date, default: Date.now}
-    },
-    external_ids: {
-        zerozero: {type: Number, required: true, unique: true, index: true},
-    },
+    followers: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
     current_season: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
     previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_user_info_season'}],
-    media: [
-        {
-            title: {type: String, required: true},
-            author: String,
-            date: Date,
-            image: String,
-            text: {type: String, required: true},
-            references: {
-                leagues: [{
-                    name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'football_competition'}
-                }],
-                team: [{
-                    name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'football_team'}
-                }],
-                user: [{
-                    name: String,
-                    id: {type: Schema.Types.ObjectId, ref: 'football_user_info'}
-                }],
-            }
-        }
-    ],
     skill_set: [
         {
             name: {type: String},
@@ -54,12 +14,13 @@ var FootballUserInfoSchema = new Schema({
             endorsements: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         }
     ],
-    recomendations: {
+    recommendations: {
         list: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         top_5: [
             {
                 author: {
                     name: String,
+                    relationship: String,
                     id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                     avatar: String,
                     team: {
@@ -73,8 +34,18 @@ var FootballUserInfoSchema = new Schema({
             }
         ],
     },
+    achievements: [
+        {
+            id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+            name: String,
+            avatar: String
+        }
+    ],
     created_at: {type: Date, default: Date.now},
-    updated_at: {type: Date, default: Date.now}
+    updated_at: {type: Date, default: Date.now},
+    external_ids: {
+        zerozero: {type: Number, required: true, unique: true, index: true},
+    }
 });
 
 FootballUserInfoSchema.statics = require('../services/football_user_info_service');
