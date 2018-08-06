@@ -2,18 +2,18 @@ import {Achievement} from './achievement';
 
 export class PlayerMatch {
   name: string;
+  avatar: string;
   id: string;
-  external_ids:{
-    zerozero: number
-  };
+  user_info_id: string;
   number: number;
   positions: string[];
-  goals: number;
-  assists: number;
-  yellow_cards: number;
-  red_cards: number;
+  nationality: string;
+  goals: number[];
+  assists: number[];
+  yellow_cards: number[];
+  red_cards: number[];
   minutes_played: number;
-  go_in:string[];
-  go_out:string[];
-  avatar: string
+  go_in:number[];
+  go_out:number[];
+  achievements: Achievement[];
 }
