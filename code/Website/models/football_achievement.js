@@ -1,16 +1,10 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
-var FootballCompetitionSchema = new Schema({
-	name : String,
-	avatar: String,
-	current_season: {type: Schema.Types.ObjectId, ref: 'football_competition_season'},
-	previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_competition_season'}],
-    external_ids: {
-        zerozero: {type: Number, required: true, unique: true, index: true},
-    }
+var FootballAchievementSchema = new Schema({
+	name : String
 });
 
-FootballCompetitionSchema.statics = require('../services/football_competition_service');
+//FootballAchievementSchema.statics = require('../services/football_achievement_service');
 
-module.exports = mongoose.model('football_competition', FootballCompetitionSchema);
+module.exports = mongoose.model('football_achievement', FootballAchievementSchema);
