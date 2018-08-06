@@ -26,40 +26,77 @@ var FootballMatchSchema = new Schema({
 		main_lineup:[
 			{
                 name: String,
+                avatar: String,
+                positions: [String],
+                nationality: String,
                 user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
-                number: String,
+                number: Number,
                 goals: [Number],
                 assists: [Number],
                 yellow_cards: [Number],
                 red_cards: [Number],
                 minutes_played: {type: Number, default: 0},
                 go_in: [Number],
-                go_out: [Number]
+                go_out: [Number],
+                achievements: [
+                    {
+                        id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                        name: String,
+                        avatar: String
+                    }
+                ]
 			}
 		],
 		reserves:[
             {
                 name: String,
+                avatar: String,
+                positions: [String],
+                nationality: String,
                 user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
-                number: String,
+                number: Number,
                 goals: [Number],
                 assists: [Number],
                 yellow_cards: [Number],
                 red_cards: [Number],
                 minutes_played: {type: Number, default: 0},
-                go_in:[Number],
-                go_out:[Number]
+                go_in: [Number],
+                go_out: [Number],
+                achievements: [
+                    {
+                        id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                        name: String,
+                        avatar: String
+                    }
+                ]
             }
 		],
 		staff:[
             {
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
+                user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 name: String,
-                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                avatar: String,
+                nationality: String,
                 external_ids: {
                     zerozero: Number
-                }
+                },
+                achievements: [
+                    {
+                        id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                        name: String,
+                        avatar: String
+                    }
+                ]
+            }
+        ],
+        achievements: [
+            {
+                id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                name: String,
+                avatar: String
             }
         ]
 	},
@@ -71,47 +108,78 @@ var FootballMatchSchema = new Schema({
         goals: [String],
         main_lineup:[
             {
-                id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
                 name: String,
+                avatar: String,
+                positions: [String],
+                nationality: String,
                 user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-                external_ids:{
-                    zerozero: Number
-                },
-                number: String,
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
+                number: Number,
                 goals: [Number],
                 assists: [Number],
                 yellow_cards: [Number],
                 red_cards: [Number],
                 minutes_played: {type: Number, default: 0},
-                go_in:[Number],
-                go_out:[Number]
+                go_in: [Number],
+                go_out: [Number],
+                achievements: [
+                    {
+                        id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                        name: String,
+                        avatar: String
+                    }
+                ]
             }
         ],
         reserves:[
             {
                 name: String,
+                avatar: String,
+                positions: [String],
+                nationality: String,
                 user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
-                external_ids:{
-                    zerozero: Number
-                },
-                number: String,
+                number: Number,
                 goals: [Number],
                 assists: [Number],
                 yellow_cards: [Number],
                 red_cards: [Number],
                 minutes_played: {type: Number, default: 0},
-                go_in:[Number],
-                go_out:[Number]
+                go_in: [Number],
+                go_out: [Number],
+                achievements: [
+                    {
+                        id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                        name: String,
+                        avatar: String
+                    }
+                ]
             }
         ],
         staff:[
             {
+                id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
+                user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
                 name: String,
-                id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+                avatar: String,
+                nationality: String,
                 external_ids: {
                     zerozero: Number
-                }
+                },
+                achievements: [
+                    {
+                        id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                        name: String,
+                        avatar: String
+                    }
+                ]
+            }
+        ],
+        achievements: [
+            {
+                id: {type: Schema.Types.ObjectId, ref: 'football_achievement'},
+                name: String,
+                avatar: String
             }
         ]
     }

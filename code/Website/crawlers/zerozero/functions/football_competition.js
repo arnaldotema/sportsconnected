@@ -41,7 +41,7 @@ const updateCompetition = function (err, res, done){
     });
 
     // Beta, first 5 years.
-    editionIds = editionIds.splice(1, 2);
+    editionIds = editionIds.splice(1, 1);
 
     footballCompetition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, function (err, result) {
         if (err) {
