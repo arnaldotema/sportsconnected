@@ -1,4 +1,4 @@
-<div class="inner-page player">
+<div *ngIf="viewModel" class="inner-page player">
 
   <table class="table-order-center" matSort (matSortChange)="sortData($event)">
     <tr>

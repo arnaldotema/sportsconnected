@@ -1,4 +1,4 @@
-<div class="callout meta ">
+<div *ngIf="viewModel" class="callout meta ">
   <div class="row">
     <div class="row-left">
       <div class="player-image">
@@ -165,7 +165,7 @@
         </div>
       </div>
 
-      <div class="recommendations">
+      <div *ngIf="viewModel.recomendations.length >= 5" class="recommendations">
         <div class="content">
           <div class="header">
             <h3 class="title">Recomendações</h3>
@@ -205,9 +205,9 @@
               <img src="{{achievement.avatar}}">
             </div>
           </div>
-          <div *ngIf=" viewModel.achievements.length > 6 " class="footer">
-            <button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais crachás</button>
-          </div>
+          <!--<div *ngIf=" viewModel.achievements.length > 6 " class="footer">-->
+            <!--<button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais crachás</button>-->
+          <!--</div>-->
         </div>
       </div>
 

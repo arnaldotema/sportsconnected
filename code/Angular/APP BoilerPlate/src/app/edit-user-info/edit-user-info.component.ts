@@ -43,7 +43,6 @@ export class EditUserInfoComponent implements OnInit {
   player_matches: MatchViewModel[];
 
   viewModel: UserInfoViewModel;
-  userInfoService: UserInfoService;
 
   userDetailsForm: FormGroup;
   accountDetailsForm: FormGroup;
@@ -171,7 +170,8 @@ export class EditUserInfoComponent implements OnInit {
     ]
   };
 
-  constructor(private fb: FormBuilder, private router: Router, private scrollService: ScrollToService) {
+  constructor(private fb: FormBuilder, private router: Router, private scrollService: ScrollToService,
+              private userInfoService : UserInfoService) {
   }
 
   ngOnInit() {
@@ -185,7 +185,7 @@ export class EditUserInfoComponent implements OnInit {
       id: '',
       name: ''
     };
-    this.userInfoService = new UserInfoService();
+
     this.matchService = new MatchService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
