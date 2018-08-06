@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GenericUserService} from '../_services/generic_user.service';
 import {AuthenticationService} from '../_services/authentication.service';
 import { Observable } from 'rxjs/Observable';
-import {Search_entity_viewmodel} from "../_models/search_entity_viewmodel";
+import {SearchEntityViewmodel} from "../_models/search_entity_viewmodel";
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 
@@ -14,7 +14,7 @@ import {UserInfoService} from '../_services/user_info.service';
 export class HeaderComponent implements OnInit {
 
   searchString: string;
-  searchResults: Search_entity_viewmodel[];
+  searchResults: SearchEntityViewmodel[];
   viewModel: UserInfoViewModel;
 
   show_notifications: boolean;
