@@ -4,7 +4,7 @@ import {of} from 'rxjs/observable/of';
 import {AuthenticationService} from './authentication.service';
 import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
-import {catchError, retry} from 'rxjs/operators';
+import { catchError, retry, tap, map } from 'rxjs/operators';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {Recommendation} from '../_models/recommendation';
 
@@ -445,7 +445,9 @@ export class UserInfoService {
 
   requestOptions;
 
-  constructor() {
+  testing = false;
+
+  constructor(private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -454,7 +456,16 @@ export class UserInfoService {
   }
 
   getUserInfo(id: string): Observable<UserInfoViewModel> {
-    return of(this.mockUserInfo[id]);
+    if(this.testing) {
+      return of(this.mockUserInfo[id]);
+    }
+    else{
+      return this.http.get<UserInfoViewModel>('/players/5b5b4fafd966a8172c7058a1', this.requestOptions)
+        .pipe(
+          tap(data => console.log('Document Types', data)),
+          catchError(this.handleError)
+        );
+    }
   };
 
   createRecommendation(id: string, recommendation: Recommendation): Observable<Recommendation> {

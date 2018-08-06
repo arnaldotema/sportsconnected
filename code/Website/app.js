@@ -27,7 +27,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //Statics
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 //Controllers
 app.use('/users', users);
@@ -49,7 +49,11 @@ mongoose.connection.on('error', function(err){
 
 //Start
 app.get('/', function(req, res){
-    res.send('hi');
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 })
 
 app.listen(port, function(){
