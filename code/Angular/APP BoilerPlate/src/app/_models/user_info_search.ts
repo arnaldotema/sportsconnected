@@ -1,6 +1,25 @@
 import {Achievement} from './achievement';
+import {SearchEntityViewmodel} from './search_entity_viewmodel';
 
-export class UserInfoSearch {
+export class UserInfoSearch extends SearchEntityViewmodel{
+
+  constructor(){
+    super();
+  }
+
+  // Inherit from the extended class
+  name: string;
+  team: {
+    id: number,
+    acronym: string,
+    avatar: string,
+    name: string,
+    full_name: string
+  };
+  id: string;
+  type: string;
+  avatar: string;
+
   user_id: string;
   personal_info: {
     name: string,
