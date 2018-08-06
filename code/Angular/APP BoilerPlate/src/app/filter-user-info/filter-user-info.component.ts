@@ -39,7 +39,6 @@ export class FilterUserInfoComponent implements OnInit {
   stats;
 
   genericUserService: GenericUserService;
-  userInfoService: UserInfoService;
   teams: Search_entity_viewmodel[];
   age_groups;
   leagues;
@@ -52,13 +51,13 @@ export class FilterUserInfoComponent implements OnInit {
   private fieldArray: Array<any> = [];
   private newAttribute: any = {};
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private userInfoService : UserInfoService) {
   }
 
   ngOnInit() {
     this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
-    this.userInfoService = new UserInfoService();
     this.personal_data = ['Nome', 'Data de Nascimento', 'Idade', 'Residência', 'Clube', 'Mobilidade', 'Posição'];
     this.stats = ['Jogos', 'Minutos','Golos','Assistências','Classificação média','C. Amarelos','C. Vermelhos'];
     this.physical_atts = ['Altura','Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];

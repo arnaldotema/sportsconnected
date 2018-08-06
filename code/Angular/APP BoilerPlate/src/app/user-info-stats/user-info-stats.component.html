@@ -1,4 +1,4 @@
-<table class="table-order-center" matSort (matSortChange)="sortData($event)">
+<table *ngIf="viewModel" class="table-order-center" matSort (matSortChange)="sortData($event)">
   <tr>
     <th mat-sort-header="Recente">Época</th>
     <th mat-sort-header="Popular">Competição</th>

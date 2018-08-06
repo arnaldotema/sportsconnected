@@ -10,11 +10,11 @@ import {UserInfoService} from '../_services/user_info.service';
 export class User_infoComponent implements OnInit{
 
   viewModel: UserInfoViewModel;
-  userInfoService : UserInfoService;
-  constructor() { }
+  constructor(
+    private userInfoService : UserInfoService
+  ) { }
 
   ngOnInit() {
-    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
   }

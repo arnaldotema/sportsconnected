@@ -20,7 +20,6 @@ export class CreateAccountComponent implements OnInit {
   chosenAgeGroup;
   chosenTeam;
   genericUserService: GenericUserService;
-  userInfoService: UserInfoService;
   teams: Search_entity_viewmodel[];
   age_groups;
   genders;
@@ -28,13 +27,13 @@ export class CreateAccountComponent implements OnInit {
   players: Search_entity_viewmodel[];
   user;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private userInfoService : UserInfoService) {
   }
 
   ngOnInit() {
     this.teamService = new TeamService();
     this.genericUserService = new GenericUserService();
-    this.userInfoService = new UserInfoService();
     this.genders = [
       {
         id: '1',
