@@ -16,18 +16,17 @@ export class HeaderComponent implements OnInit {
   searchString: string;
   searchResults: Search_entity_viewmodel[];
   viewModel: UserInfoViewModel;
-  userInfoService : UserInfoService;
 
   show_notifications: boolean;
   show_search: boolean;
 
   constructor(
     private authenticationService: AuthenticationService,
-    private genericService : GenericUserService)
+    private genericService : GenericUserService,
+    private userInfoService : UserInfoService)
   {}
 
   ngOnInit() {
-    this.userInfoService = new UserInfoService();
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => this.viewModel = userInfo);
 
