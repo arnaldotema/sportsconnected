@@ -1,38 +1,14 @@
 import {Recommendation} from './recommendation';
 import {Achievement} from './achievement';
+import {TeamSeason} from "./team_season";
 
 export class TeamViewModel {
   acronym: string;
   avatar: string;
   name: string;
   full_name: string;
-  followers : number [];
-  current_season: {
-    season_id: string,
-    name: string,
-    stats: [{
-      competition_name: string,
-      competition_avatar: string,
-      games: number,
-      classification: number,
-      wins: number,
-      losses: number,
-      draws: number,
-      scored_goals: number,
-      suffered_goals: number,
-    }]
-  };
-  history_stats: [{
-    competition_name: string,
-    competition_avatar: string,
-    games: number,
-    classification: number,
-    wins: number,
-    losses: number,
-    draws: number,
-    scored_goals: number,
-    suffered_goals: number,
-  }];
+  current_season: TeamSeason;
+  history_stats: TeamSeason[];
   tryouts: [{
     address: string;
     age_group: string;
@@ -40,7 +16,7 @@ export class TeamViewModel {
     time: string;
     requirements: string;
   }];
-  personal_info: {
+  additional_info: {
     site: string;
     email: string;
     phone_number: string;
@@ -80,60 +56,6 @@ export class TeamViewModel {
       }
       ],
   };
-  roster: {
-    players: [{
-      user_id: string;
-      name: string;
-      avatar: string;
-      age: number;
-      number: number;
-      positions: string[];
-      nationality: string;
-      residence: string;
-      stats: {
-        games: number,
-        goals: number,
-        assists: number,
-        yellow_cards: number,
-        red_cards: number,
-        minutes_played: number
-      };
-    }];
-    staff: [{
-      user_id: string;
-      name: string;
-      avatar: string;
-      age: number;
-      position: string;
-      nationality: string;
-      residence: string;
-    }];
-  };
-  media: [{
-    title: string,
-    author: string,
-    date: string,
-    image: string,
-    ref: string, //Todo: Added ref for videos or other things alike
-    views: number, //Todo: Added
-    shares: number, //Todo: Added
-    likes: number, //Todo: Added
-    text: string,
-    references: {
-      leagues: [{
-        name: string,
-        id: number,
-      }],
-      team: [{
-        name: string,
-        id: number
-      }],
-      player: [{
-        name: string,
-        id: number
-      }],
-    }
-  }];
+  followers : number [];
   achievements: Achievement[];
-
 }

@@ -61,6 +61,29 @@ var FootballTeamSeasonSchema = new Schema({
             avatar: String
         }
     ],
+    media: [
+        {
+            title: {type: String, required: true},
+            author: String,
+            date: Date,
+            image: String,
+            text: {type: String, required: true},
+            references: {
+                leagues: [{
+                    name: String,
+                    id: {type: Schema.Types.ObjectId, ref: 'football_competition'}
+                }],
+                team: [{
+                    name: String,
+                    id: {type: Schema.Types.ObjectId, ref: 'football_team'}
+                }],
+                user: [{
+                    name: String,
+                    id: {type: Schema.Types.ObjectId, ref: 'football_user_info'}
+                }],
+            }
+        }
+    ],
     external_ids: {
         zerozero: {type: Number, required: true, index: true},
     }

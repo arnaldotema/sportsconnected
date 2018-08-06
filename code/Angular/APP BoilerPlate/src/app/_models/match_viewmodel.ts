@@ -1,7 +1,7 @@
 import {TeamMatch} from './team_match';
 
 export class MatchViewModel{
-  id: string;
+  _id: string;
   played: boolean;
   external_ids: {
     zerozero: number
@@ -15,9 +15,8 @@ export class MatchViewModel{
     name: string;
     avatar: string;
     id: string;
-    external_ids:{
-      zerozero: number
-    }
+    competition_id: string;
+    phase: string;
   };
   home_team : TeamMatch;
   away_team : TeamMatch;

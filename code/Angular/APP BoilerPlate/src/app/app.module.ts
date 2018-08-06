@@ -12,7 +12,6 @@ import {AuthGuard} from './_guards/auth.guard';
 import {AdminGuard} from './_guards/admin.guard';
 import {AuthenticationService} from './_services/authentication.service';
 import {GenericUserService} from './_services/generic_user.service';
-import { UserInfoService } from "./_services/user_info.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
