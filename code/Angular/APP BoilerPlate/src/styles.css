@@ -3,7 +3,6 @@
 @import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '../node_modules/bootstrap-grid-only/bootstrap.css';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import '../node_modules/nouislider/distribute/nouislider.css';
 
 [hidden], template {
   display: none !important;
@@ -187,19 +186,6 @@ th {
   padding: 5px !important;
   text-align: center !important;
   font-weight: bold !important;
-}
-
-.table_header {
-  color: #032f4f;
-  background-color: white;
-}
-
-.table_header tr{
-  height: 50px !important;
-}
-
-.table_header td, th {
-  height: auto !important;
 }
 
 body {
@@ -477,6 +463,10 @@ body {
   min-width: 50px;
 }
 
+.last-td {
+  padding: 5px 20px 5px 5px !important;
+}
+
 .background-message {
   font-size: xx-large;
   color: #b3b5bb;
@@ -748,7 +738,7 @@ table .caption img {
   font-weight: bold !important;
 }
 
-first-td-img {
+.first-td-img {
   color: white !important;
   max-width: 80px;
   font-weight: bold !important;

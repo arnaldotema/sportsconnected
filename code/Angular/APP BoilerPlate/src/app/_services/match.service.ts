@@ -8,7 +8,7 @@ import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry} from 'rxjs/operators';
 import {MatchViewModel} from '../_models/match_viewmodel';
 import {Achievement} from '../_models/achievement';
-import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
+import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 
 @Injectable()
 export class MatchService {

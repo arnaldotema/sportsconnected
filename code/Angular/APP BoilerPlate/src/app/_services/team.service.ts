@@ -8,7 +8,7 @@ import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import {Recommendation} from '../_models/recommendation';
-import {Search_entity_viewmodel} from '../_models/search_entity_viewmodel';
+import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 
 @Injectable()
 export class TeamService {
