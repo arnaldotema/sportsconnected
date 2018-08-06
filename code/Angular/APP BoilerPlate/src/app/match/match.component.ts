@@ -12,15 +12,14 @@ import {MatchService} from '../_services/match.service';
 export class MatchComponent implements OnInit, AfterViewInit {
 
   viewModel: MatchViewModel;
-  matchService : MatchService;
 
-  constructor(/*private userInfoService: UserInfoService, */public dialog: MatDialog) {}
+  constructor(private matchService: MatchService, public dialog: MatDialog) {}
 
-  ngOnInit() {
-    this.matchService = new MatchService();
-    this.matchService.getMatch('0')
-      .subscribe(match => this.viewModel = match);
-  }
+  ngOnInit() {}
 
-  ngAfterViewInit(){}
-}
+  ngAfterViewInit() {
+    setTimeout(() =>{
+      this.matchService.getMatch('0')
+        .subscribe(match => this.viewModel = match);
+    },2000);
+  }}
