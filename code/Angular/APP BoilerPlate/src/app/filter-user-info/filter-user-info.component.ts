@@ -43,14 +43,14 @@ export class FilterUserInfoComponent implements OnInit {
   user;
 
   sortedData;
-  sliderRange;
+  regex_values;
 
   value_types;
 
   private search_fields: Array<FilterSearch> = [];
 
   constructor(private router: Router,
-              private userInfoService : UserInfoService) {
+              private userInfoService: UserInfoService) {
   }
 
   ngOnInit() {
@@ -63,6 +63,27 @@ export class FilterUserInfoComponent implements OnInit {
     this.sc_atts = ['Badges', 'Badges Época', 'Badges Carreira'];
     this.competitions = ['Escalão', 'Distrito', 'Divisão', 'Clube'];
 
+
+    /**
+     *
+
+     It should be something like this:
+
+     filters: [
+     {
+       name: 'Exatamente',
+       regex:'$eq'
+     },
+     {
+       name: 'Pelo menos',
+       regex:'$gte'
+     }
+     ]
+
+
+     But no time so hammertime it is...
+
+     * */
     this.value_types = {
       'default': {
         values: Array.apply(null, {length: 50}).map(Number.call, Number),
@@ -157,6 +178,18 @@ export class FilterUserInfoComponent implements OnInit {
         filters: ['Exatamente', 'Desde', 'Até', 'Entre']
       }
     };
+
+    this.regex_words = {
+      '$eq': ['Exatamente', 'Joga na', 'Joga em/no', 'É natural como', 'Joga no', 'Joga com', 'Reside em'],
+      '$gte': ['Desde', 'Pelo menos'],
+      '$lte': ['Até', 'No máximo'],
+      '$regex': ['Exatamente', 'Joga na', 'Joga em/no', 'É natural como', 'Joga no', 'Joga com', 'Reside em'],
+      '$gt': [],
+      '$lt': [],
+      '$in': [],
+      '$ne': [],
+      '$nin': []
+    };
   }
 
   loadAgeGroups() {
@@ -238,64 +271,37 @@ export class FilterUserInfoComponent implements OnInit {
 
   loadPlayers() {
     this.loading = true;
-    setTimeout(() =>{
-      this.genericUserService.detailedSearchUser(this.search_fields)
-        .subscribe(players => {
-            this.loading = false;
-            this.players = players;
-            this.sortedData = this.players.slice();
+    setTimeout(() => {
+
+      //Converting the selected filter into readable regex
+      this.search_fields.forEach((search_field, idx) => {
+        let field_filter = search_field.selected_filter;
+        let _default = true;
+        Object.keys(this.regex_values).forEach((regex_type, key) => {
+          if (this.regex_values[regex_type].contains(field_filter)) {
+            debugger;
+            _default = false;
+            this.search_fields[idx].selected_filter = regex_type.toString();
           }
-        );
-    },2000);
+          if (this.regex_values.length - 1 == key) {
+            if (_default){
+              this.search_fields[idx].selected_filter = '$regex';
+            }
+            if(this.search_fields.length - 1 == idx){
+              //Calling the service
+              this.genericUserService.detailedSearchUser(this.search_fields)
+                .subscribe(players => {
+                    this.loading = false;
+                    this.players = players;
+                    this.sortedData = this.players.slice();
+                  }
+                );
+            }
+          }
+        });
+      });
+    }, 2000);
 
-  }
-
-  changed(form) {
-
-    // Cleans current player list if the filters were cleaned
-    if(this.search_fields.length == 0){
-      this.players = undefined;
-    }
-
-    // Todo: Get Players based on
-    if (form)
-      this.addFieldValue(form);
-
-    // Reset the selected fileds
-    this.personal_data_select = undefined;
-    this.competition_select = undefined;
-    this.physical_atts_select = undefined;
-    this.sc_atts_select = undefined;
-    this.technical_atts_select = undefined;
-
-  }
-
-
-  getTeam() {
-    this.genericUserService.searchUser('', '', 'team')
-      .subscribe(teams => this.teams = teams);
-  }
-
-  sortData(sort: Sort) {
-    const data = this.players.slice();
-    if (!sort.active || sort.direction == '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a, b) => {
-      let isAsc = sort.direction == 'asc';
-      debugger;
-      switch (sort.active) {
-        case 'age': return compare(+a.personal_info.age, +b.personal_info.age, !isAsc);
-        case 'games': return compare(+a.current_season.games.length, b.current_season.games.length, !isAsc);
-        case 'goals': return compare(+a.current_season.stats[0].goals, +b.current_season.stats[0].goals, !isAsc);
-        case 'assists': return compare(+a.current_season.stats[0].assists, +b.current_season.stats[0].assists, !isAsc);
-        case 'height': return compare(+a.personal_info.height, +b.personal_info.height,!isAsc);
-        case 'weight': return compare(+a.personal_info.weight, +b.personal_info.weight, !isAsc);
-        default: return 0;
-      }
-    });
   }
 
   addFieldValue(form_values) {
@@ -317,56 +323,106 @@ export class FilterUserInfoComponent implements OnInit {
     });
   }
 
+  changed(form) {
+
+    // Cleans current player list if the filters were cleaned
+    if (this.search_fields.length == 0) {
+      this.players = undefined;
+    }
+
+    // Todo: Get Players based on
+    if (form)
+      this.addFieldValue(form);
+
+    // Reset the selected fileds
+    this.personal_data_select = undefined;
+    this.competition_select = undefined;
+    this.physical_atts_select = undefined;
+    this.sc_atts_select = undefined;
+    this.technical_atts_select = undefined;
+
+  }
+
+  sortData(sort: Sort) {
+    const data = this.players.slice();
+    if (!sort.active || sort.direction == '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      let isAsc = sort.direction == 'asc';
+      debugger;
+      switch (sort.active) {
+        case 'age':
+          return compare(+a.personal_info.age, +b.personal_info.age, !isAsc);
+        case 'games':
+          return compare(+a.current_season.games.length, b.current_season.games.length, !isAsc);
+        case 'goals':
+          return compare(+a.current_season.stats[0].goals, +b.current_season.stats[0].goals, !isAsc);
+        case 'assists':
+          return compare(+a.current_season.stats[0].assists, +b.current_season.stats[0].assists, !isAsc);
+        case 'height':
+          return compare(+a.personal_info.height, +b.personal_info.height, !isAsc);
+        case 'weight':
+          return compare(+a.personal_info.weight, +b.personal_info.weight, !isAsc);
+        default:
+          return 0;
+      }
+    });
+  }
+
   deleteFieldValue(index) {
     this.search_fields.splice(index, 1);
   }
 }
+
 
 function mapVariable(text) {
   let translated = '';
 
   switch (text) {
     case 'Pé Dominante':
-      translated = 'foot';
+      translated = 'personal_info.foot';
       break;
     case 'Posição':
-      translated = 'position';
+      translated = 'personal_info.positions';
       break;
     case 'Idade':
-      translated = 'age';
+      translated = 'personal_info.age';
       break;
     case 'Residência':
-      translated = 'residence';
+      translated = 'personal_info.residence';
       break;
     case 'Clube':
-      translated = 'team';
+      translated = 'team.name';
       break;
     case 'Mobilidade':
-      translated = 'mobility';
+      translated = 'personal_info.mobility';
       break;
     case 'Época':
-      translated = 'season';
+      translated = 'season'; //TODO ALTT Check this one out because it doesn't add up this way.
       break;
     case 'Jogos':
-      translated = 'games';
+      translated = 'stats.games';
       break;
     case 'D. de Nascimento':
-      translated = 'birth_date';
+      translated = 'personal_info.date_of_birth';
       break;
     case 'Minutos':
-      translated = 'minutes';
+      translated = 'stats.minutes';
       break;
     case 'Golos':
-      translated = 'goals';
+      translated = 'stats.goals';
       break;
     case 'Assistências':
-      translated = 'assists';
+      translated = 'stats.assists';
       break;
     case 'Altura':
-      translated = 'height';
+      translated = 'personal_info.height';
       break;
     case 'Peso':
-      translated = 'weight';
+      translated = 'personal_info.weight';
       break;
     case 'Escalão':
       translated = 'age_group';
@@ -387,3 +443,10 @@ function mapVariable(text) {
 function compare(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
+
+/**
+ * Auxiliary function
+ * */
+Array.prototype.contains = function (element) {
+  return this.indexOf(element) > -1;
+};
