@@ -129,7 +129,7 @@ function processAllTeamPlayers(res, done) {
 
     zerozero.queue({
         uri: format(baseUris.PLAYER_INFO, {player_id: 450}),
-        priority: 1,
+        priority: 4,
         callback: proxyHandler.crawl,
         successCallback: footballUserInfoCrawler.updateUserInfoCurrentSeasons,
         proxyFailCallback: zerozero.proxyFailCallback,

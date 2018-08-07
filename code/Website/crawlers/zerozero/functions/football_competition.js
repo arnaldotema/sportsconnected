@@ -151,7 +151,7 @@ const updateCompetitionSeasonCalendar = function (err, res, done){
     res.$("#pagination li").each(function(index){
         zerozero.queue({
             uri:format(baseUris.COMPETITION_EDITION_MATCHES, { edition_id: res.options.zerozeroId, page: index+1 }),
-            priority: 9,
+            priority: 1,
             callback: proxyHandler.crawl,
             successCallback: updateCompetitionSeasonMatches,
             zerozeroId: res.options.zerozeroId,
@@ -197,7 +197,7 @@ const updateCompetitionSeasonMatches = function (err, res, done){
                 zerozero.queue({
                     uri: format(baseUris.MATCH_INFO, {match_id: matchId}),
                     callback: proxyHandler.crawl,
-                    priority: 1,
+                    priority: 9,
                     successCallback: footballMatchCrawler.processMatchInfo,
                     zerozeroId: matchId,
                     matchDate: matchDate,
