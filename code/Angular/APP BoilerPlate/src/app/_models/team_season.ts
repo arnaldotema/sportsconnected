@@ -50,7 +50,9 @@ export class TeamSeason{
       id: string,
       user_info_id: string,
       name: string,
-      avatar: string
+      avatar: string,
+      nationality: string,
+      positions: string[]
     }
   ];
   staff: [
