@@ -7,7 +7,7 @@ export class UserInfoViewModel {
   _id: string;
   user_id: string;
   followers : string[];
-  current_season: UserInfoSeason
+  current_season: UserInfoSeason;
   previous_seasons: UserInfoSeason[];
   skill_set: [{
       name: string,
@@ -19,7 +19,7 @@ export class UserInfoViewModel {
     top_5: [{
         author: {
           name: string,
-          relationship: string, //NEW Treinador, clube, adepto, etc...
+          relationship: string,
           id: number,
           avatar: string,
           team: {
