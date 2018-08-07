@@ -47,77 +47,11 @@ function cascadeUserInfoSeasonUpdates(res, done){
 const updateUserInfo = function (err, res, done){
 
     const user_info = {
-        personal_info: {
-            name: '',
-            avatar: '',
-            positions: [],
-            height: 0,
-            weight: 0,
-            date_of_birth: Date.now(),
-            foot: '',
-            updated_at: Date.now()
-        },
+        type: 1,
         external_ids: {
             zerozero: res.options.zerozeroId
         }
     };
-
-    user_info.personal_info.avatar = res.$("#page_header .logo img") ?
-        "https://www.zerozero.pt" + res.$("#page_header .logo img")[0].attribs["data-cfsrc"] :
-        '';
-
-    res.$("#entity_bio .bio").each(function(){
-        let parsedData = res.$(this).html().split("<span>");
-        if(parsedData.length < 2){
-            //logger.error("Can't parse player info due to html misformation");
-        }
-        else{
-            parsedData = parsedData[1].split("</span>");
-        }
-        let attribute = entities.decode(parsedData[0]);
-        let value = parsedData[1];
-        switch(attribute) {
-            case "Nome":
-                user_info.personal_info.name = utf8.encode(value);
-                break;
-            case "Posição":
-                value = value.split('<td>')[1].split('</td>')[0];
-                user_info.personal_info.positions = value.split(" / ");
-                break;
-            default:
-        }
-    });
-
-    res.$("#entity_bio .bio_half").each(function(){
-        let parsedData = res.$(this).html().split("<span>");
-        if(parsedData.length < 2){
-            logger.error("Can't parse player info due to html misformation");
-        }
-        else{
-            parsedData = parsedData[1].split("</span>");
-        }
-        let attribute = entities.decode(parsedData[0]);
-        let value = parsedData[1];
-        switch(attribute) {
-            case "Nacionalidade":
-                value = value.split('<div class="text">')[1].split("</div>")[0];
-                user_info.personal_info.nationality = value;
-                break;
-            case "Nascimento":
-                user_info.personal_info.date_of_birth = new Date(value.match(/\d+-\d+-\d+/g)[0]);
-                break;
-            case "Pé preferencial":
-                user_info.personal_info.foot = utf8.encode(value);
-                break;
-            case "Altura":
-                user_info.personal_info.height = value.match(/\d+/g)[0];
-                break;
-            case "Peso":
-                user_info.personal_info.weight = value.match(/\d+/g)[0];
-                break;
-            default:
-        }
-    });
 
     logger.info("User Info:", user_info);
 
@@ -140,8 +74,8 @@ const updateUserInfoSeason = function(err, res, done){
     const user_info_season = {
         user_info_id: res.options.user_info._id,
         season_id: res.options.team_season.season_id,
-        name: res.options.user_info.personal_info.name,
-        avatar: res.options.user_info.personal_info.avatar,
+        name: '',
+        avatar: '',
         number: res.options.player_number,
         team: {
             id: res.options.team_season ? res.options.team_season._id : 0 ,
@@ -154,6 +88,63 @@ const updateUserInfoSeason = function(err, res, done){
             zerozero: res.options.zerozeroId
         }
     };
+
+    user_info_season.personal_info.avatar = res.$("#page_header .logo img") ?
+        "https://www.zerozero.pt" + res.$("#page_header .logo img")[0].attribs["data-cfsrc"] :
+        '';
+
+    res.$("#entity_bio .bio").each(function(){
+        let parsedData = res.$(this).html().split("<span>");
+        if(parsedData.length < 2){
+            //logger.error("Can't parse player info due to html misformation");
+        }
+        else{
+            parsedData = parsedData[1].split("</span>");
+        }
+        let attribute = entities.decode(parsedData[0]);
+        let value = parsedData[1];
+        switch(attribute) {
+            case "Nome":
+                user_info_season.personal_info.name = utf8.encode(value);
+                break;
+            case "Posição":
+                value = value.split('<td>')[1].split('</td>')[0];
+                user_info_season.personal_info.positions = value.split(" / ");
+                break;
+            default:
+        }
+    });
+
+    res.$("#entity_bio .bio_half").each(function(){
+        let parsedData = res.$(this).html().split("<span>");
+        if(parsedData.length < 2){
+            logger.error("Can't parse player info due to html misformation");
+        }
+        else{
+            parsedData = parsedData[1].split("</span>");
+        }
+        let attribute = entities.decode(parsedData[0]);
+        let value = parsedData[1];
+        switch(attribute) {
+            case "Nacionalidade":
+                value = value.split('<div class="text">')[1].split("</div>")[0];
+                user_info_season.personal_info.nationality = value;
+                break;
+            case "Nascimento":
+                user_info_season.personal_info.date_of_birth = new Date(value.match(/\d+-\d+-\d+/g)[0]);
+                break;
+            case "Pé preferencial":
+                user_info_season.personal_info.foot = utf8.encode(value);
+                break;
+            case "Altura":
+                user_info_season.personal_info.height = value.match(/\d+/g)[0];
+                break;
+            case "Peso":
+                user_info_season.personal_info.weight = value.match(/\d+/g)[0];
+                break;
+            default:
+        }
+    });
 
     footballUserInfoSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, user_info_season, function (err, result) {
         if (err) {

@@ -41,6 +41,7 @@ const addPlayerToTeam = function(id, user_info_season, cb) {
                 user_info_id:  user_info_season.user_info_id,
                 name: user_info_season.name,
                 avatar: user_info_season.avatar,
+
             }
         }
     };
