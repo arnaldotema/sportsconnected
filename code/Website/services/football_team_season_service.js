@@ -39,9 +39,11 @@ const addPlayerToTeam = function(id, user_info_season, cb) {
         $addToSet: { "players": {
                 id: user_info_season._id,
                 user_info_id:  user_info_season.user_info_id,
-                name: user_info_season.name,
-                avatar: user_info_season.avatar,
-
+                name: user_info_season.personal_info.name,
+                number: user_info_season.personal_info.number,
+                avatar: user_info_season.personal_info.avatar,
+                nationality: user_info_season.personal_info.nationality,
+                positions: user_info_season.personal_info.positions
             }
         }
     };
