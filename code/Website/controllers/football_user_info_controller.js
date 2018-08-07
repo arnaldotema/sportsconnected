@@ -9,15 +9,14 @@ module.exports = {
         let select = {
             "_id": 1,
             "user_info_id": 1,
-            "avatar": 1,
             "personal_info": 1,
-            "team": 1
+            "team": 1,
+            "stats": 1
         };
 
         let query = {};
 
         req.body.forEach(function(filter){
-            select[filter.search_item] = 1;
             query[filter.search_item] = {};
             query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
