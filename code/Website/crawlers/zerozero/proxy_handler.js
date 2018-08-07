@@ -2,7 +2,7 @@ const logger = require('../../logging');
 
 const proxies = [undefined];
 const users = {
-    undefined: 'e7782ea7ec0825c9cbdc2b1393285507',
+    undefined: '6e6360566f8f117273cda3f43af85760',
     'http://81.163.43.14:41258':'40aea8c640e27156acdc6dea7d0f39f8'
 }
 
