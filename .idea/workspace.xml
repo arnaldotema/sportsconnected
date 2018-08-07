@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/code/Website/config/database.js" afterPath="$PROJECT_DIR$/code/Website/config/database.js" />
       <change beforePath="$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js" afterPath="$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/controllers/team_controller.js" afterPath="$PROJECT_DIR$/code/Website/controllers/team_controller.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/routes/player_routes.js" afterPath="$PROJECT_DIR$/code/Website/routes/player_routes.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="football_user_info_controller.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="football_user_info_controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="32" />
+            <state relative-caret-position="119">
+              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -64,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team_controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="team_controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Website/controllers/team_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="-102">
               <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
               <folding />
             </state>
@@ -203,8 +198,8 @@
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
         <option value="$PROJECT_DIR$/code/Website/routes/player_routes.js" />
-        <option value="$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js" />
         <option value="$PROJECT_DIR$/code/Website/controllers/team_controller.js" />
+        <option value="$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js" />
       </list>
     </option>
   </component>
@@ -489,12 +484,12 @@
       <workItem from="1529491186050" duration="302000" />
       <workItem from="1529923918727" duration="12235000" />
       <workItem from="1532525426263" duration="80660000" />
-      <workItem from="1533544560153" duration="42858000" />
+      <workItem from="1533544560153" duration="44084000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432961000" />
+    <option name="totallyTimeSpent" value="434187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -604,7 +599,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js</url>
-          <line>89</line>
+          <line>88</line>
           <option name="timeStamp" value="324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1120,18 +1115,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js">
+    <entry file="file://$PROJECT_DIR$/code/Website/controllers/team_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="-102">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/team_controller.js">
+    <entry file="file://$PROJECT_DIR$/code/Website/controllers/football_user_info_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="119">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
