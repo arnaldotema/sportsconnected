@@ -50,7 +50,9 @@ var FootballTeamSeasonSchema = new Schema({
             id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
             user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
             name: String,
-            avatar: String
+            avatar: String,
+            nationality: String,
+            positions: [String]
         }
     ],
     staff: [
@@ -58,7 +60,8 @@ var FootballTeamSeasonSchema = new Schema({
             id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
             user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
             name: String,
-            avatar: String
+            avatar: String,
+            nationality: String
         }
     ],
     media: [
