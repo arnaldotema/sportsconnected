@@ -51,6 +51,7 @@ export class TeamSeason{
       user_info_id: string,
       name: string,
       avatar: string,
+      number: string,
       nationality: string,
       positions: string[]
     }
@@ -60,7 +61,8 @@ export class TeamSeason{
       id: string,
       user_info_id: string,
       name: string,
-      avatar: string
+      avatar: string,
+      nationality: string
     }
   ];
   media: Media[];

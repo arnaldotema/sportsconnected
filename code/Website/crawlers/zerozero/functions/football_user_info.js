@@ -19,14 +19,14 @@ function cascadeUserInfoSeasonUpdates(res, done){
             zerozero.proxyFailCallback(res, done);
         }
         else {
-            logger.info("Successfully added player " + res.options.user_info_season.name + " to team " + res.options.team_season.name);
+            logger.info("Successfully added player " + res.options.user_info_season.personal_info.name + " to team " + res.options.team_season.name);
             footballUserInfoSeason.addCompetitionToUserInfo(res.options.user_info_season._id, res.options.competition_season, function (err, result) {
                 if (err) {
                     logger.error("Error when adding competition to user info:", err);
                     zerozero.proxyFailCallback(res, done);
                 }
                 else {
-                    logger.info("Successfully added competition " + res.options.competition_season.name + " to user info " + res.options.user_info_season.name);
+                    logger.info("Successfully added competition " + res.options.competition_season.name + " to user info " + res.options.user_info_season.personal_info.name);
 
                     footballCompetitionSeason.addUserInfoToCompetition(res.options.competition_season._id, res.options.user_info_season, function (err, result) {
                         if (err) {
@@ -34,7 +34,7 @@ function cascadeUserInfoSeasonUpdates(res, done){
                             zerozero.proxyFailCallback(res, done);
                         }
                         else {
-                            logger.info("Successfully added user info " + res.options.user_info_season.name + " to competition " + res.options.competition_season.name);
+                            logger.info("Successfully added user info " + res.options.user_info_season.personal_info.name + " to competition " + res.options.competition_season.name);
                             done();
                         }
                     });
@@ -74,9 +74,20 @@ const updateUserInfoSeason = function(err, res, done){
     const user_info_season = {
         user_info_id: res.options.user_info._id,
         season_id: res.options.team_season.season_id,
-        name: '',
-        avatar: '',
-        number: res.options.player_number,
+        personal_info: {
+            name: '',
+            avatar: '',
+            full_name: '',
+            positions: [],
+            number: res.options.player_number,
+            height: 0,
+            weight: 0,
+            date_of_birth: '',
+            foot: '',
+            nationality: '',
+            residence: '',
+            updated_at: Date.now()
+        },
         team: {
             id: res.options.team_season ? res.options.team_season._id : 0 ,
             team_id: res.options.team_season ? res.options.team_season.team_id : 0 ,
