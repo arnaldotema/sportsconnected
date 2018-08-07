@@ -1,5 +1,7 @@
 var TeamModel = require('../models/football_team.js');
-
+var TeamModelSeason = require('../models/football_team_season');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 /**
  * team_controller.js
  *
@@ -11,14 +13,19 @@ module.exports = {
      * TeamController.list()
      */
     list: function (req, res) {
-        TeamModel.find(function (err, Teams) {
+        TeamModel
+            .find()
+            .populate('current_season')
+            .populate('previous_seasons', 'standings')
+            .limit(5)
+            .exec(function (err, Teams) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting Team.',
                     error: err
                 });
             }
-            return res.json(Teams);
+            return res.json(JSON.parse(entities.decode(JSON.stringify(Teams))));
         });
     },
 
@@ -27,7 +34,11 @@ module.exports = {
      */
     show: function (req, res) {
         var id = req.params.id;
-        TeamModel.findOne({_id: id}, function (err, Team) {
+        TeamModel
+            .findOne({_id: id})
+            .populate('current_season')
+            .populate('previous_seasons', 'standings')
+            .exec(function (err, Team) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting Team.',
@@ -39,7 +50,7 @@ module.exports = {
                     message: 'No such Team'
                 });
             }
-            return res.json(Team);
+            return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
         });
     },
 
