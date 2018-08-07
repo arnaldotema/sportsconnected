@@ -260,25 +260,37 @@ function processMatchIds(match, res, done, cb){
             logger.info("Successfully fetched match user infos", result);
 
             result[0].away_team.forEach(function (value, index) {
-                match.away_team.main_lineup[index].name = value.name;
+                match.away_team.main_lineup[index].name = value.personal_info.name;
+                match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
+                match.away_team.main_lineup[index].positions = value.personal_info.positions;
+                match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
                 match.away_team.main_lineup[index].id = value._id;
                 match.away_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
             result[0].away_team_reserves.forEach(function (value, index) {
-                match.away_team.reserves[index].name = value.name;
+                match.away_team.reserves[index].name = value.personal_info.name;
+                match.away_team.reserves[index].avatar = value.personal_info.avatar;
+                match.away_team.reserves[index].positions = value.personal_info.positions;
+                match.away_team.reserves[index].nationality = value.personal_info.nationality;
                 match.away_team.reserves[index].id = value._id;
                 match.away_team.reserves[index].user_info_id = value.user_info_id;
             });
 
             result[0].home_team.forEach(function (value, index) {
-                match.home_team.main_lineup[index].name = value.name;
+                match.home_team.main_lineup[index].name = value.personal_info.name;
+                match.home_team.main_lineup[index].avatar = value.personal_info.avatar;
+                match.home_team.main_lineup[index].positions = value.personal_info.positions;
+                match.home_team.main_lineup[index].nationality = value.personal_info.nationality;
                 match.home_team.main_lineup[index].id = value._id;
                 match.home_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
             result[0].home_team_reserves.forEach(function (value, index) {
-                match.home_team.reserves[index].name = value.name;
+                match.home_team.reserves[index].name = value.personal_info.name;
+                match.home_team.reserves[index].avatar = value.personal_info.avatar;
+                match.home_team.reserves[index].positions = value.personal_info.positions;
+                match.home_team.reserves[index].nationality = value.personal_info.nationality;
                 match.home_team.reserves[index].id = value._id;
                 match.home_team.reserves[index].user_info_id = value.user_info_id;
             });

@@ -1,5 +1,7 @@
 var FootballUserInfo = require('../models/football_user_info.js');
 var FootballUserInfoSeason = require('../models/football_user_info_season');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 
 module.exports = {
 
@@ -8,7 +10,7 @@ module.exports = {
             "_id": 1,
             "user_info_id": 1,
             "avatar": 1,
-            "name": 1,
+            "personal_info": 1,
             "team": 1
         };
 
@@ -19,7 +21,7 @@ module.exports = {
             select["season_id"] = 1;
         }
         if(req.query.name){
-            query["name"] = {$regex : req.query.name, $options : 'i'};
+            query["personal_info.name"] = {$regex : req.query.name, $options : 'i'};
         }
         if(req.query.team_name){
             query["team.name"] = {$regex : req.query.team_name, $options : 'i'};
@@ -45,7 +47,7 @@ module.exports = {
                         error: err
                     });
                 }
-                return res.json(user_infos);
+                return res.json(JSON.parse(entities.decode(JSON.stringify(user_infos))));
             });
     },
 

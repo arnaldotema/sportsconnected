@@ -1,5 +1,8 @@
 export class SearchEntityViewmodel {
-  name: string;
+  personal_info:{
+    name: string,
+    avatar: string
+  };
   team: {
     id: number,
     acronym: string,
@@ -7,7 +10,6 @@ export class SearchEntityViewmodel {
     name: string,
     full_name: string
   };
-  id: string;
+  _id: string;
   type: string;
-  avatar: string;
 }

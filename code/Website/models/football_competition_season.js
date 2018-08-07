@@ -27,6 +27,8 @@ var FootballCompetitionSeasonSchema = new Schema({
             user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
             name: String,
             avatar: String,
+            nationality: String,
+            positions: [String],
             goals: {type: Number, default: 0},
             assists: {type: Number, default: 0},
             minutes: {type: Number, default: 0},
