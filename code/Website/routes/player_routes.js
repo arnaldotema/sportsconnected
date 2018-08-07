@@ -5,7 +5,7 @@ var PlayerController = require('../controllers/football_user_info_controller.js'
 /*
  * GET
  */
-router.get('/search', PlayerController.search);
+router.post('/search', PlayerController.search);
 
 /*
  * GET
