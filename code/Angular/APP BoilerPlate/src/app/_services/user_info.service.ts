@@ -11,7 +11,9 @@ import {Recommendation} from '../_models/recommendation';
 @Injectable()
 export class UserInfoService {
 
-  mockUserInfo: UserInfoViewModel[] = [{
+  // TODO ALTT This is not coherent with the model yet!!!!!!!
+  // mockUserInfo: UserInfoViewModel[] = [{
+    mockUserInfo: [{
     user_id: '1',
     personal_info: {
       name: 'Diogo Pires',
@@ -143,7 +145,7 @@ export class UserInfoService {
       ],
       games: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     },
-    previous_seasons: [],
+    previous_seasons: undefined,
     media: [
       {
         title: 'Diogo Pires marca Hat-trick em jogo decisivo',
@@ -306,8 +308,7 @@ export class UserInfoService {
             id: 1
           }],
         }
-      },
-
+      }
     ],
     skill_set: [
       {
@@ -334,7 +335,7 @@ export class UserInfoService {
         name: 'Força',
         avatar: '/assets/strong.png',
         endorsements: [33,1,2,3,4,5,3,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,44,4,4,4,4,4,4,4,4,4,4,4,4,4,42,2,2,2,2,2,2,2,2],
-      },
+      }
     ],
     recommendations: {
       list: [1, 2, 3],
@@ -462,7 +463,7 @@ export class UserInfoService {
     else{
       return this.http.get<UserInfoViewModel>('/players/5b5b4fafd966a8172c7058a1', this.requestOptions)
         .pipe(
-          tap(data => console.log('Document Types', data)),
+          tap(data => console.log('Hammered user info', data)),
           catchError(this.handleError)
         );
     }
@@ -477,7 +478,7 @@ export class UserInfoService {
     let done = false;
     this.mockUserInfo[0].skill_set.forEach(skill =>{
       if(skill.name == skillName){
-        skill.endorsements.push(/*authorId*/1); // Todo convert endorsments to string[]
+        //skill.endorsements.push(/*authorId*/1); // Todo convert endorsments to string[]
         done = true;
       }
     });

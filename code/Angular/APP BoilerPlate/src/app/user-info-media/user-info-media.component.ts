@@ -21,14 +21,14 @@ export class User_infoMediaComponent implements OnInit{
 
     this.userInfoService.getUserInfo('0')
       .subscribe(userInfo => {
-        this.sortedData = userInfo.media.slice();
+        this.sortedData = userInfo.current_season.media.slice();
         debugger;
         return this.viewModel = userInfo
       });
   }
 
   sortData(sort: Sort) {
-    const data = this.viewModel.media.slice();
+    const data = this.viewModel.current_season.media.slice();
     if (!sort.active || sort.direction == '') {
       this.sortedData = data;
       return;

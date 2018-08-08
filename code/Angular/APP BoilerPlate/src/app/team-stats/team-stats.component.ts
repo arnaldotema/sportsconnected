@@ -21,7 +21,7 @@ export class TeamStatsComponent implements OnInit,AfterViewInit {
     this.teamService = new TeamService();
     this.teamService.getTeam('0')
       .subscribe(team => {
-        this.sortedData = team.media.slice();
+        this.sortedData = team.current_season.media.slice();
         return this.viewModel = team;
       });
   }
@@ -30,7 +30,7 @@ export class TeamStatsComponent implements OnInit,AfterViewInit {
   }
 
   sortData(sort: Sort) {
-    const data = this.viewModel.media.slice();
+    const data = this.viewModel.current_season.media.slice();
     if (!sort.active || sort.direction == '') {
       this.sortedData = data;
       return;
