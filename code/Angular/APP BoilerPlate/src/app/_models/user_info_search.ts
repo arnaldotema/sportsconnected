@@ -16,9 +16,7 @@ export class UserInfoSearch extends SearchEntityViewmodel{
     name: string,
     full_name: string
   };
-  id: string;
-  type: string;
-  avatar: string;
+
 
   user_id: string;
   personal_info: {
