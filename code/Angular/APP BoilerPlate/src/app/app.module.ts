@@ -19,6 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 import {HttpClient, HttpHeaders, HttpClientModule} from '@angular/common/http';
 
+
 import {LoadingPageModule} from 'angular-loading-page';         //Loading directive
 import {MaterialBarModule} from 'angular-loading-page';         //Loading animation component
 import {ClickOutsideModule} from 'ng-click-outside';

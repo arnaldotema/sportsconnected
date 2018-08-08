@@ -13,7 +13,8 @@ import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 @Injectable()
 export class TeamService {
 
-  mockTeams: TeamViewModel[] = [
+  // TODO mockTeams: TeamViewModel[] = [
+  mockTeams= [
     {
       acronym: 'SFC',
       avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
@@ -960,7 +961,8 @@ export class TeamService {
     };
   }
 
-  getTeam(id: string): Observable<TeamViewModel> {
+  //TODO getTeam(id: string): Observable<TeamViewModel> {
+  getTeam(id: string): Observable<any> {
     return of(this.mockTeams[0]); //use id
   };
 
