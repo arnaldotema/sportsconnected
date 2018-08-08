@@ -1961,8 +1961,8 @@ export class GenericUserService {
   constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': authenticationService.token
+        'Content-Type': 'application/json'
+        //'Authorization': authenticationService.token
       })
     };
   }
@@ -2012,7 +2012,7 @@ export class GenericUserService {
     if (this.testing){
       return of(this.mockUserInfo);
     }
-    return this.http.post<SearchEntityViewmodel[]>('/players/search', {search_obj}, this.requestOptions)
+    return this.http.post<SearchEntityViewmodel[]>('/players/search', search_obj, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
         catchError(this.handleError)
