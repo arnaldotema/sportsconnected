@@ -85,96 +85,114 @@ export class FilterUserInfoComponent implements OnInit {
      * */
     this.value_types = {
       'default': {
-        values: Array.apply(null, {length: 50}).map(Number.call, Number),
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: '',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
 
       },
       'foot': {
         values: ['Direito', 'Esquerdo', 'Ambidestro'],
         suffix: '',
-        filters: ['Joga com']
+        filters: ['$regex'],
+        filters_text: ['Joga com']
       },
       'birth_date': {
         values: ['1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009'],
         suffix: '',
-        filters: ['Exatamente', 'Desde', 'Até', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Desde', 'Até', 'Entre']
       },
       'age': {
         values: Array.apply(null, {length: 35}).map(Number.call, Number),
         suffix: 'anos',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'residence': {
         values: ['Lisboa', 'Porto', 'Coimbra', 'Algarve', 'Setúbal', 'Santarém', 'Viseu', 'Leiria'],
         suffix: '',
-        filters: ['Reside em']
+        filters: ['$regex'],
+        filters_text: ['Reside em']
       },
       'team': {
         values: ['Seixal FC', 'SL Benfica', 'FC Porto', 'Amora FC', 'Alcochetense', 'Montijo', 'Sporting CP'],
         suffix: '',
-        filters: ['Joga no']
+        filters: ['$regex'],
+        filters_text: ['Joga no']
       },
       'mobility': {
         values: ['Total', 'Regional', 'Distrital'],
         suffix: '',
-        filters: ['No máximo']
+        filters: ['$regex'],
+        filters_text: ['No máximo']
       },
       'position': {
         values: ['Guarda-redes', 'Defesa Central', 'Defesa Esquerdo', 'Defesa Direito', 'Defesa', 'Médio Defensivo', 'Médio Ofensivo', 'Médio Esquerdo', 'Médio Direito', 'Médio Centro', 'Ala Esquerdo', 'Ala Direito', 'Avançado',],
         suffix: '',
-        filters: ['É natural como'],
+        filters: ['$regex'],
+        filters_text: ['É natural como'],
       },
       'games': {
-        values: Array.apply(null, {length: 50}).map(Number.call, Number),
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: 'jogos',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'minutes': {
         values: Array.apply(null, {length: 90}).map(Number.call, Number),
         suffix: 'mins',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'goals': {
-        values: Array.apply(null, {length: 100}).map(Number.call, Number),
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: 'golos',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'assists': {
-        values: Array.apply(null, {length: 100}).map(Number.call, Number),
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: 'ass.',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'height': {
         values: ['1,20', '1,50', '1,70', '1,80', '1,90', '2,00'],
         suffix: 'm',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'weight': {
         values: ['50', '60', '70', '80', '90'],
         suffix: 'kg',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
       },
       'age_group': {
         values: ['Petizes', 'Traquinas', 'Benjamins B', 'Benjamins A', 'Infantis B', 'Infantis A', 'Iniciados B', 'Iniciados', 'Juvenis B', 'Juvenis', 'Juniores B', 'Juniores', 'Seniores'],
         suffix: '',
-        filters: ['Exatamente', 'Desde', 'Até', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Desde', 'Até', 'Entre']
       },
       'district': {
         values: ['Lisboa', 'Porto', 'Setúbal', 'Santarém', 'Faro'],
         suffix: '',
-        filters: ['Joga em/no']
+        filters: ['$regex'],
+        filters_text: ['Joga em/no']
       },
 
       'division': {
         values: ['Nacional', 'Regional', 'Distrital', '1ª Div', '2ª Div', '3ª Div'],
         suffix: '',
-        filters: ['Joga na']
+        filters: ['$regex'],
+        filters_text: ['Joga na'],
       },
       'season': {
         values: ['2018/2019', '2017/2018', '2016/2017', '2015/2016', '2014/2015'],
         suffix: '',
-        filters: ['Exatamente', 'Desde', 'Até', 'Entre']
+        filters: ['$regex', '$gte', '$lte', '$gte,$lte'],
+        filters_text: ['Exatamente', 'Desde', 'Até', 'Entre']
       }
     };
 
@@ -191,7 +209,7 @@ export class FilterUserInfoComponent implements OnInit {
     };
   }
 
-  contains (array: any[], element) {
+  contains(array: any[], element) {
     return array.indexOf(element) > -1;
   };
 
@@ -276,34 +294,20 @@ export class FilterUserInfoComponent implements OnInit {
   loadPlayers() {
     this.loading = true;
     setTimeout(() => {
-
-      //Converting the selected filter into readable regex
-      this.search_fields.forEach((search_field, idx) => {
-        let field_filter = search_field.selected_filter;
-        let _default = true;
-        Object.keys(this.regex_values).forEach((regex_type, key) => {
-          if (this.contains(this.regex_values[regex_type],field_filter)) {
+      this.genericUserService.detailedSearchUser(this.search_fields)
+        .subscribe(players => {
             debugger;
-            _default = false;
-            this.search_fields[idx].selected_filter = regex_type.toString();
+            players.forEach( player => {
+              let birth_date = new Date(player.personal_info.date_of_birth);
+              let ageDifMs = Date.now() - birth_date.getTime();
+              let ageDate = new Date(ageDifMs);
+              player.personal_info.age = Math.abs(ageDate.getUTCFullYear() - 1970);
+            });
+            this.players = players;
+            this.loading = false;
+            this.sortedData = this.players.slice();
           }
-          if (this.regex_values.length - 1 == key) {
-            if (_default){
-              this.search_fields[idx].selected_filter = '$regex';
-            }
-            if(this.search_fields.length - 1 == idx){
-              //Calling the service
-              this.genericUserService.detailedSearchUser(this.search_fields)
-                .subscribe(players => {
-                    this.loading = false;
-                    this.players = players;
-                    this.sortedData = this.players.slice();
-                  }
-                );
-            }
-          }
-        });
-      });
+        );
     }, 2000);
 
   }
