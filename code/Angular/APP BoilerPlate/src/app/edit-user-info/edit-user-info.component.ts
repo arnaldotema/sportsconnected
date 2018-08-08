@@ -209,11 +209,11 @@ export class EditUserInfoComponent implements OnInit {
 
     // user details form validations
     this.userDetailsForm = this.fb.group({
-      name: [this.viewModel.personal_info.name, Validators.required],
-      birthday: [this.viewModel.personal_info.date_of_birth, Validators.required],
+      name: [this.viewModel.current_season.personal_info.name, Validators.required],
+      birthday: [this.viewModel.current_season.personal_info.date_of_birth, Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
-      height: [this.viewModel.personal_info.height, Validators.required],
-      weight: [this.viewModel.personal_info.weight, Validators.required],
+      height: [this.viewModel.current_season.personal_info.height, Validators.required],
+      weight: [this.viewModel.current_season.personal_info.weight, Validators.required],
       country: new FormControl(this.countries[0], Validators.required),
       city: new FormControl(this.cities[0], Validators.required),
       position: new FormControl(this.positions[0], Validators.required),

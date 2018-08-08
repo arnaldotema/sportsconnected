@@ -1,5 +1,5 @@
 
-export class reFilterSearch {
+export class FilterSearch {
   form: string;
   search_item: string;
   filters: string[];
