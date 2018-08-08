@@ -13,13 +13,11 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 })
 export class CreateAccountComponent implements OnInit {
 
-  teamService: TeamService;
   chosenPlayer;
   chosenLeague;
   chosenGender;
   chosenAgeGroup;
   chosenTeam;
-  genericUserService: GenericUserService;
   teams: SearchEntityViewmodel[];
   age_groups;
   genders;
@@ -27,13 +25,11 @@ export class CreateAccountComponent implements OnInit {
   players: SearchEntityViewmodel[];
   user;
 
-  constructor(private router: Router,
+  constructor(private router: Router, private teamService: TeamService, private genericUserService : GenericUserService,
               private userInfoService : UserInfoService) {
   }
 
   ngOnInit() {
-    this.teamService = new TeamService();
-    this.genericUserService = new GenericUserService();
     this.genders = [
       {
         id: '1',
@@ -118,13 +114,13 @@ export class CreateAccountComponent implements OnInit {
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.genericUserService.searchUser('', '', 'team')
+    this.genericUserService.searchUser('', '', 'team.name')
       .subscribe(teams => this.teams = teams);
   }
 
   loadPlayers() {
     // Todo: Get Players based on chosenTeam
-    this.genericUserService.searchUser('', '', 'player')
+    this.genericUserService.searchUser('', '', 'personal_info.name')
       .subscribe(players => this.players = players);
   }
 
@@ -133,7 +129,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
   getTeam() {
-    this.genericUserService.searchUser('', '', 'team')
+    this.genericUserService.searchUser('', '', 'team.name')
       .subscribe(teams => this.teams = teams);
   }
 
