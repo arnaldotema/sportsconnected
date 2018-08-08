@@ -461,7 +461,7 @@ export class UserInfoService {
       return of(this.mockUserInfo[id]);
     }
     else{
-      return this.http.get<UserInfoViewModel>('/players/5b5b4fafd966a8172c7058a1', this.requestOptions)
+      return this.http.get<UserInfoViewModel>('/players/5b69b1b8f5accc36e448a798', this.requestOptions)
         .pipe(
           tap(data => console.log('Hammered user info', data)),
           catchError(this.handleError)
