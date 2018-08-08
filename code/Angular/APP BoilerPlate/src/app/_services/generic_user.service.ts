@@ -8,11 +8,13 @@ import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {UserInfoSearch} from '../_models/user_info_search';
 import {FilterSearch} from '../_models/filter_search';
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable()
 export class GenericUserService {
 
-  mockUserInfo: UserInfoSearch[] = [
+  //TODO change to mockUserInfo: UserInfoSearch[] = [
+  mockUserInfo = [
     {
       name: 'Cristiano Ronaldo',
       team: {
@@ -1781,9 +1783,11 @@ export class GenericUserService {
         }
       ],
     },
-  ];
+  ]
 
-  search_obj: SearchEntityViewmodel[] = [
+
+  //TODO ALTT: search_obj: SearchEntityViewmodel[] = [
+  search_obj = [
     {
       name: 'Diogo Pires',
       team: {
@@ -1806,7 +1810,7 @@ export class GenericUserService {
         avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
         name: 'Seixal FC',
         full_name: 'Seixal Futebol Clube'
-      },        id: '2',
+      }, id: '2',
       type: 'player',
       avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F2302574%2F1520172295_0.jpg&w=400&h=400&t=square&q=40',
     },
@@ -1857,7 +1861,7 @@ export class GenericUserService {
         avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
         name: 'Seixal FC',
         full_name: 'Seixal Futebol Clube'
-      },        id: '1',
+      }, id: '1',
       type: 'team',
       avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
     },
@@ -1895,7 +1899,7 @@ export class GenericUserService {
         avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
         name: 'Seixal FC',
         full_name: 'Seixal Futebol Clube'
-      },        id: '1',
+      }, id: '1',
       type: 'team',
       avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
     },
@@ -1933,7 +1937,7 @@ export class GenericUserService {
         avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
         name: 'Seixal FC',
         full_name: 'Seixal Futebol Clube'
-      },        id: '1',
+      }, id: '1',
       type: 'team',
       avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
     },
@@ -1951,23 +1955,68 @@ export class GenericUserService {
       avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
     }
   ];
+  testing: boolean = false;
   requestOptions;
 
-  constructor() {
+  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': authenticationService.token
       })
     };
   }
 
-  searchUser(id: string, name: string, type: string): Observable<SearchEntityViewmodel[]> {
-    return of(this.search_obj.filter(item => item.name.includes(name) && (type == '' || item.type == type)));
+  //TODO: ALTT - Change input params to just a Filter_Search model
+  // TODO ALTT - and algo:     searchUser(id: string, name: string, type: string): Observable<SearchEntityViewmodel[]> {
+  searchUser(id: string, query: string, type: string): Observable<any[]> {
+    if (this.testing) {
+      return of(this.search_obj.filter(item => item.name.includes(name) && (type == '' || item.type == type)));
+    }
+
+    let body = [];
+    if (type) {
+      body.push(
+        {
+          search_item: type,
+          selected_filter: '$regex',
+          selected_value: query
+        }
+      );
+    }
+    else {
+      body.push(
+        {
+          search_item: 'team.name',
+          selected_filter: '$regex',
+          selected_value: query
+        },
+        {
+          search_item: 'personal_info.name',
+          selected_filter: '$regex',
+          selected_value: query
+        }
+      );
+    }
+
+    return this.http.post<SearchEntityViewmodel[]>('/players/search', {body}, this.requestOptions)
+      .pipe(
+        tap(data => console.log('POST Player Search', data)),
+        catchError(this.handleError)
+      );
   }
 
-  detailedSearchUser(model: Array<FilterSearch>): Observable<UserInfoSearch[]> {
+  //detailedSearchUser(search_obj: Array<FilterSearch>): Observable<UserInfoSearch[]> {
+  detailedSearchUser(search_obj: Array<FilterSearch>): Observable<any[]> {
     debugger;
-    return of(this.mockUserInfo);
+    if (this.testing){
+      return of(this.mockUserInfo);
+    }
+    return this.http.post<SearchEntityViewmodel[]>('/players/search', {search_obj}, this.requestOptions)
+      .pipe(
+        tap(data => console.log('POST Player Search', data)),
+        catchError(this.handleError)
+      );
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -1985,5 +2034,4 @@ export class GenericUserService {
     return new ErrorObservable(
       'Something bad happened; please try again later.');
   };
-
 }

@@ -13,7 +13,8 @@ import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 @Injectable()
 export class MatchService {
 
-  mockMatches: MatchViewModel[] = [
+  //mockMatches: MatchViewModel[] = [
+  mockMatches = [
     {
       id: '1',
       played: true,
@@ -580,7 +581,8 @@ export class MatchService {
   };
 
 
-  getPlayerMatchByTeamSeason(player_id: string, team_id: string,season_id: string): Observable<MatchViewModel[]> {
+  // getPlayerMatchByTeamSeason(player_id: string, team_id: string,season_id: string): Observable<MatchViewModel[]> {
+  getPlayerMatchByTeamSeason(player_id: string, team_id: string,season_id: string): Observable<any[]> {
     let mock_match_obj = [
       {
         id: '1',

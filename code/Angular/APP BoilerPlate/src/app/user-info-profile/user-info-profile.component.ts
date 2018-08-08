@@ -92,7 +92,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
     };
     this.options = {
       title: {
-        text: 'Vota nas "Skills" de ' + this.viewModel.personal_info.name,
+        text: 'Vota nas "Skills" de ' + this.viewModel.current_season.personal_info.name,
         display: true
       },
       legend: {
@@ -128,7 +128,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
-          name: this.viewModel.personal_info.name,
+          name: this.viewModel.current_season.personal_info.name,
           author: this.mockAuthor,
           edit: false,
           create: true
@@ -159,50 +159,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
         if (label == skillName)
           ++this.skill_values[key];
       });
-      /*
-      this.data = {
-        labels: this.labels,
-        datasets: [{
-          data: this.skill_values, //[19, 18, 14, 15, 23]
-          backgroundColor: [
-            '#4383a882',
-            '#4383a882',
-            '#4383a882',
-            '#4383a882',
-            '#4383a882',
-          ]
-        }]
-      };
-      this.options = {
-        title: {
-          text: 'Skills',
-          display: true
-        },
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            gridLines: {
-              display: false
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              mirror: true
-            },
-            gridLines: {
-              display: false
-            }
-          }]
-        }
-      };
-      this.chart = new Chart('graph', {
-        type: 'horizontalBar',
-        data: this.data,
-        options: this.options
-      });
-      */
     }
   }
 }

@@ -34,7 +34,6 @@ export class FilterUserInfoComponent implements OnInit {
   seasons;
   stats;
 
-  genericUserService: GenericUserService;
   teams: SearchEntityViewmodel[];
   age_groups;
   leagues;
@@ -44,17 +43,17 @@ export class FilterUserInfoComponent implements OnInit {
 
   sortedData;
   regex_values;
+  regex_words;
 
   value_types;
 
   private search_fields: Array<FilterSearch> = [];
 
-  constructor(private router: Router,
+  constructor(private router: Router, private genericUserService: GenericUserService,
               private userInfoService: UserInfoService) {
   }
 
   ngOnInit() {
-    this.genericUserService = new GenericUserService();
     this.personal_data = ['Pé Dominante', 'Idade', 'Posição', 'Residência', 'Mobilidade', 'D. de Nascimento',];
     this.stats = ['Época', 'Jogos', 'Minutos', 'Golos', 'Assistências', 'Class. média', 'C. Amarelos', 'C. Vermelhos'];
     this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
@@ -192,6 +191,11 @@ export class FilterUserInfoComponent implements OnInit {
     };
   }
 
+  contains (array: any[], element) {
+    return array.indexOf(element) > -1;
+  };
+
+
   loadAgeGroups() {
     // Todo: Get AgeGroups
     this.age_groups = [
@@ -265,7 +269,7 @@ export class FilterUserInfoComponent implements OnInit {
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.genericUserService.searchUser('', '', 'team')
+    this.genericUserService.searchUser('', '', 'team.name')
       .subscribe(teams => this.teams = teams);
   }
 
@@ -278,7 +282,7 @@ export class FilterUserInfoComponent implements OnInit {
         let field_filter = search_field.selected_filter;
         let _default = true;
         Object.keys(this.regex_values).forEach((regex_type, key) => {
-          if (this.regex_values[regex_type].contains(field_filter)) {
+          if (this.contains(this.regex_values[regex_type],field_filter)) {
             debugger;
             _default = false;
             this.search_fields[idx].selected_filter = regex_type.toString();
@@ -443,10 +447,3 @@ function mapVariable(text) {
 function compare(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
-
-/**
- * Auxiliary function
- * */
-Array.prototype.contains = function (element) {
-  return this.indexOf(element) > -1;
-};
