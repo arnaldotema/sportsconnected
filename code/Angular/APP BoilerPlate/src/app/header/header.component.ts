@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import { GenericUserService} from '../_services/generic_user.service';
 import {AuthenticationService} from '../_services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import {SearchEntityViewmodel} from "../_models/search_entity_viewmodel";
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
+import {MatDialog} from "@angular/material";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ToastsManager} from "ng2-toastr";
+import {User} from "../_models/user";
 
 @Component({
   selector: 'app-header',
@@ -15,19 +19,23 @@ export class HeaderComponent implements OnInit {
 
   searchString: string;
   searchResults: SearchEntityViewmodel[];
-  viewModel: UserInfoViewModel;
+  viewModel: User;
 
   show_notifications: boolean;
   show_search: boolean;
 
   constructor(
+    public dialog: MatDialog, private router: Router,
+    private route: ActivatedRoute,
+    public toastr: ToastsManager, vcr: ViewContainerRef,
     private authenticationService: AuthenticationService,
     private genericService : GenericUserService,
     private userInfoService : UserInfoService)
   {}
 
   ngOnInit() {
-    this.userInfoService.getUserInfo('0')
+
+    this.authenticationService.getSessionUser()
       .subscribe(userInfo => this.viewModel = userInfo);
 
     this.show_notifications = false;

@@ -4,6 +4,9 @@ import {of} from 'rxjs/observable/of';
 import {Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {User} from "../_models/user";
+import {UserService} from './user.service';
+
 
 @Injectable()
 export class AuthenticationService {
@@ -12,11 +15,17 @@ export class AuthenticationService {
   public testing: boolean = true;
   private logged: boolean = true;
 
-  constructor(private http: HttpClient) {
+  session_user : User;
+
+  constructor(private http: HttpClient, private userService: UserService) {
     // set token if saved in local storage
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
     this.admin = currentUser && currentUser.admin;
+  }
+
+  getSessionUser(): Observable<User> {
+    return this.userService.getSessionUser();
   }
 
   login(username: string, password: string): Observable<boolean> {

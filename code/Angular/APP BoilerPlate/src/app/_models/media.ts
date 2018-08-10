@@ -12,15 +12,15 @@ export class Media{
   references: {
     leagues: [{
       name: string,
-      id: number,
+      id: string,
     }],
     team: [{
       name: string,
-      id: number
+      id: string
     }],
     player: [{
       name: string,
-      id: number
+      id: string
     }],
   }
 }

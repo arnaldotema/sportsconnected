@@ -1,4 +1,4 @@
-<div class="row">
+<div *ngIf="viewModel" class="row">
   <div class="row-left-stats">
     <table class="table-order-center" matSort (matSortChange)="sortData($event)">
       <tr>

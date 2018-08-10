@@ -5,7 +5,7 @@ export class FilterSearch {
   filters: string[];
   values: string[];
   selected_filter: string;
-  selected_value: string;
+  selected_value: any;
   selected_value_end: string;
   value_suffix: string;
 }
