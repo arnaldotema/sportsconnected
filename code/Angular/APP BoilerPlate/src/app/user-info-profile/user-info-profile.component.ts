@@ -9,6 +9,7 @@ import {Observable} from 'rxjs/Observable';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastsManager} from 'ng2-toastr';
 import {of} from 'rxjs/observable/of';
+import {AuthenticationService} from "../_services/authentication.service";
 
 @Component({
   selector: 'app-user-info-profile',
@@ -17,7 +18,7 @@ import {of} from 'rxjs/observable/of';
 })
 export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   viewModel: UserInfoViewModel;
-  mockAuthor;
+  session_user;
   chart;
   colors;
   data;
@@ -29,7 +30,9 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
   constructor(private userInfoService: UserInfoService, public dialog: MatDialog, private router: Router,
               private route: ActivatedRoute,
-              public toastr: ToastsManager, vcr: ViewContainerRef) {
+              public toastr: ToastsManager, vcr: ViewContainerRef,
+              private authenticationService: AuthenticationService
+  ) {
     this.toastr.setRootViewContainerRef(vcr);
   }
 
@@ -42,7 +45,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.labels = [];
     this.skill_values = [];
     this.colors = [];
-    this.mockAuthor = {
+    this.session_user = {
       name: 'Sports Connected',
       id: '-1',
       avatar: '/assets/default-profile.png',
@@ -72,6 +75,8 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
             stickyScroll()
           };
         });
+    this.authenticationService.getSessionUser()
+      .subscribe(userInfo => this.session_user = userInfo);
   }
 
   /*
@@ -130,7 +135,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         }]
       }
     };
-    debugger;
+
     let ctx = document.getElementById('graph');
     this.chart = new Chart(ctx, {
       type: 'horizontalBar',
@@ -146,8 +151,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
-          name: this.viewModel.current_season.personal_info.name,
-          author: this.mockAuthor,
+          author: this.session_user,
           edit: false,
           create: true
         }
@@ -171,7 +175,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.toastr.success('Obrigado pelo voto!');
 
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
-    this.userInfoService.voteForSkill(skillName, this.mockAuthor.id).subscribe();
+    this.userInfoService.voteForSkill(skillName, this.session_user.id).subscribe();
     {
       this.labels.forEach((label, key) => {
         if (label == skillName)
