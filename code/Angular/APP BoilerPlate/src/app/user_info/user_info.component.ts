@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   templateUrl: './user_info.component.html',
   styleUrls: ['./user_info.component.css']
 })
-export class User_infoComponent implements OnInit{
+export class User_infoComponent implements OnInit, AfterViewInit{
 
   id;
   viewModel: UserInfoViewModel;
@@ -19,8 +19,10 @@ export class User_infoComponent implements OnInit{
     private userInfoService : UserInfoService) { }
 
   ngOnInit() {
-
     this.id  = this.route.snapshot.paramMap.get('id');
+  }
+
+  ngAfterViewInit(){
     this.userInfoService.getUserInfo(this.id)
       .subscribe(userInfo => this.viewModel = userInfo);
   }

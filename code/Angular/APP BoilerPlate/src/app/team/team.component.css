@@ -40,7 +40,9 @@
 .player .meta .player-image img {
   object-fit: cover;
   min-height: 100%;
-}
+            width: 100%;
+
+  }
 
 .player .meta .player-image .right-shadow {
   position: absolute;

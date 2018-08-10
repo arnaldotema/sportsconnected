@@ -190,7 +190,7 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.userInfoService.getUserInfo(this.id)
       .subscribe(userInfo => {
-        debugger;
+
         this.viewModel = userInfo;
         this.createForms();
       });

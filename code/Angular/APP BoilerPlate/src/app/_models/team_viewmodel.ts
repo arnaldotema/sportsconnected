@@ -1,61 +1,24 @@
 import {Recommendation} from './recommendation';
 import {Achievement} from './achievement';
 import {TeamSeason} from "./team_season";
+import {TeamAdditionalInfo} from "./team_additional_info";
+import {ExternalIds} from "./external_ids";
+import {TryOut} from "./try_out";
 
 export class TeamViewModel {
+  _id: string;
+  additional_info: TeamAdditionalInfo;
   acronym: string;
   avatar: string;
   name: string;
   full_name: string;
   current_season: TeamSeason;
-  history_stats: TeamSeason[];
-  tryouts: [{
-    address: string;
-    age_group: string;
-    days: string;
-    time: string;
-    requirements: string;
-  }];
-  additional_info: {
-    site: string;
-    email: string;
-    phone_number: string;
-    address: string;
-    president: string;
-    vice_president: string;
-    sports_director: string;
-    number_of_teams: number;
-    number_of_athletes: number;
-    number_of_coaches: number;
-    number_of_physiotherapists: number;
-    number_of_grass_fields: number;
-    number_of_synthetic_fields: number;
-    number_of_locker_rooms: number;
-    sponsors: [{
-      link: string;
-      name: string
-    }];
-    other_sports: string[]
-  };
+  previous_seasons: TeamSeason[];
+  tryouts: TryOut[];
   recommendations: {
     list: number[],
-    top_5: [
-      {
-        author: {
-          name: string,
-          id: number,
-          avatar: string,
-          team: {
-            id: string,
-            acronym: string,
-            avatar: string,
-            name: string,
-          },
-        },
-        text: string,
-      }
-      ],
+    top_5: Recommendation[]
   };
-  followers : number [];
-  achievements: Achievement[];
+  external_ids: ExternalIds;
+  followers : string[];
 }

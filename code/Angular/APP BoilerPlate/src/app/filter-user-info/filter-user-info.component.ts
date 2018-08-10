@@ -533,7 +533,7 @@ export class FilterUserInfoComponent implements OnInit {
   addFieldValue(form_values) {
     form_values.forEach((form_value, key) => {
       if (!this.search_fields.some(item => item.form == form_value)) {
-        debugger;
+
         let mapped_var = mapVariable(form_value);
         let obj = this.value_types[mapped_var] ? this.value_types[mapped_var] : this.value_types['default'];
         this.search_fields.push({
