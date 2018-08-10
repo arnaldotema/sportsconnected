@@ -1,19 +1,20 @@
-<div style="overflow: hidden">
+<div *ngIf="viewModel" style="overflow: hidden">
   <div class="player">
     <div class="player-header" id="navbar">
       <div class="row">
         <div class="player-info">
           <div class="team">
-            <a href="/team" title="{{viewModel.current_season.team.id}}">
+            <a routerLink="/team/{{viewModel.current_season.team.team_id}}"
+               title="{{viewModel.current_season.team.id}}">
               <img [src]="viewModel.current_season.team.avatar" [title]="viewModel.current_season.team.name"
                    [alt]="viewModel.current_season.team.acronym">
             </a>
           </div>
           <h1>
-            {{viewModel.personal_info.name}}
+            {{viewModel.current_season.personal_info.name}}
           </h1>
           <div class="player-team">
-            <a href="/team" [title]="viewModel.current_season.team.name">
+            <a routerLink="/team" [title]="viewModel.current_season.team.name">
               {{viewModel.current_season.team.name}}
             </a>
           </div>
@@ -31,7 +32,7 @@
       </div>
       <div class="row-left">
         <div class="player-image">
-          <img [src]="viewModel.personal_info.avatar" alt="Profile image"
+          <img [src]="viewModel.current_season.personal_info.avatar" alt="Profile image"
                title="Profile" style="left: -241.5px;">
         </div>
         <div class="profile-buttons">
@@ -44,19 +45,19 @@
           <form [formGroup]="userDetailsForm">
             <mat-form-field>
               <input matInput placeholder="Nome completo" formControlName="name"
-                     [(ngModel)]="viewModel.personal_info.name"
+                     [(ngModel)]="viewModel.current_season.personal_info.name"
                      (change)="changedInput('name',$event, false)">
             </mat-form-field>
 
             <mat-form-field>
               <input matInput placeholder="Altura" formControlName="height"
-                     [(ngModel)]="viewModel.personal_info.height"
+                     [(ngModel)]="viewModel.current_season.personal_info.height"
                      (change)="changedInput('height',$event, false)">
             </mat-form-field>
 
             <mat-form-field>
               <input matInput placeholder="Peso" formControlName="weight"
-                     [(ngModel)]="viewModel.personal_info.weight"
+                     [(ngModel)]="viewModel.current_season.personal_info.weight"
                      (change)="changedInput('weight',$event, false)">
             </mat-form-field>
 
@@ -70,7 +71,8 @@
             <mat-form-field>
               <mat-select formControlName="country" placeholder="País"
                           (change)="changedInput('country',$event, false)">
-                <mat-option *ngFor="let country of countries" [value]="viewModel.personal_info.nationality">
+                <mat-option *ngFor="let country of countries"
+                            [value]="viewModel.current_season.personal_info.nationality">
                   {{country}}
                 </mat-option>
               </mat-select>
@@ -79,7 +81,7 @@
             <mat-form-field>
               <mat-select formControlName="city" placeholder="Cidade"
                           (change)="changedInput('city',$event, false)">
-                <mat-option *ngFor="let city of cities" [value]="viewModel.personal_info.residence">
+                <mat-option *ngFor="let city of cities" [value]="viewModel.current_season.personal_info.residence">
                   {{city}}
                 </mat-option>
               </mat-select>
@@ -88,7 +90,8 @@
             <mat-form-field>
               <mat-select formControlName="position" placeholder="Posição"
                           (change)="changedInput('position',$event, false)">
-              <mat-option *ngFor="let position of positions" [value]="viewModel.personal_info.positions[0]">
+                <mat-option *ngFor="let position of positions"
+                            [value]="viewModel.current_season.personal_info.positions[0]">
                   {{position}}
                 </mat-option>
               </mat-select>
@@ -97,7 +100,7 @@
             <mat-form-field>
               <mat-select formControlName="foot" placeholder="Pé dominante"
                           (change)="changedInput('foot',$event, false)">
-                <mat-option *ngFor="let foot of feet" [value]="viewModel.personal_info.foot">
+                <mat-option *ngFor="let foot of feet" [value]="viewModel.current_season.personal_info.foot">
                   {{foot}}
                 </mat-option>
               </mat-select>
@@ -119,7 +122,8 @@
         <div *ngIf="player_matches != null">
           <div class="event-list">
             <mat-accordion class="match-form">
-              <mat-expansion-panel *ngFor="let match of player_matches; let _idx = index" (opened)="currentMatchIdx = _idx">
+              <mat-expansion-panel *ngFor="let match of player_matches; let _idx = index"
+                                   (opened)="currentMatchIdx = _idx">
                 <mat-expansion-panel-header class="event-list__header">
                   <mat-panel-title>
                     {{match.date}}
@@ -182,169 +186,80 @@
     </div>
   </div>
 </div>
-
-
-<!--
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h2 class="section-title">{{viewModel.personal_info.name}}</h2>
-      <form [formGroup]="userDetailsForm">
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Nome completo" formControlName="name" required>
-          <mat-error *ngFor="let validation of validation_messages.name">
-            <mat-error class="error-message"
-                       *ngIf="userDetailsForm.get('name').hasError(validation.type) && (userDetailsForm.get('name').dirty || userDetailsForm.get('name').touched)">
-              {{validation.message}}
-            </mat-error>
-          </mat-error>
-        </mat-form-field>
-
-
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Your birthday" formControlName="birthday" required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <mat-error *ngFor="let validation of validation_messages.birthday">
-            <mat-error class="error-message"
-                       *ngIf="userDetailsForm.get('birthday').hasError(validation.type) && (userDetailsForm.get('birthday').dirty || userDetailsForm.get('birthday').touched)">
-              {{validation.message}}
-            </mat-error>
-          </mat-error>
-        </mat-form-field>
-
-
-        <mat-form-field>
-          <mat-select placeholder="Gender">
-            <mat-option *ngFor="let gender of genders" [value]="gender">
-              {{ gender }}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngFor="let validation of validation_messages.gender">
-            <mat-error class="error-message"
-                       *ngIf="userDetailsForm.get('gender').hasError(validation.type) && (userDetailsForm.get('gender').dirty || userDetailsForm.get('gender').touched)">
-              {{validation.message}}
-            </mat-error>
-          </mat-error>
-        </mat-form-field>
-
-
-        <div formGroupName="country_phone" class="row">
-          <mat-form-field class="full-width col-4">
-            <mat-select formControlName="country" placeholder="Country">
-              <mat-option *ngFor="let country of countries" [value]="country">
-                {{ country.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Phone" type="tel" formControlName="phone" required>
-            <mat-hint align="start"><strong>Mobile:</strong> {{
-              userDetailsForm.value.country_phone.country.sampleMobilePhone }}
-            </mat-hint>
-            <mat-hint align="end"><strong>Fixed:</strong> {{
-              userDetailsForm.value.country_phone.country.sampleFixedPhone }}
-            </mat-hint>
-            <mat-error *ngFor="let validation of validation_messages.phone">
-              <mat-error class="error-message" class="error-message"
-                         *ngIf="userDetailsForm.get('country_phone').get('phone').hasError(validation.type) && (userDetailsForm.get('country_phone').get('phone').dirty || userDetailsForm.get('country_phone').get('phone').touched)">
-                {{ validation.message }}
-              </mat-error>
-            </mat-error>
-          </mat-form-field>
-        </div>
-
-        <mat-form-field class="full-width">
-          <textarea matInput maxlength="256" placeholder="Bio" formControlName="bio" matTextareaAutosize
-                    matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
-          <mat-hint align="start">Tell us about yourself</mat-hint>
-          <mat-hint align="end">{{userDetailsForm.get('bio').value.length}} / 256</mat-hint>
-          <mat-error *ngFor="let validation of validation_messages.bio">
-            <mat-error class="error-message"
-                       *ngIf="userDetailsForm.get('bio').hasError(validation.type) && (userDetailsForm.get('bio').dirty || userDetailsForm.get('bio').touched)">
-              {{validation.message}}
-            </mat-error>
-          </mat-error>
-        </mat-form-field>
-
-
-        <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!userDetailsForm.valid">
-          Submit
-        </button>
-
-      </form>
-    </div>
-
-
-    <div class="col">
-      <h2 class="section-title">Account details</h2>
-
-      <form [formGroup]="accountDetailsForm" novalidate (ngSubmit)="onSubmitAccountDetails(accountDetailsForm.value)">
-
-        <mat-form-field class="full-width">
-          <input matInput maxlength="25" placeholder="Username" formControlName="username" required>
-          <mat-error *ngFor="let validation of account_validation_messages.username">
-            <mat-error class="error-message"
-                       *ngIf="accountDetailsForm.get('username').hasError(validation.type) && (accountDetailsForm.get('username').dirty || accountDetailsForm.get('username').touched)">
-              {{validation.message}}
-            </mat-error>
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field class="full-width">
-          <input matInput type="email" placeholder="Email" formControlName="email" required>
-          <mat-error *ngFor="let validation of account_validation_messages.email">
-            <mat-error class="error-message"
-                       *ngIf="accountDetailsForm.get('email').hasError(validation.type) && (accountDetailsForm.get('email').dirty || accountDetailsForm.get('email').touched)">
-              {{validation.message}}
-            </mat-error>
-          </mat-error>
-        </mat-form-field>
-
-
-        <div formGroupName="matching_passwords">
-          <mat-form-field class="full-width">
-            <input matInput type="password" placeholder="Password" formControlName="password" required>
-            <mat-error *ngFor="let validation of account_validation_messages.password">
-              <mat-error class="error-message"
-                         *ngIf="accountDetailsForm.get('matching_passwords').get('password').hasError(validation.type) && (accountDetailsForm.get('matching_passwords').get('password').dirty || accountDetailsForm.get('matching_passwords').get('password').touched)">
-                {{validation.message}}
-              </mat-error>
-            </mat-error>
-          </mat-form-field>
-
-          <mat-form-field class="full-width">
-            <input matInput type="password" placeholder="Confirm Password" formControlName="confirm_password"
-                   [errorStateMatcher]="parentErrorStateMatcher" required>
-            <mat-error *ngFor="let validation of account_validation_messages.confirm_password">
-              <mat-error class="error-message"
-                         *ngIf="(accountDetailsForm.get('matching_passwords').get('confirm_password').hasError(validation.type)|| accountDetailsForm.get('matching_passwords').hasError(validation.type)) && (accountDetailsForm.get('matching_passwords').get('confirm_password').dirty || accountDetailsForm.get('matching_passwords').get('confirm_password').touched)">
-                {{validation.message}}
-              </mat-error>
-            </mat-error>
-          </mat-form-field>
-
-        </div>
-
-        <mat-checkbox formControlName="terms">
-          I accept terms and conditions
-        </mat-checkbox>
-        <mat-error *ngFor="let validation of account_validation_messages.terms">
-          <mat-error class="error-message"
-                     *ngIf="accountDetailsForm.get('terms').hasError(validation.type) && (accountDetailsForm.get('terms').dirty || accountDetailsForm.get('terms').touched)">
-            {{validation.message}}
-          </mat-error>
-        </mat-error>
-
-        <button class="submit-btn" color="primary" mat-raised-button type="submit"
-                [disabled]="!accountDetailsForm.valid">
-          Submit
-        </button>
-
-      </form>
-
-    </div>
+<div [hidden]="viewModel" class="loading">
+  <img src="/assets/SP_Logo_Black.png" style="height: 100px; width: auto;">
+  <div class="bars">
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
   </div>
+  <!--<div style="color: darkgrey; font-family: Museo Sans,sans-serif; font-size: 20px; margin: 20px auto;">
+    Um jogo, um clique, o teu destino.
+  </div>-->
+  <style>
+    .loading {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      overflow: auto;
+      text-align: center;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .loading .bars {
+      margin: 20px auto;
+      width: 100%;
+    }
+
+    .loading-bar {
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      border-radius: 4px;
+      animation: loading 1s ease-in-out infinite;
+    }
+
+    .loading-bar:nth-child(1) {
+      background-color: #27ae60;
+      animation-delay: 0;
+    }
+
+    .loading-bar:nth-child(2) {
+      background-color: #f1c40f;
+      animation-delay: 0.09s;
+    }
+
+    .loading-bar:nth-child(3) {
+      background-color: #c0392b;
+      animation-delay: .18s;
+    }
+
+    .loading-bar:nth-child(4) {
+      background-color: #c0392b;
+      animation-delay: .27s;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(1, 2.2);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+  </style>
 </div>
--->

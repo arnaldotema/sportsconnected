@@ -20,7 +20,7 @@ export class UserInfoViewModel {
         author: {
           name: string,
           relationship: string,
-          id: number,
+          id: string,
           avatar: string,
           team: {
             id: string,
