@@ -1248,7 +1248,7 @@ export class TeamService {
 
   getTeam(id: string): Observable<TeamViewModel> {
 
-    if (id == "-1") {
+    if (true) {
       //Convert player's birth_date to age
       this.mockTeams[0].current_season.players.forEach((player) => {
         if (!player['date_of_birth']) player['date_of_birth'] = '1996-05-20T00:00:00.000Z';
