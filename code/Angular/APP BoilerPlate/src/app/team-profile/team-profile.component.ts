@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {TryoutModalComponent} from "../_modals/tryout-modal/tryout-modal.component";
 import {ActivatedRoute} from "@angular/router";
+import {AuthenticationService} from "../_services/authentication.service";
 
 @Component({
   selector: 'app-team-profile',
@@ -15,75 +16,57 @@ import {ActivatedRoute} from "@angular/router";
 export class TeamProfileComponent implements OnInit, AfterViewInit {
 
   viewModel: TeamViewModel;
-  mockAuthor;
+  session_user;
   chart = [];
   data = {};
   options = {};
   id;
-  constructor(private teamService : TeamService, private route: ActivatedRoute, public dialog: MatDialog) {
+
+  constructor(private teamService: TeamService, private authenticationService: AuthenticationService, private route: ActivatedRoute, public dialog: MatDialog) {
   }
 
   ngOnInit() {
-    this.id  = this.route.snapshot.paramMap.get('id');
-    this.mockAuthor = {
-      name: 'Sports Connected',
-      id: '-1',
-      avatar: '/assets/default-profile.png',
-      team: {
-        id: '-1',
-        acronym: 'SCT',
-        avatar: '/assets/SP_Logo_Black.png',
-        name: 'Sports Connected Team',
-      }
-    }
-
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
   ngAfterViewInit() {
     this.teamService.getTeam(this.id)
-      .subscribe(team => this.viewModel = team);
-  }
+      .subscribe(team => {
 
-  loadChart() {
-    this.data = {
-      labels: ['Ataque', 'Tática', 'Defesa', 'Meio Campo', 'Bolas paradas'],
-      datasets: [{
-        data: [19, 18, 14, 15, 23]
-      }]
-    };
-    this.options = {
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: false
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            mirror: true
-          },
-          gridLines: {
-            display: false
-          }
-        }]
-      }
-    };
-    this.chart = new Chart('radar', {
-      type: 'horizontalBar',
-      data: this.data,
-      options: this.options
-    });
+        //Convert player's birth_date to age
+        team.current_season.players.forEach((player) => {
+          if (!player['date_of_birth']) player['date_of_birth'] = '1996-05-20T00:00:00.000Z';
+          let birth_date = new Date(player['date_of_birth']);
+          let ageDifMs = Date.now() - birth_date.getTime();
+          let ageDate = new Date(ageDifMs);
+          player['age'] = Math.abs(ageDate.getUTCFullYear() - 1970);
+        });
+
+        //Convert staff's birth_date to age
+        team.current_season.staff.forEach((staff) => {
+          if (!staff['date_of_birth']) staff['date_of_birth'] = '1979-05-20T00:00:00.000Z';
+          let birth_date = new Date(staff['date_of_birth']);
+          let ageDifMs = Date.now() - birth_date.getTime();
+          let ageDate = new Date(ageDifMs);
+          staff['age'] = Math.abs(ageDate.getUTCFullYear() - 1970);
+        });
+
+        //Convert player's name to short name
+        team.current_season.players.forEach((player) => {
+          player.name = player.name.split(' ')[0] + player.name.split(' ')[player.name.split(' ').length];
+        });
+
+        this.viewModel = team;
+      });
+    this.authenticationService.getSessionUser()
+      .subscribe(userInfo => this.session_user = userInfo);
   }
 
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
-          target: this.viewModel,
-          author: this.mockAuthor,
+          author: this.session_user,
           edit: false,
           create: true
         }
@@ -106,7 +89,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
       {
         data: {
           target: this.viewModel,
-          author: this.mockAuthor,
+          author: this.session_user,
           edit: false,
           create: true
         }

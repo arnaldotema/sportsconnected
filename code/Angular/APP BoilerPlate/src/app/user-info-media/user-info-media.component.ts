@@ -16,8 +16,7 @@ export class User_infoMediaComponent implements OnInit{
   viewModel: UserInfoViewModel;
   sortedData;
   id;
-  constructor(private userInfoService : UserInfoService, private route: ActivatedRoute) {
-  }
+  constructor(private userInfoService : UserInfoService, private route: ActivatedRoute) {}
 
   ngOnInit() {
 
@@ -30,6 +29,9 @@ export class User_infoMediaComponent implements OnInit{
   }
 
   sortData(sort: Sort) {
+    if(!this.viewModel.current_season.media){
+      return;
+    }
     const data = this.viewModel.current_season.media.slice();
     if (!sort.active || sort.direction == '') {
       this.sortedData = data;

@@ -2,6 +2,7 @@ export class Recommendation{
   author:{
     name : string;
     id: string;
+    relationship: string,
     avatar: string;
     team : {
       id: string;

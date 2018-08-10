@@ -3,6 +3,8 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
 import {MatDialog} from '@angular/material';
+import {AuthenticationService} from "../_services/authentication.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -10,16 +12,19 @@ import {MatDialog} from '@angular/material';
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
-export class TeamComponent implements OnInit  {
+export class TeamComponent implements OnInit, AfterViewInit{
 
   viewModel: TeamViewModel;
-  teamService : TeamService;
-
-  constructor(/*private teamService: TeamService, */public dialog: MatDialog) { }
+  id;
+  constructor(private teamService : TeamService, private authenticationService: AuthenticationService, private route: ActivatedRoute, public dialog: MatDialog) {
+  }
 
   ngOnInit() {
-    this.teamService = new TeamService();
-    this.teamService.getTeam('0')
+    this.id  = this.route.snapshot.paramMap.get('id');
+  }
+
+  ngAfterViewInit() {
+    this.teamService.getTeam(this.id)
       .subscribe(team => this.viewModel = team);
   }
 
