@@ -1,5 +1,6 @@
 import {Achievement} from './achievement';
 import {UserInfoSeason} from "./user_info_season";
+import {Recommendation} from "./recommendation";
 
 //NEW put correct information in "user_info_season"
 
@@ -16,21 +17,7 @@ export class UserInfoViewModel {
     }];
   recommendations: {
     list: number[],
-    top_5: [{
-        author: {
-          name: string,
-          relationship: string,
-          id: string,
-          avatar: string,
-          team: {
-            id: string,
-            acronym: string,
-            avatar: string,
-            name: string,
-          },
-        },
-        text: string,
-      }],
+    top_5: Recommendation[]
   };
   achievements: Achievement[];
   created_at: string;

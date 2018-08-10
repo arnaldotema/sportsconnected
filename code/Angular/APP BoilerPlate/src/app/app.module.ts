@@ -82,6 +82,7 @@ import {UserInfoService} from './_services/user_info.service';
 import {UserService} from './_services/user.service';
 import {MatchService} from './_services/match.service';
 import {TeamService} from './_services/team.service';
+import { TeamMediaComponent } from './team-media/team-media.component';
 
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
@@ -111,7 +112,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     CreateAccountComponent,
     HeaderComponent,
     EditUserInfoComponent,
-    FilterUserInfoComponent
+    FilterUserInfoComponent,
+    TeamMediaComponent
   ],
   imports: [
     HttpClientModule,

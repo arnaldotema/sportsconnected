@@ -8,15 +8,15 @@
     </mat-icon>
   </div>
   <div class="creation-modal__modal-description">
-    <img [src]="target.avatar">
-    <div class="target-info">
-      <h4>{{target.name}}</h4>
+    <img [src]="author.avatar">
+    <div class="author-info">
+      <h4>{{author.name}}</h4>
       <h5>Primeira Liga Portuguesa</h5>
     </div>
   </div>
   <div class="creation-modal__modal-form">
     <mat-form-field class="col-sm-12">
-      <mat-select [placeholder]="'Relação com ' + target.name">
+      <mat-select [placeholder]="'Relação com ' + author.name">
         <mat-option value="Adepto">
           Adepto
         </mat-option>
