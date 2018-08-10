@@ -1785,7 +1785,6 @@ export class GenericUserService {
     },
   ]
 
-
   //TODO ALTT: search_obj: SearchEntityViewmodel[] = [
   search_obj = [
     {
@@ -2008,7 +2007,7 @@ export class GenericUserService {
 
   //detailedSearchUser(search_obj: Array<FilterSearch>): Observable<UserInfoSearch[]> {
   detailedSearchUser(search_obj: Array<FilterSearch>): Observable<any[]> {
-    debugger;
+
     if (this.testing){
       return of(this.mockUserInfo);
     }
@@ -2018,6 +2017,8 @@ export class GenericUserService {
         catchError(this.handleError)
       );
   }
+
+
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

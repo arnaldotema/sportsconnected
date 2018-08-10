@@ -268,6 +268,10 @@ body {
   float: left;
 }
 
+.auto-height {
+
+}
+
 .auto-height td {
   height: auto !important;
 }
@@ -1441,6 +1445,10 @@ button.toast-close-button {
   opacity: 0.4;
 }
 
+.mat-form-field-underline {
+  display: none;
+}
+
 /*Responsive Design*/
 @media all and (max-width: 240px) {
   #toast-container > div {
@@ -1468,3 +1476,4 @@ button.toast-close-button {
     width: 25em;
   }
 }
+

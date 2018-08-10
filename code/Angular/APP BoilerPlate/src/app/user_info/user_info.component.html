@@ -4,24 +4,24 @@
       <div class="row">
         <div class="player-info">
           <div class="team">
-            <a href="/team" title="{{viewModel.current_season.team.id}}">
+            <a routerLink="/team/{{viewModel.current_season.team.team_id}}" title="{{viewModel.current_season.team.id}}">
               <img [src]="viewModel.current_season.team.avatar" [title]="viewModel.current_season.team.name"
                    [alt]="viewModel.current_season.team.acronym">
             </a>
           </div>
           <h1>
-            {{viewModel.personal_info.name}}
+            {{viewModel.current_season.personal_info.name}}
           </h1>
           <div class="player-team">
-            <a href="/team" [title]="viewModel.current_season.team.name">
+            <a routerLink="/team/{{viewModel.current_season.team.team_id}}" [title]="viewModel.current_season.team.name">
               {{viewModel.current_season.team.name}}
             </a>
           </div>
         </div>
         <div class="player-menu">
-          <span id="profile" (mouseover)='over($event, true)' (mouseleave)='over($event, false)' title="{{viewModel.personal_info.name}}" (click)="changeTab('profile')" class="current">Perfil</span>
-          <span id="media" (mouseover)='over($event, true)' (mouseleave)='over($event, false)' title="{{viewModel.personal_info.name}}" (click)="changeTab('media')" class="">Media</span>
-          <span id="stats" (mouseover)='over($event, true)' (mouseleave)='over($event, false)' title="{{viewModel.personal_info.name}}" (click)="changeTab('stats')" class="">Estatísticas</span>
+          <span id="profile" (mouseover)='over($event, true)' (mouseleave)='over($event, false)' title="{{viewModel.current_season.personal_info.name}}" (click)="changeTab('profile')" class="current">Perfil</span>
+          <span id="media" (mouseover)='over($event, true)' (mouseleave)='over($event, false)' title="{{viewModel.current_season.personal_info.name}}" (click)="changeTab('media')" class="">Media</span>
+          <span id="stats" (mouseover)='over($event, true)' (mouseleave)='over($event, false)' title="{{viewModel.current_season.personal_info.name}}" (click)="changeTab('stats')" class="">Estatísticas</span>
         </div>
       </div>
     </div>

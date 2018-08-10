@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
@@ -9,13 +10,18 @@ import {UserInfoService} from '../_services/user_info.service';
 })
 export class User_infoComponent implements OnInit{
 
+  id;
   viewModel: UserInfoViewModel;
+
   constructor(
-    private userInfoService : UserInfoService
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    private userInfoService : UserInfoService) { }
 
   ngOnInit() {
-    this.userInfoService.getUserInfo('0')
+
+    this.id  = this.route.snapshot.paramMap.get('id');
+    this.userInfoService.getUserInfo(this.id)
       .subscribe(userInfo => this.viewModel = userInfo);
   }
 
