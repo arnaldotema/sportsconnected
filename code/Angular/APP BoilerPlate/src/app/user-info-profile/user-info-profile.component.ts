@@ -6,7 +6,7 @@ import {forEach} from '@angular/router/src/utils/collection';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {Observable} from 'rxjs/Observable';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ToastsManager} from 'ng2-toastr';
 import {of} from 'rxjs/observable/of';
 
@@ -15,7 +15,7 @@ import {of} from 'rxjs/observable/of';
   templateUrl: './user-info-profile.component.html',
   styleUrls: ['./user-info-profile.component.css']
 })
-export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   viewModel: UserInfoViewModel;
   mockAuthor;
   chart;
@@ -24,13 +24,19 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
   options;
   labels;
   skill_values;
+  id;
+  loading_chart :boolean = false;
 
   constructor(private userInfoService: UserInfoService, public dialog: MatDialog, private router: Router,
+              private route: ActivatedRoute,
               public toastr: ToastsManager, vcr: ViewContainerRef) {
     this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {
+
+    this.id  = this.route.snapshot.paramMap.get('id');
+
     this.data = {};
     this.options = {};
     this.labels = [];
@@ -51,28 +57,38 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
   }
 
   ngAfterViewInit() {
-    setTimeout(() =>{
-      this.userInfoService.getUserInfo('0')
+      this.userInfoService.getUserInfo(this.id)
         .subscribe((userInfo) => {
+
+          //Convert birth_date to age TODO: This should probably be done right out of the service
+          let birth_date = new Date(userInfo.current_season.personal_info.date_of_birth);
+          let ageDifMs = Date.now() - birth_date.getTime();
+          let ageDate = new Date(ageDifMs);
+          userInfo.current_season.personal_info.age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
           this.viewModel = userInfo;
           // When the user scrolls the page, execute myFunction
-          window.onscroll = function() {stickyScroll()};
+          window.onscroll = function () {
+            stickyScroll()
+          };
         });
-    },2000);
   }
 
-  ngAfterViewChecked(){
-    if(this.viewModel && !this.chart){
+  /*
+  ngAfterViewChecked() {
+    if (this.viewModel && !this.loading_chart) {
       this.loadChart();
     }
   }
+  */
 
 
   editPlayer(): void {
-    this.router.navigate(['/edit-user-info']);
+    this.router.navigate(['/edit-user-info/' + this.id]);
   }
 
-  loadChart () {
+  loadChart() {
+    this.loading_chart = true;
     this.viewModel.skill_set.forEach((skill) => {
       this.labels.push(skill.name);
       this.skill_values.push(skill.endorsements.length);
@@ -114,6 +130,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
         }]
       }
     };
+    debugger;
     let ctx = document.getElementById('graph');
     this.chart = new Chart(ctx, {
       type: 'horizontalBar',
@@ -121,6 +138,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
       options: this.options,
       colors: this.colors
     });
+    this.loading_chart = false;
     return true;
   }
 
@@ -155,7 +173,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit, AfterVie
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
     this.userInfoService.voteForSkill(skillName, this.mockAuthor.id).subscribe();
     {
-      this.labels.forEach((label,key) => {
+      this.labels.forEach((label, key) => {
         if (label == skillName)
           ++this.skill_values[key];
       });
@@ -176,21 +194,21 @@ function stickyScroll() {
   // Get the offset position of the personal
   let currOffset = personal.offsetTop;
 
-  if (window.pageYOffset + 195 >= currOffset){
+  if (window.pageYOffset + 195 >= currOffset) {
     personal.parentElement.classList.add("row-left");
     personal.classList.add("sticky");
   }
 
-  if( window.pageYOffset < 286 ){
+  if (window.pageYOffset < 286) {
     personal.classList.remove("sticky");
   }
 
-  if( window.pageYOffset > 2411){
+  if (window.pageYOffset > 2411) {
     personal.classList.add("hidden-for-footer");
     achievements.classList.add("hidden-for-footer");
     indicators.classList.add("hidden-for-footer");
   }
-  else{
+  else {
     personal.classList.remove("hidden-for-footer");
     achievements.classList.remove("hidden-for-footer");
     indicators.classList.remove("hidden-for-footer");

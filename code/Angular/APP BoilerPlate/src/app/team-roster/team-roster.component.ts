@@ -2,6 +2,8 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import { TeamService } from '../_services/team.service';
 import { Chart } from 'chart.js';
+import {ActivatedRoute} from "@angular/router";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-team-roster',
@@ -11,13 +13,16 @@ import { Chart } from 'chart.js';
 export class TeamRosterComponent implements OnInit, AfterViewInit  {
 
   viewModel: TeamViewModel;
-  teamService: TeamService;
-
-  constructor() { }
+  id;
+  constructor(private teamService : TeamService, private route: ActivatedRoute, public dialog: MatDialog) {
+  }
 
   ngOnInit() {
-    this.teamService = new TeamService();
+    this.id  = this.route.snapshot.paramMap.get('id');
   }
-  ngAfterViewInit(){
+
+  ngAfterViewInit() {
+    this.teamService.getTeam(this.id)
+      .subscribe(team => this.viewModel = team);
   }
 }

@@ -80,7 +80,9 @@
         </div>
       </div>
       <div class="search-button">
-        <button mat-raised-button (click)="loadPlayers()" [disabled]="search_fields.length <= 0" class="sc-btn btn-start centered">PESQUISAR</button>
+        <button mat-raised-button (click)="loadPlayers()" [disabled]="search_fields.length <= 0"
+                class="sc-btn btn-start centered">PESQUISAR
+        </button>
       </div>
       <div [hidden]="search_fields && search_fields.length > 0" class="centered  ">
         <h3>Escolhe em cima o que filtrar</h3>
@@ -101,11 +103,13 @@
                 </td>
                 <div>
                   <td>
-                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
-                      <mat-option *ngFor="let filter_type of field.filters" [value]="filter_type">
-                        {{filter_type}}
-                      </mat-option>
-                    </mat-select>
+                    <form>
+                      <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem" name="selected_filter">
+                        <mat-option *ngFor="let filter_type of field.filters" [value]="filter_type.regex">
+                          {{filter_type.text}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
                   </td>
                   <td>
                     <form *ngIf=" field.selected_filter && field.selected_filter != '$gte,$lte'">
@@ -118,7 +122,7 @@
                     </form>
                     <form *ngIf=" field.selected_filter == '$gte,$lte' " class="range-form">
                       de
-                      <mat-select [(ngModel)]=" field.selected_value" name="selected_value_start">
+                      <mat-select [(ngModel)]=" field.selected_value" name="selected_value">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
                           <span matSuffix>{{field.value_suffix}}</span>
@@ -131,7 +135,7 @@
                           <span matSuffix>{{field.value_suffix}}</span>
                         </mat-option>
                       </mat-select>
-                    </form>
+                      </form>
                   </td>
                 </div>
               </tr>
@@ -159,7 +163,7 @@
                 <tbody>
                 <tr *ngFor="let player of sortedData">
                   <td class="centered number_move first-td-img">
-                    <a href="/player/{{player.user_info_id}}">
+                    <a routerLink="/user-info/{{player.user_info_id}}">
                       <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
                            [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
                       </div>
@@ -171,7 +175,7 @@
                       <tr>
                         <td class="table-link">
                           <a
-                            href="/player/{{player.user_info_id}}">
+                            routerLink="/user-info/{{player.user_info_id}}">
                             {{player.personal_info.name}}
                           </a>
                         </td>
@@ -189,7 +193,7 @@
                   <td class="centered">{{player.personal_info.height}}</td>
                   <td class="centered">{{player.personal_info.weight}}</td>
                   <td class="centered">
-                    <a href="/team/{{player.team.team_id}}">
+                    <a routerLink="/team/{{player.team.team_id}}">
                       <img src="{{player.team.avatar}}" title="{{player.team.name}}"
                            alt="{{player.team.name}}" class="team-img">
                     </a>

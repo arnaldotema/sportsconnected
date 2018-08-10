@@ -6,10 +6,10 @@
              title="Profile" style="left: -241.5px;">
       </div>
       <div class="profile-buttons">
-        <button mat-raised-button class="sc-btn btn-sc-default" style="display: none">Seguir</button>
+        <button mat-raised-button class="sc-btn btn-sc-default">Seguir</button>
         <!--<button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button> -->
         <button mat-icon-button>
-          <mat-icon aria-label="Example icon-button with a heart icon" (click)="editPlayer()">edit</mat-icon>
+          <mat-icon aria-label="Clica para editar a tua conta" (click)="editPlayer()">edit</mat-icon>
         </button>
       </div>
 
@@ -22,19 +22,11 @@
         <table class="col-md-12 personal-table">
           <tbody class="auto-height">
           <tr>
-            <td class="first-td-padding" title="Idade">
+            <td title="Idade">
               <strong>Idade</strong>
             </td>
-            <td class=" first-td-padding">
-              {{viewModel.current_season.personal_info.age}}
-            </td>
-          </tr>
-          <tr>
-            <td title="D. Nascimento">
-              <strong>D. Nascimento</strong>
-            </td>
             <td class="">
-              {{viewModel.current_season.personal_info.date_of_birth}}
+              {{viewModel.current_season.personal_info.age}}
             </td>
           </tr>
           <tr>
@@ -164,7 +156,7 @@
         </div>
       </div>
 
-      <div *ngIf="viewModel.recommendations.length >= 5" class="recommendations">
+      <div *ngIf="viewModel.recommendations.top_5.length > 0" class="recommendations">
         <div class="content">
           <div class="header">
             <h3 class="title">Recomendações</h3>
@@ -197,11 +189,16 @@
       <div class="achievements sticky-achievements" id="achievements">
         <div class="content">
           <div class="header">
-            <h3 class="title centered">Crachás de {{viewModel.current_season.personal_info.name}}</h3>
-          </div>
-          <div class="badges" *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
-            <div class="image" *ngFor="let achievement of viewModel.achievements">
-              <img src="{{achievement.avatar}}">
+            <div *ngIf="viewModel.achievements && viewModel.achievements.length > 0">
+              <h3 class="title centered">Crachás de {{viewModel.current_season.personal_info.name}}</h3>
+              <div class="badges">
+                <div class="image" *ngFor="let achievement of viewModel.achievements">
+                  <img src="{{achievement.avatar}}">
+                </div>
+              </div>
+            </div>
+            <div *ngIf="!viewModel.achievements || viewModel.achievements.length == 0">
+              <h3 class="title centered">{{viewModel.current_season.personal_info.name}} não tem crachás</h3>
             </div>
           </div>
           <!--<div *ngIf=" viewModel.achievements.length > 6 " class="footer">-->

@@ -1,10 +1,11 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {TeamViewModel} from '../_models/team_viewmodel';
-import { TeamService } from '../_services/team.service';
-import { Chart } from 'chart.js';
+import {TeamService} from '../_services/team.service';
+import {Chart} from 'chart.js';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {TryoutModalComponent} from "../_modals/tryout-modal/tryout-modal.component";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-team-profile',
@@ -18,11 +19,12 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   chart = [];
   data = {};
   options = {};
-
-  constructor(private teamService: TeamService, public dialog: MatDialog) { }
+  id;
+  constructor(private teamService : TeamService, private route: ActivatedRoute, public dialog: MatDialog) {
+  }
 
   ngOnInit() {
-
+    this.id  = this.route.snapshot.paramMap.get('id');
     this.mockAuthor = {
       name: 'Sports Connected',
       id: '-1',
@@ -37,11 +39,9 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
 
   }
 
-  ngAfterViewInit(){
-    setTimeout(() =>{
-      this.teamService.getTeam('0')
-        .subscribe(team => this.viewModel = team);
-    },2000);
+  ngAfterViewInit() {
+    this.teamService.getTeam(this.id)
+      .subscribe(team => this.viewModel = team);
   }
 
   loadChart() {
@@ -58,7 +58,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
       scales: {
         xAxes: [{
           gridLines: {
-            display:false
+            display: false
           }
         }],
         yAxes: [{
@@ -66,7 +66,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
             mirror: true
           },
           gridLines: {
-            display:false
+            display: false
           }
         }]
       }
@@ -91,7 +91,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        this.teamService.createRecommendation('0',result).subscribe()
+        this.teamService.createRecommendation('0', result).subscribe()
         {
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.recommendations.top_5.push(result);
