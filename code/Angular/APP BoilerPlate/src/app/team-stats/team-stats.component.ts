@@ -2,6 +2,8 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import {Sort} from '@angular/material';
 import {TeamService} from '../_services/team.service';
+import {UserInfoService} from "../_services/user_info.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-team-stats',
@@ -11,22 +13,22 @@ import {TeamService} from '../_services/team.service';
 export class TeamStatsComponent implements OnInit,AfterViewInit {
 
   viewModel: TeamViewModel;
-  teamService : TeamService;
   sortedData;
-  constructor() {
+  id;
+  constructor(private teamService : TeamService, private route: ActivatedRoute) {
   }
 
-  ngOnInit() {
+  ngOnInit(){
+    this.id  = this.route.snapshot.paramMap.get('id');
+  }
 
-    this.teamService = new TeamService();
-    this.teamService.getTeam('0')
+  ngAfterViewInit(){
+
+    this.teamService.getTeam(this.id)
       .subscribe(team => {
         this.sortedData = team.current_season.media.slice();
         return this.viewModel = team;
       });
-  }
-
-  ngAfterViewInit(){
   }
 
   sortData(sort: Sort) {

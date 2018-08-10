@@ -290,14 +290,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info">
                       {{player.name}}
                     </a>
                   </td>
@@ -337,14 +337,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2">
-                    <a href="/user-info">
+                    <a routerLink="/user-info">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + staff.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info">
                       {{staff.name}}
                     </a>
                   </td>

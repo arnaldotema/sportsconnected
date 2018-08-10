@@ -18,7 +18,7 @@
                 <h4>{{user.name}}</h4>
                 <p> {{user.team.name}} </p>
               </div>
-            </div>x
+            </div>
           </div>
         </div>
       </div>
@@ -28,9 +28,9 @@
       </a>
 
       <div class="profile-menu">
-        <a href="/user-info" class="avatar">
+        <a routerLink="/user-info/{{viewModel.id}}" class="avatar">
           <div mat-card-avatar class="profile-small-image"
-               [ngStyle]="{'background-image':  'url(' + viewModel.current_season.personal_info.avatar + ')' }"></div>
+               [ngStyle]="{'background-image':  'url(' + viewModel.avatar + ')' }"></div>
         </a>
         <div class="profile-menu__notifications"
              (click)="show_notifications=true"

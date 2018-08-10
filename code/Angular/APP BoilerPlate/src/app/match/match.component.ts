@@ -18,8 +18,6 @@ export class MatchComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    setTimeout(() =>{
       this.matchService.getMatch('0')
         .subscribe(match => this.viewModel = match);
-    },2000);
   }}
