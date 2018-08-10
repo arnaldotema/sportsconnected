@@ -12,6 +12,7 @@
 .player .meta .player-image img{
   object-fit: cover;
   min-height: 100%;
+  width: -webkit-stretch;
 }
 
 
