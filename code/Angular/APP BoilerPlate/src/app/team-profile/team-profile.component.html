@@ -285,19 +285,19 @@
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td class="posrela">
+            <td class="roster-table-list">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a routerLink="/user-info">
+                    <a routerLink="/user-info/{{player.user_info_id}}">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      routerLink="/user-info">
+                      routerLink="/user-info/{{player.user_info_id}}">
                       {{player.name}}
                     </a>
                   </td>
@@ -337,14 +337,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2">
-                    <a routerLink="/user-info">
+                    <a routerLink="/user-info/{{staff.user_info_id}}">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + staff.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      routerLink="/user-info">
+                      routerLink="/user-info/{{staff.user_info_id}}">
                       {{staff.name}}
                     </a>
                   </td>

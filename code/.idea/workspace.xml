@@ -25,14 +25,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team-profile.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="team_season.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_season.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="team-profile.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+            <state relative-caret-position="221">
+              <caret line="247" column="55" selection-start-line="247" selection-start-column="55" selection-end-line="247" selection-end-column="55" />
               <folding>
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#mat-card#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -40,22 +48,78 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.ts">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="389">
+              <caret line="653" column="1" selection-start-line="653" selection-start-column="1" selection-end-line="653" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
+      <file leaf-file-name="team-profile.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7293">
-              <caret line="429" selection-start-line="429" selection-end-line="435" selection-end-column="10" />
+            <state relative-caret-position="230">
+              <caret line="273" column="11" selection-start-line="273" selection-start-column="11" selection-end-line="273" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="match.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="345" selection-start-line="345" selection-end-line="345" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#a#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#a#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#ng-container#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#ng-container#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#caption#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#img#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#4;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#!!top" />
+                <element signature="e#13151#13308#0" />
+                <element signature="n#style#0;n#div#1;n#!!top" />
+                <element signature="e#13332#13703#0" />
+                <element signature="e#13724#13775#0" />
+                <element signature="e#13794#13944#0" />
+                <element signature="e#13976#14042#0" />
+                <element signature="e#14074#14144#0" />
+                <element signature="e#14176#14245#0" />
+                <element signature="e#14277#14346#0" />
+                <element signature="e#14352#14529#0" />
+                <element signature="e#14382#14420#0" />
+                <element signature="e#14431#14474#0" />
+                <element signature="e#14485#14523#0" />
               </folding>
             </state>
           </provider>
@@ -64,8 +128,8 @@
       <file leaf-file-name="team.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="1248" column="6" selection-start-line="1248" selection-start-column="6" selection-end-line="1248" selection-end-column="6" />
+            <state relative-caret-position="627">
+              <caret line="1284" column="4" selection-start-line="1284" selection-start-column="4" selection-end-line="1284" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -73,35 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team-stats.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team-media.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-media/team-media.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team-profile.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="team-profile.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="511">
+              <caret line="110" column="7" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -109,20 +149,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/@angular/common/http/src/client.d.ts">
+      <file leaf-file-name="team_viewmodel.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_viewmodel.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11713">
-              <caret line="694" column="34" selection-start-line="694" selection-start-column="34" selection-end-line="694" selection-end-column="34" />
+            <state relative-caret-position="238">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Observable.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/rxjs/src/Observable.ts">
+      <file leaf-file-name="recommendation.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/recommendation.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4811">
-              <caret line="293" column="2" selection-start-line="293" selection-start-column="2" selection-end-line="293" selection-end-column="2" />
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -138,16 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>recomm</find>
-      <find>target</find>
-      <find>debugger;</find>
-      <find>players</find>
-      <find>personal_info</find>
-      <find>other_sports</find>
-      <find>Treinador principal</find>
-      <find>staff</find>
-      <find>player</find>
-      <find>sponsors</find>
       <find>.age</find>
       <find>link:</find>
       <find>__v</find>
@@ -168,11 +198,20 @@
       <find>user</find>
       <find>.full_name</find>
       <find>pipex</find>
+      <find>capta</find>
+      <find>matc</find>
+      <find>&quot;/user-info&quot;</find>
+      <find>/user-info</find>
+      <find>href</find>
+      <find>user_info_id</find>
+      <find>split('')</find>
+      <find>name.split(' '</find>
+      <find>posrela</find>
+      <find>opencr</find>
     </findStrings>
     <replaceStrings>
       <replace>filters</replace>
       <replace>stats.</replace>
-      <replace>routerLink</replace>
       <replace>id: '6'</replace>
       <replace>view_model</replace>
       <replace>undefined</replace>
@@ -197,12 +236,14 @@
       <replace>Team</replace>
       <replace>team</replace>
       <replace>.name</replace>
+      <replace>/user-info/{{player.user_info_id}}</replace>
+      <replace>/user-info/-1</replace>
+      <replace>routerLink</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
@@ -249,9 +290,11 @@
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.html" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team/team.component.html" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.html" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/team.service.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.css" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" />
       </list>
     </option>
   </component>
@@ -380,7 +423,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -478,15 +521,16 @@
       <workItem from="1533731594858" duration="29627000" />
       <workItem from="1533850375911" duration="5506000" />
       <workItem from="1533857587541" duration="36976000" />
-      <workItem from="1533937837634" duration="758000" />
+      <workItem from="1533937837634" duration="4606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72867000" />
+    <option name="totallyTimeSpent" value="76715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-309" y="-1057" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -586,18 +630,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-          <folding>
-            <element signature="n#div#0;n#!!top" />
-            <element signature="n#div#1;n#!!top" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -629,6 +661,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+          <folding>
+            <element signature="e#1626#1662#0" />
+            <element signature="e#1680#1716#0" />
+            <element signature="e#4299#4394#0" />
+            <element signature="e#4834#5189#0" />
+            <element signature="e#5203#5240#0" />
+            <element signature="e#5256#5525#0" />
+            <element signature="e#5541#5672#0" />
+            <element signature="e#5683#5731#0" />
+            <element signature="e#5744#5844#0" />
+            <element signature="e#5870#6141#0" />
+            <element signature="e#6175#7269#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -636,13 +681,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="1440" column="10" selection-start-line="1440" selection-start-column="10" selection-end-line="1440" selection-end-column="10" />
+          <folding>
+            <element signature="e#405#669#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -792,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="430" selection-start-line="430" selection-end-line="430" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -817,13 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/recommendation.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -931,20 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_season.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_viewmodel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1047,32 +1060,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-media/team-media.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="1248" column="6" selection-start-line="1248" selection-start-column="6" selection-end-line="1248" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1099,15 +1092,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="345" selection-start-line="345" selection-end-line="345" />
+          <folding>
+            <element signature="n#a#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#a#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#ng-container#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#ng-container#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#caption#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#img#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#!!top" />
+            <element signature="e#13151#13308#0" />
+            <element signature="n#style#0;n#div#1;n#!!top" />
+            <element signature="e#13332#13703#0" />
+            <element signature="e#13724#13775#0" />
+            <element signature="e#13794#13944#0" />
+            <element signature="e#13976#14042#0" />
+            <element signature="e#14074#14144#0" />
+            <element signature="e#14176#14245#0" />
+            <element signature="e#14277#14346#0" />
+            <element signature="e#14352#14529#0" />
+            <element signature="e#14382#14420#0" />
+            <element signature="e#14431#14474#0" />
+            <element signature="e#14485#14523#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_season.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="1284" column="4" selection-start-line="1284" selection-start-column="4" selection-end-line="1284" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="653" column="1" selection-start-line="653" selection-start-column="1" selection-end-line="653" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="273" column="11" selection-start-line="273" selection-start-column="11" selection-end-line="273" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        <state relative-caret-position="221">
+          <caret line="247" column="55" selection-start-line="247" selection-start-column="55" selection-end-line="247" selection-end-column="55" />
           <folding>
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" />
             <element signature="n#mat-card#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/recommendation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_viewmodel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="110" column="7" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>

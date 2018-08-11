@@ -271,9 +271,8 @@ img {
   min-height: 9px;
 }
 
-.posrela {
+.roster-table-list {
   position: relative !important;
-  display: grid;
 }
 
 .card-sc {
