@@ -1248,30 +1248,7 @@ export class TeamService {
 
   getTeam(id: string): Observable<TeamViewModel> {
 
-    if (true) {
-      //Convert player's birth_date to age
-      this.mockTeams[0].current_season.players.forEach((player) => {
-        if (!player['date_of_birth']) player['date_of_birth'] = '1996-05-20T00:00:00.000Z';
-        let birth_date = new Date(player['date_of_birth']);
-        let ageDifMs = Date.now() - birth_date.getTime();
-        let ageDate = new Date(ageDifMs);
-        player['age'] = Math.abs(ageDate.getUTCFullYear() - 1970);
-      });
-
-      //Convert staff's birth_date to age
-      this.mockTeams[0].current_season.staff.forEach((staff) => {
-        if (!staff['date_of_birth']) staff['date_of_birth'] = '1979-05-20T00:00:00.000Z';
-        let birth_date = new Date(staff['date_of_birth']);
-        let ageDifMs = Date.now() - birth_date.getTime();
-        let ageDate = new Date(ageDifMs);
-        staff['age'] = Math.abs(ageDate.getUTCFullYear() - 1970);
-      });
-
-      //Convert player's name to short name
-      this.mockTeams[0].current_season.players.forEach((player) => {
-        player.name = player.name.split(' ')[0] + player.name.split(' ')[player.name.split(' ').length];
-      });
-
+    if (id == "-1") {
       return of(this.mockTeams[0]);
     }
 
