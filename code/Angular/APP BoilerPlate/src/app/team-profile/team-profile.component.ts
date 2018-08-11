@@ -53,7 +53,19 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
 
         //Convert player's name to short name
         team.current_season.players.forEach((player) => {
-          player.name = player.name.split(' ')[0] + player.name.split(' ')[player.name.split(' ').length];
+          if (player.name.split(' ').length > 2) {
+            player.name = player.name.split(' ')[0] + ' ' + player.name.split(' ')[player.name.split(' ').length - 1];
+          }
+
+          debugger;
+          let position = player.positions[0];
+          let parenthesis_idx = position.indexOf('(');
+          if (parenthesis_idx > 0) {
+            player.positions[0] = position.substring(
+              position.indexOf("(") + 1,
+              position.lastIndexOf(")")
+            );
+          }
         });
 
         this.viewModel = team;
@@ -76,8 +88,23 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
       if (result !== undefined) {
         this.teamService.createRecommendation('0', result).subscribe()
         {
+          debugger;
           // Todo: Add to the real team recommendation's list instead of the top 5
-          this.viewModel.recommendations.top_5.push(result);
+          this.viewModel.recommendations.top_5.push({
+            author: {
+              name: result.author.name,
+              id: result.author.id,
+              relationship: '',
+              avatar: result.author.avatar,
+              team: {
+                id: '-1',
+                acronym: 'SFC',
+                avatar: 'https://www.zerozero.pt/img/logos/equipas/16_imgbank.png',
+                name: 'Seixal FC',
+              }
+            },
+            text: result.text
+          });
           //this.recommendationDataSource.filter = this.filterString;
         }
       }

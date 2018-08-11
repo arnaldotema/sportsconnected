@@ -1,6 +1,6 @@
 <div *ngIf="viewModel" class="match">
   <div class="result-info col-md-10">
-    <a class="match-competition" href="/competition">
+    <a class="match-competition" routerLink="/competition">
       <img *ngIf="viewModel.competition.avatar != null || viewModel.competition.avatar != ''"
            src="{{viewModel.competition.avatar}}">
       <div *ngIf="viewModel.competition.avatar == null || viewModel.competition.avatar == ''">
@@ -16,13 +16,13 @@
     </div>
     <div class="match-team-info">
       <div class="home-team col-md-5">
-        <a href="/team">
+        <a routerLink="/team">
           <img src="{{viewModel.home_team.avatar}}" class="col-md-4">
         </a>
         <table class="col-md-6">
           <tbody>
           <tr>
-            <a href="/team">
+            <a routerLink="/team">
               {{viewModel.home_team.name}}
             </a>
           </tr>
@@ -41,7 +41,7 @@
         <table class="col-md-6">
           <tbody>
           <tr>
-            <a href="/team">
+            <a routerLink="/team">
               {{viewModel.away_team.name}}
             </a>
           </tr>
@@ -52,7 +52,7 @@
           </tr>
           </tbody>
         </table>
-        <a href="/team">
+        <a routerLink="/team">
           <img src="{{viewModel.away_team.avatar}}" class="col-md-4">
         </a>
       </div>
@@ -74,14 +74,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/-1/-1">
                       {{player.name}}
                     </a>
                   </td>
@@ -116,14 +116,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/-1/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/-1">
                       {{player.name}}
                     </a>
                   </td>
@@ -162,14 +162,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.home_team.coach.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/-1">
                       {{viewModel.home_team.coach.name}}
                     </a>
                   </td>
@@ -217,14 +217,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/-1">
                       {{player.name}}
                     </a>
                   </td>
@@ -259,14 +259,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/-1">
                       <div class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/-1">
                       {{player.name}}
                     </a>
                   </td>
@@ -305,14 +305,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.away_team.coach.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/-1">
                       {{viewModel.away_team.coach.name}}
                     </a>
                   </td>
