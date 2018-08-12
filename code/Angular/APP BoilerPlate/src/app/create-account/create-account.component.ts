@@ -13,11 +13,11 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 })
 export class CreateAccountComponent implements OnInit {
 
-  chosenPlayer;
+  chosenPlayer: SearchEntityViewmodel;
   chosenLeague;
   chosenGender;
   chosenAgeGroup;
-  chosenTeam;
+  chosenTeam: SearchEntityViewmodel;
   teams: SearchEntityViewmodel[];
   age_groups;
   genders;
@@ -25,8 +25,8 @@ export class CreateAccountComponent implements OnInit {
   players: SearchEntityViewmodel[];
   user;
 
-  constructor(private router: Router, private teamService: TeamService, private genericUserService : GenericUserService,
-              private userInfoService : UserInfoService) {
+  constructor(private router: Router, private teamService: TeamService, private genericUserService: GenericUserService,
+              private userInfoService: UserInfoService) {
   }
 
   ngOnInit() {
@@ -60,35 +60,35 @@ export class CreateAccountComponent implements OnInit {
       {
         id: '4',
         name: 'Benjamins A',
-      },      {
+      }, {
         id: '5',
         name: 'Infantis B',
       },
       {
         id: '6',
         name: 'Infantis A',
-      },      {
+      }, {
         id: '7',
         name: 'Iniciados B',
       },
       {
         id: '8',
         name: 'Iniciados',
-      },      {
+      }, {
         id: '9',
         name: 'Juvenis B',
       },
       {
         id: '10',
         name: 'Juvenis',
-      },      {
+      }, {
         id: '11',
         name: 'Juniores B',
       },
       {
         id: '12',
         name: 'Juniores',
-      },      {
+      }, {
         id: '13',
         name: 'Seniores',
       }
@@ -110,22 +110,23 @@ export class CreateAccountComponent implements OnInit {
         id: '2',
         name: 'AF Lisboa 1ª Divisão Série 1 2017/18'
       },
-    ];  }
+    ];
+  }
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.genericUserService.searchUser('', '', 'team.name')
+    this.teamService.getTeamsByLeague(this.chosenLeague)
       .subscribe(teams => this.teams = teams);
   }
 
-  loadPlayers() {
+  loadPlayersByTeam() {
     // Todo: Get Players based on chosenTeam
-    this.genericUserService.searchUser('', '', 'personal_info.name')
+    this.genericUserService.searchUser('', this.chosenTeam.personal_info.name, 'team.name')
       .subscribe(players => this.players = players);
   }
 
-  loadPlayer(){
-    this.router.navigate(['/edit-user-info']);
+  loadPlayer() {
+    this.router.navigate(['/edit-user-info/' + this.chosenPlayer.user_info_id]);
   }
 
   getTeam() {

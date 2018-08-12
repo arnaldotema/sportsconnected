@@ -1784,176 +1784,89 @@ export class GenericUserService {
       ],
     },
   ]
-
-  //TODO ALTT: search_obj: SearchEntityViewmodel[] = [
-  search_obj = [
+  search_obj: SearchEntityViewmodel[] =[
     {
-      name: 'Diogo Pires',
-      team: {
-        id: 1,
-        acronym: 'SFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC',
-        full_name: 'Seixal Futebol Clube'
+      personal_info: {
+        name: 'FC Porto',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
       },
-      id: '1',
-      type: 'player',
-
-      avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F125944%2Fimage_5975f423b7033.jpg&w=400&h=400&t=square&q=40'
-    },
-    {
-      name: 'Arnaldo Tema',
       team: {
-        id: 1,
-        acronym: 'SFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC',
-        full_name: 'Seixal Futebol Clube'
-      }, id: '2',
-      type: 'player',
-      avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F2302574%2F1520172295_0.jpg&w=400&h=400&t=square&q=40',
-    },
-    {
-      name: 'Arnaldo Trindade',
-      team: {
-        id: 1,
-        acronym: 'RFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC',
-        full_name: 'Renegados FC'
-      },
-      id: '3',
-      type: 'player',
-      avatar: 'https://www.rochdaleafc.co.uk/api/image/cropandgreyscale/d5a90991-e926-4846-811f-6869cca31725/?preset=square&greyscale=false',
-    },
-    {
-      name: 'Arnaldo da Trindade Tema',
-      team: {
-        id: 1,
-        acronym: 'IFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Irmandade FC',
-        full_name: 'Irmandade FC'
-      },
-      id: '4',
-      type: 'player',
-      avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F850305%2F1433704548_9318.jpg&w=800&h=800&t=square&q=25',
-    },
-    {
-      name: 'Diogo César',
-      team: {
-        id: 1,
-        acronym: 'IFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Irmandade FC',
-        full_name: 'Irmandade FC'
-      },
-      id: '5',
-      type: 'player',
-      avatar: 'http://d2dzjyo4yc2sta.cloudfront.net/?url=images.pitchero.com%2Fui%2F3129895%2Fimage_59de1731ae51b.jpg&w=400&h=400&t=square&q=40',
-    },
-    {
-      name: 'Seixal FC',
-      team: {
-        id: 1,
-        acronym: 'SFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC',
-        full_name: 'Seixal Futebol Clube'
-      }, id: '1',
-      type: 'team',
-      avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-    },
-    {
-      name: 'SL Benfica',
-      team: {
-        id: 1,
-        acronym: 'SLB',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'SL Benfica',
-        full_name: 'SL Benfica'
-      },
-      id: '2',
-      type: 'team',
-      avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
-    },
-    {
-      name: 'FC Porto',
-      team: {
-        id: 1,
+        id: '5b69b1adf5accc36e448a750',
         acronym: 'FCP',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
         name: 'FC Porto',
         full_name: 'FC Porto'
       },
-      id: '3',
-      type: 'team',
-      avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      _id: '5b69b1adf5accc36e448a750',
+      user_info_id: '5b69b1adf5accc36e448a750',
+      type: 'teams',
     },
     {
-      name: 'Seixal FC',
+      personal_info: {
+        name: 'Benfica',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
       team: {
-        id: 1,
-        acronym: 'SFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC',
-        full_name: 'Seixal Futebol Clube'
-      }, id: '1',
-      type: 'team',
-      avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-    },
-    {
-      name: 'SL Benfica',
-      team: {
-        id: 1,
+        id: '5b69b1adf5accc36e448a754',
         acronym: 'SLB',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'SL Benfica',
-        full_name: 'SL Benfica'
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+        name: 'Benfica',
+        full_name: 'Benfica'
       },
-      id: '2',
-      type: 'team',
-      avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      _id: '5b69b1adf5accc36e448a754',
+      user_info_id: '5b69b1adf5accc36e448a754',
+      type: 'teams',
     },
     {
-      name: 'FC Porto',
-      team: {
-        id: 1,
-        acronym: 'FCP',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'FC Porto',
-        full_name: 'FC Porto'
+      personal_info: {
+        name: 'Sporting',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/16_imgbank.png',
       },
-      id: '3',
-      type: 'team',
-      avatar: 'http://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
-    },
-    {
-      name: 'Seixal FC',
       team: {
-        id: 1,
+        id: '5b69b1b0f5accc36e448a758',
         acronym: 'SFC',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'Seixal FC',
-        full_name: 'Seixal Futebol Clube'
-      }, id: '1',
-      type: 'team',
-      avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/16_imgbank.png',
+        name: 'Sporting',
+        full_name: 'Sporting'
+      },
+      _id: '5b69b1b0f5accc36e448a758',
+      user_info_id: '5b69b1b0f5accc36e448a758',
+      type: 'teams',
     },
     {
-      name: 'SL Benfica',
-      team: {
-        id: 1,
-        acronym: 'SLB',
-        avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-        name: 'SL Benfica',
-        full_name: 'SL Benfica'
+      personal_info: {
+        name: 'Braga',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/15_imgbank.png',
       },
-      id: '2',
-      type: 'team',
-      avatar: 'http://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      team: {
+        id: '5b69b1b0f5accc36e448a75c',
+        acronym: 'SCB',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/15_imgbank.png',
+        name: 'Braga',
+        full_name: 'Braga'
+      },
+      _id: '5b69b1b0f5accc36e448a75c',
+      user_info_id: '5b69b1b0f5accc36e448a75c',
+      type: 'teams',
+    },
+    {
+      personal_info: {
+        name: 'Rio Ave',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/31_imgbank.png',
+      },
+      team: {
+        id: '5b69b1b1f5accc36e448a760',
+        acronym: 'RAFC',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/31_imgbank.png',
+        name: 'Rio Ave',
+        full_name: 'Rio Ave'
+      },
+      user_info_id: '5b69b1b1f5accc36e448a760',
+      _id: '5b69b1b1f5accc36e448a760',
+      type: 'teams',
     }
   ];
+
   testing: boolean = false;
   requestOptions;
 
@@ -1968,9 +1881,9 @@ export class GenericUserService {
 
   //TODO: ALTT - Change input params to just a Filter_Search model
   // TODO ALTT - and algo:     searchUser(id: string, name: string, type: string): Observable<SearchEntityViewmodel[]> {
-  searchUser(id: string, query: string, type: string): Observable<any[]> {
+  searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
     if (this.testing) {
-      return of(this.search_obj.filter(item => item.name.includes(name) && (type == '' || item.type == type)));
+      return of(this.search_obj.filter(item => item.personal_info.name.includes(name) && (type == '' || item.type == type)));
     }
 
     let body = [];
@@ -1998,7 +1911,7 @@ export class GenericUserService {
       );
     }
 
-    return this.http.post<SearchEntityViewmodel[]>('/players/search', {body}, this.requestOptions)
+    return this.http.post<SearchEntityViewmodel[]>('/players/search', body, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
         catchError(this.handleError)
@@ -2008,7 +1921,7 @@ export class GenericUserService {
   //detailedSearchUser(search_obj: Array<FilterSearch>): Observable<UserInfoSearch[]> {
   detailedSearchUser(search_obj: Array<FilterSearch>): Observable<any[]> {
 
-    if (this.testing){
+    if (this.testing) {
       return of(this.mockUserInfo);
     }
     return this.http.post<SearchEntityViewmodel[]>('/players/search', search_obj, this.requestOptions)
@@ -2017,7 +1930,6 @@ export class GenericUserService {
         catchError(this.handleError)
       );
   }
-
 
 
   private handleError(error: HttpErrorResponse) {
