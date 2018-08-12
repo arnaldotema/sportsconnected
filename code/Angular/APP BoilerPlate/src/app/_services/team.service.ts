@@ -8,12 +8,12 @@ import {catchError, retry, tap} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import {Recommendation} from '../_models/recommendation';
 import {UserInfoViewModel} from "../_models/user_info_viewmodel";
+import {SearchEntityViewmodel} from "../_models/search_entity_viewmodel";
 
 @Injectable()
 export class TeamService {
 
-  mockTeams: TeamViewModel[] = [
-    {
+  mockTeams: TeamViewModel[] = [{
       "additional_info": {
         "sponsors": [{
           link: 'https://www.tripadvisor.pt/Restaurant_Review-g4995953-d12242638-Reviews-Mundet_Factory-Seixal_Lisbon_District_Central_Portugal.html',
@@ -1069,7 +1069,7 @@ export class TeamService {
             author: 'A Bola.',
             date: '08-05-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-            ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+            ref: '//www.youtube.com/embed/8Z0sbekoQL4',
             views: 53,
             shares: 8,
             likes: 20,
@@ -1096,7 +1096,7 @@ export class TeamService {
             author: 'A Bola.',
             date: '27-08-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-            ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+            ref: '//www.youtube.com/embed/8Z0sbekoQL4',
             views: 1200,
             shares: 12,
             likes: 0,
@@ -1123,7 +1123,7 @@ export class TeamService {
             author: 'A Bola.',
             date: '08-09-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-            ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+            ref: '//www.youtube.com/embed/8Z0sbekoQL4',
             views: 93,
             shares: 45,
             likes: 90,
@@ -1150,7 +1150,7 @@ export class TeamService {
             author: 'A Bola.',
             date: '03-11-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-            ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+            ref: '//www.youtube.com/embed/8Z0sbekoQL4',
             views: 200,
             shares: 12,
             likes: 20,
@@ -1177,7 +1177,7 @@ export class TeamService {
             author: 'A Bola.',
             date: '08-02-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-            ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+            ref: '//www.youtube.com/embed/8Z0sbekoQL4',
             views: 2,
             shares: 0,
             likes: 0,
@@ -1204,7 +1204,7 @@ export class TeamService {
             author: 'A Bola.',
             date: '28-05-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-            ref: '//www.youtube.com/embed/zyIgPqOpMWY',
+            ref: '//www.youtube.com/embed/8Z0sbekoQL4',
             views: 40,
             shares: 40,
             likes: 13,
@@ -1234,7 +1234,88 @@ export class TeamService {
         "name": "FC Porto",
         "team_id": "5b69b1adf5accc36e448a750"
       }
+    }];
+  mockSearchTeams: SearchEntityViewmodel[] = [
+    {
+      personal_info: {
+        name: 'FC Porto',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+      },
+      team: {
+        id: '5b69b1adf5accc36e448a750',
+        acronym: 'FCP',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/9_imgbank.png',
+        name: 'FC Porto',
+        full_name: 'FC Porto'
+      },
+      _id: '5b69b1adf5accc36e448a750',
+      user_info_id: '5b69b1adf5accc36e448a750',
+      type: 'teams',
     },
+    {
+      personal_info: {
+        name: 'Benfica',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+      },
+      team: {
+        id: '5b69b1adf5accc36e448a754',
+        acronym: 'SLB',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/4_imgbank.png',
+        name: 'Benfica',
+        full_name: 'Benfica'
+      },
+      _id: '5b69b1adf5accc36e448a754',
+      user_info_id: '5b69b1adf5accc36e448a754',
+      type: 'teams',
+    },
+    {
+      personal_info: {
+        name: 'Sporting',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/16_imgbank.png',
+      },
+      team: {
+        id: '5b69b1b0f5accc36e448a758',
+        acronym: 'SFC',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/16_imgbank.png',
+        name: 'Sporting',
+        full_name: 'Sporting'
+      },
+      _id: '5b69b1b0f5accc36e448a758',
+      user_info_id: '5b69b1b0f5accc36e448a758',
+      type: 'teams',
+    },
+    {
+      personal_info: {
+        name: 'Braga',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/15_imgbank.png',
+      },
+      team: {
+        id: '5b69b1b0f5accc36e448a75c',
+        acronym: 'SCB',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/15_imgbank.png',
+        name: 'Braga',
+        full_name: 'Braga'
+      },
+      _id: '5b69b1b0f5accc36e448a75c',
+      user_info_id: '5b69b1b0f5accc36e448a75c',
+      type: 'teams',
+    },
+    {
+      personal_info: {
+        name: 'Rio Ave',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/31_imgbank.png',
+      },
+      team: {
+        id: '5b69b1b1f5accc36e448a760',
+        acronym: 'RAFC',
+        avatar: 'https://www.zerozero.pt/img/logos/equipas/31_imgbank.png',
+        name: 'Rio Ave',
+        full_name: 'Rio Ave'
+      },
+      user_info_id: '5b69b1b1f5accc36e448a760',
+      _id: '5b69b1b1f5accc36e448a760',
+      type: 'teams',
+    }
   ];
   requestOptions;
 
@@ -1284,4 +1365,7 @@ export class TeamService {
       'Something bad happened; please try again later.');
   };
 
+  getTeamsByLeague(league: string) {
+    return of(this.mockSearchTeams);
+  }
 }
