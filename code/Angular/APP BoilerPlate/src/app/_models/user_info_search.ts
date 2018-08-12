@@ -10,13 +10,13 @@ export class UserInfoSearch extends SearchEntityViewmodel{
   // Inherit from the extended class
   name: string;
   team: {
-    id: number,
+    id: string,
     acronym: string,
     avatar: string,
     name: string,
     full_name: string
   };
-  user_id: string;
+  user_info_id: string;
   _id: string;
   personal_info: {
     name: string,
