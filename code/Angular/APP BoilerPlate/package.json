@@ -45,6 +45,7 @@
     "rxjs": "^5.5.2",
     "selectize": "^0.12.4",
     "vis": "^4.21.0",
+    "youtube-search": "^1.1.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
