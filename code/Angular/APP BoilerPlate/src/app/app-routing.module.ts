@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'user-info/:id', component: User_infoComponent },
   { path: 'team/:id', component: TeamComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'match/:id', component: MatchComponent },
+  { path: 'match', component: MatchComponent },
   { path: 'create-account', component: CreateAccountComponent},
   { path: 'edit-user-info/:id', component: EditUserInfoComponent},
   { path: 'filter-user-info', component: FilterUserInfoComponent},

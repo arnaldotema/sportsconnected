@@ -24,7 +24,9 @@ export class User_infoComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(){
     this.userInfoService.getUserInfo(this.id)
-      .subscribe(userInfo => this.viewModel = userInfo);
+      .subscribe(userInfo => {
+        this.viewModel = userInfo
+      });
   }
 
   hasClass(elementId, className) {
