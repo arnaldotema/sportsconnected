@@ -7,7 +7,6 @@ import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry, tap} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import {Recommendation} from '../_models/recommendation';
-import {UserInfoViewModel} from "../_models/user_info_viewmodel";
 import {SearchEntityViewmodel} from "../_models/search_entity_viewmodel";
 
 @Injectable()
@@ -1359,6 +1358,9 @@ export class TeamService {
       console.error(
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
+
+      // Returning the mock team for showing purposes
+      return of(this.mockTeams[0]);
     }
     // return an ErrorObservable with a user-facing error message
     return new ErrorObservable(
