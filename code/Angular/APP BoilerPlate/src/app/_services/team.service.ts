@@ -79,7 +79,7 @@ export class TeamService {
                 name: 'Seixal FC',
               },
             },
-            text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros id, tincidunt ante.',
+            text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros team_id, tincidunt ante.',
           },
           {
             author: {
@@ -94,7 +94,7 @@ export class TeamService {
                 name: 'Seixal FC',
               },
             },
-            text: 'Cras vehicula diam id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
+            text: 'Cras vehicula diam team_id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean team_id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
           },
           {
             author: {
@@ -1328,7 +1328,7 @@ export class TeamService {
 
   getTeam(id: string): Observable<TeamViewModel> {
 
-    if (id == "-1") {
+    if (!id || id == "-1" ) {
       return of(this.mockTeams[0]);
     }
 
@@ -1358,9 +1358,6 @@ export class TeamService {
       console.error(
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
-
-      // Returning the mock team for showing purposes
-      return of(this.mockTeams[0]);
     }
     // return an ErrorObservable with a user-facing error message
     return new ErrorObservable(
