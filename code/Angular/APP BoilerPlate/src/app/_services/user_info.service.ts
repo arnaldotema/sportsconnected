@@ -7,6 +7,7 @@ import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {catchError, retry, tap, map} from 'rxjs/operators';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {Recommendation} from '../_models/recommendation';
+import {TeamPlayer} from "../_models/team_player";
 
 @Injectable()
 export class UserInfoService {
@@ -355,7 +356,7 @@ export class UserInfoService {
                 name: 'Seixal FC',
               },
             },
-            text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros id, tincidunt ante.',
+            text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros team_id, tincidunt ante.',
           },
           {
             author: {
@@ -370,7 +371,7 @@ export class UserInfoService {
                 name: 'Seixal FC',
               },
             },
-            text: 'Cras vehicula diam id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
+            text: 'Cras vehicula diam team_id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean team_id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
           },
           {
             author: {
@@ -410,6 +411,234 @@ export class UserInfoService {
       updated_at: '9-05-2018'
     }
   ];
+
+  mockTeamPlayer: TeamPlayer = {
+    _id: '-1',
+    created_at: '',
+    updated_at: '',
+    user_info_id: '-1',
+    name: 'Raul Fonseca',
+    date_of_birth: '1993-05-20T00:00:00.000Z',
+    avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
+    positions: ['Guarda Redes'],
+    height: 190,
+    weight: 80,
+    foot: 'Direito',
+    nationality: 'Portugal',
+    residence: 'Montijo',
+    contacts: ['910001123', 'jogador@gmail.com'],
+    media: [
+      {
+        title: 'Diogo Pires marca Hat-trick em jogo decisivo',
+        author: 'A Bola.',
+        date: '08-05-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
+        views: 53,
+        shares: 8,
+        likes: 20,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portugal',
+              id: '1',
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: '1'
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: '1'
+          }],
+        }
+      },
+      {
+        title: 'Arnaldo faz 25 anos!',
+        author: 'A Bola.',
+        date: '27-08-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
+        views: 1200,
+        shares: 12,
+        likes: 0,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci.',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portugal',
+              id: '1',
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: '1'
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: '1'
+          }],
+        }
+      },
+      {
+        title: 'Melhores momentos',
+        author: 'A Bola.',
+        date: '08-09-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
+        views: 93,
+        shares: 45,
+        likes: 90,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portugal',
+              id: '1',
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: '1'
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: '1'
+          }],
+        }
+      },
+      {
+        title: '15 Golos em 10 jogos.',
+        author: 'A Bola.',
+        date: '03-11-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
+        views: 200,
+        shares: 12,
+        likes: 20,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portugal',
+              id: '1',
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: '1'
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: '1'
+          }],
+        }
+      },
+      {
+        title: 'Campeão da Supermacia',
+        author: 'A Bola.',
+        date: '08-02-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
+        views: 2,
+        shares: 0,
+        likes: 0,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portugal',
+              id: '1',
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: '1'
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: '1'
+          }],
+        }
+      },
+      {
+        title: 'Diogo falha final da Taça de Portugal',
+        author: 'A Bola.',
+        date: '28-05-2018',
+        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
+        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
+        views: 40,
+        shares: 40,
+        likes: 13,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
+        references: {
+          leagues: [
+            {
+              name: 'Liga Portugal',
+              id: '1',
+            }
+          ],
+          team: [{
+            name: 'Seixal FC',
+            id: '1'
+          }],
+          player: [{
+            name: 'Diogo Pires',
+            id: '1'
+          }],
+        }
+      }
+    ],
+    evaluations: {
+      simple: [{
+        technical: '4',
+        tactical: '4',
+        physical: '2',
+        mental: '4',
+        date: '2018-05-20T00:00:00.000Z',
+        match: 'SLB v FCP',
+      }],
+      advanced: [{
+        technical: [
+          {
+            attribute: 'passe',
+            value: '3'
+          },
+          {
+            attribute: 'drible',
+            value: '3'
+          },
+          {
+            attribute: 'remate',
+            value: '3'
+          }],
+        tactical: [
+          {
+            attribute: 'posicionamento',
+            value: '3'
+          }],
+        physical: [
+          {
+            attribute: 'velocidade',
+            value: ''
+          },
+          {
+            attribute: 'força',
+            value: ''
+          }],
+        mental: [
+          {
+          attribute: 'liderança',
+          value: '4'
+        }],
+        date: '2018-05-20T00:00:00.000Z',
+        match: 'SLB v FCP',
+      }]
+    }
+  };
+
   requestOptions;
 
   testing = false;
@@ -431,6 +660,21 @@ export class UserInfoService {
         .pipe(
           tap(data => {
             console.log('GET User info', data);
+          }),
+          catchError(this.handleError)
+        );
+    }
+  };
+
+  getTeamPlayer(team_id: string, id: string): Observable<TeamPlayer> {
+    if (this.testing || id == '-1') {
+      return of(this.mockTeamPlayer[0]);
+    }
+    else {
+      return this.http.get<TeamPlayer>('/team/' + team_id + '/player/' + id, this.requestOptions)
+        .pipe(
+          tap(data => {
+            console.log('GET Team Info', data);
           }),
           catchError(this.handleError)
         );
