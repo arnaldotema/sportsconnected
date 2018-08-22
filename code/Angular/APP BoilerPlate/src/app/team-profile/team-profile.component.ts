@@ -5,7 +5,7 @@ import {Chart} from 'chart.js';
 import {MatDialog} from '@angular/material';
 import {RecommendationModalComponent} from '../_modals/recommendation-modal/recommendation-modal.component';
 import {TryoutModalComponent} from "../_modals/tryout-modal/tryout-modal.component";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "../_services/authentication.service";
 
 @Component({
@@ -22,7 +22,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   options = {};
   id;
 
-  constructor(private teamService: TeamService, private authenticationService: AuthenticationService, private route: ActivatedRoute, public dialog: MatDialog) {
+  constructor(private teamService: TeamService, private authenticationService: AuthenticationService, private router: Router, private route: ActivatedRoute, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -66,7 +66,6 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
             );
           }
         });
-
 
         team.current_season.media= [
           {
@@ -281,7 +280,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
                   name: 'Seixal FC',
                 },
               },
-              text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros id, tincidunt ante.',
+              text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros team_id, tincidunt ante.',
             },
             {
               author: {
@@ -296,7 +295,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
                   name: 'Seixal FC',
                 },
               },
-              text: 'Cras vehicula diam id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
+              text: 'Cras vehicula diam team_id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean team_id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
             },
             {
               author: {
@@ -357,6 +356,10 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
         }
       }
     });
+  }
+
+  createTeamPlayer(): void {
+    this.router.navigate(['/team-player/' + this.viewModel._id]);
   }
 
   openTryoutDialog(): void {
