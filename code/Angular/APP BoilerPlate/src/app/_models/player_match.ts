@@ -2,6 +2,8 @@ import {Achievement} from './achievement';
 
 export class PlayerMatch {
   name: string;
+  age: number; // added
+  date_of_birth: string;// added
   avatar: string;
   id: string;
   user_info_id: string;
