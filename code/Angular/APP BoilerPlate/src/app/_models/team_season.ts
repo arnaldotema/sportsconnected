@@ -52,6 +52,8 @@ export class TeamSeason {
       id: string,
       _id: string,
       user_info_id: string,
+      age: number; // added
+      date_of_birth: string; // added
       name: string,
       number: string,
       avatar: string,
@@ -62,6 +64,8 @@ export class TeamSeason {
   staff: [
     {
       id: string,
+      age: number; // added
+      date_of_birth: string;// added
       user_info_id: string,
       position: string,
       name: string,
