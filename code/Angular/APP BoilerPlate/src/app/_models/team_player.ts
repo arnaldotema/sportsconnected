@@ -11,7 +11,8 @@ export class TeamPlayer {
   updated_at: string;
   user_info_id: string;
   name: string;
-  date_of_birth: string;
+  age: number; // added
+  date_of_birth: string;// added
   avatar: string;
   positions: string[];
   height: number;
