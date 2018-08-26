@@ -12,6 +12,9 @@ import {MatchService} from '../_services/match.service';
 import {MatchViewModel} from '../_models/match_viewmodel';
 import {ScrollToService} from 'ng2-scroll-to-el';
 import {TeamPlayer} from "../_models/team_player";
+import {RecommendationModalComponent} from "../_modals/recommendation-modal/recommendation-modal.component";
+import {MatDialog} from "@angular/material";
+import {AuthenticationService} from "../_services/authentication.service";
 
 @Component({
   selector: 'app-team-player',
@@ -22,7 +25,6 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
 
   ngModelMockVar;
   currentMatchIdx;
-  availableStuff;
   matchesInEdit;
   eventsToggled;
   selectizeConfig;
@@ -51,15 +53,15 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
               private router: Router,
               private scrollService: ScrollToService,
               private cdRef: ChangeDetectorRef,
-              private userInfoService: UserInfoService) {
-  }
+              private userInfoService: UserInfoService,
+              private authenticationService: AuthenticationService,
+              public dialog: MatDialog) {}
 
   ngOnInit() {
 
     this.team_id = this.route.snapshot.paramMap.get('team_id');
     this.id = this.route.snapshot.paramMap.get('id');
 
-    debugger;
     // Charge mock values
     this.season = {
       id: '',
@@ -69,12 +71,6 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
       id: '',
       name: ''
     };
-    this.availableStuff = [
-      '2 Golos',
-      '2 Assistências',
-      '2 Cartões Vermelhos',
-      '3 Cartões Amarelos',
-    ];
     this.matchesInEdit = {};
     this.eventsToggled = {};
     this.selectizeConfig = {
@@ -196,49 +192,47 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (this.team_id) {
-      if (this.id) {
-        this.userInfoService.getTeamPlayer(this.team_id, this.id)
-          .subscribe(userInfo => {
+    if (this.id != '0') {
+      this.userInfoService.getTeamPlayer(this.team_id, this.id)
+        .subscribe(userInfo => {
+          this.viewModel = userInfo;
 
-            this.viewModel = userInfo;
+          this.createForms();
 
-            this.createForms();
+          // Updates after detecting changes
+          this.cdRef.detectChanges();
+        });
+    }
+    else {
 
-            // Updates after detecting changes
-            this.cdRef.detectChanges();
-          });
-      }
-      else {
+      // Charge newPlayer
+      this.viewModel = {
+        _id: '',
+        age: 0,
+        date_of_birth: '',
+        created_at: '',
+        updated_at: '',
+        user_info_id: '',
+        name: '',
+        avatar: '/assets/default-profile.png',
+        positions: [''],
+        height: undefined,
+        weight: undefined,
+        foot: '',
+        nationality: '',
+        residence: '',
+        contacts: [''],
+        media: undefined,
+        evaluations: {
+          simple: undefined,
+          advanced: undefined
+        }
+      };
 
-        // Charge newPlayer
-        this.viewModel = {
-          _id: '',
-          created_at: '',
-          updated_at: '',
-          user_info_id: '',
-          name: '',
-          date_of_birth: '',
-          avatar: '/assets/default-profile.png',
-          positions: [''],
-          height: undefined,
-          weight: undefined,
-          foot: '',
-          nationality: '',
-          residence: '',
-          contacts: [''],
-          media: undefined,
-          evaluations: {
-            simple: undefined,
-            advanced: undefined
-          }
-        };
+      this.createForms();
 
-        this.createForms();
-
-        // Updates after detecting changes
-        this.cdRef.detectChanges();
-      }
+      // Updates after detecting changes
+      this.cdRef.detectChanges();
     }
   }
 
@@ -258,6 +252,20 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
     });
 
   }
+
+  addEvaluation(): void {
+
+    // When created, open the EvaluationModalComponent
+    const dialogRef = this.dialog.open(RecommendationModalComponent,
+      {
+        data: {
+          author: '',
+          edit: false,
+          create: true
+        }
+      });
+  }
+
 
   onSubmitAccountDetails(value) {
     console.log(value);

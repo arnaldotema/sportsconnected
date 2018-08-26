@@ -14,10 +14,6 @@
 
   <div class="callout meta ">
     <div class="row">
-      <div class="heading-buttons">
-        <button mat-raised-button class="sc-btn btn-success" (click)="save()">Salvar</button>
-        <button mat-raised-button class="sc-btn btn-danger" (click)="discard()">Descartar</button>
-      </div>
       <div class="row-left">
         <div class="player-image">
           <img [src]="viewModel.avatar" alt="Profile image"
@@ -28,82 +24,136 @@
         </div>
       </div>
       <div class="row-center-edit-mode centered">
-        <div>
-          <h2>Dados pessoais</h2>
-          <form [formGroup]="userDetailsForm">
-            <mat-form-field>
-              <mat-select formControlName="position" placeholder="Posição"
-                          (change)="changedInput('position',$event)">
-                <mat-option *ngFor="let position of positions"
-                            [value]="viewModel.positions[0]">
-                  {{position}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+        <mat-accordion class="team-player-accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h4>Dados Pessoais</h4>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form [formGroup]="userDetailsForm">
+              <mat-form-field>
+                <mat-select formControlName="position" placeholder="Posição"
+                            (change)="changedInput('position',$event)">
+                  <mat-option *ngFor="let position of positions"
+                              [value]="viewModel.positions[0]">
+                    {{position}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
 
-            <mat-form-field>
-              <input matInput placeholder="Altura" formControlName="height"
-                     [(ngModel)]="viewModel.height"
-                     (change)="changedInput('height',$event)">
-            </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Altura" formControlName="height"
+                       [(ngModel)]="viewModel.height"
+                       (change)="changedInput('height',$event)">
+              </mat-form-field>
 
-            <mat-form-field>
-              <input matInput placeholder="Peso" formControlName="weight"
-                     [(ngModel)]="viewModel.weight"
-                     (change)="changedInput('weight',$event)">
-            </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Peso" formControlName="weight"
+                       [(ngModel)]="viewModel.weight"
+                       (change)="changedInput('weight',$event)">
+              </mat-form-field>
 
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Data de nascimento"
-                     formControlName="birthday">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Data de nascimento"
+                       formControlName="birthday">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
 
-            <mat-form-field>
-              <mat-select formControlName="country" placeholder="País"
-                          (change)="changedInput('country',$event)">
-                <mat-option *ngFor="let country of countries"
-                            [value]="viewModel.nationality">
-                  {{country}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+              <mat-form-field>
+                <mat-select formControlName="country" placeholder="País"
+                            (change)="changedInput('country',$event)">
+                  <mat-option *ngFor="let country of countries"
+                              [value]="viewModel.nationality">
+                    {{country}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
 
-            <mat-form-field>
-              <mat-select formControlName="city" placeholder="Cidade"
-                          (change)="changedInput('city',$event)">
-                <mat-option *ngFor="let city of cities" [value]="viewModel.residence">
-                  {{city}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+              <mat-form-field>
+                <mat-select formControlName="city" placeholder="Cidade"
+                            (change)="changedInput('city',$event)">
+                  <mat-option *ngFor="let city of cities" [value]="viewModel.residence">
+                    {{city}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
 
-            <mat-form-field>
-              <input matInput placeholder="Contactos" formControlName="contacts"
-                     [(ngModel)]="viewModel.contacts[0]"
-                     (change)="changedInput('contacts',$event)">
-            </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Contactos" formControlName="contacts"
+                       [(ngModel)]="viewModel.contacts[0]"
+                       (change)="changedInput('contacts',$event)">
+              </mat-form-field>
 
-            <mat-form-field>
-              <mat-select formControlName="foot" placeholder="Pé dominante"
-                          (change)="changedInput('foot',$event)">
-                <mat-option *ngFor="let foot of feet" [value]="viewModel.foot">
-                  {{foot}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+              <mat-form-field>
+                <mat-select formControlName="foot" placeholder="Pé dominante"
+                            (change)="changedInput('foot',$event)">
+                  <mat-option *ngFor="let foot of feet" [value]="viewModel.foot">
+                    {{foot}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
 
-            <mat-form-field>
-              <input matInput placeholder="Nome completo" formControlName="name"
-                     [(ngModel)]="viewModel.name"
-                     (change)="changedInput('name',$event)">
-            </mat-form-field>
-          </form>
-          <div class="profile-buttons">
-            <button mat-raised-button class="btn-sc-default" (click)="createTeamPlayer()">Adicionar Avaliação</button>
-          </div>
-        </div>
+              <mat-form-field>
+                <input matInput placeholder="Nome completo" formControlName="name"
+                       [(ngModel)]="viewModel.name"
+                       (change)="changedInput('name',$event)">
+              </mat-form-field>
+            </form>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion class="team-player-accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h4>Media</h4>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="col-md-6 col-xs-12 column " *ngFor="let med of viewModel.media">
+              <div class="callout small articles-big">
+                <div class="video">
+                  <iframe width="100%" height="360" src="//www.youtube.com/embed/8Z0sbekoQL4" frameborder="0"
+                          allowfullscreen=""></iframe>
+                </div>
+                <div class="description">
+                  <p class="title">
+                    <br>
+                    <a href="/video/11523/" title="{{med.title}}">{{med.title}}</a>
+                    <br>
+                    {{med.text}}
+                  </p>
+                  <div class="authors">
+                    <span class="author">{{med.author}}</span></div>
+                  <div class="date">{{med.date}}</div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion class="team-player-accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header class="event-list__header">
+              <mat-panel-title>
+                <h4>Avaliações</h4>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="team-player-evaluations">
+
+            </div>
+            <div class="heading-buttons">
+              <div class="profile-buttons">
+                <button mat-raised-button (click)="addEvaluation()" class="sc-btn btn-sc-default">Avaliar</button>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="heading-buttons">
+        <button mat-raised-button class="sc-btn btn-success" (click)="save()">Salvar</button>
+        <button mat-raised-button class="sc-btn btn-danger" (click)="discard()">Descartar</button>
       </div>
     </div>
   </div>
