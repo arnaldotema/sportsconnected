@@ -414,6 +414,7 @@ export class UserInfoService {
 
   mockTeamPlayer: TeamPlayer = {
     _id: '-1',
+    age: 25,
     created_at: '',
     updated_at: '',
     user_info_id: '-1',
@@ -428,33 +429,6 @@ export class UserInfoService {
     residence: 'Montijo',
     contacts: ['910001123', 'jogador@gmail.com'],
     media: [
-      {
-        title: 'Diogo Pires marca Hat-trick em jogo decisivo',
-        author: 'A Bola.',
-        date: '08-05-2018',
-        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
-        views: 53,
-        shares: 8,
-        likes: 20,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
-        references: {
-          leagues: [
-            {
-              name: 'Liga Portugal',
-              id: '1',
-            }
-          ],
-          team: [{
-            name: 'Seixal FC',
-            id: '1'
-          }],
-          player: [{
-            name: 'Diogo Pires',
-            id: '1'
-          }],
-        }
-      },
       {
         title: 'Arnaldo faz 25 anos!',
         author: 'A Bola.',
@@ -491,87 +465,6 @@ export class UserInfoService {
         views: 93,
         shares: 45,
         likes: 90,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
-        references: {
-          leagues: [
-            {
-              name: 'Liga Portugal',
-              id: '1',
-            }
-          ],
-          team: [{
-            name: 'Seixal FC',
-            id: '1'
-          }],
-          player: [{
-            name: 'Diogo Pires',
-            id: '1'
-          }],
-        }
-      },
-      {
-        title: '15 Golos em 10 jogos.',
-        author: 'A Bola.',
-        date: '03-11-2018',
-        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
-        views: 200,
-        shares: 12,
-        likes: 20,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
-        references: {
-          leagues: [
-            {
-              name: 'Liga Portugal',
-              id: '1',
-            }
-          ],
-          team: [{
-            name: 'Seixal FC',
-            id: '1'
-          }],
-          player: [{
-            name: 'Diogo Pires',
-            id: '1'
-          }],
-        }
-      },
-      {
-        title: 'Campeão da Supermacia',
-        author: 'A Bola.',
-        date: '08-02-2018',
-        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
-        views: 2,
-        shares: 0,
-        likes: 0,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
-        references: {
-          leagues: [
-            {
-              name: 'Liga Portugal',
-              id: '1',
-            }
-          ],
-          team: [{
-            name: 'Seixal FC',
-            id: '1'
-          }],
-          player: [{
-            name: 'Diogo Pires',
-            id: '1'
-          }],
-        }
-      },
-      {
-        title: 'Diogo falha final da Taça de Portugal',
-        author: 'A Bola.',
-        date: '28-05-2018',
-        image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
-        ref: '//www.youtube.com/embed/8Z0sbekoQL4',
-        views: 40,
-        shares: 40,
-        likes: 13,
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, lectus non maximus varius, nibh orci rutrum velit, rhoncus vehicula sapien quam efficitur orci',
         references: {
           leagues: [
@@ -652,6 +545,7 @@ export class UserInfoService {
   }
 
   getUserInfo(id: string): Observable<UserInfoViewModel> {
+    debugger;
     if (this.testing || id == '-1') {
       return of(this.mockUserInfo[0]);
     }
@@ -668,7 +562,7 @@ export class UserInfoService {
 
   getTeamPlayer(team_id: string, id: string): Observable<TeamPlayer> {
     if (this.testing || id == '-1') {
-      return of(this.mockTeamPlayer[0]);
+      return of(this.mockTeamPlayer);
     }
     else {
       return this.http.get<TeamPlayer>('/team/' + team_id + '/player/' + id, this.requestOptions)
