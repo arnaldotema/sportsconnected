@@ -2,8 +2,6 @@ export class SearchEntityViewmodel {
   personal_info:{
     name: string,
     avatar: string
-    age: number; // added
-    date_of_birth: string;// added
   };
   team: {
     id: string,

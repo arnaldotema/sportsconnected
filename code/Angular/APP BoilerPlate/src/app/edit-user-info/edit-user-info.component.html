@@ -119,7 +119,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div *ngIf="player_matches != null">
+        <div *ngIf="player_matches && player_matches.length > 0">
           <div class="event-list">
             <mat-accordion class="match-form">
               <mat-expansion-panel *ngFor="let match of player_matches; let _idx = index"

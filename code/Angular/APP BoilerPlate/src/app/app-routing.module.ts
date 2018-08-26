@@ -12,13 +12,13 @@ import {TeamPlayerComponent} from "./team-player/team-player.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'user-info/:team_id', component: User_infoComponent },
-  { path: 'team/:team_id', component: TeamComponent },
-  { path: 'team-player/:team_id', component: TeamPlayerComponent },
+  { path: 'user-info/:id', component: User_infoComponent },
+  { path: 'team/:id', component: TeamComponent },
+  { path: 'team-player/:team_id/:id', component: TeamPlayerComponent },
   { path: 'home', component: HomeComponent },
   { path: 'match', component: MatchComponent },
   { path: 'create-account', component: CreateAccountComponent},
-  { path: 'edit-user-info/:team_id', component: EditUserInfoComponent},
+  { path: 'edit-user-info/:id', component: EditUserInfoComponent},
   { path: 'filter-user-info', component: FilterUserInfoComponent},
 ];
 

@@ -677,7 +677,6 @@ img {
 }
 
 .player-image {
-  margin: 10px 0;
   position: relative;
   height: 300px;
   overflow: hidden;
@@ -815,4 +814,22 @@ p {
 .centered mat-form-field{
   width: 20%;
   padding: 0 5px;
+}
+
+.team-player-accordion{
+}
+
+.team-player-evaluations{
+}
+
+.heading-buttons {
+  margin: auto 20px;
+  width: fit-content;
+  float: left;
+}
+
+.team-player-accordion .heading-buttons {
+  margin: auto 20px auto 0;
+  width: fit-content;
+  float: none;
 }
