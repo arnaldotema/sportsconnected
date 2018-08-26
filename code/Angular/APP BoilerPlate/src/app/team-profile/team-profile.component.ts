@@ -22,7 +22,11 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   options = {};
   id;
 
-  constructor(private teamService: TeamService, private authenticationService: AuthenticationService, private router: Router, private route: ActivatedRoute, public dialog: MatDialog) {
+  constructor(private teamService: TeamService,
+              private authenticationService: AuthenticationService,
+              private router: Router,
+              private route: ActivatedRoute,
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -335,7 +339,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
       if (result !== undefined) {
         this.teamService.createRecommendation('0', result).subscribe()
         {
-          debugger;
+
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.recommendations.top_5.push({
             author: {
@@ -361,6 +365,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   createTeamPlayer(): void {
     this.router.navigate(['/team-player/' + this.viewModel._id]);
   }
+
 
   openTryoutDialog(): void {
     const dialogRef = this.dialog.open(TryoutModalComponent,
