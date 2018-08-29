@@ -819,11 +819,17 @@ p {
 .team-player-accordion{
 }
 
+.team-player-accordion mat-expansion-panel{
+  margin: 0 0 0 20px;
+  float: left;
+  width: 100%;
+}
+
 .team-player-evaluations{
 }
 
 .heading-buttons {
-  margin: auto 20px;
+  margin: 20px;
   width: fit-content;
   float: left;
 }

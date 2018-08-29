@@ -1,5 +1,4 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {
@@ -8,13 +7,12 @@ import {
   ParentErrorStateMatcher
 } from '../validators';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatchService} from '../_services/match.service';
-import {MatchViewModel} from '../_models/match_viewmodel';
 import {ScrollToService} from 'ng2-scroll-to-el';
 import {TeamPlayer} from "../_models/team_player";
 import {RecommendationModalComponent} from "../_modals/recommendation-modal/recommendation-modal.component";
 import {MatDialog} from "@angular/material";
 import {AuthenticationService} from "../_services/authentication.service";
+import {TeamPlayerEvaluationModalComponent} from "../_modals/team-player-evaluation-modal/team-player-evaluation-modal.component";
 
 @Component({
   selector: 'app-team-player',
@@ -47,6 +45,15 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
   userDetailsForm: FormGroup;
   accountDetailsForm: FormGroup;
   matching_passwords_group: FormGroup;
+
+  newAttribute = {
+    technical: '',
+    tactical: '',
+    physical: '',
+    mental: '',
+    date: '',
+    match: ''
+  };
 
   constructor(private route: ActivatedRoute,
               private fb: FormBuilder,
@@ -256,7 +263,7 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
   addEvaluation(): void {
 
     // When created, open the EvaluationModalComponent
-    const dialogRef = this.dialog.open(RecommendationModalComponent,
+    const dialogRef = this.dialog.open(TeamPlayerEvaluationModalComponent,
       {
         data: {
           author: '',
@@ -265,7 +272,6 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
         }
       });
   }
-
 
   onSubmitAccountDetails(value) {
     console.log(value);
@@ -292,5 +298,38 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
   goToTop(index) {
     this.scrollService.scrollTo('#top', 500, -100);
     this.eventsToggled[index] = false;
+  }
+
+  addFieldValue() {
+
+    /**
+      simple: [{
+      technical: string,
+      tactical: string,
+      physical: string,
+      mental: string,
+      date: string,
+      match: string
+    }]
+    * */
+
+    if(!this.viewModel.evaluations.simple || this.viewModel.evaluations.simple.length <= 0){
+      this.viewModel.evaluations.simple = [this.newAttribute];
+    }
+    else{
+      this.viewModel.evaluations.simple.push(this.newAttribute);
+    }
+    this.newAttribute = {
+      technical: '',
+      tactical: '',
+      physical: '',
+      mental: '',
+      date: '',
+      match: ''
+    };
+  }
+
+  deleteFieldValue(index) {
+    this.viewModel.evaluations.simple.splice(index, 1);
   }
 }
