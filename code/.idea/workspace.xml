@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info.service.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_info.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-557">
@@ -60,6 +62,15 @@
                 <element signature="e#16145#16450#0" />
                 <element signature="n#!!block;n#handleError#0;n#UserInfoService#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -190,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" />
@@ -241,6 +251,7 @@
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-player/team-player.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-player/team-player.component.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" />
       </list>
     </option>
   </component>
@@ -324,15 +335,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="_modals" type="462c0819:PsiDirectoryNode" />
               <item name="team-player-evaluation-modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="team-player" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -455,15 +457,16 @@
       <workItem from="1533857587541" duration="36976000" />
       <workItem from="1533937837634" duration="20807000" />
       <workItem from="1534304734986" duration="13870000" />
-      <workItem from="1535208133636" duration="15904000" />
+      <workItem from="1535208133636" duration="16238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122690000" />
+    <option name="totallyTimeSpent" value="123024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="745" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -485,8 +488,8 @@
       <window_info anchor="bottom" id="NativeScript" order="7" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33830103" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1515625" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33830103" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3484375" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32935917" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -568,17 +571,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="n#div#1;n#!!top" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1455,6 +1447,13 @@
             <element signature="e#16145#16450#0" />
             <element signature="n#!!block;n#handleError#0;n#UserInfoService#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
