@@ -68,6 +68,7 @@ import {User_infoStatsComponent} from './user-info-stats/user-info-stats.compone
 import {TeamRosterComponent} from './team-roster/team-roster.component';
 import {RecommendationModalComponent} from './_modals/recommendation-modal/recommendation-modal.component';
 import {TryoutModalComponent} from './_modals/tryout-modal/tryout-modal.component';
+import {TeamPlayerEvaluationModalComponent} from './_modals/team-player-evaluation-modal/team-player-evaluation-modal.component';
 import {UserInfoProfileComponent} from './user-info-profile/user-info-profile.component';
 import {TeamProfileComponent} from './team-profile/team-profile.component';
 import {TeamStatsComponent} from './team-stats/team-stats.component';
@@ -104,6 +105,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     User_infoStatsComponent,
     TeamRosterComponent,
     RecommendationModalComponent,
+    TeamPlayerEvaluationModalComponent,
     TryoutModalComponent,
     UserInfoProfileComponent,
     TeamProfileComponent,
@@ -182,6 +184,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   bootstrap: [AppComponent],
   entryComponents: [
     RecommendationModalComponent,
+    TeamPlayerEvaluationModalComponent,
     TryoutModalComponent
   ]
 })
