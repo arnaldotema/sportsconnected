@@ -332,4 +332,8 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
   deleteFieldValue(index) {
     this.viewModel.evaluations.simple.splice(index, 1);
   }
+
+  addMedia(): void {
+    // Todo: Add media
+  }
 }
