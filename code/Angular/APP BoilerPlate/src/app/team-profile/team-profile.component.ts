@@ -363,7 +363,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   }
 
   createTeamPlayer(): void {
-    this.router.navigate(['/team-player/' + this.viewModel._id+'/0']);
+    this.router.navigate(['/team/' + this.viewModel._id+ + '/player/'+'0']);
   }
 
 

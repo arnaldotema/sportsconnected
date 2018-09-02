@@ -10,7 +10,7 @@ router.get('/', CompetitionController.list);
 /*
  * GET
  */
-router.get('/:team_id', CompetitionController.show);
+router.get('/:id', CompetitionController.show);
 
 /*
  * POST
@@ -20,11 +20,11 @@ router.post('/', CompetitionController.create);
 /*
  * PUT
  */
-router.put('/:team_id', CompetitionController.update);
+router.put('/:id', CompetitionController.update);
 
 /*
  * DELETE
  */
-router.delete('/:team_id', CompetitionController.remove);
+router.delete('/:id', CompetitionController.remove);
 
 module.exports = router;
