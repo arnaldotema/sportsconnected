@@ -163,7 +163,7 @@
                 <tbody>
                 <tr *ngFor="let player of sortedData">
                   <td class="centered number_move first-td-img">
-                    <a routerLink="/user-info/{{player.user_info_id}}">
+                    <a routerLink="/user-info/{{player._id}}">
                       <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
                            [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
                       </div>
@@ -193,7 +193,7 @@
                   <td class="centered">{{player.personal_info.height}}</td>
                   <td class="centered">{{player.personal_info.weight}}</td>
                   <td class="centered">
-                    <a routerLink="/team/{{player.team.team_id}}">
+                    <a routerLink="/team/{{player.team.id}}">
                       <img src="{{player.team.avatar}}" title="{{player.team.name}}"
                            alt="{{player.team.name}}" class="team-img">
                     </a>

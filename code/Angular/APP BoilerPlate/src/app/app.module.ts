@@ -12,6 +12,7 @@ import {AuthGuard} from './_guards/auth.guard';
 import {AdminGuard} from './_guards/admin.guard';
 import {AuthenticationService} from './_services/authentication.service';
 import {GenericUserService} from './_services/generic_user.service';
+import {CompetitionService} from './_services/competition.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -171,6 +172,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AuthGuard,
     AdminGuard,
     AuthenticationService,
+    CompetitionService,
     GenericUserService,
     UserInfoService,
     UserService,
