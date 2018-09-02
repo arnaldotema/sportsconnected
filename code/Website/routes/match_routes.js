@@ -10,7 +10,7 @@ router.get('/', MatchController.list);
 /*
  * GET
  */
-router.get('/:team_id', MatchController.show);
+router.get('/:id', MatchController.show);
 
 /*
  * POST
@@ -20,11 +20,11 @@ router.post('/', MatchController.create);
 /*
  * PUT
  */
-router.put('/:team_id', MatchController.update);
+router.put('/:id', MatchController.update);
 
 /*
  * DELETE
  */
-router.delete('/:team_id', MatchController.remove);
+router.delete('/:id', MatchController.remove);
 
 module.exports = router;

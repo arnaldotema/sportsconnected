@@ -10,7 +10,7 @@ router.post('/search', PlayerController.search);
 /*
  * GET
  */
-router.get('/:team_id', PlayerController.show);
+router.get('/:id', PlayerController.show);
 
 /*
  * GET
@@ -25,11 +25,11 @@ router.post('/', PlayerController.create);
 /*
  * PUT
  */
-router.put('/:team_id', PlayerController.update);
+router.put('/:id', PlayerController.update);
 
 /*
  * DELETE
  */
-router.delete('/:team_id', PlayerController.remove);
+router.delete('/:id', PlayerController.remove);
 
 module.exports = router;
