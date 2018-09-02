@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewContainerRef} from '@angular/core';
-import { GenericUserService} from '../_services/generic_user.service';
+import {GenericUserService} from '../_services/generic_user.service';
 import {AuthenticationService} from '../_services/authentication.service';
-import { Observable } from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable';
 import {SearchEntityViewmodel} from "../_models/search_entity_viewmodel";
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
@@ -29,9 +29,9 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute,
     public toastr: ToastsManager, vcr: ViewContainerRef,
     private authenticationService: AuthenticationService,
-    private genericService : GenericUserService,
-    private userInfoService : UserInfoService)
-  {}
+    private genericService: GenericUserService
+  ) {
+  }
 
   ngOnInit() {
 
@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchFor() {
-    this.genericService.searchUser('',this.searchString,'')
+    this.genericService.searchUser('', this.searchString, '')
       .subscribe(list => this.searchResults = list);
   }
 
