@@ -67,7 +67,8 @@ export class TeamPlayerComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.team_id = this.route.snapshot.paramMap.get('team_id');
-    this.id = this.route.snapshot.paramMap.get('id');
+    //this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('shadow_player_id');
 
     // Charge mock values
     this.season = {

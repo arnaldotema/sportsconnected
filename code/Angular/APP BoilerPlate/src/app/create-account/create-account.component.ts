@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {TeamService} from '../_services/team.service';
 import {UserInfoService} from '../_services/user_info.service';
 import {GenericUserService} from '../_services/generic_user.service';
+import {CompetitionService} from '../_services/competition.service';
 import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {TeamViewModel} from '../_models/team_viewmodel';
 
@@ -25,9 +26,12 @@ export class CreateAccountComponent implements OnInit {
   players: SearchEntityViewmodel[];
   user;
 
-  constructor(private router: Router, private teamService: TeamService, private genericUserService: GenericUserService,
-              private userInfoService: UserInfoService) {
-  }
+  constructor(
+    private router: Router,
+    private teamService: TeamService,
+    private competitionService: CompetitionService,
+    private genericUserService: GenericUserService)
+  {}
 
   ngOnInit() {
     this.genders = [
