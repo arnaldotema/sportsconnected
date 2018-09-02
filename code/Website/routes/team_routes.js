@@ -10,7 +10,7 @@ router.get('/', TeamController.list);
 /*
  * GET
  */
-router.get('/:team_id', TeamController.show);
+router.get('/:id', TeamController.show);
 
 /*
  * POST
@@ -20,11 +20,11 @@ router.post('/', TeamController.create);
 /*
  * PUT
  */
-router.put('/:team_id', TeamController.update);
+router.put('/:id', TeamController.update);
 
 /*
  * DELETE
  */
-router.delete('/:team_id', TeamController.remove);
+router.delete('/:id', TeamController.remove);
 
 module.exports = router;

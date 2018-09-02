@@ -10,7 +10,7 @@ router.get('/', UserController.list);
 /*
  * GET
  */
-router.get('/:team_id', UserController.show);
+router.get('/:id', UserController.show);
 
 /*
  * POST
@@ -20,11 +20,11 @@ router.post('/', UserController.create);
 /*
  * PUT
  */
-router.put('/:team_id', UserController.update);
+router.put('/:id', UserController.update);
 
 /*
  * DELETE
  */
-router.delete('/:team_id', UserController.remove);
+router.delete('/:id', UserController.remove);
 
 module.exports = router;
