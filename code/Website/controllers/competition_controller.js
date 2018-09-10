@@ -1,4 +1,7 @@
-var CompetitionModel  = require('../models/football_competition.js');
+var CompetitionModel = require('../models/football_competition.js');
+var CompetitionSeasonModel = require('../models/football_competition_season');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 
 /**
  * competition_controller.js
@@ -11,15 +14,24 @@ module.exports = {
      * CompetitionController.list()
      */
     list: function (req, res) {
-        CompetitionModel.find(function (err, Competitions) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting Competition.',
-                    error: err
-                });
-            }
-            return res.json(Competitions);
-        });
+        CompetitionSeasonModel
+            .find()
+            .select({
+                standings: 0,
+                matches: 0,
+                stats: 0
+            })
+            .populate('current_season')
+            .populate('previous_seasons', 'stats')
+            .exec( function (err, Competitions) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting Competition.',
+                        error: err
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(Competitions))));
+            });
     },
 
     /**
@@ -27,7 +39,7 @@ module.exports = {
      */
     show: function (req, res) {
         var id = req.params.id;
-        CompetitionModel.findOne({_id: id}, function (err, Competition) {
+        CompetitionSeasonModel.findOne({_id: id}, function (err, Competition) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting Competition.',
@@ -39,7 +51,7 @@ module.exports = {
                     message: 'No such Competition'
                 });
             }
-            return res.json(Competition);
+            return res.json(JSON.parse(entities.decode(JSON.stringify(Competition))));
         });
     },
 
@@ -71,7 +83,7 @@ module.exports = {
      */
     update: function (req, res) {
         var id = req.params.id;
-        CompetitionModel.findOne({_id: id}, function (err, Competition) {
+        CompetitionSeasonModel.findOne({_id: id}, function (err, Competition) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting Competition',
@@ -106,7 +118,7 @@ module.exports = {
      */
     remove: function (req, res) {
         var id = req.params.id;
-        CompetitionModel.findByIdAndRemove(id, function (err, Competition) {
+        CompetitionSeasonModel.findByIdAndRemove(id, function (err, Competition) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when deleting the Competition.',
@@ -114,6 +126,26 @@ module.exports = {
                 });
             }
             return res.status(204).json();
+        });
+    },
+
+    teams: function (req, res) {
+        var id = req.params.id;
+        CompetitionSeasonModel
+            .findOne({_id: id})
+            .exec(function (err, Competition) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting Competition.',
+                    error: err
+                });
+            }
+            if (!Competition) {
+                return res.status(404).json({
+                    message: 'No such Competition'
+                });
+            }
+            return res.json(JSON.parse(entities.decode(JSON.stringify(Competition.standings))));
         });
     }
 };

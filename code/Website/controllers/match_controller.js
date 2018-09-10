@@ -1,4 +1,6 @@
 var MatchModel = require('../models/football_match.js');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 
 /**
  * match_controller.js
@@ -11,14 +13,14 @@ module.exports = {
      * matchController.list()
      */
     list: function (req, res) {
-        MatchModel.find(function (err, matchs) {
+        MatchModel.find(function (err, matches) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting match.',
                     error: err
                 });
             }
-            return res.json(matchs);
+            return res.json(JSON.parse(entities.decode(JSON.stringify(matches))));
         });
     },
 
@@ -39,7 +41,7 @@ module.exports = {
                     message: 'No such match'
                 });
             }
-            return res.json(match);
+            return res.json(JSON.parse(entities.decode(JSON.stringify(match))));
         });
     },
 

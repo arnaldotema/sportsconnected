@@ -1,9 +1,9 @@
 const logger = require('../../logging');
 
-const proxies = [undefined];
+const proxies = [undefined, 'http://139.162.235.163:31028'];
 const users = {
-    undefined: '6e6360566f8f117273cda3f43af85760',
-    'http://81.163.43.14:41258':'40aea8c640e27156acdc6dea7d0f39f8'
+    undefined: '39e5d204642dada7bb08924de2713108',
+    'http://139.162.235.163:31028':'a1d92f9f89ae4731f45de6205f48ba80'
 }
 
 function getRandomInt(max) {

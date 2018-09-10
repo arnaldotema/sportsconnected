@@ -19,14 +19,14 @@ module.exports = {
             .populate('previous_seasons', 'standings')
             .limit(5)
             .exec(function (err, Teams) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting Team.',
-                    error: err
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(Teams))));
-        });
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting Team.',
+                        error: err
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(Teams))));
+            });
     },
 
     /**
@@ -39,19 +39,39 @@ module.exports = {
             .populate('current_season')
             .populate('previous_seasons', 'standings')
             .exec(function (err, Team) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting Team.',
-                    error: err
-                });
-            }
-            if (!Team) {
-                return res.status(404).json({
-                    message: 'No such Team'
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
-        });
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting Team.',
+                        error: err
+                    });
+                }
+                if (!Team) {
+                    return res.status(404).json({
+                        message: 'No such Team'
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
+            });
+    },
+
+    players: function (req, res) {
+        var id = req.params.id;
+        TeamModelSeason
+            .findOne({_id: id})
+            .exec(function (err, Team) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting Team.',
+                        error: err
+                    });
+                }
+                if (!Team) {
+                    return res.status(404).json({
+                        message: 'No such Team'
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(Team.players))));
+            });
     },
 
     /**

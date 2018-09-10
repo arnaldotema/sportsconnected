@@ -1,20 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var PlayerController = require('../controllers/football_user_info_controller.js');
+var PlayerController = require('../controllers/user_info_controller.js');
 
 /*
  * GET
  */
 router.post('/search', PlayerController.search);
 
-/*
- * GET
- */
 router.get('/:id', PlayerController.show);
 
-/*
- * GET
- */
 router.get('/', PlayerController.list);
 
 /*

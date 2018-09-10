@@ -5,12 +5,12 @@ var CompetitionController = require('../controllers/competition_controller.js');
 /*
  * GET
  */
-router.get('/', CompetitionController.list);
 
-/*
- * GET
- */
+router.get('/:id/teams', CompetitionController.teams);
+
 router.get('/:id', CompetitionController.show);
+
+router.get('/', CompetitionController.list);
 
 /*
  * POST

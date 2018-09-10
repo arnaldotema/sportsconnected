@@ -7,6 +7,10 @@ var UserModel = require('../models/football_user.js');
  */
 module.exports = {
 
+    signup: function (req, res) {
+        return res.json({message: "Signed UP!"});
+    },
+
     /**
      * UserController.list()
      */
