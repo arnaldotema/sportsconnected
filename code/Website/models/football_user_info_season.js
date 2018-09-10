@@ -31,6 +31,7 @@ var FootballUserSeasonSchema = new Schema({
     stats: [{
         id: {type: Schema.Types.ObjectId, ref: 'football_competition_season'},
         competition_id: {type: Schema.Types.ObjectId, ref: 'football_competition'},
+        season_id: {type: Schema.Types.ObjectId, ref: 'football_season'},
         name: String,
         avatar: String,
         games: {type: Number, default: 0},
