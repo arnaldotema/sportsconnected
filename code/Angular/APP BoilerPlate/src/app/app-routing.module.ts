@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'team/:id/player/:shadow_player_id', component: TeamPlayerComponent },
   { path: 'team/:id', component: TeamComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'match', component: MatchComponent },
+  { path: 'match/:id', component: MatchComponent },
   { path: 'create-account', component: CreateAccountComponent},
   { path: 'edit-user-info/:id', component: EditUserInfoComponent},
   { path: 'filter-user-info', component: FilterUserInfoComponent},

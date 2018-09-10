@@ -1873,8 +1873,8 @@ export class GenericUserService {
   constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-        //'Authorization': authenticationService.token
+        'Content-Type': 'application/json',
+        'jwt': authenticationService.token
       })
     };
   }
@@ -1911,7 +1911,7 @@ export class GenericUserService {
       );
     }
 
-    return this.http.post<SearchEntityViewmodel[]>('/players/search', body, this.requestOptions)
+    return this.http.post<SearchEntityViewmodel[]>('/api/players/search', body, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
         catchError(this.handleError)
@@ -1924,7 +1924,7 @@ export class GenericUserService {
     if (this.testing) {
       return of(this.mockUserInfo);
     }
-    return this.http.post<SearchEntityViewmodel[]>('/players/search', search_obj, this.requestOptions)
+    return this.http.post<SearchEntityViewmodel[]>('/api/players/search', search_obj, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
         catchError(this.handleError)

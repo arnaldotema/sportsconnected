@@ -46,9 +46,6 @@ export class HeaderComponent implements OnInit {
     this.show_notifications = false;
     this.show_search = false;
 
-    //Login component call
-    this.authenticationService.logout();
-
   }
 
   searchFor() {
@@ -58,8 +55,8 @@ export class HeaderComponent implements OnInit {
 
   isAuthenticated() {
     // Only for print screens
-    return true;
-    //return this.authenticationService.isLogged();
+    // return true;
+    return localStorage.getItem('currentUser') != null;
   }
 
   //Login functions
