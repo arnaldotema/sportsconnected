@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/ -->
+<html lang="en-US" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@DanWahlin">
+<meta name="twitter:title" content="Code with Dan">
+<meta name="twitter:description" content="Angular, ES6, JavaScript, TypeScript, HTML5, jQuery, Node.js, ASP.NET, C#, XAML, Docker">
+<meta name="twitter:creator" content="@DanWahlin">
+<meta name="twitter:image:src" content="https://blog.codewithdan.com/wp-content/uploads/2015/09/DanHeadShotBlog.jpg">
+<meta name="twitter:domain" content="https://blog.codewithdan.com">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://blog.codewithdan.com/xmlrpc.php">
+
+<link rel="stylesheet" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/slim-081711.css" type="text/css">
+<link rel="stylesheet" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/font-awesome.min.css">
+<link rel="stylesheet" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/css">
+<link rel="stylesheet" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/vs.min.css">
+
+<!--[if lt IE 9]>
+                    <script src="https://blog.codewithdan.com/wp-content/themes/customizr/inc/assets/js/html5.js"></script>
+                <![endif]-->
+<script async="" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/analytics.js"></script><script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>5 Key Benefits of Angular and TypeScript – Code with Dan Blog</title>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Code with Dan Blog » Feed" href="https://blog.codewithdan.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Code with Dan Blog » Comments Feed" href="https://blog.codewithdan.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Code with Dan Blog » 5 Key Benefits of Angular and TypeScript Comments Feed" href="https://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/feed/">
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.codewithdan.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+<script>
+					advanced_ads_ready=function(){var fns=[],listener,doc=typeof document==="object"&&document,hack=doc&&doc.documentElement.doScroll,domContentLoaded="DOMContentLoaded",loaded=doc&&(hack?/^loaded|^c/:/^loaded|^i|^c/).test(doc.readyState);if(!loaded&&doc){listener=function(){doc.removeEventListener(domContentLoaded,listener);window.removeEventListener("load",listener);loaded=1;while(listener=fns.shift())listener()};doc.addEventListener(domContentLoaded,listener);window.addEventListener("load",listener)}return function(fn){loaded?setTimeout(fn,0):fns.push(fn)}}();
+			</script><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="tc-gfonts-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="amazonpolly-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/amazonpolly-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-core-blocks-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-fa-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/font-awesome.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-common-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/tc_common.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-skin-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/blue.min.css" type="text/css" media="all">
+<style id="customizr-skin-inline-css" type="text/css">
+
+                  .site-title,.site-description,h1,h2,h3,.tc-dropcap {
+                    font-family : 'Open Sans';
+                    font-weight : inherit;
+                  }
+
+                  body,.navbar .nav>li>a {
+                    font-family : 'Open Sans';
+                    font-weight : inherit;
+                  }
+table { border-collapse: separate; }
+                           body table { border-collapse: collapse; }
+                          
+.social-links .social-icon:before { content: none } 
+header.tc-header {border-top: none;}
+
+#tc-push-footer { display: none; visibility: hidden; }
+         .tc-sticky-footer #tc-push-footer.sticky-footer-enabled { display: block; }
+        
+
+</style>
+<link rel="stylesheet" id="customizr-style-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="fancyboxcss-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery.fancybox-1.3.4.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/font-awesome.min(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="amarkal-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/amarkal.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="select2-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/select2.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="mivhak-css" href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/mivhak.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/amazonpolly-public.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/modernizr.min.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery.fancybox-1.3.4.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var TCParams = {"_disabled":[],"FancyBoxState":"1","FancyBoxAutoscale":"1","SliderName":"","SliderDelay":"","SliderHover":"1","centerSliderImg":"1","SmoothScroll":{"Enabled":false,"Options":{"touchpadSupport":false}},"anchorSmoothScroll":"linear","anchorSmoothScrollExclude":{"simple":["[class*=edd]",".tc-carousel-control",".carousel-control","[data-toggle=\"modal\"]","[data-toggle=\"dropdown\"]","[data-toggle=\"tooltip\"]","[data-toggle=\"popover\"]","[data-toggle=\"collapse\"]","[data-toggle=\"tab\"]","[class*=upme]","[class*=um-]"],"deep":{"classes":[],"ids":[]}},"ReorderBlocks":"1","centerAllImg":"1","HasComments":"1","LeftSidebarClass":".span3.left.tc-sidebar","RightSidebarClass":".span3.right.tc-sidebar","LoadModernizr":"1","stickyCustomOffset":{"_initial":0,"_scrolling":0,"options":{"_static":true,"_element":""}},"stickyHeader":"1","dropdowntoViewport":"1","timerOnScrollAllBrowsers":"1","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"dropcapEnabled":"","dropcapWhere":{"post":"1","page":"1"},"dropcapMinWords":"50","dropcapSkipSelectors":{"tags":["IMG","IFRAME","H1","H2","H3","H4","H5","H6","BLOCKQUOTE","UL","OL"],"classes":["btn","tc-placeholder-wrap"],"id":[]},"imgSmartLoadEnabled":"","imgSmartLoadOpts":{"parentSelectors":[".article-container",".__before_main_wrapper",".widget-front"],"opts":{"excludeImg":[".tc-holder-img"]}},"imgSmartLoadsForSliders":"","goldenRatio":"1.618","gridGoldenRatioLimit":"350","isSecondMenuEnabled":"","secondMenuRespSet":"in-sn-before","isParallaxOn":"1","parallaxRatio":"0.55","pluginCompats":[],"frontHelpNoticesOn":"1","frontHelpNoticeParams":{"thumbnail":{"active":false,"args":{"action":"dismiss_thumbnail_help","nonce":{"id":"thumbnailNonce","handle":"c803883cf6"},"class":"tc-thumbnail-help"}},"smartload":{"active":true,"args":{"action":"dismiss_img_smartload_help","nonce":{"id":"imgSmartLoadNonce","handle":"2e0aad64d7"},"class":"tc-img-smartload-help"}},"sidenav":{"active":false,"args":{"action":"dismiss_sidenav_help","nonce":{"id":"sideNavNonce","handle":"da228658d0"},"class":"tc-sidenav-help"}},"secondMenu":{"active":false,"args":{"action":"dismiss_second_menu_notice","nonce":{"id":"secondMenuNonce","handle":"c48cfcbe7b"},"class":"tc-menu-placeholder"}},"mainMenu":{"active":false,"args":{"action":"dismiss_main_menu_notice","nonce":{"id":"mainMenuNonce","handle":"995ba38f74"},"class":"tc-main-menu-notice"}},"slider":{"active":false,"args":{"action":"slider_notice_actions","nonce":{"id":"sliderNoticeNonce","handle":"ac11a37eab"},"class":"tc-slider-notice"}},"fp":{"active":false,"args":{"action":"fp_notice_actions","nonce":{"id":"fpNoticeNonce","handle":"9ec9385076"},"class":"tc-fp-notice"}},"widget":{"active":false,"args":{"action":"dismiss_widget_notice","nonce":{"id":"WidgetNonce","handle":"46f52b97f2"}}}},"adminAjaxUrl":"https:\/\/blog.codewithdan.com\/wp-admin\/admin-ajax.php","ajaxUrl":"https:\/\/blog.codewithdan.com\/?czrajax=1","frontNonce":{"id":"CZRFrontNonce","handle":"1b6573a1b5"},"isDevMode":"","isModernStyle":"","i18n":{"Permanently dismiss":"Permanently dismiss"},"frontNotifications":{"styleSwitcher":{"enabled":false,"content":"","dismissAction":"dismiss_style_switcher_note_front","ajaxUrl":"https:\/\/blog.codewithdan.com\/wp-admin\/admin-ajax.php"}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/tc-scripts.min.js"></script>
+<link rel="https://api.w.org/" href="https://blog.codewithdan.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.codewithdan.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.codewithdan.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Code with Dan Newsletter #2: Node.js, Microservices, Authentication, CSS and TypeScript/Angular" href="https://blog.codewithdan.com/2017/08/10/code-with-dan-newsletter-2-node-js-microservices-authentication-css-and-typescriptangular/">
+<link rel="next" title="New Pluralsight Course: Integrating Angular with ASP.NET Core RESTful Services" href="https://blog.codewithdan.com/2017/09/05/new-pluralsight-course-integrating-angular-with-asp-net-core-restful-services/">
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="canonical" href="https://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/">
+<link rel="shortlink" href="https://blog.codewithdan.com/?p=1264">
+<link rel="alternate" type="application/json+oembed" href="https://blog.codewithdan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.codewithdan.com%2F2017%2F08%2F26%2F5-key-benefits-of-angular-and-typescript%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://blog.codewithdan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.codewithdan.com%2F2017%2F08%2F26%2F5-key-benefits-of-angular-and-typescript%2F&amp;format=xml">
+<style>.post-thumbnail img[src$='.svg'] { width: 100%; height: auto; }</style> <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-32x32.png" sizes="32x32">
+<link rel="icon" href="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-180x180.png">
+<meta name="msapplication-TileImage" content="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-270x270.png">
+<script src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="profile" href="http://gmpg.org/xfn/11"><link rel="pingback" href="https://blog.codewithdan.com/xmlrpc.php"><script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script><title>5 Key Benefits of Angular and TypeScript – Code with Dan Blog</title><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/"><link rel="dns-prefetch" href="https://fonts.googleapis.com/"><link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/"><link rel="dns-prefetch" href="https://s.w.org/"><link rel="alternate" type="application/rss+xml" title="Code with Dan Blog » Feed" href="https://blog.codewithdan.com/feed/"><link rel="alternate" type="application/rss+xml" title="Code with Dan Blog » Comments Feed" href="https://blog.codewithdan.com/comments/feed/"><link rel="alternate" type="application/rss+xml" title="Code with Dan Blog » 5 Key Benefits of Angular and TypeScript Comments Feed" href="https://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/feed/"><script>
+					advanced_ads_ready=function(){var fns=[],listener,doc=typeof document==="object"&&document,hack=doc&&doc.documentElement.doScroll,domContentLoaded="DOMContentLoaded",loaded=doc&&(hack?/^loaded|^c/:/^loaded|^i|^c/).test(doc.readyState);if(!loaded&&doc){listener=function(){doc.removeEventListener(domContentLoaded,listener);window.removeEventListener("load",listener);loaded=1;while(listener=fns.shift())listener()};doc.addEventListener(domContentLoaded,listener);window.addEventListener("load",listener)}return function(fn){loaded?setTimeout(fn,0):fns.push(fn)}}();
+			</script><script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/wp-embed.min.js"></script><link rel="https://api.w.org/" href="https://blog.codewithdan.com/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.codewithdan.com/xmlrpc.php?rsd"><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.codewithdan.com/wp-includes/wlwmanifest.xml"><link rel="prev" title="Code with Dan Newsletter #2: Node.js, Microservices, Authentication, CSS and TypeScript/Angular" href="https://blog.codewithdan.com/2017/08/10/code-with-dan-newsletter-2-node-js-microservices-authentication-css-and-typescriptangular/"><link rel="next" title="New Pluralsight Course: Integrating Angular with ASP.NET Core RESTful Services" href="https://blog.codewithdan.com/2017/09/05/new-pluralsight-course-integrating-angular-with-asp-net-core-restful-services/"><meta name="generator" content="WordPress 4.9.8"><link rel="canonical" href="https://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/"><link rel="shortlink" href="https://blog.codewithdan.com/?p=1264"><link rel="alternate" type="application/json+oembed" href="https://blog.codewithdan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.codewithdan.com%2F2017%2F08%2F26%2F5-key-benefits-of-angular-and-typescript%2F"><link rel="alternate" type="text/xml+oembed" href="https://blog.codewithdan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.codewithdan.com%2F2017%2F08%2F26%2F5-key-benefits-of-angular-and-typescript%2F&amp;format=xml"><style>.post-thumbnail img[src$='.svg'] { width: 100%; height: auto; }</style><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-32x32.png" sizes="32x32"><link rel="icon" href="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-192x192.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-180x180.png"><meta name="msapplication-TileImage" content="https://blog.codewithdan.com/wp-content/uploads/2015/09/cropped-codeWithDanAppIcon-270x270.png"><script async="" type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/count.js"></script><script type="text/javascript" async="" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/embed.js"></script><style></style><style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><script src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/count-data.js"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.fda8427fde61b6f55d19bcd47d8c54b0.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.e63a160a6bfb2f2953b5059c50baaf15.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.d9de07e390c24c083ffd3c2c531d3ebf.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+				      <script src="https://blog.codewithdan.com/wp-content/themes/customizr/inc/assets/js/html5.js"></script>
+				    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<body class="post-template-default single single-post postid-1264 single-format-standard tc-r-sidebar tc-center-images skin-blue tc-sticky-header tc-solid-color-on-scroll no-navbar tc-regular-menu tc-sticky-footer chrome sticky-enabled" itemscope="" itemtype="http://schema.org/WebPage">
+<div id="tc-page-wrap" class="">
+<header class="tc-header row-fluid" style="height: auto; top: 0px;">
+<div class="wrapper">
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="brand" href="https://blog.codewithdan.com/" title="Code with Dan | see it, learn it, code it">
+<img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/codeWithDanLogo.png" alt="Back Home" width="250" height="59">
+</a>
+<div class="nav-collapse pull-right">
+<ul class="nav">
+<li><a href="https://codewithdan.com/products/productType/training">Training</a></li>
+<li><a href="https://codewithdan.com/products/productType/videos">Videos</a></li>
+<li><a href="https://codewithdan.com/contact">Contact</a></li>
+<li><a href="https://blog.codewithdan.com/" class="active">Blog</a></li>
+</ul>
+</div>
+<div class="btn-toggle-nav pull-right">
+<button type="button" class="btn menu-btn" data-toggle="collapse" data-target=".nav-collapse" title="Open the menu">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="subpage-section product-full-width-background">
+<div class="wrapper">
+<div class="container-fluid animated fadeInDown">
+<div class="feature-section-content">
+<div class="featured-item white">
+<div class="item-name">
+<a href="https://blog.codewithdan.com/feed/rss" target="_blank" title="RSS">
+<i class="fa fa-rss"></i>
+</a>
+<a href="https://blog.codewithdan.com/">Blog</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<br><br>
+<div id="tc-reset-margin-top" class="container-fluid" style="margin-top: 86px;"></div><div id="main-wrapper" class="container">
+<div class="tc-hot-crumble container" role="navigation"><div class="row"><div class="span12"><div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><span class="trail-begin"><a href="https://blog.codewithdan.com/" title="Code with Dan Blog" rel="home" class="trail-begin">Home</a></span> <span class="sep">»</span> <a href="https://blog.codewithdan.com/category/angular/" title="Angular">Angular</a> <span class="sep">»</span> <span class="trail-end">5 Key Benefits of Angular and TypeScript</span></div></div></div></div>
+<div class="container" role="main">
+<div class="row column-content-wrapper">
+<div id="content" class="span9 article-container tc-gallery-style">
+ <article id="post-1264" class="row-fluid post-1264 post type-post status-publish format-standard has-post-thumbnail hentry category-angular category-es6 category-framework category-javascript category-spa category-typescript hover">
+<header class="entry-header">
+<h1 class="entry-title ">5 Key Benefits of Angular and TypeScript <span class="comments-link"><a href="https://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/#tc-comment-title" title="16 Comment(s) on 5 Key Benefits of Angular and TypeScript" data-disqus-identifier="javascript:this.page.identifier"><span class="tc-comment-bubble default-bubble">16 </span></a></span></h1><div class="entry-meta">This entry was posted in <a class="btn btn-mini btn-tag" href="https://blog.codewithdan.com/category/angular/" title="View all posts in Angular"> Angular </a><a class="btn btn-mini btn-tag" href="https://blog.codewithdan.com/category/es6/" title="View all posts in es6"> es6 </a><a class="btn btn-mini btn-tag" href="https://blog.codewithdan.com/category/framework/" title="View all posts in Framework"> Framework </a><a class="btn btn-mini btn-tag" href="https://blog.codewithdan.com/category/javascript/" title="View all posts in javascript"> javascript </a><a class="btn btn-mini btn-tag" href="https://blog.codewithdan.com/category/spa/" title="View all posts in SPA"> SPA </a><a class="btn btn-mini btn-tag" href="https://blog.codewithdan.com/category/typescript/" title="View all posts in TypeScript"> TypeScript </a> on <a href="https://blog.codewithdan.com/2017/08/26/" title="7:59 pm" rel="bookmark"><time class="entry-date updated" datetime="2017-08-26T19:59:32+00:00">August 26, 2017</time></a> <span class="by-author">by <span class="author vcard"><a class="url fn n" href="https://blog.codewithdan.com/author/dwahlin/" title="View all posts by Dan Wahlin" rel="author">Dan Wahlin</a></span></span> </div><hr class="featurette-divider __before_content"> </header>
+<section class="entry-content ">
+<aside class="social-block widget">
+<div class="social-links-post">
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/&amp;t=Check%20out%20the%20great%20content%20on%20the%20Code%20with%20Dan%20site:%20http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-facebook-square" style="color:#3B5998;"></i>
+</a>
+<a href="https://twitter.com/intent/tweet/?url=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/&amp;text=Check%20out%20the%20great%20content%20on%20the%20Code%20with%20Dan%20website!" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-twitter-square" style="color:#00aced;"></i>
+</a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/&amp;title=Code%20With%20Dan&amp;summary=Code%20with%20Dan:%20Training%20and%20Videos&amp;source=Code%20with%20Dan" onclick="javascript:window.open(this.href,&#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-linkedin-square" style="color:#007bb6"></i>
+</a>
+<a href="https://plus.google.com/share?url=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/" onclick="javascript:window.open(this.href,&#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-google-plus-square" style="color:#dd4b39;"></i>
+ </a>
+<a href="https://www.youtube.com/channel/UCtbxTmNfHcXLV5nfpnQxFkw" target="_blank">
+<i class="fa fa-youtube-square" style="color:#dd4b39"></i>
+</a>
+<a rel="nofollow" title="Subscribe to my rss feed" aria-label="Subscribe to my rss feed" href="https://blog.codewithdan.com/feed/" target="_blank">
+<i class="fa fa-rss-square" style="color: #E15C2D"></i>
+</a>
+<a rel="nofollow" title="Follow us on Github" aria-label="Follow us on Github" href="https://github.com/danwahlin" target="_blank">
+<i class="fa fa-github-square"></i>
+</a>
+</div>
+</aside>
+<p>&nbsp;</p>
+<p><a href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/5-key-benefits-angular-typescript.jpg" class="grouped_elements" rel="tc-fancybox-group1264"><img class="size-full wp-image-1487 alignright" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/5-key-benefits-angular-typescript.jpg" alt="" width="270" height="250"></a>Over the past few months, I’ve been asked the same general question about Angular multiple times in&nbsp;<a href="https://www.codewithdan.com/products/angular-programming" target="_blank" rel="noopener noreferrer">onsite training classes</a>, while helping customers with their architecture, or when talking with company leaders about the direction web technologies are heading. Here’s the general question:</p>
+<h3><strong>“What are the key benefits that Angular and TypeScript can offer our development teams?”</strong></h3>
+<p>It’s a great question and one that should be asked before jumping into any new technology or framework. Most of the people asking are technology managers or directors interested in understanding the benefits that Angular can offer their teams (both technical and non-technical). They’re concerned about application maintenance, developer productivity, handling change requests, the longevity of the framework, the pace of technology, and more.</p>
+<p>After hearing that general question over and over I decided it was time to put together a post that outlines my top 5 reasons for using Angular and TypeScript. There are certainly <strong>MANY</strong> others I could list, but here are my top 5 benefits:</p>
+<ol>
+<li>Consistency</li>
+<li>Productivity</li>
+<li>Maintainability</li>
+<li>Modularity</li>
+<li>Catch Errors Early</li>
+</ol>
+<p>Before continuing I do want to mention that while I do work with Angular a lot (and enjoy it), I’m not a “one framework” type of guy. Why? Because if there’s one thing I’ve learned in life it’s that one size never fits all. When someone suggests that one technology or framework is *always* the best option I like to say, “Walk into a shoe store and say that you want to try on a pair of shoes. When they ask you what size you’d like, tell them it doesn’t matter and see how that goes.” One size doesn’t fit all in shoes – or in technology.</p>
+<p>My company (<a href="https://codewithdan.com/" target="_blank" rel="noopener noreferrer">Wahlin Consulting</a>) works with a lot of large and small companies and some are using AngularJS 1.x, some have moved to Angular v2+, some are using React, others are exploring Vue.js (and others), and a few are still using jQuery. This post is geared toward those who are considering Angular and TypeScript. If you’re not interested in Angular/TypeScript then this post probably isn’t for you.</p>
+<p>Let’s get started with benefit #1.</p>
+<h2>Consistency</h2>
+<p>Code consistency is an important goal to strive for in any code base. If you or your team have to support production applications then you understand how important consistency is and why it leads to better maintenance. So what does Angular offer that provides consistency for teams? The overall framework is based on components and services that you can think of as Lego blocks. All components and services start out the same way. For example, all Angular components do the following:</p>
+<ol>
+<li>Import required ES2015 modules</li>
+<li>Define a @Component decorator (metadata)</li>
+<li>Place code in a component class</li>
+</ol>
+<p>Here’s a visual showing how that works:</p>
+<p><img class="alignnone wp-image-1467" style="border: 1px solid #ccc;" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/2017-08-26_13-28-38.png" alt="" width="650" height="381" srcset="https://blog.codewithdan.com/wp-content/uploads/2017/08/2017-08-26_13-28-38.png 1225w, https://blog.codewithdan.com/wp-content/uploads/2017/08/2017-08-26_13-28-38-300x176.png 300w, https://blog.codewithdan.com/wp-content/uploads/2017/08/2017-08-26_13-28-38-768x450.png 768w, https://blog.codewithdan.com/wp-content/uploads/2017/08/2017-08-26_13-28-38-1024x600.png 1024w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p>Regardless of what component you’re writing, this overall structure is always followed. Sure, there are additional things you can add (implement an interface such as OnInit or others if using TypeScript, put templates inline versus in a separate file, and many others), but the overall structure of a component always looks the same. That’s a good start and provides consistency as team members start out building components.</p>
+<p>Another big area of consistency in Angular is with services. AngularJS 1.x let you choose between factories, services, providers, values and constants when you have code that needs to be reused throughout an application. Some developers prefer factories while others lean toward services. They both do the same thing overall but which one is the “right one”? The answer is that it’s quite subjective. Unless a team agrees on a coding style for team members, each developer goes off and does their own things…something I’ve always called “cowboy coding” (no offense to any cowboys out there :-)).</p>
+<p>Fortunately, Angular makes deciding how to add re-usable code into an application quite simple. Everything in that scenario is simply a service class:</p>
+<pre class="code"><code class="typescript hljs javascript">
+<span class="hljs-keyword">import</span> { Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { MyDependency } <span class="hljs-keyword">from</span> <span class="hljs-string">'./mydependency.service'</span>;
+
+@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyService</span> </span>{
+&nbsp; &nbsp;<span class="hljs-keyword">constructor</span>(private myDependency: MyDependency) {}
+}
+</code></pre>
+<p>Any dependencies that the service requires can be “injected” into its constructor as shown in the code sample above (the dependency must have a <a href="https://angular.io/guide/dependency-injection" target="_blank" rel="noopener">provider registered</a> for this to work). This is another area where consistency is great. While components, services, and other types can certainly create instances of the objects they need, Angular provides built-in dependency injection that will inject the objects at runtime. This not only provides consistency across an application but also allows injected objects to be overridden if needed which can be useful in many scenarios.</p>
+<p>The Angular documentation also provides a <a href="https://angular.io/guide/styleguide" target="_blank" rel="noopener">style guide</a>&nbsp;that teams can use as a starting point to help drive consistency across projects. If I’m a director, manager, team lead or simply in charge of ensuring consistency across a team, I’m investing the necessary time to create a team-specific style guide for any framework used.</p>
+<p>Finally, <a href="https://cli.angular.io/" target="_blank" rel="noopener">Angular provides a CLI tool</a> that can be used to create initial projects, add different features into an application (components, services, etc.), run tests, perform builds, lint code, and more. This provides a great foundation for teams to build on to drive consistency across team members and even across multiple teams in an enterprise.</p>
+<p>The bottom line is that the consistency found in Angular components, services, pipes, directives and more allows a team to swim with the current rather than feeling like they’re always swimming upstream against the current. &nbsp;That leads quite nicely into the next benefit – productivity.</p>
+<h2>Productivity</h2>
+<p>Consistency brings productivity into the picture as well. Developers don’t have to worry as much about if they’re doing it the “right way”. Components and services look the same overall, reusable application code is put in service classes, ES6/ES2015 modules organize related functionality and allow code to be self-contained and self-responsible, data is passed into components using input properties and can be passed out using output properties, etc.</p>
+<p>With greater consistency, you get the added benefit of productivity. When you learn how to write one component you can write another following the same general guidelines and code structure. Once you learn how to create a service class it’s easy to create another one. It’s like a broken record consistently spinning round and round that feels like many other frameworks you may have used in the past. Combine all of this with the <a href="https://cli.angular.io/" target="_blank" rel="noopener">Angular CLI</a>, code snippets that the team creates (<a href="https://blog.codewithdan.com/2016/08/30/angular-2-typescript-and-html-snippets-for-vs-code/" target="_blank" rel="noopener noreferrer">or use mine</a> if you use <a href="http://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a>) and you’re consistent and productive.</p>
+<p><img class="wp-image-1469 alignright" style="border: 1px solid #ccc;" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/2017-08-26_19-34-18.png" alt="" width="491" height="230" srcset="https://blog.codewithdan.com/wp-content/uploads/2017/08/2017-08-26_19-34-18.png 713w, https://blog.codewithdan.com/wp-content/uploads/2017/08/2017-08-26_19-34-18-300x141.png 300w" sizes="(max-width: 491px) 100vw, 491px"></p>
+<p>If you use TypeScript to build your Angular applications then you also get several productivity benefits. In editors like <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> and <a href="https://www.jetbrains.com/webstorm/specials/webstorm/webstorm.html" target="_blank" rel="noopener">WebStorm</a>&nbsp;, you have access to robust code help(intellisense) as you type making it easier to discover types and the features they offer. If you use TypeScript interfaces, you can even get code help against the JSON data that comes back from calls to a back-end service. This is extremely helpful when various data/model objects are being used and manipulated by developers. TypeScript isn’t only for Angular of course (you can use it with React, AngularJS, Vue.js, Node.js and any other JavaScript libraries/frameworks), but it integrates with Angular quite well.</p>
+<h2>Maintainability</h2>
+<p>I love open source projects but am also sensitive to the fact that some people or groups running a project get tied up with other aspects of life and projects stop being maintained on occasion. If you’ve worked with OSS projects very long you know the story there. Anytime I consider using a project I look at the number of contributors, the last time it was updated and scan through the issues to see if they’re being handled with regularity. I try really hard to only use and recommend projects, modules, libraries, etc. that are actively supported so that my projects and my customers’ projects are easier to maintain and easier to keep up-to-date down the road.</p>
+<p>Having a dedicated team at Google building Angular combined with the open source contributions from the community is a HUGE selling point for me personally. In today’s “flavor of the day” world of JavaScript you never know what is going to be around tomorrow of course, so having that solid foundation backing the framework gives me more confidence. The fact that Google uses Angular quite heavily inside of the company for applications is another bonus. Many will say that the same could be said for React too….and they’d be correct. But, this post is focused on Angular.</p>
+<p>You may be thinking, “But Dan – the jump from AngularJS 1.x to Angular 2+ was huge and definitely not good when it came to maintaining our existing app!” Yes, that’s a valid point – even with ng-upgrade options. The jump between AngularJS and Angular was a direct result of the JavaScript language making huge gains forward with ES6/ES2015 functionality, combined with new features that modern browsers can now support. Had the Angular team NOT made that jump we’d be calling Angular the “Caveman Framework” in no time at all since it wouldn’t be leveraging the latest and greatest features that can help with performance, consistency, productivity, maintainability and overall development. It was a move that I’m glad the Angular team made. I don’t have a crystal ball (if anyone has one I’d be interested in borrowing it), but I do know that the Angular team is very aware of how framework changes affect enterprise projects (Angular is used a lot inside of Google). Based on what I’ve heard from the team I’m confident that they’ll provide a smooth road going forward as new versions are released.</p>
+<p>In addition to the solid backing Angular has going for it behind the scenes with the Angular team, when you add in the consistency features mentioned earlier you also get code that will be easier to maintain in production. I’ve had production support responsibilities for many years in my career (used to have a good old pager back in the day) so I’m really sensitive to being able to write code that is consistent and easy to maintain. With the proper style guide, training, and knowledge, a team can take any framework and create a consistent way of developing applications of course. That’s true not only Angular but for many other frameworks out there as well I realize. But, Angular provides a very clear path for writing code as mentioned earlier in the “consistency” section which ultimately leads to simplified maintenance. If Jim or Jane goes on vacation (or changes jobs), Victor can step in and fix bugs that are found or handle change requests with confidence.</p>
+<p>Angular code can be built using TypeScript (my preference) which provides a host of benefits, especially in the enterprise. See the “Catch Errors Early” section below for my thoughts on TypeScript and some of the maintenance benefits it brings to the table.</p>
+<p>Whether your team does your own production support or hands it off to another group, being able to build applications that are consistent, easy to maintain, and that use a framework backed by a full-time development team combined with a robust open source community is a key priority for most enterprises.</p>
+<h2>Modularity</h2>
+<p><img class=" wp-image-1470 alignright" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/bucket.png" alt="" width="350" height="250" srcset="https://blog.codewithdan.com/wp-content/uploads/2017/08/bucket.png 500w, https://blog.codewithdan.com/wp-content/uploads/2017/08/bucket-300x214.png 300w" sizes="(max-width: 350px) 100vw, 350px"></p>
+<p>Angular is all about organizing code into “buckets”. Everything you create whether it’s components, services, pipes, or directives has to be organized into one or more buckets. If you come from a &nbsp;“function spaghetti code” background in your organization, the sanity that Angular and TypeScript bring to the table can be quite refreshing. The “buckets” I refer to are called “modules” in the Angular world. They provide a way to organize application functionality and divide it up into features and reusable chunks. Modules also offer many other benefits such as lazy loading as well where one or more application features are loaded in the background or on-demand.</p>
+<p>Enterprise applications can grow quite large and the ability to divide the labor across multiple team members while keeping code organized is definitely achievable with Angular. Modules can be used to add organization into an application much like packages and namespaces do in other languages/frameworks like Java or .NET. I’ll admit that a solid understanding of Angular modules and the way they can be used is crucial in order to use them successfully. However, once a team architects modules appropriately they can reap the benefits when it comes to the division of labor, code consistency, productivity, and maintenance.</p>
+<h2>Catch Errors Early</h2>
+<p><a href="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/oops-sign.jpg" class="grouped_elements" rel="tc-fancybox-group1264"><img class=" wp-image-1471 alignright" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/oops-sign.jpg" alt="" width="226" height="226" srcset="https://blog.codewithdan.com/wp-content/uploads/2017/08/oops-sign.jpg 400w, https://blog.codewithdan.com/wp-content/uploads/2017/08/oops-sign-150x150.jpg 150w, https://blog.codewithdan.com/wp-content/uploads/2017/08/oops-sign-300x300.jpg 300w" sizes="(max-width: 226px) 100vw, 226px"></a>Angular is built using TypeScript which brings many benefits to the table such as:</p>
+<ul>
+<li>TypeScript is a <strong>superset</strong> <strong>of JavaScrip</strong>t.TypeScript is not its own stand-alone language like CoffeeScript, Dart or others and that’s super powerful. That means I can take existing ES5 or ES2015+ JavaScript code, plug it into a TypeScript .ts file (or even work with the .js file directly) and the code will work fine. TypeScript simply compiles/transpiles code down to ES5 or ES2015 depending on what you configure.</li>
+<li>TypeScript supports core ES2015 features as well as ES2016/ES2017 features like decorators, async/await and others. I like to think of it as ES2015++. See supported features at <a href="http://kangax.github.io/compat-table/es6" target="_blank" rel="noopener noreferrer">http://kangax.github.io/compat-table/es6</a>.</li>
+<li>TypeScript provides support for types (primitives, interfaces, and other custom types). Yes – there’s a reason TypeScript has the word “Type” in its name. Although types are optional, they’re highly recommended if you want to catch errors early on in the development lifecycle especially with larger applications. They make it much easier to see when something is passed or used incorrectly.</li>
+<li>TypeScript code can be debugged directly in the browser (or in an editor) as long as the proper map files are created during build time.</li>
+<li>TypeScript allows you to use classes and/or functional programming techniques. You’re not limited to one way of doing things and can opt-out of any TypeScript specific features.</li>
+</ul>
+<p>I could list many other features (visit <a href="http://www.typescriptlang.org/docs/home.html" target="_blank" rel="noopener">TypeScript’s site</a> for more), but ultimately, the Angular framework is built using TypeScript and if you use it in your projects (which I highly recommend) then you can catch errors early in the development lifecycle or while performing maintenance tasks. When it comes to enterprise applications, TypeScript offers “guard rails” for your JavaScript code to ensure that developers and teams don’t go “off the cliff” as they’re building applications.</p>
+<p>In addition to the benefits TypeScript offers, Angular is also built with testability in mind. The <a href="https://cli.angular.io/" target="_blank" rel="noopener">Angular CLI</a>&nbsp;makes the process of unit testing and end-to-end testing a snap (it relies on Karma and Jasmine by default for unit tests but you can use whatever testing tools you’d like). Simply type <strong>ng test</strong> at the command line and any tests in the project will run. The <strong>ng generate</strong> command will automatically generate a spec file for you as you create a component, service, etc. If your organization is planning to write unit tests against your Angular code that’s definitely another benefit that will help you catch errors early on in the development lifecycle.</p>
+<h2>Summary</h2>
+<p>There are certainly many more benefits that could be discussed, but I wanted to focus on 5 that I think are important to consider. Are these the “correct” benefits to focus on? That’s a very subjective question of course. For my company and many others that we work with, consistency, maintainability, productivity, modularity, and the ability to catch errors early are definitely at the top of the list.</p>
+<p>It’s important to note that many of these benefits can be achieved using other JavaScript libraries/frameworks as well (refer to my “one size does not fit all” discussion). The goal of this post is&nbsp;<strong>NOT</strong> to infer that Angular is the only client-side framework that offers these benefits. Instead, the goal is to help those considering Angular and TypeScript to better understand some of the key benefits they offer.</p>
+<br>
+<aside class="social-block widget">
+<div class="social-links-post">
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/&amp;t=Check%20out%20the%20great%20content%20on%20the%20Code%20with%20Dan%20site:%20http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-facebook-square" style="color:#3B5998;"></i>
+</a>
+<a href="https://twitter.com/intent/tweet/?url=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/&amp;text=Check%20out%20the%20great%20content%20on%20the%20Code%20with%20Dan%20website!" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-twitter-square" style="color:#00aced;"></i>
+</a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/&amp;title=Code%20With%20Dan&amp;summary=Code%20with%20Dan:%20Training%20and%20Videos&amp;source=Code%20with%20Dan" onclick="javascript:window.open(this.href,&#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-linkedin-square" style="color:#007bb6"></i>
+</a>
+<a href="https://plus.google.com/share?url=http://blog.codewithdan.com/2017/08/26/5-key-benefits-of-angular-and-typescript/" onclick="javascript:window.open(this.href,&#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;">
+<i class="fa fa-google-plus-square" style="color:#dd4b39;"></i>
+</a>
+<a href="https://www.youtube.com/channel/UCtbxTmNfHcXLV5nfpnQxFkw" target="_blank">
+<i class="fa fa-youtube-square" style="color:#dd4b39"></i>
+</a>
+<a rel="nofollow" title="Subscribe to my rss feed" aria-label="Subscribe to my rss feed" href="https://blog.codewithdan.com/feed/" target="_blank">
+<i class="fa fa-rss-square" style="color: #E15C2D"></i>
+</a>
+<a rel="nofollow" title="Follow us on Github" aria-label="Follow us on Github" href="https://github.com/danwahlin" target="_blank">
+<i class="fa fa-github-square"></i>
+</a>
+</div>
+</aside>
+<br>
+<div class="mailchimp mailchimp-bottom">
+<div id="mc_embed_signup">
+<form action="https://asp.us7.list-manage.com/subscribe/post?u=65e00aa00c80d98f762ebeb6e&amp;id=8ad074a071" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<div id="mc_embed_signup_scroll">
+<div class="mailchimp-heading">Join the free <span class="main-color">Code with Dan</span> Development Newsletter!</div>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+
+<div style="position: absolute; left: -5000px;">
+<input type="text" name="b_65e00aa00c80d98f762ebeb6e_8ad074a071" tabindex="-1" value="">
+</div>
+<div class="clear"></div>
+</div>
+</form>
+</div>
+</div>
+<br>
+</section>
+</article>
+<div id="disqus_thread"><iframe id="dsq-app8811" name="dsq-app8811" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 2500px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="dsq-app8814" name="dsq-app8814" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" sandbox="allow-forms allow-popups allow-same-origin allow-scripts" width="100%" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/saved_resource(1).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;"></iframe></div>
+<hr class="featurette-divider __after_loop">
+<nav id="nav-below" class="navigation" role="navigation">
+<h3 class="assistive-text">
+Post navigation </h3>
+<ul class="pager">
+<li class="previous">
+<span class="nav-previous">
+<a href="https://blog.codewithdan.com/2017/08/10/code-with-dan-newsletter-2-node-js-microservices-authentication-css-and-typescriptangular/" rel="prev"><span class="meta-nav">←</span> Code with Dan Newsletter #2: Node.js, Microservices, Authentication, CSS and TypeScript/Angular</a> </span>
+</li>
+<li class="next">
+<span class="nav-next">
+<a href="https://blog.codewithdan.com/2017/09/05/new-pluralsight-course-integrating-angular-with-asp-net-core-restful-services/" rel="next">New Pluralsight Course: Integrating Angular with ASP.NET Core RESTful Services <span class="meta-nav">→</span></a> </span>
+</li>
+</ul>
+</nav>
+</div>
+<div class="span3 right tc-sidebar">
+<div id="right" class="widget-area" role="complementary">
+<aside class="social-block widget widget_social"><div class="social-links"><a rel="nofollow" class="social-icon icon-feed" title="Subscribe to my rss feed" aria-label="Subscribe to my rss feed" href="https://blog.codewithdan.com/feed/" target="_blank" style="font-size:20px"><i class="fa fa-rss"></i></a><a rel="nofollow" class="social-icon icon-twitter" title="Follow us on Twitter" aria-label="Follow us on Twitter" href="https://twitter.com/danwahlin" target="_blank" style="font-size:20px"><i class="fa fa-twitter"></i></a><a rel="nofollow" class="social-icon icon-linkedin" title="Follow us on Linkedin" aria-label="Follow us on Linkedin" href="https://www.linkedin.com/in/danwahlin/" target="_blank" style="font-size:20px"><i class="fa fa-linkedin"></i></a><a rel="nofollow" class="social-icon icon-github" title="Follow us on Github" aria-label="Follow us on Github" href="https://github.com/danwahlin" target="_blank" style="font-size:20px"><i class="fa fa-github"></i></a><a rel="nofollow" class="social-icon icon-facebook" title="Follow us on Facebook" aria-label="Follow us on Facebook" href="https://www.facebook.com/DanWahlin" target="_blank" style="font-size:20px"><i class="fa fa-facebook"></i></a><a rel="nofollow" class="social-icon icon-google" title="Follow us on Google" aria-label="Follow us on Google" href="https://plus.google.com/u/0/+DanWahlin" target="_blank" style="font-size:20px"><i class="fa fa-google"></i></a><a rel="nofollow" class="social-icon icon-youtube" title="Follow us on Youtube" aria-label="Follow us on Youtube" href="https://www.youtube.com/channel/UCtbxTmNfHcXLV5nfpnQxFkw" target="_blank" style="font-size:20px"><i class="fa fa-youtube"></i></a></div></aside><aside class="widget widget_video">
+<h3 class="widget-title">Pluralsight Video Courses</h3>
+<ul>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/angular-aspnetcore-restful-services" target="_blank">Integrating Angular with ASP.NET Core RESTful Services (NEW!)</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/angular-nodejs-restful-services" target="_blank">Integrating Angular with Node.js RESTful Services (NEW!)</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/docker-web-development" target="_blank">Docker for Web Developers</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/play-by-play-angular-2-rxjs-http-restful-services-john-papa-dan-wahlin" target="_blank">Play by Play: Angular/RxJS/HTTP and RESTful Services</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/play-by-play-docker-web-developers-john-papa-dan-wahlin" target="_blank">Play by Play: Docker for Web Developers </a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/structuring-javascript" target="_blank">Structuring JavaScript Code</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/typescript" target="_blank">TypeScript Fundamentals</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/web-development" target="_blank">Building ASP.NET MVC, EF Code First, HTML5, and jQuery Apps</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/csharp-events-delegates" target="_blank">C# Events, Delegates &amp; Lambdas</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/jquery-fundamentals" target="_blank">jQuery Fundamentals</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/jquery-tips-and-tricks" target="_blank">jQuery Tips and Tricks</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/html5-canvas-fundamentals" target="_blank">HTML5 Canvas Fundamentals</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/aspdotnet-webforms4-intro" target="_blank">Intro to ASP.NET Web Forms</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/aspnet-webforms45-new-features" target="_blank">New Features in ASP.NET 4.5</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/play-by-play-wahlin-allen" target="_blank">Play by Play: AngularJS Application Design</a></li>
+<li><a href="https://pluralsight.pxf.io/c/1191765/424552/7490?u=https://www.pluralsight.com/courses/win8-intro" target="_blank">Intro to Windows 8 Metro Apps</a></li>
+</ul>
+</aside>
+<aside class="widget widget_video">
+<h3 class="widget-title">Udemy Video Courses</h3>
+<ul>
+<li><a href="https://www.udemy.com/angularjs-jumpstart/#/" target="_blank">AngularJS JumpStart</a></li>
+<li><a href="https://www.udemy.com/angularjs-custom-directives/#/" target="_blank">AngularJS Custom Directives</a></li>
+</ul>
+</aside>
+<aside id="text-5" class="widget widget_text"> <div class="textwidget"><a target="_blank" href="https://shareasale.com/r.cfm?b=978783&amp;u=1457843&amp;m=53701&amp;urllink=&amp;afftrack="><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/5011-16_Banners_B2CFreeTrial-250x250.jpg" border="0" style=""></a></div>
+</aside><aside id="search-4" class="widget widget_search"><h3 class="widget-title">Search</h3><form role="search" method="get" id="searchform" class="searchform" action="https://blog.codewithdan.com/">
+<div>
+<label class="screen-reader-text" for="s">Search for:</label>
+<input type="text" value="" name="s" id="s">
+<input type="submit" id="searchsubmit" value="Search">
+</div>
+</form></aside> <aside id="recent-posts-8" class="widget widget_recent_entries"> <h3 class="widget-title">Recent Posts</h3> <ul>
+<li>
+<a href="https://blog.codewithdan.com/2018/06/15/8-tips-for-maximizing-your-productivity/">8 Tips to Maximize Your Productivity</a>
+</li>
+<li>
+<a href="https://blog.codewithdan.com/2018/05/13/video-microservices-with-docker-angular-and-asp-net-core/">Video: Microservices with Docker, Angular, and ASP.NET Core</a>
+</li>
+<li>
+<a href="https://blog.codewithdan.com/2018/05/03/upgrading-an-application-to-angular-6-step-by-step/">Upgrading an Application to Angular 6: Step By Step</a>
+</li>
+<li>
+<a href="https://blog.codewithdan.com/2018/05/03/getting-started-with-machine-learning-using-tensorflow-and-docker/">Getting Started with Machine Learning using TensorFlow and Docker</a>
+</li>
+<li>
+<a href="https://blog.codewithdan.com/2018/04/23/my-interview-on-the-it-career-energizer-podcast-career-tips-and-life-lessons-learned/">My Interview on the IT Career Energizer Podcast: Career Tips and Life Lessons Learned</a>
+</li>
+</ul>
+</aside><aside id="categories-8" class="widget widget_categories"><h3 class="widget-title">Categories</h3><form action="https://blog.codewithdan.com/" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+<option value="-1">Select Category</option>
+<option class="level-0" value="71">.NET&nbsp;&nbsp;(14)</option>
+<option class="level-0" value="171">ActiveDirectory&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="261">Ajax&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="51">Angular&nbsp;&nbsp;(21)</option>
+<option class="level-0" value="401">Angular 2&nbsp;&nbsp;(8)</option>
+<option class="level-0" value="81">angularjs&nbsp;&nbsp;(16)</option>
+<option class="level-0" value="271">Animations&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="281">Architecture&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="502">Artificial Intelligence&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="391">ASP.NET&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="497">ASP.NET Core&nbsp;&nbsp;(5)</option>
+<option class="level-0" value="291">ASP.NET Web API&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="381">Aurelia&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="181">Azure&nbsp;&nbsp;(7)</option>
+<option class="level-0" value="231">Babel&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="301">Breeze&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="311">C#&nbsp;&nbsp;(5)</option>
+<option class="level-0" value="508">career&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="191">Cloud&nbsp;&nbsp;(7)</option>
+<option class="level-0" value="91">conference&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="495">Containers&nbsp;&nbsp;(5)</option>
+<option class="level-0" value="321">CSS&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="331">Databinding&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="131">directives&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="482">Docker&nbsp;&nbsp;(15)</option>
+<option class="level-0" value="201">ECMASCript6&nbsp;&nbsp;(5)</option>
+<option class="level-0" value="341">EF Code First&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="21">es6&nbsp;&nbsp;(10)</option>
+<option class="level-0" value="351">Express&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="501">Framework&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="101">Gulp&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="121">HTML5&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="31">javascript&nbsp;&nbsp;(29)</option>
+<option class="level-0" value="111">jQuery&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="361">JSON&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="509">machine learning&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="513">meditation&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="512">microservices&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="507">mindfulness&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="371">MongoDB&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="499">Newsletter&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="241">Node.js&nbsp;&nbsp;(12)</option>
+<option class="level-0" value="483">Observables&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="61">Office365&nbsp;&nbsp;(5)</option>
+<option class="level-0" value="151">patterns&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="485">Pluralsight&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="514">productivity&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="511">python&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="496">React&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="484">RxJS&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="251">SharePoint&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="505">socket.io&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="141">SPA&nbsp;&nbsp;(15)</option>
+<option class="level-0" value="504">Tech 5&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="510">tensorflow&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="221">Traceur&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="211">Transpile&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="41">TypeScript&nbsp;&nbsp;(23)</option>
+<option class="level-0" value="161">Udemy&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="503">VSCode&nbsp;&nbsp;(1)</option>
+<option class="level-0" value="498">VueJS&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="506">web sockets&nbsp;&nbsp;(1)</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+</aside> </div>
+</div>
+</div>
+</div>
+<div id="tc-push-footer"></div>
+</div>
+
+<div class="container">
+<div class="row column-content-wrapper">
+<hr>
+<div class="bonus-content">
+<table id="magazines-table">
+<tbody><tr>
+<th colspan="5"><h4>Subscribe to Our Free FlipBoard Magazines:</h4></th>
+</tr>
+<tr>
+<td><a href="https://flipboard.com/@dwahlin/the-angularjs-magazine-f66o0fd8y" target="_blank"><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/angularFlipboard.png"></a></td>
+<td><a href="https://flipboard.com/@dwahlin/the-javascript%2C-html5-and-css-magazine-r54fkughy" target="_blank"><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/javascriptFlipboard.png"></a></td>
+<td><a href="https://flipboard.com/@dwahlin/the-node.js-magazine-aa4fu4jsy" target="_blank"><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/nodeFlipboard.png"></a></td>
+<td><a href="https://flipboard.com/@dwahlin/the-azure-magazine-uo2han4gy" target="_blank"><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/azureFlipboard.png"></a></td>
+<td><a href="https://flipboard.com/@dwahlin/the-asp.net-mvc-%26-web-api-magazine-ghshc9qsy" target="_blank"><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/aspnetFlipboard.png"></a></td>
+<td><a href="https://flipboard.com/@dwahlin/the-docker-magazine-vp93fvnry" target="_blank"><img src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/dockerFlipboard.png"></a></td>
+</tr>
+</tbody></table>
+<br>
+</div>
+</div>
+</div>
+
+<footer id="footer" class="">
+<div class="colophon">
+<div class="container">
+<div class="row">
+<div class="span4 pull-left">
+<span class="tc-footer-social-links-wrapper">
+<a href="https://blog.codewithdan.com/feed/rss/" title="Subscribe to my rss feed"><i class="fa fa-rss" aria-hidden="true"></i></a>
+</span>
+</div>
+<div class="span4 credits pull-right">
+<p>© 2017 <a href="https://blog.codewithdan.com/" title="Code with Dan" rel="bookmark">Wahlin Consulting</a></p>
+</div>
+
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script>
+		var advanced_ads_ga_UID = false;
+		var advanced_ads_ga_anonymIP = true;
+advanced_ads_check_adblocker=function(t){function e(t){(window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(t){return setTimeout(t,16)}).call(window,t)}var n=[],a=null;return e(function(){var t=document.createElement("div");t.innerHTML="&nbsp;",t.setAttribute("class","ad_unit ad-unit text-ad text_ad pub_300x250"),t.setAttribute("style","width: 1px !important; height: 1px !important; position: absolute !important; left: 0px !important; top: 0px !important; overflow: hidden !important;"),document.body.appendChild(t),e(function(){var e=window.getComputedStyle&&window.getComputedStyle(t),o=e&&e.getPropertyValue("-moz-binding");a=e&&"none"===e.getPropertyValue("display")||"string"==typeof o&&-1!==o.indexOf("about:");for(var i=0;i<n.length;i++)n[i](a);n=[]})}),function(t){if(null===a)return void n.push(t);t(a)}}(),function(){var t=function(t,e){this.name=t,this.UID=e,this.analyticsObject=null;var n=this,a={hitType:"event",eventCategory:"Advanced Ads",eventAction:"AdBlock",eventLabel:"Yes",nonInteraction:!0,transport:"beacon"};this.analyticsObject="string"==typeof GoogleAnalyticsObject&&"function"==typeof window[GoogleAnalyticsObject]&&window[GoogleAnalyticsObject],!1===this.analyticsObject?(!function(t,e,n,a,o,i,d){t.GoogleAnalyticsObject=o,t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)},t[o].l=1*new Date,i=e.createElement(n),d=e.getElementsByTagName(n)[0],i.async=1,i.src="https://www.google-analytics.com/analytics.js",d.parentNode.insertBefore(i,d)}(window,document,"script",0,"_advads_ga"),_advads_ga("create",n.UID,"auto",this.name),advanced_ads_ga_anonymIP&&_advads_ga("set","anonymizeIp",!0),_advads_ga(n.name+".send",a)):(window.console&&window.console.log("Advanced Ads Analytics >> using other's variable named `"+GoogleAnalyticsObject+"`"),window[GoogleAnalyticsObject]("create",n.UID,"auto",this.name),window[GoogleAnalyticsObject]("set","anonymizeIp",!0),window[GoogleAnalyticsObject](n.name+".send",a))};advanced_ads_check_adblocker(function(e){e&&"string"==typeof advanced_ads_ga_UID&&advanced_ads_ga_UID&&new t("advadsTracker",advanced_ads_ga_UID)})}();		
+		</script><script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"codewithdan"};
+var countVars = {"disqusShortname":"codewithdan"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/comment_count.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.16"},"disqusIdentifier":"1264 https:\/\/blog.codewithdan.com\/?p=1264","disqusShortname":"codewithdan","disqusTitle":"5 Key Benefits of Angular and TypeScript","disqusUrl":"https:\/\/blog.codewithdan.com\/2017\/08\/26\/5-key-benefits-of-angular-and-typescript\/","postId":"1264"};
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.16"},"disqusIdentifier":"1264 https:\/\/blog.codewithdan.com\/?p=1264","disqusShortname":"codewithdan","disqusTitle":"5 Key Benefits of Angular and TypeScript","disqusUrl":"https:\/\/blog.codewithdan.com\/2017\/08\/26\/5-key-benefits-of-angular-and-typescript\/","postId":"1264"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/comment_embed.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/core.min.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/select2.min.js"></script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/ace.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mivhak_settings = {"line_numbers":"","auto_assign":"","show_meta":"1","min_lines":"1","default_lang":"javascript","font_size":"12","theme":"chrome","version":"1.3.6","lang_list":{"abap":"ABAP","abc":"ABC","actionscript":"ActionScript","ada":"Ada","apache_conf":"ApacheConf","applescript":"AppleScript","asciidoc":"AsciiDoc","assembly_x86":"Assembly x86","autohotkey":"AutoHotkey","batchfile":"Batch File","c9search":"c9search","c_cpp":"C\/C++","cirru":"cirru","clojure":"Clojure","cobol":"COBOL","coffee":"CoffeeScript","coldfusion":"ColdFusion","csharp":"C#","css":"CSS","curly":"Curly","d":"D","dart":"Dart","diff":"diff","django":"Django","dockerfile":"Dockerfile","dot":"DOT","eiffel":"Eiffel","ejs":"EJS","elixir":"Elixir","elm":"Elm","erlang":"Erlang","forth":"Forth","ftl":"FTL","gcode":"G-Code","gherkin":"Gherkin","gitignore":"gitignore","glsl":"GLSL","gobstones":"gobstones","golang":"Go","groovy":"Groovy","haml":"Haml","handlebars":"Handlebars","haskell":"Haskell","haxe":"Haxe","html":"HTML","html_elixir":"HTML Elixir","html_ruby":"HTML Ruby","ini":"INI","io":"io","jack":"JACK","jade":"Jade","java":"Java","javascript":"JavaScript","json":"JSON","jsoniq":"JSONiq","jsp":"JSP","jsx":"JSX","julia":"Julia","latex":"LaTex","lean":"Lean","less":"Less","liquid":"Liquid","lisp":"Lisp","livescript":"LiveScript","logiql":"LogiQL","lsl":"LSL","lua":"Lua","luapage":"Luapage","lucene":"Lucene","makefile":"Makefile","markdown":"Markdown","mask":"Mask","matlab":"MATLAB","maze":"Maze","mel":"MEL","mipsassembler":"MIPS Assembler","mushcode":"MUSHCode","mysql":"MySQL","nix":"nix","nsis":"NSIS","objectivec":"Objective-C","ocaml":"OCaml","pascal":"Pascal","perl":"Perl","pgsql":"pgSQL","php":"PHP","plain_text":"Plain Text","powershell":"PowerShell","praat":"Praat","prolog":"Prolog","properties":"Properties","protobuf":"Protocol Bufffers","python":"Python","r":"R","razor":"Razor","rdoc":"RDoc","rhtml":"rhtml","rst":"reStructuredText","ruby":"Ruby","rust":"Rust","sass":"Sass","scad":"SCAD","scala":"Scala","scheme":"Scheme","scss":"SCSS","sh":"sh","sjs":"SJS","smarty":"Smarty","snippets":"Snippets","soy_template":"Soy Template","space":"Space","sql":"SQL","sqlserver":"SQLServer","stylus":"Stylus","svg":"SVG","swift":"Swift","swig":"Swig","tcl":"Tcl","tex":"Tex","text":"Text","textile":"Textile","toml":"Toml","twig":"Twig","typescript":"TypeScript","vala":"Vala","vbscript":"VBScript","velocity":"Velocity","verilog":"Verilog","vhdl":"VHDL","wollok":"Wollok","xml":"XML","xquery":"XQuery","yaml":"YAML"},"i18n":["line","lines","Copy this code to clipboard","Open this code in a new window","Wrap lines","Show code","About"]};
+var mivhak_settings = {"line_numbers":"","auto_assign":"","show_meta":"1","min_lines":"1","default_lang":"javascript","font_size":"12","theme":"chrome","version":"1.3.6","lang_list":{"abap":"ABAP","abc":"ABC","actionscript":"ActionScript","ada":"Ada","apache_conf":"ApacheConf","applescript":"AppleScript","asciidoc":"AsciiDoc","assembly_x86":"Assembly x86","autohotkey":"AutoHotkey","batchfile":"Batch File","c9search":"c9search","c_cpp":"C\/C++","cirru":"cirru","clojure":"Clojure","cobol":"COBOL","coffee":"CoffeeScript","coldfusion":"ColdFusion","csharp":"C#","css":"CSS","curly":"Curly","d":"D","dart":"Dart","diff":"diff","django":"Django","dockerfile":"Dockerfile","dot":"DOT","eiffel":"Eiffel","ejs":"EJS","elixir":"Elixir","elm":"Elm","erlang":"Erlang","forth":"Forth","ftl":"FTL","gcode":"G-Code","gherkin":"Gherkin","gitignore":"gitignore","glsl":"GLSL","gobstones":"gobstones","golang":"Go","groovy":"Groovy","haml":"Haml","handlebars":"Handlebars","haskell":"Haskell","haxe":"Haxe","html":"HTML","html_elixir":"HTML Elixir","html_ruby":"HTML Ruby","ini":"INI","io":"io","jack":"JACK","jade":"Jade","java":"Java","javascript":"JavaScript","json":"JSON","jsoniq":"JSONiq","jsp":"JSP","jsx":"JSX","julia":"Julia","latex":"LaTex","lean":"Lean","less":"Less","liquid":"Liquid","lisp":"Lisp","livescript":"LiveScript","logiql":"LogiQL","lsl":"LSL","lua":"Lua","luapage":"Luapage","lucene":"Lucene","makefile":"Makefile","markdown":"Markdown","mask":"Mask","matlab":"MATLAB","maze":"Maze","mel":"MEL","mipsassembler":"MIPS Assembler","mushcode":"MUSHCode","mysql":"MySQL","nix":"nix","nsis":"NSIS","objectivec":"Objective-C","ocaml":"OCaml","pascal":"Pascal","perl":"Perl","pgsql":"pgSQL","php":"PHP","plain_text":"Plain Text","powershell":"PowerShell","praat":"Praat","prolog":"Prolog","properties":"Properties","protobuf":"Protocol Bufffers","python":"Python","r":"R","razor":"Razor","rdoc":"RDoc","rhtml":"rhtml","rst":"reStructuredText","ruby":"Ruby","rust":"Rust","sass":"Sass","scad":"SCAD","scala":"Scala","scheme":"Scheme","scss":"SCSS","sh":"sh","sjs":"SJS","smarty":"Smarty","snippets":"Snippets","soy_template":"Soy Template","space":"Space","sql":"SQL","sqlserver":"SQLServer","stylus":"Stylus","svg":"SVG","swift":"Swift","swig":"Swig","tcl":"Tcl","tex":"Tex","text":"Text","textile":"Textile","toml":"Toml","twig":"Twig","typescript":"TypeScript","vala":"Vala","vbscript":"VBScript","velocity":"Velocity","verilog":"Verilog","vhdl":"VHDL","wollok":"Wollok","xml":"XML","xquery":"XQuery","yaml":"YAML"},"i18n":["line","lines","Copy this code to clipboard","Open this code in a new window","Wrap lines","Show code","About"]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/mivhak.min.js"></script>
+<script>if( typeof QTags !== 'undefined' ){QTags.addButton( 'pre', 'pre', '<pre>', '</pre>\n', 'p', '', 105 );}</script>
+<script src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/main.js"></script>
+
+<script type="text/javascript" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/embed(1).js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us7.list-manage.com","uuid":"65e00aa00c80d98f762ebeb6e","lid":"8ad074a071"}) })</script>
+<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-75902021-1', 'auto');
+		  ga('send', 'pageview');		
+	  </script>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><iframe style="display: none;" src="./5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/saved_resource(2).html"></iframe><div class="ad_unit ad-unit text-ad text_ad pub_300x250" style="width: 1px !important; height: 1px !important; position: absolute !important; left: 0px !important; top: 0px !important; overflow: hidden !important;">&nbsp;</div></body></html>

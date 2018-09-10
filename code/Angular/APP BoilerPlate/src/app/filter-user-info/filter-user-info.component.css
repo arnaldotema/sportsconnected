@@ -52,9 +52,9 @@ mat-select {
   min-height: 9px;
 }
 
-.table-td {
+.player-details-td {
   position: relative !important;
-  min-width: 90px !important;
+  min-width: 150px !important;
 }
 
 .sc-mat-card-avatar {

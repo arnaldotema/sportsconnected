@@ -4,19 +4,28 @@ import {of} from 'rxjs/observable/of';
 import {Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {User} from "../_models/user";
+import {UserService} from './user.service';
+
 
 @Injectable()
 export class AuthenticationService {
   public token: string;
   public admin: boolean;
   public testing: boolean = true;
-  private logged: boolean = true;
+  private logged: boolean = false;
 
-  constructor(private http: HttpClient) {
+  session_user : User;
+
+  constructor(private http: HttpClient, private userService: UserService) {
     // set token if saved in local storage
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
     this.admin = currentUser && currentUser.admin;
+  }
+
+  getSessionUser(): Observable<User> {
+    return this.userService.getSessionUser();
   }
 
   login(username: string, password: string): Observable<boolean> {
@@ -26,6 +35,7 @@ export class AuthenticationService {
           {username: username, token: '', admin: false}));
         this.token = '';
         this.admin = false;
+        this.logged = true;
         return of(true);
       }
       else if (username === 'admin') {
@@ -33,6 +43,7 @@ export class AuthenticationService {
           {username: username, token: '', admin: true}));
         this.token = '';
         this.admin = true;
+        this.logged = true;
         return of(true);
       }
       else {
@@ -52,7 +63,7 @@ export class AuthenticationService {
             localStorage.setItem('currentUser', JSON.stringify(
               {username: username, token: json.token, admin: json.admin}
             ));
-
+            this.logged = true;
             // return true to indicate successful login
             return true;
           } else {
@@ -72,6 +83,6 @@ export class AuthenticationService {
   }
 
   isLogged(): boolean {
-    return true;
+    return this.logged;
   }
 }

@@ -12,12 +12,14 @@ import {AuthGuard} from './_guards/auth.guard';
 import {AdminGuard} from './_guards/admin.guard';
 import {AuthenticationService} from './_services/authentication.service';
 import {GenericUserService} from './_services/generic_user.service';
+import {CompetitionService} from './_services/competition.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
 
 import {HttpClient, HttpHeaders, HttpClientModule} from '@angular/common/http';
+
 
 import {LoadingPageModule} from 'angular-loading-page';         //Loading directive
 import {MaterialBarModule} from 'angular-loading-page';         //Loading animation component
@@ -67,6 +69,7 @@ import {User_infoStatsComponent} from './user-info-stats/user-info-stats.compone
 import {TeamRosterComponent} from './team-roster/team-roster.component';
 import {RecommendationModalComponent} from './_modals/recommendation-modal/recommendation-modal.component';
 import {TryoutModalComponent} from './_modals/tryout-modal/tryout-modal.component';
+import {TeamPlayerEvaluationModalComponent} from './_modals/team-player-evaluation-modal/team-player-evaluation-modal.component';
 import {UserInfoProfileComponent} from './user-info-profile/user-info-profile.component';
 import {TeamProfileComponent} from './team-profile/team-profile.component';
 import {TeamStatsComponent} from './team-stats/team-stats.component';
@@ -78,8 +81,11 @@ import {EditUserInfoComponent} from './edit-user-info/edit-user-info.component';
 import {ToastModule} from 'ng2-toastr';
 import {FilterUserInfoComponent} from './filter-user-info/filter-user-info.component';
 import {UserInfoService} from './_services/user_info.service';
+import {UserService} from './_services/user.service';
 import {MatchService} from './_services/match.service';
 import {TeamService} from './_services/team.service';
+import { TeamMediaComponent } from './team-media/team-media.component';
+import { TeamPlayerComponent } from './team-player/team-player.component';
 
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
@@ -100,6 +106,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     User_infoStatsComponent,
     TeamRosterComponent,
     RecommendationModalComponent,
+    TeamPlayerEvaluationModalComponent,
     TryoutModalComponent,
     UserInfoProfileComponent,
     TeamProfileComponent,
@@ -109,7 +116,9 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     CreateAccountComponent,
     HeaderComponent,
     EditUserInfoComponent,
-    FilterUserInfoComponent
+    FilterUserInfoComponent,
+    TeamMediaComponent,
+    TeamPlayerComponent
   ],
   imports: [
     HttpClientModule,
@@ -163,8 +172,10 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AuthGuard,
     AdminGuard,
     AuthenticationService,
+    CompetitionService,
     GenericUserService,
     UserInfoService,
+    UserService,
     TeamService,
     MatchService,
     {
@@ -175,6 +186,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   bootstrap: [AppComponent],
   entryComponents: [
     RecommendationModalComponent,
+    TeamPlayerEvaluationModalComponent,
     TryoutModalComponent
   ]
 })

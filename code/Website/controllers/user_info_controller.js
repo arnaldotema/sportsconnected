@@ -113,7 +113,7 @@ module.exports = {
                 });
             }
 
-            user_info.user_id = req.body.user_id ? req.body.user_id : user_info.user_id;
+            user_info.user_info_id = req.body.user_id ? req.body.user_id : user_info.user_id;
 			user_info.name = req.body.name ? req.body.name : user_info.name;
 			
             user_info.save(function (err, user_info) {

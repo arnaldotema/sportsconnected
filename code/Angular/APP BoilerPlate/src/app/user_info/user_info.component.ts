@@ -1,22 +1,32 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
   templateUrl: './user_info.component.html',
   styleUrls: ['./user_info.component.css']
 })
-export class User_infoComponent implements OnInit{
+export class User_infoComponent implements OnInit, AfterViewInit{
 
+  id;
   viewModel: UserInfoViewModel;
+
   constructor(
-    private userInfoService : UserInfoService
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    private userInfoService : UserInfoService) { }
 
   ngOnInit() {
-    this.userInfoService.getUserInfo('0')
-      .subscribe(userInfo => this.viewModel = userInfo);
+    this.id  = this.route.snapshot.paramMap.get('id');
+  }
+
+  ngAfterViewInit(){
+    this.userInfoService.getUserInfo(this.id)
+      .subscribe(userInfo => {
+        this.viewModel = userInfo
+      });
   }
 
   hasClass(elementId, className) {
