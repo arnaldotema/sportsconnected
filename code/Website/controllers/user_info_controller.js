@@ -25,26 +25,6 @@ module.exports = {
             }
         })
 
-
-        // if(req.query.season_id){
-        //     query["season_id"] = {$in: [].concat(req.query.season_id)};
-        //     select["season_id"] = 1;
-        // }
-        // if(req.query.name){
-        //     query["personal_info.name"] = {$regex : req.query.name, $options : 'i'};
-        // }
-        // if(req.query.team_name){
-        //     query["team.name"] = {$regex : req.query.team_name, $options : 'i'};
-        // }
-        // if(req.query.goals){
-        //     query["stats.goals"] = {$gt : req.query.goals};
-        //     select["stats.goals"] = 1;
-        // }
-        // if(req.query.assists){
-        //     query["stats.assists"] = {$gt : req.query.assists};
-        //     select["stats.assists"] = 1;
-        // }
-
         FootballUserInfoSeason
             .find(query)
             .select(select)
