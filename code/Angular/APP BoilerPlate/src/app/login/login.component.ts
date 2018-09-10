@@ -13,27 +13,24 @@ export class LoginComponent implements OnInit {
   error = '';
 
   constructor(
-    /*private router: Router,
-    private authenticationService: AuthenticationService*/
+    private router: Router,
+    private authenticationService: AuthenticationService
     ) { }
 
   ngOnInit() {
     // logout
-    /*
+
     this.authenticationService.logout();
-    */
   }
 
   login() {
-    /*
     this.authenticationService.login(this.model.username, this.model.password)
       .subscribe(result => {
         if (result === true) {
-          this.router.navigate(['/']);
+          this.router.navigate(['/user-info/-1']);
         } else {
           this.error = 'Nome de usuário ou palavra passe incorretos';
         }
       });
-      */
   }
 }

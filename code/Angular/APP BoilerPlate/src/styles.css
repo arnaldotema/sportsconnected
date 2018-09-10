@@ -847,8 +847,14 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   margin: 0px 100px;
 }
 
+.login-form input{
+  color: black !important;
+}
+
+
+
 .login-form .mat-form-field {
-  color: white;
+  color: black;
 }
 
 .login-form .button {
@@ -1477,3 +1483,13 @@ button.toast-close-button {
   }
 }
 
+.icon {
+  width: auto !important;
+  height: 15px !important;
+}
+
+.list_flag {
+  min-width: 14px;
+  max-width: 30px;
+  min-height: 9px;
+}
