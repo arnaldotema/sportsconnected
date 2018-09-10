@@ -14,8 +14,12 @@
         <div class="text"><strong>{{viewModel.recommendations.list.length}}</strong> Recomendações</div>
       </div>
 
+      <div class="profile-buttons">
+        <button mat-raised-button class="btn-success" (click)="createTeamPlayer()">Criar Atletla</button>
+      </div>
+
       <div class="roster">
-        <table class="tryout-table">
+        <table *ngIf="viewModel.tryouts && viewModel.tryouts.length > 0" class="tryout-table">
           <caption class="centered caption">
             Captações
           </caption>
@@ -75,7 +79,7 @@
               <strong>Presidente</strong>
             </td>
             <td class="first-td-padding">
-              {{viewModel.personal_info.president}}
+              {{viewModel.additional_info.president}}
             </td>
           </tr>
           <tr>
@@ -83,7 +87,7 @@
               <strong>V. Presidente</strong>
             </td>
             <td>
-              {{viewModel.personal_info.vice_president}}
+              {{viewModel.additional_info.vice_president}}
             </td>
           </tr>
           <tr>
@@ -91,7 +95,7 @@
               <strong>Diret. Desportivo</strong>
             </td>
             <td>
-              {{viewModel.personal_info.sports_director}}
+              {{viewModel.additional_info.sports_director}}
             </td>
           </tr>
           <tr>
@@ -99,7 +103,7 @@
               <strong>Nº equipas</strong>
             </td>
             <td>
-              {{viewModel.personal_info.number_of_teams}}
+              {{viewModel.additional_info.number_of_teams}}
             </td>
           </tr>
           <tr>
@@ -107,7 +111,7 @@
               <strong>Nº atletas</strong>
             </td>
             <td>
-              {{viewModel.personal_info.number_of_athletes}}
+              {{viewModel.additional_info.number_of_athletes}}
             </td>
           </tr>
           <tr>
@@ -115,7 +119,7 @@
               <strong>Nº treinadores</strong>
             </td>
             <td>
-              {{viewModel.personal_info.number_of_coaches}}
+              {{viewModel.additional_info.number_of_coaches}}
             </td>
           </tr>
           <tr>
@@ -123,7 +127,7 @@
               <strong>Nº campos relvado</strong>
             </td>
             <td>
-              {{viewModel.personal_info.number_of_grass_fields}}
+              {{viewModel.additional_info.number_of_grass_fields}}
             </td>
           </tr>
           <tr>
@@ -131,7 +135,7 @@
               <strong>Nº campos sintético</strong>
             </td>
             <td>
-              {{viewModel.personal_info.number_of_synthetic_fields}}
+              {{viewModel.additional_info.number_of_synthetic_fields}}
             </td>
           </tr>
           <tr>
@@ -139,7 +143,7 @@
               <strong>Patrocinadores</strong>
             </td>
             <td>
-              {{viewModel.personal_info.sponsors[0].name}}
+              {{viewModel.additional_info.sponsors[0]}}
             </td>
           </tr>
           <tr>
@@ -147,7 +151,7 @@
               <strong>Outras modalidades</strong>
             </td>
             <td class=" last-td-padding">
-              {{viewModel.personal_info.other_sports}}
+              {{viewModel.additional_info.other_sports}}
             </td>
           </tr>
           </tbody>
@@ -160,7 +164,7 @@
               <strong>Site</strong>
             </td>
             <td class="first-td-padding">
-              {{viewModel.personal_info.site}}
+              {{viewModel.additional_info.site}}
             </td>
           </tr>
           <tr>
@@ -168,7 +172,7 @@
               <strong>E-mail</strong>
             </td>
             <td>
-              {{viewModel.personal_info.email}}
+              {{viewModel.additional_info.email}}
             </td>
           </tr>
           <tr>
@@ -176,7 +180,7 @@
               <strong>Telefone</strong>
             </td>
             <td>
-              {{viewModel.personal_info.phone_number}}
+              {{viewModel.additional_info.phone_number}}
             </td>
           </tr>
           <tr>
@@ -184,7 +188,7 @@
               <strong>Morada</strong>
             </td>
             <td class="last-td-padding">
-              {{viewModel.personal_info.address}}
+              {{viewModel.additional_info.address}}
             </td>
           </tr>
           </tbody>
@@ -202,17 +206,17 @@
           <th>Derrotas</th>
           <th class="th-td-last">Empates</th>
         </tr>
-        <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
+        <tr *ngFor="let stat of viewModel.current_season.standings; let _idx = index "
             class="{{ _idx % 2 ? 'tr-odd': 'tr-even'  }}">
           <td>
-            <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
+            <img class="league" src="{{stat.avatar}}" alt="{{stat.name}}">
             <div class="player-stats-text">
             </div>
           </td>
-          <td>{{stat.games}}</td>
+          <td>{{stat.matches}}</td>
           <td>
-            <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
-            <div *ngIf="stat.classification == null">-</div>
+            <div *ngIf="stat.position != null">{{stat.position}}º</div>
+            <div *ngIf="stat.position == null">-</div>
           </td>
           <td>{{stat.wins}}</td>
           <td>{{stat.losses}}</td>
@@ -220,11 +224,11 @@
         </tr>
         </tbody>
       </table>
-      <div class="sc-media">
-        <div *ngFor="let med of viewModel.media.slice(0,2)">
+      <div  *ngIf="viewModel.current_season.media && viewModel.current_season.media.length > 0" class="sc-media">
+        <div *ngFor="let med of viewModel.current_season.media.slice(0,2)">
           <div class="callout small articles-big">
             <div class="video">
-              <iframe width="100%" height="360" src="//www.youtube.com/embed/zyIgPqOpMWY" frameborder="0"
+              <iframe width="100%" height="360" src="//www.youtube.com/embed/8Z0sbekoQL4" frameborder="0"
                       allowfullscreen=""></iframe>
             </div>
             <div class="description">
@@ -241,7 +245,7 @@
           </div>
         </div>
       </div>
-      <div class="recommendations">
+      <div *ngIf="viewModel.recommendations.top_5 && viewModel.recommendations.top_5.length > 0" class="recommendations">
         <div class="content">
           <div class="header">
             <h3 class="title">Recomendações</h3>
@@ -264,7 +268,7 @@
             </mat-card-content>
           </mat-card>
           <div class="footer">
-            <button mat-button (click)="openRecomendationsDialog()" class="btn-see-more">Ver mais recomendações</button>
+            <button mat-button (click)="openRecommendationsDialog()" class="btn-see-more">Ver mais recomendações</button>
           </div>
         </div>
       </div>
@@ -281,23 +285,23 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let player of viewModel.roster.players" class="tr-odd">
+          <tr *ngFor="let player of viewModel.current_season.players" class="tr-odd">
             <td title="{{player.positions[0]}}" class="centered number_move first-td">
               <div class="list_number">{{player.number}}</div>
             </td>
-            <td class="posrela">
+            <td class="roster-table-list">
               <table class="inline-table" title="">
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/{{player.user_info_id}}">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + player.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/{{player.user_info_id}}">
                       {{player.name}}
                     </a>
                   </td>
@@ -328,7 +332,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let staff of viewModel.roster.staff" class="tr-odd">
+          <tr *ngFor="let staff of viewModel.current_season.staff" class="tr-odd">
             <td title="{{staff.position}}" class="centered first-td">
               <div class="list_role">{{staff.position}}</div>
             </td>
@@ -337,14 +341,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/{{staff.user_info_id}}">
                       <div mat-card-avatar class="profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + staff.avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      href="/user-info">
+                      routerLink="/user-info/{{staff.user_info_id}}">
                       {{staff.name}}
                     </a>
                   </td>
@@ -365,7 +369,7 @@
   </div>
 </div>
 <div [hidden]="viewModel" class="loading">
-  <img src="/assets/SP_Logo_Black.png" style="height: 100px; width: auto;">
+  <img src="/assets/ball.png" style="height: 100px; width: auto;">
   <div class="bars">
     <div class="loading-bar"></div>
     <div class="loading-bar"></div>

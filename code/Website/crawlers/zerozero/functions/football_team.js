@@ -95,19 +95,19 @@ function cascadeTeamUpdates(res, done) {
 
     footballTeamSeason.addCompetitionToTeam(team_season._id, competition_season, function (err, result) {
         if (err) {
-            logger.error("Error when adding competition to team:", err);
+            logger.error("Error when adding competition_season to team:", err);
             zerozero.proxyFailCallback(res, done);
         }
         else {
-            logger.info("Successfully added competition " + competition_season.name + " to team " + team_season.name, result);
+            logger.info("Successfully added competition_season " + competition_season.name + " to team " + team_season.name, result);
 
             footballCompetitionSeason.addTeamToCompetition(competition_season._id, team_season, function (err, result) {
                 if (err) {
-                    logger.error("Error when adding team to competition:", err);
+                    logger.error("Error when adding team to competition_season:", err);
                     zerozero.proxyFailCallback(res, done);
                 }
                 else {
-                    logger.info("Successfully added team " + team_season.name + " to competition " + competition_season.name, result);
+                    logger.info("Successfully added team " + team_season.name + " to competition_season " + competition_season.name, result);
                     processAllTeamPlayers(res, done);
                 }
             });

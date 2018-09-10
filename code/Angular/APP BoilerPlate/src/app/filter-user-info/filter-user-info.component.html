@@ -80,14 +80,16 @@
         </div>
       </div>
       <div class="search-button">
-        <button mat-raised-button (click)="loadPlayers()" [disabled]="search_fields.length <= 0" class="sc-btn btn-start centered">PESQUISAR</button>
+        <button mat-raised-button (click)="loadPlayers()" [disabled]="search_fields.length <= 0"
+                class="sc-btn btn-start centered">PESQUISAR
+        </button>
       </div>
       <div [hidden]="search_fields && search_fields.length > 0" class="centered  ">
         <h3>Escolhe em cima o que filtrar</h3>
       </div>
       <div class="filter-search-fields">
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-4">
             <table class="table table-bordered">
               <tbody>
               <tr *ngFor="let field of search_fields; let i = index">
@@ -101,14 +103,16 @@
                 </td>
                 <div>
                   <td>
-                    <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem">
-                      <mat-option *ngFor="let filter_type of field.filters" [value]="filter_type">
-                        {{filter_type}}
-                      </mat-option>
-                    </mat-select>
+                    <form>
+                      <mat-select [(ngModel)]="field.selected_filter" placeholder="Filtragem" name="selected_filter">
+                        <mat-option *ngFor="let filter_type of field.filters" [value]="filter_type.regex">
+                          {{filter_type.text}}
+                        </mat-option>
+                      </mat-select>
+                    </form>
                   </td>
                   <td>
-                    <form *ngIf=" field.selected_filter && field.selected_filter != 'Entre'">
+                    <form *ngIf=" field.selected_filter && field.selected_filter != '$gte,$lte'">
                       <mat-select [(ngModel)]=" field.selected_value" name="selected_value" placeholder="Valor">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
@@ -116,9 +120,9 @@
                         </mat-option>
                       </mat-select>
                     </form>
-                    <form *ngIf=" field.selected_filter == 'Entre' " class="range-form">
+                    <form *ngIf=" field.selected_filter == '$gte,$lte' " class="range-form">
                       de
-                      <mat-select [(ngModel)]=" field.selected_value" name="selected_value_start">
+                      <mat-select [(ngModel)]=" field.selected_value" name="selected_value">
                         <mat-option *ngFor="let value_type of field.values" [value]="value_type">
                           {{value_type}}
                           <span matSuffix>{{field.value_suffix}}</span>
@@ -131,14 +135,14 @@
                           <span matSuffix>{{field.value_suffix}}</span>
                         </mat-option>
                       </mat-select>
-                    </form>
+                      </form>
                   </td>
                 </div>
               </tr>
               </tbody>
             </table>
           </div>
-          <div class="centered col-md-7 players-table-filter">
+          <div class="centered col-md-8 players-table-filter">
             <div [hidden]="loading || search_fields.length <= 0" *ngIf="players" class="roster">
 
               <table class=" table-players-search table-order-center" matSort (matSortChange)="sortData($event)">
@@ -159,19 +163,19 @@
                 <tbody>
                 <tr *ngFor="let player of sortedData">
                   <td class="centered number_move first-td-img">
-                    <a href="/user-info">
+                    <a routerLink="/user-info/{{player._id}}">
                       <div mat-card-avatar class="profile-small-image sc-mat-card-avatar"
                            [ngStyle]="{'background-image':  'url(' + player.personal_info.avatar + ')'}">
                       </div>
                     </a>
                   </td>
-                  <td class="table-td">
+                  <td class="player-details-td">
                     <table class="inline-table" title="">
                       <tbody>
                       <tr>
                         <td class="table-link">
                           <a
-                            href="/user-info">
+                            routerLink="/user-info/{{player.user_info_id}}">
                             {{player.personal_info.name}}
                           </a>
                         </td>
@@ -183,13 +187,13 @@
                     </table>
                   </td>
                   <td class="centered">{{player.personal_info.age}}</td>
-                  <td class="centered">{{player.current_season.games.length}}</td>
-                  <td class="centered">{{player.current_season.stats[0].goals}}</td>
-                  <td class="centered">{{player.current_season.stats[0].assists}}</td>
+                  <td class="centered">{{player.stats[0].games}}</td>
+                  <td class="centered">{{player.stats[0].goals}}</td>
+                  <td class="centered">{{player.stats[0].assists}}</td>
                   <td class="centered">{{player.personal_info.height}}</td>
                   <td class="centered">{{player.personal_info.weight}}</td>
                   <td class="centered">
-                    <a href="/team">
+                    <a routerLink="/team/{{player.team.id}}">
                       <img src="{{player.team.avatar}}" title="{{player.team.name}}"
                            alt="{{player.team.name}}" class="team-img">
                     </a>
