@@ -288,7 +288,7 @@ export class GenericUserService {
       ],
     },
     {
-      name: 'Diogo Pires',
+      name: 'Arnaldo Tema',
       team: {
         id: 1,
         acronym: 'SFC',
@@ -301,7 +301,7 @@ export class GenericUserService {
       avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       user_id: '1',
       personal_info: {
-        name: 'Diogo Pires',
+        name: 'Arnaldo Tema',
         age: 25,
         avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
         full_name: 'Diogo César Pontes Pires',
@@ -696,7 +696,7 @@ export class GenericUserService {
       ],
     },
     {
-      name: 'Diogo Pires',
+      name: 'Arnaldo Tema',
       team: {
         id: 1,
         acronym: 'SFC',
@@ -709,7 +709,7 @@ export class GenericUserService {
       avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       user_id: '1',
       personal_info: {
-        name: 'Diogo Pires',
+        name: 'Arnaldo Tema',
         age: 25,
         avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
         full_name: 'Diogo César Pontes Pires',
@@ -1104,7 +1104,7 @@ export class GenericUserService {
       ],
     },
     {
-      name: 'Diogo Pires',
+      name: 'Arnaldo Tema',
       team: {
         id: 1,
         acronym: 'SFC',
@@ -1117,7 +1117,7 @@ export class GenericUserService {
       avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       user_id: '1',
       personal_info: {
-        name: 'Diogo Pires',
+        name: 'Arnaldo Tema',
         age: 25,
         avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
         full_name: 'Diogo César Pontes Pires',
@@ -1240,7 +1240,7 @@ export class GenericUserService {
       ],
     },
     {
-      name: 'Diogo Pires',
+      name: 'Arnaldo Tema',
       team: {
         id: 1,
         acronym: 'SFC',
@@ -1253,7 +1253,7 @@ export class GenericUserService {
       avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       user_id: '1',
       personal_info: {
-        name: 'Diogo Pires',
+        name: 'Arnaldo Tema',
         age: 25,
         avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
         full_name: 'Diogo César Pontes Pires',
@@ -1648,7 +1648,7 @@ export class GenericUserService {
       ],
     },
     {
-      name: 'Diogo Pires',
+      name: 'Arnaldo Tema',
       team: {
         id: 1,
         acronym: 'SFC',
@@ -1661,7 +1661,7 @@ export class GenericUserService {
       avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
       user_id: '1',
       personal_info: {
-        name: 'Diogo Pires',
+        name: 'Arnaldo Tema',
         age: 25,
         avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
         full_name: 'Diogo César Pontes Pires',

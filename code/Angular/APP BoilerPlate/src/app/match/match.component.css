@@ -121,3 +121,8 @@
 .table_header td, th {
   height: auto !important;
 }
+
+.icon {
+  width: auto !important;
+  height: 15px !important;
+}

@@ -18,6 +18,6 @@ export class MatchComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-      this.matchService.getMatch('0')
+      this.matchService.getMatch('')
         .subscribe(match => this.viewModel = match);
   }}

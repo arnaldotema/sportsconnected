@@ -148,7 +148,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -175,7 +175,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -202,7 +202,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -229,7 +229,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -363,9 +363,8 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   }
 
   createTeamPlayer(): void {
-    this.router.navigate(['/team/' + this.viewModel._id+ + '/player/'+'0']);
+    this.router.navigate(['/team/' + this.viewModel._id + '/player/'+'0']);
   }
-
 
   openTryoutDialog(): void {
     const dialogRef = this.dialog.open(TryoutModalComponent,

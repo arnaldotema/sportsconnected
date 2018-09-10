@@ -134,7 +134,7 @@ export class TeamMediaComponent implements OnInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -161,7 +161,7 @@ export class TeamMediaComponent implements OnInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -188,7 +188,7 @@ export class TeamMediaComponent implements OnInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -215,7 +215,7 @@ export class TeamMediaComponent implements OnInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }

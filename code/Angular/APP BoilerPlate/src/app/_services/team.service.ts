@@ -1150,7 +1150,7 @@ export class TeamService {
       ],
       "media": [
         {
-          title: 'Diogo Pires marca Hat-trick em jogo decisivo',
+          title: 'Arnaldo Tema marca Hat-trick em jogo decisivo',
           author: 'A Bola.',
           date: '08-05-2018',
           image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
@@ -1171,7 +1171,7 @@ export class TeamService {
               id: '1'
             }],
             player: [{
-              name: 'Diogo Pires',
+              name: 'Arnaldo Tema',
               id: '1'
             }],
           }
@@ -1198,7 +1198,7 @@ export class TeamService {
               id: '1'
             }],
             player: [{
-              name: 'Diogo Pires',
+              name: 'Arnaldo Tema',
               id: '1'
             }],
           }
@@ -1225,7 +1225,7 @@ export class TeamService {
               id: '1'
             }],
             player: [{
-              name: 'Diogo Pires',
+              name: 'Arnaldo Tema',
               id: '1'
             }],
           }
@@ -1252,7 +1252,7 @@ export class TeamService {
               id: '1'
             }],
             player: [{
-              name: 'Diogo Pires',
+              name: 'Arnaldo Tema',
               id: '1'
             }],
           }
@@ -1279,7 +1279,7 @@ export class TeamService {
               id: '1'
             }],
             player: [{
-              name: 'Diogo Pires',
+              name: 'Arnaldo Tema',
               id: '1'
             }],
           }
@@ -1306,7 +1306,7 @@ export class TeamService {
               id: '1'
             }],
             player: [{
-              name: 'Diogo Pires',
+              name: 'Arnaldo Tema',
               id: '1'
             }],
           }

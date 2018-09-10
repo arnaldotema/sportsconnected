@@ -50,7 +50,7 @@ const updateCompetition = function (err, res, done){
         }
         else {
 
-            logger.info("Updated competition", result._doc);
+            logger.info("Updated competition_season", result._doc);
 
             editionIds.forEach(function(edition){
                 zerozero.queue({
@@ -102,7 +102,7 @@ const updateCompetitionSeason = function (err, res, done){
                 }
                 else {
 
-                    logger.info("Updated competition season", result._doc);
+                    logger.info("Updated competition_season season", result._doc);
 
                     zerozero.queue({
                         uri:format(baseUris.COMPETITION_EDITION_MATCHES, { edition_id: res.options.zerozeroId, page: 1 }),
