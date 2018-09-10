@@ -71,55 +71,78 @@ const updateCompetition = function (err, res, done){
 }
 
 const updateCompetitionSeason = function (err, res, done){
-    footballSeason.getSeasonByName(res.options.season_name, function (err, result) {
-        if(err){
-            logger.error(err);
-            zerozero.proxyFailCallback(res, done);
-        }
-        else{
-            let competition_season = {
-                competition_id: res.options.competition._id,
-                season_id: result._doc._id,
-                name: '',
-                avatar: '',
-                external_ids: {
-                    zerozero: res.options.zerozeroId,
-                }
-            };
+    if(res.$('#edition_table').length == 0){
 
-            competition_season.name = res.$('#page_header .factsheet .name').length > 0 ?
-                res.$('#page_header .factsheet .name').html() :
-                '';
+        res.$('#page_main tr td .text a').each(function() {
+            let seasonId = res.$(this).attr('href').match(/\d+/g)[0];
 
-            competition_season.avatar = res.$('#page_header_container .logo img').length > 0 ?
-                "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
-                '';
-
-            footballCompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, function (err, result) {
-                if (err) {
-                    logger.error(err);
-                    zerozero.proxyFailCallback(res, done);
-                }
-                else {
-
-                    logger.info("Updated competition season", result._doc);
-
-                    zerozero.queue({
-                        uri:format(baseUris.COMPETITION_EDITION_MATCHES, { edition_id: res.options.zerozeroId, page: 1 }),
-                        priority: 1,
-                        callback: proxyHandler.crawl,
-                        successCallback: updateCompetitionSeasonCalendar,
-                        zerozeroId: res.options.zerozeroId,
-                        competition_season: result._doc
-                    });
-
-                    res.options.competition_season = result._doc;
-
-                    updateCompetitionSeasonTeams(err, res, done)
-                }
+            zerozero.queue({
+                uri:format(baseUris.COMPETITION_EDITION, { edition_id: seasonId }),
+                priority: 1,
+                callback: proxyHandler.crawl,
+                successCallback: updateCompetitionSeason,
+                zerozeroId: seasonId,
+                competition: res.options.competition,
+                season_name: res.options.season_name
             });
-        }
-    })
+        });
+
+        done();
+    }
+    else {
+        footballSeason.getSeasonByName(res.options.season_name, function (err, result) {
+            if (err) {
+                logger.error(err);
+                zerozero.proxyFailCallback(res, done);
+            }
+            else {
+                let competition_season = {
+                    competition_id: res.options.competition._id,
+                    season_id: result._doc._id,
+                    name: '',
+                    avatar: '',
+                    external_ids: {
+                        zerozero: res.options.zerozeroId,
+                    }
+                };
+
+                competition_season.name = res.$('#page_header .factsheet .name').length > 0 ?
+                    res.$('#page_header .factsheet .name').html() :
+                    '';
+
+                competition_season.avatar = res.$('#page_header_container .logo img').length > 0 ?
+                    "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
+                    '';
+
+                footballCompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, function (err, result) {
+                    if (err) {
+                        logger.error(err);
+                        zerozero.proxyFailCallback(res, done);
+                    }
+                    else {
+
+                        logger.info("Updated competition season", result._doc);
+
+                        zerozero.queue({
+                            uri: format(baseUris.COMPETITION_EDITION_MATCHES, {
+                                edition_id: res.options.zerozeroId,
+                                page: 1
+                            }),
+                            priority: 1,
+                            callback: proxyHandler.crawl,
+                            successCallback: updateCompetitionSeasonCalendar,
+                            zerozeroId: res.options.zerozeroId,
+                            competition_season: result._doc
+                        });
+
+                        res.options.competition_season = result._doc;
+
+                        updateCompetitionSeasonTeams(err, res, done)
+                    }
+                });
+            }
+        })
+    }
 }
 
 const updateCompetitionSeasonTeams = function (err, res, done){

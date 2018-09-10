@@ -8,12 +8,14 @@ const mongoose = require('mongoose');
 
 //Configs
 const config = require('./config/database');
+require('./auth/auth');
 
 //Routes
 const users = require('./routes/user_routes');
 const players = require('./routes/player_routes');
 const teams = require('./routes/team_routes');
 const competitions = require('./routes/competition_routes');
+const matches = require('./routes/match_routes');
 
 //Logging
 const logger = require('./logging');
@@ -30,17 +32,20 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 //Controllers
+
+app.use('/api/players', passport.authenticate('jwt', { session : false }), players);
+app.use('/api/teams', passport.authenticate('jwt', { session : false }), teams);
+app.use('/api/competitions', passport.authenticate('jwt', { session : false }), competitions);
+app.use('/api/matches', passport.authenticate('jwt', { session : false }), matches);
+
 app.use('/users', users);
-app.use('/players', players);
-app.use('/teams', teams);
-app.use('/competitions', competitions);
 
 //Database
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected', function(){
     console.log("im connected to " + config.database);
-    var lol = require('./crawlers/zerozero/crawler')
+    //var lol = require('./crawlers/zerozero/crawler')
 })
 
 mongoose.connection.on('error', function(err){

@@ -54,15 +54,15 @@ zerozero.proxyFailCallback = function (res, done){
 
 module.exports = zerozero;
 
-// const footballTeamCrawler = require('./functions/football_team');
-// const competitionCrawler = require('./functions/football_competition');
-//
-// logger.info("Testing the editions...");
-//
-// zerozero.queue({
-//     uri: format(baseUris.COMPETITION, {competition_id: 3}),
-//     callback: proxyHandler.crawl,
-//     successCallback: competitionCrawler.updateCompetition,
-//     proxyFailCallback: zerozero.proxyFailCallback,
-//     zerozeroId: 3
-// });
+const footballTeamCrawler = require('./functions/football_team');
+const competitionCrawler = require('./functions/football_competition');
+
+logger.info("Testing the editions...");
+
+zerozero.queue({
+    uri: format(baseUris.COMPETITION, {competition_id: 136}),
+    callback: proxyHandler.crawl,
+    successCallback: competitionCrawler.updateCompetition,
+    proxyFailCallback: zerozero.proxyFailCallback,
+    zerozeroId: 136
+});

@@ -11,6 +11,7 @@ const addCompetitionToUserInfo = function(id, competition_season, cb) {
         $addToSet: { "stats": {
                 id: competition_season._id,
                 competition_id: competition_season.competition_id,
+                season_id: competition_season.season_id,
                 name: competition_season.name,
                 avatar: competition_season.avatar,
             }
@@ -106,7 +107,7 @@ const updateUserInfosStats = function(match, nestedMatch, cb){
                     $inc : {
                         "stats.$.goals": player.goals.length,
                         "stats.$.assists": player.assists.length,
-                        "stats.$.minutes": player.minutes_played,
+                        "stats.$.minutes_played": player.minutes_played,
                         "stats.$.games": 1,
                         "stats.$.wins": home_goals > away_goals ? 1 : 0,
                         "stats.$.draws" : home_goals == away_goals ? 1 : 0,
@@ -134,7 +135,7 @@ const updateUserInfosStats = function(match, nestedMatch, cb){
                     $inc : {
                         "stats.$.goals": player.goals.length,
                         "stats.$.assists": player.assists.length,
-                        "stats.$.minutes": player.minutes_played,
+                        "stats.$.minutes_played": player.minutes_played,
                         "stats.$.games": 1,
                         "stats.$.wins": home_goals < away_goals ? 1 : 0,
                         "stats.$.draws" : home_goals == away_goals ? 1 : 0,
@@ -162,7 +163,7 @@ const updateUserInfosStats = function(match, nestedMatch, cb){
                     $inc : {
                         "stats.$.goals": player.goals.length,
                         "stats.$.assists": player.assists.length,
-                        "stats.$.minutes": player.minutes_played,
+                        "stats.$.minutes_played": player.minutes_played,
                         "stats.$.games": 1,
                         "stats.$.wins": home_goals > away_goals ? 1 : 0,
                         "stats.$.draws" : home_goals == away_goals ? 1 : 0,
@@ -190,7 +191,7 @@ const updateUserInfosStats = function(match, nestedMatch, cb){
                     $inc : {
                         "stats.$.goals": player.goals.length,
                         "stats.$.assists": player.assists.length,
-                        "stats.$.minutes": player.minutes_played,
+                        "stats.$.minutes_played": player.minutes_played,
                         "stats.$.games": 1,
                         "stats.$.wins": home_goals < away_goals ? 1 : 0,
                         "stats.$.draws" : home_goals == away_goals ? 1 : 0,
