@@ -5,12 +5,12 @@ var TeamController = require('../controllers/team_controller.js');
 /*
  * GET
  */
-router.get('/', TeamController.list);
 
-/*
- * GET
- */
+router.get('/:id/players', TeamController.players);
+
 router.get('/:id', TeamController.show);
+
+router.get('/', TeamController.list);
 
 /*
  * POST

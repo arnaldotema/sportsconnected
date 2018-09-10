@@ -33,6 +33,16 @@ const updateTeamInfo = function (err, res, done) {
         res.$("#page_header .factsheet .name").html() :
         '';
 
+    //Different age groups from seniors
+    if(team.name != ''){
+        if( team.name.split('<')[1] != undefined){
+            team.name = team.name = team.name.split('<')[0].trim() + " " + team.name.split('<')[1].split('>')[1];
+        }
+        else{
+            team.name = team.name = team.name.split('<')[0].trim()
+        }
+    }
+
     team.fullName = res.$("#entity_bio .bio")[0] ?
         res.$("#entity_bio .bio")[0].children[1].data :
         '';
