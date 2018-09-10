@@ -119,7 +119,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div *ngIf="player_matches && player_matches.length > 0">
+        <div *ngIf="showGames && player_matches && player_matches.length > 0">
           <div class="event-list">
             <mat-accordion class="match-form">
               <mat-expansion-panel *ngFor="let match of player_matches; let _idx = index"
@@ -130,52 +130,55 @@
                   </mat-panel-title>
                   <mat-panel-description class="match-description">
 
-                    <small>{{match.competition.name}}</small>
+                    <img *ngIf="match.isDataConfirmed" title = "Dados validades pela PlayersNet" class="icon" src="/assets/valid_green.png">
+                    <img *ngIf="!match.isDataConfirmed" title = "Dados validades pela PlayersNet" class="icon" src="/assets/valid_gray.png">
+
+                    <small>{{match.competition_season.name}}</small>
 
                     <img src="{{match.home_team.avatar}}">
                     <h4>{{match.home_team.name}}</h4>
                     <div class="info">
 
-                      {{match.home_team.goals.length}}
+                      {{match.home_team.goals}}
                       -
-                      {{match.away_team.goals.length}}
+                      {{match.away_team.goals}}
                     </div>
 
                     <h4>{{match.away_team.name}}</h4>
                     <img src="{{match.away_team.avatar}}">
                     <div class="info">
-                      {{match.home_team.main_lineup[0].goals}}<img src="/assets/ball.png">
-                      {{match.home_team.main_lineup[0].assists}}<img src="/assets/boots.png">
-                      {{match.home_team.main_lineup[0].minutes_played}}<img src="/assets/clock.png">
-                      {{match.home_team.main_lineup[0].yellow_cards}}<img src="/assets/yellow.png">
-                      {{match.home_team.main_lineup[0].red_cards}}<img src="/assets/red.png">
+                      {{match.player_goals}}<img src="/assets/ball.png">
+                      {{match.player_assists}}<img src="/assets/boots.png">
+                      {{match.player_minutes_played}}<img src="/assets/clock.png">
+                      {{match.player_yellow_cards}}<img src="/assets/yellow.png">
+                      {{match.player_red_cards}}<img src="/assets/red.png">
                     </div>
                   </mat-panel-description>
                 </mat-expansion-panel-header>
                 <mat-form-field>
-                  <input matInput ngModel="{{match.home_team.main_lineup[0].goals}}"
-                         (change)="changedInput('goals',$event, true)"
-                         placeholder="Golos" value="{{match.home_team.main_lineup[0].goals}}">
+                  <input matInput ngModel="{{match.player_goals}}"
+                         (change)="changedInput('player_goals',$event, true)"
+                         placeholder="Golos" value="{{match.player_goals}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput ngModel="{{match.home_team.main_lineup[0].assists}}"
-                         (change)="changedInput('assists',$event, true)"
-                         placeholder="Assistências" value="{{match.home_team.main_lineup[0].assists}}">
+                  <input matInput ngModel="{{match.player_assists}}"
+                         (change)="changedInput('player_assists',$event, true)"
+                         placeholder="Assistências" value="{{match.player_assists}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput ngModel="{{match.home_team.main_lineup[0].yellow_cards}}"
-                         (change)="changedInput('yellow_cards',$event, true)"
-                         placeholder="Cartões Amarelo" value="{{match.home_team.main_lineup[0].yellow_cards}}">
+                  <input matInput ngModel="{{match.player_yellow_cards}}"
+                         (change)="changedInput('player_yellow_cards',$event, true)"
+                         placeholder="Cartões Amarelo" value="{{match.player_yellow_cards}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput ngModel="{{match.home_team.main_lineup[0].red_cards}}"
-                         (change)="changedInput('red_cards',$event, true)"
-                         placeholder="Cartões Vermelho" value="{{match.home_team.main_lineup[0].red_cards}}">
+                  <input matInput ngModel="{{match.player_red_cards}}"
+                         (change)="changedInput('player_red_cards',$event, true)"
+                         placeholder="Cartões Vermelho" value="{{match.player_red_cards}}">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput ngModel="{{match.home_team.main_lineup[0].minutes_played}}"
-                         (change)="changedInput('minutes_played',$event, true)"
-                         placeholder="Minutos jogados" value="{{match.home_team.main_lineup[0].minutes_played}}">
+                  <input matInput ngModel="{{match.player_minutes_played}}"
+                         (change)="changedInput('player_minutes_played',$event, true)"
+                         placeholder="Minutos jogados" value="{{match.player_minutes_played}}">
                 </mat-form-field>
                 <button mat-raised-button class="sc-btn btn-sc-default" (click)="goToMatch()">Ir para Jogo</button>
               </mat-expansion-panel>
@@ -187,7 +190,7 @@
   </div>
 </div>
 <div [hidden]="viewModel" class="loading">
-  <img src="/assets/SP_Logo_Black.png" style="height: 100px; width: auto;">
+  <img src="/assets/ball.png" style="height: 100px; width: auto;">
   <div class="bars">
     <div class="loading-bar"></div>
     <div class="loading-bar"></div>

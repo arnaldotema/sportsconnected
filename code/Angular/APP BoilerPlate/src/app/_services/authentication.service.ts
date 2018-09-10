@@ -13,7 +13,7 @@ export class AuthenticationService {
   public token: string;
   public admin: boolean;
   public testing: boolean = true;
-  private logged: boolean = true;
+  private logged: boolean = false;
 
   session_user : User;
 
@@ -35,6 +35,7 @@ export class AuthenticationService {
           {username: username, token: '', admin: false}));
         this.token = '';
         this.admin = false;
+        this.logged = true;
         return of(true);
       }
       else if (username === 'admin') {
@@ -42,6 +43,7 @@ export class AuthenticationService {
           {username: username, token: '', admin: true}));
         this.token = '';
         this.admin = true;
+        this.logged = true;
         return of(true);
       }
       else {
@@ -61,7 +63,7 @@ export class AuthenticationService {
             localStorage.setItem('currentUser', JSON.stringify(
               {username: username, token: json.token, admin: json.admin}
             ));
-
+            this.logged = true;
             // return true to indicate successful login
             return true;
           } else {
@@ -81,6 +83,6 @@ export class AuthenticationService {
   }
 
   isLogged(): boolean {
-    return true;
+    return this.logged;
   }
 }

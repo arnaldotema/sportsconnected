@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatchService} from '../_services/match.service';
 import {MatchViewModel} from '../_models/match_viewmodel';
 import {ScrollToService} from 'ng2-scroll-to-el';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-edit-user-info',
@@ -38,14 +39,17 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
   account_validation_messages;
   id;
 
-  player_matches: MatchViewModel[];
+  player_matches: any[];
   viewModel: UserInfoViewModel;
   userDetailsForm: FormGroup;
   accountDetailsForm: FormGroup;
   matching_passwords_group: FormGroup;
 
+  // Only for demonstration purposes, this variable helps knowing when to display the *already received* matches
+  showGames: boolean = false;
+
   constructor(private matchService: MatchService, private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private scrollService: ScrollToService,
-              private userInfoService : UserInfoService) {
+              private userInfoService: UserInfoService) {
   }
 
   ngOnInit() {
@@ -192,6 +196,13 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
       .subscribe(userInfo => {
 
         this.viewModel = userInfo;
+
+        // For demonstration purposes only.
+        // The matches should come through a match.sercice function
+        this.player_matches = this.viewModel.current_season.matches;
+
+        debugger;
+
         this.createForms();
       });
   }
@@ -240,8 +251,29 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
   }
 
   loadGames() {
+
+    this.showGames = true;
+    // Simply reloading the games with different goals, assists and other info - only for demonstration purposes.
+    // When the Season Endpoint is working, it will get the games by Season ID
+
+    // While the match endpoint is not yet configured, the goals statically mocked.
+    this.player_matches.forEach(function (match, index) {
+      match.player_goals = random(0,3);
+      match.player_assists = random(0,2);
+      match.player_minutes_played = random(65,29);
+      match.player_yellow_cards = random(0,2);
+      match.player_red_cards = random(0,1);
+
+      match.date = new Date(match.date).toDateString();
+
+      match.isDataConfirmed = true;
+
+    });
+
+    /*
     this.matchService.getPlayerMatchByTeamSeason(this.viewModel.user_id, this.team.id, this.season.id)
       .subscribe(player_matches => this.player_matches = player_matches);
+    */
   }
 
   save() {
@@ -261,8 +293,10 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
 
   changedInput(inputType, event, isMatch) {
     let value = event.target.value;
-    if (isMatch)
-      this.player_matches[this.currentMatchIdx].home_team.main_lineup[0][inputType] = value;
+    if (isMatch){
+      this.player_matches[this.currentMatchIdx][inputType] = value;
+      this.player_matches[this.currentMatchIdx].isDataConfirmed = false;
+    }
     else
       this.viewModel[inputType] = value;
   }
@@ -273,4 +307,9 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
     this.eventsToggled[index] = false;
   }
 
+}
+
+// For demonstration purposes only, this function helps generating random numbers between a certain range
+function random(start, end) {
+  return Math.floor(Math.random() * end) + start
 }
