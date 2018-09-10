@@ -536,10 +536,11 @@ export class UserInfoService {
 
   testing = false;
 
-  constructor(private http: HttpClient) {
+  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json',
+        'jwt': authenticationService.token
       })
     };
   }
@@ -550,7 +551,7 @@ export class UserInfoService {
       return of(this.mockUserInfo[0]);
     }
     else {
-      return this.http.get<UserInfoViewModel>('/players/' + id, this.requestOptions)
+      return this.http.get<UserInfoViewModel>('/api/players/' + id, this.requestOptions)
         .pipe(
           tap(data => {
             console.log('GET User info', data);
@@ -565,7 +566,7 @@ export class UserInfoService {
       return of(this.mockTeamPlayer);
     }
     else {
-      return this.http.get<TeamPlayer>('/team/' + team_id + '/player/' + id, this.requestOptions)
+      return this.http.get<TeamPlayer>('api/team/' + team_id + '/player/' + id, this.requestOptions)
         .pipe(
           tap(data => {
             console.log('GET Team Info', data);

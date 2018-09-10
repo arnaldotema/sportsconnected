@@ -13,13 +13,13 @@
     <section class="form-body">
       <label for="reg-firstname">Nome</label>
       <input type="text" name="firstName" id="reg-firstname" class="col-md-12 reg-firstname" aria-required="true"
-             tabindex="1" placeholder="">
+             tabindex="1" placeholder="" >
       <label for="reg-email">Email</label>
       <input type="text" name="session_key" class="reg-email col-md-12 " autocapitalize="off" tabindex="1"
-             id="reg-email" autofocus="autofocus">
+             id="reg-email" autofocus="autofocus" [(ngModel)]="email">
       <label for="reg-password">Palavra-passe (mínimo de 8 caracteres)</label>
       <input type="password" name="session_password" class="col-md-12 reg-password" id="reg-password"
-             aria-required="true" tabindex="1" autocomplete="new-password">
+             aria-required="true" tabindex="1" autocomplete="new-password" [(ngModel)]="password">
       <span class="agreement">
       Ao clicar em "Criar conta", está a concordar com os
       <a tabindex="4" href="https://www.linkedin.com/legal/user-agreement"> Termos e Condições</a>

@@ -6,6 +6,7 @@ import {GenericUserService} from '../_services/generic_user.service';
 import {CompetitionService} from '../_services/competition.service';
 import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {TeamViewModel} from '../_models/team_viewmodel';
+import {CompetitionViewModel} from "../_models/competition_viewmodel";
 
 @Component({
   selector: 'app-create-account',
@@ -15,15 +16,15 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 export class CreateAccountComponent implements OnInit {
 
   chosenPlayer: SearchEntityViewmodel;
-  chosenLeague;
+  chosenLeague: CompetitionViewModel;
   chosenGender;
   chosenAgeGroup;
-  chosenTeam: SearchEntityViewmodel;
-  teams: SearchEntityViewmodel[];
+  chosenTeam: any;
+  teams: any[];
   age_groups;
   genders;
-  leagues;
-  players: SearchEntityViewmodel[];
+  leagues: CompetitionViewModel [];
+  players: any[];
   user;
 
   constructor(
@@ -34,98 +35,24 @@ export class CreateAccountComponent implements OnInit {
   {}
 
   ngOnInit() {
-    this.genders = [
-      {
-        id: '1',
-        name: 'Masculino',
-      },
-      {
-        id: '2',
-        name: 'Feminino',
-      }
-    ]
-  }
-
-  loadAgeGroups() {
-    // Todo: Get AgeGroups
-    this.age_groups = [
-      {
-        id: '1',
-        name: 'Petizes',
-      },
-      {
-        id: '2',
-        name: 'Traquinas',
-      },
-      {
-        id: '3',
-        name: 'Benjamins B',
-      },
-      {
-        id: '4',
-        name: 'Benjamins A',
-      }, {
-        id: '5',
-        name: 'Infantis B',
-      },
-      {
-        id: '6',
-        name: 'Infantis A',
-      }, {
-        id: '7',
-        name: 'Iniciados B',
-      },
-      {
-        id: '8',
-        name: 'Iniciados',
-      }, {
-        id: '9',
-        name: 'Juvenis B',
-      },
-      {
-        id: '10',
-        name: 'Juvenis',
-      }, {
-        id: '11',
-        name: 'Juniores B',
-      },
-      {
-        id: '12',
-        name: 'Juniores',
-      }, {
-        id: '13',
-        name: 'Seniores',
-      }
-    ]
+    this.loadLeagues();
   }
 
   loadLeagues() {
     // Todo: Get Competitions
-    this.leagues = [
-      {
-        id: '2',
-        name: 'Liga Portuguesa'
-      },
-      {
-        id: '3',
-        name: 'II Liga'
-      },
-      {
-        id: '2',
-        name: 'AF Lisboa 1ª Divisão Série 1 2017/18'
-      },
-    ];
+    this.competitionService.getCompetitons()
+      .subscribe(leagues => this.leagues = leagues);
   }
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.teamService.getTeamsByLeague(this.chosenLeague)
+    this.teamService.getTeamsByLeague(this.chosenLeague._id)
       .subscribe(teams => this.teams = teams);
   }
 
   loadPlayersByTeam() {
     // Todo: Get Players based on chosenTeam
-    this.genericUserService.searchUser('', this.chosenTeam.personal_info.name, 'team.name')
+    this.teamService.getPlayers(this.chosenTeam.id)
       .subscribe(players => this.players = players);
   }
 

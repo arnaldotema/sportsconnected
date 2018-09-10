@@ -5,12 +5,13 @@ import {of} from 'rxjs/observable/of';
 import {AuthenticationService} from './authentication.service';
 import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, retry, tap} from 'rxjs/operators';
 import {MatchViewModel} from '../_models/match_viewmodel';
 import {Achievement} from '../_models/achievement';
 import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {TeamMatch} from "../_models/team_match";
 import {PlayerMatch} from "../_models/player_match";
+import {TeamViewModel} from "../_models/team_viewmodel";
 
 @Injectable()
 export class MatchService {
@@ -767,16 +768,29 @@ export class MatchService {
 
   requestOptions;
 
-  constructor() {
+  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json',
+        'jwt': authenticationService.token
       })
     };
   }
 
   getMatch(id: string): Observable<MatchViewModel> {
-    return of(this.mockMatches[0]);
+    if(id == "-1") {
+      return of(this.mockMatches[0]);
+    }
+    else {
+      return this.http.get<MatchViewModel>('/api/matches/' + id, this.requestOptions)
+        .pipe(
+          tap(data => {
+            console.log('GET Match', data);
+          }),
+
+          catchError(this.handleError)
+        );
+    }
   };
 
 

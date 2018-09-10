@@ -8,6 +8,7 @@ import {catchError, retry, tap} from 'rxjs/operators';
 import {TeamViewModel} from '../_models/team_viewmodel';
 import {Recommendation} from '../_models/recommendation';
 import {SearchEntityViewmodel} from "../_models/search_entity_viewmodel";
+import {CompetitionViewModel} from "../_models/competition_viewmodel";
 
 @Injectable()
 export class TeamService {
@@ -1404,12 +1405,23 @@ export class TeamService {
   ];
   requestOptions;
 
-  constructor(private http: HttpClient) {
+  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json',
+        'jwt': authenticationService.token
       })
     };
+  }
+
+  getPlayers(id: string) : Observable<any> {
+    return this.http.get<any[]>('api/teams/' + id + '/players/', this.requestOptions)
+      .pipe(
+        tap(data => {
+          console.log('GET Players By Team Id', data);
+        }),
+        catchError(this.handleError)
+      );
   }
 
   getTeam(id: string): Observable<TeamViewModel> {
@@ -1419,7 +1431,7 @@ export class TeamService {
     }
 
     else {
-      return this.http.get<TeamViewModel>('/teams/' + id, this.requestOptions)
+      return this.http.get<TeamViewModel>('/api/teams/' + id, this.requestOptions)
         .pipe(
           tap(data => {
             console.log('GET Team', data);
@@ -1451,7 +1463,13 @@ export class TeamService {
       'Something bad happened; please try again later.');
   };
 
-  getTeamsByLeague(league: string) {
-    return of(this.mockSearchTeams);
+  getTeamsByLeague(id: string) {
+    return this.http.get<any>('/api/competitions/' + id + '/teams', this.requestOptions)
+      .pipe(
+        tap(data => {
+          console.log('GET Teams By League ID', data);
+        }),
+        catchError(this.handleError)
+      );
   }
 }
