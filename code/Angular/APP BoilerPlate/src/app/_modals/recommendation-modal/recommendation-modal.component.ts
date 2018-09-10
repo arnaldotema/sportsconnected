@@ -14,14 +14,12 @@ export class RecommendationModalComponent implements OnInit {
   recommendationIdx: string;
   edit: false;
   create: true;
-  target;
   author;
 
   constructor(
     public dialogRef: MatDialogRef<RecommendationModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
 
-    this.target = this.data.target;
     if (this.data.author != null)
       this.author = this.data.author;
     this.text = '';

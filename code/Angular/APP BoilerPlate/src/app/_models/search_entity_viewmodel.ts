@@ -4,12 +4,13 @@ export class SearchEntityViewmodel {
     avatar: string
   };
   team: {
-    id: number,
+    id: string,
     acronym: string,
     avatar: string,
     name: string,
     full_name: string
   };
   _id: string;
+  user_info_id: string;
   type: string;
 }

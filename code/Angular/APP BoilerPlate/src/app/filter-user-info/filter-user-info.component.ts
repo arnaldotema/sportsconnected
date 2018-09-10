@@ -34,7 +34,6 @@ export class FilterUserInfoComponent implements OnInit {
   seasons;
   stats;
 
-  genericUserService: GenericUserService;
   teams: SearchEntityViewmodel[];
   age_groups;
   leagues;
@@ -43,19 +42,19 @@ export class FilterUserInfoComponent implements OnInit {
   user;
 
   sortedData;
-  sliderRange;
+  regex_values;
+  regex_words;
 
   value_types;
 
   private search_fields: Array<FilterSearch> = [];
 
-  constructor(private router: Router,
-              private userInfoService : UserInfoService) {
+  constructor(private router: Router, private genericUserService: GenericUserService,
+              private userInfoService: UserInfoService) {
   }
 
   ngOnInit() {
-    this.genericUserService = new GenericUserService();
-    this.personal_data = ['Pé Dominante', 'Idade', 'Posição', 'Residência', 'Mobilidade', 'D. de Nascimento',];
+    this.personal_data = ['Pé', 'Idade', 'Posição', 'Residência', 'Mobilidade', 'D. de Nascimento',];
     this.stats = ['Época', 'Jogos', 'Minutos', 'Golos', 'Assistências', 'Class. média', 'C. Amarelos', 'C. Vermelhos'];
     this.physical_atts = ['Altura', 'Peso', 'Votação SC', 'Velocidade', 'Resistência', 'Força', 'Agilidade', 'Reflexos', 'Impulsão', 'Proteção de bola', 'Corpo a corpo'];
     this.technical_atts = ['Passe', 'Recepção', 'Drible', 'Remates Longe', 'Finalização', 'Cabeceamento', 'Cruzamento', 'Desarme', 'Primeiro toque', 'Lançamentos Laterais', 'Cantos', 'Livres diretos', 'Livres indiretos', 'Penalties'];
@@ -65,99 +64,369 @@ export class FilterUserInfoComponent implements OnInit {
 
     this.value_types = {
       'default': {
-        values: Array.apply(null, {length: 50}).map(Number.call, Number),
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: '',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
 
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'foot': {
+      'personal_info.foot': {
         values: ['Direito', 'Esquerdo', 'Ambidestro'],
         suffix: '',
-        filters: ['Joga com']
+        filters: [{
+          regex: '$regex',
+          text: 'Joga com'
+        }]
       },
-      'birth_date': {
+      'personal_info.birth_date': {
         values: ['1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009'],
         suffix: '',
-        filters: ['Exatamente', 'Desde', 'Até', 'Entre']
+        filters: [
+          {
+            regex: '$regex',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Desde'
+          },
+          {
+            regex: '$lte',
+            text: 'Até'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'age': {
+      'personal_info.age': {
         values: Array.apply(null, {length: 35}).map(Number.call, Number),
         suffix: 'anos',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$regex',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'residence': {
+      'personal_info.residence': {
         values: ['Lisboa', 'Porto', 'Coimbra', 'Algarve', 'Setúbal', 'Santarém', 'Viseu', 'Leiria'],
         suffix: '',
-        filters: ['Reside em']
+        filters: ['$regex'],
+        filters_text: ['Reside em']
       },
-      'team': {
-        values: ['Seixal FC', 'SL Benfica', 'FC Porto', 'Amora FC', 'Alcochetense', 'Montijo', 'Sporting CP'],
+      'team.name': {
+        values: ['Seixal', 'Benfica', 'Porto', 'Amora', 'Alcochetense', 'Montijo', 'Sporting'],
         suffix: '',
-        filters: ['Joga no']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Joga no'
+
+          }
+        ]
+
       },
-      'mobility': {
+      'personal_info.mobility': {
         values: ['Total', 'Regional', 'Distrital'],
         suffix: '',
-        filters: ['No máximo']
+        filters: ['$regex'],
+        filters_text: ['No máximo']
       },
-      'position': {
-        values: ['Guarda-redes', 'Defesa Central', 'Defesa Esquerdo', 'Defesa Direito', 'Defesa', 'Médio Defensivo', 'Médio Ofensivo', 'Médio Esquerdo', 'Médio Direito', 'Médio Centro', 'Ala Esquerdo', 'Ala Direito', 'Avançado',],
+      'personal_info.positions': {
+        values: ['Guarda Redes', 'Defesa','Defesa (Defesa Central)', 'Defesa (Defesa Esquerdo)', 'Defesa (Defesa Direito)', 'Médio', 'Médio (Médio Defensivo)', 'Médio (Médio Centro)', 'Médio (Médio Ofensivo)', 'Médio Esquerdo','Médio (Extremo Esquerdo)','Médio (Extremo Direito)', 'Médio Direito','Avançado (Extremo Direito)','Avançado (Extremo Esquerdo)', 'Avançado (Ponta de Lança)'],
         suffix: '',
-        filters: ['É natural como'],
+        filters: [
+          {
+            regex: '$in',
+            text: 'É natural como'
+
+          }
+        ]
       },
-      'games': {
-        values: Array.apply(null, {length: 50}).map(Number.call, Number),
+      'stats.games': {
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: 'jogos',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'minutes': {
+      'stats.minutes': {
         values: Array.apply(null, {length: 90}).map(Number.call, Number),
         suffix: 'mins',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'goals': {
-        values: Array.apply(null, {length: 100}).map(Number.call, Number),
+      'stats.goals': {
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: 'golos',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'assists': {
-        values: Array.apply(null, {length: 100}).map(Number.call, Number),
+      'stats.assists': {
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
         suffix: 'ass.',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'height': {
-        values: ['1,20', '1,50', '1,70', '1,80', '1,90', '2,00'],
-        suffix: 'm',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+      'personal_info.height': {
+        values: ['120', '150', '170', '180', '190', '200'],
+        suffix: 'cm',
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'weight': {
+      'personal_info.weight': {
         values: ['50', '60', '70', '80', '90'],
         suffix: 'kg',
-        filters: ['Exatamente', 'Pelo menos', 'No máximo', 'Entre']
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'age_group': {
+      'personal_info.age_group': {
         values: ['Petizes', 'Traquinas', 'Benjamins B', 'Benjamins A', 'Infantis B', 'Infantis A', 'Iniciados B', 'Iniciados', 'Juvenis B', 'Juvenis', 'Juniores B', 'Juniores', 'Seniores'],
         suffix: '',
-        filters: ['Exatamente', 'Desde', 'Até', 'Entre']
+        filters: [
+          {
+            regex: '$regex',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Desde'
+          },
+          {
+            regex: '$lte',
+            text: 'Até'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       },
-      'district': {
+      'personal_info.district': {
         values: ['Lisboa', 'Porto', 'Setúbal', 'Santarém', 'Faro'],
         suffix: '',
-        filters: ['Joga em/no']
+        filters: [{
+          regex: '$regex',
+          text: 'Joga em/no'
+        }]
       },
-
-      'division': {
+      'personal_info.division': {
         values: ['Nacional', 'Regional', 'Distrital', '1ª Div', '2ª Div', '3ª Div'],
         suffix: '',
-        filters: ['Joga na']
+        filters: [{
+          regex: '$regex',
+          text: 'Joga na'
+        }]
       },
-      'season': {
+      'personal_info.season': {
         values: ['2018/2019', '2017/2018', '2016/2017', '2015/2016', '2014/2015'],
         suffix: '',
-        filters: ['Exatamente', 'Desde', 'Até', 'Entre']
+        filters: [
+          {
+            regex: '$regex',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Desde'
+          },
+          {
+            regex: '$lte',
+            text: 'Até'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
+      },
+      'stats.red_cards': {
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
+        suffix: '',
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
+      },
+      'stats.yellow_cards': {
+        values: Array.apply(null, {length: 200}).map(Number.call, Number),
+        suffix: '',
+        filters: [
+          {
+            regex: '$in',
+            text: 'Exatamente'
+
+          },
+          {
+            regex: '$gte',
+            text: 'Pelo menos'
+          },
+          {
+            regex: '$lte',
+            text: 'No máximo'
+          },
+          {
+            regex: '$gte,$lte',
+            text: 'Entre'
+          },
+        ]
       }
     };
   }
+
+  contains(array: any[], element) {
+    return array.indexOf(element) > -1;
+  };
 
   loadAgeGroups() {
     // Todo: Get AgeGroups
@@ -232,75 +501,39 @@ export class FilterUserInfoComponent implements OnInit {
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.genericUserService.searchUser('', '', 'team')
+    this.genericUserService.searchUser('', '', 'team.name')
       .subscribe(teams => this.teams = teams);
   }
 
   loadPlayers() {
     this.loading = true;
-    setTimeout(() =>{
-      this.genericUserService.detailedSearchUser(this.search_fields)
-        .subscribe(players => {
-            this.loading = false;
-            this.players = players;
-            this.sortedData = this.players.slice();
-          }
-        );
-    },2000);
 
-  }
-
-  changed(form) {
-
-    // Cleans current player list if the filters were cleaned
-    if(this.search_fields.length == 0){
-      this.players = undefined;
-    }
-
-    // Todo: Get Players based on
-    if (form)
-      this.addFieldValue(form);
-
-    // Reset the selected fileds
-    this.personal_data_select = undefined;
-    this.competition_select = undefined;
-    this.physical_atts_select = undefined;
-    this.sc_atts_select = undefined;
-    this.technical_atts_select = undefined;
-
-  }
-
-
-  getTeam() {
-    this.genericUserService.searchUser('', '', 'team')
-      .subscribe(teams => this.teams = teams);
-  }
-
-  sortData(sort: Sort) {
-    const data = this.players.slice();
-    if (!sort.active || sort.direction == '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a, b) => {
-      let isAsc = sort.direction == 'asc';
-      debugger;
-      switch (sort.active) {
-        case 'age': return compare(+a.personal_info.age, +b.personal_info.age, !isAsc);
-        case 'games': return compare(+a.current_season.games.length, b.current_season.games.length, !isAsc);
-        case 'goals': return compare(+a.current_season.stats[0].goals, +b.current_season.stats[0].goals, !isAsc);
-        case 'assists': return compare(+a.current_season.stats[0].assists, +b.current_season.stats[0].assists, !isAsc);
-        case 'height': return compare(+a.personal_info.height, +b.personal_info.height,!isAsc);
-        case 'weight': return compare(+a.personal_info.weight, +b.personal_info.weight, !isAsc);
-        default: return 0;
+    this.search_fields.forEach((field, key)=>{
+      if(field.search_item == "personal_info.positions"){
+        field.selected_value = [field.selected_value];
       }
     });
+
+    this.genericUserService.detailedSearchUser(this.search_fields)
+      .subscribe(players => {
+          players.forEach(player => {
+            let birth_date = new Date(player.personal_info.date_of_birth);
+            let ageDifMs = Date.now() - birth_date.getTime();
+            let ageDate = new Date(ageDifMs);
+            player.personal_info.age = Math.abs(ageDate.getUTCFullYear() - 1970);
+          });
+          this.players = players;
+          this.loading = false;
+          this.sortedData = this.players.slice();
+        }
+      );
+
   }
 
   addFieldValue(form_values) {
     form_values.forEach((form_value, key) => {
       if (!this.search_fields.some(item => item.form == form_value)) {
+
         let mapped_var = mapVariable(form_value);
         let obj = this.value_types[mapped_var] ? this.value_types[mapped_var] : this.value_types['default'];
         this.search_fields.push({
@@ -317,65 +550,120 @@ export class FilterUserInfoComponent implements OnInit {
     });
   }
 
+  changed(form) {
+
+    // Cleans current player list if the filters were cleaned
+    if (this.search_fields.length == 0) {
+      this.players = undefined;
+    }
+
+    // Todo: Get Players based on
+    if (form)
+      this.addFieldValue(form);
+
+    // Reset the selected fileds
+    this.personal_data_select = undefined;
+    this.competition_select = undefined;
+    this.physical_atts_select = undefined;
+    this.sc_atts_select = undefined;
+    this.technical_atts_select = undefined;
+
+  }
+
+  sortData(sort: Sort) {
+    const data = this.players.slice();
+    if (!sort.active || sort.direction == '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      let isAsc = sort.direction == 'asc';
+      switch (sort.active) {
+        case 'age':
+          return compare(+a.personal_info.age, +b.personal_info.age, !isAsc);
+        case 'games':
+          return compare(+a.stats[0].games, b.stats[0].games, !isAsc);
+        case 'goals':
+          return compare(+a.stats[0].goals, +b.stats[0].goals, !isAsc);
+        case 'assists':
+          return compare(+a.stats[0].assists, +b.stats[0].assists, !isAsc);
+        case 'height':
+          return compare(+a.personal_info.height, +b.personal_info.height, !isAsc);
+        case 'weight':
+          return compare(+a.personal_info.weight, +b.personal_info.weight, !isAsc);
+        default:
+          return 0;
+      }
+    });
+  }
+
   deleteFieldValue(index) {
     this.search_fields.splice(index, 1);
   }
 }
 
+
 function mapVariable(text) {
   let translated = '';
 
   switch (text) {
-    case 'Pé Dominante':
-      translated = 'foot';
+    case 'Pé':
+      translated = 'personal_info.foot';
       break;
     case 'Posição':
-      translated = 'position';
+      translated = 'personal_info.positions';
       break;
     case 'Idade':
-      translated = 'age';
+      translated = 'personal_info.age';
       break;
     case 'Residência':
-      translated = 'residence';
+      translated = 'personal_info.residence';
       break;
     case 'Clube':
-      translated = 'team';
+      translated = 'team.name';
       break;
     case 'Mobilidade':
-      translated = 'mobility';
+      translated = 'personal_info.mobility';
       break;
     case 'Época':
-      translated = 'season';
+      translated = 'season'; //TODO ALTT Check this one out because it doesn't add up this way.
       break;
     case 'Jogos':
-      translated = 'games';
+      translated = 'stats.games';
       break;
     case 'D. de Nascimento':
-      translated = 'birth_date';
+      translated = 'personal_info.date_of_birth';
       break;
     case 'Minutos':
-      translated = 'minutes';
+      translated = 'stats.minutes';
       break;
     case 'Golos':
-      translated = 'goals';
+      translated = 'stats.goals';
       break;
     case 'Assistências':
-      translated = 'assists';
+      translated = 'stats.assists';
       break;
     case 'Altura':
-      translated = 'height';
+      translated = 'personal_info.height';
       break;
     case 'Peso':
-      translated = 'weight';
+      translated = 'personal_info.weight';
       break;
     case 'Escalão':
-      translated = 'age_group';
+      translated = 'personal_info.age_group';
       break;
     case 'Distrito':
-      translated = 'district';
+      translated = 'personal_info.district';
       break;
     case 'Divisão':
-      translated = 'division';
+      translated = 'personal_info.division';
+      break;
+    case 'C. Amarelos':
+      translated = 'stats.yellow_cards';
+      break;
+    case 'C. Vermelhos':
+      translated = 'stats.red_cards';
       break;
     default:
       translated = '';

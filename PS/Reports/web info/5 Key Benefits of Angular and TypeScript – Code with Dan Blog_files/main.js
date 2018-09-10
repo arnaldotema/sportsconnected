@@ -1,0 +1,1 @@
+(function($){var width=$('.article-container').width(),videoPlayer=$('.video-player');if(width&&videoPlayer){var height=width*.56;videoPlayer.width(width);videoPlayer.height(height);}}(jQuery));

@@ -240,7 +240,7 @@ body {
 
 .row-center-edit-mode {
   width: 80%;
-  margin: auto auto 30px auto;
+  margin: 30px auto 30px auto;
   float: left;
 }
 
@@ -266,6 +266,10 @@ body {
 
 .home-row .roster {
   float: left;
+}
+
+.auto-height {
+
 }
 
 .auto-height td {
@@ -843,8 +847,14 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   margin: 0px 100px;
 }
 
+.login-form input{
+  color: black !important;
+}
+
+
+
 .login-form .mat-form-field {
-  color: white;
+  color: black;
 }
 
 .login-form .button {
@@ -1441,6 +1451,10 @@ button.toast-close-button {
   opacity: 0.4;
 }
 
+.mat-form-field-underline {
+  display: none;
+}
+
 /*Responsive Design*/
 @media all and (max-width: 240px) {
   #toast-container > div {
@@ -1467,4 +1481,15 @@ button.toast-close-button {
     padding: 15px 15px 15px 50px;
     width: 25em;
   }
+}
+
+.icon {
+  width: auto !important;
+  height: 15px !important;
+}
+
+.list_flag {
+  min-width: 14px;
+  max-width: 30px;
+  min-height: 9px;
 }

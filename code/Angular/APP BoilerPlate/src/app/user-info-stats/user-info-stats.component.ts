@@ -3,6 +3,7 @@ import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 import { Chart } from 'chart.js';
 import {Sort} from '@angular/material';
+import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-user-info-stats',
   templateUrl: './user-info-stats.component.html',
@@ -13,15 +14,16 @@ export class User_infoStatsComponent implements OnInit,AfterViewInit{
 
   viewModel: UserInfoViewModel;
   sortedData;
-  constructor(
-    private userInfoService : UserInfoService
-  ) {
+  id;
+  constructor(private userInfoService : UserInfoService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.userInfoService.getUserInfo('0')
+
+    this.id  = this.route.snapshot.paramMap.get('id');
+    this.userInfoService.getUserInfo(this.id)
       .subscribe(userInfo => {
-        this.sortedData = userInfo.media.slice();
+        this.sortedData = userInfo.current_season.media.slice();
         return this.viewModel = userInfo
       });
   }
@@ -30,7 +32,7 @@ export class User_infoStatsComponent implements OnInit,AfterViewInit{
   }
 
   sortData(sort: Sort) {
-    const data = this.viewModel.media.slice();
+    const data = this.viewModel.current_season.media.slice();
     if (!sort.active || sort.direction == '') {
       this.sortedData = data;
       return;

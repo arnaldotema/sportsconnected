@@ -24,7 +24,9 @@
 .meta .player-image img {
   object-fit: cover;
   min-height: 100%;
-}
+            width: 100%;
+
+  }
 
 .meta .personal {
   margin: 10px auto;
@@ -349,7 +351,7 @@ img {
 .player-image {
   margin: 10px 0;
   position: relative;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
   background: white center center no-repeat;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);

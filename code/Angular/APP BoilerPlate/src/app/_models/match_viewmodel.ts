@@ -11,7 +11,7 @@ export class MatchViewModel{
   phase: string;
   stadium: string;
   referee: string;
-  competition: {
+  competition_season: {
     name: string;
     avatar: string;
     id: string;

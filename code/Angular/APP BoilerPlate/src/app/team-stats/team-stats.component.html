@@ -1,4 +1,4 @@
-<div class="row">
+<div *ngIf="viewModel" class="row">
   <div class="row-left-stats">
     <table class="table-order-center" matSort (matSortChange)="sortData($event)">
       <tr>
@@ -20,21 +20,21 @@
           <th>G. Marcados</th>
           <th class="th-td-last">G. Sofridos</th>
         </tr>
-        <tr *ngFor="let stat of viewModel.history_stats; let _idx = index "
+        <tr *ngFor="let stat of viewModel.current_season.standings; let _idx = index "
             class="{{ _idx % 2 ? ' tr-even': 'tr-odd ' }} {{_idx == 0 ? ' tr-current-season ' : '' }}">
           <td>
-            <img class="league" src="{{stat.competition_avatar}}" alt="{{stat.competition_name}}">
+            <img class="league" src="{{stat.avatar}}" alt="{{stat.name}}">
           </td>
-          <td>{{stat.games}}</td>
+          <td>{{stat.matches}}</td>
           <td>
-            <div *ngIf="stat.classification != null">{{stat.classification}}º</div>
-            <div *ngIf="stat.classification == null">-</div>
+            <div *ngIf="stat.position != null">{{stat.position}}º</div>
+            <div *ngIf="stat.position == null">-</div>
           </td>
           <td>{{stat.wins}}</td>
           <td>{{stat.losses}}</td>
           <td>{{stat.draws}}</td>
-          <td>{{stat.scored_goals}}</td>
-          <td>{{stat.suffered_goals}}</td>
+          <td>{{stat.goals}}</td>
+          <td>{{stat.goals_taken}}</td>
         </tr>
         </tbody>
       </table>
@@ -86,7 +86,7 @@
                 </div>
               </div>
             </div>
-            <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+            <div class="sc-highlights">Arnaldo Tema fez hat-trick</div>
           </div>
         </a>
 
@@ -132,7 +132,7 @@
                 </div>
               </div>
             </div>
-            <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+            <div class="sc-highlights">Arnaldo Tema fez hat-trick</div>
           </div>
         </a>
 
@@ -178,7 +178,7 @@
                 </div>
               </div>
             </div>
-            <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+            <div class="sc-highlights">Arnaldo Tema fez hat-trick</div>
           </div>
         </a>
 
@@ -224,7 +224,7 @@
                 </div>
               </div>
             </div>
-            <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+            <div class="sc-highlights">Arnaldo Tema fez hat-trick</div>
           </div>
         </a>
 
@@ -270,7 +270,7 @@
                 </div>
               </div>
             </div>
-            <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+            <div class="sc-highlights">Arnaldo Tema fez hat-trick</div>
           </div>
         </a>
 
@@ -316,12 +316,89 @@
                 </div>
               </div>
             </div>
-            <div class="sc-highlights">Diogo Pires fez hat-trick</div>
+            <div class="sc-highlights">Arnaldo Tema fez hat-trick</div>
           </div>
         </a>
 
       </section>
     </div>
   </div>
+</div>
+<div [hidden]="viewModel" class="loading">
+  <img src="/assets/ball.png" style="height: 100px; width: auto;">
+  <div class="bars">
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+  </div>
+  <!--<div style="color: darkgrey; font-family: Museo Sans,sans-serif; font-size: 20px; margin: 20px auto;">
+    Um jogo, um clique, o teu destino.
+  </div>-->
+  <style>
+    .loading {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      overflow: auto;
+      text-align: center;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .loading .bars {
+      margin: 20px auto;
+      width: 100%;
+    }
+
+    .loading-bar {
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      border-radius: 4px;
+      animation: loading 1s ease-in-out infinite;
+    }
+
+    .loading-bar:nth-child(1) {
+      background-color: #27ae60;
+      animation-delay: 0;
+    }
+
+    .loading-bar:nth-child(2) {
+      background-color: #f1c40f;
+      animation-delay: 0.09s;
+    }
+
+    .loading-bar:nth-child(3) {
+      background-color: #c0392b;
+      animation-delay: .18s;
+    }
+
+    .loading-bar:nth-child(4) {
+      background-color: #c0392b;
+      animation-delay: .27s;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(1, 2.2);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+  </style>
 </div>
 

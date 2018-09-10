@@ -1,5 +1,7 @@
 import {Achievement} from './achievement';
 import {UserInfoSeason} from "./user_info_season";
+import {Recommendation} from "./recommendation";
+import {SkillSet} from "./skill_set";
 
 //NEW put correct information in "user_info_season"
 
@@ -7,30 +9,12 @@ export class UserInfoViewModel {
   _id: string;
   user_id: string;
   followers : string[];
-  current_season: UserInfoSeason
+  current_season: UserInfoSeason;
   previous_seasons: UserInfoSeason[];
-  skill_set: [{
-      name: string,
-      avatar: string,
-      endorsements: string[],
-    }];
+  skill_set: SkillSet[];
   recommendations: {
     list: number[],
-    top_5: [{
-        author: {
-          name: string,
-          relationship: string, //NEW Treinador, clube, adepto, etc...
-          id: number,
-          avatar: string,
-          team: {
-            id: string,
-            acronym: string,
-            avatar: string,
-            name: string,
-          },
-        },
-        text: string,
-      }],
+    top_5: Recommendation[]
   };
   achievements: Achievement[];
   created_at: string;
