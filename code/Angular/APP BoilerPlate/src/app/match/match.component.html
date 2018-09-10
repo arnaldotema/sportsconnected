@@ -1,10 +1,10 @@
 <div *ngIf="viewModel" class="match">
   <div class="result-info col-md-10">
     <a class="match-competition" routerLink="/competition">
-      <img *ngIf="viewModel.competition.avatar != null || viewModel.competition.avatar != ''"
-           src="{{viewModel.competition.avatar}}">
-      <div *ngIf="viewModel.competition.avatar == null || viewModel.competition.avatar == ''">
-        {{viewModel.competition.name}}
+      <img *ngIf="viewModel.competition_season.avatar != null || viewModel.competition_season.avatar != ''"
+           src="{{viewModel.competition_season.avatar}}">
+      <div *ngIf="viewModel.competition_season.avatar == null || viewModel.competition_season.avatar == ''">
+        {{viewModel.competition_season.name}}
       </div>
     </a>
     <div class="game-info">
@@ -96,7 +96,11 @@
               <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
                    alt="{{player.nationality}}" class="list_flag">
             </td>
-            <td class="centered">G: {{player.goals[0]}}</td>
+            <td class="centered">
+              <div *ngIf="player.goals && player.goals.length > 0">
+                <img class="icon" src="/assets/ball.png"> {{player.goals.length}}
+              </div>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -138,7 +142,11 @@
               <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
                    alt="{{player.nationality}}" class="list_flag">
             </td>
-            <td class="centered">G: {{player.goals[0]}}</td>
+            <td class="centered">
+              <div *ngIf="player.goals && player.goals.length > 0">
+                <img class="icon" src="/assets/ball.png">{{player.goals.length}}
+              </div>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -154,7 +162,7 @@
           </thead>
           <tbody>
           <tr>
-            <td title="{{viewModel.home_team.coach.name}}" class="centered first-td">
+            <td title="{{viewModel.home_team.staff[0].name}}" class="centered first-td">
               <div class="list_role">Treinador principal</div>
             </td>
             <td class="roster-name-td">
@@ -164,13 +172,13 @@
                   <td rowspan="2" class="">
                     <a routerLink="/user-info/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
-                           [ngStyle]="{'background-image':  'url(' + viewModel.home_team.coach.avatar + ')'}"></div>
+                           [ngStyle]="{'background-image':  'url(' + viewModel.home_team.staff[0].avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
                       routerLink="/user-info/-1">
-                      {{viewModel.home_team.coach.name}}
+                      {{viewModel.home_team.staff[0].name}}
                     </a>
                   </td>
                 </tr>
@@ -178,8 +186,8 @@
               </table>
             </td>
             <td class="centered">
-              <img src="/assets/flags/pt.svg" title="{{viewModel.home_team.coach.nationality}}"
-                   alt="{{viewModel.home_team.coach.nationality}}" class="list_flag">
+              <img src="/assets/flags/pt.svg" title="{{viewModel.home_team.staff[0].nationality}}"
+                   alt="{{viewModel.home_team.staff[0].nationality}}" class="list_flag">
             </td>
           </tr>
           </tbody>
@@ -190,11 +198,11 @@
         <div *ngFor="let achievement of viewModel.home_team.achievements">
           <div class="sc-achievement-accomplished">
             <div class="sc-achievement-accomplished__logos">
-              <img class="sc-rounded-image" [src]="achievement.user_avatar">
+              <img class="sc-rounded-image" [src]="achievement.avatar">
               <img [src]="achievement.avatar">
             </div>
             <div class="sc-achievement-accomplished__headings">
-              <h4>{{achievement.user_name}}</h4>
+              <h4>{{achievement.name}}</h4>
             </div>
           </div>
         </div>
@@ -239,7 +247,11 @@
               <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
                    alt="{{player.nationality}}" class="list_flag">
             </td>
-            <td class="centered">G: {{player.goals[0]}}</td>
+            <td class="centered">
+              <div *ngIf="player.goals && player.goals.length > 0">
+                <img class="icon" src="/assets/ball.png"> {{player.goals.length}}
+              </div>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -281,7 +293,11 @@
               <img src="/assets/flags/pt.svg" title="{{player.nationality}}"
                    alt="{{player.nationality}}" class="list_flag">
             </td>
-            <td class="centered">G: {{player.goals[0]}}</td>
+            <td class="centered">
+              <div *ngIf="player.goals && player.goals.length > 0">
+                <img class="icon" src="/assets/ball.png"> {{player.goals.length}}
+              </div>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -297,7 +313,7 @@
           </thead>
           <tbody>
           <tr>
-            <td title="{{viewModel.away_team.coach.name}}" class="centered first-td">
+            <td title="{{viewModel.away_team.staff[0].name}}" class="centered first-td">
               <div class="list_role">Treinador principal</div>
             </td>
             <td class="roster-name-td">
@@ -307,13 +323,13 @@
                   <td rowspan="2" class="">
                     <a routerLink="/user-info/-1">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
-                           [ngStyle]="{'background-image':  'url(' + viewModel.away_team.coach.avatar + ')'}"></div>
+                           [ngStyle]="{'background-image':  'url(' + viewModel.away_team.staff[0].avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
                       routerLink="/user-info/-1">
-                      {{viewModel.away_team.coach.name}}
+                      {{viewModel.away_team.staff[0].name}}
                     </a>
                   </td>
                 </tr>
@@ -321,8 +337,8 @@
               </table>
             </td>
             <td class="centered">
-              <img src="/assets/flags/pt.svg" title="{{viewModel.away_team.coach.nationality}}"
-                   alt="{{viewModel.away_team.coach.nationality}}" class="list_flag">
+              <img src="/assets/flags/pt.svg" title="{{viewModel.away_team.staff[0].nationality}}"
+                   alt="{{viewModel.away_team.staff[0].nationality}}" class="list_flag">
             </td>
           </tr>
           </tbody>
@@ -333,11 +349,11 @@
         <div *ngFor="let achievement of viewModel.away_team.achievements">
           <div class=" w sc-achievement-accomplished">
             <div class="col-md-5 sc-achievement-accomplished__logos">
-              <img class="sc-rounded-image" [src]="achievement.user_avatar">
+              <img class="sc-rounded-image" [src]="achievement.avatar">
               <img [src]="achievement.avatar">
             </div>
             <div class="col-md-7 sc-achievement-accomplished__headings">
-              <h4>{{achievement.user_name}}</h4>
+              <h4>{{achievement.name}}</h4>
             </div>
           </div>
         </div>
@@ -352,7 +368,7 @@
   </div>
 </div>
 <div [hidden]="viewModel" class="loading">
-  <img src="/assets/SP_Logo_Black.png" style="height: 100px; width: auto;">
+  <img src="/assets/ball.png" style="height: 100px; width: auto;">
   <div class="bars">
     <div class="loading-bar"></div>
     <div class="loading-bar"></div>

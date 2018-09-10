@@ -22,19 +22,19 @@ function cascadeUserInfoSeasonUpdates(res, done){
             logger.info("Successfully added player " + res.options.user_info_season.personal_info.name + " to team " + res.options.team_season.name);
             footballUserInfoSeason.addCompetitionToUserInfo(res.options.user_info_season._id, res.options.competition_season, function (err, result) {
                 if (err) {
-                    logger.error("Error when adding competition to user info:", err);
+                    logger.error("Error when adding competition_season to user info:", err);
                     zerozero.proxyFailCallback(res, done);
                 }
                 else {
-                    logger.info("Successfully added competition " + res.options.competition_season.name + " to user info " + res.options.user_info_season.personal_info.name);
+                    logger.info("Successfully added competition_season " + res.options.competition_season.name + " to user info " + res.options.user_info_season.personal_info.name);
 
                     footballCompetitionSeason.addUserInfoToCompetition(res.options.competition_season._id, res.options.user_info_season, function (err, result) {
                         if (err) {
-                            logger.error("Error when adding user info to competition:", err);
+                            logger.error("Error when adding user info to competition_season:", err);
                             zerozero.proxyFailCallback(res, done);
                         }
                         else {
-                            logger.info("Successfully added user info " + res.options.user_info_season.personal_info.name + " to competition " + res.options.competition_season.name);
+                            logger.info("Successfully added user info " + res.options.user_info_season.personal_info.name + " to competition_season " + res.options.competition_season.name);
                             done();
                         }
                     });
