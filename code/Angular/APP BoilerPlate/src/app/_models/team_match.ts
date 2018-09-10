@@ -12,6 +12,8 @@ export class TeamMatch {
   reserves: PlayerMatch[];
   staff:[{
     name: string;
+    age: number; // added
+    date_of_birth: string;// added
     id: string;
     user_info_id: string;
     avatar: string,

@@ -37,17 +37,17 @@
   width: 30%;
 }
 
-.creation-modal__modal-description .target-info {
+.creation-modal__modal-description .author-info {
   margin-left: 10px;
 }
 
-.creation-modal__modal-description .target-info h4 {
+.creation-modal__modal-description .author-info h4 {
   margin: 0px;
   color: #032f4f;
   margin-bottom: 5px;
 }
 
-.creation-modal__modal-description .target-info h5 {
+.creation-modal__modal-description .author-info h5 {
   margin: 0px;
   color: darkgray;
 }

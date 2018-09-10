@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {TeamService} from '../_services/team.service';
 import {UserInfoService} from '../_services/user_info.service';
 import {GenericUserService} from '../_services/generic_user.service';
+import {CompetitionService} from '../_services/competition.service';
 import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
 import {TeamViewModel} from '../_models/team_viewmodel';
 
@@ -13,13 +14,11 @@ import {TeamViewModel} from '../_models/team_viewmodel';
 })
 export class CreateAccountComponent implements OnInit {
 
-  teamService: TeamService;
-  chosenPlayer;
+  chosenPlayer: SearchEntityViewmodel;
   chosenLeague;
   chosenGender;
   chosenAgeGroup;
-  chosenTeam;
-  genericUserService: GenericUserService;
+  chosenTeam: SearchEntityViewmodel;
   teams: SearchEntityViewmodel[];
   age_groups;
   genders;
@@ -27,13 +26,14 @@ export class CreateAccountComponent implements OnInit {
   players: SearchEntityViewmodel[];
   user;
 
-  constructor(private router: Router,
-              private userInfoService : UserInfoService) {
-  }
+  constructor(
+    private router: Router,
+    private teamService: TeamService,
+    private competitionService: CompetitionService,
+    private genericUserService: GenericUserService)
+  {}
 
   ngOnInit() {
-    this.teamService = new TeamService();
-    this.genericUserService = new GenericUserService();
     this.genders = [
       {
         id: '1',
@@ -64,35 +64,35 @@ export class CreateAccountComponent implements OnInit {
       {
         id: '4',
         name: 'Benjamins A',
-      },      {
+      }, {
         id: '5',
         name: 'Infantis B',
       },
       {
         id: '6',
         name: 'Infantis A',
-      },      {
+      }, {
         id: '7',
         name: 'Iniciados B',
       },
       {
         id: '8',
         name: 'Iniciados',
-      },      {
+      }, {
         id: '9',
         name: 'Juvenis B',
       },
       {
         id: '10',
         name: 'Juvenis',
-      },      {
+      }, {
         id: '11',
         name: 'Juniores B',
       },
       {
         id: '12',
         name: 'Juniores',
-      },      {
+      }, {
         id: '13',
         name: 'Seniores',
       }
@@ -114,26 +114,27 @@ export class CreateAccountComponent implements OnInit {
         id: '2',
         name: 'AF Lisboa 1ª Divisão Série 1 2017/18'
       },
-    ];  }
+    ];
+  }
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.genericUserService.searchUser('', '', 'team')
+    this.teamService.getTeamsByLeague(this.chosenLeague)
       .subscribe(teams => this.teams = teams);
   }
 
-  loadPlayers() {
+  loadPlayersByTeam() {
     // Todo: Get Players based on chosenTeam
-    this.genericUserService.searchUser('', '', 'player')
+    this.genericUserService.searchUser('', this.chosenTeam.personal_info.name, 'team.name')
       .subscribe(players => this.players = players);
   }
 
-  loadPlayer(){
-    this.router.navigate(['/edit-user-info']);
+  loadPlayer() {
+    this.router.navigate(['/edit-user-info/' + this.chosenPlayer.user_info_id]);
   }
 
   getTeam() {
-    this.genericUserService.searchUser('', '', 'team')
+    this.genericUserService.searchUser('', '', 'team.name')
       .subscribe(teams => this.teams = teams);
   }
 
