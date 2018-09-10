@@ -5,8 +5,9 @@ import {of} from 'rxjs/observable/of';
 import {AuthenticationService} from './authentication.service';
 import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, retry, tap} from 'rxjs/operators';
 import {CompetitionViewModel} from '../_models/competition_viewmodel';
+import {MatchViewModel} from "../_models/match_viewmodel";
 
 @Injectable()
 export class CompetitionService {
@@ -15,16 +16,33 @@ export class CompetitionService {
 
   requestOptions;
 
-  constructor (){
+  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json',
+        'jwt': authenticationService.token
       })
     };
   }
 
   getCompetiton(id: string): Observable<CompetitionViewModel> {
-    return of(this.mockCompetition[id]);
+    return this.http.get<CompetitionViewModel>('/api/competitions/' + id, this.requestOptions)
+      .pipe(
+        tap(data => {
+          console.log('GET Competitions', data);
+        }),
+        catchError(this.handleError)
+      );
+  };
+
+  getCompetitons(): Observable<CompetitionViewModel[]> {
+    return this.http.get<CompetitionViewModel[]>('/api/competitions/', this.requestOptions)
+      .pipe(
+        tap(data => {
+          console.log('GET Competitions', data);
+        }),
+        catchError(this.handleError)
+      );
   };
 
   getAllCompetitonsHeaders(): Observable<CompetitionViewModel[]> {

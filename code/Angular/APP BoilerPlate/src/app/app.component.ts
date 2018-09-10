@@ -10,10 +10,6 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
 
-  genericService : GenericUserService;
-  userList;
-  http;
-  private authenticationService: AuthenticationService;
   constructor() {}
 
 }

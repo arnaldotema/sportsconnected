@@ -72,6 +72,7 @@ const updateCompetition = function (err, res, done){
 
 const updateCompetitionSeason = function (err, res, done){
     if(res.$('#edition_table').length == 0){
+
         res.$('#page_main tr td .text a').each(function() {
             let seasonId = res.$(this).attr('href').match(/\d+/g)[0];
 
