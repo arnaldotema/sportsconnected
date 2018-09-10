@@ -14,7 +14,7 @@ passport.use('signup', new localStrategy({
         //Send the user information to the next middleware
         return done(null, user);
     } catch (error) {
-        done(error);
+        return done(null, false, { message : 'User already exists'});
     }
 }));
 

@@ -1,23 +1,5 @@
 <div class="row-center-stats centered">
 
-  <div>
-    <h1>Género</h1>
-    <mat-form-field>
-      <mat-select [(ngModel)]="chosenGender" (change)="loadAgeGroups()" placeholder="Género">
-        <mat-option *ngFor="let gender of genders" [value]="gender">{{gender.name}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div *ngIf="age_groups != null">
-    <h1>Escalão</h1>
-    <mat-form-field>
-      <mat-select [(ngModel)]="chosenAgeGroup" (change)="loadLeagues()" placeholder="Escalão">
-        <mat-option *ngFor="let age_group of age_groups" [value]="age_group">{{age_group.name}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
   <div *ngIf="leagues != null">
     <h1>Escolhe a tua competição</h1>
     <mat-form-field>
@@ -32,7 +14,7 @@
     <mat-form-field>
       <mat-select [(ngModel)]="chosenTeam" (change)="loadPlayersByTeam()" placeholder="Equipa">
         <mat-option *ngFor="let team of teams" [value]="team">
-          {{team.personal_info.name}}
+          {{team.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -44,7 +26,7 @@
     <mat-form-field>
       <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
         <mat-option *ngFor="let player of players" [value]="player">
-          {{player.personal_info.name}}
+          {{player.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
