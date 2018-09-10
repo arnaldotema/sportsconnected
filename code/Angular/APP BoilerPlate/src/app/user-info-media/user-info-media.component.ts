@@ -116,7 +116,7 @@ export class User_infoMediaComponent implements OnInit{
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -143,7 +143,7 @@ export class User_infoMediaComponent implements OnInit{
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -170,7 +170,7 @@ export class User_infoMediaComponent implements OnInit{
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -197,7 +197,7 @@ export class User_infoMediaComponent implements OnInit{
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }

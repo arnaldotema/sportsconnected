@@ -9,14 +9,17 @@ import {catchError, retry} from 'rxjs/operators';
 import {MatchViewModel} from '../_models/match_viewmodel';
 import {Achievement} from '../_models/achievement';
 import {SearchEntityViewmodel} from '../_models/search_entity_viewmodel';
+import {TeamMatch} from "../_models/team_match";
+import {PlayerMatch} from "../_models/player_match";
 
 @Injectable()
 export class MatchService {
 
   //mockMatches: MatchViewModel[] = [
-  mockMatches = [
+
+  mockMatches: MatchViewModel [] = [
     {
-      id: '1',
+      _id: '1',
       played: true,
       external_ids: {
         zerozero: 1
@@ -26,26 +29,22 @@ export class MatchService {
       phase: 'Jornada 1',
       stadium: 'Municipal José Martins Vieira (POR) (Cova da Piedade - Almada)',
       referee: 'Nuno Miguel Serrano Almeida',
-      competition: {
+      competition_season: {
         name: 'Ledman LigaPro 2017/2018',
         avatar: 'http://www.zerozero.pt/img/logos/edicoes/87509_imgbank_.png',
         id: '1',
-        external_ids: {
-          zerozero: 1
-        }
+        competition_id: '1',
+        phase: 'Jornada 1'
       },
       home_team: {
+        goals: ['45', '66', '79'],
         id: '1',
+        team_id: '1',
         name: 'C. Piedade',
         avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-        goals: ['34', '44', '22'],
         achievements: [{
           id: '1',
           name: '5 jogos consecutivos a marcar golo.',
-          user_id: '1',
-          user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-          user_positions: ['Médio Ofensivo'],
           avatar: '/assets/default_badge.png'
         }],
         main_lineup: [
@@ -57,13 +56,18 @@ export class MatchService {
             },
             number: 1,
             positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            goals: ['1', '12'],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -71,14 +75,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -86,14 +96,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -101,14 +117,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: ['2'],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -116,14 +138,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -131,14 +159,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -146,14 +180,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -161,14 +201,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -176,14 +222,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -191,14 +243,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Adilson Lopes',
@@ -206,14 +264,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-             goals: 1,
-            assists: 0,
-            yellow_cards: 1,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: ['23'],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
         ],
         reserves: [
@@ -223,14 +287,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 0, positions: ['Médio Centro'],
-            goals: 0,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 0,
+            positions: ['Médio Centro'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 12,
             go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Lima Pereira',
@@ -238,14 +308,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 0, positions: ['Médio Centro'],
-            goals: 0,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 0,
+            positions: ['Médio Centro'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 12,
             go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Lima Pereira',
@@ -253,14 +329,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 0, positions: ['Médio Centro'],
-            goals: 0,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 0,
+            positions: ['Médio Centro'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 12,
             go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Lima Pereira',
@@ -268,14 +350,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 0, positions: ['Médio Centro'],
-            goals: 0,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 0,
+            positions: ['Médio Centro'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 12,
             go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Lima Pereira',
@@ -283,31 +371,55 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 0, positions: ['Médio Centro'],
-            goals: 0,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 0,
+            positions: ['Médio Centro'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 12,
             go_in: ['80'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
         ],
-        coach: {
+        staff: [{
+          name: 'Bruno Ribeiro',
+          age: 45,
+          date_of_birth: 'Some date',
+          id: '1',
+          user_info_id: '1',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+          nationality: 'Portugal',
+          achievements: [],
+          external_ids: {
+            zerozero: 1
+          }
+        }]
+      },
+      away_team: {
+        staff: [{
           name: 'Bruno Ribeiro',
           id: '1',
           avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
           nationality: 'Portugal',
           external_ids: {
             zerozero: 1
-          }
-        }
-      },
-      away_team: {
+          },
+          age: 45, // added
+          date_of_birth: 'Some date',
+          user_info_id: '1',
+          achievements: []
+        }],
+        team_id: '2',
+        goals: ['45', '66', '79'],
         id: '1',
         name: 'U. Madeira',
         avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-        goals: ['11'],
         achievements: [],
         main_lineup: [
           {
@@ -316,14 +428,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -331,14 +449,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -346,14 +470,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -361,14 +491,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -376,14 +512,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: ['45'],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -391,14 +533,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -406,14 +554,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -421,14 +575,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: ['71'],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -436,14 +596,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -451,14 +617,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'José Chastre',
@@ -466,14 +638,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 1, positions: ['Avançado'],
-            goals: 1,
-            assists: 0,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 1,
+            positions: ['Avançado'],
+            goals: [],
+            assists: [],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 90,
             go_in: [],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            age: 22,
+            nationality: 'Portugal',
+            user_info_id: '1',
+            date_of_birth: 'Some date',
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
         ],
         reserves: [
@@ -483,14 +661,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 24, positions: ['D. Central'],
-            goals: 0,
-            assists: 1,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 24,
+            positions: ['D. Central'],
+            goals: [],
+            assists: ['45'],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 30,
             go_in: ['60'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Tiago Almeira',
@@ -498,14 +682,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 24, positions: ['D. Central'],
-            goals: 0,
-            assists: 1,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 24,
+            positions: ['D. Central'],
+            goals: ['33'],
+            assists: ['45'],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 30,
             go_in: ['60'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Tiago Almeira',
@@ -513,14 +703,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 24, positions: ['D. Central'],
-            goals: 0,
-            assists: 1,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 24,
+            positions: ['D. Central'],
+            goals: [],
+            assists: ['45'],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 30,
             go_in: ['60'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Tiago Almeira',
@@ -528,14 +724,20 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 24, positions: ['D. Central'],
-            goals: 0,
-            assists: 1,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 24,
+            positions: ['D. Central'],
+            goals: [],
+            assists: ['45'],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 30,
             go_in: ['60'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
           {
             name: 'Tiago Almeira',
@@ -543,25 +745,22 @@ export class MatchService {
             external_ids: {
               zerozero: 1
             },
-            number: 24, positions: ['D. Central'],
-            goals: 0,
-            assists: 1,
-            yellow_cards: 0,
-            red_cards: 0,
+            number: 24,
+            positions: ['D. Central'],
+            goals: [],
+            assists: ['45'],
+            yellow_cards: [],
+            red_cards: [],
             minutes_played: 30,
             go_in: ['60'],
-            go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+            user_info_id: '8',
+            nationality: 'Portugal',
+            date_of_birth: 'Some date',
+            age: 22,
+            go_out: [],
+            avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
           },
-        ],
-        coach: {
-          name: 'Ricardo Chéu',
-          id: '1',
-          avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/15541052_10212069863200855_2889012374229061166_o.jpg?_nc_cat=0&oh=5b128be1ebf4151ec5aa2afb671b72d0&oe=5B8C9375',
-          nationality: 'Portugal',
-          external_ids: {
-            zerozero: 1
-          }
-        }
+        ]
       }
     }
   ];
@@ -577,16 +776,21 @@ export class MatchService {
   }
 
   getMatch(id: string): Observable<MatchViewModel> {
-    return of(this.mockMatches[id]);
+    return of(this.mockMatches[0]);
   };
 
 
   // getPlayerMatchByTeamSeason(player_id: string, team_id: string,season_id: string): Observable<MatchViewModel[]> {
-  getPlayerMatchByTeamSeason(player_id: string, team_id: string,season_id: string): Observable<any[]> {
+  getPlayerMatchByTeamSeason(player_id: string, team_id: string, season_id: string): Observable<any[]> {
     let mock_match_obj = [
       {
         id: '1',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -604,17 +808,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -626,31 +840,41 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
           achievements: [],
           main_lineup: [
             {
@@ -659,14 +883,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -674,14 +904,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -689,14 +925,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -704,14 +946,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -719,14 +967,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -734,14 +988,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -749,14 +1009,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -764,14 +1030,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -779,14 +1051,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -794,14 +1072,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -809,14 +1093,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -826,14 +1116,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -841,14 +1137,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -856,14 +1158,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -871,14 +1179,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -886,30 +1200,32 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
-          ],
-          coach: {
-            name: 'Ricardo Chéu',
-            id: '1',
-            avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/15541052_10212069863200855_2889012374229061166_o.jpg?_nc_cat=0&oh=5b128be1ebf4151ec5aa2afb671b72d0&oe=5B8C9375',
-            nationality: 'Portugal',
-            external_ids: {
-              zerozero: 1
-            }
-          }
+          ]
         }
       },
       {
         id: '2',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -927,17 +1243,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -949,31 +1275,42 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
           achievements: [],
           main_lineup: [
             {
@@ -982,14 +1319,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -997,14 +1340,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1012,14 +1361,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1027,14 +1382,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1042,14 +1403,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1057,14 +1424,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1072,14 +1445,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1087,14 +1466,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1102,14 +1487,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1117,14 +1508,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1132,14 +1529,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -1149,14 +1552,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1164,14 +1573,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1179,14 +1594,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1194,14 +1615,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1209,14 +1636,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -1233,6 +1666,11 @@ export class MatchService {
       {
         id: '3',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -1250,17 +1688,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -1272,31 +1720,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -1305,14 +1765,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1320,14 +1786,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1', '2'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1335,14 +1807,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1350,14 +1828,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1365,14 +1849,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1380,14 +1870,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1395,14 +1891,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1410,14 +1912,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1425,14 +1933,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1440,14 +1954,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1455,14 +1975,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -1472,14 +1998,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1487,14 +2019,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1502,14 +2040,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1517,14 +2061,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1532,14 +2082,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -1556,6 +2112,11 @@ export class MatchService {
       {
         id: '4',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -1573,17 +2134,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -1595,31 +2166,42 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
           achievements: [],
           main_lineup: [
             {
@@ -1628,14 +2210,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1643,14 +2231,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1658,14 +2252,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1673,14 +2273,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1688,14 +2294,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1703,14 +2315,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1718,14 +2336,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1733,14 +2357,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1748,14 +2378,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1763,14 +2399,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1778,14 +2420,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -1795,14 +2443,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1810,14 +2464,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1825,14 +2485,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1840,14 +2506,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -1855,14 +2527,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -1879,6 +2557,11 @@ export class MatchService {
       {
         id: '5',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -1896,17 +2579,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -1918,31 +2611,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -1951,14 +2656,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1966,14 +2677,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1981,14 +2698,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -1996,14 +2719,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2011,14 +2740,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2026,14 +2761,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2041,14 +2782,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2056,14 +2803,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2071,14 +2824,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2086,14 +2845,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2101,14 +2866,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -2118,14 +2889,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2133,14 +2910,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2148,14 +2931,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2163,14 +2952,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2178,14 +2973,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -2202,6 +3003,11 @@ export class MatchService {
       {
         id: '6',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -2219,17 +3025,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -2241,31 +3057,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -2274,14 +3102,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2289,14 +3123,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2304,14 +3144,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2319,14 +3165,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2334,14 +3186,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2349,14 +3207,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2364,14 +3228,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2379,14 +3249,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2394,14 +3270,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2409,14 +3291,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2424,14 +3312,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -2441,14 +3335,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2456,14 +3356,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2471,14 +3377,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2486,14 +3398,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2501,14 +3419,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -2525,6 +3449,11 @@ export class MatchService {
       {
         id: '7',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -2542,17 +3471,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -2564,31 +3503,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -2597,14 +3548,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2612,14 +3569,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2627,14 +3590,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2642,14 +3611,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2657,14 +3632,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2672,14 +3653,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2687,14 +3674,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2702,14 +3695,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2717,14 +3716,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2732,14 +3737,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2747,14 +3758,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -2764,14 +3781,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2779,14 +3802,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2794,14 +3823,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2809,14 +3844,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -2824,14 +3865,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -2848,6 +3895,11 @@ export class MatchService {
       {
         id: '8',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -2865,17 +3917,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -2887,31 +3949,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -2920,14 +3994,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2935,14 +4015,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2950,14 +4036,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2965,14 +4057,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2980,14 +4078,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: ['1'],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -2995,14 +4099,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3010,14 +4120,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3025,14 +4141,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3040,14 +4162,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3055,14 +4183,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3070,14 +4204,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -3087,14 +4227,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3102,14 +4248,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3117,14 +4269,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3132,14 +4290,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3147,14 +4311,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -3171,6 +4341,11 @@ export class MatchService {
       {
         id: '9',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -3188,17 +4363,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -3210,31 +4395,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -3243,14 +4440,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3258,14 +4461,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3273,14 +4482,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3288,14 +4503,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3303,14 +4524,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3318,14 +4545,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3333,14 +4566,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3348,14 +4587,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3363,14 +4608,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3378,14 +4629,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3393,14 +4650,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -3410,14 +4673,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3425,14 +4694,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3440,14 +4715,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3455,14 +4736,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3470,14 +4757,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -3494,6 +4787,11 @@ export class MatchService {
       {
         id: '10',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -3511,17 +4809,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -3533,31 +4841,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -3566,14 +4886,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3581,14 +4907,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3596,14 +4928,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3611,14 +4949,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3626,14 +4970,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3641,14 +4991,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3656,14 +5012,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3671,14 +5033,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3686,14 +5054,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3701,14 +5075,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3716,14 +5096,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -3733,14 +5119,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3748,14 +5140,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3763,14 +5161,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3778,14 +5182,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -3793,14 +5203,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -3817,6 +5233,11 @@ export class MatchService {
       {
         id: '11',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -3834,17 +5255,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -3856,31 +5287,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -3889,14 +5332,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3904,14 +5353,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3919,14 +5374,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3934,14 +5395,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3949,14 +5416,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3964,14 +5437,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3979,14 +5458,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -3994,14 +5479,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4009,14 +5500,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4024,14 +5521,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4039,14 +5542,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -4056,14 +5565,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4071,14 +5586,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4086,14 +5607,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4101,14 +5628,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4116,14 +5649,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -4140,6 +5679,11 @@ export class MatchService {
       {
         id: '12',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -4157,17 +5701,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -4179,31 +5733,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -4212,14 +5778,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4227,14 +5799,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4242,14 +5820,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4257,14 +5841,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4272,14 +5862,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4287,14 +5883,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4302,14 +5904,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4317,14 +5925,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4332,14 +5946,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4347,14 +5967,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4362,14 +5988,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -4379,14 +6011,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4394,14 +6032,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4409,14 +6053,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4424,14 +6074,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4439,14 +6095,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -4463,6 +6125,11 @@ export class MatchService {
       {
         id: '13',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -4480,17 +6147,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -4502,31 +6179,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -4535,14 +6224,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4550,14 +6245,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4565,14 +6266,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4580,14 +6287,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4595,14 +6308,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4610,14 +6329,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4625,14 +6350,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4640,14 +6371,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4655,14 +6392,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4670,14 +6413,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4685,14 +6434,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -4702,14 +6457,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4717,14 +6478,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4732,14 +6499,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4747,14 +6520,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -4762,14 +6541,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -4786,6 +6571,11 @@ export class MatchService {
       {
         id: '14',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -4803,17 +6593,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -4825,31 +6625,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -4858,14 +6670,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4873,14 +6691,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4888,14 +6712,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4903,14 +6733,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4918,14 +6754,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4933,14 +6775,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4948,14 +6796,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4963,14 +6817,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4978,14 +6838,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -4993,14 +6859,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5008,14 +6880,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -5025,14 +6903,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5040,14 +6924,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5055,14 +6945,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5070,14 +6966,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5085,14 +6987,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -5109,6 +7017,11 @@ export class MatchService {
       {
         id: '15',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -5126,17 +7039,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -5148,31 +7071,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -5181,14 +7116,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5196,14 +7137,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5211,14 +7158,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5226,14 +7179,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5241,14 +7200,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5256,14 +7221,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5271,14 +7242,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5286,14 +7263,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5301,14 +7284,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5316,14 +7305,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5331,14 +7326,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -5348,14 +7349,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5363,14 +7370,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5378,14 +7391,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5393,14 +7412,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5408,14 +7433,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -5432,6 +7463,11 @@ export class MatchService {
       {
         id: '16',
         played: true,
+        player_goals: 2,
+        player_assists: ['45'],
+        player_minutes_played: 90,
+        player_yellow_cards: ['23'],
+        player_red_cards: [],
         external_ids: {
           zerozero: 1
         },
@@ -5449,17 +7485,27 @@ export class MatchService {
           }
         },
         home_team: {
+          staff: [{
+            name: 'Bruno Ribeiro',
+            id: '1',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+            nationality: 'Portugal',
+            external_ids: {
+              zerozero: 1
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'C. Piedade',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/6505_imgbank.png',
-          goals: ['34', '44', '22'],
+
           achievements: [{
             id: '1',
             name: '5 jogos consecutivos a marcar golo.',
-            user_id: '1',
-            user_name: 'Pedro Alves',
-            user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-            user_positions: ['Médio Ofensivo'],
             avatar: '/assets/default_badge.png'
           }],
           main_lineup: [
@@ -5471,31 +7517,43 @@ export class MatchService {
               },
               number: 1,
               positions: ['Avançado'],
-               goals: 1,
-              assists: 0,
-              yellow_cards: 1,
-              red_cards: 0,
+              goals: [],
+              assists: [],
+              yellow_cards: ['23'],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             }
           ],
           reserves: [],
-          coach: {
+
+        },
+        away_team: {
+          staff: [{
             name: 'Bruno Ribeiro',
             id: '1',
             avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
             nationality: 'Portugal',
             external_ids: {
               zerozero: 1
-            }
-          }
-        },
-        away_team: {
+            },
+            age: 45, // added
+            date_of_birth: 'Some date',
+            user_info_id: '1',
+            achievements: []
+          }],
+          team_id: '2',
+          goals: ['45', '66', '79'],
           id: '1',
           name: 'U. Madeira',
           avatar: 'http://www.zerozero.pt/img/logos/equipas/22_imgbank.png',
-          goals: ['11'],
+
           achievements: [],
           main_lineup: [
             {
@@ -5504,14 +7562,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5519,14 +7583,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5534,14 +7604,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5549,14 +7625,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5564,14 +7646,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5579,14 +7667,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5594,14 +7688,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5609,14 +7709,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5624,14 +7730,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5639,14 +7751,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'José Chastre',
@@ -5654,14 +7772,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 1, positions: ['Avançado'],
-              goals: 1,
-              assists: 0,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 1,
+              positions: ['Avançado'],
+              goals: [],
+              assists: [],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 90,
               go_in: [],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              age: 22,
+              nationality: 'Portugal',
+              user_info_id: '1',
+              date_of_birth: 'Some date',
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           reserves: [
@@ -5671,14 +7795,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5686,14 +7816,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5701,14 +7837,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5716,14 +7858,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
             {
               name: 'Tiago Almeira',
@@ -5731,14 +7879,20 @@ export class MatchService {
               external_ids: {
                 zerozero: 1
               },
-              number: 24, positions: ['D. Central'],
-              goals: 0,
-              assists: 1,
-              yellow_cards: 0,
-              red_cards: 0,
+              number: 24,
+              positions: ['D. Central'],
+              goals: [],
+              assists: ['45'],
+              yellow_cards: [],
+              red_cards: [],
               minutes_played: 30,
               go_in: ['60'],
-              go_out: [], avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
+              user_info_id: '8',
+              nationality: 'Portugal',
+              date_of_birth: 'Some date',
+              age: 22,
+              go_out: [],
+              avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg'
             },
           ],
           coach: {
@@ -5753,7 +7907,6 @@ export class MatchService {
         }
       }
     ];
-
     return of(mock_match_obj);
   }
 

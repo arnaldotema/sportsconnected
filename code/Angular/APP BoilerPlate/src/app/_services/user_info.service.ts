@@ -23,7 +23,7 @@ export class UserInfoService {
         name: '17/18',
         avatar: '',
         personal_info: {
-          name: 'Diogo Pires',
+          name: 'Arnaldo Tema',
           age: 25,
           number: '12',
           avatar: 'https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg',
@@ -119,7 +119,7 @@ export class UserInfoService {
         ],
         media: [
           {
-            title: 'Diogo Pires marca Hat-trick em jogo decisivo',
+            title: 'Arnaldo Tema marca Hat-trick em jogo decisivo',
             author: 'A Bola.',
             date: '08-05-2018',
             image: 'https://static.noticiasaominuto.com/stockimages/1920/naom_5ac4042fdc0c4.jpg?1522795787',
@@ -140,7 +140,7 @@ export class UserInfoService {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -167,7 +167,7 @@ export class UserInfoService {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -194,7 +194,7 @@ export class UserInfoService {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -221,7 +221,7 @@ export class UserInfoService {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -248,7 +248,7 @@ export class UserInfoService {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -275,7 +275,7 @@ export class UserInfoService {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -451,7 +451,7 @@ export class UserInfoService {
             id: '1'
           }],
           player: [{
-            name: 'Diogo Pires',
+            name: 'Arnaldo Tema',
             id: '1'
           }],
         }
@@ -478,7 +478,7 @@ export class UserInfoService {
             id: '1'
           }],
           player: [{
-            name: 'Diogo Pires',
+            name: 'Arnaldo Tema',
             id: '1'
           }],
         }
@@ -545,7 +545,7 @@ export class UserInfoService {
   }
 
   getUserInfo(id: string): Observable<UserInfoViewModel> {
-    debugger;
+
     if (this.testing || id == '-1') {
       return of(this.mockUserInfo[0]);
     }

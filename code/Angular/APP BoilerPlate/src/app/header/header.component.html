@@ -2,9 +2,9 @@
   <div class="nav-wrapper sc-background app-nav sc-navbar">
     <div class="header-row row">
       <a href="/home">
-        <img src="/assets/SP_Logo_White_Symbol.png" class="brand-logo app-logo"/>
+        <img src="/assets/ball.png" class="brand-logo app-logo"/>
       </a>
-      <app-login *ngIf="!isAuthenticated(); then search_bar"></app-login>
+      <app-login *ngIf="!isAuthenticated(); else search_bar"></app-login>
       <div #search_bar  *ngIf="isAuthenticated()" class="sc-header-search__input-container"
            (clickOutside)="searchResults = null"
            (focus)="searchFor()">
@@ -22,12 +22,11 @@
           </div>
         </div>
       </div>
-
-      <a href="/filter-user-info">
+      <a *ngIf="isAuthenticated()" href="/filter-user-info">
         <img src="/assets/search_players.png" class="brand-logo app-logo"/>
       </a>
 
-      <div class="profile-menu">
+      <div *ngIf="isAuthenticated()" class="profile-menu">
         <a routerLink="/user-info/{{viewModel.id}}" class="avatar">
           <div mat-card-avatar class="profile-small-image"
                [ngStyle]="{'background-image':  'url(' + viewModel.avatar + ')' }"></div>
@@ -44,7 +43,7 @@
                 <img class="sc-squared-image" src="http://www.zerozero.pt/img/logos/equipas/16_imgbank.png">
               </div>
               <div class="notification__description">
-                <h4>Diogo Pires</h4>
+                <h4>Arnaldo Tema</h4>
                 <h5>Marcou 2 Golos frente ao Sporting</h5>
                 <h6>25-10-2018</h6>
               </div>
@@ -55,7 +54,7 @@
                 <img class="sc-squared-image" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
               </div>
               <div class="notification__description">
-                <h4>Diogo Pires</h4>
+                <h4>Arnaldo Tema</h4>
                 <h5>Marcou 2 Golos frente ao Benfica</h5>
                 <h6>25-10-2018</h6>
               </div>

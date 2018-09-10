@@ -369,7 +369,7 @@ function processMatchCompetition(nestedMatch, res, done, cb){
             zerozero.proxyFailCallback(res, done);
         }
         else {
-            logger.info("Successfully updated competition season", result);
+            logger.info("Successfully updated competition_season season", result);
 
             cb(nestedMatch, res, done);
         }

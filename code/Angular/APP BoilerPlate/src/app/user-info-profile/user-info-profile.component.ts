@@ -147,7 +147,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -174,7 +174,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -201,7 +201,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }
@@ -228,7 +228,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
                 id: '1'
               }],
               player: [{
-                name: 'Diogo Pires',
+                name: 'Arnaldo Tema',
                 id: '1'
               }],
             }

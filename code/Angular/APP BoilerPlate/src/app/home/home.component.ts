@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthenticationService} from "../_services/authentication.service";
 
 
 @Component({
@@ -9,14 +10,22 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router ) {
+  model: any;
 
-  }
+  constructor(private router: Router,
+              private authenticationService: AuthenticationService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   createAccount() {
-    this.router.navigate(['/create-account']);
+
+    // Logs in with the password and username provided initially.
+    // For demo purposes, let's insert a mock username and passowrd.
+    this.authenticationService.login('admin', 'pwd')
+      .subscribe(result => {
+        if (result === true) {
+          this.router.navigate(['/create-account']);
+        }
+      });
   }
 }

@@ -24,6 +24,11 @@ export class HeaderComponent implements OnInit {
   show_notifications: boolean;
   show_search: boolean;
 
+
+  //Login variables
+  model: any = {};
+  error = '';
+
   constructor(
     public dialog: MatDialog, private router: Router,
     private route: ActivatedRoute,
@@ -40,6 +45,10 @@ export class HeaderComponent implements OnInit {
 
     this.show_notifications = false;
     this.show_search = false;
+
+    //Login component call
+    this.authenticationService.logout();
+
   }
 
   searchFor() {
@@ -48,7 +57,21 @@ export class HeaderComponent implements OnInit {
   }
 
   isAuthenticated() {
+    // Only for print screens
     return true;
+    //return this.authenticationService.isLogged();
+  }
+
+  //Login functions
+  login() {
+    this.authenticationService.login(this.model.username, this.model.password)
+      .subscribe(result => {
+        if (result === true) {
+          this.router.navigate(['/']);
+        } else {
+          this.error = 'Nome de usuário ou palavra passe incorretos';
+        }
+      });
   }
 
 }
