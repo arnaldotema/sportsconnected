@@ -45,7 +45,7 @@ mongoose.connect(config.database);
 
 mongoose.connection.on('connected', function(){
     console.log("im connected to " + config.database);
-    //var lol = require('./crawlers/zerozero/crawler')
+    //var crawler = require('./crawlers/zerozero/crawler')
 })
 
 mongoose.connection.on('error', function(err){

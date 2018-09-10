@@ -10,7 +10,8 @@ import {AuthenticationService} from "../_services/authentication.service";
 })
 export class HomeComponent implements OnInit {
 
-  model: any;
+  email;
+  password;
 
   constructor(private router: Router,
               private authenticationService: AuthenticationService) {}
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
 
     // Logs in with the password and username provided initially.
     // For demo purposes, let's insert a mock username and passowrd.
-    this.authenticationService.login('admin', 'pwd')
+    this.authenticationService.signup(this.email, this.password)
       .subscribe(result => {
         if (result === true) {
           this.router.navigate(['/create-account']);

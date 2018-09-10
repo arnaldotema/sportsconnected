@@ -126,3 +126,8 @@
   width: auto !important;
   height: 15px !important;
 }
+
+.tr-odd {
+  background-color: white;
+  height: 100px !important;
+}

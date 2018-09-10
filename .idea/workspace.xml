@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-account.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create-account.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+            <state relative-caret-position="120">
+              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -81,11 +81,11 @@
       <file leaf-file-name="team.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="1454" column="14" lean-forward="false" selection-start-line="1454" selection-start-column="14" selection-end-line="1454" selection-end-column="14" />
+            <state relative-caret-position="102">
+              <caret line="1416" column="10" lean-forward="false" selection-start-line="1416" selection-start-column="10" selection-end-line="1416" selection-end-column="10" />
               <folding>
-                <element signature="e#666#48156#0" expanded="false" />
-                <element signature="e#48204#50560#0" expanded="false" />
+                <element signature="e#737#48227#0" expanded="false" />
+                <element signature="e#48275#50631#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,38 +94,18 @@
       <file leaf-file-name="competition.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+            <state relative-caret-position="137">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="44" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-account.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="create-account.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="59" lean-forward="false" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="match.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="match.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="132" column="1" lean-forward="false" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+            <state relative-caret-position="171">
+              <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -171,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.arrow_box</find>
       <find>Competition</find>
       <find>competition</find>
       <find>res.options.team</find>
@@ -201,6 +180,7 @@
       <find>date</find>
       <find>leag</find>
       <find>teams</find>
+      <find>chosenTeam</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
@@ -294,9 +274,9 @@
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.css" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" />
-        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
+        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
       </list>
     </option>
   </component>
@@ -569,15 +549,16 @@
       <workItem from="1533544560153" duration="59699000" />
       <workItem from="1534500019313" duration="1969000" />
       <workItem from="1535894051327" duration="17486000" />
-      <workItem from="1536560574126" duration="26234000" />
+      <workItem from="1536560574126" duration="26996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="495491000" />
+    <option name="totallyTimeSpent" value="496253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -587,9 +568,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22712418" sideWeight="0.53630865" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251634" sideWeight="0.49603173" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3251634" sideWeight="0.49603173" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22712418" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22712418" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1170,14 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/dist/main.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1205,40 +1178,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+        <state relative-caret-position="137">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="44" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="1454" column="14" lean-forward="false" selection-start-line="1454" selection-start-column="14" selection-end-line="1454" selection-end-column="14" />
+        <state relative-caret-position="102">
+          <caret line="1416" column="10" lean-forward="false" selection-start-line="1416" selection-start-column="10" selection-end-line="1416" selection-end-column="10" />
           <folding>
-            <element signature="e#666#48156#0" expanded="false" />
-            <element signature="e#48204#50560#0" expanded="false" />
+            <element signature="e#737#48227#0" expanded="false" />
+            <element signature="e#48275#50631#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="59" lean-forward="false" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        <state relative-caret-position="171">
+          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
