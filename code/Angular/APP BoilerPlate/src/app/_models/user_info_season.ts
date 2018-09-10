@@ -5,10 +5,10 @@ export class UserInfoSeason{
   season_id: string;
   name: string;
   avatar: string;
-  number: string;
   personal_info: {
     name: string,
     age: number,
+    number: string;
     avatar: string,
     full_name: string,
     positions: string[],

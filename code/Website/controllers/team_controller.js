@@ -114,7 +114,7 @@ module.exports = {
                 });
             }
 
-            Team.user_id = req.body.user_id ? req.body.user_id : Team.user_id;
+            Team.user_info_id = req.body.user_id ? req.body.user_id : Team.user_id;
 			Team.name = req.body.name ? req.body.name : Team.name;
 			Team.admins = req.body.admins ? req.body.admins : Team.admins;
 			

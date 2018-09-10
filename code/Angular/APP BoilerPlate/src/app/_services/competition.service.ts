@@ -9,7 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 import {CompetitionViewModel} from '../_models/competition_viewmodel';
 
 @Injectable()
-export class PlayerService {
+export class CompetitionService {
 
   mockCompetition: CompetitionViewModel[] = null;
 

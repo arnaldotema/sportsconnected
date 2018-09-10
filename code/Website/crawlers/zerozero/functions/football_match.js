@@ -227,7 +227,7 @@ function processMatchIds(match, res, done, cb){
     //Populate the players with events...
 
     if(report.length == 0){
-        logger.error("Match with zerozero id: " + res.options.zerozeroId + " has no report");
+        logger.error("Match with zerozero team_id: " + res.options.zerozeroId + " has no report");
         zerozero.proxyFailCallback(res, done);
     }
     else{
@@ -264,7 +264,7 @@ function processMatchIds(match, res, done, cb){
                 match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
                 match.away_team.main_lineup[index].positions = value.personal_info.positions;
                 match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.away_team.main_lineup[index].id = value._id;
+                match.away_team.main_lineup[index].team_id = value._id;
                 match.away_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
@@ -273,7 +273,7 @@ function processMatchIds(match, res, done, cb){
                 match.away_team.reserves[index].avatar = value.personal_info.avatar;
                 match.away_team.reserves[index].positions = value.personal_info.positions;
                 match.away_team.reserves[index].nationality = value.personal_info.nationality;
-                match.away_team.reserves[index].id = value._id;
+                match.away_team.reserves[index].team_id = value._id;
                 match.away_team.reserves[index].user_info_id = value.user_info_id;
             });
 
@@ -282,7 +282,7 @@ function processMatchIds(match, res, done, cb){
                 match.home_team.main_lineup[index].avatar = value.personal_info.avatar;
                 match.home_team.main_lineup[index].positions = value.personal_info.positions;
                 match.home_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.home_team.main_lineup[index].id = value._id;
+                match.home_team.main_lineup[index].team_id = value._id;
                 match.home_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
@@ -291,7 +291,7 @@ function processMatchIds(match, res, done, cb){
                 match.home_team.reserves[index].avatar = value.personal_info.avatar;
                 match.home_team.reserves[index].positions = value.personal_info.positions;
                 match.home_team.reserves[index].nationality = value.personal_info.nationality;
-                match.home_team.reserves[index].id = value._id;
+                match.home_team.reserves[index].team_id = value._id;
                 match.home_team.reserves[index].user_info_id = value.user_info_id;
             });
 
@@ -369,7 +369,7 @@ function processMatchCompetition(nestedMatch, res, done, cb){
             zerozero.proxyFailCallback(res, done);
         }
         else {
-            logger.info("Successfully updated competition season", result);
+            logger.info("Successfully updated competition_season season", result);
 
             cb(nestedMatch, res, done);
         }
