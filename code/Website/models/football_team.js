@@ -37,6 +37,7 @@ var FootballTeamSchema = new Schema({
         other_sports: [String]
     },
     followers: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
+    following: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
     recommendations: {
         list: [
             {type: Schema.Types.ObjectId, ref: 'football_recommendations'}

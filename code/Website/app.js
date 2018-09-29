@@ -37,7 +37,6 @@ app.use('/api/players', passport.authenticate('jwt', { session : false }), playe
 app.use('/api/teams', passport.authenticate('jwt', { session : false }), teams);
 app.use('/api/competitions', passport.authenticate('jwt', { session : false }), competitions);
 app.use('/api/matches', passport.authenticate('jwt', { session : false }), matches);
-
 app.use('/users', users);
 
 //Database

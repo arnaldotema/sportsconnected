@@ -31,5 +31,6 @@ FootballUserSchema.methods.isValidPassword = async function(password){
     return compare;
 }
 
+FootballUserSchema.statics = require('../services/football_user_service');
 
 module.exports = mongoose.model('football_user', FootballUserSchema);
