@@ -2,28 +2,33 @@ var express = require('express');
 var router = express.Router();
 var PlayerController = require('../controllers/user_info_controller.js');
 
-/*
- * GET
- */
-router.post('/search', PlayerController.search);
 
-router.get('/:id', PlayerController.show);
+router.post('/', PlayerController.create);
+
+router.post('/:id/recommendations', PlayerController.add_recommendation);
+
+router.post('/:id/skills', PlayerController.add_skill_vote);
+
+router.post('/:id/followers', PlayerController.follow);
+
+router.post('/search', PlayerController.search);
 
 router.get('/', PlayerController.list);
 
-/*
- * POST
- */
-router.post('/', PlayerController.create);
+router.get('/:id', PlayerController.show);
 
-/*
- * PUT
- */
+router.get('/:id/recommendations', PlayerController.list_recommendations);
+
+router.get('/:id/skills', PlayerController.list_skills);
+
+router.get('/:id/followers', PlayerController.list_followers);
+
+router.get('/:id/followed', PlayerController.list_followed);
+
 router.put('/:id', PlayerController.update);
 
-/*
- * DELETE
- */
 router.delete('/:id', PlayerController.remove);
+
+router.delete('/:id/followed', PlayerController.unfollow);
 
 module.exports = router;

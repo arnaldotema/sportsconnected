@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+// TODO: Change followers and following list to a list of {user_id, name, avatar} objects
 var FootballUserInfoSchema = new Schema({
     user_id: {type: Schema.Types.ObjectId, ref: 'football_user'},
     type: {type: Number, required: true, index: true},
     followers: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
+    following: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
     current_season: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
     previous_seasons: [{type: Schema.Types.ObjectId, ref: 'football_user_info_season'}],
     skill_set: [
