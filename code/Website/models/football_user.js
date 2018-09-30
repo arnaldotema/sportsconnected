@@ -1,13 +1,15 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 const bcrypt = require('bcrypt');
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var FootballUserSchema = new Schema({
-	email : { type: String, required: true, unique: true},
-	password : { type: String, required: true },
-	last_login : Date,
-	subscription_expiration : Date,
-	player : { type: Schema.Types.ObjectId, ref: 'football_user_info' }
+    profile_id: String, // This is not this schema's ID. It's a reference for either the player, team or other type document.
+    email : { type: String, required: true, unique: true},
+    password : { type: String, required: true },
+    user_type: { type: String, enum: USER_TYPES },
+    last_login : Date,
+    subscription_expiration : Date
 });
 
 //This is called a pre-hook, before the user information is saved in the database
