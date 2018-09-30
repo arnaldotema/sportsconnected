@@ -34,7 +34,7 @@ Service.updateUserInfosCurrentSeason = function (seasons, cb) {
     this.bulkWrite(operations, {}, cb);
 }
 
-Service.addRecommendation = function (recommendation, user_info_id, cb) {
+Service.addRecommendation = function (recommendation_id, user_info_id, cb) {
     let operations = [];
 
     operations.push({
@@ -44,7 +44,7 @@ Service.addRecommendation = function (recommendation, user_info_id, cb) {
             },
             update: {
                 $push :  {
-                    "recommendations.list": recommendation
+                    "recommendations.list": recommendation_id
                 }
             }
         }
