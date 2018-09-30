@@ -1,4 +1,5 @@
 var FootballUserInfo = require('../models/football_user_info.js');
+var FootballRecommendation = require('../models/football_recommendation.js');
 var FootballUserInfoSeason = require('../models/football_user_info_season');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
@@ -149,30 +150,43 @@ Service.remove = function (req, res) {
 
 Service.add_recommendation = function (req, res) {
     let user_info__id = req.params.id;
-    let recommendation = req.body.recommendation;
+    let recommendation = req.body;
 
-    if(!recommendation){
+    if (!recommendation) {
         return res.status(404).json({
             message: 'Missing recommendation object'
         });
     }
 
-    FootballUserInfo.addRecommendation(recommendation, user_info__id, (err,user_info) => {
+    let new_recommendation = new FootballRecommendation(recommendation);
+
+    new_recommendation.save(function (err, created_recommendation) {
         if (err) {
             return res.status(500).json({
-                message: 'Error when updating user_info',
+                message: 'Error when creating recommendation',
                 error: err
             });
         }
-        if (!user_info) {
-            return res.status(404).json({
-                message: 'No such user_info'
-            });
-        }
 
-        return res.json(user_info);
+        FootballUserInfo.addRecommendation(created_recommendation._id, user_info__id, (err, user_info) => {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when updating user_info',
+                    error: err
+                });
+            }
+            if (!user_info) {
+                return res.status(404).json({
+                    message: 'No such user_info'
+                });
+            }
+
+            return res.json(user_info);
+
+        })
 
     })
+
 
 };
 
@@ -181,13 +195,13 @@ Service.add_skill_vote = function (req, res) {
     let author_user = req.user;
     let skill_name = req.body.skill_name;
 
-    if(!author_user || !skill_name){
+    if (!author_user || !skill_name) {
         return res.status(404).json({
             message: 'Missing author or skill_name object'
         });
     }
 
-    FootballUserInfo.addSkillVote(skill_name, author_user._id, user_info_id, (err,user_info) => {
+    FootballUserInfo.addSkillVote(skill_name, author_user._id, user_info_id, (err, user_info) => {
         if (err) {
             return res.status(500).json({
                 message: 'Error when updating user_info',
@@ -208,13 +222,13 @@ Service.follow = function (req, res) {
     let user_info_id = req.params.id;
     let author_user = req.user; // ._doc
 
-    if(!author_user){
+    if (!author_user) {
         return res.status(404).json({
             message: 'Missing author object'
         });
     }
 
-    FootballUserInfo.follow(author_user._id, user_info_id, (err,user_info) => {
+    FootballUserInfo.follow(author_user._id, user_info_id, (err, user_info) => {
         if (err) {
             return res.status(500).json({
                 message: 'Error when updating user_info',
@@ -319,13 +333,13 @@ Service.unfollow = function (req, res) {
     let user_info_id = req.params.id;
     let author_user = req.user; // ._doc
 
-    if(!author_user){
+    if (!author_user) {
         return res.status(404).json({
             message: 'Missing author object'
         });
     }
 
-    FootballUserInfo.unfollow(author_user._id, user_info_id, (err,user_info) => {
+    FootballUserInfo.unfollow(author_user._id, user_info_id, (err, user_info) => {
         if (err) {
             return res.status(500).json({
                 message: 'Error when updating user_info',
