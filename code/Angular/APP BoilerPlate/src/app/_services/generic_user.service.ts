@@ -42,7 +42,9 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -136,7 +138,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -145,7 +147,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -178,7 +180,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -272,7 +275,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -281,7 +284,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -314,7 +317,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -408,7 +412,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -417,7 +421,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -434,12 +438,12 @@ export class GenericUserService {
       },
       id: '1',
       type: 'player',
-      avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+      avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
       user_id: '1',
       personal_info: {
         name: 'Arnaldo Tema',
         age: 25,
-        avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+        avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
         full_name: 'Diogo César Pontes Pires',
         positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
         height: 165,
@@ -450,7 +454,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -544,7 +549,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -553,7 +558,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -586,7 +591,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -680,7 +686,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -689,7 +695,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -722,7 +728,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -816,7 +823,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -825,7 +832,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -842,12 +849,12 @@ export class GenericUserService {
       },
       id: '1',
       type: 'player',
-      avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+      avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
       user_id: '1',
       personal_info: {
         name: 'Naldo',
         age: 25,
-        avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+        avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
         full_name: 'Diogo César Pontes Pires',
         positions: ['Médio Centro', 'Médio Defensivo', 'Defesa Central'],
         height: 165,
@@ -858,7 +865,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -952,7 +960,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -961,7 +969,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -994,7 +1002,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -1088,7 +1097,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -1097,7 +1106,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -1130,7 +1139,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -1224,7 +1234,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -1233,7 +1243,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -1266,7 +1276,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -1360,7 +1371,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -1369,7 +1380,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -1402,7 +1413,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -1496,7 +1508,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -1505,7 +1517,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -1538,7 +1550,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -1632,7 +1645,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -1641,7 +1654,7 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
@@ -1674,7 +1687,8 @@ export class GenericUserService {
         foot: 'Direito',
         updated_at: '8-05-2018'
       },
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      following: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       current_season: {
         season_id: 1,
         name: '17/18',
@@ -1768,7 +1782,7 @@ export class GenericUserService {
           name: '5 jogos consecutivos a marcar golo.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         },
@@ -1777,14 +1791,14 @@ export class GenericUserService {
           name: '3 hat-tricks numa época.',
           user_id: '1',
           user_name: 'Pedro Alves',
-          user_avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+          user_avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
           user_positions: ['Médio Ofensivo'],
           avatar: '/assets/scorer.png'
         }
       ],
     },
   ]
-  search_obj: SearchEntityViewmodel[] =[
+  search_obj: SearchEntityViewmodel[] = [
     {
       personal_info: {
         name: 'FC Porto',
@@ -1870,7 +1884,7 @@ export class GenericUserService {
   testing: boolean = false;
   requestOptions;
 
-  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
+  constructor(private authenticationService: AuthenticationService , private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -1930,7 +1944,6 @@ export class GenericUserService {
         catchError(this.handleError)
       );
   }
-
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
