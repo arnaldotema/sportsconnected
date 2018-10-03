@@ -21,4 +21,5 @@ export class TeamViewModel {
   };
   external_ids: ExternalIds;
   followers : string[];
+  following : string[];
 }

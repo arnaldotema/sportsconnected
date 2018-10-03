@@ -1,10 +1,14 @@
 
-export class User {
+export class SessionUser {
+  token: string;
+  _id: string;
   email: string;
-  name: string;
+  profile_id: string;
+  user_type : string;
   avatar: string;
-  password: string;
-  last_login: string;
-  subscription_expiration: string;
-  id: string;
+  name: string;
+  team_id: string;
+  team_avatar: string;
+  team_acronym: string;
+  team_name: string;
 }

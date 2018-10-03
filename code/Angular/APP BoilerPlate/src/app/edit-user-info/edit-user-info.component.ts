@@ -200,9 +200,6 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
         // For demonstration purposes only.
         // The matches should come through a match.sercice function
         this.player_matches = this.viewModel.current_season.matches;
-
-        debugger;
-
         this.createForms();
       });
   }
