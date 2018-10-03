@@ -67,6 +67,7 @@ Service.show = function (req, res) {
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
+        //.populate('recommendations.list')
         .exec(function (err, user_info) {
             if (err) {
                 return res.status(500).json({
@@ -150,7 +151,7 @@ Service.remove = function (req, res) {
 
 Service.add_recommendation = function (req, res) {
     let user_info__id = req.params.id;
-    let recommendation = req.body;
+    let recommendation = req.body.recommendation;
 
     if (!recommendation) {
         return res.status(404).json({
@@ -158,6 +159,7 @@ Service.add_recommendation = function (req, res) {
         });
     }
 
+    recommendation.user_id = user_info__id;
     let new_recommendation = new FootballRecommendation(recommendation);
 
     new_recommendation.save(function (err, created_recommendation) {
