@@ -222,18 +222,18 @@ Service.add_skill_vote = function (req, res) {
 
 Service.follow = function (req, res) {
     let user_info_id = req.params.id;
-    let author_user = req.user; // ._doc
+    let author_user_info_id = req.body.author_user_info_id; // ._doc
 
-    if (!author_user) {
+    if (!author_user_info_id) {
         return res.status(404).json({
             message: 'Missing author object'
         });
     }
 
-    FootballUserInfo.follow(author_user._id, user_info_id, (err, user_info) => {
+    FootballUserInfo.follow(author_user_info_id, user_info_id, (err, user_info) => {
         if (err) {
             return res.status(500).json({
-                message: 'Error when updating user_info',
+                message: 'Error when following and updating user_info',
                 error: err
             });
         }
