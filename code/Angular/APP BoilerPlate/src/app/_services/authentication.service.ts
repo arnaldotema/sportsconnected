@@ -6,113 +6,114 @@ import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {User} from "../_models/user";
 import {UserService} from './user.service';
+import {SessionUser} from "../_models/session_user";
 
 
 @Injectable()
 export class AuthenticationService {
-  public token: string;
-  public admin: boolean;
-  public testing: boolean = false;
+  public token: any;
+  private session_user: SessionUser;
+  public testing: boolean = true;
   private logged: boolean = false;
 
   requestOptions;
 
-  session_user : User;
+  constructor(private http: HttpClient) {
 
-  constructor(private http: HttpClient, private userService: UserService) {
+
     // set token if saved in local storage
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = currentUser && currentUser.token;
-    this.admin = currentUser && currentUser.admin;
-    this.requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
+    if ((JSON.parse(localStorage.getItem('session_user')))) {
+      this.setSessionUser(JSON.parse(localStorage.getItem('session_user')));
+      this.token = this.session_user ? this.session_user.token : null;
+    }
+    this.requestOptions = this.token ? {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'jwt': this.token
+        })
+      } :
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      }
+    ;
   }
 
-  getSessionUser(): Observable<User> {
-    return this.userService.getSessionUser();
+  getSessionUser(): SessionUser {
+    this.session_user = this.session_user ? this.session_user : JSON.parse(localStorage.getItem('session_user'));
+    return this.session_user;
   }
 
-  login(username: string, password: string): Observable<boolean> {
-    if (this.testing) {
-      if (username === 'user') {
-        localStorage.setItem('currentUser', JSON.stringify(
-          {email: username, token: '', admin: false}));
-        this.token = '';
-        this.admin = false;
-        this.logged = true;
-        return of(true);
-      }
-      else if (username === 'admin') {
-        localStorage.setItem('currentUser', JSON.stringify(
-          {username: username, token: '', admin: true}));
-        this.token = '';
-        this.admin = true;
-        this.logged = true;
-        return of(true);
-      }
-      else {
-        return of(false);
-      }
-    }
-    else {
-      return this.http.post<any>('/users/login', JSON.stringify({email: username, password: password}), this.requestOptions)
-        .map((json: any) => {
-          // login successful if there's a jwt token in the response
-          if (json.token) {
-            // set token property
-            this.token = json.token;
-            //this.admin = json.admin;
+  setSessionUser(session_user: SessionUser): void {
+    localStorage.setItem('session_user', JSON.stringify(
+      session_user
+    ));
 
-            // store username and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('currentUser', JSON.stringify(
-              {username: username, token: json.token, admin: json.admin}
-            ));
-            this.logged = true;
-            // return true to indicate successful login
-            return true;
-          } else {
-            // return false to indicate failed login
-            return false;
-          }
-        });
-    }
+    this.session_user = session_user;
+  }
+
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>('/users/login', JSON.stringify({
+      email: username,
+      password: password
+    }), this.requestOptions)
+      .map((json: any) => {
+        // login successful if there's a jwt token in the response
+        if (json.token) {
+          // set token property
+
+          this.token = json.token;
+
+          // store username and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('session_user', JSON.stringify(json));
+
+          this.setSessionUser(JSON.parse(localStorage.getItem('session_user')));
+
+          this.logged = true;
+          // return true to indicate successful login
+          return of(json);
+        } else {
+          // return false to indicate failed login
+          return of(false);
+        }
+      });
   }
 
   signup(username: string, password: string): Observable<boolean> {
-      return this.http.post<any>('/users', JSON.stringify({email: username, password: password}), this.requestOptions)
-        .map((json: any) => {
-          // login successful if there's a jwt token in the response
-          if (json.token) {
-            // set token property
-            this.token = json.token;
-            //this.admin = json.admin;
 
-            // store username and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('currentUser', JSON.stringify(
-              {username: username, token: json.token, admin: json.admin}
-            ));
-            this.logged = true;
-            // return true to indicate successful login
-            return true;
-          } else {
-            // return false to indicate failed login
-            return false;
-          }
-        });
+    return this.http.post<any>('/users', JSON.stringify({email: username, password: password}), this.requestOptions)
+      .map((json: any) => {
+        // login successful if there's a jwt token in the response
+        if (json.token) {
+
+          // set token property
+          this.token = json.token;
+
+          // store username and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('session_user', JSON.stringify(json));
+          this.logged = true;
+
+          this.setSessionUser(JSON.parse(localStorage.getItem('session_user')));
+
+          // return true to indicate successful login
+          return true;
+        } else {
+          // return false to indicate failed login
+          return false;
+        }
+      });
   }
 
   logout(): void {
     // clear token remove user from local storage to log user out
-    this.token = null;
-    this.admin = null;
+    this.token = undefined;
     this.logged = false;
-    localStorage.removeItem('currentUser');
+    this.setSessionUser(undefined);
+    localStorage.removeItem('session_user');
   }
 
   isLogged(): boolean {
-    return localStorage.getItem('currentUser') != null;
+    return !!localStorage.getItem('session_user');
   }
 }

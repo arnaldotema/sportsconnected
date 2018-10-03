@@ -9,6 +9,7 @@ import {MatDialog} from "@angular/material";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastsManager} from "ng2-toastr";
 import {User} from "../_models/user";
+import {SessionUser} from "../_models/session_user";
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   searchString: string;
   searchResults: SearchEntityViewmodel[];
-  viewModel: User;
+  viewModel: any;
 
   show_notifications: boolean;
   show_search: boolean;
@@ -39,9 +40,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    let session_user = this.authenticationService.getSessionUser();
 
-    this.authenticationService.getSessionUser()
-      .subscribe(userInfo => this.viewModel = userInfo);
+    debugger;
+    this.viewModel = session_user ? session_user : {}
 
     this.show_notifications = false;
     this.show_search = false;
@@ -54,21 +56,11 @@ export class HeaderComponent implements OnInit {
   }
 
   isAuthenticated() {
-    // Only for print screens
-    // return true;
-    return localStorage.getItem('currentUser') != null;
+    return this.authenticationService.isLogged();
   }
 
-  //Login functions
-  login() {
-    this.authenticationService.login(this.model.username, this.model.password)
-      .subscribe(result => {
-        if (result === true) {
-          this.router.navigate(['/']);
-        } else {
-          this.error = 'Nome de usuário ou palavra passe incorretos';
-        }
-      });
+  logout() {
+    this.authenticationService.logout();
   }
 
 }

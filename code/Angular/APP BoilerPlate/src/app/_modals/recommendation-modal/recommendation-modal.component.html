@@ -16,7 +16,7 @@
   </div>
   <div class="creation-modal__modal-form">
     <mat-form-field class="col-sm-12">
-      <mat-select [placeholder]="'Relação com este utilizador'">
+      <mat-select [(ngModel)]="relationship" [placeholder]="'Relação com este utilizador'">
         <mat-option value="Adepto">
           Adepto
         </mat-option>
