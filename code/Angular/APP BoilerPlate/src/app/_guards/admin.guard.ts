@@ -7,7 +7,7 @@ export class AdminGuard implements CanActivate {
     constructor(private router: Router) { }
 
     canActivate() {
-        if (JSON.parse(localStorage.getItem('currentUser')).admin) {
+        if (JSON.parse(localStorage.getItem('session_user')).admin) {
             return true;
         }
 

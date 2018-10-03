@@ -1,4 +1,12 @@
-import {Component, OnInit, AfterViewInit, ViewContainerRef, AfterViewChecked, ChangeDetectorRef, ViewChild} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewContainerRef,
+  AfterViewChecked,
+  ChangeDetectorRef,
+  ViewChild
+} from '@angular/core';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {UserInfoService} from '../_services/user_info.service';
 import {Chart} from 'chart.js';
@@ -10,6 +18,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ToastsManager} from 'ng2-toastr';
 import {of} from 'rxjs/observable/of';
 import {AuthenticationService} from "../_services/authentication.service";
+import {SessionUser} from "../_models/session_user";
 
 @Component({
   selector: 'app-user-info-profile',
@@ -18,8 +27,8 @@ import {AuthenticationService} from "../_services/authentication.service";
 })
 export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   viewModel: UserInfoViewModel;
-  session_user;
-  _chart : Chart;
+  session_user: SessionUser;
+  _chart: Chart;
   colors;
   data;
   options;
@@ -56,20 +65,14 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.userInfoService.getUserInfo(this.id)
       .subscribe((userInfo) => {
 
-        // TODO: This should probably be done right out of the service
-
-        //Convert birth_date to age
-
+        //Convert birth_date to age TODO: This should probably be done right out of the service
         let birth_date = new Date(userInfo.current_season.personal_info.date_of_birth);
         let ageDifMs = Date.now() - birth_date.getTime();
         let ageDate = new Date(ageDifMs);
         userInfo.current_season.personal_info.age = Math.abs(ageDate.getUTCFullYear() - 1970);
 
-
         // TODO: Get 2 youtube videos based on the player's name and set it up in the media
-
         // Right now, inserting some random videos just to look cool.
-
         userInfo.current_season.media = [
           {
             title: userInfo.current_season.personal_info.name + ' marca Hat-trick em jogo decisivo',
@@ -237,90 +240,100 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
         // Inserting some recommendations for the same reason.
 
-        userInfo.recommendations = {
-          list: [1, 2, 3],
-          top_5: [
-            {
-              author: {
-                name: 'Arnaldo Tema',
-                relationship: 'Colega de equipa',
-                id: '2',
-                avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
-                team: {
-                  id: '1',
-                  acronym: 'SFC',
-                  avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-                  name: 'Seixal FC',
+        if (!userInfo.recommendations || !userInfo.recommendations .list || userInfo.recommendations.list.length < 1) {
+          userInfo.recommendations = {
+            list: [1, 2, 3],
+            top_5: [
+              {
+                user_id: '-1',
+                author: {
+                  author_type: 'football_user_info',
+                  name: 'Arnaldo Tema',
+                  relationship: 'Colega de equipa',
+                  id: '2',
+                  avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
+                  team: {
+                    id: '1',
+                    acronym: 'SFC',
+                    avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+                    name: 'Seixal FC',
+                  },
                 },
+                text: 'Sed imperdiet tellus tristique, porttitor velit condimentum, bibendum augue. Maecenas sit amet libero et urna consequat ultrices ut sit amet nulla. Mauris quis neque ut lacus elementum tempus.',
               },
-              text: 'Sed imperdiet tellus tristique, porttitor velit condimentum, bibendum augue. Maecenas sit amet libero et urna consequat ultrices ut sit amet nulla. Mauris quis neque ut lacus elementum tempus.',
-            },
-            {
-              author: {
-                name: 'Nuno Carmo',
-                relationship: 'Treinador',
-                id: '3',
-                avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/15541052_10212069863200855_2889012374229061166_o.jpg?_nc_cat=0&oh=5b128be1ebf4151ec5aa2afb671b72d0&oe=5B8C9375',
-                team: {
-                  id: '1',
-                  acronym: 'SFC',
-                  avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-                  name: 'Seixal FC',
+              {
+                user_id: '-1',
+                author: {
+                  author_type: 'football_user_info',
+                  name: 'Nuno Carmo',
+                  relationship: 'Treinador',
+                  id: '3',
+                  avatar: 'https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/15541052_10212069863200855_2889012374229061166_o.jpg?_nc_cat=0&oh=5b128be1ebf4151ec5aa2afb671b72d0&oe=5B8C9375',
+                  team: {
+                    id: '1',
+                    acronym: 'SFC',
+                    avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+                    name: 'Seixal FC',
+                  },
                 },
+                text: 'Maecenas tortor elit, fermentum non aliquam quis, bibendum nec urna. Cras euismod justo nec nisl ullamcorper, eget gravida tellus tincidunt. Aliquam quis leo ligula.',
               },
-              text: 'Maecenas tortor elit, fermentum non aliquam quis, bibendum nec urna. Cras euismod justo nec nisl ullamcorper, eget gravida tellus tincidunt. Aliquam quis leo ligula.',
-            },
-            {
-              author: {
-                name: 'Vital de Carvalho',
-                relationship: 'Treinador',
-                id: '4',
-                avatar: 'https://openminds.swissre.com/static//images/profile-default.png',
-                team: {
-                  id: '1',
-                  acronym: 'SFC',
-                  avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-                  name: 'Seixal FC',
+              {
+                user_id: '-1',
+                author: {
+                  author_type: 'football_user_info',
+                  name: 'Vital de Carvalho',
+                  relationship: 'Treinador',
+                  id: '4',
+                  avatar: 'https://openminds.swissre.com/static//images/profile-default.png',
+                  team: {
+                    id: '1',
+                    acronym: 'SFC',
+                    avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+                    name: 'Seixal FC',
+                  },
                 },
+                text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros team_id, tincidunt ante.',
               },
-              text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros team_id, tincidunt ante.',
-            },
-            {
-              author: {
-                name: 'José Mourinho',
-                relationship: 'Treinador',
-                id: '5',
-                avatar: 'https://cdn.images.dailystar.co.uk/dynamic/58/photos/763000/620x/Jose-Mourinho-644644.jpg',
-                team: {
-                  id: '1',
-                  acronym: 'SFC',
-                  avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-                  name: 'Seixal FC',
+              {
+                user_id: '-1',
+                author: {
+                  author_type: 'football_user_info',
+                  name: 'José Mourinho',
+                  relationship: 'Treinador',
+                  id: '5',
+                  avatar: 'https://cdn.images.dailystar.co.uk/dynamic/58/photos/763000/620x/Jose-Mourinho-644644.jpg',
+                  team: {
+                    id: '1',
+                    acronym: 'SFC',
+                    avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+                    name: 'Seixal FC',
+                  },
                 },
+                text: 'Cras vehicula diam team_id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean team_id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
               },
-              text: 'Cras vehicula diam team_id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean team_id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
-            },
-            {
-              author: {
-                name: 'Jorge Jesus',
-                relationship: 'Treinador',
-                id: '6',
-                avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
-                team: {
-                  id: '1',
-                  acronym: 'SFC',
-                  avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
-                  name: 'Seixal FC',
+              {
+                user_id: '-1',
+                author: {
+                  author_type: 'football_user_info',
+                  name: 'Jorge Jesus',
+                  relationship: 'Treinador',
+                  id: '6',
+                  avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jorge_Jesus.jpg/1200px-Jorge_Jesus.jpg',
+                  team: {
+                    id: '1',
+                    acronym: 'SFC',
+                    avatar: 'https://seeklogo.com/images/S/seixal-cf-logo-C94D57D780-seeklogo.com.png',
+                    name: 'Seixal FC',
+                  },
                 },
-              },
-              text: 'Nunc interdum, mauris ut pharetra elementum, mauris nunc blandit augue, nec semper arcu risus ac orci. Curabitur sit amet mauris vel erat faucibus fringilla in vel ligula.',
-            }
-          ],
-        };
-
+                text: 'Nunc interdum, mauris ut pharetra elementum, mauris nunc blandit augue, nec semper arcu risus ac orci. Curabitur sit amet mauris vel erat faucibus fringilla in vel ligula.',
+              }
+            ],
+          };
+        }
 
         // And skill sets as well.
-
         userInfo.skill_set = [
           {
             name: 'Goleador',
@@ -349,22 +362,15 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
           }
         ];
 
-
         this.viewModel = userInfo;
         // When the user scrolls the page, execute myFunction
         window.onscroll = function () {
           stickyScroll()
         };
-        this.authenticationService.getSessionUser()
-          .subscribe(userInfo => {
 
-            // Updates after detecting changes
-            this.cdRef.detectChanges();
-
-
-            this.session_user = userInfo
-            this.loadChart();
-          });
+        this.session_user = this.authenticationService.getSessionUser();
+        this.cdRef.detectChanges();
+        this.loadChart();
       });
 
   }
@@ -376,7 +382,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     }
   }
   */
-
 
   editPlayer(): void {
     this.router.navigate(['/edit-user-info/' + this.id]);
@@ -437,7 +442,8 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     return true;
   }
 
-  openCreateDialog(event): void {
+  addRecommendation(): void {
+
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
@@ -447,14 +453,31 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         }
       });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result !== undefined) {
-        this.userInfoService.createRecommendation('0', result).subscribe();
-        {
-          // Todo: Add to the real team recommendation's list instead of the top 5
-          this.viewModel.recommendations.top_5.push(result);
-          //this.recommendationDataSource.filter = this.filterString;
+    dialogRef.afterClosed().subscribe(rec_object => {
+      let recommendation = {
+        user_id: '',
+        text: rec_object.text,
+        author: {
+          author_type: rec_object.author.user_type,
+          name: rec_object.author.name,
+          id: rec_object.author.profile_id,
+          relationship: rec_object.relationship,
+          avatar: rec_object.author.avatar,
+          team: {
+            id: rec_object.author.team_id,
+            acronym: rec_object.author.team_acronym,
+            avatar: rec_object.author.team_avatar,
+            name: rec_object.author.team_name,
+          }
         }
+      };
+
+      this.userInfoService.createRecommendation(recommendation, this.viewModel._id).subscribe();
+      if (recommendation)
+        this.cdRef.detectChanges();
+      else {
+        // Say something because the recommendation was not submitted
+        this.toastr.warning('Ocorreu um erro, tente mais tarde!');
       }
     });
   }
@@ -464,7 +487,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.toastr.success('Obrigado pelo voto!');
 
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
-    this.userInfoService.voteForSkill(skillName, this.session_user.id).subscribe();
+    this.userInfoService.voteForSkill(skillName, this.session_user._id, this.viewModel._id).subscribe();
     {
       this.labels.forEach((label, key) => {
         if (label == skillName)
@@ -475,6 +498,10 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
       });
     }
+  }
+
+  follow(){
+    this.userInfoService.follow(this.viewModel._id)
   }
 }
 
