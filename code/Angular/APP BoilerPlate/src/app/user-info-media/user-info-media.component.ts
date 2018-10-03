@@ -210,11 +210,13 @@ export class User_infoMediaComponent implements OnInit{
           list: [1, 2, 3],
           top_5: [
             {
-              author: {
+              user_id: '-1',
+        author: {
+          author_type: 'football_user_info',
                 name: 'Arnaldo Tema',
                 relationship: 'Colega de equipa',
                 id: '2',
-                avatar: 'https://instagram.fopo3-1.fna.fbcdn.net/vp/280bf4e91fb6132ebfd883e5abe1c8cd/5B9606E3/t51.2885-15/sh0.08/e35/p750x750/21149434_119212105368031_177014972570664960_n.jpg',
+                avatar: 'https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&oh=c66e24c7f9b1ce391584fa0400b9414b&oe=5C545952',
                 team: {
                   id: '1',
                   acronym: 'SFC',
@@ -225,7 +227,9 @@ export class User_infoMediaComponent implements OnInit{
               text: 'Sed imperdiet tellus tristique, porttitor velit condimentum, bibendum augue. Maecenas sit amet libero et urna consequat ultrices ut sit amet nulla. Mauris quis neque ut lacus elementum tempus.',
             },
             {
-              author: {
+              user_id: '-1',
+        author: {
+          author_type: 'football_user_info',
                 name: 'Nuno Carmo',
                 relationship: 'Treinador',
                 id: '3',
@@ -240,7 +244,9 @@ export class User_infoMediaComponent implements OnInit{
               text: 'Maecenas tortor elit, fermentum non aliquam quis, bibendum nec urna. Cras euismod justo nec nisl ullamcorper, eget gravida tellus tincidunt. Aliquam quis leo ligula.',
             },
             {
-              author: {
+              user_id: '-1',
+        author: {
+          author_type: 'football_user_info',
                 name: 'Vital de Carvalho',
                 relationship: 'Treinador',
                 id: '4',
@@ -255,7 +261,9 @@ export class User_infoMediaComponent implements OnInit{
               text: 'Duis eu maximus nibh, in consequat dui. Suspendisse porttitor elit et turpis faucibus volutpat. Nunc et mi luctus, vehicula eros team_id, tincidunt ante.',
             },
             {
-              author: {
+              user_id: '-1',
+        author: {
+          author_type: 'football_user_info',
                 name: 'José Mourinho',
                 relationship: 'Treinador',
                 id: '5',
@@ -270,7 +278,9 @@ export class User_infoMediaComponent implements OnInit{
               text: 'Cras vehicula diam team_id massa tempus sodales. Mauris gravida nunc sed pulvinar ornare. Quisque eu pulvinar augue. Curabitur a rutrum metus. Nam mattis, quam ut varius suscipit, lacus lorem sodales diam, ac fermentum quam nulla a orci. Aenean team_id tincidunt ex, sit amet commodo ligula. Nulla dui mi, consectetur sit amet justo sed, aliquam dictum mi. Aenean sit amet cursus enim.',
             },
             {
-              author: {
+              user_id: '-1',
+        author: {
+          author_type: 'football_user_info',
                 name: 'Jorge Jesus',
                 relationship: 'Treinador',
                 id: '6',

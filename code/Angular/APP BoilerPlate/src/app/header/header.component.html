@@ -27,10 +27,15 @@
       </a>
 
       <div *ngIf="isAuthenticated()" class="profile-menu">
-        <a routerLink="/user-info/{{viewModel.id}}" class="avatar">
+        <a routerLink="/user-info/{{viewModel._id}}" class="avatar">
           <div mat-card-avatar class="profile-small-image"
                [ngStyle]="{'background-image':  'url(' + viewModel.avatar + ')' }"></div>
         </a>
+
+        <a href="/home">
+          <img src="/assets/logout.png" class="brand-logo app-logo" (click)="logout()" />
+        </a>
+
         <div class="profile-menu__notifications"
              (click)="show_notifications=true"
              (clickOutside)="show_notifications=false">

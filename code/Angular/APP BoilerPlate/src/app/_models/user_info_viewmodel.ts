@@ -9,6 +9,7 @@ export class UserInfoViewModel {
   _id: string;
   user_id: string;
   followers : string[];
+  following : string[];
   current_season: UserInfoSeason;
   previous_seasons: UserInfoSeason[];
   skill_set: SkillSet[];
