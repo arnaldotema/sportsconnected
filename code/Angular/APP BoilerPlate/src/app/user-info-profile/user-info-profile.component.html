@@ -6,9 +6,9 @@
              title="Profile" style="left: -241.5px;">
       </div>
       <div class="profile-buttons">
-        <button mat-raised-button (click)="follow()" class="sc-btn btn-sc-default">Seguir</button>
-        <!--<button mat-raised-button class="sc-btn btn-edit" (click)="editPlayer()">Editar</button> -->
-        <button mat-icon-button>
+        <button *ngIf="!isFollowing && !isSessionUserProfile" mat-raised-button (click)="follow()" class="sc-automatic-btn btn-success">Seguir</button>
+        <button *ngIf="isFollowing && !isSessionUserProfile" mat-raised-button (click)="unfollow()" class="sc-automatic-btn btn-danger">Deixar de Seguir</button>
+        <button *ngIf="isSessionUserProfile" mat-icon-button>
           <mat-icon aria-label="Clica para editar a tua conta" (click)="editPlayer()">edit</mat-icon>
         </button>
       </div>

@@ -29,6 +29,6 @@ router.put('/:id', PlayerController.update);
 
 router.delete('/:id', PlayerController.remove);
 
-router.delete('/:id/followed', PlayerController.unfollow);
+router.delete('/:id/followers/:follower_id', PlayerController.unfollow);
 
 module.exports = router;

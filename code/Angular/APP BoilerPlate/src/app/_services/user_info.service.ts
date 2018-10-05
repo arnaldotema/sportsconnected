@@ -595,7 +595,7 @@ export class UserInfoService {
       );
   };
 
-  voteForSkill(skillName: string, authorId: string, user_info_id:string): Observable<boolean> {
+  voteForSkill(skillName: string, author_user_id: string, user_info_id:string): Observable<boolean> {
     if(this.testing){
       let done = false;
       this.mockUserInfo[0].skill_set.forEach(skill => {
@@ -607,7 +607,7 @@ export class UserInfoService {
       return of(done);
     }
 
-    return this.http.post<TeamPlayer>('api/players/' + user_info_id+ '/skills' , {skill_name: skillName, author_id: authorId}, this.requestOptions)
+    return this.http.post<boolean>('api/players/' + user_info_id+ '/skills' , {skill_name: skillName, author_user_id: author_user_id}, this.requestOptions)
       .pipe(
         tap(data => {
           console.log('POST player skill', data);
@@ -619,9 +619,7 @@ export class UserInfoService {
   follow(user_info_id: string) : Observable<boolean> {
     if (this.testing) {}
 
-    debugger;
-
-    let author_user_info_id = this.authenticationService.getSessionUser()._id;
+    let author_user_info_id = this.authenticationService.getSessionUser().profile_id;
 
     return this.http.post<boolean>('api/players/' + user_info_id+ '/followers' , {author_user_info_id: author_user_info_id}, this.requestOptions)
       .pipe(
@@ -632,7 +630,22 @@ export class UserInfoService {
       );
   }
 
+  unfollow(user_info_id: string) : Observable<boolean> {
+    if (this.testing) {}
+
+    let author_user_info_id = this.authenticationService.getSessionUser().profile_id;
+
+    return this.http.delete<boolean>('api/players/' + user_info_id+ '/followers/' +  author_user_info_id, this.requestOptions)
+      .pipe(
+        tap(data => {
+          console.log('POST player follow', data);
+        }),
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
+
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);

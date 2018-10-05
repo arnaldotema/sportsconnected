@@ -5,7 +5,7 @@
         <img src="/assets/ball.png" class="brand-logo app-logo"/>
       </a>
       <app-login *ngIf="!isAuthenticated(); else search_bar"></app-login>
-      <div #search_bar  *ngIf="isAuthenticated()" class="sc-header-search__input-container"
+      <div #search_bar *ngIf="isAuthenticated()" class="sc-header-search__input-container"
            (clickOutside)="searchResults = null"
            (focus)="searchFor()">
         <input class="sc-header-search__input" (keyup)="searchFor()" [(ngModel)]="searchString" placeholder="Pesquisar">
@@ -13,10 +13,16 @@
         <div *ngIf=" searchResults!= null && searchResults.length > 0" class="sc-header-search__item-list-container">
           <div class="sc-header-search__item-list">
             <div class="sc-header-search__item" *ngFor="let user of searchResults">
-              <img class="sc-rounded-image" [src]="user.personal_info.avatar">
+              <a href="user._id">
+                <img class="sc-rounded-image" [src]="user.personal_info.avatar">
+              </a>
               <div class="sc-search-info">
-                <h4>{{user.personal_info.name}}</h4>
-                <p> {{user.team.name}} </p>
+                <a href="user._id">
+                  <h4>{{user.personal_info.name}}</h4>
+                </a>
+                <a href="user.team._id">
+                  <p> {{user.team.name}} </p>
+                </a>
               </div>
             </div>
           </div>
@@ -27,13 +33,13 @@
       </a>
 
       <div *ngIf="isAuthenticated()" class="profile-menu">
-        <a routerLink="/user-info/{{viewModel._id}}" class="avatar">
+        <a routerLink="/user-info/{{viewModel.profile_id}}" class="avatar">
           <div mat-card-avatar class="profile-small-image"
                [ngStyle]="{'background-image':  'url(' + viewModel.avatar + ')' }"></div>
         </a>
 
         <a href="/home">
-          <img src="/assets/logout.png" class="brand-logo app-logo" (click)="logout()" />
+          <img src="/assets/logout.png" class="brand-logo app-logo" (click)="logout()"/>
         </a>
 
         <div class="profile-menu__notifications"
@@ -44,7 +50,8 @@
           <div *ngIf="show_notifications" class="notifications-box">
             <div class="notification">
               <div class="notification__entities-logos">
-                <img class="sc-rounded-image" src="https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg">
+                <img class="sc-rounded-image"
+                     src="https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg">
                 <img class="sc-squared-image" src="http://www.zerozero.pt/img/logos/equipas/16_imgbank.png">
               </div>
               <div class="notification__description">
@@ -55,7 +62,8 @@
             </div>
             <div class="notification">
               <div class="notification__entities-logos">
-                <img class="sc-rounded-image" src="https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg">
+                <img class="sc-rounded-image"
+                     src="https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg">
                 <img class="sc-squared-image" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
               </div>
               <div class="notification__description">
