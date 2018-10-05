@@ -36,18 +36,13 @@ export class HeaderComponent implements OnInit {
     public toastr: ToastsManager, vcr: ViewContainerRef,
     private authenticationService: AuthenticationService,
     private genericService: GenericUserService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     let session_user = this.authenticationService.getSessionUser();
-
-    debugger;
     this.viewModel = session_user ? session_user : {}
-
     this.show_notifications = false;
     this.show_search = false;
-
   }
 
   searchFor() {

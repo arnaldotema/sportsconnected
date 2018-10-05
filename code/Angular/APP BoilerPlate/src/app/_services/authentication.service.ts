@@ -13,7 +13,7 @@ import {SessionUser} from "../_models/session_user";
 export class AuthenticationService {
   public token: any;
   private session_user: SessionUser;
-  public testing: boolean = true;
+  public testing: boolean = false;
   private logged: boolean = false;
 
   requestOptions;
@@ -54,7 +54,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>('/users/login', JSON.stringify({
+    return this.http.post<any>('/api/users/login', JSON.stringify({
       email: username,
       password: password
     }), this.requestOptions)
@@ -71,6 +71,7 @@ export class AuthenticationService {
           this.setSessionUser(JSON.parse(localStorage.getItem('session_user')));
 
           this.logged = true;
+
           // return true to indicate successful login
           return of(json);
         } else {
@@ -82,7 +83,7 @@ export class AuthenticationService {
 
   signup(username: string, password: string): Observable<boolean> {
 
-    return this.http.post<any>('/users', JSON.stringify({email: username, password: password}), this.requestOptions)
+    return this.http.post<any>('/api//users', JSON.stringify({email: username, password: password}), this.requestOptions)
       .map((json: any) => {
         // login successful if there's a jwt token in the response
         if (json.token) {
