@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.model.username, this.model.password)
       .subscribe(session_user => {
         if (session_user.value) {
-          debugger;
+
           this.router.navigate(['/user-info/' + session_user.value.profile_id]);
         } else {
-          debugger;
+
           this.error = 'Nome de usuário ou palavra passe incorretos';
         }
       });

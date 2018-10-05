@@ -18,6 +18,11 @@
   margin-left: 2px !important;
 }
 
+.sc-automatic-btn{
+  width: -webkit-fill-available;
+  margin: 10px 2px 0 2px !important;
+}
+
 .default-input {
   margin: 0px !important;
   height: auto !important;

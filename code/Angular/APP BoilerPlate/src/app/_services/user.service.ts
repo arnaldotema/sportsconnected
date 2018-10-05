@@ -38,7 +38,7 @@ export class UserService {
   getSessionUser(): Observable<User> {
     // return of(this.mockUser);
     let id = this.authenticationService.token.user.id;
-    return this.http.get<User>('/users/' + id , this.requestOptions)
+    return this.http.get<User>('/api/users/' + id , this.requestOptions)
       .pipe(
         tap(data => {
           console.log('Get User data', data);
@@ -55,7 +55,7 @@ export class UserService {
 
     console.log('Authentication Service Current Token: ' + this.authenticationService.token);
 
-    return this.http.post<SessionUser>('/users/' + id + '/aggregate-profile', body, this.requestOptions)
+    return this.http.post<SessionUser>('/api/users/' + id + '/aggregate-profile', body, this.requestOptions)
       .pipe(
         tap(data => {
           console.log('POST Aggregate User to User-Profile', data);

@@ -36,7 +36,8 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   skill_values;
   id;
   loading_chart: boolean = false;
-
+  isFollowing: boolean = false;
+  isSessionUserProfile: boolean = false;
 
   constructor(private userInfoService: UserInfoService,
               public dialog: MatDialog,
@@ -65,7 +66,19 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.userInfoService.getUserInfo(this.id)
       .subscribe((userInfo) => {
 
-        //Convert birth_date to age TODO: This should probably be done right out of the service
+
+
+        // Check if user is already being followed by the session user
+
+        if (userInfo.followers.indexOf(this.authenticationService.getSessionUser().profile_id) > -1) {
+          this.isFollowing = true;
+        }
+
+        if (this.authenticationService.getSessionUser().profile_id == userInfo._id) {
+          this.isSessionUserProfile = true;
+        }
+
+        // Convert birth_date to age TODO: This should probably be done right out of the service
         let birth_date = new Date(userInfo.current_season.personal_info.date_of_birth);
         let ageDifMs = Date.now() - birth_date.getTime();
         let ageDate = new Date(ageDifMs);
@@ -240,7 +253,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
         // Inserting some recommendations for the same reason.
 
-        if (!userInfo.recommendations || !userInfo.recommendations .list || userInfo.recommendations.list.length < 1) {
+        if (!userInfo.recommendations || !userInfo.recommendations.list || userInfo.recommendations.list.length < 1) {
           userInfo.recommendations = {
             list: [1, 2, 3],
             top_5: [
@@ -333,35 +346,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
           };
         }
 
-        // And skill sets as well.
-        userInfo.skill_set = [
-          {
-            name: 'Goleador',
-            avatar: '/assets/scorer.png',
-            endorsements: ['33', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'],
-          },
-          {
-            name: 'Drible',
-            avatar: '/assets/dribble.png',
-            endorsements: ['33', '1', '2', '3', '4', '5', '3', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '1', '1', '1', '1', '1', '1', '1', '2', '2', '2', '2', '2', '2', '1', '1', '1', '1'],
-          },
-          {
-            name: 'Rapidez',
-            avatar: '/assets/fast.png',
-            endorsements: ['33', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'],
-          },
-          {
-            name: 'Passe',
-            avatar: '/assets/passer.png',
-            endorsements: ['33', '2', '2', '2', '2', '2', '2'],
-          },
-          {
-            name: 'Força',
-            avatar: '/assets/strong.png',
-            endorsements: ['33', '1', '2', '3', '4', '5', '3', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],
-          }
-        ];
-
         this.viewModel = userInfo;
         // When the user scrolls the page, execute myFunction
         window.onscroll = function () {
@@ -371,6 +355,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         this.session_user = this.authenticationService.getSessionUser();
         this.cdRef.detectChanges();
         this.loadChart();
+
       });
 
   }
@@ -487,21 +472,38 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.toastr.success('Obrigado pelo voto!');
 
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
-    this.userInfoService.voteForSkill(skillName, this.session_user._id, this.viewModel._id).subscribe();
-    {
-      this.labels.forEach((label, key) => {
-        if (label == skillName)
-          ++this.skill_values[key];
-        // Updates after detecting changes
-        this.cdRef.detectChanges();
-        this._chart.update();
-
-      });
-    }
+    this.userInfoService.voteForSkill(skillName, this.session_user._id, this.viewModel._id)
+      .subscribe((done) => {
+        if(done){
+          this.labels.forEach((label, key) => {
+            if (label == skillName)
+              ++this.skill_values[key];
+            this.cdRef.detectChanges();
+            this._chart.update();
+          });
+        }
+      })
   }
 
-  follow(){
+  follow() {
     this.userInfoService.follow(this.viewModel._id)
+      .subscribe((done) => {
+        if (done) {
+          this.isFollowing = true;
+          this.cdRef.detectChanges();
+        }
+      });
+  }
+
+  unfollow() {
+    this.userInfoService.unfollow(this.viewModel._id)
+      .subscribe((done) => {
+
+        if (done) {
+          this.isFollowing = false;
+          this.cdRef.detectChanges();
+        }
+      });
   }
 }
 
