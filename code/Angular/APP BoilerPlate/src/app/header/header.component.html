@@ -13,14 +13,14 @@
         <div *ngIf=" searchResults!= null && searchResults.length > 0" class="sc-header-search__item-list-container">
           <div class="sc-header-search__item-list">
             <div class="sc-header-search__item" *ngFor="let user of searchResults">
-              <a href="user._id">
+              <a href="/user-info/{{user.user_info_id}}">
                 <img class="sc-rounded-image" [src]="user.personal_info.avatar">
               </a>
               <div class="sc-search-info">
-                <a href="user._id">
+                <a href="/user-info/{{user.user_info_id}}">
                   <h4>{{user.personal_info.name}}</h4>
                 </a>
-                <a href="user.team._id">
+                <a href="/team/{{user.team.team_id}}">
                   <p> {{user.team.name}} </p>
                 </a>
               </div>
