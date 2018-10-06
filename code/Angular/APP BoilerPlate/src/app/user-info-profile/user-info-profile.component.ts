@@ -66,8 +66,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.userInfoService.getUserInfo(this.id)
       .subscribe((userInfo) => {
 
-
-
         // Check if user is already being followed by the session user
 
         if (userInfo.followers.indexOf(this.authenticationService.getSessionUser().profile_id) > -1) {
@@ -253,7 +251,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
         // Inserting some recommendations for the same reason.
 
-        if (!userInfo.recommendations || !userInfo.recommendations.list || userInfo.recommendations.list.length < 1) {
+        if (!userInfo.recommendations || !userInfo.recommendations.top_5 || userInfo.recommendations.top_5.length < 1) {
           userInfo.recommendations = {
             list: [1, 2, 3],
             top_5: [
@@ -360,14 +358,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
   }
 
-  /*
-  ngAfterViewChecked() {
-    if (this.viewModel && !this.loading_chart) {
-      this.loadChart();
-    }
-  }
-  */
-
   editPlayer(): void {
     this.router.navigate(['/edit-user-info/' + this.id]);
   }
@@ -457,13 +447,16 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
         }
       };
 
-      this.userInfoService.createRecommendation(recommendation, this.viewModel._id).subscribe();
-      if (recommendation)
-        this.cdRef.detectChanges();
-      else {
-        // Say something because the recommendation was not submitted
-        this.toastr.warning('Ocorreu um erro, tente mais tarde!');
-      }
+      this.userInfoService.createRecommendation(recommendation, this.viewModel._id)
+        .subscribe((done) => {
+          if (done) {
+            this.viewModel.recommendations.top_5.push(recommendation);
+            this.cdRef.detectChanges();
+          }
+          else {
+            this.toastr.warning('Ocorreu um erro, tente mais tarde!');
+          }
+        })
     });
   }
 
@@ -474,7 +467,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
     this.userInfoService.voteForSkill(skillName, this.session_user._id, this.viewModel._id)
       .subscribe((done) => {
-        if(done){
+        if (done) {
           this.labels.forEach((label, key) => {
             if (label == skillName)
               ++this.skill_values[key];
