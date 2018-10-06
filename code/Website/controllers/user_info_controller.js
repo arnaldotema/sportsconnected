@@ -31,8 +31,6 @@ Service.search = function (req, res) {
     FootballUserInfoSeason
         .find(query)
         .select(select)
-        .populate('current_season')
-        .populate('previous_seasons', 'stats')
         .exec(function (err, user_infos) {
             if (err) {
                 return res.status(500).json({
@@ -170,7 +168,7 @@ Service.add_recommendation = function (req, res) {
             });
         }
 
-        FootballUserInfo.addRecommendation(created_recommendation._id, user_info__id, (err, user_info) => {
+        FootballUserInfo.addRecommendation(created_recommendation, user_info__id, (err, user_info) => {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when updating user_info',

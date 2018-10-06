@@ -1894,11 +1894,7 @@ export class GenericUserService {
   }
 
   //TODO: ALTT - Change input params to just a Filter_Search model
-  // TODO ALTT - and algo:     searchUser(team_id: string, name: string, type: string): Observable<SearchEntityViewmodel[]> {
   searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
-    if (this.testing) {
-      return of(this.search_obj.filter(item => item.personal_info.name.includes(name) && (type == '' || item.type == type)));
-    }
 
     let body = [];
     if (type) {

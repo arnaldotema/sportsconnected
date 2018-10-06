@@ -42,6 +42,7 @@ export class AuthenticationService {
 
   getSessionUser(): SessionUser {
     this.session_user = this.session_user ? this.session_user : JSON.parse(localStorage.getItem('session_user'));
+    debugger;
     return this.session_user;
   }
 
