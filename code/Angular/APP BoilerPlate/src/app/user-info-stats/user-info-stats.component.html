@@ -22,7 +22,7 @@
       </tr>
       <tr *ngFor="let stat of viewModel.current_season.stats; let _idx = index "
           class="{{ _idx % 2 ? ' tr-even': 'tr-odd ' }} {{_idx == 0 ? ' tr-current-season ' : '' }}">
-        <td>{{stat.season}}</td>
+        <td>{{stat.name}}</td>
         <td>
           <img class="league" src="{{viewModel.current_season.team.avatar}}" alt="{{viewModel.current_season.team.name}}">
         </td>
