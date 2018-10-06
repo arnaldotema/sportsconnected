@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewContainerRef} from '@angular/core';
 import {GenericUserService} from '../_services/generic_user.service';
 import {AuthenticationService} from '../_services/authentication.service';
 import {Observable} from 'rxjs/Observable';
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   searchString: string;
   searchResults: SearchEntityViewmodel[];
-  viewModel: any;
+  viewModel: SessionUser;
 
   show_notifications: boolean;
   show_search: boolean;
@@ -35,19 +35,28 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute,
     public toastr: ToastsManager, vcr: ViewContainerRef,
     private authenticationService: AuthenticationService,
-    private genericService: GenericUserService
-  ) {}
+    private genericService: GenericUserService,
+    private cdRef: ChangeDetectorRef
+  ) {
+  }
 
   ngOnInit() {
-    let session_user = this.authenticationService.getSessionUser();
-    this.viewModel = session_user ? session_user : {}
     this.show_notifications = false;
     this.show_search = false;
   }
 
+  ngAfterViewInit() {
+    this.viewModel = this.authenticationService.getSessionUser();
+    this.cdRef.detectChanges();
+  }
+
   searchFor() {
     this.genericService.searchUser('', this.searchString, '')
-      .subscribe(list => this.searchResults = list);
+      .subscribe((list) => {
+          debugger;
+          this.searchResults = list;
+        }
+      );
   }
 
   isAuthenticated() {
