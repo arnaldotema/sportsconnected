@@ -20,13 +20,6 @@ export class TryoutModalComponent implements OnInit {
     public dialogRef: MatDialogRef<TryoutModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
 
-    /*
-    if (this.data.recommendationIdx != null) {
-      this.edit = true;
-      this.recommendationIdx = this.data.recommendationIdx;
-      this.text = this.data.recommendations[this.data.recommendationIdx];
-    }
-    */
   }
 
   ngOnInit() {

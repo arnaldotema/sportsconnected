@@ -5,6 +5,7 @@ const baseUris = require('../base_uris');
 const format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
+const footballUserInfo = require('../../../models/football_user_info');
 const footballUserInfoSeason = require('../../../models/football_user_info_season');
 const footballCompetitionSeason = require('../../../models/football_competition_season');
 const footballMatch = require('../../../models/football_match');
@@ -140,7 +141,8 @@ function _processPlayerEvents(match, res, player, starter, ids, team){
             minutes_played: 0,
             go_in:[],
             go_out:[]
-        }
+        };
+
         /*
 
         Events Mapping:
@@ -259,24 +261,6 @@ function processMatchIds(match, res, done, cb){
         else {
             logger.info("Successfully fetched match user infos", result);
 
-            result[0].away_team.forEach(function (value, index) {
-                match.away_team.main_lineup[index].name = value.personal_info.name;
-                match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
-                match.away_team.main_lineup[index].positions = value.personal_info.positions;
-                match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.away_team.main_lineup[index].team_id = value._id;
-                match.away_team.main_lineup[index].user_info_id = value.user_info_id;
-            });
-
-            result[0].away_team_reserves.forEach(function (value, index) {
-                match.away_team.reserves[index].name = value.personal_info.name;
-                match.away_team.reserves[index].avatar = value.personal_info.avatar;
-                match.away_team.reserves[index].positions = value.personal_info.positions;
-                match.away_team.reserves[index].nationality = value.personal_info.nationality;
-                match.away_team.reserves[index].team_id = value._id;
-                match.away_team.reserves[index].user_info_id = value.user_info_id;
-            });
-
             result[0].home_team.forEach(function (value, index) {
                 match.home_team.main_lineup[index].name = value.personal_info.name;
                 match.home_team.main_lineup[index].avatar = value.personal_info.avatar;
@@ -286,6 +270,15 @@ function processMatchIds(match, res, done, cb){
                 match.home_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
+            result[0].away_team.forEach(function (value, index) {
+                match.away_team.main_lineup[index].name = value.personal_info.name;
+                match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
+                match.away_team.main_lineup[index].positions = value.personal_info.positions;
+                match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
+                match.away_team.main_lineup[index].team_id = value._id;
+                match.away_team.main_lineup[index].user_info_id = value.user_info_id;
+            });
+
             result[0].home_team_reserves.forEach(function (value, index) {
                 match.home_team.reserves[index].name = value.personal_info.name;
                 match.home_team.reserves[index].avatar = value.personal_info.avatar;
@@ -293,6 +286,15 @@ function processMatchIds(match, res, done, cb){
                 match.home_team.reserves[index].nationality = value.personal_info.nationality;
                 match.home_team.reserves[index].team_id = value._id;
                 match.home_team.reserves[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].away_team_reserves.forEach(function (value, index) {
+                match.away_team.reserves[index].name = value.personal_info.name;
+                match.away_team.reserves[index].avatar = value.personal_info.avatar;
+                match.away_team.reserves[index].positions = value.personal_info.positions;
+                match.away_team.reserves[index].nationality = value.personal_info.nationality;
+                match.away_team.reserves[index].team_id = value._id;
+                match.away_team.reserves[index].user_info_id = value.user_info_id;
             });
 
             footballMatch.updateAndReturnByZeroZeroId(res.options.zerozeroId, match, function (err, result) {
@@ -334,7 +336,9 @@ function processMatchIds(match, res, done, cb){
     })
 }
 
-function processMatchPlayers(nestedMatch, res, done){
+function processMatchPlayers(nestedMatch, res, done, cb){
+
+
     footballUserInfoSeason.updateUserInfosStats(res.options.match, nestedMatch, function (err, result) {
         if (err) {
             logger.error(err);
@@ -343,7 +347,7 @@ function processMatchPlayers(nestedMatch, res, done){
         else {
             logger.info("Successfully updated user infos game", result);
 
-            done();
+            cb(res, done);
         }
     })
 }
@@ -372,6 +376,118 @@ function processMatchCompetition(nestedMatch, res, done, cb){
             logger.info("Successfully updated competition_season season", result);
 
             cb(nestedMatch, res, done);
+        }
+    })
+}
+
+function processUserInfoRegex(res, done){
+    let homeTeamIds = {
+        main_lineup: [],
+        reserves: [],
+        staff: []
+    };
+
+    let awayTeamIds = {
+        main_lineup: [],
+        reserves: [],
+        staff: []
+    };
+
+    res.options.match.home_team.main_lineup.forEach(function (value) {
+        homeTeamIds.main_lineup.push(value._id);
+    });
+
+    res.options.match.away_team.main_lineup.forEach(function (value) {
+        awayTeamIds.main_lineup.push(value._id);
+    });
+
+    res.options.match.home_team.reserves.forEach(function (value) {
+        homeTeamIds.reserves.push(value._id);
+    });
+
+    res.options.match.away_team.reserves.forEach(function (value) {
+        awayTeamIds.reserves.push(value._id);
+    });
+
+    footballUserInfo.getMatchUserInfos(homeTeamIds, awayTeamIds, function (err, result) {
+        if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+        }
+        else {
+            logger.info("Successfully fetched match user infos", result);
+
+            result[0].home_team.forEach(function (value, index) {
+                match.home_team.main_lineup[index].name = value.personal_info.name;
+                match.home_team.main_lineup[index].avatar = value.personal_info.avatar;
+                match.home_team.main_lineup[index].positions = value.personal_info.positions;
+                match.home_team.main_lineup[index].nationality = value.personal_info.nationality;
+                match.home_team.main_lineup[index].team_id = value._id;
+                match.home_team.main_lineup[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].away_team.forEach(function (value, index) {
+                match.away_team.main_lineup[index].name = value.personal_info.name;
+                match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
+                match.away_team.main_lineup[index].positions = value.personal_info.positions;
+                match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
+                match.away_team.main_lineup[index].team_id = value._id;
+                match.away_team.main_lineup[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].home_team_reserves.forEach(function (value, index) {
+                match.home_team.reserves[index].name = value.personal_info.name;
+                match.home_team.reserves[index].avatar = value.personal_info.avatar;
+                match.home_team.reserves[index].positions = value.personal_info.positions;
+                match.home_team.reserves[index].nationality = value.personal_info.nationality;
+                match.home_team.reserves[index].team_id = value._id;
+                match.home_team.reserves[index].user_info_id = value.user_info_id;
+            });
+
+            result[0].away_team_reserves.forEach(function (value, index) {
+                match.away_team.reserves[index].name = value.personal_info.name;
+                match.away_team.reserves[index].avatar = value.personal_info.avatar;
+                match.away_team.reserves[index].positions = value.personal_info.positions;
+                match.away_team.reserves[index].nationality = value.personal_info.nationality;
+                match.away_team.reserves[index].team_id = value._id;
+                match.away_team.reserves[index].user_info_id = value.user_info_id;
+            });
+
+            footballMatch.updateAndReturnByZeroZeroId(res.options.zerozeroId, match, function (err, result) {
+                if (err) {
+                    logger.error(err);
+                    zerozero.proxyFailCallback(res, done)
+                }
+                else {
+                    logger.info("Successfully created match " + result._doc);
+
+                    res.options.match = result._doc;
+
+                    const embedMatch = {
+                        id: res.options.match._id,
+                        date: res.options.match.date,
+                        competition_season:{
+                            id: res.options.match.competition_season.id,
+                            competition_id: res.options.match.competition_season.competition_id,
+                            name: res.options.match.competition_season.name,
+                            avatar: res.options.match.competition_season.avatar
+                        },
+                        home_team: {
+                            id: res.options.match.home_team.id,
+                            name: res.options.match.home_team.name,
+                            avatar: res.options.match.home_team.avatar,
+                            goals: res.options.match.home_team.goals.length
+                        },
+                        away_team: {
+                            id: res.options.match.away_team.id,
+                            name: res.options.match.away_team.name,
+                            avatar: res.options.match.away_team.avatar,
+                            goals: res.options.match.away_team.goals.length
+                        }
+                    }
+                    cb(embedMatch, res, done);
+                }
+            });
         }
     })
 }
@@ -424,7 +540,9 @@ const processMatchInfo = function (err, res, done){
         processMatchIds(match, res, done, function(nestedMatch, res, done) {
             processMatchCompetition(nestedMatch, res, done, function (nestedMatch, res, done) {
                 processMatchTeams(nestedMatch, res, done, function (nestedMatch, res, done) {
-                    processMatchPlayers(nestedMatch, res, done);
+                    processMatchPlayers(nestedMatch, res, done, function (res, done) {
+                        processUserInfoRegex(res, done);
+                    });
                 });
             });
         });

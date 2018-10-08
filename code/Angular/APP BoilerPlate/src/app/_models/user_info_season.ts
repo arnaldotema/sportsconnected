@@ -1,6 +1,7 @@
 import {Media} from "./media";
 
 export class UserInfoSeason{
+  _id: string;
   user_info_id: string;
   season_id: string;
   name: string;

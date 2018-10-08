@@ -460,6 +460,12 @@ body {
   max-width: 60px !important;
 }
 
+.sc-profile-small-image {
+  height: 60px !important;
+  width: 60px !important;
+  border-radius: 100%;
+  object-fit: cover;
+}
 
 .sc-mat-card-avatar {
   height: 40px;

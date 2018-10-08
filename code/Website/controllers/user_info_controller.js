@@ -1,6 +1,7 @@
-var FootballUserInfo = require('../models/football_user_info.js');
-var FootballRecommendation = require('../models/football_recommendation.js');
+var FootballUserInfo = require('../models/football_user_info');
+var FootballRecommendation = require('../models/football_recommendation');
 var FootballUserInfoSeason = require('../models/football_user_info_season');
+var ImageStorageService = require('../services/storage/image_storage_service');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 
@@ -19,14 +20,14 @@ Service.search = function (req, res) {
 
     let query = {};
 
-    req.body.forEach(function (filter) {
+    req.body.query.forEach(function (filter) {
         query[filter.search_item] = {};
         query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
         if (filter.selected_filter == '$regex') {
             query[filter.search_item]['$options'] = 'i';
         }
-    })
+    });
 
     FootballUserInfoSeason
         .find(query)
@@ -83,7 +84,7 @@ Service.show = function (req, res) {
 };
 
 Service.create = function (req, res) {
-    var user_info = new FootballUserInfo({
+    let user_info = new FootballUserInfo({
         user_id: req.body.user_id,
         name: req.body.name
 
@@ -101,33 +102,36 @@ Service.create = function (req, res) {
 };
 
 Service.update = function (req, res) {
-    var id = req.params.id;
-    FootballUserInfo.findOne({_id: id}, function (err, user_info) {
+
+    let id = req.params.id;
+    let personal_info = JSON.parse(req.body.personal_info);
+    let avatar = req.files.avatar;
+
+    if(avatar)
+        personal_info.avatar = "api/storage/images/user_info_season/" + id + "/system/avatar";
+
+    FootballUserInfoSeason.updatePersonalInfo(id, personal_info, function (err,user_info_season) {
         if (err) {
             return res.status(500).json({
-                message: 'Error when getting user_info',
+                message: 'Error when updating user_info',
                 error: err
             });
         }
-        if (!user_info) {
-            return res.status(404).json({
-                message: 'No such user_info'
+
+        if(avatar){
+            ImageStorageService.save_from_file(avatar,'user', id, 'system/avatar', function (err, result) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when storing image.',
+                        error: err
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(user_info_season))));
             });
         }
-
-        user_info.user_info_id = req.body.user_id ? req.body.user_id : user_info.user_id;
-        user_info.name = req.body.name ? req.body.name : user_info.name;
-
-        user_info.save(function (err, user_info) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when updating user_info.',
-                    error: err
-                });
-            }
-
-            return res.json(user_info);
-        });
+        else{
+            return res.json(JSON.parse(entities.decode(JSON.stringify(user_info_season))));
+        }
     });
 };
 
@@ -159,6 +163,8 @@ Service.add_recommendation = function (req, res) {
 
     recommendation.user_id = user_info__id;
     let new_recommendation = new FootballRecommendation(recommendation);
+
+    FootballRecommendation.create(recommendation);
 
     new_recommendation.save(function (err, created_recommendation) {
         if (err) {
