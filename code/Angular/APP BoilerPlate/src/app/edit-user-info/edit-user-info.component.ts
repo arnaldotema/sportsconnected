@@ -12,6 +12,12 @@ import {MatchService} from '../_services/match.service';
 import {MatchViewModel} from '../_models/match_viewmodel';
 import {ScrollToService} from 'ng2-scroll-to-el';
 import {forEach} from "@angular/router/src/utils/collection";
+import {RecommendationModalComponent} from "../_modals/recommendation-modal/recommendation-modal.component";
+import {UploadImageModalComponent} from "../_modals/upload-image-modal/upload-image-modal.component";
+import {MatDialog} from "@angular/material";
+import {Observable} from "rxjs/Observable";
+import {HttpClient} from "@angular/common/http";
+import {AuthenticationService} from "../_services/authentication.service";
 
 @Component({
   selector: 'app-edit-user-info',
@@ -39,17 +45,31 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
   account_validation_messages;
   id;
 
+  avatar: File;
+
   player_matches: any[];
   viewModel: UserInfoViewModel;
   userDetailsForm: FormGroup;
   accountDetailsForm: FormGroup;
   matching_passwords_group: FormGroup;
 
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+  cropperReady = false;
+
   // Only for demonstration purposes, this variable helps knowing when to display the *already received* matches
   showGames: boolean = false;
 
-  constructor(private matchService: MatchService, private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private scrollService: ScrollToService,
-              private userInfoService: UserInfoService) {
+  constructor(private matchService: MatchService,
+              public dialog: MatDialog,
+              private route: ActivatedRoute,
+              private fb: FormBuilder,
+              private router: Router,
+              private scrollService: ScrollToService,
+              private userInfoService: UserInfoService,
+              private authenticationService: AuthenticationService,
+              private http: HttpClient
+              ) {
   }
 
   ngOnInit() {
@@ -239,14 +259,6 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
 
   }
 
-  onSubmitAccountDetails(value) {
-    console.log(value);
-  }
-
-  onSubmitUserDetails(value) {
-    console.log(value);
-  }
-
   loadGames() {
 
     this.showGames = true;
@@ -275,7 +287,12 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
 
   save() {
     // Todo: Saves current information to the user model and returns to user-info
-    this.router.navigate(['/user-info/' + this.id]);
+    this.userInfoService.editUserInfo(this.viewModel.current_season, this.avatar)
+      .subscribe(res => {
+        debugger;
+        this.authenticationService.setSessionAvatar(res.personal_info.avatar + '?random=' + _make_random_text());
+        this.router.navigate(['/user-info/' + this.id]);
+      })
   }
 
   discard() {
@@ -298,10 +315,25 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
       this.viewModel[inputType] = value;
   }
 
-
   goToTop(index) {
     this.scrollService.scrollTo('#top', 500, -100);
     this.eventsToggled[index] = false;
+  }
+
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+  }
+  imageCroppedBase64(image: string) {
+    this.croppedImage = image;
+  }
+  imageCroppedFile(image: File) {
+    this.avatar = image;
+  }
+  imageLoaded() {
+    this.cropperReady = true;
+  }
+  imageLoadFailed () {
+    console.log('Load failed');
   }
 
 }
@@ -309,4 +341,14 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
 // For demonstration purposes only, this function helps generating random numbers between a certain range
 function random(start, end) {
   return Math.floor(Math.random() * end) + start
+}
+
+function _make_random_text() {
+  let text = "";
+  let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (let i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
 }

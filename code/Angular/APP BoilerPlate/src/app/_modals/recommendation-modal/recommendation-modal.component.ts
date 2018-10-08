@@ -15,22 +15,15 @@ export class RecommendationModalComponent implements OnInit {
   edit: false;
   create: true;
   author;
+  player;
 
   constructor(
     public dialogRef: MatDialogRef<RecommendationModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { author: SessionUser, edit: boolean, create: boolean }
+    @Inject(MAT_DIALOG_DATA) public data: { author: SessionUser, edit: boolean, player: any, create: boolean }
   ) {
 
-    if (this.data.author != null)
-      this.author = this.data.author;
-
-    /*
-    if (this.data.recommendationIdx != null) {
-      this.edit = true;
-      this.recommendationIdx = this.data.recommendationIdx;
-      this.text = this.data.recommendations[this.data.recommendationIdx];
-    }
-    */
+    this.author = this.data.author;
+    this.player = this.data.player;
   }
 
   ngOnInit() {

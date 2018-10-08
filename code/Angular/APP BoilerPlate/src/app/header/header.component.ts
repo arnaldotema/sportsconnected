@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
   show_notifications: boolean;
   show_search: boolean;
 
-
   //Login variables
   model: any = {};
   error = '';
@@ -46,14 +45,14 @@ export class HeaderComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.viewModel = this.authenticationService.getSessionUser();
+
+    this.viewModel = this.authenticationService.getSessionUser() || new SessionUser();
     this.cdRef.detectChanges();
   }
 
   searchFor() {
     this.genericService.searchUser('', this.searchString, '')
       .subscribe((list) => {
-          debugger;
           this.searchResults = list;
         }
       );

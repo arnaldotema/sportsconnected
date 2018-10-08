@@ -42,7 +42,6 @@ export class AuthenticationService {
 
   getSessionUser(): SessionUser {
     this.session_user = this.session_user ? this.session_user : JSON.parse(localStorage.getItem('session_user'));
-    debugger;
     return this.session_user;
   }
 
@@ -52,6 +51,10 @@ export class AuthenticationService {
     ));
 
     this.session_user = session_user;
+  }
+
+  setSessionAvatar(avatar: string): void {
+    this.session_user.avatar = avatar;
   }
 
   login(username: string, password: string): Observable<any> {
