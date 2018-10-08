@@ -2,46 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/controllers/storage_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/middleware/formidable-express" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/routes/storage_routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/services/storage/image_storage_service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/RecommendationModalComponent.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/RecommendationModalComponent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/UserInfoProfileComponent.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/UserInfoProfileComponent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/coverage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/coverage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/search/search_index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/search/search_index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/routes/team_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/routes/team_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/services/football_user_info_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/services/football_user_info_season_service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/services/football_user_info_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/services/football_user_info_service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docs/~$oadmap.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/~$oadmap.docx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -558,16 +518,15 @@
       <workItem from="1535208133636" duration="56202000" />
       <workItem from="1536194431046" duration="560000" />
       <workItem from="1537910293667" duration="245163000" />
-      <workItem from="1538936572431" duration="10499000" />
+      <workItem from="1538936572431" duration="10647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419210000" />
+    <option name="totallyTimeSpent" value="419358000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1025" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="745" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -580,18 +539,18 @@
       <window_info anchor="bottom" id="NativeScript" order="8" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32912722" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.496875" weight="0.32912722" />
-      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.34270832" side_tool="true" weight="0.38170347" />
+      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.34375" side_tool="true" visible="true" weight="0.5409836" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.23645833" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.3546875" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.65729165" visible="true" weight="0.38170347" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.65625" visible="true" weight="0.5409836" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32935917" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
