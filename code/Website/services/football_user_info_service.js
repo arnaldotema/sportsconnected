@@ -3,6 +3,59 @@ const _ = require('underscore');
 
 let Service = {};
 
+Service.getMatchUserInfos = function (homeTeam, awayTeam, cb) {
+    let query = [
+        {
+            $facet: {
+                home_team: [
+                    {
+                        $match: {
+                            "_id": {"$in": homeTeam.main_lineup}
+                        }
+                    }
+                ],
+                home_team_reserves: [
+                    {
+                        $match: {
+                            "_id": {"$in": homeTeam.reserves}
+                        }
+                    }
+                ],
+                home_team_staff: [
+                    {
+                        $match: {
+                            "_id": {"$in": homeTeam.staff}
+                        }
+                    }
+                ],
+                away_team: [
+                    {
+                        $match: {
+                            "_id": {"$in": awayTeam.main_lineup}
+                        }
+                    }
+                ],
+                away_team_reserves: [
+                    {
+                        $match: {
+                            "_id": {"$in": awayTeam.reserves}
+                        }
+                    }
+                ],
+                away_team_staff: [
+                    {
+                        $match: {
+                            "_id": {"$in": awayTeam.staff}
+                        }
+                    }
+                ]
+            }
+        }
+    ];
+
+    this.aggregate(query, cb)
+};
+
 Service.updateAndReturnByZeroZeroId = function (zerozero_id, user_info, cb) {
     const query = {"external_ids.zerozero": zerozero_id};
 

@@ -69,6 +69,7 @@ import {User_infoStatsComponent} from './user-info-stats/user-info-stats.compone
 import {TeamRosterComponent} from './team-roster/team-roster.component';
 import {RecommendationModalComponent} from './_modals/recommendation-modal/recommendation-modal.component';
 import {TryoutModalComponent} from './_modals/tryout-modal/tryout-modal.component';
+import {UploadImageModalComponent} from './_modals/upload-image-modal/upload-image-modal.component';
 import {TeamPlayerEvaluationModalComponent} from './_modals/team-player-evaluation-modal/team-player-evaluation-modal.component';
 import {UserInfoProfileComponent} from './user-info-profile/user-info-profile.component';
 import {TeamProfileComponent} from './team-profile/team-profile.component';
@@ -86,7 +87,7 @@ import {MatchService} from './_services/match.service';
 import {TeamService} from './_services/team.service';
 import { TeamMediaComponent } from './team-media/team-media.component';
 import { TeamPlayerComponent } from './team-player/team-player.component';
-
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -106,6 +107,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     User_infoStatsComponent,
     TeamRosterComponent,
     RecommendationModalComponent,
+    UploadImageModalComponent,
     TeamPlayerEvaluationModalComponent,
     TryoutModalComponent,
     UserInfoProfileComponent,
@@ -121,6 +123,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     TeamPlayerComponent
   ],
   imports: [
+    ImageCropperModule,
     HttpClientModule,
     BrowserModule,
     ClickOutsideModule,
@@ -186,6 +189,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   bootstrap: [AppComponent],
   entryComponents: [
     RecommendationModalComponent,
+    UploadImageModalComponent,
     TeamPlayerEvaluationModalComponent,
     TryoutModalComponent
   ]

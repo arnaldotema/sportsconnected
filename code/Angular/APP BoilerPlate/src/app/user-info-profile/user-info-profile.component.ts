@@ -26,6 +26,7 @@ import {SessionUser} from "../_models/session_user";
   styleUrls: ['./user-info-profile.component.css']
 })
 export class UserInfoProfileComponent implements OnInit, AfterViewInit {
+
   viewModel: UserInfoViewModel;
   session_user: SessionUser;
   _chart: Chart;
@@ -344,6 +345,8 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
           };
         }
 
+        userInfo.current_season.personal_info.avatar = userInfo.current_season.personal_info.avatar + '?random=' + _make_random_text();
+
         this.viewModel = userInfo;
         // When the user scrolls the page, execute myFunction
         window.onscroll = function () {
@@ -419,10 +422,12 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
   addRecommendation(): void {
 
+
     const dialogRef = this.dialog.open(RecommendationModalComponent,
       {
         data: {
           author: this.session_user,
+          player: this.viewModel,
           edit: false,
           create: true
         }
@@ -462,10 +467,10 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
   voteSkill(event): void {
 
-    this.toastr.success('Obrigado pelo voto!');
 
-    let skillName = event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
-    this.userInfoService.voteForSkill(skillName, this.session_user._id, this.viewModel._id)
+    // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
+    let skillName = event.target.title;
+    this.userInfoService.voteForSkill(skillName, this.session_user.profile_id, this.viewModel._id)
       .subscribe((done) => {
         if (done) {
           this.labels.forEach((label, key) => {
@@ -474,6 +479,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
             this.cdRef.detectChanges();
             this._chart.update();
           });
+          this.toastr.success('Voto registado!');
         }
       })
   }
@@ -531,4 +537,14 @@ function stickyScroll() {
     achievements.classList.remove("hidden-for-footer");
     indicators.classList.remove("hidden-for-footer");
   }
+}
+
+function _make_random_text() {
+  let text = "";
+  let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
 }
