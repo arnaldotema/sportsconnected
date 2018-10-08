@@ -1,0 +1,8 @@
+((=\b(?:[^G\s]*G){1,}[^G\s]*\b=)\s){2} <- 2 jogos seguidos a marcar golo
+
+=\b(?:[^G\s]*G){3,}[^G\s]*\b= <- hattrick
+
+(=[^\d\s]*(?:[1-9][0-9]{2}|[9][0-9])=\s){N} <- N jogos a jogar mais de 90 minutos
+
+(=[^\d\s]*(?:[1-9][0-9]{2}|[9][0-9])=) <- Number of games that the player played between 90 and 120
+
