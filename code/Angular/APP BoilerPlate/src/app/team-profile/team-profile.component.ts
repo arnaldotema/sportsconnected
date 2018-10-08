@@ -17,7 +17,7 @@ import {SessionUser} from "../_models/session_user";
 export class TeamProfileComponent implements OnInit, AfterViewInit {
 
   viewModel: TeamViewModel;
-  session_user : SessionUser;
+  session_user: SessionUser;
   chart = [];
   data = {};
   options = {};
@@ -40,20 +40,12 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
 
         //Convert player's birth_date to age
         team.current_season.players.forEach((player) => {
-          if (!player['date_of_birth']) player['date_of_birth'] = '1996-05-20T00:00:00.000Z';
-          let birth_date = new Date(player['date_of_birth']);
-          let ageDifMs = Date.now() - birth_date.getTime();
-          let ageDate = new Date(ageDifMs);
-          player['age'] = Math.abs(ageDate.getUTCFullYear() - 1970);
+          if (!player['age']) player['age'] = 0;
         });
 
         //Convert staff's birth_date to age
         team.current_season.staff.forEach((staff) => {
-          if (!staff['date_of_birth']) staff['date_of_birth'] = '1979-05-20T00:00:00.000Z';
-          let birth_date = new Date(staff['date_of_birth']);
-          let ageDifMs = Date.now() - birth_date.getTime();
-          let ageDate = new Date(ageDifMs);
-          staff['age'] = Math.abs(ageDate.getUTCFullYear() - 1970);
+          if (!staff['age']) staff['age'] = 0;
         });
 
         //Convert player's name to short name and position standardisation
@@ -72,7 +64,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
           }
         });
 
-        team.current_season.media= [
+        team.current_season.media = [
           {
             title: team.name + ' marca Hat-trick em jogo decisivo',
             author: 'A Bola.',
@@ -238,14 +230,13 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
         ];
 
         // Inserting some recommendations for the same reason.
-
         team.recommendations = {
           list: [1, 2, 3],
           top_5: [
             {
               user_id: '-1',
-        author: {
-          author_type: 'football_user_info',
+              author: {
+                author_type: 'football_user_info',
                 name: 'Arnaldo Tema',
                 relationship: 'Colega de equipa',
                 id: '2',
@@ -261,8 +252,8 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
             },
             {
               user_id: '-1',
-        author: {
-          author_type: 'football_user_info',
+              author: {
+                author_type: 'football_user_info',
                 name: 'Nuno Carmo',
                 relationship: 'Treinador',
                 id: '3',
@@ -278,8 +269,8 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
             },
             {
               user_id: '-1',
-        author: {
-          author_type: 'football_user_info',
+              author: {
+                author_type: 'football_user_info',
                 name: 'Vital de Carvalho',
                 relationship: 'Treinador',
                 id: '4',
@@ -295,8 +286,8 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
             },
             {
               user_id: '-1',
-        author: {
-          author_type: 'football_user_info',
+              author: {
+                author_type: 'football_user_info',
                 name: 'José Mourinho',
                 relationship: 'Treinador',
                 id: '5',
@@ -312,8 +303,8 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
             },
             {
               user_id: '-1',
-        author: {
-          author_type: 'football_user_info',
+              author: {
+                author_type: 'football_user_info',
                 name: 'Jorge Jesus',
                 relationship: 'Treinador',
                 id: '6',
@@ -333,7 +324,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
         this.viewModel = team;
       });
 
-      this.session_user = this.authenticationService.getSessionUser();
+    this.session_user = this.authenticationService.getSessionUser();
   }
 
   openCreateDialog(): void {
@@ -354,8 +345,8 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
           // Todo: Add to the real team recommendation's list instead of the top 5
           this.viewModel.recommendations.top_5.push({
             user_id: '-1',
-        author: {
-          author_type: 'football_user_info',
+            author: {
+              author_type: 'football_user_info',
               name: result.author.name,
               id: result.author.id,
               relationship: '',
@@ -376,7 +367,7 @@ export class TeamProfileComponent implements OnInit, AfterViewInit {
   }
 
   createTeamPlayer(): void {
-    this.router.navigate(['/team/' + this.viewModel._id + '/player/'+'0']);
+    this.router.navigate(['/team/' + this.viewModel._id + '/player/' + '0']);
   }
 
   openTryoutDialog(): void {

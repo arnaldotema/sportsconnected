@@ -1895,30 +1895,33 @@ export class GenericUserService {
 
   //TODO: ALTT - Change input params to just a Filter_Search model
   searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
-
-    let body = [];
+    let query_list = [];
     if (type) {
-      body.push(
+      query_list.push(
         {
           search_item: type,
           selected_filter: '$regex',
-          selected_value: query
+          selected_value: query_list
         }
       );
     }
     else {
-      body.push(
+      query_list.push(
         {
           search_item: 'team.name',
           selected_filter: '$regex',
-          selected_value: query
+          selected_value: query_list
         },
         {
           search_item: 'personal_info.name',
           selected_filter: '$regex',
-          selected_value: query
+          selected_value: query_list
         }
       );
+    }
+
+    const body = {
+      query: query_list
     }
 
     return this.http.post<SearchEntityViewmodel[]>('/api/players/search', body, this.requestOptions)
@@ -1942,7 +1945,6 @@ export class GenericUserService {
   }
 
   private handleError(error: HttpErrorResponse) {
-
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);

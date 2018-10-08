@@ -34,8 +34,7 @@
 
       <div *ngIf="isAuthenticated()" class="profile-menu">
         <a routerLink="/user-info/{{viewModel.profile_id}}" class="avatar">
-          <div mat-card-avatar class="profile-small-image"
-               [ngStyle]="{'background-image':  'url(' + viewModel.avatar + ')' }"></div>
+          <img [src]="viewModel.avatar" class="sc-profile-small-image">
         </a>
 
         <a href="/home">

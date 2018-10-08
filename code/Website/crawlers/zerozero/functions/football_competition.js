@@ -219,7 +219,7 @@ const updateCompetitionSeasonMatches = function (err, res, done){
                 zerozero.queue({
                     uri: format(baseUris.MATCH_INFO, {match_id: matchId}),
                     callback: proxyHandler.crawl,
-                    priority: 9,
+                    priority: 1,
                     successCallback: footballMatchCrawler.processMatchInfo,
                     zerozeroId: matchId,
                     matchDate: matchDate,
