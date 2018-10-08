@@ -37,6 +37,24 @@
         </div>
         <div class="profile-buttons">
           <button mat-raised-button class="sc-btn btn-sc-default">Alterar</button>
+          <div>
+            <image-cropper
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="3 / 3"
+              [resizeToWidth]="128"
+              [roundCropper]="false"
+              format="jpeg"
+              (imageCroppedBase64)="imageCroppedBase64($event)"
+              (imageCroppedFile)="imageCroppedFile($event)"
+              (imageLoaded)="imageLoaded()"
+              (loadImageFailed)="loadImageFailed()"
+              style="max-height: 33vh"
+              [style.display]="cropperReady ? null : 'none'"
+            ></image-cropper>
+            <img [src]="croppedImage"/>
+          </div>
+          <input type="file" (change)="fileChangeEvent($event)"/>
         </div>
       </div>
       <div class="row-center-edit-mode centered">
@@ -130,8 +148,10 @@
                   </mat-panel-title>
                   <mat-panel-description class="match-description">
 
-                    <img *ngIf="match.isDataConfirmed" title = "Dados validados pela PlayersNet" class="icon" src="/assets/valid_green.png">
-                    <img *ngIf="!match.isDataConfirmed" title = "Dados não validados pela PlayersNet" class="icon" src="/assets/valid_gray.png">
+                    <img *ngIf="match.isDataConfirmed" title="Dados validados pela PlayersNet" class="icon"
+                         src="/assets/valid_green.png">
+                    <img *ngIf="!match.isDataConfirmed" title="Dados não validados pela PlayersNet" class="icon"
+                         src="/assets/valid_gray.png">
 
                     <small>{{match.competition_season.name}}</small>
 

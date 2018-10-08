@@ -1477,7 +1477,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
 
   voteSkill(event): void {
 
-    this.toastr.success(&#x27;Obrigado pelo voto!&#x27;);
+    this.toastr.success(&#x27;Voto registado!&#x27;);
 
     let skillName &#x3D; event.target.title; // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
     this.userInfoService.voteForSkill(skillName, this.session_user.id).subscribe();

@@ -8,11 +8,12 @@ import {catchError, retry, tap, map} from 'rxjs/operators';
 import {UserInfoViewModel} from '../_models/user_info_viewmodel';
 import {Recommendation} from '../_models/recommendation';
 import {TeamPlayer} from "../_models/team_player";
+import {UserInfoSeason} from "../_models/user_info_season";
 
 @Injectable()
 export class UserInfoService {
 
-  mockUserInfo: UserInfoViewModel = {
+  mockUserInfo: any = {
       _id: '1',
       user_id: '1',
       followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
@@ -540,6 +541,7 @@ export class UserInfoService {
     }
   };
   requestOptions;
+  requestOptionsMultipart;
   testing = false;
 
   constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
@@ -549,10 +551,16 @@ export class UserInfoService {
         'jwt': authenticationService.token
       })
     };
+    this.requestOptionsMultipart = {
+      headers: new HttpHeaders({
+        'jwt': authenticationService.token
+      })
+    };
   }
 
   getUserInfo(id: string): Observable<UserInfoViewModel> {
 
+    console.log(this.authenticationService.getSessionUser());
     if (this.testing || id == '-1') {
       return of(this.mockUserInfo[0]);
     }
@@ -642,6 +650,19 @@ export class UserInfoService {
         }),
         catchError(this.handleError)
       );
+  }
+
+  editUserInfo(user_info_season: UserInfoSeason, avatar: File) {
+
+    let formData: FormData = new FormData();
+    formData.append('personal_info', JSON.stringify(user_info_season.personal_info));
+    formData.append('avatar', avatar, 'avatar');
+
+    return this.http.put('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
+      .map(res => {
+        this.authenticationService.setSessionAvatar(res.personal_info.avatar);
+        return res;
+      });
   }
 
   private handleError(error: HttpErrorResponse) {
