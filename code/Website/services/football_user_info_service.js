@@ -56,6 +56,14 @@ Service.getMatchUserInfos = function (homeTeam, awayTeam, cb) {
     this.aggregate(query, cb)
 };
 
+Service.getUserInfosByUpdatedAt = function (updated_at, cb) {
+    const query = {
+        updated_at: { $gt: updated_at }
+    };
+
+    this.find(query, cb);
+};
+
 Service.updateAndReturnByZeroZeroId = function (zerozero_id, user_info, cb) {
     const query = {"external_ids.zerozero": zerozero_id};
 
@@ -241,6 +249,47 @@ Service.unfollow = function (unfollower_id, user_info_id, cb) {
     });
 
     this.bulkWrite(operations, {}, cb);
+}
+
+Service.updateRegexNewMatch = function (regexes, cb) {
+    let operations = [];
+
+    Object.keys(regexes).forEach(function (user_info_id) {
+
+        operations.push({
+            updateOne: {
+                filter: {
+                    "_id": user_info_id
+                },
+                update: {
+                    $set: {
+                        "actions_regex": regexes[user_info_id]
+                    }
+                }
+            }
+        });
+    });
+
+    this.bulkWrite(operations, {}, cb);
+}
+
+Service.addAchievementToUserInfo = function (achievement, user_info, cb) {
+    const query = {
+        _id: user_info._id,
+        "achievements.id": { $ne: achievement._id }
+    }
+
+    const update = {
+        $push: {
+            "achievements": {
+                id: achievement._id,
+                name: achievement.name,
+                avatar: achievement.avatar
+            }
+        }
+    }
+
+    this.findOneAndUpdate(query, update, cb);
 }
 
 module.exports = Service;
