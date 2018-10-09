@@ -1,4 +1,4 @@
-((=\b(?:[^G\s]*G){1,}[^G\s]*\b=)\s){2} <- 2 jogos seguidos a marcar golo
+/((=\b(?:[^G\s]*G){1,}[^G\s]*\b=)\s){2}/g <- 2 jogos seguidos a marcar golo
 
 =\b(?:[^G\s]*G){3,}[^G\s]*\b= <- hattrick
 
