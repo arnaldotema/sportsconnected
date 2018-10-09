@@ -43,12 +43,19 @@ var FootballUserInfoSchema = new Schema({
             avatar: String
         }
     ],
+    actions_regex: String,
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now},
     external_ids: {
         zerozero: {type: Number, required: true, unique: true, index: true},
     }
 });
+
+FootballUserInfoSchema.pre('save', function(next) {
+    this.updated_at = Date.now()
+    next()
+})
+
 
 FootballUserInfoSchema.statics = require('../services/football_user_info_service');
 
