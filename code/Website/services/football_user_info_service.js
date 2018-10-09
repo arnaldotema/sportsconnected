@@ -61,7 +61,11 @@ Service.getUserInfosByUpdatedAt = function (updated_at, cb) {
         updated_at: { $gt: updated_at }
     };
 
-    this.find(query, cb);
+    this
+        .find(query)
+        .populate('current_season')
+        .populate('user_id')
+        .exec(cb);
 };
 
 Service.updateAndReturnByZeroZeroId = function (zerozero_id, user_info, cb) {

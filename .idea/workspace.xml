@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/code/Website/services/football_achievement_service.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/code/Website/mailers/achievements_mailer" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/code/Website/app.js" afterPath="$PROJECT_DIR$/code/Website/app.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
+      <change beforePath="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" afterPath="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" />
       <change beforePath="$PROJECT_DIR$/code/Website/models/football_achievement.js" afterPath="$PROJECT_DIR$/code/Website/models/football_achievement.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/models/football_user_info.js" afterPath="$PROJECT_DIR$/code/Website/models/football_user_info.js" />
       <change beforePath="$PROJECT_DIR$/code/Website/package-lock.json" afterPath="$PROJECT_DIR$/code/Website/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/code/Website/package.json" afterPath="$PROJECT_DIR$/code/Website/package.json" />
       <change beforePath="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" afterPath="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" />
-      <change beforePath="$PROJECT_DIR$/docs/sports regex.txt" afterPath="$PROJECT_DIR$/docs/sports regex.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,107 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="football_achievement.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Website/models/football_achievement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="70" lean-forward="false" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info.js">
+      <file leaf-file-name="achievements_mailer" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/Website/mailers/achievements_mailer">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-              <folding>
-                <element signature="e#659#834#0" expanded="false" />
-                <element signature="e#857#1509#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gary_processor.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-161">
-              <caret line="36" column="116" lean-forward="false" selection-start-line="36" selection-start-column="116" selection-end-line="36" selection-end-column="116" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sports regex.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/sports regex.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="football_achievement_service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/services/football_achievement_service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="football_user_info_service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="291" column="39" lean-forward="false" selection-start-line="291" selection-start-column="39" selection-end-line="291" selection-end-column="39" />
-              <folding>
-                <element signature="e#153#1581#0" expanded="false" />
-                <element signature="e#1644#1741#0" expanded="false" />
-                <element signature="e#1820#1985#0" expanded="false" />
-                <element signature="e#2050#2665#0" expanded="false" />
-                <element signature="e#2739#3195#0" expanded="false" />
-                <element signature="e#3270#3273#0" expanded="false" />
-                <element signature="e#3350#3353#0" expanded="false" />
-                <element signature="e#3434#3688#0" expanded="false" />
-                <element signature="e#3731#4719#0" expanded="false" />
-                <element signature="e#4780#5368#0" expanded="false" />
-                <element signature="e#5432#6025#0" expanded="false" />
-                <element signature="e#6080#6537#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="football_competition_season.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/models/football_competition_season.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="football_competition_season_service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_season_service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="48" />
+            <state relative-caret-position="-246">
+              <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -139,7 +48,94 @@
       <file leaf-file-name="football_user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Website/models/football_user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info_season.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-561">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="e#659#834#0" expanded="false" />
+                <element signature="e#857#1509#0" expanded="false" />
+                <element signature="e#1529#1685#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gary_processor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_achievement_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/services/football_achievement_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+              <folding>
+                <element signature="e#153#1581#0" expanded="false" />
+                <element signature="e#1908#2073#0" expanded="false" />
+                <element signature="e#2138#2753#0" expanded="false" />
+                <element signature="e#2827#3283#0" expanded="false" />
+                <element signature="e#3358#3361#0" expanded="false" />
+                <element signature="e#3438#3441#0" expanded="false" />
+                <element signature="e#3522#3776#0" expanded="false" />
+                <element signature="e#3819#4807#0" expanded="false" />
+                <element signature="e#4868#5456#0" expanded="false" />
+                <element signature="e#5520#6113#0" expanded="false" />
+                <element signature="e#6168#6625#0" expanded="false" />
+                <element signature="e#6700#7075#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="59" column="11" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="59" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_competition_season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_competition_season.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -233,7 +229,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/code/Website/models/football_competition_season.js" />
         <option value="$PROJECT_DIR$/code/Website/services/football_team_season_service.js" />
         <option value="$PROJECT_DIR$/code/Website/models/football_match.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_user_info.js" />
@@ -278,12 +273,13 @@
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js" />
         <option value="$PROJECT_DIR$/code/Website/models/football_user_info.js" />
-        <option value="$PROJECT_DIR$/code/Website/models/football_achievement.js" />
         <option value="$PROJECT_DIR$/code/Website/app.js" />
         <option value="$PROJECT_DIR$/docs/sports regex.txt" />
-        <option value="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" />
         <option value="$PROJECT_DIR$/code/Website/services/football_achievement_service.js" />
+        <option value="$PROJECT_DIR$/code/Website/models/football_achievement.js" />
+        <option value="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" />
         <option value="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" />
+        <option value="$PROJECT_DIR$/code/Website/mailers/achievements_mailer" />
       </list>
     </option>
   </component>
@@ -354,31 +350,14 @@
               <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
               <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
-              <item name="zerozero" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
-              <item name="zerozero" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="gary_processor" type="462c0819:PsiDirectoryNode" />
+              <item name="mailers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
@@ -563,12 +542,12 @@
       <workItem from="1534500019313" duration="1969000" />
       <workItem from="1535894051327" duration="17486000" />
       <workItem from="1536560574126" duration="26996000" />
-      <workItem from="1539100138985" duration="13338000" />
+      <workItem from="1539100138985" duration="17533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509591000" />
+    <option name="totallyTimeSpent" value="513786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -752,17 +731,11 @@
           <line>30</line>
           <option name="timeStamp" value="403" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js</url>
-          <line>28</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="448" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="449" />
+      <option name="time" value="457" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -775,13 +748,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/competition_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="134" column="31" lean-forward="false" selection-start-line="134" selection-start-column="31" selection-end-line="134" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -987,14 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1075,14 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1109,18 +1059,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_season_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/sports regex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1135,64 +1085,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/models/football_achievement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="70" lean-forward="false" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sports regex.txt">
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="39" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/services/football_achievement_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="291" column="39" lean-forward="false" selection-start-line="291" selection-start-column="39" selection-end-line="291" selection-end-column="39" />
-          <folding>
-            <element signature="e#153#1581#0" expanded="false" />
-            <element signature="e#1644#1741#0" expanded="false" />
-            <element signature="e#1820#1985#0" expanded="false" />
-            <element signature="e#2050#2665#0" expanded="false" />
-            <element signature="e#2739#3195#0" expanded="false" />
-            <element signature="e#3270#3273#0" expanded="false" />
-            <element signature="e#3350#3353#0" expanded="false" />
-            <element signature="e#3434#3688#0" expanded="false" />
-            <element signature="e#3731#4719#0" expanded="false" />
-            <element signature="e#4780#5368#0" expanded="false" />
-            <element signature="e#5432#6025#0" expanded="false" />
-            <element signature="e#6080#6537#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+        <state relative-caret-position="221">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#659#834#0" expanded="false" />
             <element signature="e#857#1509#0" expanded="false" />
+            <element signature="e#1529#1685#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="36" column="116" lean-forward="false" selection-start-line="36" selection-start-column="116" selection-end-line="36" selection-end-column="116" />
+        <state relative-caret-position="77">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+          <folding>
+            <element signature="e#153#1581#0" expanded="false" />
+            <element signature="e#1908#2073#0" expanded="false" />
+            <element signature="e#2138#2753#0" expanded="false" />
+            <element signature="e#2827#3283#0" expanded="false" />
+            <element signature="e#3358#3361#0" expanded="false" />
+            <element signature="e#3438#3441#0" expanded="false" />
+            <element signature="e#3522#3776#0" expanded="false" />
+            <element signature="e#3819#4807#0" expanded="false" />
+            <element signature="e#4868#5456#0" expanded="false" />
+            <element signature="e#5520#6113#0" expanded="false" />
+            <element signature="e#6168#6625#0" expanded="false" />
+            <element signature="e#6700#7075#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="59" column="11" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="59" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/mailers/achievements_mailer">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
           <folding />
         </state>
       </provider>
