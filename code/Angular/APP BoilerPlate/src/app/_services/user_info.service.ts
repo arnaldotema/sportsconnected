@@ -658,9 +658,9 @@ export class UserInfoService {
     formData.append('personal_info', JSON.stringify(user_info_season.personal_info));
     formData.append('avatar', avatar, 'avatar');
 
-    return this.http.put('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
+    return this.http.put<UserInfoSeason>('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
       .map(res => {
-        this.authenticationService.setSessionAvatar(res.personal_info.avatar);
+        this.authenticationService.setSessionAvatar(res['personal_info'].avatar);
         return res;
       });
   }
