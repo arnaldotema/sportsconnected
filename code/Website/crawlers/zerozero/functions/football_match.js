@@ -295,7 +295,7 @@ function processMatchIds(match, res, done, cb){
                 match.home_team.main_lineup[index].avatar = value.personal_info.avatar;
                 match.home_team.main_lineup[index].positions = value.personal_info.positions;
                 match.home_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.home_team.main_lineup[index].team_id = value._id;
+                match.home_team.main_lineup[index].id = value._id;
                 match.home_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
@@ -304,7 +304,7 @@ function processMatchIds(match, res, done, cb){
                 match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
                 match.away_team.main_lineup[index].positions = value.personal_info.positions;
                 match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.away_team.main_lineup[index].team_id = value._id;
+                match.away_team.main_lineup[index].id = value._id;
                 match.away_team.main_lineup[index].user_info_id = value.user_info_id;
             });
 
@@ -313,7 +313,7 @@ function processMatchIds(match, res, done, cb){
                 match.home_team.reserves[index].avatar = value.personal_info.avatar;
                 match.home_team.reserves[index].positions = value.personal_info.positions;
                 match.home_team.reserves[index].nationality = value.personal_info.nationality;
-                match.home_team.reserves[index].team_id = value._id;
+                match.home_team.reserves[index].id = value._id;
                 match.home_team.reserves[index].user_info_id = value.user_info_id;
             });
 
@@ -322,7 +322,7 @@ function processMatchIds(match, res, done, cb){
                 match.away_team.reserves[index].avatar = value.personal_info.avatar;
                 match.away_team.reserves[index].positions = value.personal_info.positions;
                 match.away_team.reserves[index].nationality = value.personal_info.nationality;
-                match.away_team.reserves[index].team_id = value._id;
+                match.away_team.reserves[index].id = value._id;
                 match.away_team.reserves[index].user_info_id = value.user_info_id;
             });
 
@@ -366,7 +366,6 @@ function processMatchIds(match, res, done, cb){
 }
 
 function processMatchPlayers(nestedMatch, res, done, cb){
-
 
     footballUserInfoSeason.updateUserInfosStats(res.options.match, nestedMatch, function (err, result) {
         if (err) {
