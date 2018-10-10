@@ -660,11 +660,7 @@ export class UserInfoService {
 
     return this.http.put<UserInfoSeason>('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
       .map((res: any) => {
-<<<<<<< HEAD
         this.authenticationService.setSessionAvatar(res.personal_info.avatar);
-=======
-        this.authenticationService.setSessionAvatar(res['personal_info'].avatar);
->>>>>>> 14a5df3f4d97530865a45bdb59242a08bc410190
         return res;
       });
   }
