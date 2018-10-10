@@ -49,6 +49,7 @@ var FootballTeamSeasonSchema = new Schema({
         {
             id: {type: Schema.Types.ObjectId, ref: 'football_user_info_season'},
             user_info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+            age: Number,
             number: String,
             name: String,
             avatar: String,

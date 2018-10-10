@@ -10,6 +10,7 @@ var FootballUserSeasonSchema = new Schema({
             type: String,
             default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg/600px-Default_profile_picture_%28male%29_on_Facebook.jpg'
         },
+        age: Number,
         number: String,
         full_name: String,
         positions: [String],

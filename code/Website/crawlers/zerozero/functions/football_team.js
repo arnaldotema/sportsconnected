@@ -89,6 +89,7 @@ const updateTeamSeasonInfo = function (err, res, done) {
     });
 };
 
+// Adds team to the copetition and the other way around
 function cascadeTeamUpdates(res, done) {
     const team_season = res.options.team_season;
     const competition_season = res.options.competition_season;
