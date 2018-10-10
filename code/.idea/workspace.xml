@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/notification_viewmodel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/notifications.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts.orig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/app.js.orig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/notifications/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website/services/notifications/notifications_service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/auth/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/gary_processor/gary_processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/gary_processor/gary_processor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/mailers/achievements_mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/mailers/achievements_mailer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/services/football_user_info_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/services/football_user_info_service.js" afterDir="false" />
-    </list>
+    <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -596,12 +567,12 @@
       <workItem from="1535208133636" duration="56202000" />
       <workItem from="1536194431046" duration="560000" />
       <workItem from="1537910293667" duration="245163000" />
-      <workItem from="1538936572431" duration="36130000" />
+      <workItem from="1538936572431" duration="36391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="444841000" />
+    <option name="totallyTimeSpent" value="445102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="745" extended-state="6" />
@@ -616,8 +587,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="NativeScript" order="8" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32912722" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49375" visible="true" weight="0.36065573" />
-      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.50625" side_tool="true" visible="true" weight="0.36065573" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49375" visible="true" weight="0.46795827" />
+      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.50625" side_tool="true" visible="true" weight="0.46795827" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
