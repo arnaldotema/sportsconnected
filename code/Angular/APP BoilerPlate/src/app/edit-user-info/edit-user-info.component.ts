@@ -300,9 +300,10 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/user-info/' + this.id]);
   }
 
-  goToMatch() {
+  goToMatch(match) {
+    debugger;
     // Todo: Discards current information and returns to user-info
-    this.router.navigate(['/match']);
+    this.router.navigate(['/match/' + match.id]);
   }
 
   changedInput(inputType, event, isMatch) {
