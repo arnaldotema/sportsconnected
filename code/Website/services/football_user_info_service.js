@@ -1,7 +1,31 @@
 const logger = require('../logging');
 const _ = require('underscore');
 
+function _updateRegex(regex){
+    if(!regex){
+        regex = "##";
+    }
+
+    regex = regex.slice(0, -1); // remove the last character "#"
+
+    regex += "!"; //close game partition
+
+    return regex + "#"; //close regex
+}
+
 let Service = {};
+
+Service.updateRecommendationRegex = function (user_info, cb) {
+    const query = {"_id": user_info._id};
+
+    const update = {
+        $set: {
+            "actions_regex": _updateRegex(user_info.actions_regex)
+        }
+    }
+
+    this.findOneAndUpdate(query, update, {upsert: true}, cb);
+};
 
 Service.getMatchUserInfos = function (homeTeam, awayTeam, cb) {
     let query = [
@@ -100,25 +124,20 @@ Service.updateUserInfosCurrentSeason = function (seasons, cb) {
 }
 
 Service.addRecommendation = function (recommendation, user_info_id, cb) {
-    let operations = [];
-
     let recommendation_id = recommendation._id;
 
-    operations.push({
-        updateOne: {
-            filter: {
-                "_id": user_info_id
-            },
-            update: {
-                $push: {
-                    "recommendations.list": recommendation_id,
-                    "recommendations.top_5" : recommendation
-                }
-            }
-        }
-    });
+    const query = {
+        "_id": user_info_id
+    };
 
-    this.bulkWrite(operations, {}, cb);
+    const update = {
+        $push: {
+            "recommendations.list": recommendation_id,
+            "recommendations.top_5" : recommendation
+        }
+    }
+
+    this.findOneAndUpdate(query, update, cb);
 }
 
 Service.editRecommendation = function (recommendation, user_info_id, cb) {

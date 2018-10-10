@@ -41,38 +41,7 @@
           <img src="/assets/logout.png" class="brand-logo app-logo" (click)="logout()"/>
         </a>
 
-        <div class="profile-menu__notifications"
-             (click)="show_notifications=true"
-             (clickOutside)="show_notifications=false">
-          <mat-icon>notifications</mat-icon>
-          <span>2</span>
-          <div *ngIf="show_notifications" class="notifications-box">
-            <div class="notification">
-              <div class="notification__entities-logos">
-                <img class="sc-rounded-image"
-                     src="https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg">
-                <img class="sc-squared-image" src="http://www.zerozero.pt/img/logos/equipas/16_imgbank.png">
-              </div>
-              <div class="notification__description">
-                <h4>Arnaldo Tema</h4>
-                <h5>Marcou 2 Golos frente ao Sporting</h5>
-                <h6>25-10-2018</h6>
-              </div>
-            </div>
-            <div class="notification">
-              <div class="notification__entities-logos">
-                <img class="sc-rounded-image"
-                     src="https://connectnigeria.com/articles/wp-content/uploads/2017/12/Arsenal-legend-Thierry-Henry-624927.jpg">
-                <img class="sc-squared-image" src="http://www.zerozero.pt/img/logos/equipas/4_imgbank.png">
-              </div>
-              <div class="notification__description">
-                <h4>Arnaldo Tema</h4>
-                <h5>Marcou 2 Golos frente ao Benfica</h5>
-                <h6>25-10-2018</h6>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-notifications></app-notifications>
       </div>
     </div>
   </div>
