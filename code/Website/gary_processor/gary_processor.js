@@ -3,6 +3,7 @@ const logger = require('../logging');
 const footballAchievement = require('../models/football_achievement');
 const footballUserInfo = require('../models/football_user_info');
 const achievementsMailer = require('../mailers/achievements_mailer');
+const achievementsNotifications = require('../services/notifications/notifications_service');
 
 let Service = {};
 
@@ -20,25 +21,13 @@ Service.updateRecommendations = function() {
     })
 }
 
-Service.rewardAchievement = function(user_info, achievement) {
+Service.rewardAchievement = function(user_info, achievement, cb) {
     footballAchievement.addUserInfoToAchievement(user_info, achievement, function(err, result) {
         if (err) {
             logger.error(err);
         }
         else {
-            footballUserInfo.addAchievementToUserInfo(achievement, user_info, function(err, result) {
-                if (err) {
-                    logger.error(err);
-                }
-                else {
-                    if(result) {
-                        logger.info("Achievement " + achievement.name + " rewarded to: " + user_info._id + ", Success!");
-                    }
-                    else {
-                        logger.info("Achievement " + achievement.name + " was already rewarded to: " + user_info._id);
-                    }
-                }
-            })
+            footballUserInfo.addAchievementToUserInfo(achievement, user_info, cb)
         }
     })
 }
@@ -49,7 +38,7 @@ Service.updateRecommendations();
 
 let test = true;
 
-let regexScheduler = schedule.scheduleJob('1 * * * * *', function(fireDate){
+let regexScheduler = schedule.scheduleJob('*/20 * * * * *', function(fireDate){
     logger.info('This job was supposed to run at ' + fireDate + ', but actually ran at ' + new Date());
 
     footballUserInfo.getUserInfosByUpdatedAt(last_run, function (err, result) {
@@ -57,17 +46,28 @@ let regexScheduler = schedule.scheduleJob('1 * * * * *', function(fireDate){
             logger.error(err);
         }
         else {
+            test = true;
             result.forEach(function(user_info) {
                 achievements.forEach(function (achievement) {
                     let regex = new RegExp(achievement.regex, "g");
                     const matches = ((user_info.actions_regex || '').match(regex) || []).length;
                     if(matches >= achievement.regex_matches){
-                        logger.info("Achievement " + achievement.name + " rewarded to: " + user_info._id );
-                        Service.rewardAchievement(user_info, achievement);
-                        if(test) {
-                            achievementsMailer.ownAchievementMail(user_info, achievement);
-                            test = false;
-                        }
+                        //logger.info("Achievement " + achievement.name + " rewarded to: " + user_info._id );
+                        Service.rewardAchievement(user_info, achievement, function(err, result) {
+                            if (err) {
+                                logger.error(err);
+                            }
+                            else {
+                                if (result) {
+                                    logger.info("Achievement " + achievement.name + " rewarded to: " + user_info._id + ", Success!");
+                                    achievementsMailer.ownAchievementMail(user_info, achievement);
+                                    achievementsNotifications.newAchievement(user_info, achievement);
+                                }
+                                else {
+                                    logger.info("Achievement already rewarded!");
+                                }
+                            }
+                        });
                     }
                 })
             });
