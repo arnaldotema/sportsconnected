@@ -55,10 +55,6 @@ passport.use(new JWTstrategy({
     jwtFromRequest: ExtractJWT.fromHeader('jwt')
 }, async (token, done) => {
     try {
-        console.log('Passport middleware is being called.');
-        console.log('User email:' + token.user.email);
-        console.log('User _id:' + token.user._id);
-        console.log('--------------------------------------');
         //Pass the user details to the next middleware
         return done(null, token.user);
     } catch (error) {

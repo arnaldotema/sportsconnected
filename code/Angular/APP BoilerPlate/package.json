@@ -27,6 +27,7 @@
     "@chevtek/angular-spinners": "^5.1.2",
     "@compodoc/compodoc": "^1.1.5",
     "@types/moment-business": "^0.1.4",
+    "@types/socket.io-client": "^1.4.32",
     "@types/vis": "^4.21.0",
     "angular-chart.js": "^1.1.1",
     "angular-loading-page": "^0.6.0",
@@ -50,6 +51,7 @@
     "ngx-image-cropper": "^1.0.2",
     "rxjs": "^5.5.2",
     "selectize": "^0.12.4",
+    "socket.io-client": "^2.1.1",
     "vis": "^4.21.0",
     "youtube-search": "^1.1.1",
     "zone.js": "^0.8.14"
