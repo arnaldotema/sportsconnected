@@ -658,13 +658,15 @@ export class UserInfoService {
     formData.append('personal_info', JSON.stringify(user_info_season.personal_info));
     formData.append('avatar', avatar, 'avatar');
 
-    return this.http.put<UserInfoSeason>('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
-      .map((res: any) => {
 <<<<<<< HEAD
+    return this.http.put('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
+      .map((res: any) => {
         this.authenticationService.setSessionAvatar(res.personal_info.avatar);
 =======
+    return this.http.put<UserInfoSeason>('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
+      .map(res => {
         this.authenticationService.setSessionAvatar(res['personal_info'].avatar);
->>>>>>> 14a5df3f4d97530865a45bdb59242a08bc410190
+>>>>>>> 3995b7a46b5443e332efdfb8afb9bd580aadd912
         return res;
       });
   }
