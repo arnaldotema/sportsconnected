@@ -32,16 +32,17 @@
       </div>
       <div class="row-left">
         <div class="player-image">
-          <img [src]="viewModel.current_season.personal_info.avatar" alt="Profile image"
+          <img *ngIf="!cropperReady" [src]="viewModel.current_season.personal_info.avatar" alt="Profile image"
                title="Profile" style="left: -241.5px;">
+          <img [src]="croppedImage"/>
         </div>
         <div class="profile-buttons">
-          <button mat-raised-button class="sc-btn btn-sc-default">Alterar</button>
+          <!-- <button mat-raised-button class="sc-btn btn-sc-default">Alterar</button> -->
           <div>
             <image-cropper
               [imageChangedEvent]="imageChangedEvent"
               [maintainAspectRatio]="true"
-              [aspectRatio]="3 / 3"
+              [aspectRatio]="3 / 4"
               [resizeToWidth]="128"
               [roundCropper]="false"
               format="jpeg"
@@ -52,9 +53,17 @@
               style="max-height: 33vh"
               [style.display]="cropperReady ? null : 'none'"
             ></image-cropper>
-            <img [src]="croppedImage"/>
           </div>
-          <input type="file" (change)="fileChangeEvent($event)"/>
+          <div>
+            <input
+              type="file"
+              class="filestyle"
+              data-classButton="btn btn-primary"
+              data-input="false"
+              data-classIcon="icon-plus"
+              data-buttonText="Alterar"
+              (change)="fileChangeEvent($event)"/>
+          </div>
         </div>
       </div>
       <div class="row-center-edit-mode centered">
@@ -286,3 +295,4 @@
     }
   </style>
 </div>
+<script type="text/javascript" src="assets/js/bootstrap-filestyle.min.js"> </script>

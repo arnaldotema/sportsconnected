@@ -48,12 +48,12 @@ mongoose.connect(config.database);
 mongoose.connection.on('connected', function(){
     console.log("im connected to " + config.database);
     //var crawler = require('./crawlers/zerozero/crawler')
-    var gary_processor = require('./gary_processor/gary_processor')
-})
+    let gary_processor = require('./gary_processor/gary_processor')
+});
 
 mongoose.connection.on('error', function(err){
     console.log("Database error: " + err);
-})
+});
 
 //Start
 app.get('/', function(req, res){
