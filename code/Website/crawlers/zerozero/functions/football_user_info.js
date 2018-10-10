@@ -12,7 +12,7 @@ const footballCompetitionSeason = require('../../../models/football_competition_
 const footballTeamSeason = require('../../../models/football_team_season');
 const footballUserInfoCrawler = require('../functions/football_match');
 
-function cascadeUserInfoSeasonUpdates(res, done){
+function cascadeUserInfoSeasonUpdates(res, done) {
     footballTeamSeason.addPlayerToTeam(res.options.team_season._id, res.options.user_info_season, function (err, result) {
         if (err) {
             logger.error("Error when adding player to team:", err);
@@ -44,7 +44,7 @@ function cascadeUserInfoSeasonUpdates(res, done){
     });
 }
 
-const updateUserInfo = function (err, res, done){
+const updateUserInfo = function (err, res, done) {
 
     const user_info = {
         type: 1,
@@ -70,13 +70,14 @@ const updateUserInfo = function (err, res, done){
     });
 };
 
-const updateUserInfoSeason = function(err, res, done){
+const updateUserInfoSeason = function (err, res, done) {
     const user_info_season = {
         user_info_id: res.options.user_info._id,
         season_id: res.options.team_season.season_id,
         personal_info: {
             name: '',
             avatar: '',
+            age: 0,
             full_name: '',
             positions: [],
             number: res.options.player_number,
@@ -89,8 +90,8 @@ const updateUserInfoSeason = function(err, res, done){
             updated_at: Date.now()
         },
         team: {
-            id: res.options.team_season ? res.options.team_season._id : 0 ,
-            team_id: res.options.team_season ? res.options.team_season.team_id : 0 ,
+            id: res.options.team_season ? res.options.team_season._id : 0,
+            team_id: res.options.team_season ? res.options.team_season.team_id : 0,
             acronym: res.options.team_season ? res.options.team_season.acronym : '',
             avatar: res.options.team_season ? res.options.team_season.avatar : '',
             name: res.options.team_season ? res.options.team_season.name : ''
@@ -104,17 +105,17 @@ const updateUserInfoSeason = function(err, res, done){
         "https://www.zerozero.pt" + res.$("#page_header .logo img")[0].attribs["data-cfsrc"] :
         '';
 
-    res.$("#entity_bio .bio").each(function(){
+    res.$("#entity_bio .bio").each(function () {
         let parsedData = res.$(this).html().split("<span>");
-        if(parsedData.length < 2){
+        if (parsedData.length < 2) {
             //logger.error("Can't parse player info due to html misformation");
         }
-        else{
+        else {
             parsedData = parsedData[1].split("</span>");
         }
         let attribute = entities.decode(parsedData[0]);
         let value = parsedData[1];
-        switch(attribute) {
+        switch (attribute) {
             case "Nome":
                 user_info_season.personal_info.name = utf8.encode(value);
                 break;
@@ -126,23 +127,28 @@ const updateUserInfoSeason = function(err, res, done){
         }
     });
 
-    res.$("#entity_bio .bio_half").each(function(){
+    res.$("#entity_bio .bio_half").each(function () {
         let parsedData = res.$(this).html().split("<span>");
-        if(parsedData.length < 2){
+        if (parsedData.length < 2) {
             logger.error("Can't parse player info due to html misformation");
         }
-        else{
+        else {
             parsedData = parsedData[1].split("</span>");
         }
         let attribute = entities.decode(parsedData[0]);
         let value = parsedData[1];
-        switch(attribute) {
+        switch (attribute) {
             case "Nacionalidade":
                 value = value.split('<div class="text">')[1].split("</div>")[0];
                 user_info_season.personal_info.nationality = value;
                 break;
             case "Nascimento":
                 user_info_season.personal_info.date_of_birth = new Date(value.match(/\d+-\d+-\d+/g)[0]);
+                // Updating user's age based on his or her date of birth
+                let birth_date = new Date(user_info_season.personal_info.date_of_birth);
+                let ageDifMs = Date.now() - birth_date.getTime();
+                let ageDate = new Date(ageDifMs);
+                user_info_season.personal_info.age = Math.abs(ageDate.getUTCFullYear() - 1970);
                 break;
             case "Pé preferencial":
                 user_info_season.personal_info.foot = utf8.encode(value);
@@ -170,8 +176,8 @@ const updateUserInfoSeason = function(err, res, done){
     });
 };
 
-const updateUserInfoCurrentSeasons = function(err, res, done){
-    footballUserInfoSeason.getByTeamSeasonId(res.options.team_season._id, function(err, result){
+const updateUserInfoCurrentSeasons = function (err, res, done) {
+    footballUserInfoSeason.getByTeamSeasonId(res.options.team_season._id, function (err, result) {
         if (err) {
             logger.error(err);
             zerozero.proxyFailCallback(res, done);
