@@ -1901,7 +1901,7 @@ export class GenericUserService {
         {
           search_item: type,
           selected_filter: '$regex',
-          selected_value: query_list
+          selected_value: query
         }
       );
     }
@@ -1910,12 +1910,12 @@ export class GenericUserService {
         {
           search_item: 'team.name',
           selected_filter: '$regex',
-          selected_value: query_list
+          selected_value: query
         },
         {
           search_item: 'personal_info.name',
           selected_filter: '$regex',
-          selected_value: query_list
+          selected_value: query
         }
       );
     }
@@ -1924,6 +1924,7 @@ export class GenericUserService {
       query: query_list
     }
 
+    debugger;
     return this.http.post<SearchEntityViewmodel[]>('/api/players/search', body, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
