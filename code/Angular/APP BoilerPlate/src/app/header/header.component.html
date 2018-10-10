@@ -33,7 +33,7 @@
       </a>
 
       <div *ngIf="isAuthenticated()" class="profile-menu">
-        <a routerLink="/user-info/{{viewModel.profile_id}}" class="avatar">
+        <a *ngIf="viewModel.avatar" routerLink="/user-info/{{viewModel.profile_id}}" class="avatar">
           <img [src]="viewModel.avatar" class="sc-profile-small-image">
         </a>
 
