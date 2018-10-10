@@ -45,11 +45,12 @@ app.use('/api/users', users);
 //Database
 mongoose.connect(config.database);
 
-mongoose.connection.on('connected', function(){
+mongoose.connection.on('connected', function() {
     console.log("im connected to " + config.database);
     //var crawler = require('./crawlers/zerozero/crawler')
     const gary_processor = require('./gary_processor/gary_processor')
     const notifications = require('./notifications/app');
+});
 
 mongoose.connection.on('error', function(err){
     console.log("Database error: " + err);
