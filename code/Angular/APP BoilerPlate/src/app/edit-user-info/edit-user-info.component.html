@@ -209,7 +209,7 @@
                          (change)="changedInput('player_minutes_played',$event, true)"
                          placeholder="Minutos jogados" value="{{match.player_minutes_played}}">
                 </mat-form-field>
-                <button mat-raised-button class="sc-btn btn-sc-default" (click)="goToMatch()">Ir para Jogo</button>
+                <button mat-raised-button class="sc-btn btn-sc-default" (click)="goToMatch(match)">Ir para Jogo</button>
               </mat-expansion-panel>
             </mat-accordion>
           </div>

@@ -1895,8 +1895,10 @@ export class GenericUserService {
 
   //TODO: ALTT - Change input params to just a Filter_Search model
   searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
+    debugger;
+
     let query_list = [];
-    if (type) {
+    if (type || type != "") {
       query_list.push(
         {
           search_item: type,
@@ -1924,7 +1926,6 @@ export class GenericUserService {
       query: query_list
     }
 
-    debugger;
     return this.http.post<SearchEntityViewmodel[]>('/api/players/search', body, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
@@ -1935,10 +1936,9 @@ export class GenericUserService {
   //detailedSearchUser(search_obj: Array<FilterSearch>): Observable<UserInfoSearch[]> {
   detailedSearchUser(search_obj: Array<FilterSearch>): Observable<any[]> {
 
-    if (this.testing) {
-      return of(this.mockUserInfo);
-    }
-    return this.http.post<SearchEntityViewmodel[]>('/api/players/search', search_obj, this.requestOptions)
+    debugger;
+
+    return this.http.post<SearchEntityViewmodel[]>('/api/players/search', {query: search_obj}, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
         catchError(this.handleError)

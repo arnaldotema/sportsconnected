@@ -15,7 +15,10 @@ export class MatchComponent implements OnInit, AfterViewInit {
   viewModel: MatchViewModel;
   id;
 
-  constructor(private matchService: MatchService, public dialog: MatDialog, private route: ActivatedRoute) {}
+  constructor(
+    private matchService: MatchService,
+    public dialog: MatDialog,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.id  = this.route.snapshot.paramMap.get('id');
