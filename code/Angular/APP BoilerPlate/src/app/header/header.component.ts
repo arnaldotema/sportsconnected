@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   searchResults: SearchEntityViewmodel[];
   viewModel: SessionUser;
 
-  show_notifications: boolean;
   show_search: boolean;
 
   //Login variables
@@ -40,7 +39,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.show_notifications = false;
     this.show_search = false;
   }
 

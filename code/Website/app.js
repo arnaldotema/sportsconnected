@@ -48,7 +48,8 @@ mongoose.connect(config.database);
 mongoose.connection.on('connected', function(){
     console.log("im connected to " + config.database);
     //var crawler = require('./crawlers/zerozero/crawler')
-    var gary_processor = require('./gary_processor/gary_processor')
+    const gary_processor = require('./gary_processor/gary_processor')
+    const notifications = require('./notifications/app');
 })
 
 mongoose.connection.on('error', function(err){
@@ -59,7 +60,6 @@ mongoose.connection.on('error', function(err){
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
-
 
 app.listen(port, function(){
     console.log('Server started on port ' + port);
