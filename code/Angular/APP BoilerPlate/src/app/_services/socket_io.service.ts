@@ -13,7 +13,7 @@ export class SocketIOService {
 
   connect(): Rx.Subject<MessageEvent> {
 
-    this.socket = io("http://localhost:5000");
+    this.socket = io("http://199.247.15.139:5000");
 
     let observable = new Observable(observer => {
       this.socket.on('recommendation', (data) => {
