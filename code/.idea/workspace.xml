@@ -2,26 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change beforePath="$PROJECT_DIR$/../PS/Pres/Carol-Apresentação-Players-Net.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../PS/Pres/Carol-Apresentação-Players-Net.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/notification_viewmodel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/notifications.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts.orig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Website/app.js.orig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Website/notifications/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Website/services/notifications/notifications_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/match.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/match.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Website/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/models/football_team_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/models/football_team_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/models/football_user_info_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/models/football_user_info_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/services/football_team_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/services/football_team_season_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/auth/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/gary_processor/gary_processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/gary_processor/gary_processor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/mailers/achievements_mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/mailers/achievements_mailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_user_info_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Website/services/football_user_info_service.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
-              <caret line="305" column="44" lean-forward="true" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
+              <caret line="305" column="44" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
                 <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
@@ -87,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="163">
-              <caret line="210" column="40" lean-forward="true" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
+              <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
               <folding>
                 <element signature="n#!!block;n#initializeMatchModel#0" />
                 <element signature="e#1738#2026#0" />
@@ -210,7 +218,7 @@
         <entry file="file://$PROJECT_DIR$/Website/dispatcher/dispatcher.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="697">
-              <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+              <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -219,7 +227,7 @@
         <entry file="file://$PROJECT_DIR$/Website/gary_processor/gary_processor.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+              <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -228,7 +236,7 @@
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="211" column="85" lean-forward="true" selection-start-line="211" selection-start-column="85" selection-end-line="211" selection-end-column="85" />
+              <caret line="211" column="85" selection-start-line="211" selection-start-column="85" selection-end-line="211" selection-end-column="85" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#image-cropper#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -242,7 +250,7 @@
         <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="673">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="81" />
+              <caret line="69" selection-start-line="69" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -588,12 +596,12 @@
       <workItem from="1535208133636" duration="56202000" />
       <workItem from="1536194431046" duration="560000" />
       <workItem from="1537910293667" duration="245163000" />
-      <workItem from="1538936572431" duration="35350000" />
+      <workItem from="1538936572431" duration="36130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="444061000" />
+    <option name="totallyTimeSpent" value="444841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="745" extended-state="6" />
@@ -1347,7 +1355,7 @@
     <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
-          <caret line="210" column="40" lean-forward="true" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
+          <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
           <folding>
             <element signature="n#!!block;n#initializeMatchModel#0" />
             <element signature="e#1738#2026#0" />
@@ -1466,21 +1474,21 @@
     <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="81" />
+          <caret line="69" selection-start-line="69" selection-end-line="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/dispatcher/dispatcher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
-          <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+          <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/gary_processor/gary_processor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+          <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1494,7 +1502,7 @@
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="211" column="85" lean-forward="true" selection-start-line="211" selection-start-column="85" selection-end-line="211" selection-end-column="85" />
+          <caret line="211" column="85" selection-start-line="211" selection-start-column="85" selection-end-line="211" selection-end-column="85" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#image-cropper#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -1524,7 +1532,7 @@
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
-          <caret line="305" column="44" lean-forward="true" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
+          <caret line="305" column="44" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
             <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
