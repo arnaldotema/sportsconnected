@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport(
         debug: false // include SMTP traffic in the logs
     },
     {
-        from: 'SportsConnected <arnaldo.tema@sportsconnected.pt>',
+        from: 'PlayersNet <arnaldo.tema@sportsconnected.pt>',
     }
 );
 
@@ -28,7 +28,7 @@ Service.ownAchievementMail = function(user_info, achievement) {
         //to: own_name + ' <' + own_email + '>',
         to: "Arnaldo Trindade <arnaldo.trindade@closer.pt>",
         // Subject of the message
-        subject: 'You got a new achievement in SportsConnected!',
+        subject: 'You got a new achievement in PlayersNet!',
 
         // plaintext body
         text: 'New achievement: ' + achievement.name + '!',
@@ -36,7 +36,7 @@ Service.ownAchievementMail = function(user_info, achievement) {
         // HTML body
         html:
         '<p><b>Hello ' + own_name + ',</b></p>' +
-        '<p>You have earned a new achievement in SportsConnected:</p>' +
+        '<p>You have earned a new achievement in PlayersNet:</p>' +
         '<p>' + achievement.name + '</p>' +
         '<p><img src="cid:nyan@example.com"/></p>',
 
