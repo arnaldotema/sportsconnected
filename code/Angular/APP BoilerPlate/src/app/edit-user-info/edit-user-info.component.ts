@@ -290,7 +290,7 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
     this.userInfoService.editUserInfo(this.viewModel.current_season, this.avatar)
       .subscribe(res => {
         debugger;
-        this.authenticationService.setSessionAvatar(res.personal_info.avatar + '?random=' + _make_random_text());
+        this.authenticationService.setSessionAvatar(res['personal_info'].avatar + '?random=' + _make_random_text());
         this.router.navigate(['/user-info/' + this.id]);
       })
   }
