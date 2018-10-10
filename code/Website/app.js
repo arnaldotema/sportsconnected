@@ -47,12 +47,7 @@ mongoose.connect(config.database);
 
 mongoose.connection.on('connected', function() {
     console.log("im connected to " + config.database);
-<<<<<<< HEAD
-    let crawler = require('./crawlers/zerozero/crawler')
-    let gary_processor = require('./gary_processor/gary_processor')
-});
-=======
-    //var crawler = require('./crawlers/zerozero/crawler')
+    //let crawler = require('./crawlers/zerozero/crawler')
     const gary_processor = require('./gary_processor/gary_processor')
     const notifications = require('./notifications/app');
 });
