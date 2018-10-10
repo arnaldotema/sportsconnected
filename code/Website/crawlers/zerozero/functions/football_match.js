@@ -208,6 +208,35 @@ function _processPlayerEvents(match, res, player, starter, ids, team){
         team.push(playerStats);
 }
 
+function _updateRegex(regex, match_info){
+    if(!regex){
+        regex = "##";
+    }
+
+    regex = regex.slice(0, -1); // remove the last character "#"
+
+    let game_partition = "=";
+
+    match_info.goals.forEach(function(value){
+        game_partition += "G"
+    });
+    match_info.assists.forEach(function(value){
+        game_partition += "A"
+    });
+    match_info.red_cards.forEach(function(value){
+        game_partition += "R"
+    });
+    match_info.yellow_cards.forEach(function(value){
+        game_partition += "Y"
+    });
+
+    game_partition += match_info.minutes_played;
+
+    regex += game_partition + "= "; //close game partition
+
+    return regex + "#"; //close regex
+}
+
 function processMatchIds(match, res, done, cb){
     // User_Infos
 
@@ -259,7 +288,7 @@ function processMatchIds(match, res, done, cb){
             zerozero.proxyFailCallback(res, done);
         }
         else {
-            logger.info("Successfully fetched match user infos", result);
+            logger.info("Successfully fetched match user infos season", result);
 
             result[0].home_team.forEach(function (value, index) {
                 match.home_team.main_lineup[index].name = value.personal_info.name;
@@ -394,19 +423,19 @@ function processUserInfoRegex(res, done){
     };
 
     res.options.match.home_team.main_lineup.forEach(function (value) {
-        homeTeamIds.main_lineup.push(value._id);
+        homeTeamIds.main_lineup.push(value.user_info_id);
     });
 
     res.options.match.away_team.main_lineup.forEach(function (value) {
-        awayTeamIds.main_lineup.push(value._id);
+        awayTeamIds.main_lineup.push(value.user_info_id);
     });
 
     res.options.match.home_team.reserves.forEach(function (value) {
-        homeTeamIds.reserves.push(value._id);
+        homeTeamIds.reserves.push(value.user_info_id);
     });
 
     res.options.match.away_team.reserves.forEach(function (value) {
-        awayTeamIds.reserves.push(value._id);
+        awayTeamIds.reserves.push(value.user_info_id);
     });
 
     footballUserInfo.getMatchUserInfos(homeTeamIds, awayTeamIds, function (err, result) {
@@ -417,75 +446,33 @@ function processUserInfoRegex(res, done){
         else {
             logger.info("Successfully fetched match user infos", result);
 
+            let regexes = {};
+
             result[0].home_team.forEach(function (value, index) {
-                match.home_team.main_lineup[index].name = value.personal_info.name;
-                match.home_team.main_lineup[index].avatar = value.personal_info.avatar;
-                match.home_team.main_lineup[index].positions = value.personal_info.positions;
-                match.home_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.home_team.main_lineup[index].team_id = value._id;
-                match.home_team.main_lineup[index].user_info_id = value.user_info_id;
+                regexes[value._id] = _updateRegex(value.actions_regex, res.options.match.home_team.main_lineup[index])
             });
 
             result[0].away_team.forEach(function (value, index) {
-                match.away_team.main_lineup[index].name = value.personal_info.name;
-                match.away_team.main_lineup[index].avatar = value.personal_info.avatar;
-                match.away_team.main_lineup[index].positions = value.personal_info.positions;
-                match.away_team.main_lineup[index].nationality = value.personal_info.nationality;
-                match.away_team.main_lineup[index].team_id = value._id;
-                match.away_team.main_lineup[index].user_info_id = value.user_info_id;
+                regexes[value._id] = _updateRegex(value.actions_regex, res.options.match.away_team.main_lineup[index])
             });
 
             result[0].home_team_reserves.forEach(function (value, index) {
-                match.home_team.reserves[index].name = value.personal_info.name;
-                match.home_team.reserves[index].avatar = value.personal_info.avatar;
-                match.home_team.reserves[index].positions = value.personal_info.positions;
-                match.home_team.reserves[index].nationality = value.personal_info.nationality;
-                match.home_team.reserves[index].team_id = value._id;
-                match.home_team.reserves[index].user_info_id = value.user_info_id;
+                regexes[value._id] = _updateRegex(value.actions_regex, res.options.match.home_team.reserves[index])
             });
 
             result[0].away_team_reserves.forEach(function (value, index) {
-                match.away_team.reserves[index].name = value.personal_info.name;
-                match.away_team.reserves[index].avatar = value.personal_info.avatar;
-                match.away_team.reserves[index].positions = value.personal_info.positions;
-                match.away_team.reserves[index].nationality = value.personal_info.nationality;
-                match.away_team.reserves[index].team_id = value._id;
-                match.away_team.reserves[index].user_info_id = value.user_info_id;
+                regexes[value._id] = _updateRegex(value.actions_regex, res.options.match.away_team.reserves[index])
             });
 
-            footballMatch.updateAndReturnByZeroZeroId(res.options.zerozeroId, match, function (err, result) {
+            footballUserInfo.updateRegexNewMatch(regexes, function (err, result) {
                 if (err) {
                     logger.error(err);
-                    zerozero.proxyFailCallback(res, done)
+                    zerozero.proxyFailCallback(res, done);
                 }
                 else {
-                    logger.info("Successfully created match " + result._doc);
+                    logger.info("Successfully updated user infos regexes", result);
 
-                    res.options.match = result._doc;
-
-                    const embedMatch = {
-                        id: res.options.match._id,
-                        date: res.options.match.date,
-                        competition_season:{
-                            id: res.options.match.competition_season.id,
-                            competition_id: res.options.match.competition_season.competition_id,
-                            name: res.options.match.competition_season.name,
-                            avatar: res.options.match.competition_season.avatar
-                        },
-                        home_team: {
-                            id: res.options.match.home_team.id,
-                            name: res.options.match.home_team.name,
-                            avatar: res.options.match.home_team.avatar,
-                            goals: res.options.match.home_team.goals.length
-                        },
-                        away_team: {
-                            id: res.options.match.away_team.id,
-                            name: res.options.match.away_team.name,
-                            avatar: res.options.match.away_team.avatar,
-                            goals: res.options.match.away_team.goals.length
-                        }
-                    }
-                    cb(embedMatch, res, done);
+                    done();
                 }
             });
         }
