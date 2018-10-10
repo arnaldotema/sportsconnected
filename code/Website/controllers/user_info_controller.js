@@ -187,7 +187,16 @@ Service.add_recommendation = function (req, res) {
                 });
             }
 
-            return res.json(user_info);
+            FootballUserInfo.updateRecommendationRegex(user_info, function (err, user_info) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when updating user_info',
+                        error: err
+                    });
+                }
+
+                return res.json(user_info);
+            })
 
         })
 

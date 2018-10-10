@@ -659,7 +659,7 @@ export class UserInfoService {
     formData.append('avatar', avatar, 'avatar');
 
     return this.http.put('/api/players/' + user_info_season._id , formData, this.requestOptionsMultipart)
-      .map(res => {
+      .map((res: any) => {
         this.authenticationService.setSessionAvatar(res.personal_info.avatar);
         return res;
       });
