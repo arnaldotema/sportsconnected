@@ -1895,7 +1895,6 @@ export class GenericUserService {
 
   //TODO: ALTT - Change input params to just a Filter_Search model
   searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
-    debugger;
 
     let query_list = [];
     if (type || type != "") {
@@ -1909,11 +1908,6 @@ export class GenericUserService {
     }
     else {
       query_list.push(
-        {
-          search_item: 'team.name',
-          selected_filter: '$regex',
-          selected_value: query
-        },
         {
           search_item: 'personal_info.name',
           selected_filter: '$regex',
