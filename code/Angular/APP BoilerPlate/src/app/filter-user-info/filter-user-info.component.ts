@@ -39,6 +39,7 @@ export class FilterUserInfoComponent implements OnInit {
   leagues;
   players: UserInfoSearch[];
   loading = false;
+  no_results = false;
   user;
 
   sortedData;
@@ -165,7 +166,7 @@ export class FilterUserInfoComponent implements OnInit {
         filters_text: ['No máximo']
       },
       'personal_info.positions': {
-        values: ['Guarda Redes', 'Defesa','Defesa (Defesa Central)', 'Defesa (Defesa Esquerdo)', 'Defesa (Defesa Direito)', 'Médio', 'Médio (Médio Defensivo)', 'Médio (Médio Centro)', 'Médio (Médio Ofensivo)', 'Médio Esquerdo','Médio (Extremo Esquerdo)','Médio (Extremo Direito)', 'Médio Direito','Avançado (Extremo Direito)','Avançado (Extremo Esquerdo)', 'Avançado (Ponta de Lança)'],
+        values: ['Guarda Redes', 'Defesa', 'Defesa (Defesa Central)', 'Defesa (Defesa Esquerdo)', 'Defesa (Defesa Direito)', 'Médio', 'Médio (Médio Defensivo)', 'Médio (Médio Centro)', 'Médio (Médio Ofensivo)', 'Médio Esquerdo', 'Médio (Extremo Esquerdo)', 'Médio (Extremo Direito)', 'Médio Direito', 'Avançado (Extremo Direito)', 'Avançado (Extremo Esquerdo)', 'Avançado (Ponta de Lança)'],
         suffix: '',
         filters: [
           {
@@ -507,15 +508,23 @@ export class FilterUserInfoComponent implements OnInit {
 
   loadPlayers() {
     this.loading = true;
+    this.no_results = false;
 
-    this.search_fields.forEach((field, key)=>{
-      if(field.search_item == "personal_info.positions"){
+    this.search_fields.forEach((field, key) => {
+      if (field.search_item == "personal_info.positions") {
         field.selected_value = [field.selected_value];
       }
     });
 
     this.genericUserService.detailedSearchUser(this.search_fields)
       .subscribe(players => {
+
+          debugger;
+
+          if (!players) {
+            this.loading = false;
+            this.no_results = true;
+          }
           players.forEach(player => {
             let birth_date = new Date(player.personal_info.date_of_birth);
             let ageDifMs = Date.now() - birth_date.getTime();
@@ -524,10 +533,10 @@ export class FilterUserInfoComponent implements OnInit {
           });
           this.players = players;
           this.loading = false;
+          this.no_results = false;
           this.sortedData = this.players.slice();
         }
       );
-
   }
 
   addFieldValue(form_values) {
