@@ -778,6 +778,7 @@ export class MatchService {
   }
 
   getMatch(id: string): Observable<MatchViewModel> {
+    debugger;
     if(id == "-1") {
       return of(this.mockMatches[0]);
     }
