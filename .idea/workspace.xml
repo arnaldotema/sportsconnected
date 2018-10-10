@@ -5,31 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/code/Website/mailers/achievements_mailer" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/match.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/match.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app-routing.module.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.html" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.css" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Website/app.js" afterPath="$PROJECT_DIR$/code/Website/app.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/auth/auth.js" afterPath="$PROJECT_DIR$/code/Website/auth/auth.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
-      <change beforePath="$PROJECT_DIR$/code/Website/routes/user_routes.js" afterPath="$PROJECT_DIR$/code/Website/routes/user_routes.js" />
+      <change beforePath="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" afterPath="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" />
+      <change beforePath="$PROJECT_DIR$/code/Website/models/football_achievement.js" afterPath="$PROJECT_DIR$/code/Website/models/football_achievement.js" />
+      <change beforePath="$PROJECT_DIR$/code/Website/package-lock.json" afterPath="$PROJECT_DIR$/code/Website/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/code/Website/package.json" afterPath="$PROJECT_DIR$/code/Website/package.json" />
+      <change beforePath="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" afterPath="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,99 +25,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/app.js">
+      <file leaf-file-name="football_achievement.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_achievement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="38" column="77" lean-forward="false" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="match.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/match.service.ts">
+      <file leaf-file-name="achievements_mailer" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/Website/mailers/achievements_mailer">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="784" column="0" lean-forward="false" selection-start-line="784" selection-start-column="0" selection-end-line="791" selection-end-column="10" />
-              <folding>
-                <element signature="e#865#25881#0" expanded="false" />
-                <element signature="e#26792#276020#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create-account.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="1416" column="10" lean-forward="false" selection-start-line="1416" selection-start-column="10" selection-end-line="1416" selection-end-column="10" />
-              <folding>
-                <element signature="e#737#48227#0" expanded="false" />
-                <element signature="e#48275#50631#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="competition.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="44" selection-end-column="8" />
+            <state relative-caret-position="-246">
+              <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-account.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html">
+      <file leaf-file-name="football_user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="match.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html">
+      <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="435" column="28" lean-forward="false" selection-start-line="435" selection-start-column="28" selection-end-line="435" selection-end-column="28" />
+            <state relative-caret-position="-561">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
-                <element signature="n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#3;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#3;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#3;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="e#659#834#0" expanded="false" />
+                <element signature="e#857#1509#0" expanded="false" />
+                <element signature="e#1529#1685#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit-user-info.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
+      <file leaf-file-name="gary_processor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="270" selection-end-column="7" />
+            <state relative-caret-position="77">
+              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_achievement_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/services/football_achievement_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
               <folding>
-                <element signature="e#0#63#0" expanded="true" />
+                <element signature="e#153#1581#0" expanded="false" />
+                <element signature="e#1908#2073#0" expanded="false" />
+                <element signature="e#2138#2753#0" expanded="false" />
+                <element signature="e#2827#3283#0" expanded="false" />
+                <element signature="e#3358#3361#0" expanded="false" />
+                <element signature="e#3438#3441#0" expanded="false" />
+                <element signature="e#3522#3776#0" expanded="false" />
+                <element signature="e#3819#4807#0" expanded="false" />
+                <element signature="e#4868#5456#0" expanded="false" />
+                <element signature="e#5520#6113#0" expanded="false" />
+                <element signature="e#6168#6625#0" expanded="false" />
+                <element signature="e#6700#7075#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="59" column="11" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="59" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_competition_season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/models/football_competition_season.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,7 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Competition</find>
       <find>competition</find>
       <find>res.options.team</find>
       <find>result._doc</find>
@@ -181,6 +182,7 @@
       <find>leag</find>
       <find>teams</find>
       <find>chosenTeam</find>
+      <find>_id</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
@@ -210,6 +212,7 @@
       <replace>home</replace>
       <replace>.minutes_played</replace>
       <replace>FootballUserSchema</replace>
+      <replace>user_info_id</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Development\PlayersNet</dir>
@@ -226,14 +229,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/code/Website/models/football_user_info.js" />
-        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" />
-        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
-        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/match_viewmodel.ts" />
-        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_match.ts" />
-        <option value="$PROJECT_DIR$/code/Website/services/football_competition_season_service.js" />
-        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js" />
-        <option value="$PROJECT_DIR$/code/Website/models/football_competition_season.js" />
         <option value="$PROJECT_DIR$/code/Website/services/football_team_season_service.js" />
         <option value="$PROJECT_DIR$/code/Website/models/football_match.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_user_info.js" />
@@ -260,8 +255,6 @@
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js" />
-        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
-        <option value="$PROJECT_DIR$/code/Website/app.js" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
@@ -277,6 +270,16 @@
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
+        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
+        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js" />
+        <option value="$PROJECT_DIR$/code/Website/models/football_user_info.js" />
+        <option value="$PROJECT_DIR$/code/Website/app.js" />
+        <option value="$PROJECT_DIR$/docs/sports regex.txt" />
+        <option value="$PROJECT_DIR$/code/Website/services/football_achievement_service.js" />
+        <option value="$PROJECT_DIR$/code/Website/models/football_achievement.js" />
+        <option value="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" />
+        <option value="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" />
+        <option value="$PROJECT_DIR$/code/Website/mailers/achievements_mailer" />
       </list>
     </option>
   </component>
@@ -293,7 +296,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/node_modules" />
     <handled-path value="$PROJECT_DIR$/code/Website/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
@@ -325,76 +327,65 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="mailers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="_services" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PlayersNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayersNet" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="create-account" type="462c0819:PsiDirectoryNode" />
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,6 +395,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Development\SportsConnected\code\Website\services" />
       <recent name="D:\Development\PlayersNet\code\Website\models" />
       <recent name="D:\Development\PlayersNet\code\Angular\APP BoilerPlate\src\app\_models" />
       <recent name="D:\Development\PlayersNet\code\Website\services" />
@@ -550,14 +542,15 @@
       <workItem from="1534500019313" duration="1969000" />
       <workItem from="1535894051327" duration="17486000" />
       <workItem from="1536560574126" duration="26996000" />
+      <workItem from="1539100138985" duration="17533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496253000" />
+    <option name="totallyTimeSpent" value="513786000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -567,29 +560,29 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22712418" sideWeight="0.53630865" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3251634" sideWeight="0.49603173" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32467532" sideWeight="0.49603173" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22712418" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22619048" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.4888268" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946696" sideWeight="0.4888268" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38311687" sideWeight="0.85515875" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5111732" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38398692" sideWeight="0.85515875" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -635,43 +628,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>68</line>
+          <line>69</line>
           <option name="timeStamp" value="287" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>255</line>
+          <line>286</line>
           <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>299</line>
+          <line>330</line>
           <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>339</line>
+          <line>372</line>
           <option name="timeStamp" value="290" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>353</line>
+          <line>386</line>
           <option name="timeStamp" value="291" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>367</line>
+          <line>400</line>
           <option name="timeStamp" value="292" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js</url>
-          <line>68</line>
+          <line>69</line>
           <option name="timeStamp" value="324" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_user_info.js</url>
-          <line>55</line>
-          <option name="timeStamp" value="336" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_team.js</url>
@@ -729,39 +717,25 @@
           <option name="timeStamp" value="376" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js</url>
-          <line>44</line>
-          <option name="timeStamp" value="389" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/routes/user_routes.js</url>
           <line>43</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="396" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/code/Website/auth/auth.js</url>
-          <line>12</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="401" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/routes/user_routes.js</url>
           <line>20</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="402" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/routes/user_routes.js</url>
           <line>30</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="403" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="411" />
+      <option name="time" value="457" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -769,233 +743,16 @@
         <watch expression="result[&quot;0&quot;].away_team" />
         <watch expression="result" />
         <watch expression="match.away_team.main_lineup[&quot;1&quot;]" />
+        <watch expression="value" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/Website/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/routes/player_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/routes/team_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/team_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="72" column="86" lean-forward="false" selection-start-line="72" selection-start-column="86" selection-end-line="72" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/models/football_match.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
-            <element signature="e#3012#3240#0" expanded="false" />
-            <element signature="e#5984#6212#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="66" column="18" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="66" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/.angular-cli.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_guards/auth.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_guards/admin.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1615">
-          <caret line="10" column="45" lean-forward="false" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/node_modules/mongodb-core/lib/connection/pool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="531" column="17" lean-forward="false" selection-start-line="531" selection-start-column="17" selection-end-line="531" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/node_modules/mongodb/lib/operations/collection_ops.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="827" column="38" lean-forward="false" selection-start-line="827" selection-start-column="38" selection-end-line="827" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/node_modules/mongodb/lib/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/node_modules/mongodb-core/lib/error.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="42" column="11" lean-forward="false" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="96" lean-forward="false" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/routes/user_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/auth/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/competition_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="134" column="31" lean-forward="false" selection-start-line="134" selection-start-column="31" selection-end-line="134" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="64" column="48" lean-forward="false" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="73" column="4" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="550" column="38" lean-forward="true" selection-start-line="550" selection-start-column="38" selection-end-line="550" selection-end-column="38" />
-          <folding>
-            <element signature="e#667#15105#0" expanded="false" />
-            <element signature="e#15139#18305#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,10 +760,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="1875" column="0" lean-forward="false" selection-start-line="1875" selection-start-column="0" selection-end-line="1875" selection-end-column="43" />
-          <folding>
-            <element signature="e#771#61276#0" expanded="false" />
-            <element signature="e#61316#63672#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,9 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#73#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,9 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#69#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1050,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,9 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="22" column="54" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#63#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,9 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,11 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!block;n#getSessionUser#0;n#AuthenticationService#0" expanded="false" />
-            <element signature="n#!!block;n#login#0;n#AuthenticationService#0" expanded="false" />
-            <element signature="e#1155#1742#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,15 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="77" lean-forward="false" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,13 +845,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="132" column="1" lean-forward="false" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="3502">
           <caret line="435" column="28" lean-forward="false" selection-start-line="435" selection-start-column="28" selection-end-line="435" selection-end-column="28" />
           <folding>
             <element signature="n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -1143,30 +865,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="270" selection-end-column="7" />
+        <state relative-caret-position="4386">
+          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
           <folding>
-            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#0#63#0" expanded="false" />
+            <marker date="1539099936903" expanded="true" signature="10395:10397" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/dist/main.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="13051" column="37" lean-forward="false" selection-start-line="13051" selection-start-column="37" selection-end-line="13051" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/dist/main.bundle.js" />
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/match.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="0">
           <caret line="784" column="0" lean-forward="false" selection-start-line="784" selection-start-column="0" selection-end-line="791" selection-end-column="10" />
-          <folding>
-            <element signature="e#865#25881#0" expanded="false" />
-            <element signature="e#26792#276020#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,13 +894,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
+        <state relative-caret-position="493">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="44" selection-end-column="8" />
           <folding />
         </state>
@@ -1196,29 +907,267 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="23902">
           <caret line="1416" column="10" lean-forward="false" selection-start-line="1416" selection-start-column="10" selection-end-line="1416" selection-end-column="10" />
-          <folding>
-            <element signature="e#737#48227#0" expanded="false" />
-            <element signature="e#48275#50631#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="289">
           <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="397">
           <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/node_modules/mongoose/lib/error/messages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_user_info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_recommendation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_recommendation_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_season_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_team_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_competition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="67" lean-forward="true" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-884">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!block;n#initializeMatchModel#0" expanded="false" />
+            <element signature="n#!!block;n#_getEventsTimes#0" expanded="false" />
+            <element signature="n#!!block;n#_processPlayerEvents#0" expanded="false" />
+            <element signature="n#!!block;n#_updateRegex#0" expanded="false" />
+            <element signature="n#!!block;n#processMatchPlayers#0" expanded="false" />
+            <element signature="n#!!block;n#processMatchTeams#0" expanded="false" />
+            <element signature="n#!!block;n#processMatchCompetition#0" expanded="false" />
+            <element signature="n#!!block;n#processUserInfoRegex#0" expanded="false" />
+            <element signature="e#17247#18845#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_season_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/sports regex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_competition_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_achievement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_achievement_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user_info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#659#834#0" expanded="false" />
+            <element signature="e#857#1509#0" expanded="false" />
+            <element signature="e#1529#1685#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+          <folding>
+            <element signature="e#153#1581#0" expanded="false" />
+            <element signature="e#1908#2073#0" expanded="false" />
+            <element signature="e#2138#2753#0" expanded="false" />
+            <element signature="e#2827#3283#0" expanded="false" />
+            <element signature="e#3358#3361#0" expanded="false" />
+            <element signature="e#3438#3441#0" expanded="false" />
+            <element signature="e#3522#3776#0" expanded="false" />
+            <element signature="e#3819#4807#0" expanded="false" />
+            <element signature="e#4868#5456#0" expanded="false" />
+            <element signature="e#5520#6113#0" expanded="false" />
+            <element signature="e#6168#6625#0" expanded="false" />
+            <element signature="e#6700#7075#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="59" column="11" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="59" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/mailers/achievements_mailer">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
           <folding />
         </state>
       </provider>
