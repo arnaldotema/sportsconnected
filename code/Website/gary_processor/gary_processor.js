@@ -39,7 +39,7 @@ Service.updateRecommendations();
 let test = true;
 
 let regexScheduler = schedule.scheduleJob('*/20 * * * * *', function(fireDate){
-    logger.info('This job was supposed to run at ' + fireDate + ', but actually ran at ' + new Date());
+    logger.info('This job was set to run at ' + fireDate + ', and actually ran at ' + new Date());
 
     footballUserInfo.getUserInfosByUpdatedAt(last_run, function (err, result) {
         if (err) {
