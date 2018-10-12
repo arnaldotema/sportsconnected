@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/code/Website/app.js" afterPath="$PROJECT_DIR$/code/Website/app.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts.orig" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,52 +24,18 @@
       <file leaf-file-name="gary_processor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="61" column="36" lean-forward="false" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+            <state relative-caret-position="152">
+              <caret line="40" column="78" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my-date-picker.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/node_modules/angular4-datepicker/src/my-date-picker/my-date-picker.component.ts">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#180#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-user-info.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="socket_io.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/Website/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="65" column="3" lean-forward="true" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+            <state relative-caret-position="17">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,7 +44,7 @@
       <file leaf-file-name="user_info.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="1003">
               <caret line="662" column="78" lean-forward="false" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
               <folding>
                 <element signature="e#711#15594#0" expanded="false" />
@@ -96,22 +64,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/notifications/notifications.component.html">
+      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="72">
+              <caret line="24" column="81" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
+      <file leaf-file-name="generic_user.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="80">
+              <caret line="1909" column="22" lean-forward="false" selection-start-line="1909" selection-start-column="22" selection-end-line="1909" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#771#63710#0" expanded="false" />
+                <element signature="e#63751#66107#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,7 +199,6 @@
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js" />
-        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.ts" />
@@ -258,7 +229,6 @@
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/notifications/notifications.component.ts" />
         <option value="$PROJECT_DIR$/code/Website/services/notifications/notifications_service.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_match.js" />
-        <option value="$PROJECT_DIR$/code/Website/controllers/user_info_controller.js" />
         <option value="$PROJECT_DIR$/code/Website/services/football_user_info_service.js" />
         <option value="$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/notifications/notifications.component.html" />
@@ -267,6 +237,8 @@
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/node_modules/angular4-datepicker/src/my-date-picker/my-date-picker.component.ts" />
         <option value="$PROJECT_DIR$/code/Website/app.js" />
+        <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
+        <option value="$PROJECT_DIR$/code/Website/controllers/user_info_controller.js" />
       </list>
     </option>
   </component>
@@ -343,6 +315,13 @@
               <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="gary_processor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -508,12 +487,12 @@
       <workItem from="1535894051327" duration="17486000" />
       <workItem from="1536560574126" duration="26996000" />
       <workItem from="1539100138985" duration="18656000" />
-      <workItem from="1539151926769" duration="25628000" />
+      <workItem from="1539151926769" duration="28113000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="540537000" />
+    <option name="totallyTimeSpent" value="543022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -529,7 +508,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.49603173" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24509804" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -542,7 +521,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5111732" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970588" sideWeight="0.85515875" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3970588" sideWeight="0.85515875" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -698,7 +677,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="477" />
+      <option name="time" value="479" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -711,13 +690,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/Website/services/football_team_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1006,14 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="177" column="12" lean-forward="false" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/services/football_user_info_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1074,31 +1038,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="662" column="78" lean-forward="false" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
-          <folding>
-            <element signature="e#711#15594#0" expanded="false" />
-            <element signature="e#15627#18799#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1113,16 +1058,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="61" column="36" lean-forward="false" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+        <state relative-caret-position="153">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1132,25 +1069,72 @@
         <state relative-caret-position="459">
           <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
           <folding>
-            <element signature="e#0#180#0" expanded="true" />
+            <element signature="e#0#180#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding>
-            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#0#63#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/app.js">
+    <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="65" column="3" lean-forward="true" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+        <state relative-caret-position="152">
+          <caret line="40" column="78" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="662" column="78" lean-forward="false" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
+          <folding>
+            <element signature="e#711#15594#0" expanded="false" />
+            <element signature="e#15627#18799#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="1909" column="22" lean-forward="false" selection-start-line="1909" selection-start-column="22" selection-end-line="1909" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#771#63710#0" expanded="false" />
+            <element signature="e#63751#66107#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="24" column="81" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
           <folding />
         </state>
       </provider>
