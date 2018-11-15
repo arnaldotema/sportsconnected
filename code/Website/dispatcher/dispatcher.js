@@ -1,3 +1,17 @@
+/**
+ *
+ * NOTE:
+ *
+ * This file is not being used!
+ * It will only be used when the crawler starts being triggered automatically.
+ *
+ * */
+
+
+
+
+
+
 // LIBS
 const Crawler = require("crawler");
 const logger = require('../logging');
