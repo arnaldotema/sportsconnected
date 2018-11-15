@@ -40,7 +40,7 @@ const updateCompetition = function (err, res, done){
         );
     });
 
-    // Beta, first 5 years.
+    // Beta, first X years.
     editionIds = editionIds.splice(1, 1);
 
     footballCompetition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, function (err, result) {
@@ -70,6 +70,8 @@ const updateCompetition = function (err, res, done){
 }
 
 const updateCompetitionSeason = function (err, res, done){
+
+    // Checking if there are any teams in this template
     if(res.$('#edition_table').length == 0){
         res.$('#page_main tr td .text a').each(function() {
             let seasonId = res.$(this).attr('href').match(/\d+/g)[0];
@@ -87,6 +89,11 @@ const updateCompetitionSeason = function (err, res, done){
 
         done();
     }
+
+    // Else, we need to have a new condition checking if the template has Like (1ª Divisão, etc - like here: http://www.zerozero.pt/associacao.php?id=15)
+        // btw todo: change comp_id to id when it's associacao
+
+
     else {
         footballSeason.getSeasonByName(res.options.season_name, function (err, result) {
             if (err) {
