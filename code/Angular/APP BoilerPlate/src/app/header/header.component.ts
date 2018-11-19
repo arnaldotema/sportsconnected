@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchFor() {
+
     this.genericService.searchUser('', this.searchString, '')
       .subscribe((list) => {
           this.searchResults = list;
