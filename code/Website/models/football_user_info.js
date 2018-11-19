@@ -12,7 +12,6 @@ var FootballUserInfoSchema = new Schema({
     skill_set: [
         {
             name: {type: String},
-            avatar: String,
             endorsements: [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
         }
     ],

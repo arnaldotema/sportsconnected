@@ -34,7 +34,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
   data;
   options;
   labels;
-  skill_values;
+  labels_values;
   id;
   loading_chart: boolean = false;
   isFollowing: boolean = false;
@@ -58,7 +58,7 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.data = {};
     this.options = {};
     this.labels = [];
-    this.skill_values = [];
+    this.labels_values = [];
     this.colors = [];
 
   }
@@ -369,12 +369,12 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.loading_chart = true;
     this.viewModel.skill_set.forEach((skill) => {
       this.labels.push(skill.name);
-      this.skill_values.push(skill.endorsements.length);
+      this.labels_values.push(skill.endorsements.length);
     });
     this.data = {
       labels: this.labels,
       datasets: [{
-        data: this.skill_values, //[19, 18, 14, 15, 23]
+        data: this.labels_values, //[19, 18, 14, 15, 23]
         backgroundColor: [
           '#4383a882',
           '#4383a882',
@@ -465,17 +465,32 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     });
   }
 
+
+
   voteSkill(event): void {
+    let skillName = event.target.title;
+    this.userInfoService.voteForSkill(skillName, this.session_user.profile_id, this.viewModel._id)
+      .subscribe((user) => {
+        if (user) {
+          debugger;
+          this.labels = [];
+          this.labels_values = [];
+          this.viewModel.skill_set = user.skill_set;
+          this.cdRef.detectChanges();
+          this.loadChart();
+          this.toastr.success('Voto registado!');
+        }
+      })
+  }
 
-
-    // TODO: Should send the whole skill_set instead of just the name and then receive the whole skillSet as it is now
+  fakeVoteSkill(event): void {
     let skillName = event.target.title;
     this.userInfoService.voteForSkill(skillName, this.session_user.profile_id, this.viewModel._id)
       .subscribe((done) => {
         if (done) {
           this.labels.forEach((label, key) => {
             if (label == skillName)
-              ++this.skill_values[key];
+              ++this.labels_values[key];
             this.cdRef.detectChanges();
             this._chart.update();
           });

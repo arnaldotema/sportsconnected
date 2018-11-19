@@ -603,7 +603,7 @@ export class UserInfoService {
       );
   };
 
-  voteForSkill(skillName: string, author_user_id: string, user_info_id:string): Observable<boolean> {
+  voteForSkill(skillName: string, author_user_id: string, user_info_id:string): Observable<any> {
     if(this.testing){
       let done = false;
       this.mockUserInfo[0].skill_set.forEach(skill => {
@@ -615,7 +615,7 @@ export class UserInfoService {
       return of(done);
     }
 
-    return this.http.post<boolean>('api/players/' + user_info_id+ '/skills' , {skill_name: skillName, author_user_id: author_user_id}, this.requestOptions)
+    return this.http.post<any>('api/players/' + user_info_id+ '/skills' , {skill_name: skillName, author_user_id: author_user_id}, this.requestOptions)
       .pipe(
         tap(data => {
           console.log('POST player skill', data);
