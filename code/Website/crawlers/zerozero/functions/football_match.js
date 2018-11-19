@@ -259,7 +259,7 @@ function processMatchIds(match, res, done, cb){
 
     if(report.length == 0){
         logger.error("Match with zerozero team_id: " + res.options.zerozeroId + " has no report");
-        zerozero.proxyFailCallback(res, done);
+        //zerozero.proxyFailCallback(res, done);
     }
     else{
         res.$(report[0]).find(".player").each(function() {
@@ -285,7 +285,7 @@ function processMatchIds(match, res, done, cb){
     footballUserInfoSeason.getMatchUserInfosByZeroZeroId(res.options.competition_season.season_id, homeTeamIds, awayTeamIds, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            //zerozero.proxyFailCallback(res, done);
         }
         else {
             logger.info("Successfully fetched match user infos season", result);
@@ -329,7 +329,7 @@ function processMatchIds(match, res, done, cb){
             footballMatch.updateAndReturnByZeroZeroId(res.options.zerozeroId, match, function (err, result) {
                 if (err) {
                     logger.error(err);
-                    zerozero.proxyFailCallback(res, done)
+                    //zerozero.proxyFailCallback(res, done)
                 }
                 else {
                     logger.info("Successfully created match " + result._doc);

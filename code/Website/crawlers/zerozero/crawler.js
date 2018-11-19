@@ -74,7 +74,7 @@ logger.info("Testing the editions...");
 
 /*
 zerozero.queue({
-    uri: format(baseUris.COMPETITION, {competition_id: 2380}), // 3 - ID da Super Liga
+    uri: format(baseUris.COMPETITION, {competition_id: 2380}), // 3 - ID da Super Liga, 2380 - Campeonato de Portugal
     callback: proxyHandler.crawl,
     successCallback: competitionCrawler.updateCompetition,
     proxyFailCallback: zerozero.proxyFailCallback,
@@ -83,9 +83,9 @@ zerozero.queue({
 */
 
 zerozero.queue({
-    uri: format(baseUris.COMPETITION, {competition_id: 3}), // 3 - ID da Super Liga
+    uri: format(baseUris.ASSOCIATION, {competition_id: 15}), // 15 - ID da A.Setúbal
     callback: proxyHandler.crawl,
     successCallback: competitionCrawler.updateCompetition,
     proxyFailCallback: zerozero.proxyFailCallback,
-    zerozeroId: 3
+    zerozeroId: 15
 });

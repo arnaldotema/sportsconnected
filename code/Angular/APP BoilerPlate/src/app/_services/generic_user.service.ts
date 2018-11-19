@@ -1884,7 +1884,7 @@ export class GenericUserService {
   testing: boolean = false;
   requestOptions;
 
-  constructor(private authenticationService: AuthenticationService , private http: HttpClient) {
+  constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
     this.requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -1895,6 +1895,8 @@ export class GenericUserService {
 
   //TODO: ALTT - Change input params to just a Filter_Search model
   searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
+
+    debugger;
 
     let query_list = [];
     if (type || type != "") {
@@ -1918,7 +1920,7 @@ export class GenericUserService {
 
     const body = {
       query: query_list
-    }
+    };
 
     return this.http.post<SearchEntityViewmodel[]>('/api/players/search', body, this.requestOptions)
       .pipe(
