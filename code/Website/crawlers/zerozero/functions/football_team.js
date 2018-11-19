@@ -34,11 +34,11 @@ const updateTeamInfo = function (err, res, done) {
         '';
 
     //Different age groups from seniors
-    if(team.name != ''){
-        if( team.name.split('<')[1] != undefined){
+    if (team.name != '') {
+        if (team.name.split('<')[1] != undefined) {
             team.name = team.name = team.name.split('<')[0].trim() + " " + team.name.split('<')[1].split('>')[1];
         }
-        else{
+        else {
             team.name = team.name = team.name.split('<')[0].trim()
         }
     }
@@ -135,17 +135,8 @@ function processAllTeamPlayers(res, done) {
             player_number: playerNumber
         });
 
-        playerIds.push(playerId);
-    });
 
-    zerozero.queue({
-        uri: format(baseUris.PLAYER_INFO, {player_id: 450}),
-        priority: 4,
-        callback: proxyHandler.crawl,
-        successCallback: footballUserInfoCrawler.updateUserInfoCurrentSeasons,
-        proxyFailCallback: zerozero.proxyFailCallback,
-        competition_season: res.options.competition_season,
-        team_season: res.options.team_season
+        playerIds.push(playerId);
     });
 
     logger.info("Team Player IDs in processing: " + playerIds);
@@ -180,8 +171,8 @@ const processAllTeamGames = function (err, res, done) {
 };
 */
 
-function processTeamPositionsAndSeason(err, res, done){
-    footballCompetitionSeason.getById(res.options.competition_season._id, function (err, result){
+function processTeamPositionsAndSeason(err, res, done) {
+    footballCompetitionSeason.getById(res.options.competition_season._id, function (err, result) {
         if (err) {
             logger.error(err);
             zerozero.proxyFailCallback(res, done);

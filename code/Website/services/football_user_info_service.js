@@ -1,8 +1,8 @@
 const logger = require('../logging');
 const _ = require('underscore');
 
-function _updateRegex(regex){
-    if(!regex){
+function _updateRegex(regex) {
+    if (!regex) {
         regex = "##";
     }
 
@@ -82,7 +82,7 @@ Service.getMatchUserInfos = function (homeTeam, awayTeam, cb) {
 
 Service.getUserInfosByUpdatedAt = function (updated_at, cb) {
     const query = {
-        updated_at: { $gt: updated_at }
+        updated_at: {$gt: updated_at}
     };
 
     this
@@ -133,7 +133,7 @@ Service.addRecommendation = function (recommendation, user_info_id, cb) {
     const update = {
         $push: {
             "recommendations.list": recommendation_id,
-            "recommendations.top_5" : recommendation
+            "recommendations.top_5": recommendation
         }
     }
 
@@ -148,18 +148,40 @@ Service.deleteRecommendation = function (recommendation, user_info_id, cb) {
 
 Service.addSkillVote = function (skill_name, author_user_id, user_info_id, cb) {
 
-    let conditions = {
-        "_id": user_info_id,
-        "skill_set.name": skill_name
+
+    const query = {
+        _id: user_info_id,
+        'skill_set.name': {$ne: skill_name}
     };
-    let update = {
-        $push: {
-            "skill_set.$.endorsements": author_user_id
+
+    const update = {
+        $addToSet: {
+            'skill_set': {
+                "name": skill_name
+            }
         }
     };
 
-    this.update(conditions, update, {}, cb);
-}
+    this.update(query, update, (err, result) => {
+
+        if (err)
+            cb(err);
+
+        const query = {
+            _id: user_info_id,
+            'skill_set.name': skill_name
+        };
+
+        const update = {
+            $push: {
+                "skill_set.$.endorsements": author_user_id
+            }
+        };
+
+        this.findOneAndUpdate(query, update,{new: true}, cb);
+    });
+
+};
 
 Service.setAllSkillVotes = function (cb) {
 
@@ -299,7 +321,7 @@ Service.updateRegexNewMatch = function (regexes, cb) {
 Service.addAchievementToUserInfo = function (achievement, user_info, cb) {
     const query = {
         _id: user_info._id,
-        "achievements.id": { $ne: achievement._id }
+        "achievements.id": {$ne: achievement._id}
     }
 
     const update = {

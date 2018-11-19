@@ -10,6 +10,8 @@ router.get('/', TeamController.list);
 
 router.post('/', TeamController.create);
 
+router.post('/search', TeamController.search);
+
 router.put('/:id', TeamController.update);
 
 router.delete('/:id', TeamController.remove);

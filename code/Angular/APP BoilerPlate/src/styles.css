@@ -19,7 +19,7 @@
 }
 
 .sc-automatic-btn{
-  width: -webkit-fill-available;
+  width: -webkit-stretch;
   margin: 10px 2px 0 2px !important;
 }
 
