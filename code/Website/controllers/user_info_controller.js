@@ -228,8 +228,7 @@ Service.add_skill_vote = function (req, res) {
                 message: 'No such user_info'
             });
         }
-        return res.json(user_info);
-
+        return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
     })
 };
 

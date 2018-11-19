@@ -9,6 +9,45 @@ const entities = new Entities();
  */
 module.exports = {
 
+
+
+    /**
+     * TeamController.search()
+     */
+    search: function (req, res) {
+        let select = {
+            "_id": 1,
+            "user_info_id": 1,
+            "personal_info": 1,
+            "team": 1,
+            "stats": 1
+        };
+
+        let query = {};
+
+        req.body.query.forEach(function (filter) {
+            query[filter.search_item] = {};
+            query[filter.search_item][filter.selected_filter] = filter.selected_value;
+
+            if (filter.selected_filter == '$regex') {
+                query[filter.search_item]['$options'] = 'i';
+            }
+        });
+
+        TeamModel
+            .find(query)
+            .select(select)
+            .exec(function (err, teams) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting teams.',
+                        error: err
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(teams))));
+            });
+    },
+
     /**
      * TeamController.list()
      */
@@ -79,9 +118,9 @@ module.exports = {
      */
     create: function (req, res) {
         var Team = new TeamModel({
-			user_id : req.body.user_id,
-			name : req.body.name,
-			admins : req.body.admins
+            user_id: req.body.user_id,
+            name: req.body.name,
+            admins: req.body.admins
 
         });
 
@@ -115,9 +154,9 @@ module.exports = {
             }
 
             Team.user_info_id = req.body.user_id ? req.body.user_id : Team.user_id;
-			Team.name = req.body.name ? req.body.name : Team.name;
-			Team.admins = req.body.admins ? req.body.admins : Team.admins;
-			
+            Team.name = req.body.name ? req.body.name : Team.name;
+            Team.admins = req.body.admins ? req.body.admins : Team.admins;
+
             Team.save(function (err, Team) {
                 if (err) {
                     return res.status(500).json({
