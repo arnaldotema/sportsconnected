@@ -135,6 +135,15 @@ function processAllTeamPlayers(res, done) {
             player_number: playerNumber
         });
 
+        zerozero.queue({
+            uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
+            priority: 4,
+            callback: proxyHandler.crawl,
+            successCallback: footballUserInfoCrawler.updateUserInfoCurrentSeasons,
+            proxyFailCallback: zerozero.proxyFailCallback,
+            competition_season: res.options.competition_season,
+            team_season: res.options.team_season
+        });
 
         playerIds.push(playerId);
     });
@@ -146,7 +155,6 @@ function processAllTeamPlayers(res, done) {
 }
 
 //not used, may be useful in the future...
-/*
 const processAllTeamGames = function (err, res, done) {
     let matchIds = [];
 
@@ -169,7 +177,6 @@ const processAllTeamGames = function (err, res, done) {
 
     done();
 };
-*/
 
 function processTeamPositionsAndSeason(err, res, done) {
     footballCompetitionSeason.getById(res.options.competition_season._id, function (err, result) {

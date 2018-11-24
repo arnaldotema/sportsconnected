@@ -45,8 +45,8 @@ const updateCompetition = function (err, res, done) {
 
                 editionIds.push(
                     {
-                        edition_id: res.$(this).attr("href").match(/\d+/g)[0], //res.$(res.$(".nivel1 a"))[0].attribs['href'].match(/\d+/g)[0]
-                        season_name: res.$(this).html() // res.$(res.$(".nivel1 a"))[0].children[0].data
+                        edition_id: res.$(this).attr("href").match(/\d+/g)[0],
+                        season_name: res.$(this).html()
                     }
                 );
             }
@@ -65,7 +65,8 @@ const updateCompetition = function (err, res, done) {
     }
 
     // Beta, first X years.
-    editionIds = editionIds.splice(1, 1);
+    //editionIds = editionIds.splice(0, 1);
+    editionIds = [editionIds[1]];
 
     footballCompetition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, function (err, result) {
         if (err) {

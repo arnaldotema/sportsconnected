@@ -1894,9 +1894,7 @@ export class GenericUserService {
   }
 
   //TODO: ALTT - Change input params to just a Filter_Search model
-  searchUser(id: string, query: string, type: string): Observable<SearchEntityViewmodel[]> {
-
-    debugger;
+  searchUser(query: string, type: string): Observable<SearchEntityViewmodel[]> {
 
     let query_list = [];
     if (type || type != "") {
@@ -1925,6 +1923,20 @@ export class GenericUserService {
     return this.http.post<SearchEntityViewmodel[]>('/api/players/search', body, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
+        catchError(this.handleError)
+      );
+  }
+
+  globalSearch(query: string, type: string): Observable<SearchEntityViewmodel[]> {
+
+    let body = {
+      item: type,
+      query: query
+    };
+
+    return this.http.post<SearchEntityViewmodel[]>('/api/global/search', body , this.requestOptions)
+      .pipe(
+        tap(data => console.log('POST Global Search', data)),
         catchError(this.handleError)
       );
   }
