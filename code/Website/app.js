@@ -13,6 +13,7 @@ require('./auth/auth');
 //Routes
 const users = require('./routes/user_routes');
 const players = require('./routes/player_routes');
+const global = require('./routes/global_routes');
 const teams = require('./routes/team_routes');
 const competitions = require('./routes/competition_routes');
 const matches = require('./routes/match_routes');
@@ -35,6 +36,7 @@ app.use(formidable());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 //Controllers
+app.use('/api/global', passport.authenticate('jwt', { session : false }), global);
 app.use('/api/players', passport.authenticate('jwt', { session : false }), players);
 app.use('/api/teams', passport.authenticate('jwt', { session : false }), teams);
 app.use('/api/competitions', passport.authenticate('jwt', { session : false }), competitions);

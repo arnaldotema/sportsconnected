@@ -4,8 +4,8 @@ const proxies = [undefined]; //, 'http://115.78.123.57:60562'];
 
 // proxy value is 'zzptremember'
 const users = {
-    undefined: '78b832a7-0e1a-4b24-bcd6-a1a7a92e4488',
-    'http://115.78.123.57:60562':'08998fc8-b50c-41b8-aa72-c52dd2c424a3'
+    undefined: '66fd97ac-b649-45d5-b33a-459b2e10e978',
+    'http://115.78.123.57:60562':'78b832a7-0e1a-4b24-bcd6-a1a7a92e4488'
 }
 
 function getRandomInt(max) {

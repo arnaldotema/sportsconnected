@@ -502,7 +502,7 @@ export class FilterUserInfoComponent implements OnInit {
 
   loadTeam() {
     // Todo: Get Team based on chosenLeague
-    this.genericUserService.searchUser('', '', 'team.name')
+    this.genericUserService.searchUser('', 'team.name')
       .subscribe(teams => this.teams = teams);
   }
 
