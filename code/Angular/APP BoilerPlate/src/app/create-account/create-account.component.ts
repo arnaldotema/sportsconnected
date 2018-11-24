@@ -44,19 +44,16 @@ export class CreateAccountComponent implements OnInit {
   }
 
   loadLeagues() {
-    // Todo: Get Competitions
     this.competitionService.getCompetitons()
       .subscribe(leagues => this.leagues = leagues);
   }
 
   loadTeam() {
-    // Todo: Get Team based on chosenLeague
     this.teamService.getTeamsByLeague(this.chosenLeague._id)
       .subscribe(teams => this.teams = teams);
   }
 
   loadPlayersByTeam() {
-    // Todo: Get Players based on chosenTeam
     this.teamService.getPlayers(this.chosenTeam.id)
       .subscribe(players => this.players = players);
   }
@@ -75,11 +72,6 @@ export class CreateAccountComponent implements OnInit {
           this.router.navigate(['/edit-user-info/' + this.chosenPlayer.user_info_id]);
         }
       );
-  }
-
-  getTeam() {
-    this.genericUserService.searchUser('', '', 'team.name')
-      .subscribe(teams => this.teams = teams);
   }
 
   createPlayer() {
