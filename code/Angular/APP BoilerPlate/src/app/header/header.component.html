@@ -7,22 +7,22 @@
       <app-login *ngIf="!isAuthenticated(); else search_bar"></app-login>
       <div #search_bar *ngIf="isAuthenticated()" class="sc-header-search__input-container"
            (clickOutside)="searchResults = null"
-           (focus)="searchFor()">
+           (focus)="search()">
 
-        <form (ngSubmit)="searchFor()" class="sc-header-search-form__input">
+        <form (ngSubmit)="search()" class="sc-header-search-form__input">
           <input [(ngModel)]="searchString" name="search" class="sc-header-search__input" placeholder="Pesquisar">
         </form>
 
 
-        <mat-icon matSuffix style="color:black" class="clickable-button" (click)="searchFor()">search</mat-icon>
+        <mat-icon matSuffix style="color:black" class="clickable-button" (click)="search()">search</mat-icon>
         <div *ngIf=" searchResults!= null && searchResults.length > 0" class="sc-header-search__item-list-container">
           <div class="sc-header-search__item-list">
             <div class="sc-header-search__item" *ngFor="let user of searchResults">
-              <a href="/user-info/{{user.user_info_id}}">
+              <a href="/{{user.type}}/{{user.user_info_id}}">
                 <img class="sc-rounded-image" [src]="user.personal_info.avatar">
               </a>
               <div class="sc-search-info">
-                <a href="/user-info/{{user.user_info_id}}">
+                <a href="/{{user.type}}/{{user.user_info_id}}">
                   <h4>{{user.personal_info.name}}</h4>
                 </a>
                 <a href="/team/{{user.team.team_id}}">

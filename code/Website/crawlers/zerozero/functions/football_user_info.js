@@ -53,10 +53,6 @@ const updateUserInfo = function (err, res, done) {
         }
     };
 
-    if(user_info.external_ids.zerozero === 450){
-        logger.info("WRONG TYPE User Info: - ", user_info);
-    }
-
     logger.info("User Info:", user_info);
 
     footballUserInfo.updateAndReturnByZeroZeroId(res.options.zerozeroId, user_info, function (err, result) {
