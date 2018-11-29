@@ -1126,11 +1126,13 @@ coisas transversais a toda a plataforma.
   position: fixed;
   width: 28%;
   max-width: 354.19px;
+  top: 240px;
 }
 
-.sticky-indicators {
+.sticky-stats {
+  width: 28%;
+  max-width: 354.19px;
   position: fixed;
-  top: 320px;
 }
 
 .hidden-for-footer {
