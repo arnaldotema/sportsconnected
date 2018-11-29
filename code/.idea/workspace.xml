@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,20 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="global_controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/controllers/global_controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="177" column="12" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+            <state relative-caret-position="204">
+              <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
               <folding>
                 <element signature="e#489#607#0" />
                 <element signature="e#1041#1334#0" />
@@ -87,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="91">
-              <caret line="267" lean-forward="true" selection-start-line="267" selection-end-line="267" />
+              <caret line="267" selection-start-line="267" selection-end-line="267" />
             </state>
           </provider>
         </entry>
@@ -118,11 +107,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info_viewmodel.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -132,15 +143,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session_user.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/session_user.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -199,26 +201,26 @@
     </findStrings>
     <replaceStrings>
       <replace>match</replace>
-      <replace />
-      <replace />
-      <replace />
-      <replace />
-      <replace />
-      <replace />
-      <replace />
-      <replace />
+      <replace>go_in: []</replace>
+      <replace>goals: [2],</replace>
+      <replace>goals: [],</replace>
+      <replace>goals: ['1']</replace>
+      <replace>goals: ['45','66','79']</replace>
+      <replace>assists: []</replace>
+      <replace>red_cards: []</replace>
+      <replace>achievements: []</replace>
       <replace>goals.length</replace>
       <replace>goals.length§</replace>
-      <replace />
-      <replace />
+      <replace>&lt;img class =&quot;icon&quot; *ngIf=&quot;player.goals &amp;&amp; players.goals.length &gt; 0&quot; src=&quot;/assets/ball.png&quot;&gt;{{player.goals.length}}</replace>
+      <replace>goals: []</replace>
       <replace>player.goals</replace>
-      <replace />
+      <replace>&lt;div&gt;&lt;img class =&quot;icon&quot; src=&quot;/assets/ball.png&quot;&gt;{{player.goals.length}}&lt;/div</replace>
       <replace>length}}&lt;/div&gt;</replace>
-      <replace />
-      <replace />
+      <replace>followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],</replace>
+      <replace>; // ._doc</replace>
       <replace>https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&amp;oh=c66e24c7f9b1ce391584fa0400b9414b&amp;oe=5C545952</replace>
       <replace>'session_user'</replace>
-      <replace />
+      <replace>Voto registado</replace>
       <replace>info</replace>
       <replace>get</replace>
       <replace />
@@ -230,7 +232,7 @@
       <replace>search</replace>
     </replaceStrings>
     <dirStrings>
-      <dir />
+      <dir>$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals</dir>
       <dir>$PROJECT_DIR$/Website/notifications</dir>
     </dirStrings>
   </component>
@@ -282,16 +284,16 @@
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
         <option value="$PROJECT_DIR$/Website/controllers/gloabal_controller.js" />
         <option value="$PROJECT_DIR$/Website/routes/global_routes.js" />
-        <option value="$PROJECT_DIR$/Website/app.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/Website/controllers/global_controller.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
+        <option value="$PROJECT_DIR$/Website/app.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
       </list>
     </option>
   </component>
@@ -367,24 +369,16 @@
               <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="user-info-profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -526,12 +520,12 @@
       <workItem from="1541781912396" duration="1292000" />
       <workItem from="1542014840514" duration="1653000" />
       <workItem from="1542030976225" duration="587000" />
-      <workItem from="1542061355480" duration="89088000" />
+      <workItem from="1542061355480" duration="89710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="545181000" />
+    <option name="totallyTimeSpent" value="545803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="845" extended-state="6" />
@@ -606,77 +600,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>16</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/node_modules/passport/lib/strategies/session.js</url>
-          <line>44</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/recommendation_controller.js</url>
-          <line>79</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/services/storage/image_storage_service.js</url>
-          <line>10</line>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js</url>
-          <line>118</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/dispatcher/dispatcher.js</url>
-          <line>36</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>69</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>330</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="235" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/user_info_controller.js</url>
-          <line>177</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="280" />
+      <option name="time" value="281" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -726,12 +653,12 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>playerId === &quot;385046&quot;</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>res.$(this).html() === '1&amp;#xAA; Divis&amp;#xE3;o'</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -741,7 +668,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>res.$(this).html() === '1ª Divisão'</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -931,37 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="331" selection-end-column="22" />
-          <folding>
-            <element signature="e#1738#2026#0" />
-            <element signature="e#1828#1924#0" />
-            <element signature="e#1937#2020#0" />
-            <element signature="e#2085#2373#0" />
-            <element signature="e#2175#2271#0" />
-            <element signature="e#2284#2367#0" />
-            <element signature="e#3119#3361#0" />
-            <element signature="e#3654#3955#0" />
-            <element signature="e#3700#3947#0" />
-            <element signature="e#3738#3868#0" />
-            <element signature="e#3886#3937#0" />
-            <element signature="e#3964#4067#0" />
-            <element signature="e#4017#4059#0" />
-            <element signature="n#!!block;n#_processPlayerEvents#0" />
-            <element signature="e#4490#4740#0" />
-            <element signature="e#4751#5085#0" />
-            <element signature="e#5140#6682#0" />
-            <element signature="e#5254#6672#0" />
-            <element signature="e#5598#5693#0" />
-            <element signature="e#5757#5855#0" />
-            <element signature="e#6827#6856#0" />
-            <element signature="e#6999#7036#0" />
-            <element signature="e#7085#7122#0" />
-            <element signature="e#7173#7210#0" />
-            <element signature="e#7264#7301#0" />
-            <element signature="e#7642#7714#0" />
-            <element signature="n#!!block;n#processMatchTeams#0" />
-            <element signature="n#!!block;n#processMatchCompetition#0" />
-            <element signature="n#!!block;n#processUserInfoRegex#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,13 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1248,13 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1303,16 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1376,7 +1248,7 @@
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
-          <caret line="267" lean-forward="true" selection-start-line="267" selection-end-line="267" />
+          <caret line="267" selection-start-line="267" selection-end-line="267" />
         </state>
       </provider>
     </entry>
@@ -1392,8 +1264,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="177" column="12" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+        <state relative-caret-position="204">
+          <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
           <folding>
             <element signature="e#489#607#0" />
             <element signature="e#1041#1334#0" />
@@ -1430,6 +1302,31 @@
             <element signature="e#5589#5719#0" />
             <element signature="e#5635#5703#0" />
             <element signature="e#5890#6014#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
           </folding>
         </state>
       </provider>
