@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
+      <change afterPath="$PROJECT_DIR$/../docs/tasks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +18,7 @@
       <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="1394">
               <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
               <folding>
                 <element signature="e#489#607#0" />
@@ -63,7 +64,7 @@
       <file leaf-file-name="user-info-profile.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
+            <state relative-caret-position="3485">
               <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -75,7 +76,7 @@
       <file leaf-file-name="user-info-profile.component.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
+            <state relative-caret-position="4539">
               <caret line="267" selection-start-line="267" selection-end-line="267" />
             </state>
           </provider>
@@ -84,7 +85,7 @@
       <file leaf-file-name="user-info-stats.component.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
+            <state relative-caret-position="7106">
               <caret line="418" column="1" selection-start-line="418" selection-start-column="1" selection-end-line="418" selection-end-column="1" />
             </state>
           </provider>
@@ -93,15 +94,298 @@
       <file leaf-file-name="user-info-profile.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="194">
+              <caret line="465" column="3" selection-start-line="465" selection-start-column="3" selection-end-line="465" selection-end-column="3" />
               <folding>
                 <element signature="e#845#989#0" />
+                <element signature="n#!!block;n#constructor#0;n#UserInfoProfileComponent#0" />
+                <element signature="n#!!block;n#ngOnInit#0;n#UserInfoProfileComponent#0" />
+                <element signature="n#!!block;n#ngAfterViewInit#0;n#UserInfoProfileComponent#0" />
+                <element signature="e#2023#14202#0" />
+                <element signature="e#2199#2245#0" />
+                <element signature="e#2331#2386#0" />
+                <element signature="e#2777#2860#0" />
+                <element signature="e#2971#8864#0" />
+                <element signature="e#2983#4002#0" />
+                <element signature="e#3596#3990#0" />
+                <element signature="e#3621#3742#0" />
+                <element signature="e#3639#3726#0" />
+                <element signature="e#3764#3842#0" />
+                <element signature="e#3765#3841#0" />
+                <element signature="e#3866#3975#0" />
+                <element signature="e#3867#3974#0" />
+                <element signature="e#4014#5016#0" />
+                <element signature="e#4610#5004#0" />
+                <element signature="e#4635#4756#0" />
+                <element signature="e#4653#4740#0" />
+                <element signature="e#4778#4856#0" />
+                <element signature="e#4779#4855#0" />
+                <element signature="e#4880#4989#0" />
+                <element signature="e#4881#4988#0" />
+                <element signature="e#5028#5959#0" />
+                <element signature="e#5581#5947#0" />
+                <element signature="e#5606#5727#0" />
+                <element signature="e#5624#5711#0" />
+                <element signature="e#5749#5827#0" />
+                <element signature="e#5750#5826#0" />
+                <element signature="e#5851#5932#0" />
+                <element signature="e#5852#5931#0" />
+                <element signature="e#5971#6907#0" />
+                <element signature="e#6529#6895#0" />
+                <element signature="e#6554#6675#0" />
+                <element signature="e#6572#6659#0" />
+                <element signature="e#6697#6775#0" />
+                <element signature="e#6698#6774#0" />
+                <element signature="e#6799#6880#0" />
+                <element signature="e#6800#6879#0" />
+                <element signature="e#6919#7851#0" />
+                <element signature="e#7473#7839#0" />
+                <element signature="e#7498#7619#0" />
+                <element signature="e#7516#7603#0" />
+                <element signature="e#7641#7719#0" />
+                <element signature="e#7642#7718#0" />
+                <element signature="e#7743#7824#0" />
+                <element signature="e#7744#7823#0" />
+                <element signature="e#7863#8854#0" />
+                <element signature="e#8476#8842#0" />
+                <element signature="e#8501#8622#0" />
+                <element signature="e#8519#8606#0" />
+                <element signature="e#8644#8722#0" />
+                <element signature="e#8645#8721#0" />
+                <element signature="e#8746#8827#0" />
+                <element signature="e#8747#8826#0" />
+                <element signature="e#9050#13746#0" />
+                <element signature="e#9089#13735#0" />
+                <element signature="e#9139#13722#0" />
+                <element signature="e#9155#10083#0" />
+                <element signature="e#9212#9848#0" />
+                <element signature="e#9600#9829#0" />
+                <element signature="e#10099#10990#0" />
+                <element signature="e#10156#10782#0" />
+                <element signature="e#10534#10763#0" />
+                <element signature="e#11006#11797#0" />
+                <element signature="e#11063#11601#0" />
+                <element signature="e#11353#11582#0" />
+                <element signature="e#11813#12857#0" />
+                <element signature="e#11870#12429#0" />
+                <element signature="e#12181#12410#0" />
+                <element signature="e#12873#13708#0" />
+                <element signature="e#12930#13494#0" />
+                <element signature="e#13246#13475#0" />
+                <element signature="e#14020#14056#0" />
                 <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
+                <element signature="n#!!block;n#loadChart#0;n#UserInfoProfileComponent#0" />
+                <element signature="e#14392#14493#0" />
+                <element signature="e#14512#14783#0" />
+                <element signature="e#14557#14777#0" />
+                <element signature="e#14558#14776#0" />
+                <element signature="e#14642#14768#0" />
+                <element signature="e#14804#15259#0" />
+                <element signature="e#14819#14940#0" />
+                <element signature="e#14956#14988#0" />
+                <element signature="e#15004#15253#0" />
+                <element signature="e#15021#15096#0" />
+                <element signature="e#15022#15095#0" />
+                <element signature="e#15045#15085#0" />
+                <element signature="e#15113#15245#0" />
+                <element signature="e#15114#15244#0" />
+                <element signature="e#15133#15171#0" />
+                <element signature="e#15194#15234#0" />
+                <element signature="e#15343#15457#0" />
                 <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
+                <element signature="e#15621#15773#0" />
+                <element signature="e#15637#15765#0" />
+                <element signature="e#15829#16779#0" />
+                <element signature="e#15858#16400#0" />
+                <element signature="e#15928#16392#0" />
+                <element signature="e#16175#16382#0" />
+                <element signature="e#16516#16772#0" />
+                <element signature="e#16538#16662#0" />
+                <element signature="e#16678#16762#0" />
+                <element signature="n#!!block;n#voteSkill#0;n#UserInfoProfileComponent#0" />
+                <element signature="n#!!block;n#fakeVoteSkill#0;n#UserInfoProfileComponent#0" />
                 <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
                 <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
+                <element signature="n#!!block;n#stickyScroll#0" />
                 <element signature="n#!!block;n#_make_random_text#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filter-user-info.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-582">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="e#465#606#0" />
+                <element signature="n#!!block;n#constructor#0;n#FilterUserInfoComponent#0" />
+                <element signature="n#!!block;n#ngOnInit#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#2458#10872#0" />
+                <element signature="e#2477#2941#0" />
+                <element signature="e#2591#2933#0" />
+                <element signature="e#2603#2674#0" />
+                <element signature="e#2686#2757#0" />
+                <element signature="e#2769#2839#0" />
+                <element signature="e#2851#2922#0" />
+                <element signature="e#2971#3140#0" />
+                <element signature="e#3065#3132#0" />
+                <element signature="e#3066#3131#0" />
+                <element signature="e#3176#3671#0" />
+                <element signature="e#3329#3663#0" />
+                <element signature="e#3341#3415#0" />
+                <element signature="e#3427#3493#0" />
+                <element signature="e#3505#3569#0" />
+                <element signature="e#3581#3652#0" />
+                <element signature="e#3700#4170#0" />
+                <element signature="e#3817#4162#0" />
+                <element signature="e#3829#3903#0" />
+                <element signature="e#3915#3986#0" />
+                <element signature="e#3998#4068#0" />
+                <element signature="e#4080#4151#0" />
+                <element signature="e#4205#4400#0" />
+                <element signature="e#4421#4655#0" />
+                <element signature="e#4556#4646#0" />
+                <element signature="e#4568#4636#0" />
+                <element signature="e#4689#4835#0" />
+                <element signature="e#4870#5406#0" />
+                <element signature="e#5301#5398#0" />
+                <element signature="e#5313#5388#0" />
+                <element signature="e#5429#5898#0" />
+                <element signature="e#5548#5890#0" />
+                <element signature="e#5560#5631#0" />
+                <element signature="e#5643#5714#0" />
+                <element signature="e#5726#5796#0" />
+                <element signature="e#5808#5879#0" />
+                <element signature="e#5923#6390#0" />
+                <element signature="e#6040#6382#0" />
+                <element signature="e#6052#6123#0" />
+                <element signature="e#6135#6206#0" />
+                <element signature="e#6218#6288#0" />
+                <element signature="e#6300#6371#0" />
+                <element signature="e#6413#6882#0" />
+                <element signature="e#6532#6874#0" />
+                <element signature="e#6544#6615#0" />
+                <element signature="e#6627#6698#0" />
+                <element signature="e#6710#6780#0" />
+                <element signature="e#6792#6863#0" />
+                <element signature="e#6907#7375#0" />
+                <element signature="e#7025#7367#0" />
+                <element signature="e#7037#7108#0" />
+                <element signature="e#7120#7191#0" />
+                <element signature="e#7203#7273#0" />
+                <element signature="e#7285#7356#0" />
+                <element signature="e#7407#7858#0" />
+                <element signature="e#7508#7850#0" />
+                <element signature="e#7520#7591#0" />
+                <element signature="e#7603#7674#0" />
+                <element signature="e#7686#7756#0" />
+                <element signature="e#7768#7839#0" />
+                <element signature="e#7890#8329#0" />
+                <element signature="e#7979#8321#0" />
+                <element signature="e#7991#8062#0" />
+                <element signature="e#8074#8145#0" />
+                <element signature="e#8157#8227#0" />
+                <element signature="e#8239#8310#0" />
+                <element signature="e#8364#8935#0" />
+                <element signature="e#8593#8927#0" />
+                <element signature="e#8605#8679#0" />
+                <element signature="e#8691#8757#0" />
+                <element signature="e#8769#8833#0" />
+                <element signature="e#8845#8916#0" />
+                <element signature="e#8969#9153#0" />
+                <element signature="e#9076#9145#0" />
+                <element signature="e#9077#9144#0" />
+                <element signature="e#9187#9385#0" />
+                <element signature="e#9311#9377#0" />
+                <element signature="e#9312#9376#0" />
+                <element signature="e#9417#9881#0" />
+                <element signature="e#9539#9873#0" />
+                <element signature="e#9551#9625#0" />
+                <element signature="e#9637#9703#0" />
+                <element signature="e#9715#9779#0" />
+                <element signature="e#9791#9862#0" />
+                <element signature="e#9908#10372#0" />
+                <element signature="e#10022#10364#0" />
+                <element signature="e#10034#10105#0" />
+                <element signature="e#10117#10188#0" />
+                <element signature="e#10200#10270#0" />
+                <element signature="e#10282#10353#0" />
+                <element signature="e#10402#10866#0" />
+                <element signature="e#10516#10858#0" />
+                <element signature="e#10528#10599#0" />
+                <element signature="e#10611#10682#0" />
+                <element signature="e#10694#10764#0" />
+                <element signature="e#10776#10847#0" />
+                <element signature="n#!!block;n#contains#0;n#FilterUserInfoComponent#0" />
+                <element signature="n#!!block;n#loadAgeGroups#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#11030#11806#0" />
+                <element signature="e#11038#11089#0" />
+                <element signature="e#11097#11150#0" />
+                <element signature="e#11158#11213#0" />
+                <element signature="e#11221#11276#0" />
+                <element signature="e#11278#11332#0" />
+                <element signature="e#11340#11394#0" />
+                <element signature="e#11396#11451#0" />
+                <element signature="e#11459#11512#0" />
+                <element signature="e#11514#11567#0" />
+                <element signature="e#11575#11627#0" />
+                <element signature="e#11629#11684#0" />
+                <element signature="e#11692#11745#0" />
+                <element signature="e#11747#11800#0" />
+                <element signature="n#!!block;n#loadLeagues#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#11880#12098#0" />
+                <element signature="e#11888#11946#0" />
+                <element signature="e#11954#12004#0" />
+                <element signature="e#12012#12091#0" />
+                <element signature="n#!!block;n#loadTeam#0;n#FilterUserInfoComponent#0" />
+                <element signature="n#!!block;n#loadPlayers#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#12392#12522#0" />
+                <element signature="e#12452#12516#0" />
+                <element signature="e#12621#13230#0" />
+                <element signature="e#12669#12752#0" />
+                <element signature="e#12789#13067#0" />
+                <element signature="n#!!block;n#addFieldValue#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#13321#13868#0" />
+                <element signature="e#13392#13862#0" />
+                <element signature="e#13586#13852#0" />
+                <element signature="n#!!block;n#changed#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#13997#14036#0" />
+                <element signature="n#!!block;n#sortData#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#14476#14527#0" />
+                <element signature="e#14571#15294#0" />
+                <element signature="e#14622#15288#0" />
+                <element signature="e#14653#14742#0" />
+                <element signature="e#14751#14835#0" />
+                <element signature="e#14844#14929#0" />
+                <element signature="e#14938#15029#0" />
+                <element signature="e#15038#15136#0" />
+                <element signature="e#15145#15243#0" />
+                <element signature="e#15252#15280#0" />
+                <element signature="n#!!block;n#deleteFieldValue#0;n#FilterUserInfoComponent#0" />
+                <element signature="e#15434#16964#0" />
+                <element signature="e#15454#15518#0" />
+                <element signature="e#15523#15597#0" />
+                <element signature="e#15602#15668#0" />
+                <element signature="e#15673#15750#0" />
+                <element signature="e#15755#15813#0" />
+                <element signature="e#15818#15894#0" />
+                <element signature="e#15899#16021#0" />
+                <element signature="e#16026#16086#0" />
+                <element signature="e#16091#16178#0" />
+                <element signature="e#16183#16247#0" />
+                <element signature="e#16252#16312#0" />
+                <element signature="e#16317#16386#0" />
+                <element signature="e#16391#16461#0" />
+                <element signature="e#16466#16534#0" />
+                <element signature="e#16539#16613#0" />
+                <element signature="e#16618#16692#0" />
+                <element signature="e#16697#16770#0" />
+                <element signature="e#16775#16848#0" />
+                <element signature="e#16853#16924#0" />
+                <element signature="e#16929#16960#0" />
+                <element signature="n#!!block;n#compare#0" />
               </folding>
             </state>
           </provider>
@@ -110,17 +394,17 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="884">
               <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+            <state relative-caret-position="425">
+              <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
               <folding>
                 <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
@@ -132,17 +416,8 @@
       <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="1479">
               <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_info_season.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -150,7 +425,7 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="19108">
               <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
             </state>
           </provider>
@@ -168,8 +443,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>current_season</find>
-      <find>.current_season</find>
       <find>&quot;current_season&quot;:</find>
       <find>CurrentSeasons</find>
       <find>updateUserInfoSeason</find>
@@ -198,6 +471,8 @@
       <find>.sc-stats-table</find>
       <find>table</find>
       <find>badges</find>
+      <find>idade</find>
+      <find>personal_data</find>
     </findStrings>
     <replaceStrings>
       <replace>match</replace>
@@ -275,7 +550,6 @@
         <option value="$PROJECT_DIR$/Website/controllers/user_info_controller.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
         <option value="$PROJECT_DIR$/Website/services/football_user_info_service.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
         <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" />
         <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" />
         <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" />
@@ -294,6 +568,7 @@
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
         <option value="$PROJECT_DIR$/Website/app.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
       </list>
     </option>
   </component>
@@ -313,11 +588,10 @@
       <path value="$PROJECT_DIR$/Website/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="7" />
-    <option name="y" value="55" />
-    <option name="width" value="1440" />
-    <option name="height" value="845" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -327,8 +601,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -369,22 +644,12 @@
               <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="user-info-profile" type="462c0819:PsiDirectoryNode" />
+              <item name="filter-user-info" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -520,15 +785,17 @@
       <workItem from="1541781912396" duration="1292000" />
       <workItem from="1542014840514" duration="1653000" />
       <workItem from="1542030976225" duration="587000" />
-      <workItem from="1542061355480" duration="89710000" />
+      <workItem from="1542061355480" duration="89943000" />
+      <workItem from="1544622944231" duration="648000" />
+      <workItem from="1545225821890" duration="1137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="545803000" />
+    <option name="totallyTimeSpent" value="547821000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="845" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="995" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -541,22 +808,22 @@
       <window_info anchor="bottom" id="NativeScript" order="8" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.26588845" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
-      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" side_tool="true" visible="true" weight="0.46562904" />
+      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" side_tool="true" visible="true" weight="0.3344191" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.22152779" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.22142857" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" visible="true" weight="0.46562904" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" weight="0.46562904" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32935917" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
@@ -675,8 +942,164 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/skill_set.ts">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="465" column="3" selection-start-line="465" selection-start-column="3" selection-end-line="465" selection-end-column="3" />
+          <folding>
+            <element signature="e#845#989#0" />
+            <element signature="n#!!block;n#constructor#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#ngOnInit#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#ngAfterViewInit#0;n#UserInfoProfileComponent#0" />
+            <element signature="e#2023#14202#0" />
+            <element signature="e#2199#2245#0" />
+            <element signature="e#2331#2386#0" />
+            <element signature="e#2777#2860#0" />
+            <element signature="e#2971#8864#0" />
+            <element signature="e#2983#4002#0" />
+            <element signature="e#3596#3990#0" />
+            <element signature="e#3621#3742#0" />
+            <element signature="e#3639#3726#0" />
+            <element signature="e#3764#3842#0" />
+            <element signature="e#3765#3841#0" />
+            <element signature="e#3866#3975#0" />
+            <element signature="e#3867#3974#0" />
+            <element signature="e#4014#5016#0" />
+            <element signature="e#4610#5004#0" />
+            <element signature="e#4635#4756#0" />
+            <element signature="e#4653#4740#0" />
+            <element signature="e#4778#4856#0" />
+            <element signature="e#4779#4855#0" />
+            <element signature="e#4880#4989#0" />
+            <element signature="e#4881#4988#0" />
+            <element signature="e#5028#5959#0" />
+            <element signature="e#5581#5947#0" />
+            <element signature="e#5606#5727#0" />
+            <element signature="e#5624#5711#0" />
+            <element signature="e#5749#5827#0" />
+            <element signature="e#5750#5826#0" />
+            <element signature="e#5851#5932#0" />
+            <element signature="e#5852#5931#0" />
+            <element signature="e#5971#6907#0" />
+            <element signature="e#6529#6895#0" />
+            <element signature="e#6554#6675#0" />
+            <element signature="e#6572#6659#0" />
+            <element signature="e#6697#6775#0" />
+            <element signature="e#6698#6774#0" />
+            <element signature="e#6799#6880#0" />
+            <element signature="e#6800#6879#0" />
+            <element signature="e#6919#7851#0" />
+            <element signature="e#7473#7839#0" />
+            <element signature="e#7498#7619#0" />
+            <element signature="e#7516#7603#0" />
+            <element signature="e#7641#7719#0" />
+            <element signature="e#7642#7718#0" />
+            <element signature="e#7743#7824#0" />
+            <element signature="e#7744#7823#0" />
+            <element signature="e#7863#8854#0" />
+            <element signature="e#8476#8842#0" />
+            <element signature="e#8501#8622#0" />
+            <element signature="e#8519#8606#0" />
+            <element signature="e#8644#8722#0" />
+            <element signature="e#8645#8721#0" />
+            <element signature="e#8746#8827#0" />
+            <element signature="e#8747#8826#0" />
+            <element signature="e#9050#13746#0" />
+            <element signature="e#9089#13735#0" />
+            <element signature="e#9139#13722#0" />
+            <element signature="e#9155#10083#0" />
+            <element signature="e#9212#9848#0" />
+            <element signature="e#9600#9829#0" />
+            <element signature="e#10099#10990#0" />
+            <element signature="e#10156#10782#0" />
+            <element signature="e#10534#10763#0" />
+            <element signature="e#11006#11797#0" />
+            <element signature="e#11063#11601#0" />
+            <element signature="e#11353#11582#0" />
+            <element signature="e#11813#12857#0" />
+            <element signature="e#11870#12429#0" />
+            <element signature="e#12181#12410#0" />
+            <element signature="e#12873#13708#0" />
+            <element signature="e#12930#13494#0" />
+            <element signature="e#13246#13475#0" />
+            <element signature="e#14020#14056#0" />
+            <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#loadChart#0;n#UserInfoProfileComponent#0" />
+            <element signature="e#14392#14493#0" />
+            <element signature="e#14512#14783#0" />
+            <element signature="e#14557#14777#0" />
+            <element signature="e#14558#14776#0" />
+            <element signature="e#14642#14768#0" />
+            <element signature="e#14804#15259#0" />
+            <element signature="e#14819#14940#0" />
+            <element signature="e#14956#14988#0" />
+            <element signature="e#15004#15253#0" />
+            <element signature="e#15021#15096#0" />
+            <element signature="e#15022#15095#0" />
+            <element signature="e#15045#15085#0" />
+            <element signature="e#15113#15245#0" />
+            <element signature="e#15114#15244#0" />
+            <element signature="e#15133#15171#0" />
+            <element signature="e#15194#15234#0" />
+            <element signature="e#15343#15457#0" />
+            <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
+            <element signature="e#15621#15773#0" />
+            <element signature="e#15637#15765#0" />
+            <element signature="e#15829#16779#0" />
+            <element signature="e#15858#16400#0" />
+            <element signature="e#15928#16392#0" />
+            <element signature="e#16175#16382#0" />
+            <element signature="e#16516#16772#0" />
+            <element signature="e#16538#16662#0" />
+            <element signature="e#16678#16762#0" />
+            <element signature="n#!!block;n#voteSkill#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#fakeVoteSkill#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#stickyScroll#0" />
+            <element signature="n#!!block;n#_make_random_text#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19108">
+          <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/node_modules/mongoose/lib/model.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -717,133 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="605" column="9" selection-start-line="605" selection-start-column="9" selection-end-line="605" selection-end-column="9" />
-          <folding>
-            <element signature="e#1115#9779#0" />
-            <element signature="e#1234#1794#0" />
-            <element signature="e#1810#2012#0" />
-            <element signature="e#2029#3223#0" />
-            <element signature="e#2041#2430#0" />
-            <element signature="e#2442#2826#0" />
-            <element signature="e#2838#3213#0" />
-            <element signature="e#3242#4028#0" />
-            <element signature="e#3254#4018#0" />
-            <element signature="e#3341#3546#0" />
-            <element signature="e#3571#3777#0" />
-            <element signature="e#3802#4006#0" />
-            <element signature="e#4045#9771#0" />
-            <element signature="e#4057#5015#0" />
-            <element signature="e#4637#5003#0" />
-            <element signature="e#4662#4783#0" />
-            <element signature="e#4680#4767#0" />
-            <element signature="e#4805#4883#0" />
-            <element signature="e#4806#4882#0" />
-            <element signature="e#4907#4988#0" />
-            <element signature="e#4908#4987#0" />
-            <element signature="e#5027#5963#0" />
-            <element signature="e#5585#5951#0" />
-            <element signature="e#5610#5731#0" />
-            <element signature="e#5628#5715#0" />
-            <element signature="e#5753#5831#0" />
-            <element signature="e#5754#5830#0" />
-            <element signature="e#5855#5936#0" />
-            <element signature="e#5856#5935#0" />
-            <element signature="e#5975#6906#0" />
-            <element signature="e#6528#6894#0" />
-            <element signature="e#6553#6674#0" />
-            <element signature="e#6571#6658#0" />
-            <element signature="e#6696#6774#0" />
-            <element signature="e#6697#6773#0" />
-            <element signature="e#6798#6879#0" />
-            <element signature="e#6799#6878#0" />
-            <element signature="e#6918#7854#0" />
-            <element signature="e#7476#7842#0" />
-            <element signature="e#7501#7622#0" />
-            <element signature="e#7519#7606#0" />
-            <element signature="e#7644#7722#0" />
-            <element signature="e#7645#7721#0" />
-            <element signature="e#7746#7827#0" />
-            <element signature="e#7747#7826#0" />
-            <element signature="e#7866#8798#0" />
-            <element signature="e#8420#8786#0" />
-            <element signature="e#8445#8566#0" />
-            <element signature="e#8463#8550#0" />
-            <element signature="e#8588#8666#0" />
-            <element signature="e#8589#8665#0" />
-            <element signature="e#8690#8771#0" />
-            <element signature="e#8691#8770#0" />
-            <element signature="e#8810#9761#0" />
-            <element signature="e#9383#9749#0" />
-            <element signature="e#9408#9529#0" />
-            <element signature="e#9426#9513#0" />
-            <element signature="e#9551#9629#0" />
-            <element signature="e#9552#9628#0" />
-            <element signature="e#9653#9734#0" />
-            <element signature="e#9654#9733#0" />
-            <element signature="e#9843#9984#0" />
-            <element signature="e#9994#10249#0" />
-            <element signature="e#10259#10397#0" />
-            <element signature="e#10407#10545#0" />
-            <element signature="e#10555#10808#0" />
-            <element signature="e#10841#15091#0" />
-            <element signature="e#10883#15082#0" />
-            <element signature="e#10895#11751#0" />
-            <element signature="e#10940#11524#0" />
-            <element signature="e#11300#11509#0" />
-            <element signature="e#11763#12582#0" />
-            <element signature="e#11808#12382#0" />
-            <element signature="e#12158#12367#0" />
-            <element signature="e#12594#13313#0" />
-            <element signature="e#12639#13125#0" />
-            <element signature="e#12901#13110#0" />
-            <element signature="e#13325#14297#0" />
-            <element signature="e#13370#13877#0" />
-            <element signature="e#13653#13862#0" />
-            <element signature="e#14309#15072#0" />
-            <element signature="e#14354#14866#0" />
-            <element signature="e#14642#14851#0" />
-            <element signature="e#15113#15526#0" />
-            <element signature="e#15123#15254#0" />
-            <element signature="e#15264#15384#0" />
-            <element signature="e#15394#15518#0" />
-            <element signature="e#15627#18799#0" />
-            <element signature="e#16144#17822#0" />
-            <element signature="e#16152#16981#0" />
-            <element signature="e#16667#16973#0" />
-            <element signature="e#16688#16789#0" />
-            <element signature="e#16702#16777#0" />
-            <element signature="e#16807#16873#0" />
-            <element signature="e#16808#16872#0" />
-            <element signature="e#16893#16962#0" />
-            <element signature="e#16894#16961#0" />
-            <element signature="e#16989#17816#0" />
-            <element signature="e#17502#17808#0" />
-            <element signature="e#17523#17624#0" />
-            <element signature="e#17537#17612#0" />
-            <element signature="e#17642#17708#0" />
-            <element signature="e#17643#17707#0" />
-            <element signature="e#17728#17797#0" />
-            <element signature="e#17729#17796#0" />
-            <element signature="e#17841#18795#0" />
-            <element signature="e#17857#18029#0" />
-            <element signature="e#17858#18028#0" />
-            <element signature="e#18047#18789#0" />
-            <element signature="e#18048#18788#0" />
-            <element signature="e#18069#18312#0" />
-            <element signature="e#18081#18149#0" />
-            <element signature="e#18161#18230#0" />
-            <element signature="e#18242#18311#0" />
-            <element signature="e#18332#18422#0" />
-            <element signature="e#18344#18421#0" />
-            <element signature="e#18442#18606#0" />
-            <element signature="e#18454#18526#0" />
-            <element signature="e#18538#18605#0" />
-            <element signature="e#18624#18709#0" />
-            <element signature="e#18636#18708#0" />
-            <element signature="n#!!block;n#getTeamPlayer#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#createRecommendation#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#unfollow#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#handleError#0;n#UserInfoService#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -872,40 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
-          <folding>
-            <element signature="e#143#675#0" />
-            <element signature="e#161#235#0" />
-            <element signature="e#255#596#0" />
-            <element signature="e#276#590#0" />
-            <element signature="e#299#580#0" />
-            <element signature="e#738#938#0" />
-            <element signature="e#785#859#0" />
-            <element signature="e#801#853#0" />
-            <element signature="e#1024#2872#0" />
-            <element signature="e#1042#2838#0" />
-            <element signature="e#1052#2832#0" />
-            <element signature="e#1074#2822#0" />
-            <element signature="e#1103#1361#0" />
-            <element signature="e#1125#1343#0" />
-            <element signature="e#1159#1321#0" />
-            <element signature="e#1399#1654#0" />
-            <element signature="e#1421#1636#0" />
-            <element signature="e#1455#1614#0" />
-            <element signature="e#1689#1941#0" />
-            <element signature="e#1711#1923#0" />
-            <element signature="e#1745#1901#0" />
-            <element signature="e#1970#2228#0" />
-            <element signature="e#1992#2210#0" />
-            <element signature="e#2026#2188#0" />
-            <element signature="e#2266#2521#0" />
-            <element signature="e#2288#2503#0" />
-            <element signature="e#2322#2481#0" />
-            <element signature="e#2556#2808#0" />
-            <element signature="e#2578#2790#0" />
-            <element signature="e#2612#2768#0" />
-            <element signature="e#8044#8122#0" />
-            <element signature="e#8064#8093#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -920,9 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
           <caret line="138" column="66" selection-start-line="138" selection-start-column="66" selection-end-line="138" selection-end-column="66" />
-          <folding>
-            <element signature="e#5106#5738#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,9 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts.orig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -980,15 +1236,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-          <folding>
-            <element signature="e#639#774#0" />
-            <element signature="n#!!block;n#constructor#0;n#CreateAccountComponent#0" />
-            <element signature="n#!!block;n#ngOnInit#0;n#CreateAccountComponent#0" />
-            <element signature="e#2044#2196#0" />
-            <element signature="e#2215#2263#0" />
-            <element signature="e#2278#2376#0" />
-            <element signature="n#!!block;n#createPlayer#0;n#CreateAccountComponent#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,56 +1260,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/routes/storage_routes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Website/routes/user_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
-          <folding>
-            <element signature="e#519#1746#0" />
-            <element signature="e#529#1694#0" />
-            <element signature="e#587#686#0" />
-            <element signature="e#746#1686#0" />
-            <element signature="e#803#865#0" />
-            <element signature="e#1227#1673#0" />
-            <element signature="e#1709#1744#0" />
-            <element signature="e#1798#5835#0" />
-            <element signature="e#1862#5815#0" />
-            <element signature="e#1876#5751#0" />
-            <element signature="e#1908#2094#0" />
-            <element signature="e#2158#5739#0" />
-            <element signature="e#2294#2358#0" />
-            <element signature="e#2744#3309#0" />
-            <element signature="e#2789#3049#0" />
-            <element signature="e#3070#3290#0" />
-            <element signature="e#3366#5725#0" />
-            <element signature="e#3397#3609#0" />
-            <element signature="e#3451#3585#0" />
-            <element signature="e#3643#3803#0" />
-            <element signature="e#3697#3779#0" />
-            <element signature="e#3918#3969#0" />
-            <element signature="e#4058#4900#0" />
-            <element signature="e#5163#5705#0" />
-            <element signature="e#5766#5809#0" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_competition.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/models/football_user_info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="e#659#806#0" />
-            <element signature="e#829#1481#0" />
-            <element signature="e#1501#1657#0" />
-            <element signature="e#1802#1886#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,56 +1278,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="99" column="79" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
-          <folding>
-            <element signature="e#316#542#0" />
-            <element signature="e#869#1088#0" />
-            <element signature="e#1101#1801#0" />
-            <element signature="e#1102#1800#0" />
-            <element signature="e#1816#2698#0" />
-            <element signature="e#1817#2697#0" />
-            <element signature="e#1932#2167#0" />
-            <element signature="e#2188#2429#0" />
-            <element signature="e#2450#2691#0" />
-            <element signature="e#2711#3438#0" />
-            <element signature="e#2721#3432#0" />
-            <element signature="e#2927#3422#0" />
-            <element signature="e#2954#3092#0" />
-            <element signature="e#2955#3091#0" />
-            <element signature="e#3116#3247#0" />
-            <element signature="e#3117#3246#0" />
-            <element signature="e#3271#3407#0" />
-            <element signature="e#3272#3406#0" />
-            <element signature="e#3458#3528#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_team_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#303#894#0" />
-            <element signature="e#313#888#0" />
-            <element signature="e#909#1791#0" />
-            <element signature="e#910#1790#0" />
-            <element signature="e#1025#1260#0" />
-            <element signature="e#1281#1522#0" />
-            <element signature="e#1543#1784#0" />
-            <element signature="e#1806#2170#0" />
-            <element signature="e#1816#2164#0" />
-            <element signature="e#2183#2461#0" />
-            <element signature="e#2193#2455#0" />
-            <element signature="e#2474#3201#0" />
-            <element signature="e#2484#3195#0" />
-            <element signature="e#2690#3185#0" />
-            <element signature="e#2717#2855#0" />
-            <element signature="e#2718#2854#0" />
-            <element signature="e#2879#3010#0" />
-            <element signature="e#2880#3009#0" />
-            <element signature="e#3034#3170#0" />
-            <element signature="e#3035#3169#0" />
-            <element signature="e#3221#3291#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1141,9 +1299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="66" lean-forward="true" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,28 +1306,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="1815" column="13" selection-start-line="1815" selection-start-column="13" selection-end-line="1815" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#771#63710#0" />
-            <element signature="e#66651#66808#0" />
-            <element signature="e#66818#66991#0" />
-            <element signature="e#67010#67041#0" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="7" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_team.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1211,50 +1346,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding>
-            <element signature="e#845#989#0" />
-            <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#_make_random_text#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="19108">
           <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
+        <state relative-caret-position="7106">
           <caret line="418" column="1" selection-start-line="418" selection-start-column="1" selection-end-line="418" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
+        <state relative-caret-position="4539">
           <caret line="267" selection-start-line="267" selection-end-line="267" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
+        <state relative-caret-position="3485">
           <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1264,7 +1384,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="1394">
           <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
           <folding>
             <element signature="e#489#607#0" />
@@ -1308,25 +1428,321 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="1479">
           <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="884">
           <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+        <state relative-caret-position="425">
+          <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
           <folding>
             <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="465" column="3" selection-start-line="465" selection-start-column="3" selection-end-line="465" selection-end-column="3" />
+          <folding>
+            <element signature="e#845#989#0" />
+            <element signature="n#!!block;n#constructor#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#ngOnInit#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#ngAfterViewInit#0;n#UserInfoProfileComponent#0" />
+            <element signature="e#2023#14202#0" />
+            <element signature="e#2199#2245#0" />
+            <element signature="e#2331#2386#0" />
+            <element signature="e#2777#2860#0" />
+            <element signature="e#2971#8864#0" />
+            <element signature="e#2983#4002#0" />
+            <element signature="e#3596#3990#0" />
+            <element signature="e#3621#3742#0" />
+            <element signature="e#3639#3726#0" />
+            <element signature="e#3764#3842#0" />
+            <element signature="e#3765#3841#0" />
+            <element signature="e#3866#3975#0" />
+            <element signature="e#3867#3974#0" />
+            <element signature="e#4014#5016#0" />
+            <element signature="e#4610#5004#0" />
+            <element signature="e#4635#4756#0" />
+            <element signature="e#4653#4740#0" />
+            <element signature="e#4778#4856#0" />
+            <element signature="e#4779#4855#0" />
+            <element signature="e#4880#4989#0" />
+            <element signature="e#4881#4988#0" />
+            <element signature="e#5028#5959#0" />
+            <element signature="e#5581#5947#0" />
+            <element signature="e#5606#5727#0" />
+            <element signature="e#5624#5711#0" />
+            <element signature="e#5749#5827#0" />
+            <element signature="e#5750#5826#0" />
+            <element signature="e#5851#5932#0" />
+            <element signature="e#5852#5931#0" />
+            <element signature="e#5971#6907#0" />
+            <element signature="e#6529#6895#0" />
+            <element signature="e#6554#6675#0" />
+            <element signature="e#6572#6659#0" />
+            <element signature="e#6697#6775#0" />
+            <element signature="e#6698#6774#0" />
+            <element signature="e#6799#6880#0" />
+            <element signature="e#6800#6879#0" />
+            <element signature="e#6919#7851#0" />
+            <element signature="e#7473#7839#0" />
+            <element signature="e#7498#7619#0" />
+            <element signature="e#7516#7603#0" />
+            <element signature="e#7641#7719#0" />
+            <element signature="e#7642#7718#0" />
+            <element signature="e#7743#7824#0" />
+            <element signature="e#7744#7823#0" />
+            <element signature="e#7863#8854#0" />
+            <element signature="e#8476#8842#0" />
+            <element signature="e#8501#8622#0" />
+            <element signature="e#8519#8606#0" />
+            <element signature="e#8644#8722#0" />
+            <element signature="e#8645#8721#0" />
+            <element signature="e#8746#8827#0" />
+            <element signature="e#8747#8826#0" />
+            <element signature="e#9050#13746#0" />
+            <element signature="e#9089#13735#0" />
+            <element signature="e#9139#13722#0" />
+            <element signature="e#9155#10083#0" />
+            <element signature="e#9212#9848#0" />
+            <element signature="e#9600#9829#0" />
+            <element signature="e#10099#10990#0" />
+            <element signature="e#10156#10782#0" />
+            <element signature="e#10534#10763#0" />
+            <element signature="e#11006#11797#0" />
+            <element signature="e#11063#11601#0" />
+            <element signature="e#11353#11582#0" />
+            <element signature="e#11813#12857#0" />
+            <element signature="e#11870#12429#0" />
+            <element signature="e#12181#12410#0" />
+            <element signature="e#12873#13708#0" />
+            <element signature="e#12930#13494#0" />
+            <element signature="e#13246#13475#0" />
+            <element signature="e#14020#14056#0" />
+            <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#loadChart#0;n#UserInfoProfileComponent#0" />
+            <element signature="e#14392#14493#0" />
+            <element signature="e#14512#14783#0" />
+            <element signature="e#14557#14777#0" />
+            <element signature="e#14558#14776#0" />
+            <element signature="e#14642#14768#0" />
+            <element signature="e#14804#15259#0" />
+            <element signature="e#14819#14940#0" />
+            <element signature="e#14956#14988#0" />
+            <element signature="e#15004#15253#0" />
+            <element signature="e#15021#15096#0" />
+            <element signature="e#15022#15095#0" />
+            <element signature="e#15045#15085#0" />
+            <element signature="e#15113#15245#0" />
+            <element signature="e#15114#15244#0" />
+            <element signature="e#15133#15171#0" />
+            <element signature="e#15194#15234#0" />
+            <element signature="e#15343#15457#0" />
+            <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
+            <element signature="e#15621#15773#0" />
+            <element signature="e#15637#15765#0" />
+            <element signature="e#15829#16779#0" />
+            <element signature="e#15858#16400#0" />
+            <element signature="e#15928#16392#0" />
+            <element signature="e#16175#16382#0" />
+            <element signature="e#16516#16772#0" />
+            <element signature="e#16538#16662#0" />
+            <element signature="e#16678#16762#0" />
+            <element signature="n#!!block;n#voteSkill#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#fakeVoteSkill#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
+            <element signature="n#!!block;n#stickyScroll#0" />
+            <element signature="n#!!block;n#_make_random_text#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-582">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#465#606#0" />
+            <element signature="n#!!block;n#constructor#0;n#FilterUserInfoComponent#0" />
+            <element signature="n#!!block;n#ngOnInit#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#2458#10872#0" />
+            <element signature="e#2477#2941#0" />
+            <element signature="e#2591#2933#0" />
+            <element signature="e#2603#2674#0" />
+            <element signature="e#2686#2757#0" />
+            <element signature="e#2769#2839#0" />
+            <element signature="e#2851#2922#0" />
+            <element signature="e#2971#3140#0" />
+            <element signature="e#3065#3132#0" />
+            <element signature="e#3066#3131#0" />
+            <element signature="e#3176#3671#0" />
+            <element signature="e#3329#3663#0" />
+            <element signature="e#3341#3415#0" />
+            <element signature="e#3427#3493#0" />
+            <element signature="e#3505#3569#0" />
+            <element signature="e#3581#3652#0" />
+            <element signature="e#3700#4170#0" />
+            <element signature="e#3817#4162#0" />
+            <element signature="e#3829#3903#0" />
+            <element signature="e#3915#3986#0" />
+            <element signature="e#3998#4068#0" />
+            <element signature="e#4080#4151#0" />
+            <element signature="e#4205#4400#0" />
+            <element signature="e#4421#4655#0" />
+            <element signature="e#4556#4646#0" />
+            <element signature="e#4568#4636#0" />
+            <element signature="e#4689#4835#0" />
+            <element signature="e#4870#5406#0" />
+            <element signature="e#5301#5398#0" />
+            <element signature="e#5313#5388#0" />
+            <element signature="e#5429#5898#0" />
+            <element signature="e#5548#5890#0" />
+            <element signature="e#5560#5631#0" />
+            <element signature="e#5643#5714#0" />
+            <element signature="e#5726#5796#0" />
+            <element signature="e#5808#5879#0" />
+            <element signature="e#5923#6390#0" />
+            <element signature="e#6040#6382#0" />
+            <element signature="e#6052#6123#0" />
+            <element signature="e#6135#6206#0" />
+            <element signature="e#6218#6288#0" />
+            <element signature="e#6300#6371#0" />
+            <element signature="e#6413#6882#0" />
+            <element signature="e#6532#6874#0" />
+            <element signature="e#6544#6615#0" />
+            <element signature="e#6627#6698#0" />
+            <element signature="e#6710#6780#0" />
+            <element signature="e#6792#6863#0" />
+            <element signature="e#6907#7375#0" />
+            <element signature="e#7025#7367#0" />
+            <element signature="e#7037#7108#0" />
+            <element signature="e#7120#7191#0" />
+            <element signature="e#7203#7273#0" />
+            <element signature="e#7285#7356#0" />
+            <element signature="e#7407#7858#0" />
+            <element signature="e#7508#7850#0" />
+            <element signature="e#7520#7591#0" />
+            <element signature="e#7603#7674#0" />
+            <element signature="e#7686#7756#0" />
+            <element signature="e#7768#7839#0" />
+            <element signature="e#7890#8329#0" />
+            <element signature="e#7979#8321#0" />
+            <element signature="e#7991#8062#0" />
+            <element signature="e#8074#8145#0" />
+            <element signature="e#8157#8227#0" />
+            <element signature="e#8239#8310#0" />
+            <element signature="e#8364#8935#0" />
+            <element signature="e#8593#8927#0" />
+            <element signature="e#8605#8679#0" />
+            <element signature="e#8691#8757#0" />
+            <element signature="e#8769#8833#0" />
+            <element signature="e#8845#8916#0" />
+            <element signature="e#8969#9153#0" />
+            <element signature="e#9076#9145#0" />
+            <element signature="e#9077#9144#0" />
+            <element signature="e#9187#9385#0" />
+            <element signature="e#9311#9377#0" />
+            <element signature="e#9312#9376#0" />
+            <element signature="e#9417#9881#0" />
+            <element signature="e#9539#9873#0" />
+            <element signature="e#9551#9625#0" />
+            <element signature="e#9637#9703#0" />
+            <element signature="e#9715#9779#0" />
+            <element signature="e#9791#9862#0" />
+            <element signature="e#9908#10372#0" />
+            <element signature="e#10022#10364#0" />
+            <element signature="e#10034#10105#0" />
+            <element signature="e#10117#10188#0" />
+            <element signature="e#10200#10270#0" />
+            <element signature="e#10282#10353#0" />
+            <element signature="e#10402#10866#0" />
+            <element signature="e#10516#10858#0" />
+            <element signature="e#10528#10599#0" />
+            <element signature="e#10611#10682#0" />
+            <element signature="e#10694#10764#0" />
+            <element signature="e#10776#10847#0" />
+            <element signature="n#!!block;n#contains#0;n#FilterUserInfoComponent#0" />
+            <element signature="n#!!block;n#loadAgeGroups#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#11030#11806#0" />
+            <element signature="e#11038#11089#0" />
+            <element signature="e#11097#11150#0" />
+            <element signature="e#11158#11213#0" />
+            <element signature="e#11221#11276#0" />
+            <element signature="e#11278#11332#0" />
+            <element signature="e#11340#11394#0" />
+            <element signature="e#11396#11451#0" />
+            <element signature="e#11459#11512#0" />
+            <element signature="e#11514#11567#0" />
+            <element signature="e#11575#11627#0" />
+            <element signature="e#11629#11684#0" />
+            <element signature="e#11692#11745#0" />
+            <element signature="e#11747#11800#0" />
+            <element signature="n#!!block;n#loadLeagues#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#11880#12098#0" />
+            <element signature="e#11888#11946#0" />
+            <element signature="e#11954#12004#0" />
+            <element signature="e#12012#12091#0" />
+            <element signature="n#!!block;n#loadTeam#0;n#FilterUserInfoComponent#0" />
+            <element signature="n#!!block;n#loadPlayers#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#12392#12522#0" />
+            <element signature="e#12452#12516#0" />
+            <element signature="e#12621#13230#0" />
+            <element signature="e#12669#12752#0" />
+            <element signature="e#12789#13067#0" />
+            <element signature="n#!!block;n#addFieldValue#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#13321#13868#0" />
+            <element signature="e#13392#13862#0" />
+            <element signature="e#13586#13852#0" />
+            <element signature="n#!!block;n#changed#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#13997#14036#0" />
+            <element signature="n#!!block;n#sortData#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#14476#14527#0" />
+            <element signature="e#14571#15294#0" />
+            <element signature="e#14622#15288#0" />
+            <element signature="e#14653#14742#0" />
+            <element signature="e#14751#14835#0" />
+            <element signature="e#14844#14929#0" />
+            <element signature="e#14938#15029#0" />
+            <element signature="e#15038#15136#0" />
+            <element signature="e#15145#15243#0" />
+            <element signature="e#15252#15280#0" />
+            <element signature="n#!!block;n#deleteFieldValue#0;n#FilterUserInfoComponent#0" />
+            <element signature="e#15434#16964#0" />
+            <element signature="e#15454#15518#0" />
+            <element signature="e#15523#15597#0" />
+            <element signature="e#15602#15668#0" />
+            <element signature="e#15673#15750#0" />
+            <element signature="e#15755#15813#0" />
+            <element signature="e#15818#15894#0" />
+            <element signature="e#15899#16021#0" />
+            <element signature="e#16026#16086#0" />
+            <element signature="e#16091#16178#0" />
+            <element signature="e#16183#16247#0" />
+            <element signature="e#16252#16312#0" />
+            <element signature="e#16317#16386#0" />
+            <element signature="e#16391#16461#0" />
+            <element signature="e#16466#16534#0" />
+            <element signature="e#16539#16613#0" />
+            <element signature="e#16618#16692#0" />
+            <element signature="e#16697#16770#0" />
+            <element signature="e#16775#16848#0" />
+            <element signature="e#16853#16924#0" />
+            <element signature="e#16929#16960#0" />
+            <element signature="n#!!block;n#compare#0" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,104 @@
+Páginas
+- Stats jogador/clube (UPDATE & IMPROVE)
+ 3 
+ 	- Listagem de jogos à direita (inspirar ou reutilizar implementações anteriores) 
+- Media jogador/clube (UPDATE & IMPROVE)
+ 13 (10) 
+ 	- Modal de criação e edição
+ 	- Botão de adição de media
+ 	- Lógica de adição/delete de media 
+ 	- Filtro para media própria
+
+- Perfil de jogador - Skills (UPDATE & IMPROVE)
+ 5 (+Escolha da lib)
+	- Alteração da view com lib nova (Escolha e modo de funcionamento = A/D)
+	- Escolha da skill a votar com um modal com a lista das skills possíveis. 
+	- Possibilidade de ver quem votou
+	- Fix do min value
+	- Modal com infinite scroll
+	- Aparecem as X mais votadas
+
+- Pesquisa filtrada (UPDATE & IMPROVE) - Diogo - Funcional a 150%
+ 13
+	- 2way binding fix
+	- Enable / Disable para o que está implementado ou não
+	- Objetos de filtragem associada ao filtro escolhido para todos os casos.
+	- Paginação
+	- Query string with filters
+	- Pesquisa de valor string wildcard 
+	- Tornar possível pesquisar equipas
+
+- Plantel clube (CREATE)
+ 4
+	- (NA PÁGINA DE PERFIL)
+	 	Pódio - Melhor marcador; Melhor assistente; Mais minutos.
+	- Listagem dos jogadores em tabela sortable com estatísticas
+
+- Feed (CREATE)
+ 3
+	- Right (jogadores recomendadoas - Captções, melhores jogadores, destaques)
+	- Center notícias (Media)
+
+- Edição de jogador (UPDATE & IMPROVE)
+ 5
+	- Dar fix aos dropdowns (incluindo bug data)
+	- Criar lógica de inserção de equipa, incluindo design (Tabs and ddl).
+	- Integração das épocas para a lista de jogos (feito, mas a confirmar)
+	- Integração para as opções de dados do jogador (País, cidade, etc - feito, mas a confirmar) - Dependência do Filtered Search
+
+
+- Criação de novo jogador (CREATE)
+ 1
+	- Adaptação (Replicação da edição)
+	- Integrar a "Criação de jogador" com esta página
+
+
+- Edição e configuração de conta de utilizador (CREATE)
+ 3
+	- Modal com todas as configurações possíveis (inspirar o LinkedIN)
+	- Botão de edição sobe para o menu de configuração do jogador.
+
+
+- Lista de notificações [Ver todos]
+ 2	
+	- Infinite scroll (SEM MODAL)
+
+- Lista de recomendações [Ver todos]
+ 1	
+	- infinit scroll in place (SEM MODAL)
+
+- Lista de pesquisa simples [Ver todos] 
+ 0	
+	- Redirect para a pesquisa filtrada
+
+- Lista de seguidores [Ver todos]
+ 0,5	
+	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
+
+- Lista de 'a seguir' [Ver todos]
+ 0,5	
+	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
+
+
+- Lista de skills [Ver todos]
+ 1	
+	- Modal com infinit scroll ou paginação (já está adjudicado nas tarefas das skills)
+
+
+- Lista de badges [Ver todos]	
+ 1
+	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver a lista de skills)
+
+- Chat fixo
+ 20 + 13
+	- Design e layout da página principal do chat (Cópia do linkedIN ou FB)
+	- layout das pequenas componentes
+	- sewport inspired 
+	
+
+- Tornar app toda responsive
+ 13 ? 
+
+
+
+
