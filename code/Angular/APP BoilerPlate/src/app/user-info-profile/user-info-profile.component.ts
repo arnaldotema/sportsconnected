@@ -465,8 +465,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     });
   }
 
-
-
   voteSkill(event): void {
     let skillName = event.target.title;
     this.userInfoService.voteForSkill(skillName, this.session_user.profile_id, this.viewModel._id)
