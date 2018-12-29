@@ -1,16 +1,16 @@
 Páginas
 - Stats jogador/clube (UPDATE & IMPROVE)
- 3 
+ 3 [3]
  	- Listagem de jogos à direita (inspirar ou reutilizar implementações anteriores) 
 - Media jogador/clube (UPDATE & IMPROVE)
- 13 (10) 
+ 13 (10)  [13]
  	- Modal de criação e edição
  	- Botão de adição de media
  	- Lógica de adição/delete de media 
  	- Filtro para media própria
 
 - Perfil de jogador - Skills (UPDATE & IMPROVE)
- 5 (+Escolha da lib)
+ 5 (+Escolha da lib)  [8]
 	- Alteração da view com lib nova (Escolha e modo de funcionamento = A/D)
 	- Escolha da skill a votar com um modal com a lista das skills possíveis. 
 	- Possibilidade de ver quem votou
@@ -19,7 +19,7 @@ Páginas
 	- Aparecem as X mais votadas
 
 - Pesquisa filtrada (UPDATE & IMPROVE) - Diogo - Funcional a 150%
- 13
+ 13 [13]
 	- 2way binding fix
 	- Enable / Disable para o que está implementado ou não
 	- Objetos de filtragem associada ao filtro escolhido para todos os casos.
@@ -29,18 +29,18 @@ Páginas
 	- Tornar possível pesquisar equipas
 
 - Plantel clube (CREATE)
- 4
+ 4 [5]
 	- (NA PÁGINA DE PERFIL)
 	 	Pódio - Melhor marcador; Melhor assistente; Mais minutos.
 	- Listagem dos jogadores em tabela sortable com estatísticas
 
 - Feed (CREATE)
- 3
+ 3 [3]
 	- Right (jogadores recomendadoas - Captções, melhores jogadores, destaques)
 	- Center notícias (Media)
 
 - Edição de jogador (UPDATE & IMPROVE)
- 5
+ 5 [5]
 	- Dar fix aos dropdowns (incluindo bug data)
 	- Criar lógica de inserção de equipa, incluindo design (Tabs and ddl).
 	- Integração das épocas para a lista de jogos (feito, mas a confirmar)
@@ -48,56 +48,56 @@ Páginas
 
 
 - Criação de novo jogador (CREATE)
- 1
+ 1 [1]
 	- Adaptação (Replicação da edição)
 	- Integrar a "Criação de jogador" com esta página
 
 
 - Edição e configuração de conta de utilizador (CREATE)
- 3
+ 3 [4]
 	- Modal com todas as configurações possíveis (inspirar o LinkedIN)
 	- Botão de edição sobe para o menu de configuração do jogador.
 
 
 - Lista de notificações [Ver todos]
- 2	
+ 2	[2]
 	- Infinite scroll (SEM MODAL)
 
 - Lista de recomendações [Ver todos]
- 1	
+ 1	[1]
 	- infinit scroll in place (SEM MODAL)
 
 - Lista de pesquisa simples [Ver todos] 
- 0	
+ 0	[0,1]
 	- Redirect para a pesquisa filtrada
 
 - Lista de seguidores [Ver todos]
- 0,5	
+ 0,5	[1]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
 
 - Lista de 'a seguir' [Ver todos]
- 0,5	
+ 0,5	[1]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
 
 
 - Lista de skills [Ver todos]
- 1	
+ 1	[1]
 	- Modal com infinit scroll ou paginação (já está adjudicado nas tarefas das skills)
 
 
 - Lista de badges [Ver todos]	
- 1
+ 1 [1]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver a lista de skills)
 
 - Chat fixo
- 20 + 13
+ 20 + 13 [não chegámos a falar muito disto, por isso não tenho uma opinião formada]
 	- Design e layout da página principal do chat (Cópia do linkedIN ou FB)
 	- layout das pequenas componentes
 	- sewport inspired 
 	
 
 - Tornar app toda responsive
- 13 ? 
+ 13 ? [preciso de tempo para percorrer as páginas da aplicação, provalemente será por estar ordem de valores (13 ou 18 tendo em conta a utilização atual do bootstrap)]
 
 
 
