@@ -2,9 +2,444 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change afterPath="$PROJECT_DIR$/../docs/tasks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/.angular-cli.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/Achievement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/CompetitionSeason.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/CompetitionViewModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/Country.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/ExternalIds.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/FilterSearch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/MatchViewModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/Media.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/ParentErrorStateMatcher.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/PasswordValidator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/PlayerMatch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/Recommendation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/SearchEntityViewmodel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/SkillSet.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/TeamAdditionalInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/TeamMatch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/TeamPlayer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/TeamSeason.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/TeamViewModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/TryOut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/User.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/UserInfoSearch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/UserInfoSeason.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/UserInfoViewModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/classes/UsernameValidator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/AppComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/CompetitionComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/CreateAccountComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/EditUserInfoComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/FilterUserInfoComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/HeaderComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/HomeComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/LoginComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/MatchComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/RecommendationModalComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamMediaComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamPlayerComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamPlayerEvaluationModalComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamProfileComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamRosterComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TeamStatsComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/TryoutModalComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/UserInfoProfileComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/User_infoComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/User_infoMediaComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/components/User_infoStatsComponent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/coverage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/ionicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/ionicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/ionicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/ionicons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/graph/dependencies.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/guards/AdminGuard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/guards/AuthGuard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/images/compodoc-vectorise-inverted.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/images/compodoc-vectorise.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/images/coverage-badge-documentation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/AuthenticationService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/GenericUserService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/MatchService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/PlayerService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/TeamService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/UserInfoService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/injectables/UserService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/compodoc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/lazy-load-graphs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/EventDispatcher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/bootstrap-native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/clipboard.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/custom-elements.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/d3.v3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/deep-iterator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/es6-shim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/htmlparser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/innersvg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/lit-html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/prism.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/promise.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/svg-pan-zoom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/tablesort.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/tablesort.number.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/vis.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/libs/zepto.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/menu-wc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/routes/routes_index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/search/lunr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/search/search-lunr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/search/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/search/search_index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/sourceCode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/svg-pan-zoom.controls.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/js/tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/miscellaneous/functions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/miscellaneous/variables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/modules.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/modules/AppModule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/modules/AppModule/dependencies.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/modules/AppRoutingModule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/overview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/routes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/bootstrap-card.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/compodoc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/ionicons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/laravel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/material.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/original.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/postmark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/prism.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/readthedocs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/stripe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/tablesort.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/documentation/styles/vagrant.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/e2e/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/e2e/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/e2e/tsconfig.e2e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/proxy.conf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_guards/admin.guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_guards/auth.guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/achievement.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/competition_season.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/external_ids.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/filter_search.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/match_viewmodel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/media.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/notification_viewmodel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/player_match.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/recommendation.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/session_user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/skill_set.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_additional_info.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_match.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_player.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_season.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_viewmodel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/try_out.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/match.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/notifications.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/team.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/competition/competition.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/competition/competition.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/competition/competition.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/competition/competition.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-media/team-media.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-media/team-media.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-media/team-media.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-media/team-media.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-player/team-player.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-player/team-player.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-player/team-player.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-player/team-player.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team/team.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team/team.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team/team.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team/team.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user_info/user_info.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/validators/country.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/validators/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/validators/password.validator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/validators/username.validator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/9_imgbank_tp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/Liga_Portugal_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/PDF-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_Black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_Black_Symbol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_RVB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_White_Symbol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/Tacadaligalogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/arnaldo_profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/ball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/blue-longcat-spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/captain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/case.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/clock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/default-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/default_badge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/defender.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/dribble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/fast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/flags/pt-wave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/flags/pt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/follow-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/follow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/goal-keeper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/js/bootstrap-filestyle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/logout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-compass-1.13.1-darwin-x64.dmg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/GNU-AGPL-3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/MPL-2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/THIRD-PARTY-NOTICES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/bsondump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/install_compass" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongodump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongoexport" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongofiles" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongoimport" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongoperf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongoreplay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongorestore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongostat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/mongotop" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/passer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/recomendation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/recomendation_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/scorer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/search_players.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/soccer-court.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/strong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/valid_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/valid_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/src/typings.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/app.js.orig" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js.orig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/auth/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/constants/values.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/values.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/competition_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/competition_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/global_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/global_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/match_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/match_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/recommendation_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/recommendation_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/storage_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/storage_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/team_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/team_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/controllers/user_info_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user_info_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/base_uris.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/base_uris.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/crawler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/checkingtemplates.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/functions/checkingtemplates.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js.orig" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js.orig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_user_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawlers/zerozero/proxy_handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/dispatcher/dispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dispatcher/dispatcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/gary_processor/gary_processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/gary_processor/gary_processor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/logging.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logging.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/mailers/achievements_mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/mailers/achievements_mailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/middleware/formidable-express" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/formidable-express" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_achievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_achievement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_competition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_competition_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_competition_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_recommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_recommendation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_team_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_team_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_user_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/models/football_user_info_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_user_info_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/notifications/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/notifications/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/package-lock.json.orig" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json.orig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/competition_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/competition_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/global_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/global_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/match_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/match_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/player_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/player_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/storage_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/storage_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/team_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/team_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/routes/user_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_achievement_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_achievement_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_competition_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_competition_season_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_competition_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_competition_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_match_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_match_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_recommendation_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_recommendation_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_season_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_team_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_team_season_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_team_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_team_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_user_info_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_user_info_season_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_user_info_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_user_info_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/football_user_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_user_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/notifications/notifications_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/notifications/notifications_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/services/storage/image_storage_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/storage/image_storage_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info/5b9661dce32b9f14f09c8c23/lol.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info/5b9661dce32b9f14f09c8c23/lol.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info/5b9661dce32b9f14f09c8c23/system/avatar" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info/5b9661dce32b9f14f09c8c23/system/avatar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info/5b9661dce32b9f14f09c8c23/system/avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info/5b9661dce32b9f14f09c8c23/system/avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info_season/5b966044e32b9f14f09c8003/system/avatar" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info_season/5b966044e32b9f14f09c8003/system/avatar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info_season/5b96605ce32b9f14f09c80da/system/avatar" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info_season/5b96605ce32b9f14f09c80da/system/avatar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info_season/5b9661a7e32b9f14f09c8abc/system/avatar" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info_season/5b9661a7e32b9f14f09c8abc/system/avatar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info_season/5b9661dce32b9f14f09c8c23/system/avatar" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info_season/5b9661dce32b9f14f09c8c23/system/avatar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/storage/images/user_info_season/5b9661dce32b9f14f09c8c24/system/avatar" beforeDir="false" afterPath="$PROJECT_DIR$/server/storage/images/user_info_season/5b9661dce32b9f14f09c8c24/system/avatar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,10 +451,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
+        <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
+            <state relative-caret-position="222">
+              <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
               <folding>
                 <element signature="e#489#607#0" />
                 <element signature="e#1041#1334#0" />
@@ -61,338 +496,132 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-info-profile.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html">
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3485">
-              <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
+            <state relative-caret-position="510">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#659#806#0" />
+                <element signature="e#829#1481#0" />
+                <element signature="e#1501#1657#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-info-profile.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css">
+      <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/football_user_info_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4539">
-              <caret line="267" selection-start-line="267" selection-end-line="267" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-info-stats.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7106">
-              <caret line="418" column="1" selection-start-line="418" selection-start-column="1" selection-end-line="418" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-info-profile.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="465" column="3" selection-start-line="465" selection-start-column="3" selection-end-line="465" selection-end-column="3" />
+            <state relative-caret-position="340">
+              <caret line="99" column="79" lean-forward="true" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
               <folding>
-                <element signature="e#845#989#0" />
-                <element signature="n#!!block;n#constructor#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#ngOnInit#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#ngAfterViewInit#0;n#UserInfoProfileComponent#0" />
-                <element signature="e#2023#14202#0" />
-                <element signature="e#2199#2245#0" />
-                <element signature="e#2331#2386#0" />
-                <element signature="e#2777#2860#0" />
-                <element signature="e#2971#8864#0" />
-                <element signature="e#2983#4002#0" />
-                <element signature="e#3596#3990#0" />
-                <element signature="e#3621#3742#0" />
-                <element signature="e#3639#3726#0" />
-                <element signature="e#3764#3842#0" />
-                <element signature="e#3765#3841#0" />
-                <element signature="e#3866#3975#0" />
-                <element signature="e#3867#3974#0" />
-                <element signature="e#4014#5016#0" />
-                <element signature="e#4610#5004#0" />
-                <element signature="e#4635#4756#0" />
-                <element signature="e#4653#4740#0" />
-                <element signature="e#4778#4856#0" />
-                <element signature="e#4779#4855#0" />
-                <element signature="e#4880#4989#0" />
-                <element signature="e#4881#4988#0" />
-                <element signature="e#5028#5959#0" />
-                <element signature="e#5581#5947#0" />
-                <element signature="e#5606#5727#0" />
-                <element signature="e#5624#5711#0" />
-                <element signature="e#5749#5827#0" />
-                <element signature="e#5750#5826#0" />
-                <element signature="e#5851#5932#0" />
-                <element signature="e#5852#5931#0" />
-                <element signature="e#5971#6907#0" />
-                <element signature="e#6529#6895#0" />
-                <element signature="e#6554#6675#0" />
-                <element signature="e#6572#6659#0" />
-                <element signature="e#6697#6775#0" />
-                <element signature="e#6698#6774#0" />
-                <element signature="e#6799#6880#0" />
-                <element signature="e#6800#6879#0" />
-                <element signature="e#6919#7851#0" />
-                <element signature="e#7473#7839#0" />
-                <element signature="e#7498#7619#0" />
-                <element signature="e#7516#7603#0" />
-                <element signature="e#7641#7719#0" />
-                <element signature="e#7642#7718#0" />
-                <element signature="e#7743#7824#0" />
-                <element signature="e#7744#7823#0" />
-                <element signature="e#7863#8854#0" />
-                <element signature="e#8476#8842#0" />
-                <element signature="e#8501#8622#0" />
-                <element signature="e#8519#8606#0" />
-                <element signature="e#8644#8722#0" />
-                <element signature="e#8645#8721#0" />
-                <element signature="e#8746#8827#0" />
-                <element signature="e#8747#8826#0" />
-                <element signature="e#9050#13746#0" />
-                <element signature="e#9089#13735#0" />
-                <element signature="e#9139#13722#0" />
-                <element signature="e#9155#10083#0" />
-                <element signature="e#9212#9848#0" />
-                <element signature="e#9600#9829#0" />
-                <element signature="e#10099#10990#0" />
-                <element signature="e#10156#10782#0" />
-                <element signature="e#10534#10763#0" />
-                <element signature="e#11006#11797#0" />
-                <element signature="e#11063#11601#0" />
-                <element signature="e#11353#11582#0" />
-                <element signature="e#11813#12857#0" />
-                <element signature="e#11870#12429#0" />
-                <element signature="e#12181#12410#0" />
-                <element signature="e#12873#13708#0" />
-                <element signature="e#12930#13494#0" />
-                <element signature="e#13246#13475#0" />
-                <element signature="e#14020#14056#0" />
-                <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#loadChart#0;n#UserInfoProfileComponent#0" />
-                <element signature="e#14392#14493#0" />
-                <element signature="e#14512#14783#0" />
-                <element signature="e#14557#14777#0" />
-                <element signature="e#14558#14776#0" />
-                <element signature="e#14642#14768#0" />
-                <element signature="e#14804#15259#0" />
-                <element signature="e#14819#14940#0" />
-                <element signature="e#14956#14988#0" />
-                <element signature="e#15004#15253#0" />
-                <element signature="e#15021#15096#0" />
-                <element signature="e#15022#15095#0" />
-                <element signature="e#15045#15085#0" />
-                <element signature="e#15113#15245#0" />
-                <element signature="e#15114#15244#0" />
-                <element signature="e#15133#15171#0" />
-                <element signature="e#15194#15234#0" />
-                <element signature="e#15343#15457#0" />
-                <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
-                <element signature="e#15621#15773#0" />
-                <element signature="e#15637#15765#0" />
-                <element signature="e#15829#16779#0" />
-                <element signature="e#15858#16400#0" />
-                <element signature="e#15928#16392#0" />
-                <element signature="e#16175#16382#0" />
-                <element signature="e#16516#16772#0" />
-                <element signature="e#16538#16662#0" />
-                <element signature="e#16678#16762#0" />
-                <element signature="n#!!block;n#voteSkill#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#fakeVoteSkill#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
-                <element signature="n#!!block;n#stickyScroll#0" />
+                <element signature="e#276#857#0" />
+                <element signature="e#316#542#0" />
+                <element signature="e#869#1088#0" />
+                <element signature="e#1101#1801#0" />
+                <element signature="e#1102#1800#0" />
+                <element signature="e#1932#2167#0" />
+                <element signature="e#2188#2429#0" />
+                <element signature="e#2450#2691#0" />
+                <element signature="e#2711#3438#0" />
+                <element signature="e#2721#3432#0" />
+                <element signature="e#2927#3422#0" />
+                <element signature="e#2954#3092#0" />
+                <element signature="e#2955#3091#0" />
+                <element signature="e#3116#3247#0" />
+                <element signature="e#3117#3246#0" />
+                <element signature="e#3271#3407#0" />
+                <element signature="e#3272#3406#0" />
+                <element signature="e#3458#3528#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info_season_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="106" column="38" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-user-info.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="220" column="61" selection-start-line="220" selection-start-column="61" selection-end-line="220" selection-end-column="61" />
+              <folding>
+                <element signature="e#1095#1230#0" />
+                <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
+                <element signature="e#2553#2589#0" />
+                <element signature="e#2607#2643#0" />
+                <element signature="e#2671#2776#0" />
+                <element signature="e#2863#2988#0" />
+                <element signature="e#3075#3488#0" />
+                <element signature="e#3083#3133#0" />
+                <element signature="e#3141#3191#0" />
+                <element signature="e#3199#3249#0" />
+                <element signature="e#3257#3307#0" />
+                <element signature="e#3315#3365#0" />
+                <element signature="e#3373#3423#0" />
+                <element signature="e#3431#3481#0" />
+                <element signature="e#3509#3552#0" />
+                <element signature="e#3575#3872#0" />
+                <element signature="e#3895#4042#0" />
+                <element signature="e#4060#4116#0" />
+                <element signature="e#4136#4252#0" />
+                <element signature="e#4285#4576#0" />
+                <element signature="e#4301#4370#0" />
+                <element signature="e#4388#4458#0" />
+                <element signature="e#4478#4570#0" />
+                <element signature="e#4617#5759#0" />
+                <element signature="e#4637#5053#0" />
+                <element signature="e#5070#5195#0" />
+                <element signature="e#5223#5358#0" />
+                <element signature="e#5378#5652#0" />
+                <element signature="e#5669#5753#0" />
+                <element signature="n#!!block;n#createForms#0;n#EditUserInfoComponent#0" />
+                <element signature="e#6260#6972#0" />
+                <element signature="e#7055#7630#0" />
+                <element signature="e#7112#7328#0" />
+                <element signature="e#7384#7500#0" />
+                <element signature="e#7687#7796#0" />
+                <element signature="e#8017#8343#0" />
+                <element signature="e#8351#8537#0" />
+                <element signature="n#!!block;n#save#0;n#EditUserInfoComponent#0" />
+                <element signature="e#8742#8943#0" />
+                <element signature="n#!!block;n#discard#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#goToMatch#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#changedInput#0;n#EditUserInfoComponent#0" />
+                <element signature="e#9342#9490#0" />
+                <element signature="n#!!block;n#goToTop#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#fileChangeEvent#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageCroppedBase64#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageCroppedFile#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageLoaded#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageLoadFailed#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#random#0" />
                 <element signature="n#!!block;n#_make_random_text#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter-user-info.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts">
+      <file leaf-file-name="player_routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-582">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#465#606#0" />
-                <element signature="n#!!block;n#constructor#0;n#FilterUserInfoComponent#0" />
-                <element signature="n#!!block;n#ngOnInit#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#2458#10872#0" />
-                <element signature="e#2477#2941#0" />
-                <element signature="e#2591#2933#0" />
-                <element signature="e#2603#2674#0" />
-                <element signature="e#2686#2757#0" />
-                <element signature="e#2769#2839#0" />
-                <element signature="e#2851#2922#0" />
-                <element signature="e#2971#3140#0" />
-                <element signature="e#3065#3132#0" />
-                <element signature="e#3066#3131#0" />
-                <element signature="e#3176#3671#0" />
-                <element signature="e#3329#3663#0" />
-                <element signature="e#3341#3415#0" />
-                <element signature="e#3427#3493#0" />
-                <element signature="e#3505#3569#0" />
-                <element signature="e#3581#3652#0" />
-                <element signature="e#3700#4170#0" />
-                <element signature="e#3817#4162#0" />
-                <element signature="e#3829#3903#0" />
-                <element signature="e#3915#3986#0" />
-                <element signature="e#3998#4068#0" />
-                <element signature="e#4080#4151#0" />
-                <element signature="e#4205#4400#0" />
-                <element signature="e#4421#4655#0" />
-                <element signature="e#4556#4646#0" />
-                <element signature="e#4568#4636#0" />
-                <element signature="e#4689#4835#0" />
-                <element signature="e#4870#5406#0" />
-                <element signature="e#5301#5398#0" />
-                <element signature="e#5313#5388#0" />
-                <element signature="e#5429#5898#0" />
-                <element signature="e#5548#5890#0" />
-                <element signature="e#5560#5631#0" />
-                <element signature="e#5643#5714#0" />
-                <element signature="e#5726#5796#0" />
-                <element signature="e#5808#5879#0" />
-                <element signature="e#5923#6390#0" />
-                <element signature="e#6040#6382#0" />
-                <element signature="e#6052#6123#0" />
-                <element signature="e#6135#6206#0" />
-                <element signature="e#6218#6288#0" />
-                <element signature="e#6300#6371#0" />
-                <element signature="e#6413#6882#0" />
-                <element signature="e#6532#6874#0" />
-                <element signature="e#6544#6615#0" />
-                <element signature="e#6627#6698#0" />
-                <element signature="e#6710#6780#0" />
-                <element signature="e#6792#6863#0" />
-                <element signature="e#6907#7375#0" />
-                <element signature="e#7025#7367#0" />
-                <element signature="e#7037#7108#0" />
-                <element signature="e#7120#7191#0" />
-                <element signature="e#7203#7273#0" />
-                <element signature="e#7285#7356#0" />
-                <element signature="e#7407#7858#0" />
-                <element signature="e#7508#7850#0" />
-                <element signature="e#7520#7591#0" />
-                <element signature="e#7603#7674#0" />
-                <element signature="e#7686#7756#0" />
-                <element signature="e#7768#7839#0" />
-                <element signature="e#7890#8329#0" />
-                <element signature="e#7979#8321#0" />
-                <element signature="e#7991#8062#0" />
-                <element signature="e#8074#8145#0" />
-                <element signature="e#8157#8227#0" />
-                <element signature="e#8239#8310#0" />
-                <element signature="e#8364#8935#0" />
-                <element signature="e#8593#8927#0" />
-                <element signature="e#8605#8679#0" />
-                <element signature="e#8691#8757#0" />
-                <element signature="e#8769#8833#0" />
-                <element signature="e#8845#8916#0" />
-                <element signature="e#8969#9153#0" />
-                <element signature="e#9076#9145#0" />
-                <element signature="e#9077#9144#0" />
-                <element signature="e#9187#9385#0" />
-                <element signature="e#9311#9377#0" />
-                <element signature="e#9312#9376#0" />
-                <element signature="e#9417#9881#0" />
-                <element signature="e#9539#9873#0" />
-                <element signature="e#9551#9625#0" />
-                <element signature="e#9637#9703#0" />
-                <element signature="e#9715#9779#0" />
-                <element signature="e#9791#9862#0" />
-                <element signature="e#9908#10372#0" />
-                <element signature="e#10022#10364#0" />
-                <element signature="e#10034#10105#0" />
-                <element signature="e#10117#10188#0" />
-                <element signature="e#10200#10270#0" />
-                <element signature="e#10282#10353#0" />
-                <element signature="e#10402#10866#0" />
-                <element signature="e#10516#10858#0" />
-                <element signature="e#10528#10599#0" />
-                <element signature="e#10611#10682#0" />
-                <element signature="e#10694#10764#0" />
-                <element signature="e#10776#10847#0" />
-                <element signature="n#!!block;n#contains#0;n#FilterUserInfoComponent#0" />
-                <element signature="n#!!block;n#loadAgeGroups#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#11030#11806#0" />
-                <element signature="e#11038#11089#0" />
-                <element signature="e#11097#11150#0" />
-                <element signature="e#11158#11213#0" />
-                <element signature="e#11221#11276#0" />
-                <element signature="e#11278#11332#0" />
-                <element signature="e#11340#11394#0" />
-                <element signature="e#11396#11451#0" />
-                <element signature="e#11459#11512#0" />
-                <element signature="e#11514#11567#0" />
-                <element signature="e#11575#11627#0" />
-                <element signature="e#11629#11684#0" />
-                <element signature="e#11692#11745#0" />
-                <element signature="e#11747#11800#0" />
-                <element signature="n#!!block;n#loadLeagues#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#11880#12098#0" />
-                <element signature="e#11888#11946#0" />
-                <element signature="e#11954#12004#0" />
-                <element signature="e#12012#12091#0" />
-                <element signature="n#!!block;n#loadTeam#0;n#FilterUserInfoComponent#0" />
-                <element signature="n#!!block;n#loadPlayers#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#12392#12522#0" />
-                <element signature="e#12452#12516#0" />
-                <element signature="e#12621#13230#0" />
-                <element signature="e#12669#12752#0" />
-                <element signature="e#12789#13067#0" />
-                <element signature="n#!!block;n#addFieldValue#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#13321#13868#0" />
-                <element signature="e#13392#13862#0" />
-                <element signature="e#13586#13852#0" />
-                <element signature="n#!!block;n#changed#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#13997#14036#0" />
-                <element signature="n#!!block;n#sortData#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#14476#14527#0" />
-                <element signature="e#14571#15294#0" />
-                <element signature="e#14622#15288#0" />
-                <element signature="e#14653#14742#0" />
-                <element signature="e#14751#14835#0" />
-                <element signature="e#14844#14929#0" />
-                <element signature="e#14938#15029#0" />
-                <element signature="e#15038#15136#0" />
-                <element signature="e#15145#15243#0" />
-                <element signature="e#15252#15280#0" />
-                <element signature="n#!!block;n#deleteFieldValue#0;n#FilterUserInfoComponent#0" />
-                <element signature="e#15434#16964#0" />
-                <element signature="e#15454#15518#0" />
-                <element signature="e#15523#15597#0" />
-                <element signature="e#15602#15668#0" />
-                <element signature="e#15673#15750#0" />
-                <element signature="e#15755#15813#0" />
-                <element signature="e#15818#15894#0" />
-                <element signature="e#15899#16021#0" />
-                <element signature="e#16026#16086#0" />
-                <element signature="e#16091#16178#0" />
-                <element signature="e#16183#16247#0" />
-                <element signature="e#16252#16312#0" />
-                <element signature="e#16317#16386#0" />
-                <element signature="e#16391#16461#0" />
-                <element signature="e#16466#16534#0" />
-                <element signature="e#16539#16613#0" />
-                <element signature="e#16618#16692#0" />
-                <element signature="e#16697#16770#0" />
-                <element signature="e#16775#16848#0" />
-                <element signature="e#16853#16924#0" />
-                <element signature="e#16929#16960#0" />
-                <element signature="n#!!block;n#compare#0" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/app.js">
+        <entry file="file://$PROJECT_DIR$/server/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="884">
               <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
@@ -400,33 +629,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
+        <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/crawler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
+            <state relative-caret-position="396">
               <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_user_info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19108">
-              <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
+            <state relative-caret-position="991">
+              <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_match.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="338" column="40" lean-forward="true" selection-start-line="338" selection-start-column="40" selection-end-line="338" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -443,10 +668,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;current_season&quot;:</find>
-      <find>CurrentSeasons</find>
-      <find>updateUserInfoSeason</find>
-      <find>addCompetitionToUserInfo</find>
       <find>addUserInfoToCompetition</find>
       <find>updateUserInfoCurrentSeasons</find>
       <find>Beta</find>
@@ -473,6 +694,10 @@
       <find>badges</find>
       <find>idade</find>
       <find>personal_data</find>
+      <find>Website</find>
+      <find>APP BoilerPlate</find>
+      <find>player_matches</find>
+      <find>away_team</find>
     </findStrings>
     <replaceStrings>
       <replace>match</replace>
@@ -509,6 +734,8 @@
     <dirStrings>
       <dir>$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals</dir>
       <dir>$PROJECT_DIR$/Website/notifications</dir>
+      <dir>$PROJECT_DIR$/Website</dir>
+      <dir>$PROJECT_DIR$/Angular/APP BoilerPlate</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -518,8 +745,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Website/services/storage/image_storage_service.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
         <option value="$PROJECT_DIR$/Website/routes/storage_routes.js" />
         <option value="$PROJECT_DIR$/Website/middleware/formidable-express" />
         <option value="$PROJECT_DIR$/Website/controllers/storage_controller.js" />
@@ -569,6 +794,8 @@
         <option value="$PROJECT_DIR$/Website/app.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
+        <option value="$PROJECT_DIR$/server/models/football_user_info_season.js" />
+        <option value="$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts" />
       </list>
     </option>
   </component>
@@ -579,13 +806,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules" />
-    <handled-path value="$PROJECT_DIR$/Website/node_modules" />
+    <handled-path value="$PROJECT_DIR$/app/node_modules" />
+    <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" />
-      <path value="$PROJECT_DIR$/Website/package.json" />
+      <path value="$PROJECT_DIR$/app/package.json" />
+      <path value="$PROJECT_DIR$/server/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
@@ -601,9 +828,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -614,42 +838,47 @@
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="filter-user-info" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
+              <item name="zerozero" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
+              <item name="zerozero" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -666,7 +895,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -715,7 +944,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/Website" />
+    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Server/app.js" working-dir="$PROJECT_DIR$/Server" />
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -788,14 +1017,18 @@
       <workItem from="1542061355480" duration="89943000" />
       <workItem from="1544622944231" duration="648000" />
       <workItem from="1545225821890" duration="1137000" />
+      <workItem from="1545318797057" duration="599000" />
+      <workItem from="1545678072709" duration="805000" />
+      <workItem from="1546083113470" duration="7653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="547821000" />
+    <option name="totallyTimeSpent" value="556878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -870,7 +1103,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="281" />
+      <option name="time" value="283" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -942,450 +1175,173 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="465" column="3" selection-start-line="465" selection-start-column="3" selection-end-line="465" selection-end-column="3" />
-          <folding>
-            <element signature="e#845#989#0" />
-            <element signature="n#!!block;n#constructor#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#ngOnInit#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#ngAfterViewInit#0;n#UserInfoProfileComponent#0" />
-            <element signature="e#2023#14202#0" />
-            <element signature="e#2199#2245#0" />
-            <element signature="e#2331#2386#0" />
-            <element signature="e#2777#2860#0" />
-            <element signature="e#2971#8864#0" />
-            <element signature="e#2983#4002#0" />
-            <element signature="e#3596#3990#0" />
-            <element signature="e#3621#3742#0" />
-            <element signature="e#3639#3726#0" />
-            <element signature="e#3764#3842#0" />
-            <element signature="e#3765#3841#0" />
-            <element signature="e#3866#3975#0" />
-            <element signature="e#3867#3974#0" />
-            <element signature="e#4014#5016#0" />
-            <element signature="e#4610#5004#0" />
-            <element signature="e#4635#4756#0" />
-            <element signature="e#4653#4740#0" />
-            <element signature="e#4778#4856#0" />
-            <element signature="e#4779#4855#0" />
-            <element signature="e#4880#4989#0" />
-            <element signature="e#4881#4988#0" />
-            <element signature="e#5028#5959#0" />
-            <element signature="e#5581#5947#0" />
-            <element signature="e#5606#5727#0" />
-            <element signature="e#5624#5711#0" />
-            <element signature="e#5749#5827#0" />
-            <element signature="e#5750#5826#0" />
-            <element signature="e#5851#5932#0" />
-            <element signature="e#5852#5931#0" />
-            <element signature="e#5971#6907#0" />
-            <element signature="e#6529#6895#0" />
-            <element signature="e#6554#6675#0" />
-            <element signature="e#6572#6659#0" />
-            <element signature="e#6697#6775#0" />
-            <element signature="e#6698#6774#0" />
-            <element signature="e#6799#6880#0" />
-            <element signature="e#6800#6879#0" />
-            <element signature="e#6919#7851#0" />
-            <element signature="e#7473#7839#0" />
-            <element signature="e#7498#7619#0" />
-            <element signature="e#7516#7603#0" />
-            <element signature="e#7641#7719#0" />
-            <element signature="e#7642#7718#0" />
-            <element signature="e#7743#7824#0" />
-            <element signature="e#7744#7823#0" />
-            <element signature="e#7863#8854#0" />
-            <element signature="e#8476#8842#0" />
-            <element signature="e#8501#8622#0" />
-            <element signature="e#8519#8606#0" />
-            <element signature="e#8644#8722#0" />
-            <element signature="e#8645#8721#0" />
-            <element signature="e#8746#8827#0" />
-            <element signature="e#8747#8826#0" />
-            <element signature="e#9050#13746#0" />
-            <element signature="e#9089#13735#0" />
-            <element signature="e#9139#13722#0" />
-            <element signature="e#9155#10083#0" />
-            <element signature="e#9212#9848#0" />
-            <element signature="e#9600#9829#0" />
-            <element signature="e#10099#10990#0" />
-            <element signature="e#10156#10782#0" />
-            <element signature="e#10534#10763#0" />
-            <element signature="e#11006#11797#0" />
-            <element signature="e#11063#11601#0" />
-            <element signature="e#11353#11582#0" />
-            <element signature="e#11813#12857#0" />
-            <element signature="e#11870#12429#0" />
-            <element signature="e#12181#12410#0" />
-            <element signature="e#12873#13708#0" />
-            <element signature="e#12930#13494#0" />
-            <element signature="e#13246#13475#0" />
-            <element signature="e#14020#14056#0" />
-            <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#loadChart#0;n#UserInfoProfileComponent#0" />
-            <element signature="e#14392#14493#0" />
-            <element signature="e#14512#14783#0" />
-            <element signature="e#14557#14777#0" />
-            <element signature="e#14558#14776#0" />
-            <element signature="e#14642#14768#0" />
-            <element signature="e#14804#15259#0" />
-            <element signature="e#14819#14940#0" />
-            <element signature="e#14956#14988#0" />
-            <element signature="e#15004#15253#0" />
-            <element signature="e#15021#15096#0" />
-            <element signature="e#15022#15095#0" />
-            <element signature="e#15045#15085#0" />
-            <element signature="e#15113#15245#0" />
-            <element signature="e#15114#15244#0" />
-            <element signature="e#15133#15171#0" />
-            <element signature="e#15194#15234#0" />
-            <element signature="e#15343#15457#0" />
-            <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
-            <element signature="e#15621#15773#0" />
-            <element signature="e#15637#15765#0" />
-            <element signature="e#15829#16779#0" />
-            <element signature="e#15858#16400#0" />
-            <element signature="e#15928#16392#0" />
-            <element signature="e#16175#16382#0" />
-            <element signature="e#16516#16772#0" />
-            <element signature="e#16538#16662#0" />
-            <element signature="e#16678#16762#0" />
-            <element signature="n#!!block;n#voteSkill#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#fakeVoteSkill#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#stickyScroll#0" />
-            <element signature="n#!!block;n#_make_random_text#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/app.js">
+    <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19108">
-          <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/node_modules/mongoose/lib/model.js">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="2785" selection-start-line="2785" selection-end-line="2785" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_competition_service.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_competition_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="60" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/gary_processor/gary_processor.js">
+    <entry file="file://$PROJECT_DIR$/server/gary_processor/gary_processor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="1198" column="4" selection-start-line="1198" selection-start-column="4" selection-end-line="1198" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_match_service.js">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib/lib.es5.d.ts" />
+    <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="605" column="9" selection-start-line="605" selection-start-column="9" selection-end-line="605" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js.orig">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js.orig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="331" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_team_service.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_team_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="22" column="41" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_user_info_season_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_team_season_service.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_team_season_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js">
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_team.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
           <caret line="138" column="66" selection-start-line="138" selection-start-column="66" selection-end-line="138" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_user_info_service.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-177">
           <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!block;n#_updateRegex#0" />
-            <element signature="e#3736#3739#0" />
-            <element signature="e#3816#3819#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js">
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js">
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/proxy_handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/competition.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/routes/competition_routes.js">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" />
+    <entry file="file://$PROJECT_DIR$/server/routes/competition_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/controllers/competition_controller.js">
+    <entry file="file://$PROJECT_DIR$/server/controllers/competition_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/routes/user_routes.js">
+    <entry file="file://$PROJECT_DIR$/server/routes/user_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_user_info_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="99" column="79" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/routes/global_routes.js">
+    <entry file="file://$PROJECT_DIR$/server/routes/global_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/routes/player_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="66" lean-forward="true" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="1815" column="13" selection-start-line="1815" selection-start-column="13" selection-end-line="1815" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/controllers/global_controller.js">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
+    <entry file="file://$PROJECT_DIR$/server/controllers/global_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/session_user.ts">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/session_user.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
+    <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        <state relative-caret-position="884">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
+    <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts">
+    <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19108">
-          <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7106">
-          <caret line="418" column="1" selection-start-line="418" selection-start-column="1" selection-end-line="418" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4539">
-          <caret line="267" selection-start-line="267" selection-end-line="267" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3485">
-          <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
+        <state relative-caret-position="222">
+          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
           <folding>
             <element signature="e#489#607#0" />
             <element signature="e#1041#1334#0" />
@@ -1426,324 +1382,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
+    <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+        <state relative-caret-position="510">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
-            <element signature="n#style#0;n#mat-icon#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" />
+            <element signature="e#659#806#0" />
+            <element signature="e#829#1481#0" />
+            <element signature="e#1501#1657#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="465" column="3" selection-start-line="465" selection-start-column="3" selection-end-line="465" selection-end-column="3" />
+        <state relative-caret-position="532">
+          <caret line="220" column="61" selection-start-line="220" selection-start-column="61" selection-end-line="220" selection-end-column="61" />
           <folding>
-            <element signature="e#845#989#0" />
-            <element signature="n#!!block;n#constructor#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#ngOnInit#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#ngAfterViewInit#0;n#UserInfoProfileComponent#0" />
-            <element signature="e#2023#14202#0" />
-            <element signature="e#2199#2245#0" />
-            <element signature="e#2331#2386#0" />
-            <element signature="e#2777#2860#0" />
-            <element signature="e#2971#8864#0" />
-            <element signature="e#2983#4002#0" />
-            <element signature="e#3596#3990#0" />
-            <element signature="e#3621#3742#0" />
-            <element signature="e#3639#3726#0" />
-            <element signature="e#3764#3842#0" />
-            <element signature="e#3765#3841#0" />
-            <element signature="e#3866#3975#0" />
-            <element signature="e#3867#3974#0" />
-            <element signature="e#4014#5016#0" />
-            <element signature="e#4610#5004#0" />
-            <element signature="e#4635#4756#0" />
-            <element signature="e#4653#4740#0" />
-            <element signature="e#4778#4856#0" />
-            <element signature="e#4779#4855#0" />
-            <element signature="e#4880#4989#0" />
-            <element signature="e#4881#4988#0" />
-            <element signature="e#5028#5959#0" />
-            <element signature="e#5581#5947#0" />
-            <element signature="e#5606#5727#0" />
-            <element signature="e#5624#5711#0" />
-            <element signature="e#5749#5827#0" />
-            <element signature="e#5750#5826#0" />
-            <element signature="e#5851#5932#0" />
-            <element signature="e#5852#5931#0" />
-            <element signature="e#5971#6907#0" />
-            <element signature="e#6529#6895#0" />
-            <element signature="e#6554#6675#0" />
-            <element signature="e#6572#6659#0" />
-            <element signature="e#6697#6775#0" />
-            <element signature="e#6698#6774#0" />
-            <element signature="e#6799#6880#0" />
-            <element signature="e#6800#6879#0" />
-            <element signature="e#6919#7851#0" />
-            <element signature="e#7473#7839#0" />
-            <element signature="e#7498#7619#0" />
-            <element signature="e#7516#7603#0" />
-            <element signature="e#7641#7719#0" />
-            <element signature="e#7642#7718#0" />
-            <element signature="e#7743#7824#0" />
-            <element signature="e#7744#7823#0" />
-            <element signature="e#7863#8854#0" />
-            <element signature="e#8476#8842#0" />
-            <element signature="e#8501#8622#0" />
-            <element signature="e#8519#8606#0" />
-            <element signature="e#8644#8722#0" />
-            <element signature="e#8645#8721#0" />
-            <element signature="e#8746#8827#0" />
-            <element signature="e#8747#8826#0" />
-            <element signature="e#9050#13746#0" />
-            <element signature="e#9089#13735#0" />
-            <element signature="e#9139#13722#0" />
-            <element signature="e#9155#10083#0" />
-            <element signature="e#9212#9848#0" />
-            <element signature="e#9600#9829#0" />
-            <element signature="e#10099#10990#0" />
-            <element signature="e#10156#10782#0" />
-            <element signature="e#10534#10763#0" />
-            <element signature="e#11006#11797#0" />
-            <element signature="e#11063#11601#0" />
-            <element signature="e#11353#11582#0" />
-            <element signature="e#11813#12857#0" />
-            <element signature="e#11870#12429#0" />
-            <element signature="e#12181#12410#0" />
-            <element signature="e#12873#13708#0" />
-            <element signature="e#12930#13494#0" />
-            <element signature="e#13246#13475#0" />
-            <element signature="e#14020#14056#0" />
-            <element signature="n#!!block;n#editPlayer#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#loadChart#0;n#UserInfoProfileComponent#0" />
-            <element signature="e#14392#14493#0" />
-            <element signature="e#14512#14783#0" />
-            <element signature="e#14557#14777#0" />
-            <element signature="e#14558#14776#0" />
-            <element signature="e#14642#14768#0" />
-            <element signature="e#14804#15259#0" />
-            <element signature="e#14819#14940#0" />
-            <element signature="e#14956#14988#0" />
-            <element signature="e#15004#15253#0" />
-            <element signature="e#15021#15096#0" />
-            <element signature="e#15022#15095#0" />
-            <element signature="e#15045#15085#0" />
-            <element signature="e#15113#15245#0" />
-            <element signature="e#15114#15244#0" />
-            <element signature="e#15133#15171#0" />
-            <element signature="e#15194#15234#0" />
-            <element signature="e#15343#15457#0" />
-            <element signature="n#!!block;n#addRecommendation#0;n#UserInfoProfileComponent#0" />
-            <element signature="e#15621#15773#0" />
-            <element signature="e#15637#15765#0" />
-            <element signature="e#15829#16779#0" />
-            <element signature="e#15858#16400#0" />
-            <element signature="e#15928#16392#0" />
-            <element signature="e#16175#16382#0" />
-            <element signature="e#16516#16772#0" />
-            <element signature="e#16538#16662#0" />
-            <element signature="e#16678#16762#0" />
-            <element signature="n#!!block;n#voteSkill#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#fakeVoteSkill#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#follow#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#unfollow#0;n#UserInfoProfileComponent#0" />
-            <element signature="n#!!block;n#stickyScroll#0" />
+            <element signature="e#1095#1230#0" />
+            <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
+            <element signature="e#2553#2589#0" />
+            <element signature="e#2607#2643#0" />
+            <element signature="e#2671#2776#0" />
+            <element signature="e#2863#2988#0" />
+            <element signature="e#3075#3488#0" />
+            <element signature="e#3083#3133#0" />
+            <element signature="e#3141#3191#0" />
+            <element signature="e#3199#3249#0" />
+            <element signature="e#3257#3307#0" />
+            <element signature="e#3315#3365#0" />
+            <element signature="e#3373#3423#0" />
+            <element signature="e#3431#3481#0" />
+            <element signature="e#3509#3552#0" />
+            <element signature="e#3575#3872#0" />
+            <element signature="e#3895#4042#0" />
+            <element signature="e#4060#4116#0" />
+            <element signature="e#4136#4252#0" />
+            <element signature="e#4285#4576#0" />
+            <element signature="e#4301#4370#0" />
+            <element signature="e#4388#4458#0" />
+            <element signature="e#4478#4570#0" />
+            <element signature="e#4617#5759#0" />
+            <element signature="e#4637#5053#0" />
+            <element signature="e#5070#5195#0" />
+            <element signature="e#5223#5358#0" />
+            <element signature="e#5378#5652#0" />
+            <element signature="e#5669#5753#0" />
+            <element signature="n#!!block;n#createForms#0;n#EditUserInfoComponent#0" />
+            <element signature="e#6260#6972#0" />
+            <element signature="e#7055#7630#0" />
+            <element signature="e#7112#7328#0" />
+            <element signature="e#7384#7500#0" />
+            <element signature="e#7687#7796#0" />
+            <element signature="e#8017#8343#0" />
+            <element signature="e#8351#8537#0" />
+            <element signature="n#!!block;n#save#0;n#EditUserInfoComponent#0" />
+            <element signature="e#8742#8943#0" />
+            <element signature="n#!!block;n#discard#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#goToMatch#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#changedInput#0;n#EditUserInfoComponent#0" />
+            <element signature="e#9342#9490#0" />
+            <element signature="n#!!block;n#goToTop#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#fileChangeEvent#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageCroppedBase64#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageCroppedFile#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageLoaded#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageLoadFailed#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#random#0" />
             <element signature="n#!!block;n#_make_random_text#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts">
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-582">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="396">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_user_info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="991">
+          <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_user_info_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="99" column="79" lean-forward="true" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
           <folding>
-            <element signature="e#465#606#0" />
-            <element signature="n#!!block;n#constructor#0;n#FilterUserInfoComponent#0" />
-            <element signature="n#!!block;n#ngOnInit#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#2458#10872#0" />
-            <element signature="e#2477#2941#0" />
-            <element signature="e#2591#2933#0" />
-            <element signature="e#2603#2674#0" />
-            <element signature="e#2686#2757#0" />
-            <element signature="e#2769#2839#0" />
-            <element signature="e#2851#2922#0" />
-            <element signature="e#2971#3140#0" />
-            <element signature="e#3065#3132#0" />
-            <element signature="e#3066#3131#0" />
-            <element signature="e#3176#3671#0" />
-            <element signature="e#3329#3663#0" />
-            <element signature="e#3341#3415#0" />
-            <element signature="e#3427#3493#0" />
-            <element signature="e#3505#3569#0" />
-            <element signature="e#3581#3652#0" />
-            <element signature="e#3700#4170#0" />
-            <element signature="e#3817#4162#0" />
-            <element signature="e#3829#3903#0" />
-            <element signature="e#3915#3986#0" />
-            <element signature="e#3998#4068#0" />
-            <element signature="e#4080#4151#0" />
-            <element signature="e#4205#4400#0" />
-            <element signature="e#4421#4655#0" />
-            <element signature="e#4556#4646#0" />
-            <element signature="e#4568#4636#0" />
-            <element signature="e#4689#4835#0" />
-            <element signature="e#4870#5406#0" />
-            <element signature="e#5301#5398#0" />
-            <element signature="e#5313#5388#0" />
-            <element signature="e#5429#5898#0" />
-            <element signature="e#5548#5890#0" />
-            <element signature="e#5560#5631#0" />
-            <element signature="e#5643#5714#0" />
-            <element signature="e#5726#5796#0" />
-            <element signature="e#5808#5879#0" />
-            <element signature="e#5923#6390#0" />
-            <element signature="e#6040#6382#0" />
-            <element signature="e#6052#6123#0" />
-            <element signature="e#6135#6206#0" />
-            <element signature="e#6218#6288#0" />
-            <element signature="e#6300#6371#0" />
-            <element signature="e#6413#6882#0" />
-            <element signature="e#6532#6874#0" />
-            <element signature="e#6544#6615#0" />
-            <element signature="e#6627#6698#0" />
-            <element signature="e#6710#6780#0" />
-            <element signature="e#6792#6863#0" />
-            <element signature="e#6907#7375#0" />
-            <element signature="e#7025#7367#0" />
-            <element signature="e#7037#7108#0" />
-            <element signature="e#7120#7191#0" />
-            <element signature="e#7203#7273#0" />
-            <element signature="e#7285#7356#0" />
-            <element signature="e#7407#7858#0" />
-            <element signature="e#7508#7850#0" />
-            <element signature="e#7520#7591#0" />
-            <element signature="e#7603#7674#0" />
-            <element signature="e#7686#7756#0" />
-            <element signature="e#7768#7839#0" />
-            <element signature="e#7890#8329#0" />
-            <element signature="e#7979#8321#0" />
-            <element signature="e#7991#8062#0" />
-            <element signature="e#8074#8145#0" />
-            <element signature="e#8157#8227#0" />
-            <element signature="e#8239#8310#0" />
-            <element signature="e#8364#8935#0" />
-            <element signature="e#8593#8927#0" />
-            <element signature="e#8605#8679#0" />
-            <element signature="e#8691#8757#0" />
-            <element signature="e#8769#8833#0" />
-            <element signature="e#8845#8916#0" />
-            <element signature="e#8969#9153#0" />
-            <element signature="e#9076#9145#0" />
-            <element signature="e#9077#9144#0" />
-            <element signature="e#9187#9385#0" />
-            <element signature="e#9311#9377#0" />
-            <element signature="e#9312#9376#0" />
-            <element signature="e#9417#9881#0" />
-            <element signature="e#9539#9873#0" />
-            <element signature="e#9551#9625#0" />
-            <element signature="e#9637#9703#0" />
-            <element signature="e#9715#9779#0" />
-            <element signature="e#9791#9862#0" />
-            <element signature="e#9908#10372#0" />
-            <element signature="e#10022#10364#0" />
-            <element signature="e#10034#10105#0" />
-            <element signature="e#10117#10188#0" />
-            <element signature="e#10200#10270#0" />
-            <element signature="e#10282#10353#0" />
-            <element signature="e#10402#10866#0" />
-            <element signature="e#10516#10858#0" />
-            <element signature="e#10528#10599#0" />
-            <element signature="e#10611#10682#0" />
-            <element signature="e#10694#10764#0" />
-            <element signature="e#10776#10847#0" />
-            <element signature="n#!!block;n#contains#0;n#FilterUserInfoComponent#0" />
-            <element signature="n#!!block;n#loadAgeGroups#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#11030#11806#0" />
-            <element signature="e#11038#11089#0" />
-            <element signature="e#11097#11150#0" />
-            <element signature="e#11158#11213#0" />
-            <element signature="e#11221#11276#0" />
-            <element signature="e#11278#11332#0" />
-            <element signature="e#11340#11394#0" />
-            <element signature="e#11396#11451#0" />
-            <element signature="e#11459#11512#0" />
-            <element signature="e#11514#11567#0" />
-            <element signature="e#11575#11627#0" />
-            <element signature="e#11629#11684#0" />
-            <element signature="e#11692#11745#0" />
-            <element signature="e#11747#11800#0" />
-            <element signature="n#!!block;n#loadLeagues#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#11880#12098#0" />
-            <element signature="e#11888#11946#0" />
-            <element signature="e#11954#12004#0" />
-            <element signature="e#12012#12091#0" />
-            <element signature="n#!!block;n#loadTeam#0;n#FilterUserInfoComponent#0" />
-            <element signature="n#!!block;n#loadPlayers#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#12392#12522#0" />
-            <element signature="e#12452#12516#0" />
-            <element signature="e#12621#13230#0" />
-            <element signature="e#12669#12752#0" />
-            <element signature="e#12789#13067#0" />
-            <element signature="n#!!block;n#addFieldValue#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#13321#13868#0" />
-            <element signature="e#13392#13862#0" />
-            <element signature="e#13586#13852#0" />
-            <element signature="n#!!block;n#changed#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#13997#14036#0" />
-            <element signature="n#!!block;n#sortData#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#14476#14527#0" />
-            <element signature="e#14571#15294#0" />
-            <element signature="e#14622#15288#0" />
-            <element signature="e#14653#14742#0" />
-            <element signature="e#14751#14835#0" />
-            <element signature="e#14844#14929#0" />
-            <element signature="e#14938#15029#0" />
-            <element signature="e#15038#15136#0" />
-            <element signature="e#15145#15243#0" />
-            <element signature="e#15252#15280#0" />
-            <element signature="n#!!block;n#deleteFieldValue#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#15434#16964#0" />
-            <element signature="e#15454#15518#0" />
-            <element signature="e#15523#15597#0" />
-            <element signature="e#15602#15668#0" />
-            <element signature="e#15673#15750#0" />
-            <element signature="e#15755#15813#0" />
-            <element signature="e#15818#15894#0" />
-            <element signature="e#15899#16021#0" />
-            <element signature="e#16026#16086#0" />
-            <element signature="e#16091#16178#0" />
-            <element signature="e#16183#16247#0" />
-            <element signature="e#16252#16312#0" />
-            <element signature="e#16317#16386#0" />
-            <element signature="e#16391#16461#0" />
-            <element signature="e#16466#16534#0" />
-            <element signature="e#16539#16613#0" />
-            <element signature="e#16618#16692#0" />
-            <element signature="e#16697#16770#0" />
-            <element signature="e#16775#16848#0" />
-            <element signature="e#16853#16924#0" />
-            <element signature="e#16929#16960#0" />
-            <element signature="n#!!block;n#compare#0" />
+            <element signature="e#276#857#0" />
+            <element signature="e#316#542#0" />
+            <element signature="e#869#1088#0" />
+            <element signature="e#1101#1801#0" />
+            <element signature="e#1102#1800#0" />
+            <element signature="e#1932#2167#0" />
+            <element signature="e#2188#2429#0" />
+            <element signature="e#2450#2691#0" />
+            <element signature="e#2711#3438#0" />
+            <element signature="e#2721#3432#0" />
+            <element signature="e#2927#3422#0" />
+            <element signature="e#2954#3092#0" />
+            <element signature="e#2955#3091#0" />
+            <element signature="e#3116#3247#0" />
+            <element signature="e#3117#3246#0" />
+            <element signature="e#3271#3407#0" />
+            <element signature="e#3272#3406#0" />
+            <element signature="e#3458#3528#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="106" column="38" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="338" column="40" lean-forward="true" selection-start-line="338" selection-start-column="40" selection-end-line="338" selection-end-column="40" />
         </state>
       </provider>
     </entry>
