@@ -86,15 +86,15 @@ Lista de notificações [Ver todos] (2h)	[2h]
 Lista de recomendações [Ver todos] (1h)	[1h]
 	- infinit scroll in place (SEM MODAL)
 
-(TASK 12)
-Lista de pesquisa simples [Ver todos] (0h)	[0,1h]
+(TASK 12) REVER
+Lista de pesquisa simples [Ver todos] (0h)	[0,1h] 
 	- Redirect para a pesquisa filtrada
 
-(TASK 13)
+(TASK 13) REVER
 Lista de seguidores [Ver todos] (0,5h)	[1h]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
 
-(TASK 14)
+(TASK 14) REVER
 Lista de 'a seguir' [Ver todos] (0,5h)	[1h]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
 
@@ -108,8 +108,7 @@ Lista de skills [Ver todos]  (1h)	[1h]
 Lista de badges [Ver todos]	 (1h) [1h]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver a lista de skills)
 
-(TASK 17)
-(A REVER)
+(TASK 17) REVER
 Chat fixo (20h + 13h) [não chegámos a falar muito disto, por isso não tenho uma opinião formada]
 	- Design e layout da página principal do chat (Cópia do linkedIN ou FB)
 	- layout das pequenas componentes
