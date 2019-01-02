@@ -1,9 +1,11 @@
 const logger = require('../../logging');
 
 const proxies = [undefined];
+
+// proxy value is 'zzptremember'
 const users = {
-    undefined: '48e0cceb-330a-4fcb-bc9e-ad3730af907e',
-    'http://139.162.235.163:31028':'879739dc-74ce-4598-ad6e-6b540fd28af5'
+    undefined: '08998fc8-b50c-41b8-aa72-c52dd2c424a3',
+    'http://115.78.123.57:60562':'a9a357b4-28df-4511-83e3-bc007b4adb33'
 }
 
 function getRandomInt(max) {
