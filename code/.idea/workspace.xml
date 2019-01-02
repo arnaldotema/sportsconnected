@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change beforePath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Angular/APP BoilerPlate/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Website/package-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,42 +11,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="player_routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/routes/player_routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
+        <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="153" column="49" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
+            <state relative-caret-position="222">
+              <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
               <folding>
-                <element signature="e#470#1338#0" />
                 <element signature="e#489#607#0" />
-                <element signature="e#676#924#0" />
-                <element signature="e#850#918#0" />
                 <element signature="e#1041#1334#0" />
                 <element signature="e#1064#1238#0" />
                 <element signature="e#1110#1222#0" />
                 <element signature="e#1580#1754#0" />
                 <element signature="e#1626#1738#0" />
-                <element signature="e#1892#2593#0" />
-                <element signature="e#2138#2589#0" />
-                <element signature="e#2161#2335#0" />
                 <element signature="e#2207#2319#0" />
                 <element signature="e#2364#2494#0" />
                 <element signature="e#2410#2478#0" />
@@ -71,248 +44,175 @@
                 <element signature="e#4307#4530#0" />
                 <element signature="e#4326#4485#0" />
                 <element signature="e#4368#4473#0" />
-                <element signature="e#4615#6118#0" />
                 <element signature="e#4732#4842#0" />
                 <element signature="e#4770#4834#0" />
-                <element signature="e#5081#6113#0" />
                 <element signature="e#5100#5259#0" />
                 <element signature="e#5142#5247#0" />
-                <element signature="e#5363#6105#0" />
-                <element signature="e#5386#5560#0" />
                 <element signature="e#5432#5544#0" />
                 <element signature="e#5589#5719#0" />
                 <element signature="e#5635#5703#0" />
-                <element signature="e#5813#6093#0" />
-                <element signature="e#5840#6034#0" />
                 <element signature="e#5890#6014#0" />
-                <element signature="e#6166#6911#0" />
-                <element signature="e#6339#6455#0" />
-                <element signature="e#6377#6447#0" />
-                <element signature="e#6553#6908#0" />
-                <element signature="e#6572#6726#0" />
-                <element signature="e#6614#6714#0" />
-                <element signature="e#6751#6865#0" />
-                <element signature="e#6793#6853#0" />
-                <element signature="e#6951#7650#0" />
-                <element signature="e#7091#7193#0" />
-                <element signature="e#7129#7185#0" />
-                <element signature="e#7278#7647#0" />
-                <element signature="e#7297#7465#0" />
-                <element signature="e#7339#7453#0" />
-                <element signature="e#7490#7604#0" />
-                <element signature="e#7532#7592#0" />
-                <element signature="e#7704#8333#0" />
-                <element signature="e#7878#8329#0" />
-                <element signature="e#7901#8075#0" />
-                <element signature="e#7947#8059#0" />
-                <element signature="e#8104#8234#0" />
-                <element signature="e#8150#8218#0" />
-                <element signature="e#8380#9009#0" />
-                <element signature="e#8554#9005#0" />
-                <element signature="e#8577#8751#0" />
-                <element signature="e#8623#8735#0" />
-                <element signature="e#8780#8910#0" />
-                <element signature="e#8826#8894#0" />
-                <element signature="e#9057#9686#0" />
-                <element signature="e#9231#9682#0" />
-                <element signature="e#9254#9428#0" />
-                <element signature="e#9300#9412#0" />
-                <element signature="e#9457#9587#0" />
-                <element signature="e#9503#9571#0" />
-                <element signature="e#9731#10360#0" />
-                <element signature="e#9905#10356#0" />
-                <element signature="e#9928#10102#0" />
-                <element signature="e#9974#10086#0" />
-                <element signature="e#10131#10261#0" />
-                <element signature="e#10177#10245#0" />
-                <element signature="e#10402#11066#0" />
-                <element signature="e#10511#10613#0" />
-                <element signature="e#10549#10605#0" />
-                <element signature="e#10692#11061#0" />
-                <element signature="e#10711#10879#0" />
-                <element signature="e#10753#10867#0" />
-                <element signature="e#10904#11018#0" />
-                <element signature="e#10946#11006#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="e#659#806#0" />
+                <element signature="e#829#1481#0" />
+                <element signature="e#1501#1657#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/models/football_user_info_season.js">
+        <entry file="file://$PROJECT_DIR$/server/models/football_user_info_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_info.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="654" column="21" selection-start-line="654" selection-start-column="21" selection-end-line="654" selection-end-column="21" />
+            <state relative-caret-position="340">
+              <caret line="99" column="79" lean-forward="true" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
               <folding>
-                <element signature="e#711#15594#0" />
-                <element signature="e#1115#9779#0" />
-                <element signature="e#1234#1794#0" />
-                <element signature="e#1810#2012#0" />
-                <element signature="e#2029#3223#0" />
-                <element signature="e#2041#2430#0" />
-                <element signature="e#2442#2826#0" />
-                <element signature="e#2838#3213#0" />
-                <element signature="e#3242#4028#0" />
-                <element signature="e#3254#4018#0" />
-                <element signature="e#3341#3546#0" />
-                <element signature="e#3571#3777#0" />
-                <element signature="e#3802#4006#0" />
-                <element signature="e#4045#9771#0" />
-                <element signature="e#4057#5015#0" />
-                <element signature="e#4637#5003#0" />
-                <element signature="e#4662#4783#0" />
-                <element signature="e#4680#4767#0" />
-                <element signature="e#4805#4883#0" />
-                <element signature="e#4806#4882#0" />
-                <element signature="e#4907#4988#0" />
-                <element signature="e#4908#4987#0" />
-                <element signature="e#5027#5963#0" />
-                <element signature="e#5585#5951#0" />
-                <element signature="e#5610#5731#0" />
-                <element signature="e#5628#5715#0" />
-                <element signature="e#5753#5831#0" />
-                <element signature="e#5754#5830#0" />
-                <element signature="e#5855#5936#0" />
-                <element signature="e#5856#5935#0" />
-                <element signature="e#5975#6906#0" />
-                <element signature="e#6528#6894#0" />
-                <element signature="e#6553#6674#0" />
-                <element signature="e#6571#6658#0" />
-                <element signature="e#6696#6774#0" />
-                <element signature="e#6697#6773#0" />
-                <element signature="e#6798#6879#0" />
-                <element signature="e#6799#6878#0" />
-                <element signature="e#6918#7854#0" />
-                <element signature="e#7476#7842#0" />
-                <element signature="e#7501#7622#0" />
-                <element signature="e#7519#7606#0" />
-                <element signature="e#7644#7722#0" />
-                <element signature="e#7645#7721#0" />
-                <element signature="e#7746#7827#0" />
-                <element signature="e#7747#7826#0" />
-                <element signature="e#7866#8798#0" />
-                <element signature="e#8420#8786#0" />
-                <element signature="e#8445#8566#0" />
-                <element signature="e#8463#8550#0" />
-                <element signature="e#8588#8666#0" />
-                <element signature="e#8589#8665#0" />
-                <element signature="e#8690#8771#0" />
-                <element signature="e#8691#8770#0" />
-                <element signature="e#8810#9761#0" />
-                <element signature="e#9383#9749#0" />
-                <element signature="e#9408#9529#0" />
-                <element signature="e#9426#9513#0" />
-                <element signature="e#9551#9629#0" />
-                <element signature="e#9552#9628#0" />
-                <element signature="e#9653#9734#0" />
-                <element signature="e#9654#9733#0" />
-                <element signature="e#9833#10816#0" />
-                <element signature="e#9843#9984#0" />
-                <element signature="e#9994#10249#0" />
-                <element signature="e#10259#10397#0" />
-                <element signature="e#10407#10545#0" />
-                <element signature="e#10555#10808#0" />
-                <element signature="e#10841#15091#0" />
-                <element signature="e#10883#15082#0" />
-                <element signature="e#10895#11751#0" />
-                <element signature="e#10940#11524#0" />
-                <element signature="e#11300#11509#0" />
-                <element signature="e#11763#12582#0" />
-                <element signature="e#11808#12382#0" />
-                <element signature="e#12158#12367#0" />
-                <element signature="e#12594#13313#0" />
-                <element signature="e#12639#13125#0" />
-                <element signature="e#12901#13110#0" />
-                <element signature="e#13325#14297#0" />
-                <element signature="e#13370#13877#0" />
-                <element signature="e#13653#13862#0" />
-                <element signature="e#14309#15072#0" />
-                <element signature="e#14354#14866#0" />
-                <element signature="e#14642#14851#0" />
-                <element signature="e#15113#15526#0" />
-                <element signature="e#15123#15254#0" />
-                <element signature="e#15264#15384#0" />
-                <element signature="e#15394#15518#0" />
-                <element signature="e#15627#18799#0" />
-                <element signature="e#16144#17822#0" />
-                <element signature="e#16152#16981#0" />
-                <element signature="e#16667#16973#0" />
-                <element signature="e#16688#16789#0" />
-                <element signature="e#16702#16777#0" />
-                <element signature="e#16807#16873#0" />
-                <element signature="e#16808#16872#0" />
-                <element signature="e#16893#16962#0" />
-                <element signature="e#16894#16961#0" />
-                <element signature="e#16989#17816#0" />
-                <element signature="e#17502#17808#0" />
-                <element signature="e#17523#17624#0" />
-                <element signature="e#17537#17612#0" />
-                <element signature="e#17642#17708#0" />
-                <element signature="e#17643#17707#0" />
-                <element signature="e#17728#17797#0" />
-                <element signature="e#17729#17796#0" />
-                <element signature="e#17841#18795#0" />
-                <element signature="e#17857#18029#0" />
-                <element signature="e#17858#18028#0" />
-                <element signature="e#18047#18789#0" />
-                <element signature="e#18048#18788#0" />
-                <element signature="e#18069#18312#0" />
-                <element signature="e#18081#18149#0" />
-                <element signature="e#18161#18230#0" />
-                <element signature="e#18242#18311#0" />
-                <element signature="e#18332#18422#0" />
-                <element signature="e#18344#18421#0" />
-                <element signature="e#18442#18606#0" />
-                <element signature="e#18454#18526#0" />
-                <element signature="e#18538#18605#0" />
-                <element signature="e#18624#18709#0" />
-                <element signature="e#18636#18708#0" />
-                <element signature="n#!!block;n#getUserInfo#0;n#UserInfoService#0" />
-                <element signature="n#!!block;n#getTeamPlayer#0;n#UserInfoService#0" />
-                <element signature="n#!!block;n#createRecommendation#0;n#UserInfoService#0" />
-                <element signature="n#!!block;n#voteForSkill#0;n#UserInfoService#0" />
-                <element signature="n#!!block;n#follow#0;n#UserInfoService#0" />
-                <element signature="n#!!block;n#unfollow#0;n#UserInfoService#0" />
-                <element signature="n#!!block;n#handleError#0;n#UserInfoService#0" />
+                <element signature="e#276#857#0" />
+                <element signature="e#316#542#0" />
+                <element signature="e#869#1088#0" />
+                <element signature="e#1101#1801#0" />
+                <element signature="e#1102#1800#0" />
+                <element signature="e#1932#2167#0" />
+                <element signature="e#2188#2429#0" />
+                <element signature="e#2450#2691#0" />
+                <element signature="e#2711#3438#0" />
+                <element signature="e#2721#3432#0" />
+                <element signature="e#2927#3422#0" />
+                <element signature="e#2954#3092#0" />
+                <element signature="e#2955#3091#0" />
+                <element signature="e#3116#3247#0" />
+                <element signature="e#3117#3246#0" />
+                <element signature="e#3271#3407#0" />
+                <element signature="e#3272#3406#0" />
+                <element signature="e#3458#3528#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SP_Logo_Black_Symbol.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_Black_Symbol.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="SP_Logo_Black.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_Black.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="SP_Logo_White_Symbol.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_White_Symbol.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="SP_Logo_White.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_White.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="notifications_service.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Website/services/notifications/notifications_service.js">
+      <file leaf-file-name="football_user_info_season_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="180">
+              <caret line="106" column="38" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-user-info.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="220" column="61" selection-start-line="220" selection-start-column="61" selection-end-line="220" selection-end-column="61" />
+              <folding>
+                <element signature="e#1095#1230#0" />
+                <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
+                <element signature="e#2553#2589#0" />
+                <element signature="e#2607#2643#0" />
+                <element signature="e#2671#2776#0" />
+                <element signature="e#2863#2988#0" />
+                <element signature="e#3075#3488#0" />
+                <element signature="e#3083#3133#0" />
+                <element signature="e#3141#3191#0" />
+                <element signature="e#3199#3249#0" />
+                <element signature="e#3257#3307#0" />
+                <element signature="e#3315#3365#0" />
+                <element signature="e#3373#3423#0" />
+                <element signature="e#3431#3481#0" />
+                <element signature="e#3509#3552#0" />
+                <element signature="e#3575#3872#0" />
+                <element signature="e#3895#4042#0" />
+                <element signature="e#4060#4116#0" />
+                <element signature="e#4136#4252#0" />
+                <element signature="e#4285#4576#0" />
+                <element signature="e#4301#4370#0" />
+                <element signature="e#4388#4458#0" />
+                <element signature="e#4478#4570#0" />
+                <element signature="e#4617#5759#0" />
+                <element signature="e#4637#5053#0" />
+                <element signature="e#5070#5195#0" />
+                <element signature="e#5223#5358#0" />
+                <element signature="e#5378#5652#0" />
+                <element signature="e#5669#5753#0" />
+                <element signature="n#!!block;n#createForms#0;n#EditUserInfoComponent#0" />
+                <element signature="e#6260#6972#0" />
+                <element signature="e#7055#7630#0" />
+                <element signature="e#7112#7328#0" />
+                <element signature="e#7384#7500#0" />
+                <element signature="e#7687#7796#0" />
+                <element signature="e#8017#8343#0" />
+                <element signature="e#8351#8537#0" />
+                <element signature="n#!!block;n#save#0;n#EditUserInfoComponent#0" />
+                <element signature="e#8742#8943#0" />
+                <element signature="n#!!block;n#discard#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#goToMatch#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#changedInput#0;n#EditUserInfoComponent#0" />
+                <element signature="e#9342#9490#0" />
+                <element signature="n#!!block;n#goToTop#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#fileChangeEvent#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageCroppedBase64#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageCroppedFile#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageLoaded#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#imageLoadFailed#0;n#EditUserInfoComponent#0" />
+                <element signature="n#!!block;n#random#0" />
+                <element signature="n#!!block;n#_make_random_text#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="player_routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/crawler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_user_info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="991">
+              <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_match.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="347" column="36" lean-forward="true" selection-start-line="347" selection-start-column="36" selection-end-line="347" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -323,45 +223,44 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>profile</find>
-      <find>createWriteStream</find>
-      <find>post</find>
-      <find>query</find>
-      <find>upload_user_info_image</find>
-      <find>body</find>
-      <find>avatar</find>
-      <find>authenticationService</find>
-      <find>_make_random_text</find>
-      <find>home</find>
-      <find>FootballSeason</find>
-      <find>return this.http.</find>
-      <find>proxy.conf</find>
-      <find>debugger;</find>
-      <find>&lt;script</find>
-      <find>A carr</find>
-      <find>user_info</find>
+      <find>addUserInfoToCompetition</find>
+      <find>updateUserInfoCurrentSeasons</find>
+      <find>Beta</find>
+      <find>updateAndReturnByZeroZeroId</find>
+      <find>updateUserInfosCurrentSeason</find>
+      <find>PlayerController</find>
+      <find>/api/players/s</find>
+      <find>searchFor</find>
+      <find>SearchEntityViewmodel</find>
+      <find>foreach</find>
+      <find>.type</find>
+      <find>user_info_id</find>
+      <find>user-info</find>
       <find>team_id</find>
-      <find>Unexpected end of input</find>
-      <find>ir para</find>
-      <find>updateRecommendations</find>
-      <find>rewardAchievement</find>
-      <find>ownAchievementMail</find>
-      <find>regexScheduler</find>
-      <find>const gary</find>
-      <find>scheduleJob</find>
-      <find>// we tell the client to execute 'new message'</find>
-      <find>PlayersNet</find>
-      <find>Players Net</find>
-      <find>ball.png</find>
+      <find>games</find>
+      <find>goals</find>
+      <find>league</find>
+      <find>Liga</find>
+      <find>ngf</find>
+      <find>ngfor</find>
+      <find>achievements</find>
+      <find>.sc-stats-table</find>
+      <find>table</find>
+      <find>badges</find>
+      <find>idade</find>
+      <find>personal_data</find>
+      <find>Website</find>
+      <find>APP BoilerPlate</find>
+      <find>player_matches</find>
+      <find>away_team</find>
     </findStrings>
     <replaceStrings>
-      <replace>www.playersnet.pt</replace>
-      <replace>Arnaldo Tema</replace>
       <replace>match</replace>
       <replace>go_in: []</replace>
       <replace>goals: [2],</replace>
@@ -390,69 +289,74 @@
       <replace>away</replace>
       <replace>SportsConnected</replace>
       <replace>SP_Logo_Black.png</replace>
+      <replace>GlobalController</replace>
+      <replace>search</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals</dir>
       <dir>$PROJECT_DIR$/Website/notifications</dir>
+      <dir>$PROJECT_DIR$/Website</dir>
+      <dir>$PROJECT_DIR$/Angular/APP BoilerPlate</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Website/controllers/team_controller.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/recommendation-modal.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.spec.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.html" />
-        <option value="$PROJECT_DIR$/Website/routes/player_routes.js" />
-        <option value="$PROJECT_DIR$/Website/services/storage_service.js" />
-        <option value="$PROJECT_DIR$/Website/routes/team_routes.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/Website/services/storage/image_storage_service.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
         <option value="$PROJECT_DIR$/Website/routes/storage_routes.js" />
         <option value="$PROJECT_DIR$/Website/middleware/formidable-express" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
         <option value="$PROJECT_DIR$/Website/controllers/storage_controller.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
-        <option value="$PROJECT_DIR$/Website/services/football_user_info_service.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.css" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/index.html" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
-        <option value="$PROJECT_DIR$/Website/controllers/user_info_controller.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" />
         <option value="$PROJECT_DIR$/Website/services/football_team_season_service.js" />
         <option value="$PROJECT_DIR$/Website/models/football_user_info_season.js" />
         <option value="$PROJECT_DIR$/Website/models/football_team_season.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" />
         <option value="$PROJECT_DIR$/Website/services/football_user_info_season_service.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/match.service.ts" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" />
         <option value="$PROJECT_DIR$/Website/notifications/app.js" />
-        <option value="$PROJECT_DIR$/Website/app.js" />
         <option value="$PROJECT_DIR$/Website/gary_processor/gary_processor.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/base_uris.js" />
+        <option value="$PROJECT_DIR$/Website/dispatcher/dispatcher.js" />
+        <option value="$PROJECT_DIR$/Website/routes/match_routes.js" />
+        <option value="$PROJECT_DIR$/Website/routes/competition_routes.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/checkingtemplates.html" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.css" />
+        <option value="$PROJECT_DIR$/Website/routes/team_routes.js" />
+        <option value="$PROJECT_DIR$/Website/controllers/team_controller.js" />
+        <option value="$PROJECT_DIR$/Website/models/football_user_info.js" />
+        <option value="$PROJECT_DIR$/Website/controllers/user_info_controller.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
+        <option value="$PROJECT_DIR$/Website/services/football_user_info_service.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" />
+        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
+        <option value="$PROJECT_DIR$/Website/controllers/gloabal_controller.js" />
+        <option value="$PROJECT_DIR$/Website/routes/global_routes.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
+        <option value="$PROJECT_DIR$/Website/controllers/global_controller.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
+        <option value="$PROJECT_DIR$/Website/app.js" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
+        <option value="$PROJECT_DIR$/server/models/football_user_info_season.js" />
+        <option value="$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts" />
       </list>
     </option>
   </component>
@@ -463,19 +367,19 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules" />
-    <handled-path value="$PROJECT_DIR$/Website/node_modules" />
+    <handled-path value="$PROJECT_DIR$/app/node_modules" />
+    <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/Angular/APP BoilerPlate/package.json" />
-      <path value="$PROJECT_DIR$/Website/package.json" />
+      <path value="$PROJECT_DIR$/app/package.json" />
+      <path value="$PROJECT_DIR$/server/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="745" />
+    <option name="width" value="1680" />
+    <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -485,7 +389,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -493,42 +396,18 @@
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts&#10;authent&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts&#10;filte&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts&#10;ts&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts&#10;filter&#9;null&#9;null&#10;user service&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;edit&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html&#10;team_pla&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_player.ts&#10;generic_user&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts&#10;match model&#9;null&#9;null&#10;team servic&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts&#10;header&#9;null&#9;null&#10;teamprofile&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts&#10;UserInfoSearch&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts&#10;team.component.ts&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team/team.component.ts&#10;team&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_season.ts&#10;recomm&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;user servi&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;user-info-pro&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts&#10;match&#9;null&#9;null&#10;auth&#9;null&#9;null" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="app.&#9;FILE&#9;file:///Repos/Website/code/Website/app.js&#10;foot&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/functions/football_team.js&#10;app&#9;FILE&#9;file:///Repos/Website/code/Website/app.js&#10;cr&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/crawler.js&#10;styles.css&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;crawl&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/crawler.js&#10;user&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts&#10;authent&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts&#10;filte&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts&#10;ts&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts&#10;filter&#9;null&#9;null&#10;user service&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;edit&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html&#10;team_pla&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_player.ts&#10;generic_user&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts&#10;match model&#9;null&#9;null&#10;team servic&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts&#10;header&#9;null&#9;null&#10;teamprofile&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts&#10;UserInfoSearch&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts&#10;team.component.ts&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team/team.component.ts&#10;team&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_season.ts&#10;recomm&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;user servi&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;user-info-pro&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts&#10;match&#9;null&#9;null&#10;auth&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -540,15 +419,15 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/js" />
       <recent name="$PROJECT_DIR$/Website/controllers" />
       <recent name="$PROJECT_DIR$/Website/routes" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/js" />
       <recent name="$PROJECT_DIR$/Website/services" />
-      <recent name="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Website/services/storage" />
@@ -589,7 +468,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/Website" />
+    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Server/app.js" working-dir="$PROJECT_DIR$/Server" />
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -651,15 +530,28 @@
       <workItem from="1536194431046" duration="560000" />
       <workItem from="1537910293667" duration="245163000" />
       <workItem from="1538936572431" duration="36391000" />
-      <workItem from="1539190323303" duration="5393000" />
+      <workItem from="1539190323303" duration="5719000" />
+      <workItem from="1539634391416" duration="875000" />
+      <workItem from="1540119359303" duration="61000" />
+      <workItem from="1541100807503" duration="615000" />
+      <workItem from="1541232534669" duration="189000" />
+      <workItem from="1541781912396" duration="1292000" />
+      <workItem from="1542014840514" duration="1653000" />
+      <workItem from="1542030976225" duration="587000" />
+      <workItem from="1542061355480" duration="89943000" />
+      <workItem from="1544622944231" duration="648000" />
+      <workItem from="1545225821890" duration="1137000" />
+      <workItem from="1545318797057" duration="599000" />
+      <workItem from="1545678072709" duration="805000" />
+      <workItem from="1546083113470" duration="8512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="450495000" />
+    <option name="totallyTimeSpent" value="557737000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="745" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="995" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -671,24 +563,24 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="NativeScript" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32912722" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49296874" visible="true" weight="0.46795827" />
-      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.50703126" side_tool="true" visible="true" weight="0.46795827" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.26588845" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
+      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" side_tool="true" visible="true" weight="0.3344191" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.296875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.22142857" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49791667" weight="0.3280757" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" weight="0.46562904" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.57109374" weight="0.39344263" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32935917" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
@@ -732,57 +624,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>16</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/football_user_info_controller.js</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/node_modules/passport/lib/strategies/session.js</url>
-          <line>44</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/controllers/recommendation_controller.js</url>
-          <line>79</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/services/storage/image_storage_service.js</url>
-          <line>10</line>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js</url>
-          <line>370</line>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Website/services/football_user_info_season_service.js</url>
-          <line>105</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="203" />
+      <option name="time" value="283" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -807,571 +652,227 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>req.url.split('?')[0]</expression-string>
+        <expression-string>res.json(JSON.parse(entities.decode(JSON.stringify(user_infos))))</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>req.url</expression-string>
+        <expression-string>res.options.user_info._id.toString()</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>req.user._doc._id.id</expression-string>
+        <expression-string>res.options.user_info._id</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>req.user._doc._id</expression-string>
+        <expression-string>JSON.parse(entities.decode(JSON.stringify(user_info)))</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>req.user._doc</expression-string>
+        <expression-string>res.json(JSON.parse(entities.decode(JSON.stringify(user_info))))</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>playerId === &quot;385046&quot;</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>res.$(this).html() === '1&amp;#xAA; Divis&amp;#xE3;o'</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>res.$(this).html()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>res.$(this).html() === '1ª Divisão'</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.css">
+    <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="812" column="1" selection-start-line="812" selection-start-column="1" selection-end-line="812" selection-end-column="1" />
+        <state relative-caret-position="884">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/index.html">
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+        <state relative-caret-position="1479">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/node_modules/passport/lib/middleware/authenticate.js">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="262" column="12" selection-start-line="262" selection-start-column="12" selection-end-line="262" selection-end-column="12" />
+        <state relative-caret-position="29">
+          <caret line="2785" selection-start-line="2785" selection-end-line="2785" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/auth/auth.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_competition_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="170">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html">
+    <entry file="file://$PROJECT_DIR$/server/gary_processor/gary_processor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="208" column="28" selection-start-line="208" selection-start-column="28" selection-end-line="208" selection-end-column="28" />
+        <state relative-caret-position="228">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts">
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib/lib.es5.d.ts" />
+    <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="1936" column="2" selection-start-line="1936" selection-start-column="2" selection-end-line="1936" selection-end-column="2" />
+        <state relative-caret-position="255">
+          <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js.orig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_team_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_team_season_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="138" column="66" selection-start-line="138" selection-start-column="66" selection-end-line="138" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/proxy_handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" />
+    <entry file="file://$PROJECT_DIR$/server/routes/competition_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/competition_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/user_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/global_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
+    <entry file="file://$PROJECT_DIR$/server/controllers/global_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/session_user.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
+    <entry file="file://$PROJECT_DIR$/server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
+    <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#771#63710#0" />
-            <element signature="e#63751#66107#0" />
-            <element signature="n#!!block;n#searchUser#0;n#GenericUserService#0" />
-            <element signature="e#66622#66779#0" />
-            <element signature="e#66789#67088#0" />
-            <element signature="e#67107#67138#0" />
-            <element signature="n#!!block;n#handleError#0;n#GenericUserService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="532" column="13" lean-forward="true" selection-start-line="532" selection-start-column="13" selection-end-line="532" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!block;n#loadAgeGroups#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#11003#11779#0" />
-            <element signature="n#!!block;n#loadLeagues#0;n#FilterUserInfoComponent#0" />
-            <element signature="e#11853#12071#0" />
-            <element signature="e#11861#11919#0" />
-            <element signature="e#11927#11977#0" />
-            <element signature="e#11985#12064#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/team_season.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-659" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_team_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="66" column="66" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_team_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_user_info_season_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="114" column="34" lean-forward="true" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
-          <folding>
-            <element signature="e#143#675#0" />
-            <element signature="e#161#235#0" />
-            <element signature="e#255#596#0" />
-            <element signature="e#276#590#0" />
-            <element signature="e#299#580#0" />
-            <element signature="e#738#938#0" />
-            <element signature="e#785#859#0" />
-            <element signature="e#801#853#0" />
-            <element signature="e#1024#2872#0" />
-            <element signature="e#1042#2838#0" />
-            <element signature="e#1052#2832#0" />
-            <element signature="e#1074#2822#0" />
-            <element signature="e#1103#1361#0" />
-            <element signature="e#1125#1343#0" />
-            <element signature="e#1159#1321#0" />
-            <element signature="e#1399#1654#0" />
-            <element signature="e#1421#1636#0" />
-            <element signature="e#1455#1614#0" />
-            <element signature="e#1689#1941#0" />
-            <element signature="e#1711#1923#0" />
-            <element signature="e#1745#1901#0" />
-            <element signature="e#1970#2228#0" />
-            <element signature="e#1992#2210#0" />
-            <element signature="e#2026#2188#0" />
-            <element signature="e#2266#2521#0" />
-            <element signature="e#2288#2503#0" />
-            <element signature="e#2322#2481#0" />
-            <element signature="e#2556#2808#0" />
-            <element signature="e#2578#2790#0" />
-            <element signature="e#2612#2768#0" />
-            <element signature="e#2967#3185#0" />
-            <element signature="e#2987#3071#0" />
-            <element signature="e#8044#8122#0" />
-            <element signature="e#8064#8093#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_team_season_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_user_info_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
-          <folding>
-            <element signature="e#153#1581#0" />
-            <element signature="e#1644#1829#0" />
-            <element signature="e#1908#2073#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="59" column="60" lean-forward="true" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="201" column="25" selection-start-line="201" selection-start-column="25" selection-end-line="201" selection-end-column="25" />
-          <folding>
-            <element signature="e#1371#2505#0" />
-            <element signature="e#1398#1569#0" />
-            <element signature="e#1591#2491#0" />
-            <element signature="e#1936#2471#0" />
-            <element signature="e#1971#2166#0" />
-            <element signature="e#2196#2449#0" />
-            <element signature="e#2578#3191#0" />
-            <element signature="e#2603#2706#0" />
-            <element signature="e#2644#2700#0" />
-            <element signature="e#2859#3187#0" />
-            <element signature="e#2878#2971#0" />
-            <element signature="e#2985#3181#0" />
-            <element signature="e#3280#4294#0" />
-            <element signature="e#3408#3776#0" />
-            <element signature="e#3792#4208#0" />
-            <element signature="e#4232#4288#0" />
-            <element signature="e#4530#5276#0" />
-            <element signature="e#4628#4719#0" />
-            <element signature="e#4733#4801#0" />
-            <element signature="e#4901#5270#0" />
-            <element signature="e#4934#5043#0" />
-            <element signature="e#5056#5239#0" />
-            <element signature="e#5332#6888#0" />
-            <element signature="e#5430#5519#0" />
-            <element signature="e#5533#5601#0" />
-            <element signature="e#5701#6882#0" />
-            <element signature="e#5734#5927#0" />
-            <element signature="e#5940#6460#0" />
-            <element signature="e#6473#6593#0" />
-            <element signature="e#6606#6723#0" />
-            <element signature="e#6736#6851#0" />
-            <element signature="e#7073#7166#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="231" column="28" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="221" column="69" lean-forward="true" selection-start-line="221" selection-start-column="69" selection-end-line="221" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!block;n#initializeMatchModel#0" />
-            <element signature="e#1738#2026#0" />
-            <element signature="e#1828#1924#0" />
-            <element signature="e#1937#2020#0" />
-            <element signature="e#2085#2373#0" />
-            <element signature="e#2175#2271#0" />
-            <element signature="e#2284#2367#0" />
-            <element signature="e#2523#3507#0" />
-            <element signature="e#2542#2634#0" />
-            <element signature="e#2648#3501#0" />
-            <element signature="e#2850#3092#0" />
-            <element signature="e#3119#3361#0" />
-            <element signature="n#!!block;n#_getEventsTimes#0" />
-            <element signature="e#3654#3955#0" />
-            <element signature="e#3700#3947#0" />
-            <element signature="e#3738#3868#0" />
-            <element signature="e#3886#3937#0" />
-            <element signature="e#3964#4067#0" />
-            <element signature="e#4017#4059#0" />
-            <element signature="n#!!block;n#_processPlayerEvents#0" />
-            <element signature="e#4490#4740#0" />
-            <element signature="e#4751#5085#0" />
-            <element signature="e#5140#6682#0" />
-            <element signature="e#5254#6672#0" />
-            <element signature="e#5293#5393#0" />
-            <element signature="e#5410#5512#0" />
-            <element signature="e#5529#5882#0" />
-            <element signature="e#5598#5693#0" />
-            <element signature="e#5757#5855#0" />
-            <element signature="e#5899#6084#0" />
-            <element signature="e#6101#6193#0" />
-            <element signature="e#6210#6302#0" />
-            <element signature="e#6319#6469#0" />
-            <element signature="e#6486#6633#0" />
-            <element signature="e#6827#6856#0" />
-            <element signature="e#6999#7036#0" />
-            <element signature="e#7085#7122#0" />
-            <element signature="e#7173#7210#0" />
-            <element signature="e#7264#7301#0" />
-            <element signature="n#!!block;n#processMatchIds#0" />
-            <element signature="e#7545#7617#0" />
-            <element signature="e#7642#7714#0" />
-            <element signature="e#7842#7995#0" />
-            <element signature="e#8004#9063#0" />
-            <element signature="e#8063#8186#0" />
-            <element signature="e#8246#8369#0" />
-            <element signature="e#8429#8547#0" />
-            <element signature="e#8607#8725#0" />
-            <element signature="e#8799#8890#0" />
-            <element signature="e#8964#9055#0" />
-            <element signature="e#9213#13563#0" />
-            <element signature="e#9232#9325#0" />
-            <element signature="e#9339#13557#0" />
-            <element signature="e#9487#10019#0" />
-            <element signature="e#10087#10619#0" />
-            <element signature="e#10696#11210#0" />
-            <element signature="e#11287#11801#0" />
-            <element signature="e#11913#13545#0" />
-            <element signature="e#11940#12056#0" />
-            <element signature="e#12078#13531#0" />
-            <element signature="e#12252#13466#0" />
-            <element signature="e#12402#12756#0" />
-            <element signature="e#12793#13100#0" />
-            <element signature="e#13137#13444#0" />
-            <element signature="n#!!block;n#processMatchPlayers#0" />
-            <element signature="e#13730#13974#0" />
-            <element signature="e#13749#13842#0" />
-            <element signature="e#13856#13968#0" />
-            <element signature="n#!!block;n#processMatchTeams#0" />
-            <element signature="e#14134#14385#0" />
-            <element signature="e#14153#14246#0" />
-            <element signature="e#14260#14379#0" />
-            <element signature="n#!!block;n#processMatchCompetition#0" />
-            <element signature="e#14570#14837#0" />
-            <element signature="e#14589#14682#0" />
-            <element signature="e#14696#14831#0" />
-            <element signature="n#!!block;n#processUserInfoRegex#0" />
-            <element signature="e#14906#14978#0" />
-            <element signature="e#15003#15075#0" />
-            <element signature="e#15147#15212#0" />
-            <element signature="e#15285#15350#0" />
-            <element signature="e#15420#15482#0" />
-            <element signature="e#15552#15614#0" />
-            <element signature="e#15706#17171#0" />
-            <element signature="e#15725#15818#0" />
-            <element signature="e#15832#17165#0" />
-            <element signature="e#16004#16138#0" />
-            <element signature="e#16206#16340#0" />
-            <element signature="e#16417#16548#0" />
-            <element signature="e#16625#16756#0" />
-            <element signature="e#16841#17153#0" />
-            <element signature="e#16868#16985#0" />
-            <element signature="e#17007#17139#0" />
-            <element signature="e#17226#18824#0" />
-            <element signature="e#17244#18257#0" />
-            <element signature="e#17290#17346#0" />
-            <element signature="e#17476#17675#0" />
-            <element signature="e#17696#17963#0" />
-            <element signature="e#17861#17953#0" />
-            <element signature="e#17984#18251#0" />
-            <element signature="e#18149#18241#0" />
-            <element signature="e#18330#18820#0" />
-            <element signature="e#18407#18812#0" />
-            <element signature="e#18503#18800#0" />
-            <element signature="e#18597#18784#0" />
-            <element signature="e#18684#18764#0" />
-            <element signature="e#18843#18885#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/dispatcher/dispatcher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/match.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13022">
-          <caret line="779" column="2" selection-start-line="779" selection-start-column="2" selection-end-line="779" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3587">
-          <caret line="211" column="85" selection-start-line="211" selection-start-column="85" selection-end-line="211" selection-end-column="85" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#image-cropper#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match/match.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="305" column="44" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#ngAfterViewInit#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#createForms#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#loadGames#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#discard#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#changedInput#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#goToTop#0;n#EditUserInfoComponent#0" />
-            <element signature="n#!!block;n#imageLoadFailed#0;n#EditUserInfoComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/mailers/achievements_mailer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/football_achievement_service.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_achievement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/gary_processor/gary_processor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="63" column="69" lean-forward="true" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/node_modules/typescript/lib/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="851" column="4" selection-start-line="851" selection-start-column="4" selection-end-line="851" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_models/notification_viewmodel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/notifications/notifications.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/notifications/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/notifications.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/routes/player_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="153" column="49" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
-          <folding>
-            <element signature="e#470#1338#0" />
             <element signature="e#489#607#0" />
-            <element signature="e#676#924#0" />
-            <element signature="e#850#918#0" />
             <element signature="e#1041#1334#0" />
             <element signature="e#1064#1238#0" />
             <element signature="e#1110#1222#0" />
             <element signature="e#1580#1754#0" />
             <element signature="e#1626#1738#0" />
-            <element signature="e#1892#2593#0" />
-            <element signature="e#2138#2589#0" />
-            <element signature="e#2161#2335#0" />
             <element signature="e#2207#2319#0" />
             <element signature="e#2364#2494#0" />
             <element signature="e#2410#2478#0" />
@@ -1393,237 +894,143 @@
             <element signature="e#4307#4530#0" />
             <element signature="e#4326#4485#0" />
             <element signature="e#4368#4473#0" />
-            <element signature="e#4615#6118#0" />
             <element signature="e#4732#4842#0" />
             <element signature="e#4770#4834#0" />
-            <element signature="e#5081#6113#0" />
             <element signature="e#5100#5259#0" />
             <element signature="e#5142#5247#0" />
-            <element signature="e#5363#6105#0" />
-            <element signature="e#5386#5560#0" />
             <element signature="e#5432#5544#0" />
             <element signature="e#5589#5719#0" />
             <element signature="e#5635#5703#0" />
-            <element signature="e#5813#6093#0" />
-            <element signature="e#5840#6034#0" />
             <element signature="e#5890#6014#0" />
-            <element signature="e#6166#6911#0" />
-            <element signature="e#6339#6455#0" />
-            <element signature="e#6377#6447#0" />
-            <element signature="e#6553#6908#0" />
-            <element signature="e#6572#6726#0" />
-            <element signature="e#6614#6714#0" />
-            <element signature="e#6751#6865#0" />
-            <element signature="e#6793#6853#0" />
-            <element signature="e#6951#7650#0" />
-            <element signature="e#7091#7193#0" />
-            <element signature="e#7129#7185#0" />
-            <element signature="e#7278#7647#0" />
-            <element signature="e#7297#7465#0" />
-            <element signature="e#7339#7453#0" />
-            <element signature="e#7490#7604#0" />
-            <element signature="e#7532#7592#0" />
-            <element signature="e#7704#8333#0" />
-            <element signature="e#7878#8329#0" />
-            <element signature="e#7901#8075#0" />
-            <element signature="e#7947#8059#0" />
-            <element signature="e#8104#8234#0" />
-            <element signature="e#8150#8218#0" />
-            <element signature="e#8380#9009#0" />
-            <element signature="e#8554#9005#0" />
-            <element signature="e#8577#8751#0" />
-            <element signature="e#8623#8735#0" />
-            <element signature="e#8780#8910#0" />
-            <element signature="e#8826#8894#0" />
-            <element signature="e#9057#9686#0" />
-            <element signature="e#9231#9682#0" />
-            <element signature="e#9254#9428#0" />
-            <element signature="e#9300#9412#0" />
-            <element signature="e#9457#9587#0" />
-            <element signature="e#9503#9571#0" />
-            <element signature="e#9731#10360#0" />
-            <element signature="e#9905#10356#0" />
-            <element signature="e#9928#10102#0" />
-            <element signature="e#9974#10086#0" />
-            <element signature="e#10131#10261#0" />
-            <element signature="e#10177#10245#0" />
-            <element signature="e#10402#11066#0" />
-            <element signature="e#10511#10613#0" />
-            <element signature="e#10549#10605#0" />
-            <element signature="e#10692#11061#0" />
-            <element signature="e#10711#10879#0" />
-            <element signature="e#10753#10867#0" />
-            <element signature="e#10904#11018#0" />
-            <element signature="e#10946#11006#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/models/football_user_info_season.js">
+    <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="654" column="21" selection-start-line="654" selection-start-column="21" selection-end-line="654" selection-end-column="21" />
+        <state relative-caret-position="510">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
-            <element signature="e#711#15594#0" />
-            <element signature="e#1115#9779#0" />
-            <element signature="e#1234#1794#0" />
-            <element signature="e#1810#2012#0" />
-            <element signature="e#2029#3223#0" />
-            <element signature="e#2041#2430#0" />
-            <element signature="e#2442#2826#0" />
-            <element signature="e#2838#3213#0" />
-            <element signature="e#3242#4028#0" />
-            <element signature="e#3254#4018#0" />
-            <element signature="e#3341#3546#0" />
-            <element signature="e#3571#3777#0" />
-            <element signature="e#3802#4006#0" />
-            <element signature="e#4045#9771#0" />
-            <element signature="e#4057#5015#0" />
-            <element signature="e#4637#5003#0" />
-            <element signature="e#4662#4783#0" />
-            <element signature="e#4680#4767#0" />
-            <element signature="e#4805#4883#0" />
-            <element signature="e#4806#4882#0" />
-            <element signature="e#4907#4988#0" />
-            <element signature="e#4908#4987#0" />
-            <element signature="e#5027#5963#0" />
-            <element signature="e#5585#5951#0" />
-            <element signature="e#5610#5731#0" />
-            <element signature="e#5628#5715#0" />
-            <element signature="e#5753#5831#0" />
-            <element signature="e#5754#5830#0" />
-            <element signature="e#5855#5936#0" />
-            <element signature="e#5856#5935#0" />
-            <element signature="e#5975#6906#0" />
-            <element signature="e#6528#6894#0" />
-            <element signature="e#6553#6674#0" />
-            <element signature="e#6571#6658#0" />
-            <element signature="e#6696#6774#0" />
-            <element signature="e#6697#6773#0" />
-            <element signature="e#6798#6879#0" />
-            <element signature="e#6799#6878#0" />
-            <element signature="e#6918#7854#0" />
-            <element signature="e#7476#7842#0" />
-            <element signature="e#7501#7622#0" />
-            <element signature="e#7519#7606#0" />
-            <element signature="e#7644#7722#0" />
-            <element signature="e#7645#7721#0" />
-            <element signature="e#7746#7827#0" />
-            <element signature="e#7747#7826#0" />
-            <element signature="e#7866#8798#0" />
-            <element signature="e#8420#8786#0" />
-            <element signature="e#8445#8566#0" />
-            <element signature="e#8463#8550#0" />
-            <element signature="e#8588#8666#0" />
-            <element signature="e#8589#8665#0" />
-            <element signature="e#8690#8771#0" />
-            <element signature="e#8691#8770#0" />
-            <element signature="e#8810#9761#0" />
-            <element signature="e#9383#9749#0" />
-            <element signature="e#9408#9529#0" />
-            <element signature="e#9426#9513#0" />
-            <element signature="e#9551#9629#0" />
-            <element signature="e#9552#9628#0" />
-            <element signature="e#9653#9734#0" />
-            <element signature="e#9654#9733#0" />
-            <element signature="e#9833#10816#0" />
-            <element signature="e#9843#9984#0" />
-            <element signature="e#9994#10249#0" />
-            <element signature="e#10259#10397#0" />
-            <element signature="e#10407#10545#0" />
-            <element signature="e#10555#10808#0" />
-            <element signature="e#10841#15091#0" />
-            <element signature="e#10883#15082#0" />
-            <element signature="e#10895#11751#0" />
-            <element signature="e#10940#11524#0" />
-            <element signature="e#11300#11509#0" />
-            <element signature="e#11763#12582#0" />
-            <element signature="e#11808#12382#0" />
-            <element signature="e#12158#12367#0" />
-            <element signature="e#12594#13313#0" />
-            <element signature="e#12639#13125#0" />
-            <element signature="e#12901#13110#0" />
-            <element signature="e#13325#14297#0" />
-            <element signature="e#13370#13877#0" />
-            <element signature="e#13653#13862#0" />
-            <element signature="e#14309#15072#0" />
-            <element signature="e#14354#14866#0" />
-            <element signature="e#14642#14851#0" />
-            <element signature="e#15113#15526#0" />
-            <element signature="e#15123#15254#0" />
-            <element signature="e#15264#15384#0" />
-            <element signature="e#15394#15518#0" />
-            <element signature="e#15627#18799#0" />
-            <element signature="e#16144#17822#0" />
-            <element signature="e#16152#16981#0" />
-            <element signature="e#16667#16973#0" />
-            <element signature="e#16688#16789#0" />
-            <element signature="e#16702#16777#0" />
-            <element signature="e#16807#16873#0" />
-            <element signature="e#16808#16872#0" />
-            <element signature="e#16893#16962#0" />
-            <element signature="e#16894#16961#0" />
-            <element signature="e#16989#17816#0" />
-            <element signature="e#17502#17808#0" />
-            <element signature="e#17523#17624#0" />
-            <element signature="e#17537#17612#0" />
-            <element signature="e#17642#17708#0" />
-            <element signature="e#17643#17707#0" />
-            <element signature="e#17728#17797#0" />
-            <element signature="e#17729#17796#0" />
-            <element signature="e#17841#18795#0" />
-            <element signature="e#17857#18029#0" />
-            <element signature="e#17858#18028#0" />
-            <element signature="e#18047#18789#0" />
-            <element signature="e#18048#18788#0" />
-            <element signature="e#18069#18312#0" />
-            <element signature="e#18081#18149#0" />
-            <element signature="e#18161#18230#0" />
-            <element signature="e#18242#18311#0" />
-            <element signature="e#18332#18422#0" />
-            <element signature="e#18344#18421#0" />
-            <element signature="e#18442#18606#0" />
-            <element signature="e#18454#18526#0" />
-            <element signature="e#18538#18605#0" />
-            <element signature="e#18624#18709#0" />
-            <element signature="e#18636#18708#0" />
-            <element signature="n#!!block;n#getUserInfo#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#getTeamPlayer#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#createRecommendation#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#voteForSkill#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#follow#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#unfollow#0;n#UserInfoService#0" />
-            <element signature="n#!!block;n#handleError#0;n#UserInfoService#0" />
+            <element signature="e#659#806#0" />
+            <element signature="e#829#1481#0" />
+            <element signature="e#1501#1657#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_Black.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_White_Symbol.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_Black_Symbol.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_RVB.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/assets/SP_Logo_White.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/services/notifications/notifications_service.js">
+    <entry file="file://$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="532">
+          <caret line="220" column="61" selection-start-line="220" selection-start-column="61" selection-end-line="220" selection-end-column="61" />
+          <folding>
+            <element signature="e#1095#1230#0" />
+            <element signature="n#!!block;n#constructor#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#ngOnInit#0;n#EditUserInfoComponent#0" />
+            <element signature="e#2553#2589#0" />
+            <element signature="e#2607#2643#0" />
+            <element signature="e#2671#2776#0" />
+            <element signature="e#2863#2988#0" />
+            <element signature="e#3075#3488#0" />
+            <element signature="e#3083#3133#0" />
+            <element signature="e#3141#3191#0" />
+            <element signature="e#3199#3249#0" />
+            <element signature="e#3257#3307#0" />
+            <element signature="e#3315#3365#0" />
+            <element signature="e#3373#3423#0" />
+            <element signature="e#3431#3481#0" />
+            <element signature="e#3509#3552#0" />
+            <element signature="e#3575#3872#0" />
+            <element signature="e#3895#4042#0" />
+            <element signature="e#4060#4116#0" />
+            <element signature="e#4136#4252#0" />
+            <element signature="e#4285#4576#0" />
+            <element signature="e#4301#4370#0" />
+            <element signature="e#4388#4458#0" />
+            <element signature="e#4478#4570#0" />
+            <element signature="e#4617#5759#0" />
+            <element signature="e#4637#5053#0" />
+            <element signature="e#5070#5195#0" />
+            <element signature="e#5223#5358#0" />
+            <element signature="e#5378#5652#0" />
+            <element signature="e#5669#5753#0" />
+            <element signature="n#!!block;n#createForms#0;n#EditUserInfoComponent#0" />
+            <element signature="e#6260#6972#0" />
+            <element signature="e#7055#7630#0" />
+            <element signature="e#7112#7328#0" />
+            <element signature="e#7384#7500#0" />
+            <element signature="e#7687#7796#0" />
+            <element signature="e#8017#8343#0" />
+            <element signature="e#8351#8537#0" />
+            <element signature="n#!!block;n#save#0;n#EditUserInfoComponent#0" />
+            <element signature="e#8742#8943#0" />
+            <element signature="n#!!block;n#discard#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#goToMatch#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#changedInput#0;n#EditUserInfoComponent#0" />
+            <element signature="e#9342#9490#0" />
+            <element signature="n#!!block;n#goToTop#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#fileChangeEvent#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageCroppedBase64#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageCroppedFile#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageLoaded#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#imageLoadFailed#0;n#EditUserInfoComponent#0" />
+            <element signature="n#!!block;n#random#0" />
+            <element signature="n#!!block;n#_make_random_text#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_user_info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="991">
+          <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_user_info_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="99" column="79" lean-forward="true" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
+          <folding>
+            <element signature="e#276#857#0" />
+            <element signature="e#316#542#0" />
+            <element signature="e#869#1088#0" />
+            <element signature="e#1101#1801#0" />
+            <element signature="e#1102#1800#0" />
+            <element signature="e#1932#2167#0" />
+            <element signature="e#2188#2429#0" />
+            <element signature="e#2450#2691#0" />
+            <element signature="e#2711#3438#0" />
+            <element signature="e#2721#3432#0" />
+            <element signature="e#2927#3422#0" />
+            <element signature="e#2954#3092#0" />
+            <element signature="e#2955#3091#0" />
+            <element signature="e#3116#3247#0" />
+            <element signature="e#3117#3246#0" />
+            <element signature="e#3271#3407#0" />
+            <element signature="e#3272#3406#0" />
+            <element signature="e#3458#3528#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="106" column="38" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="347" column="36" lean-forward="true" selection-start-line="347" selection-start-column="36" selection-end-line="347" selection-end-column="36" />
         </state>
       </provider>
     </entry>
