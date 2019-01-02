@@ -22,10 +22,10 @@ export class MatchComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.id  = this.route.snapshot.paramMap.get('id');
+    this.matchService.getMatch(this.id)
+      .subscribe(match => this.viewModel = match);
   }
 
   ngAfterViewInit() {
-      console.log("Arnaldo");
-      this.matchService.getMatch(this.id)
-        .subscribe(match => this.viewModel = match);
+
   }}

@@ -1,0 +1,174 @@
+.result-info{
+  margin: 20px auto;
+  display: table;
+  float: none;
+}
+
+.result-info .game-info{
+  display: table;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.result-info .game-info .info{
+  font-size: small;
+}
+
+.result-info .game-info .date{
+  font-size: initial;
+  font-weight: initial;
+}
+
+
+.match-competition{
+  text-align: center;
+  font-size: xx-large;
+  display: table;
+  margin: 0 auto;
+}
+
+.match-competition img{
+  height: 150px;
+  width: auto;
+}
+
+.match-team-info{
+  margin: 0 90px;
+}
+
+.referee{
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.fill{
+  width: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.match-team-info .result{
+  font-weight: bold;
+  font-size: xx-large;
+  margin: 0;
+  text-align: center;
+}
+
+
+.match-team-info a{
+  font-size: large;
+}
+
+.match-team-info img{
+  height: 75px;
+  width: auto;
+}
+
+.match-team-info .home-team{
+  text-align: right;
+}
+
+.match-team-info .home-team table{
+  float: right;
+}
+
+.match-team-info .away-team{
+  text-align: left;
+}
+
+.match-team-info .away-team img{
+  float: right;
+}
+
+.match-team-info .home-team .team-goals{
+  font-size: 8px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.match-team-info .away-team .team-goals{
+  font-size: 8px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.match{
+  overflow: hidden;
+  margin: 0 auto;
+  width: 60vw;
+}
+
+.player-picker__home{
+  width: 20vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+.player-picker__home .roster{
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.player-picker__away{
+  width: 20vw;
+  position: fixed;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.player-picker__away .roster{
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.match .home-row{
+  float: left;
+}
+
+.match .away-row{
+  float: right;
+}
+
+.match .center{
+  margin: 0 auto;
+}
+
+.achievements{
+  margin: 30px 0;
+}
+
+
+.table_header {
+  color: #032f4f;
+  background-color: white;
+}
+
+.table_header tr{
+  height: 50px !important;
+}
+
+.table_header td, th {
+  height: auto !important;
+}
+
+.icon {
+  width: auto !important;
+  height: 15px !important;
+}
+
+.tr-odd {
+  background-color: white;
+  height: 100px !important;
+}
+
+.no-goalie {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+

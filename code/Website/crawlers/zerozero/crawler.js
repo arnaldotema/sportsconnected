@@ -73,9 +73,9 @@ const competitionCrawler = require('./functions/football_competition');
 logger.info("Testing the editions...");
 
 zerozero.queue({
-    uri: format(baseUris.COMPETITION, {competition_id: 3}), // 3 - ID da Super Liga
+    uri: format(baseUris.COMPETITION, {competition_id: 2380}), // 3 - ID da Super Liga
     callback: proxyHandler.crawl,
     successCallback: competitionCrawler.updateCompetition,
     proxyFailCallback: zerozero.proxyFailCallback,
-    zerozeroId: 3
+    zerozeroId: 2380
 });
