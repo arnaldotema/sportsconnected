@@ -12,6 +12,7 @@ import {AuthGuard} from './_guards/auth.guard';
 import {AdminGuard} from './_guards/admin.guard';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgDragDropModule} from 'ng-drag-drop';
 
 import {MatButtonModule} from '@angular/material/button';
 
@@ -59,6 +60,7 @@ import {DROPZONE_CONFIG} from 'ngx-dropzone-wrapper';
 import {DropzoneConfigInterface} from 'ngx-dropzone-wrapper';
 import {TeamComponent} from './team/team.component';
 import {MatchComponent} from './match/match.component';
+import {MatchEditComponent} from './match-edit/match-edit.component';
 import {CompetitionComponent} from './competition/competition.component';
 import {User_infoComponent} from './user_info/user_info.component';
 import {User_infoMediaComponent} from './user-info-media/user-info-media.component';
@@ -104,6 +106,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AppComponent,
     TeamComponent,
     MatchComponent,
+    MatchEditComponent,
     CompetitionComponent,
     User_infoComponent,
     User_infoMediaComponent,
@@ -133,6 +136,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ClickOutsideModule,
     FormsModule,
     ReactiveFormsModule,
+    NgDragDropModule.forRoot(),
     ScrollToModule.forRoot(),
     MyDatePickerModule,
     AppRoutingModule,

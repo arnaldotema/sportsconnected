@@ -6,8 +6,296 @@
   <component name="ChangeListManager">
     <list default="true" id="9f09cfca-2512-4db6-8265-5258ead4a11c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/.angular-cli.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/.angular-cli.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/.editorconfig" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/.editorconfig" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/.gitignore" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/README.md" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/README.md" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Achievement.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Achievement.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/CompetitionSeason.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/CompetitionSeason.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/CompetitionViewModel.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/CompetitionViewModel.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Country.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Country.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/ExternalIds.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/ExternalIds.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/FilterSearch.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/FilterSearch.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/MatchViewModel.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/MatchViewModel.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Media.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Media.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/ParentErrorStateMatcher.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/ParentErrorStateMatcher.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/PasswordValidator.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/PasswordValidator.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/PlayerMatch.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/PlayerMatch.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Recommendation.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/Recommendation.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/SearchEntityViewmodel.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/SearchEntityViewmodel.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/SkillSet.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/SkillSet.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamAdditionalInfo.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamAdditionalInfo.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamMatch.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamMatch.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamPlayer.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamPlayer.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamSeason.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamSeason.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamViewModel.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TeamViewModel.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TryOut.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/TryOut.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/User.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/User.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UserInfoSearch.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UserInfoSearch.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UserInfoSeason.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UserInfoSeason.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UserInfoViewModel.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UserInfoViewModel.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UsernameValidator.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/classes/UsernameValidator.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/AppComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/AppComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/CompetitionComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/CompetitionComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/CreateAccountComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/CreateAccountComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/EditUserInfoComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/EditUserInfoComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/FilterUserInfoComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/FilterUserInfoComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/HeaderComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/HeaderComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/HomeComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/HomeComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/LoginComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/LoginComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/MatchComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/MatchComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/RecommendationModalComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/RecommendationModalComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamMediaComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamMediaComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamPlayerComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamPlayerComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamPlayerEvaluationModalComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamPlayerEvaluationModalComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamProfileComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamProfileComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamRosterComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamRosterComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamStatsComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TeamStatsComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TryoutModalComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/TryoutModalComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/UserInfoProfileComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/UserInfoProfileComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/User_infoComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/User_infoComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/User_infoMediaComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/User_infoMediaComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/User_infoStatsComponent.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/components/User_infoStatsComponent.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/coverage.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/coverage.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/dependencies.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/dependencies.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/ionicons.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/ionicons.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-300.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-700.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/fonts/roboto-v15-latin-regular.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/graph/dependencies.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/graph/dependencies.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/guards/AdminGuard.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/guards/AdminGuard.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/guards/AuthGuard.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/guards/AuthGuard.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/images/compodoc-vectorise-inverted.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/images/compodoc-vectorise-inverted.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/images/compodoc-vectorise.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/images/compodoc-vectorise.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/images/coverage-badge-documentation.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/images/coverage-badge-documentation.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/index.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/index.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/AuthenticationService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/AuthenticationService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/GenericUserService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/GenericUserService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/MatchService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/MatchService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/PlayerService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/PlayerService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/TeamService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/TeamService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/UserInfoService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/UserInfoService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/UserService.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/injectables/UserService.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/compodoc.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/compodoc.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/lazy-load-graphs.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/lazy-load-graphs.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/EventDispatcher.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/EventDispatcher.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/bootstrap-native.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/bootstrap-native.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/clipboard.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/clipboard.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/custom-elements.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/custom-elements.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/d3.v3.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/d3.v3.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/deep-iterator.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/deep-iterator.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/es6-shim.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/es6-shim.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/htmlparser.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/htmlparser.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/innersvg.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/innersvg.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/lit-html.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/lit-html.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/prism.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/prism.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/promise.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/promise.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/svg-pan-zoom.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/svg-pan-zoom.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/tablesort.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/tablesort.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/tablesort.number.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/tablesort.number.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/vis.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/vis.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/zepto.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/libs/zepto.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/menu-wc.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/menu-wc.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/menu.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/menu.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/routes.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/routes.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/routes/routes_index.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/routes/routes_index.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/search/search-lunr.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/search/search-lunr.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/search/search.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/search/search.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/search/search_index.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/search/search_index.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/sourceCode.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/sourceCode.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/svg-pan-zoom.controls.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/svg-pan-zoom.controls.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/tabs.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/tabs.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/tree.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/js/tree.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/miscellaneous/functions.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/miscellaneous/functions.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/miscellaneous/variables.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/miscellaneous/variables.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules/AppModule.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules/AppModule.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules/AppModule/dependencies.svg" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules/AppModule/dependencies.svg" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules/AppRoutingModule.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/modules/AppRoutingModule.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/overview.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/overview.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/routes.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/routes.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/bootstrap-card.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/bootstrap-card.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/bootstrap.min.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/compodoc.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/compodoc.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/ionicons.min.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/ionicons.min.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/laravel.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/laravel.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/material.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/material.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/original.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/original.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/postmark.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/postmark.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/prism.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/prism.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/readthedocs.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/readthedocs.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/reset.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/reset.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/stripe.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/stripe.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/style.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/style.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/tablesort.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/tablesort.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/vagrant.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/documentation/styles/vagrant.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/e2e/app.e2e-spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/e2e/app.e2e-spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/e2e/app.po.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/e2e/app.po.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/e2e/tsconfig.e2e.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/e2e/tsconfig.e2e.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/karma.conf.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/karma.conf.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/package-lock.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/package.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/package.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/protractor.conf.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/protractor.conf.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/proxy.conf.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/proxy.conf.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_guards/admin.guard.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_guards/admin.guard.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_guards/auth.guard.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_guards/auth.guard.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/recommendation-modal/recommendation-modal.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/team-player-evaluation-modal/team-player-evaluation-modal.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/tryout-modal/tryout-modal.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_modals/upload-image-modal/upload-image-modal.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/achievement.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/achievement.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/competition_season.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/competition_season.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/competition_viewmodel.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/external_ids.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/external_ids.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/filter_search.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/filter_search.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/match_viewmodel.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/match_viewmodel.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/media.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/media.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/notification_viewmodel.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/notification_viewmodel.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/player_match.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/player_match.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/recommendation.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/recommendation.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/search_entity_viewmodel.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/session_user.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/session_user.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/skill_set.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/skill_set.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_additional_info.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_additional_info.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_match.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_match.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_player.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_player.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_season.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_season.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_viewmodel.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/team_viewmodel.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/try_out.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/try_out.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_season.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_models/user_info_viewmodel.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/competition.service.ts" />
       <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
-      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts.orig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/match.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/match.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/notifications.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/notifications.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app-routing.module.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.module.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/competition/competition.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/competition/competition.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/competition/competition.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/competition/competition.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/competition/competition.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/competition/competition.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts.orig" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts.orig" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/login/login.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/match/match.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/notifications/notifications.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/notifications/notifications.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-media/team-media.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-player/team-player.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-roster/team-roster.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team-stats/team-stats.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/team/team.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-media/user-info-media.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.spec.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.spec.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/user_info/user_info.component.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/country.model.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/country.model.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/index.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/index.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/password.validator.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/password.validator.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/username.validator.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/validators/username.validator.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/config.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/config.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap-theme.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap-theme.min.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/css/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/js/bootstrap-filestyle.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/js/bootstrap-filestyle.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/js/bootstrap.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/js/bootstrap.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/js/bootstrap.min.js" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/GNU-AGPL-3.0" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/GNU-AGPL-3.0" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/MPL-2" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/MPL-2" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/THIRD-PARTY-NOTICES" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/THIRD-PARTY-NOTICES" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/install_compass" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/assets/mongodb-osx-x86_64-3.6.4/bin/install_compass" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/environments/environment.prod.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/environments/environment.prod.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/environments/environment.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/environments/environment.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/index.html" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/index.html" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/main.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/main.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/polyfills.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/polyfills.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/styles.css" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/styles.css" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/test.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/test.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/tsconfig.app.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/tsconfig.app.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/tsconfig.spec.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/tsconfig.spec.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/typings.d.ts" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/typings.d.ts" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/tsconfig.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/tsconfig.json" />
+      <change beforePath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/tslint.json" afterPath="$PROJECT_DIR$/code/Angular/APP BoilerPlate/tslint.json" />
+      <change beforePath="$PROJECT_DIR$/code/Website/app.js" afterPath="$PROJECT_DIR$/code/Website/app.js" />
+      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
+      <change beforePath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" afterPath="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,54 +309,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gary_processor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
+      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="40" column="78" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="78" />
+            <state relative-caret-position="544">
+              <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proxy.conf.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/proxy.conf.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
+        <entry file="file://$PROJECT_DIR$/code/Website/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_competition.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
+      <file leaf-file-name="base_uris.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="662" column="78" lean-forward="false" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
-              <folding>
-                <element signature="e#711#15594#0" expanded="false" />
-                <element signature="e#15627#18799#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Website/routes/user_routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+            <state relative-caret-position="51">
+              <caret line="3" column="56" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info_controller.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
+      <file leaf-file-name="proxy_handler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="24" column="81" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+            <state relative-caret-position="34">
+              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -77,10 +392,9 @@
       <file leaf-file-name="generic_user.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="595">
               <caret line="1909" column="22" lean-forward="false" selection-start-line="1909" selection-start-column="22" selection-end-line="1909" selection-end-column="22" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#771#63710#0" expanded="false" />
                 <element signature="e#63751#66107#0" expanded="false" />
               </folding>
@@ -91,11 +405,9 @@
       <file leaf-file-name="edit-user-info.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="1088">
               <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -196,7 +508,6 @@
         <option value="$PROJECT_DIR$/code/Website/routes/user_routes.js" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/home/home.component.html" />
-        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js" />
         <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts" />
@@ -211,7 +522,6 @@
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/create-account/create-account.component.html" />
-        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
         <option value="$PROJECT_DIR$/code/Website/models/football_user_info.js" />
         <option value="$PROJECT_DIR$/docs/sports regex.txt" />
         <option value="$PROJECT_DIR$/code/Website/services/football_achievement_service.js" />
@@ -236,9 +546,11 @@
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/node_modules/angular4-datepicker/src/my-date-picker/my-date-picker.component.ts" />
-        <option value="$PROJECT_DIR$/code/Website/app.js" />
         <option value="$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
         <option value="$PROJECT_DIR$/code/Website/controllers/user_info_controller.js" />
+        <option value="$PROJECT_DIR$/code/Website/app.js" />
+        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js" />
+        <option value="$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js" />
       </list>
     </option>
   </component>
@@ -270,7 +582,7 @@
       <path value="$PROJECT_DIR$/code/Website/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="y" value="15" />
     <option name="width" value="1192" />
@@ -296,8 +608,6 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,19 +624,48 @@
               <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
               <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="Angular" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
               <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="gary_processor" type="462c0819:PsiDirectoryNode" />
+              <item name="Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsConnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsConnected" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="APP BoilerPlate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="match-edit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,16 +826,20 @@
       <workItem from="1535894051327" duration="17486000" />
       <workItem from="1536560574126" duration="26996000" />
       <workItem from="1539100138985" duration="18656000" />
-      <workItem from="1539151926769" duration="28113000" />
+      <workItem from="1539151926769" duration="29300000" />
+      <workItem from="1539351230776" duration="108000" />
+      <workItem from="1542024505094" duration="4714000" />
+      <workItem from="1542194177157" duration="15000" />
+      <workItem from="1543503257587" duration="1788000" />
+      <workItem from="1546425077782" duration="925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543022000" />
+    <option name="totallyTimeSpent" value="551759000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -508,26 +851,26 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.49603173" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.4888268" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18910742" sideWeight="0.4888268" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5111732" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3970588" sideWeight="0.85515875" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970588" sideWeight="0.85515875" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -664,20 +1007,43 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Website/notifications/app.js</url>
           <line>5</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="459" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/socket_io.service.ts</url>
           <line>19</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="465" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js</url>
+          <line>14</line>
+          <option name="timeStamp" value="479" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js</url>
+          <line>52</line>
+          <option name="timeStamp" value="480" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js</url>
+          <line>55</line>
+          <option name="timeStamp" value="481" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js</url>
+          <line>72</line>
+          <option name="timeStamp" value="482" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js</url>
+          <line>87</line>
+          <option name="timeStamp" value="483" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="479" />
+      <option name="time" value="484" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -690,47 +1056,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/models/football_competition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="67" lean-forward="true" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/services/football_competition_season_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sports regex.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/models/football_user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/models/football_achievement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2618">
           <caret line="784" column="0" lean-forward="false" selection-start-line="784" selection-start-column="0" selection-end-line="791" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="1416" column="10" lean-forward="false" selection-start-line="1416" selection-start-column="10" selection-end-line="1416" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,10 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="190" column="5" lean-forward="true" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-            <element signature="e#934#986#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="1171" column="1" lean-forward="false" selection-start-line="1171" selection-start-column="1" selection-end-line="1171" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -821,7 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="55" column="2" lean-forward="false" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,7 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,9 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
           <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#85#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -847,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-343">
           <caret line="58" column="42" lean-forward="false" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,7 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,9 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="68" lean-forward="false" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,9 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,7 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,15 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="94" column="68" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="64" column="48" lean-forward="false" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,7 +1228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="59" column="67" lean-forward="false" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,19 +1269,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-          <folding>
-            <element signature="e#670#2098#0" expanded="false" />
-            <element signature="e#2161#2346#0" expanded="false" />
-            <element signature="e#2655#3270#0" expanded="false" />
-            <element signature="e#3344#3661#0" expanded="false" />
-            <element signature="e#3736#3739#0" expanded="false" />
-            <element signature="e#3816#3819#0" expanded="false" />
-            <element signature="e#3900#4154#0" expanded="false" />
-            <element signature="e#4197#5185#0" expanded="false" />
-            <element signature="e#5246#5834#0" expanded="false" />
-            <element signature="e#5898#6491#0" expanded="false" />
-            <element signature="e#7078#7453#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,7 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +1283,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="27" column="73" lean-forward="false" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,41 +1290,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/mailers/achievements_mailer">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="59" lean-forward="false" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/mailers/achievements_mailer" />
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/notifications/notifications.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/routes/user_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,25 +1313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#180#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/Website/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,47 +1320,118 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#63#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/gary_processor/gary_processor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="680">
           <caret line="40" column="78" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/notifications/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
+        <state relative-caret-position="2159">
           <caret line="662" column="78" lean-forward="false" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
-          <folding>
-            <element signature="e#711#15594#0" expanded="false" />
-            <element signature="e#15627#18799#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/routes/user_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="595">
           <caret line="1909" column="22" lean-forward="false" selection-start-line="1909" selection-start-column="22" selection-end-line="1909" selection-end-column="22" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
             <element signature="e#771#63710#0" expanded="false" />
             <element signature="e#63751#66107#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/Website/controllers/user_info_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="24" column="81" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+        <state relative-caret-position="544">
+          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/proxy.conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Angular/APP BoilerPlate/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/base_uris.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="56" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/proxy_handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/Website/crawlers/zerozero/functions/football_competition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
           <folding />
         </state>
       </provider>

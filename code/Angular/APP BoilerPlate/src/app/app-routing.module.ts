@@ -5,6 +5,7 @@ import { User_infoComponent } from "./user_info/user_info.component";
 import {TeamComponent} from './team/team.component';
 import {HomeComponent} from './home/home.component';
 import {MatchComponent} from './match/match.component';
+import {MatchEditComponent} from "./match-edit/match-edit.component";
 import {CreateAccountComponent} from './create-account/create-account.component';
 import {EditUserInfoComponent} from './edit-user-info/edit-user-info.component';
 import {FilterUserInfoComponent} from './filter-user-info/filter-user-info.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'team/:id', component: TeamComponent },
   { path: 'home', component: HomeComponent },
   { path: 'match/:id', component: MatchComponent },
+  { path: 'match-edit/:id', component: MatchEditComponent },
   { path: 'create-account', component: CreateAccountComponent},
   { path: 'edit-user-info/:id', component: EditUserInfoComponent},
   { path: 'filter-user-info', component: FilterUserInfoComponent},
