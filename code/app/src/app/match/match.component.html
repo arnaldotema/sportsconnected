@@ -170,14 +170,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a routerLink="/user-info/{{player.user_info_id}}">
+                    <a routerLink="/user-info/{{viewModel.home_team.staff[0].user_info_id}}">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.home_team.staff[0].avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      routerLink="/user-info/{{player.user_info_id}}">
+                      routerLink="/user-info/{{viewModel.home_team.staff[0].user_info_id}}">
                       {{viewModel.home_team.staff[0].name}}
                     </a>
                   </td>
@@ -321,14 +321,14 @@
                 <tbody>
                 <tr>
                   <td rowspan="2" class="">
-                    <a routerLink="/user-info/{{player.user_info_id}}">
+                    <a routerLink="/user-info/{{viewModel.away_team.staff[0].user_info_id}}">
                       <div mat-card-avatar class="sc-mat-card-avatar profile-small-image"
                            [ngStyle]="{'background-image':  'url(' + viewModel.away_team.staff[0].avatar + ')'}"></div>
                     </a>
                   </td>
                   <td class="table-link">
                     <a
-                      routerLink="/user-info/{{player.user_info_id}}">
+                      routerLink="/user-info/{{viewModel.away_team.staff[0].user_info_id}}">
                       {{viewModel.away_team.staff[0].name}}
                     </a>
                   </td>
