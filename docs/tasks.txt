@@ -1,34 +1,49 @@
 Páginas
 
 
-Horas entre parêntises retos () são as horas estimadas pelo Arnaldo Tema e Diogo Pires para a conclusão de cada tarefa. Estas horas NÃO têm qualquer relevância para o valor final, ficam aqui apenas para referência.
+Horas entre parêntises () são as horas estimadas pelo Arnaldo Tema e Diogo Pires para a conclusão de cada task. Estas horas NÃO têm qualquer relevância para o valor final, ficam aqui apenas para referência.
 
-Horas entre parêntises retos [] são as horas estimadas pelo Marco Monsanto para a conclusão de cada tarefa. As horas foram verificadas e acordadas pelas três partes.
+Horas entre parêntises retos [] são as horas estimadas pelo Marco Monsanto para a conclusão de cada task. As horas foram verificadas e acordadas pelas três partes.
 
-Total de horas estimadas: 101
 Valor por hora: 13.00 €
-Valor total: 1313.00 €
 
-- O valor a pagar é baseado nas horas estimadas. (Independentemente do tempo real despendido para a execução de cada tarefa)
-- O valor será pago em 4 tranches, seguindo a seguinte estrutura:
-- 300 € (31 de Dezembro)
-- 300 € (Quando metade das tarefas tiverem sido concluídas)
-- 300 € (Quando todas as tarefas tiverem sido concluídas)
-- 413 € (Quando todas as tarefas tiverem sido aprovadas e fechadas pelo(s) QA - Há de ser à volta de 2 semanas após a conclusão de todas as tarefas)
-- Marco Monsanto compromete-se a executar todas as tarefas descritas neste documento EXCEPTO a tarefa 4 - (TASK 4).
+- Marco Monsanto compromete-se a executar todas as tasks descritas neste documento. 
+- Se o Marco ainda não tiver começado nem gasto qualquer tempo com uma task, mediante acordo entre todas as partes, a mesma poderá ser cancelada.
 
-(TASK 1)
+- Trabalhamos em sprints de 2 semanas:
+
+- Sprint 1 [4  Janeiro    - 17 Janeiro  ]
+- Sprint 2 [18 Janeiro    - 31 Janeiro  ]
+- Sprint 3 [1  Fevereiro  - 14 Fevereiro]
+- Sprint 4 [15 Fevereiro -  28 Fevereiro]
+
+- O Pagamento é feito no último dia de cada sprint.
+- O Pagamento é o montante total dos valores de todas as tasks concluídas nesse sprint.
+
+
+--------------------------------------------------------------
+
+[NOTA]:
+	O valor a pagar é baseado nas horas estimadas, independentemente do tempo real despendido para a execução de cada task.
+	Portanto, o pagamento é à task, e não às horas trabalhadas. 
+	Usou-se as horas apenas para atribuír um significado mais assertivo ao valor de cada task.
+
+--------------------------------------------------------------
+
+(TASK 1) 39€
 Stats jogador/clube (UPDATE & IMPROVE) (3h) [3h]
  	- Listagem de jogos à direita (inspirar ou reutilizar implementações anteriores) 
 
-(TASK 2)
+
+(TASK 2) 169€
 Media jogador/clube (UPDATE & IMPROVE) (13h) [13h]
  	- Modal de criação e edição
  	- Botão de adição de media
  	- Lógica de adição/delete de media 
  	- Filtro para media própria
 
-(TASK 3)
+
+(TASK 3) 104€
 Perfil de jogador - Skills (UPDATE & IMPROVE) (+Escolha da lib)  (5h) [8h]
 	- Alteração da view com lib nova (Escolha e modo de funcionamento = A/D)
 	- Escolha da skill a votar com um modal com a lista das skills possíveis. 
@@ -37,28 +52,24 @@ Perfil de jogador - Skills (UPDATE & IMPROVE) (+Escolha da lib)  (5h) [8h]
 	- Modal com infinite scroll
 	- Aparecem as X mais votadas
 
-(TASK 4)
-Pesquisa filtrada (UPDATE & IMPROVE) - Sob a responsabilidade de Diogo Pires a 100% - 13 [13]
-	- 2way binding fix
-	- Enable / Disable para o que está implementado ou não
-	- Objetos de filtragem associada ao filtro escolhido para todos os casos.
-	- Paginação
-	- Query string with filters
-	- Pesquisa de valor string wildcard 
-	- Tornar possível pesquisar equipas
+(TASK 4) 234€
+Tornar app toda responsive (13h) [18h] 
 
-(TASK 5)
+
+(TASK 5) 65€
 Plantel clube (CREATE) (4h) [5h]
 	- (NA PÁGINA DE PERFIL)
 	 	Pódio - Melhor marcador; Melhor assistente; Mais minutos.
 	- Listagem dos jogadores em tabela sortable com estatísticas
 
-(TASK 6)
+
+(TASK 6) 39€
 Feed (CREATE) (3h) [3h]
 	- Right (jogadores recomendadoas - Captções, melhores jogadores, destaques)
 	- Center notícias (Media)
 
-(TASK 7)
+
+(TASK 7) 65€
 Edição de jogador (UPDATE & IMPROVE) (5h) [5h]
 	- Dar fix aos dropdowns (incluindo bug data)
 	- Criar lógica de inserção de equipa, incluindo design (Tabs and ddl).
@@ -66,57 +77,74 @@ Edição de jogador (UPDATE & IMPROVE) (5h) [5h]
 	- Integração para as opções de dados do jogador (País, cidade, etc - feito, mas a confirmar) - Dependência do Filtered Search
 
 
-(TASK 8)
+(TASK 8) 13€
 Criação de novo jogador (CREATE) (1h) [1h]
 	- Adaptação (Replicação da edição)
 	- Integrar a "Criação de jogador" com esta página
 
 
-(TASK 9)
+(TASK 9) 52€
 Edição e configuração de conta de utilizador (CREATE) (3h) [4h]
 	- Modal com todas as configurações possíveis (inspirar o LinkedIN)
 	- Botão de edição sobe para o menu de configuração do jogador.
 
 
-(TASK 10)
+(TASK 10) 26€
 Lista de notificações [Ver todos] (2h)	[2h]
 	- Infinite scroll (SEM MODAL)
 
-(TASK 11)
+
+(TASK 11) 13€
 Lista de recomendações [Ver todos] (1h)	[1h]
 	- infinit scroll in place (SEM MODAL)
 
-(TASK 12) REVER
-Lista de pesquisa simples [Ver todos] (0h)	[0,1h] 
+
+(TASK 12) 13€
+Lista de pesquisa simples [Ver todos] (0h)	[1h] 
 	- Redirect para a pesquisa filtrada
 
-(TASK 13) REVER
+
+(TASK 13) 13€
 Lista de seguidores [Ver todos] (0,5h)	[1h]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
 
-(TASK 14) REVER
+
+(TASK 14) 13€
 Lista de 'a seguir' [Ver todos] (0,5h)	[1h]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver quem votou nas skills)
 
 
-(TASK 15)
+(TASK 15) 13€
 Lista de skills [Ver todos]  (1h)	[1h]
-	- Modal com infinit scroll ou paginação (já está adjudicado nas tarefas das skills)
+	- Modal com infinit scroll ou paginação (já está adjudicado nas tasks das skills)
 
 
-(TASK 16)
+(TASK 16) 13€
 Lista de badges [Ver todos]	 (1h) [1h]
 	- Modal com infinit scroll ou paginação (O mesmo Modal usado para ver a lista de skills)
 
-(TASK 17) REVER
-Chat fixo (20h + 13h) [não chegámos a falar muito disto, por isso não tenho uma opinião formada]
+
+(TASK 17) 260€ + 169€
+Chat fixo (20h + 13h) [20h + 13h]
 	- Design e layout da página principal do chat (Cópia do linkedIN ou FB)
 	- layout das pequenas componentes
-	
+	- O primeiro valor estimado refere-se à execução da task e o segundo à integração do layout com o backend
 
-(TASK 18)
-Tornar app toda responsive (13h) [18h] [preciso de tempo para percorrer as páginas da aplicação, provalemente será por estar ordem de valores (13 ou 18 tendo em conta a utilização atual do bootstrap)]
 
+
+--------------------------------------------------------------
+
+
+(DIOGO)
+Pesquisa filtrada (UPDATE & IMPROVE) - Sob a responsabilidade de Diogo Pires a 100%
+	- 2way binding fix
+	- Enable / Disable para o que está implementado ou não
+	- Objetos de filtragem associada ao filtro escolhido para todos os casos.
+	- Paginação
+	- Query string with filters
+	- Pesquisa de valor string wildcard 
+	- Tornar possível pesquisar equipas
+	- Integração total
 
 
 
