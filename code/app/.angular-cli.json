@@ -22,7 +22,8 @@
         "styles.css",
         "../node_modules/selectize/dist/css/selectize.css",
         "../node_modules/selectize/dist/css/selectize.default.css",
-        "assets/css/bootstrap.min.css"
+        "assets/css/bootstrap.min.css",
+        "../node_modules/ng-drag-drop/style.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
