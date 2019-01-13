@@ -23,4 +23,4 @@ function parse(opts) {
 }
 
 module.exports = parse;
-exports.parse = parse; // backword compatibility
+exports.parse = parse; // backward compatibility
