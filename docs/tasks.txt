@@ -30,7 +30,7 @@ Valor por hora: 13.00 €
 
 --------------------------------------------------------------
 
-(TASK 1) 39€
+(TASK 1) 39€ - PULL RESQUEST CRIADO! VERIFICAR MUDANÇAS AO LAYOUT
 Stats jogador/clube (UPDATE & IMPROVE) (3h) [3h]
  	- Listagem de jogos à direita (inspirar ou reutilizar implementações anteriores) 
 
