@@ -1,24 +1,50 @@
-const io = require('socket.io-client');
-var socket = io.connect('http://localhost:5000');
 
 let Service = {};
 
-Service.newAchievement = function(user_info, achievement) {
-    const notification_text = user_info.current_season.personal_info.name + " conquistou o achievement " + achievement.name + "!!"
+Service.createChatConversation = function (user, chatConversation, cb) {
 
-    socket.emit('recommendation', {
-        author: {
-            name: user_info.current_season.personal_info.name,
-            avatar: user_info.current_season.personal_info.avatar
-        },
-        target: {
-            name: achievement.name,
-            avatar: achievement.avatar
-        },
-        link: '/user-info/' + user_info._id,
-        text: notification_text,
-        date: new Date()
+    chatConversation.created_at = Date.now();
+    chatConversation.updated_at_at = Date.now();
+
+    this.save(chatConversation, function (err, conv) {
+        if (err) {
+            return cb(err)
+        }
+        return cb(null, conv);
     });
-}
+};
 
+Service.showChatConversation = function (id) {
+    this.findOne({_id: id}, function (err, conversation) {
+        if (err) {
+            return cb(err);
+        }
+        if (!conversation) {
+            return cb('No such chatConversation');
+        }
+        return cb(null, conversation);
+    });
+};
+
+Service.loadConversationsByUserId = function (userId) {
+
+    this.findOne({ "removed": { "$ne": userId } }, function (err, conversation) {
+        if (err) {
+            return cb(err);
+        }
+        if (!conversation) {
+            return cb('No such chatConversation');
+        }
+        return cb(null, conversation);
+    });
+};
+
+Service.editChatConversation = function (conv, cb) {
+    this.findOneAndUpdate({"_id": conv._id}, conv, {upsert: false, new: true}, cb);
+};
+
+Service.deleteChatConversation = function (conv, cb) {
+    conv.deleted = true;
+    this.findOneAndUpdate({"_id": conv._id}, conv, {upsert: false, new: true}, cb);
+};
 module.exports = Service;
