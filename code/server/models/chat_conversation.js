@@ -4,10 +4,12 @@ var Schema = mongoose.Schema;
 var ChatConversationSchema = new Schema({
     id: Number,
     participants: [{
-            name: String,
-            info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
-            avatar: String,
-        }],
+        name: String,
+        info_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+        avatar: String,
+    }],
+    removed : [{type: Schema.Types.ObjectId, ref: 'football_user_info'}],
+    created_at: Date,
     updated_at: Date
 });
 
