@@ -1,24 +1,61 @@
-const io = require('socket.io-client');
-var socket = io.connect('http://localhost:5000');
 
 let Service = {};
 
-Service.newAchievement = function(user_info, achievement) {
-    const notification_text = user_info.current_season.personal_info.name + " conquistou o achievement " + achievement.name + "!!"
+Service.createChatMessage = function (user, msg, cb) {
 
-    socket.emit('recommendation', {
-        author: {
-            name: user_info.current_season.personal_info.name,
-            avatar: user_info.current_season.personal_info.avatar
+    let chatMessage = {
+        sender: {
+            name: user.name,
+            info_id: user._id,
+            avatar: user.avatar,
         },
-        target: {
-            name: achievement.name,
-            avatar: achievement.avatar
-        },
-        link: '/user-info/' + user_info._id,
-        text: notification_text,
-        date: new Date()
+        text: msg.text,
+        time_created: Date.now(),
+        conversation_id: msg.conversation_id,
+        deleted: false,
+        archived: false
+    };
+
+    this.save(chatMessage, function (err, msg) {
+        if (err) {
+            return cb(err)
+        }
+        return cb(null, msg);
     });
-}
+};
 
+Service.showChatMessage = function (id) {
+    this.findOne({_id: id}, function (err, message) {
+        if (err) {
+            return cb(err);
+        }
+        if (!message) {
+            return cb('No such chatMessage');
+        }
+        return cb(null, message);
+    });
+};
+
+Service.editChatMessage = function (msg, cb) {
+    this.findOneAndUpdate({"_id": msg._id}, msg, {upsert: false, new: true}, cb);
+};
+
+Service.loadMessagesByConversationId = function (conversationId) {
+
+    this.findOne({ "conversation_id": conversationId }, null, {sort: {time_created: -1 }}, function (err, chatMessages) {
+        if (err) {
+            return cb(err);
+        }
+        if (!chatMessages) {
+            return cb('No messages for such chatConversationId');
+        }
+        return cb(null, chatMessages);
+    });
+};
+
+
+Service.deleteChatMessage = function (msg, cb) {
+    msg.deleted = true;
+    this.findOneAndUpdate({"_id": msg._id}, msg, {upsert: false, new: true}, cb);
+};
 module.exports = Service;
