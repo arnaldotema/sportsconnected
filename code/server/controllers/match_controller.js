@@ -13,6 +13,8 @@ module.exports = {
      * matchController.list()
      */
     list: function (req, res) {
+        var id = req.params.id;
+
         MatchModel.find(function (err, matches) {
             if (err) {
                 return res.status(500).json({
@@ -29,7 +31,8 @@ module.exports = {
      */
     show: function (req, res) {
         var id = req.params.id;
-        MatchModel.findOne({_id: id}, function (err, match) {
+        MatchModel
+            .findOne({_id: id}, function (err, match) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting match.',
