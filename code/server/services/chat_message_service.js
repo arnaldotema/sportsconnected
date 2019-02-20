@@ -1,4 +1,3 @@
-
 let Service = {};
 
 Service.createChatMessage = function (user, msg, cb) {
@@ -11,7 +10,7 @@ Service.createChatMessage = function (user, msg, cb) {
         },
         text: msg.text,
         time_created: Date.now(),
-        conversation_id: msg.conversation_id,
+        chat_conversation_id: msg.chat_conversation_id,
         deleted: false,
         archived: false
     };
@@ -40,9 +39,12 @@ Service.editChatMessage = function (msg, cb) {
     this.findOneAndUpdate({"_id": msg._id}, msg, {upsert: false, new: true}, cb);
 };
 
-Service.loadMessagesByConversationId = function (conversationId) {
+Service.loadMessagesByConversationAndUserId = function (conversationId, userId) {
 
-    this.findOne({ "conversation_id": conversationId }, null, {sort: {time_created: -1 }}, function (err, chatMessages) {
+    this.find({
+        chat_conversation_id: conversationId,
+        removed: {"$ne": userId}
+    }, null, {sort: {time_created: -1}}, function (err, chatMessages) {
         if (err) {
             return cb(err);
         }
@@ -52,7 +54,6 @@ Service.loadMessagesByConversationId = function (conversationId) {
         return cb(null, chatMessages);
     });
 };
-
 
 Service.deleteChatMessage = function (msg, cb) {
     msg.deleted = true;

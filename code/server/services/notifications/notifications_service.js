@@ -19,6 +19,6 @@ Service.newAchievement = function(user_info, achievement) {
         text: notification_text,
         date: new Date()
     });
-}
+};
 
 module.exports = Service;
