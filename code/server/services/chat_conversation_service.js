@@ -1,4 +1,6 @@
+'use strict'
 
+const mongoose = require('mongoose');
 let Service = {};
 
 Service.createChatConversation = function (user, chatConversation, cb) {
@@ -28,15 +30,21 @@ Service.showChatConversation = function (id) {
 
 Service.loadConversationsByUserId = function (userId) {
 
-    this.findOne({ "removed": { "$ne": userId } }, function (err, conversation) {
-        if (err) {
-            return cb(err);
+    this.findOne({
+            where: {
+                participants: mongoose.Types.ObjectId(userId)
+            },
+            removed: {"$ne": userId}
         }
-        if (!conversation) {
-            return cb('No such chatConversation');
-        }
-        return cb(null, conversation);
-    });
+        , function (err, conversation) {
+            if (err) {
+                return cb(err);
+            }
+            if (!conversation) {
+                return cb('No such chatConversation');
+            }
+            return cb(null, conversation);
+        });
 };
 
 Service.editChatConversation = function (conv, cb) {
@@ -47,4 +55,6 @@ Service.deleteChatConversation = function (conv, cb) {
     conv.deleted = true;
     this.findOneAndUpdate({"_id": conv._id}, conv, {upsert: false, new: true}, cb);
 };
+
+
 module.exports = Service;

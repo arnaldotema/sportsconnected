@@ -5,7 +5,7 @@ const updateAndReturnByZeroZeroId = function(zerozero_id, user_info, cb) {
     const query = {"external_ids.zerozero": zerozero_id};
 
     this.findOneAndUpdate(query, user_info, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
-}
+};
 
 const updateCurrentSeasons = function (seasons, cb) {
     let operations = [];
