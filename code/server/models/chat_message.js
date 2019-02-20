@@ -9,7 +9,7 @@ var MessageSchema = new Schema({
     },
     text: String,
     time_created: Date,
-    conversation_id: {type: Schema.Types.ObjectId, ref: 'chat_conversation', required: true},
+    chat_conversation_id: {type: Schema.Types.ObjectId, ref: 'chat_conversation', required: true},
     deleted: {type: Boolean, required: true, index: true},
     archived: {type: Boolean, required: true, index: true}
 });
