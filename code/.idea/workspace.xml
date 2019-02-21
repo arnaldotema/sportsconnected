@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
       <change afterPath="$PROJECT_DIR$/server/models/chat_unread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/chat_unread_service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/notifications/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/notifications/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/notifications/socket_client.js" beforeDir="false" />
@@ -33,19 +34,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat_unread.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chat_unread.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/models/chat_unread.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat_message_service.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chat_unread_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/services/chat_unread_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+              <folding>
+                <element signature="e#457#495#0" />
+                <element signature="e#651#690#0" />
+                <element signature="e#713#770#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chat_message_service.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/services/chat_message_service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
+            <state relative-caret-position="218">
               <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
               <folding>
                 <element signature="e#448#486#0" />
@@ -118,15 +133,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chat_conversation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/chat_conversation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -220,8 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/checkingtemplates.html" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/crawler.js" />
         <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.css" />
         <option value="$PROJECT_DIR$/Website/routes/team_routes.js" />
         <option value="$PROJECT_DIR$/Website/controllers/team_controller.js" />
@@ -271,6 +275,8 @@
         <option value="$PROJECT_DIR$/server/services/notifications/socket_client.js" />
         <option value="$PROJECT_DIR$/server/services/notifications/notifications_service.js" />
         <option value="$PROJECT_DIR$/server/notifications/app.js" />
+        <option value="$PROJECT_DIR$/server/models/chat_unread.js" />
+        <option value="$PROJECT_DIR$/server/services/chat_unread_service.js" />
       </list>
     </option>
   </component>
@@ -488,20 +494,7 @@
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="notifications" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -530,16 +523,16 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/services" />
-      <recent name="$PROJECT_DIR$/Website/services/storage" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/services" />
+      <recent name="$PROJECT_DIR$/server/models" />
       <recent name="$PROJECT_DIR$/server/controllers" />
       <recent name="$PROJECT_DIR$/server/services/notifications" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/app/src/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/services" />
+      <recent name="$PROJECT_DIR$/Website/services/storage" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -664,16 +657,15 @@
       <workItem from="1549538048153" duration="240000" />
       <workItem from="1550184521139" duration="3253000" />
       <workItem from="1550449830572" duration="971000" />
-      <workItem from="1550691319019" duration="11743000" />
+      <workItem from="1550691319019" duration="12528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="608020000" />
+    <option name="totallyTimeSpent" value="608805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="845" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -686,11 +678,11 @@
       <window_info anchor="bottom" id="NativeScript" order="8" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.26588845" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
-      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.30869" />
+      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.30869" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
@@ -820,13 +812,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
@@ -1055,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_attachment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/services/chat_attachment_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1104,30 +1082,6 @@
     <entry file="file://$PROJECT_DIR$/server/models/football_competition.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_message_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="e#448#486#0" />
-            <element signature="e#569#805#0" />
-            <element signature="e#623#801#0" />
-            <element signature="e#642#681#0" />
-            <element signature="e#704#761#0" />
-            <element signature="e#853#938#0" />
-            <element signature="e#1215#1292#0" />
-            <element signature="e#1392#1501#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -1143,10 +1097,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/chat_attachment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/chat_message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/chat_unread.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/chat_unread_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+          <folding>
+            <element signature="e#457#495#0" />
+            <element signature="e#651#690#0" />
+            <element signature="e#713#770#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/chat_message_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="e#448#486#0" />
+            <element signature="e#569#805#0" />
+            <element signature="e#623#801#0" />
+            <element signature="e#642#681#0" />
+            <element signature="e#704#761#0" />
+            <element signature="e#853#938#0" />
+            <element signature="e#1215#1292#0" />
+            <element signature="e#1392#1501#0" />
+          </folding>
         </state>
       </provider>
     </entry>
