@@ -27,7 +27,13 @@ Service.showUnreadMessagesByUser = function (id) {
     });
 };
 
-Service.removeUnreadMessage = function (msg, cb) {
-    //delete it
+Service.removeUnreadMessage = function (msgID, cb) {
+    this.findByIdAndRemove(msgID, function (err, message) {
+        if (err)
+            return cb(err);
+        if (!message)
+            return cb('No such chatMessage');
+        return cb(null, message);
+    });
 };
 module.exports = Service;
