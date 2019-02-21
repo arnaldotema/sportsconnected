@@ -1,7 +1,10 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-let worker = require('./../services/notifications/socket_client');
+const app = require('express')();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const worker = require('./../services/notifications/socket_client');// Todo doesn't exist.
+const ChatMessage = require('./../models/chat_message');
+const ChatMessageAttachment = require('./../models/chat_attachment');
+const ChatMessageConversation = require('./../models/chat_conversation');
 
 
 app.get('/', function (req, res) {
@@ -14,7 +17,16 @@ io.on('connection', (socket) => {
     console.log('a user connected');
 
     function client() {
-        return worker(socket, io);
+        // return worker(socket, io);
+    }
+
+
+    function reply (message){
+        client().reply(message.id, (err, participants, message) => {
+            if (!err) {
+                // Todo: Notify via email
+            }
+        });
     }
 
     socket.on('disconnect', function () {
@@ -23,20 +35,20 @@ io.on('connection', (socket) => {
 
     socket.on('message', (data) => {
 
-        db.chatMessages
-            .create({
-                userId: socket.decoded_token.sub,
-                message: data.message,
-                chatRoomId: data.room,
-                json: data.json
-            })
-            .then((message) => {
-                client().reply(message.id, (err, participants, message) => {
-                    if(!err){
-                        // Todo: Notify via email
-                    }
-                });
-            });
+        let user = {
+            name: data.user.name,
+            _id: socket.decoded_token.sub.user.id,
+            avatar: data.user.avatar
+        };
+
+        let msg = {
+            text: data.text,
+            chat_conversation_id: data.chat_conversation_id
+        };
+
+        ChatMessage
+            .createChatMessage(user, msg)
+            .then(reply);
     });
 
     socket.on('message:read', (data) => {
