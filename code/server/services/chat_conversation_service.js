@@ -3,17 +3,39 @@
 const mongoose = require('mongoose');
 let Service = {};
 
-Service.createChatConversation = function (user, chatConversation, cb) {
+Service.createBulkChatConversation = function (userIds, participants, cb) {
 
-    chatConversation.created_at = Date.now();
-    chatConversation.updated_at_at = Date.now();
+    let convParticipants = [];
 
-    this.save(chatConversation, function (err, conv) {
-        if (err) {
-            return cb(err)
-        }
-        return cb(null, conv);
+    participants.forEach(participant => {
+       convParticipants.push({
+           name: participant.name,
+           info_id: participant._id,
+           avatar: participant.avatar,
+       })
     });
+
+    userIds.forEach(userId => {
+        let chatConversation = {
+            user_id: userId,
+            participants: convParticipants,
+            lastMessage: [],
+            removed : false,
+            created_at: Date.now(),
+            updated_at_: Date.now()
+        };
+
+        this.save(chatConversation, function (err, conv) {
+            if (err) {
+                return cb(err)
+            }
+            return cb(null, conv);
+        });
+    });
+};
+
+Service.createChatConversation = function (userId, participants, cb) {
+    this.createBulkChatConversation([userId], participants, cb);
 };
 
 Service.showChatConversation = function (id) {
@@ -30,20 +52,20 @@ Service.showChatConversation = function (id) {
 
 Service.loadConversationsByUserId = function (userId) {
 
-    this.findOne({
+    this.find({
             where: {
                 participants: mongoose.Types.ObjectId(userId)
             },
             removed: {"$ne": userId}
         }
-        , function (err, conversation) {
+        , function (err, conversations) {
             if (err) {
                 return cb(err);
             }
-            if (!conversation) {
+            if (!conversations) {
                 return cb('No such chatConversation');
             }
-            return cb(null, conversation);
+            return cb(null, conversations);
         });
 };
 
