@@ -2,7 +2,7 @@ const logger = require('../logging');
 const _ = require('underscore');
 
 const getMissingMatches = function(matchIds, cb) {
-    return this.find({ "external_ids.zerozero":{ '$in': matchIds }}, function (err, matches) {
+    return this.find({ <}, function (err, matches) {
         if (matches && !err) {
             matches = _.difference(matchIds, matches.map(match => match.external_ids.zerozero))
         }
