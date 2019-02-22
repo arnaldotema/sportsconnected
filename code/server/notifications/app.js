@@ -3,8 +3,9 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const worker = require('./../services/notifications/socket_client');// Todo doesn't exist.
 const ChatMessage = require('./../models/chat_message');
-const ChatMessageAttachment = require('./../models/chat_attachment');
-const ChatMessageConversation = require('./../models/chat_conversation');
+const ChatUnread = require('./../models/chat_unread');
+const ChatAttachment = require('./../models/chat_attachment');
+const ChatConversation = require('./../models/chat_conversation');
 
 
 app.get('/', function (req, res) {
@@ -14,33 +15,61 @@ app.get('/', function (req, res) {
 
 io.on('connection', (socket) => {
 
-    console.log('a user connected');
+
+    let userId = socket.decoded_token.sub;
+    console.log(`User ${userId} has connected.`);
+
+    // Join the user's private room (by id)
+    // Join the chat conversation rooms where this user is a participant in
+
+    ChatConversation
+        .loadConversationsByUserId(userId)
+        .then((conversations) => {
+            conversations.forEach(c => {
+                socket.join(c._id);
+            })
+        })
+        .then(socket.join(userId));
 
     function client() {
         // return worker(socket, io);
     }
 
+    function update(message) {
+        client().update(message);
+    }
 
-    function reply (message){
+    function reply(message) {
         client().reply(message.id, (err, participants, message) => {
             if (!err) {
-                // Todo: Notify via email
+                // Todo: Also notify via email
             }
         });
     }
 
+    socket.on('room:create', function (data) {
+        let userId = socket.decoded_token.sub;
+        let participants = data.participants;
+
+        ChatConversation
+            .createChatConversation(userId, participants)
+            .then((room) => {
+                socket.join(room._id);
+                socket.emit('room:created', room._id)
+            });
+    });
+
     socket.on('disconnect', function () {
-        console.log('user disconnected');
+        console.log(`user ${socket.decoded_token.sub} disconnected`);
     });
 
     socket.on('message', (data) => {
 
         let user = {
             name: data.user.name,
-            _id: socket.decoded_token.sub.user.id,
+            _id: socket.decoded_token.sub,
             avatar: data.user.avatar
         };
-
         let msg = {
             text: data.text,
             chat_conversation_id: data.chat_conversation_id
@@ -52,42 +81,24 @@ io.on('connection', (socket) => {
     });
 
     socket.on('message:read', (data) => {
-        db.chatMessageStatus.setRead(socket.decoded_token.sub, data.msg, () => {
-            client().update(data.msg);
-        });
+
+        let userId = socket.decoded_token.sub;
+        let msgId = data.chat_message_id
+
+        ChatUnread
+            .createUnreadMessage(userId, msgId)
+            .then(update);
     });
 
     socket.on('recommendation', (data) => {
+        // Todo: Implement recommendation notification
         socket.broadcast.emit('recommendation', data);
     });
 
     socket.on('achievement', () => {
+        // Todo: Implement achievement notification
         socket.broadcast.emit('achievement', {
             message: "I'm achieved!"
-        });
-    });
-
-    socket.on('disconnect', () => {
-
-    });
-
-    socket.on('room:open', (data) => {
-
-    });
-
-    socket.on('user:status', (data) => {
-        db.user.findOne({
-            where: {
-                id: socket.decoded_token.sub
-            }
-        }).then(user => {
-            user.status = data.status;
-            user.save().then(() => {
-                io.emit("user:status", {
-                    user: socket.decoded_token.sub,
-                    status: data.status
-                });
-            });
         });
     });
 

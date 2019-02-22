@@ -1,3 +1,5 @@
+'use strict'
+
 let Service = {};
 
 Service.createUnreadMessage = function (userId, msgId, cb) {

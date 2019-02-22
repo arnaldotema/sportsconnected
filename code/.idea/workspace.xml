@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change afterPath="$PROJECT_DIR$/server/models/chat_unread.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/chat_unread_service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/chat_conversation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/chat_conversation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/notifications/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/notifications/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/notifications/socket_client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/chat_conversation_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/chat_conversation_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/chat_unread_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/chat_unread_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/football_match_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_match_service.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,18 +18,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            <state relative-caret-position="189">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="e#211#259#0" />
-                <element signature="e#1237#1299#0" />
-                <element signature="e#1338#1441#0" />
-                <element signature="e#1479#3106#0" />
-                <element signature="e#3147#3881#0" />
-                <element signature="e#3924#4320#0" />
+                <element signature="e#359#401#0" />
+                <element signature="e#1015#1138#0" />
+                <element signature="e#1162#1267#0" />
+                <element signature="e#1385#1433#0" />
+                <element signature="e#4359#4402#0" />
               </folding>
             </state>
           </provider>
@@ -37,8 +38,8 @@
       <file leaf-file-name="chat_unread.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/models/chat_unread.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="136">
+              <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -46,24 +47,30 @@
       <file leaf-file-name="chat_unread_service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/services/chat_unread_service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+            <state relative-caret-position="68">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="27" />
               <folding>
+                <element signature="e#72#535#0" />
+                <element signature="e#101#164#0" />
+                <element signature="e#438#531#0" />
                 <element signature="e#457#495#0" />
+                <element signature="e#578#814#0" />
+                <element signature="e#632#810#0" />
                 <element signature="e#651#690#0" />
                 <element signature="e#713#770#0" />
+                <element signature="e#1460#1569#0" />
+                <element signature="e#716#872#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat_message_service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chat_message_service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/services/chat_message_service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+            <state relative-caret-position="306">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding>
-                <element signature="e#448#486#0" />
                 <element signature="e#569#805#0" />
                 <element signature="e#623#801#0" />
                 <element signature="e#642#681#0" />
@@ -71,6 +78,18 @@
                 <element signature="e#853#938#0" />
                 <element signature="e#1215#1292#0" />
                 <element signature="e#1392#1501#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chat_conversation_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/services/chat_conversation_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="e#132#944#0" />
               </folding>
             </state>
           </provider>
@@ -85,54 +104,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_achievement.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/football_achievement.js">
+      <file leaf-file-name="football_match_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="17">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_competition.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/football_competition.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="chat_attachment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/chat_attachment.js">
+      <file leaf-file-name="chat_conversation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/chat_conversation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chat_attachment_service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/services/chat_attachment_service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-              <folding>
-                <element signature="e#141#1206#0" />
-                <element signature="e#578#814#0" />
-                <element signature="e#632#810#0" />
-                <element signature="e#651#690#0" />
-                <element signature="e#713#770#0" />
-                <element signature="e#862#947#0" />
-                <element signature="e#1030#1410#0" />
-                <element signature="e#1284#1361#0" />
-                <element signature="e#1460#1569#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notifications_service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+            <state relative-caret-position="323">
+              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -149,10 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>table</find>
-      <find>badges</find>
-      <find>idade</find>
-      <find>personal_data</find>
       <find>Website</find>
       <find>APP BoilerPlate</find>
       <find>player_matches</find>
@@ -179,6 +160,10 @@
       <find>conversation_id</find>
       <find>essage</find>
       <find>.id</find>
+      <find>socket.decoded_token.sub</find>
+      <find>foreach</find>
+      <find>updated_at_at</find>
+      <find>socket.</find>
     </findStrings>
     <replaceStrings>
       <replace>red_cards: []</replace>
@@ -217,6 +202,7 @@
       <dir>$PROJECT_DIR$/Website/notifications</dir>
       <dir>$PROJECT_DIR$/Website</dir>
       <dir>$PROJECT_DIR$/Angular/APP BoilerPlate</dir>
+      <dir>$PROJECT_DIR$/server</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -226,7 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.css" />
         <option value="$PROJECT_DIR$/Website/routes/team_routes.js" />
         <option value="$PROJECT_DIR$/Website/controllers/team_controller.js" />
         <option value="$PROJECT_DIR$/Website/models/football_user_info.js" />
@@ -265,18 +250,19 @@
         <option value="$PROJECT_DIR$/server/controllers/match_controller.js" />
         <option value="$PROJECT_DIR$/server/controllers/chat_controller.js" />
         <option value="$PROJECT_DIR$/server/routes/global_routes.js" />
-        <option value="$PROJECT_DIR$/server/services/chat_conversation_service.js" />
         <option value="$PROJECT_DIR$/server/services/chat_message_service.js" />
         <option value="$PROJECT_DIR$/server/models/chat_message.js" />
         <option value="$PROJECT_DIR$/server/services/football_team_service.js" />
-        <option value="$PROJECT_DIR$/server/models/chat_conversation.js" />
         <option value="$PROJECT_DIR$/server/models/chat_attachment.js" />
         <option value="$PROJECT_DIR$/server/services/chat_attachment_service.js" />
         <option value="$PROJECT_DIR$/server/services/notifications/socket_client.js" />
         <option value="$PROJECT_DIR$/server/services/notifications/notifications_service.js" />
-        <option value="$PROJECT_DIR$/server/notifications/app.js" />
         <option value="$PROJECT_DIR$/server/models/chat_unread.js" />
         <option value="$PROJECT_DIR$/server/services/chat_unread_service.js" />
+        <option value="$PROJECT_DIR$/server/services/football_match_service.js" />
+        <option value="$PROJECT_DIR$/server/models/chat_conversation.js" />
+        <option value="$PROJECT_DIR$/server/services/chat_conversation_service.js" />
+        <option value="$PROJECT_DIR$/server/notifications/app.js" />
       </list>
     </option>
   </component>
@@ -474,7 +460,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -490,24 +476,45 @@
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+              <item name="server" type="cbb8eebc:String" user="server" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+              <item name="server" type="cbb8eebc:String" user="server" />
+              <item name="models" type="cbb8eebc:String" user="models" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+              <item name="server" type="cbb8eebc:String" user="server" />
+              <item name="notifications" type="cbb8eebc:String" user="notifications" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="chat&#9;FILE&#9;file:///Repos/Website/code/server/models/chat_message.js&#10;app.&#9;FILE&#9;file:///Repos/Website/code/Website/app.js&#10;foot&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/functions/football_team.js&#10;app&#9;FILE&#9;file:///Repos/Website/code/Website/app.js&#10;cr&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/crawler.js&#10;styles.css&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;crawl&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/crawler.js&#10;user&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts&#10;authent&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts&#10;filte&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts&#10;ts&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts&#10;filter&#9;null&#9;null&#10;user service&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;edit&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html&#10;team_pla&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_player.ts&#10;generic_user&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts&#10;match model&#9;null&#9;null&#10;team servic&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts&#10;header&#9;null&#9;null&#10;teamprofile&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts&#10;UserInfoSearch&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts&#10;team.component.ts&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team/team.component.ts&#10;team&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_season.ts&#10;recomm&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;user servi&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;user-info-pro&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts&#10;match&#9;null&#9;null&#10;auth&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Repos/Website/code/server/services/notifications/notifications_service.js&#10;chat&#9;FILE&#9;file:///Repos/Website/code/server/models/chat_message.js&#10;app.&#9;FILE&#9;file:///Repos/Website/code/Website/app.js&#10;foot&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/functions/football_team.js&#10;app&#9;FILE&#9;file:///Repos/Website/code/Website/app.js&#10;cr&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/crawler.js&#10;styles.css&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;crawl&#9;FILE&#9;file:///Repos/Website/code/Website/crawlers/zerozero/crawler.js&#10;user&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.ts&#10;authent&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/authentication.service.ts&#10;filte&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts&#10;ts&#9;FILE&#9;file:///Repos/Website/code/Angular/APP BoilerPlate/src/app/_services/user.service.ts&#10;filter&#9;null&#9;null&#10;user service&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;edit&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/edit-user-info/edit-user-info.component.html&#10;team_pla&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_player.ts&#10;generic_user&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts&#10;match model&#9;null&#9;null&#10;team servic&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/team.service.ts&#10;header&#9;null&#9;null&#10;teamprofile&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team-profile/team-profile.component.ts&#10;UserInfoSearch&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/user_info_search.ts&#10;team.component.ts&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/team/team.component.ts&#10;team&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_models/team_season.ts&#10;recomm&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/styles.css&#10;user servi&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts&#10;user-info-pro&#9;FILE&#9;file:///Repos/sportsconnected/Website/code/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts&#10;match&#9;null&#9;null&#10;auth&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="9.10.1" />
@@ -657,15 +664,16 @@
       <workItem from="1549538048153" duration="240000" />
       <workItem from="1550184521139" duration="3253000" />
       <workItem from="1550449830572" duration="971000" />
-      <workItem from="1550691319019" duration="12528000" />
+      <workItem from="1550691319019" duration="19235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="608805000" />
+    <option name="totallyTimeSpent" value="615512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="845" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -678,11 +686,11 @@
       <window_info anchor="bottom" id="NativeScript" order="8" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.26588845" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
-      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.30869" />
+      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.30869" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
@@ -812,13 +820,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="106" column="38" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -981,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/match_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1009,13 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_conversation_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="12" selection-end-line="59" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/team_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -1023,20 +1010,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_team_service.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/football_team.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
           <caret line="46" selection-start-line="46" selection-end-line="57" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_conversation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -1065,12 +1042,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
+    <entry file="file://$PROJECT_DIR$/server/models/chat_attachment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_team_service.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/models/football_achievement.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1082,28 +1062,6 @@
     <entry file="file://$PROJECT_DIR$/server/models/football_competition.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-          <folding>
-            <element signature="e#211#259#0" />
-            <element signature="e#1237#1299#0" />
-            <element signature="e#1338#1441#0" />
-            <element signature="e#1479#3106#0" />
-            <element signature="e#3147#3881#0" />
-            <element signature="e#3924#4320#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_attachment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/chat_message.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1111,31 +1069,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_unread.js">
+    <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_unread_service.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        <state relative-caret-position="17">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="2839">
+            <caret line="167" column="10" selection-start-line="167" selection-start-column="10" selection-end-line="167" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/chat_conversation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/chat_conversation_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="30" />
           <folding>
-            <element signature="e#457#495#0" />
-            <element signature="e#651#690#0" />
-            <element signature="e#713#770#0" />
+            <element signature="e#132#944#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services/chat_message_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="306">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding>
-            <element signature="e#448#486#0" />
             <element signature="e#569#805#0" />
             <element signature="e#623#801#0" />
             <element signature="e#642#681#0" />
@@ -1143,6 +1122,47 @@
             <element signature="e#853#938#0" />
             <element signature="e#1215#1292#0" />
             <element signature="e#1392#1501#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/chat_unread_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#72#535#0" />
+            <element signature="e#101#164#0" />
+            <element signature="e#438#531#0" />
+            <element signature="e#457#495#0" />
+            <element signature="e#578#814#0" />
+            <element signature="e#632#810#0" />
+            <element signature="e#651#690#0" />
+            <element signature="e#713#770#0" />
+            <element signature="e#1460#1569#0" />
+            <element signature="e#716#872#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/chat_unread.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#211#259#0" />
+            <element signature="e#359#401#0" />
+            <element signature="e#1015#1138#0" />
+            <element signature="e#1162#1267#0" />
+            <element signature="e#1385#1433#0" />
+            <element signature="e#4359#4402#0" />
           </folding>
         </state>
       </provider>
