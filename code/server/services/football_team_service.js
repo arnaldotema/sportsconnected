@@ -1,13 +1,15 @@
+'use strict';
+
 const logger = require('../logging');
 const _ = require('underscore');
 
-const updateAndReturnByZeroZeroId = function(zerozero_id, user_info, cb) {
+function updateAndReturnByZeroZeroId (zerozero_id, user_info, cb) {
     const query = {"external_ids.zerozero": zerozero_id};
 
     this.findOneAndUpdate(query, user_info, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
 };
 
-const updateCurrentSeasons = function (seasons, cb) {
+function updateCurrentSeasons (seasons, cb) {
     let operations = [];
 
     seasons.forEach(function(season){
@@ -28,11 +30,11 @@ const updateCurrentSeasons = function (seasons, cb) {
     });
 
     this.bulkWrite(operations, {}, cb);
-}
+};
 
 module.exports = {
-    updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
-    updateCurrentSeasons: updateCurrentSeasons
+    updateAndReturnByZeroZeroId,
+    updateCurrentSeasons
 }
 
 

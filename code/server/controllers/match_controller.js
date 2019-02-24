@@ -120,5 +120,33 @@ module.exports = {
             }
             return res.status(204).json();
         });
+    },
+
+    showLastByTeam: function (req, res) {
+        let teamId = req.body.teamId || req.params.teamId || req.body.query.teamId;
+        let nMatches = req.body.nMatches || req.params.nMatches || req.body.query.nMatches;
+        MatchModel.getLastPlayedMatchesByTeamId(teamId, nMatches, function (err, matches) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting match.',
+                    error: err
+                });
+            }
+            return res.json(JSON.parse(entities.decode(JSON.stringify(matches))));
+        });
+    },
+
+    showNextByTeam: function (req, res) {
+        let teamId = req.body.teamId || req.params.teamId || req.body.query.teamId;
+        let nMatches = req.body.nMatches || req.params.nMatches || req.body.query.nMatches;
+        MatchModel.getNextMatchesByTeamId(teamId, nMatches, function (err, matches) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting match.',
+                    error: err
+                });
+            }
+            return res.json(JSON.parse(entities.decode(JSON.stringify(matches))));
+        });
     }
 };
