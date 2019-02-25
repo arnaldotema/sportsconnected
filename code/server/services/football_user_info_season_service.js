@@ -1,6 +1,16 @@
 const logger = require('../logging');
 const _ = require('underscore');
 
+function addMedia(id, media, cb) {
+
+    let update = {
+        $addToSet: {
+            "media": media
+        }
+    };
+    this.findOneAndUpdate({_id: id}, update, {setDefaultsOnInsert: true}, cb);
+}
+
 const addCompetitionToUserInfo = function (id, competition_season, cb) {
     let query = {
         _id: id,
@@ -232,10 +242,11 @@ const getByTeamSeasonId = function (id, cb) {
 };
 
 module.exports = {
-    addCompetitionToUserInfo: addCompetitionToUserInfo,
-    getMatchUserInfosByZeroZeroId: getMatchUserInfosByZeroZeroId,
+    addMedia,
+    addCompetitionToUserInfo,
+    getMatchUserInfosByZeroZeroId,
     updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
-    updateUserInfosStats: updateUserInfosStats,
-    getByTeamSeasonId: getByTeamSeasonId,
-    updatePersonalInfo: updatePersonalInfo
+    updateUserInfosStats,
+    getByTeamSeasonId,
+    updatePersonalInfo
 }
