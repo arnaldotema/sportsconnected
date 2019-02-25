@@ -137,8 +137,8 @@ module.exports = {
     },
 
     showNextByTeam: function (req, res) {
-        let teamId = req.body.teamId || req.params.teamId || req.body.query.teamId;
-        let nMatches = req.body.nMatches || req.params.nMatches || req.body.query.nMatches;
+        let teamId = req.params.teamId || req.body.query.teamId;
+        let nMatches = req.params.nMatches || req.body.query.nMatches;
         MatchModel.getNextMatchesByTeamId(teamId, nMatches, function (err, matches) {
             if (err) {
                 return res.status(500).json({
