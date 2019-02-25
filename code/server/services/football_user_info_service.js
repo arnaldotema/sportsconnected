@@ -1,5 +1,6 @@
 const logger = require('../logging');
 const _ = require('underscore');
+const FootballUserInfoSeason = require('./../models/football_user_info_season')
 
 function _updateRegex(regex) {
     if (!regex) {
@@ -178,7 +179,7 @@ Service.addSkillVote = function (skill_name, author_user_id, user_info_id, cb) {
             }
         };
 
-        this.findOneAndUpdate(query, update,{new: true}, cb);
+        this.findOneAndUpdate(query, update, {new: true}, cb);
     });
 
 };
@@ -336,5 +337,36 @@ Service.addAchievementToUserInfo = function (achievement, user_info, cb) {
 
     this.findOneAndUpdate(query, update, cb);
 }
+
+Service.addMedia = function (id, media, cb) {
+
+    /*
+    * This is not yet implemented because the DB structure is not well done.
+    *
+    * We should have something like this "media" field in the document
+    * And then add here like this
+    *
+    * let update = {
+        $addToSet: {
+            "media": {
+
+            }
+        }
+    };
+
+    But, for now, we'll not do anything, we'll just insert the media in the user's current season object.
+    * */
+
+    this.findOne({_id: id}, (err, userInfo) => {
+        let userInfoSeasonId = userInfo.current_season._id;
+
+        FootballUserInfoSeason.addMedia(media, userInfoSeasonId, (err, userInfoSeason) => {
+            if (err) {
+                cb(err)
+            }
+            cb(userInfoSeason);
+        });
+    });
+};
 
 module.exports = Service;
