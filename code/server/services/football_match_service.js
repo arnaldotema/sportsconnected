@@ -4,8 +4,8 @@ const _ = require('underscore');
 function getLastPlayedMatchesByTeamId(teamId, nMatches, cb) {
     this.find({
         $or: [
-            {home_team: {id: teamId}},
-            {home_team: {id: teamId}}
+            {"home_team.team_id": teamId},
+            {"away_team.team_id": teamId}
         ]
     })
         .and({played: true})
@@ -21,7 +21,7 @@ function getLastPlayedMatchesByTeamId(teamId, nMatches, cb) {
             'away_team.name' +
             'away_team.avatar' +
             'away_team.goals')
-        .limit(nMatches)
+        .limit(parseInt(nMatches))
         .sort({date: 'desc'})
         .exec((err, matches) => {
             cb(err, matches);
@@ -31,8 +31,8 @@ function getLastPlayedMatchesByTeamId(teamId, nMatches, cb) {
 function getNextMatchesByTeamId(teamId, nMatches, cb) {
     this.find({
         $or: [
-            {home_team: {id: teamId}},
-            {home_team: {id: teamId}}
+            {"home_team.team_id": {team_id: teamId}},
+            {"away_team.team_id": {team_id: teamId}}
         ]
     })
         .and({played: false})
@@ -48,7 +48,7 @@ function getNextMatchesByTeamId(teamId, nMatches, cb) {
             'away_team.name' +
             'away_team.avatar' +
             'away_team.goals')
-        .limit(nMatches)
+        .limit(parseInt(nMatches))
         .sort({date: 'asc'})
         .exec((err, matches) => {
             cb(err, matches);
