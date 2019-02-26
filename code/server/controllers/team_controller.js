@@ -1,5 +1,6 @@
 var TeamModel = require('../models/football_team.js');
 var TeamModelSeason = require('../models/football_team_season');
+var FootballMedia = require('../models/football_media');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 /**
@@ -8,8 +9,6 @@ const entities = new Entities();
  * @description :: Server-side logic for managing Teams.
  */
 module.exports = {
-
-
 
     /**
      * TeamController.search()
@@ -184,5 +183,126 @@ module.exports = {
             }
             return res.status(204).json();
         });
+    },
+
+
+    // Media
+
+    listMedia: function (req, res) {
+        let id = req.params.id;
+
+        let offset = parseInt(req.query.offset || '0');
+        let size = parseInt(req.query.size || '100');
+
+        FootballMedia
+            .find()
+            .where("team_id").equals(id)
+            .skip(offset * size)
+            .limit(size)
+            .exec(function (err, media) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting media.',
+                        error: err
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
+            });
+    },
+
+    showMedia: function (req, res) {
+        let id = req.params.id;
+
+        FootballMedia
+            .findOne({_id: id})
+            .where("team_id").equals(id)
+            .exec(function (err, media) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting media.',
+                        error: err
+                    });
+                }
+                return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
+            });
+    },
+
+    createMedia: function (req, res) {
+        let userInfoId = req.params.id;
+        let media = req.body.media;
+
+        if (!media) {
+            return res.status(404).json({
+                message: 'Missing media object'
+            });
+        }
+        if (!media.season_id) {
+            return res.status(404).json({
+                message: 'Media object requires season id.'
+            });
+        }
+
+        media.user_info_id = user_info_id;
+        media.user_type = 'football_team';
+        let newMedia = new FootballMedia(media);
+
+        newMedia.save(function (err, createdMedia) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when creating media',
+                    error: err
+                });
+            }
+
+            TeamModel.addMedia(createdMedia, userInfoId, (err, team) => {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when updating team_season',
+                        error: err
+                    });
+                }
+                if (!team) {
+                    return res.status(404).json({
+                        message: 'No such team'
+                    });
+                }
+            })
+        })
+    },
+
+    updateMedia: function (req, res) {
+        let mediaId = req.params.mediaId;
+        let media = req.body.media;
+
+        if (!media) {
+            return res.status(404).json({
+                message: 'Missing media object'
+            });
+        }
+
+        FootballMedia.update(mediaId, media, (err, media) => {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting media.',
+                    error: err
+                });
+            }
+            return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
+        });
+    },
+
+    removeMedia: function (req, res) {
+        let mediaId = req.params.mediaId;
+
+        FootballMedia.findByIdAndRemove(mediaId, (err) => {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when deleting the media.',
+                    error: err
+                });
+            }
+            return res.status(204).json();
+        });
+
     }
 };
