@@ -36,10 +36,10 @@ app.use(formidable());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 //Controllers
-app.use('/api/global', passport.authenticate('jwt', { session : false }), global);
-app.use('/api/players', passport.authenticate('jwt', { session : false }), players);
+app.use('/api/global', passport.authenticate('jwt', {session: false}), global);
+app.use('/api/players', passport.authenticate('jwt', {session: false}), players);
 app.use('/api/teams', /*passport.authenticate('jwt', { session : false }),*/ teams);
-app.use('/api/competitions', passport.authenticate('jwt', { session : false }), competitions);
+app.use('/api/competitions', passport.authenticate('jwt', {session: false}), competitions);
 app.use('/api/matches', /*passport.authenticate('jwt', { session : false }),*/ matches);
 app.use('/api/storage', storage);
 app.use('/api/users', users);
@@ -47,26 +47,26 @@ app.use('/api/users', users);
 //Database
 mongoose.connect(config.database);
 
-mongoose.connection.on('connected', function() {
+mongoose.connection.on('connected', function () {
     console.log("im connected to " + config.database);
     // const crawler = require('./crawlers/zerozero/crawler')
     // const gary_processor = require('./gary_processor/gary_processor')
     // const notifications = require('./notifications/app');
 });
 
-mongoose.connection.on('error', function(err){
+mongoose.connection.on('error', function (err) {
     console.log("Database error: " + err);
 });
 
 //Start
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-app.get('*', function(req, res){
+app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-app.listen(port, function(){
+app.listen(port, function () {
     console.log('Server started on port ' + port);
 });
