@@ -188,7 +188,7 @@ Service.listMedia = function (req, res) {
     let user_info__id = req.params.id;
 
     let offset = parseInt(req.query.offset || '0');
-    let size = parseInt(req.query.size || '100');
+    let size = parseInt(req.query.size || '10');
 
     FootballMedia
         .find()
@@ -288,10 +288,16 @@ Service.removeMedia = function (req, res) {
 // Recommendation
 
 Service.list_recommendations = function (req, res) {
+
+    let offset = parseInt(req.query.offset || '0');
+    let size = parseInt(req.query.size || '10');
+
     FootballUserInfo
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
+        .skip(offset * size)
+        .limit(size)
         .exec((err, user_info) => handleError(err, user_info, res));
 };
 
@@ -410,18 +416,30 @@ Service.follow = function (req, res) {
 };
 
 Service.list_followed = function (req, res) {
+
+    let offset = parseInt(req.query.offset || '0');
+    let size = parseInt(req.query.size || '10');
+
     FootballUserInfo
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
+        .skip(offset * size)
+        .limit(size)
         .exec((err, user_info) => handleError(err, user_info, res));
 };
 
 Service.list_followers = function (req, res) {
+
+    let offset = parseInt(req.query.offset || '0');
+    let size = parseInt(req.query.size || '10');
+
     FootballUserInfo
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
+        .skip(offset * size)
+        .limit(size)
         .exec((err, user_info) => handleError(err, user_info, res));
 };
 
