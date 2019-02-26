@@ -1,16 +1,26 @@
 const logger = require('../logging');
 const _ = require('underscore');
 
-const getMissingTeams = function(teamIds, cb) {
+function addMedia(id, media, cb) {
+
+    let update = {
+        $addToSet: {
+            "media": media
+        }
+    };
+    this.findOneAndUpdate({_id: id}, update, {setDefaultsOnInsert: true}, cb);
+}
+
+function getMissingTeams(teamIds, cb) {
     return this.find({ "external_ids.zerozero":{ '$in': teamIds }}, function (err, teams) {
         if (teams && !err) {
             teams = _.difference(teamIds, teams.map(team => team.external_ids.zerozero))
         }
         cb(err, teams);
     });
-};
+}
 
-const addCompetitionToTeam = function(id, competition_season, cb) {
+function addCompetitionToTeam(id, competition_season, cb) {
     let query = {
         _id: id,
         "standings.id": { $ne: competition_season._id }
@@ -27,9 +37,9 @@ const addCompetitionToTeam = function(id, competition_season, cb) {
     };
 
     this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
-};
+}
 
-const addPlayerToTeam = function(id, user_info_season, cb) {
+function addPlayerToTeam(id, user_info_season, cb) {
     let query = {
         _id: id,
         "players.id": { $ne: user_info_season._id }
@@ -50,9 +60,9 @@ const addPlayerToTeam = function(id, user_info_season, cb) {
     };
 
     this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
-};
+}
 
-const getMatchTeamsByZeroZeroId = function(season_id, homeTeam, awayTeam, cb) {
+function getMatchTeamsByZeroZeroId(season_id, homeTeam, awayTeam, cb) {
     let query = [
         {
             $facet: {
@@ -77,9 +87,9 @@ const getMatchTeamsByZeroZeroId = function(season_id, homeTeam, awayTeam, cb) {
     ];
 
     this.aggregate(query, cb)
-};
+}
 
-const updateTeamsStandings = function(match, nestedMatch, cb){
+function updateTeamsStandings(match, nestedMatch, cb){
     const home_goals = match.home_team.goals.length;
     const away_goals = match.away_team.goals.length;
 
@@ -133,26 +143,26 @@ const updateTeamsStandings = function(match, nestedMatch, cb){
         {},
         cb
     );
-};
+}
 
-const updateAndReturnByZeroZeroId = function(zerozero_id, season_id, team_season, cb) {
+function updateAndReturnByZeroZeroId(zerozero_id, season_id, team_season, cb) {
     const query = {
         "external_ids.zerozero": zerozero_id,
         "season_id": season_id
     };
 
     this.findOneAndUpdate(query, team_season, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
-};
+}
 
-const getByIds = function (ids, cb) {
+function getByIds(ids, cb) {
     const query = {
         _id: { $in: ids }
     }
 
     this.find(query, cb)
-};
+}
 
-const updateTeamsPositions = function(competition_season, seasons, cb){
+function updateTeamsPositions(competition_season, seasons, cb){
 
     let operations = [];
 
@@ -184,12 +194,13 @@ const updateTeamsPositions = function(competition_season, seasons, cb){
 }
 
 module.exports = {
-    getMissingTeams: getMissingTeams,
-    addCompetitionToTeam: addCompetitionToTeam,
-    addPlayerToTeam: addPlayerToTeam,
-    getMatchTeamsByZeroZeroId: getMatchTeamsByZeroZeroId,
-    updateTeamsStandings: updateTeamsStandings,
-    updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
-    getByIds: getByIds,
-    updateTeamsPositions: updateTeamsPositions
-}
+    addMedia,
+    getMissingTeams,
+    addCompetitionToTeam,
+    addPlayerToTeam,
+    getMatchTeamsByZeroZeroId,
+    updateTeamsStandings,
+    updateAndReturnByZeroZeroId,
+    getByIds,
+    updateTeamsPositions
+};
