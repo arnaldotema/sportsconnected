@@ -140,9 +140,6 @@ Service.remove = function (req, res) {
     });
 };
 
-/**
- * UserController.remove()
- */
 Service.aggregate_profile = function (req, res) {
     let id = req.params.id;
     let profile_id = req.body.id;

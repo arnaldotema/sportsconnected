@@ -1,5 +1,4 @@
 const logger = require('../logging');
-const _ = require('underscore');
 
 function addMedia(id, media, cb) {
 
@@ -9,6 +8,18 @@ function addMedia(id, media, cb) {
         }
     };
     this.findOneAndUpdate({_id: id}, update, {setDefaultsOnInsert: true}, cb);
+};
+
+function createNew(user_info_id, season_id, personal_info, team, cb) {
+
+    const user_info_season = {
+        user_info_id: user_info_id,
+        season_id: season_id,
+        personal_info: personal_info,
+        team: team
+    };
+
+    this.create({user_info_season}, cb);
 }
 
 const addCompetitionToUserInfo = function (id, competition_season, cb) {
@@ -32,12 +43,13 @@ const addCompetitionToUserInfo = function (id, competition_season, cb) {
     this.findOneAndUpdate(query, update, {setDefaultsOnInsert: true}, cb);
 };
 
-const updatePersonalInfo = function (id, personal_info, cb) {
+const updateUserInfoSeason = function (id, personal_info, team, cb) {
     let query = {_id: id};
 
     let update = {
         $set: {
-            personal_info: personal_info
+            personal_info: personal_info,
+            team: team
         }
     };
 
@@ -242,11 +254,12 @@ const getByTeamSeasonId = function (id, cb) {
 };
 
 module.exports = {
+    createNew,
     addMedia,
     addCompetitionToUserInfo,
     getMatchUserInfosByZeroZeroId,
     updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
     updateUserInfosStats,
     getByTeamSeasonId,
-    updatePersonalInfo
+    updateUserInfoSeason
 }

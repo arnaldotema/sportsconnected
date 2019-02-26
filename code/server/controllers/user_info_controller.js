@@ -8,6 +8,23 @@ const entities = new Entities();
 
 let Service = {};
 
+// Helpers
+
+function handleError(err, result, res) {
+    if (err) {
+        return res.status(500).json({
+            message: 'Error from the API.',
+            error: err
+        });
+    }
+    if (!result) {
+        return res.status(404).json({
+            message: 'No such object'
+        });
+    }
+    return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
+}
+
 // User
 
 Service.search = function (req, res) {
@@ -62,56 +79,71 @@ Service.list = function (req, res) {
 };
 
 Service.show = function (req, res) {
-    var id = req.params.id;
+    let id = req.params.id;
     FootballUserInfo
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
-        //.populate('recommendations.list')
-        .exec(function (err, user_info) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting user_info.',
-                    error: err
-                });
-            }
-            if (!user_info) {
-                return res.status(404).json({
-                    message: 'No such user_info'
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
-        });
+        .populate('recommendations.list')
+        .exec((err, result) => handleError(err, result, res));
 };
 
 Service.create = function (req, res) {
-    let user_info = new FootballUserInfo({
-        user_id: req.body.user_id,
-        name: req.body.name
+    let personal_info = JSON.parse(req.body.personal_info);
+    let team = JSON.parse(req.body.team);
+    let season_id = req.body.season_id;
 
+    let userInfo = new FootballUserInfo({
+        user_id: req.body.user_id,
+        type: 1
     });
 
-    user_info.save(function (err, user_info) {
-        if (err) {
+    userInfo.save(function (err, newUserInfo) {
+        if (err)
             return res.status(500).json({
-                message: 'Error when creating user_info',
+                message: 'Error when creating userInfo',
                 error: err
             });
-        }
-        return res.status(201).json(user_info);
+        let user_info_id = newUserInfo._id;
+        FootballUserInfoSeason
+            .createNew(user_info_id, season_id, personal_info, team, (err, user_info_season) => {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when creating user_info_season',
+                        error: err
+                    });
+                }
+                let update = {"current_season": user_info_season._id};
+
+                FootballUserInfo
+                    .findOneAndUpdate(
+                        {_id: update},
+                        query,
+                        {upsert: true, new: true, setDefaultsOnInsert: true},
+                        (err, userInfo) => {
+                            if (err) {
+                                return res.status(500).json({
+                                    message: 'Error when creating user_info_season',
+                                    error: err
+                                });
+                            }
+                            return res.status(201).json(userInfo);
+                        });
+            });
     });
 };
 
 Service.update = function (req, res) {
 
     let id = req.params.id;
+    let team = JSON.parse(req.body.team);
     let personal_info = JSON.parse(req.body.personal_info);
     let avatar = req.files.avatar;
 
     if (avatar)
         personal_info.avatar = "api/storage/images/user_info_season/" + id + "/system/avatar";
 
-    FootballUserInfoSeason.updatePersonalInfo(id, personal_info, function (err, user_info_season) {
+    FootballUserInfoSeason.updateUserInfoSeason(id, personal_info, team, function (err, user_info_season) {
         if (err) {
             return res.status(500).json({
                 message: 'Error when updating user_info',
@@ -207,6 +239,7 @@ Service.createMedia = function (req, res) {
     }
 
     media.user_info_id = user_info_id;
+    media.user_type = 'football_user_info';
     let newMedia = new FootballMedia(media);
 
     newMedia.save(function (err, createdMedia) {
@@ -217,19 +250,10 @@ Service.createMedia = function (req, res) {
             });
         }
 
-        FootballUserInfo.addMedia(createdMedia, userInfoId, (err, user_info) => {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when updating user_info_season',
-                    error: err
-                });
-            }
-            if (!user_info) {
-                return res.status(404).json({
-                    message: 'No such user_info'
-                });
-            }
-        })
+        FootballUserInfo.addMedia(
+            createdMedia,
+            userInfoId,
+            (err, user_info) => handleError(err, user_info, res))
     })
 };
 
@@ -243,15 +267,7 @@ Service.updateMedia = function (req, res) {
         });
     }
 
-    FootballMedia.update(mediaId, media, (err, media) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Error when getting media.',
-                error: err
-            });
-        }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
-    });
+    FootballMedia.update(mediaId, media, (err, media) => handleError(err, media, res));
 };
 
 Service.removeMedia = function (req, res) {
@@ -276,20 +292,7 @@ Service.list_recommendations = function (req, res) {
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
-        .exec(function (err, user_info) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting user_info.',
-                    error: err
-                });
-            }
-            if (!user_info) {
-                return res.status(404).json({
-                    message: 'No such user_info'
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
-        });
+        .exec((err, user_info) => handleError(err, user_info, res));
 };
 
 Service.add_recommendation = function (req, res) {
@@ -328,16 +331,8 @@ Service.add_recommendation = function (req, res) {
                 });
             }
 
-            FootballUserInfo.updateRecommendationRegex(user_info, function (err, user_info) {
-                if (err) {
-                    return res.status(500).json({
-                        message: 'Error when updating user_info',
-                        error: err
-                    });
-                }
-
-                return res.json(user_info);
-            })
+            FootballUserInfo.updateRecommendationRegex(user_info,
+                (err, user_info) => handleError(err, user_info, res))
 
         })
 
@@ -408,21 +403,10 @@ Service.follow = function (req, res) {
         });
     }
 
-    FootballUserInfo.follow(author_user_info_id, user_info_id, (err, user_info) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Error when following and updating user_info',
-                error: err
-            });
-        }
-        if (!user_info) {
-            return res.status(404).json({
-                message: 'No such user_info'
-            });
-        }
-        return res.json(user_info);
-
-    })
+    FootballUserInfo.follow(
+        author_user_info_id,
+        user_info_id,
+        (err, user_info) => handleError(err, user_info, res))
 };
 
 Service.list_followed = function (req, res) {
@@ -430,20 +414,7 @@ Service.list_followed = function (req, res) {
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
-        .exec(function (err, user_info) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting user_info.',
-                    error: err
-                });
-            }
-            if (!user_info) {
-                return res.status(404).json({
-                    message: 'No such user_info'
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
-        });
+        .exec((err, user_info) => handleError(err, user_info, res));
 };
 
 Service.list_followers = function (req, res) {
@@ -451,20 +422,7 @@ Service.list_followers = function (req, res) {
         .findOne({_id: id})
         .populate('current_season')
         .populate('previous_seasons', 'stats')
-        .exec(function (err, user_info) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting user_info.',
-                    error: err
-                });
-            }
-            if (!user_info) {
-                return res.status(404).json({
-                    message: 'No such user_info'
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
-        });
+        .exec((err, user_info) => handleError(err, user_info, res));
 };
 
 Service.unfollow = function (req, res) {
@@ -477,23 +435,10 @@ Service.unfollow = function (req, res) {
         });
     }
 
-    FootballUserInfo.unfollow(follower_id, user_info_id, (err, user_info) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Error when following and updating user_info',
-                error: err
-            });
-        }
-        if (!user_info) {
-            return res.status(404).json({
-                message: 'No such user_info'
-            });
-        }
-        return res.json(user_info);
-
-    })
-
-
+    FootballUserInfo.unfollow(
+        follower_id,
+        user_info_id,
+        (err, user_info) => handleError(err, user_info, res))
 };
 
 module.exports = Service;

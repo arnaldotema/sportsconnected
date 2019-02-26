@@ -149,7 +149,6 @@ Service.deleteRecommendation = function (recommendation, user_info_id, cb) {
 
 Service.addSkillVote = function (skill_name, author_user_id, user_info_id, cb) {
 
-
     const query = {
         _id: user_info_id,
         'skill_set.name': {$ne: skill_name}
