@@ -94,8 +94,6 @@ export class AuthenticationService {
     return this.http.post<any>('/api/auth', user, this.requestOptions)
       .map((json: any) => {
 
-        debugger;
-
         // login successful if there's a jwt token in the response
         if (json.token) {
 
