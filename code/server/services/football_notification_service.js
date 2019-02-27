@@ -1,13 +1,20 @@
 'use strict';
 
-let Service = {};
 
-Service.createNotification = function(notification, cb) {
+function createNotification(notification, cb) {
     this.create(notification, { upsert:true, new:true, setDefaultsOnInsert: true }, cb);
-};
+}
 
-Service.getAll = function (cb) {
+function getAll(cb) {
     this.find({}, cb);
-};
+}
 
-module.exports = Service;
+function update(id, notification, cb) {
+    this.findOneAndUpdate({_id: id}, notification, {upsert: true, new: true, setDefaultsOnInsert: true}, cb);
+}
+
+module.exports = {
+    update,
+    getAll,
+    createNotification
+};
