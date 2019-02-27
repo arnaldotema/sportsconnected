@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/match_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/match_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_match_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_match_service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_team_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_team_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/_services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/auth/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/auth_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth_routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,155 +19,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
+      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="108" column="3" lean-forward="true" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
+            <state>
               <folding>
-                <element signature="e#211#259#0" />
-                <element signature="e#886#989#0" />
-                <element signature="e#359#401#0" />
-                <element signature="e#655#671#0" />
-                <element signature="e#670#814#0" />
-                <element signature="e#998#1289#0" />
-                <element signature="e#1666#1715#0" />
-                <element signature="e#1754#2117#0" />
-                <element signature="e#1015#1138#0" />
-                <element signature="e#1162#1267#0" />
-                <element signature="e#2161#2352#0" />
-                <element signature="e#2398#2515#0" />
-                <element signature="e#2554#2709#0" />
-                <element signature="e#1385#1433#0" />
-                <element signature="e#4359#4402#0" />
+                <element signature="e#0#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_team.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/football_team.js">
+      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="66" column="63" lean-forward="true" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
+            <state relative-caret-position="-306" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_team_service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/services/football_team_service.js">
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
-              <folding>
-                <element signature="e#145#310#0" />
-                <element signature="e#365#843#0" />
-                <element signature="e#429#798#0" />
-                <element signature="e#495#790#0" />
-                <element signature="e#520#780#0" />
-                <element signature="e#546#612#0" />
-                <element signature="e#638#766#0" />
-                <element signature="e#667#748#0" />
-              </folding>
+            <state relative-caret-position="56">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_match.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/football_match.js">
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/auth/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="187" column="63" lean-forward="true" selection-start-line="187" selection-start-column="63" selection-end-line="187" selection-end-column="63" />
-              <folding>
-                <element signature="e#181#204#0" />
-                <element signature="e#324#547#0" />
-                <element signature="e#562#3471#0" />
-                <element signature="e#791#1678#0" />
-                <element signature="e#796#1674#0" />
-                <element signature="e#1441#1669#0" />
-                <element signature="e#1463#1651#0" />
-                <element signature="e#1691#2596#0" />
-                <element signature="e#1705#2592#0" />
-                <element signature="e#2350#2578#0" />
-                <element signature="e#2372#2560#0" />
-                <element signature="e#2606#3264#0" />
-                <element signature="e#2620#3254#0" />
-                <element signature="e#2924#2980#0" />
-                <element signature="e#3012#3240#0" />
-                <element signature="e#3034#3222#0" />
-                <element signature="e#3288#3468#0" />
-                <element signature="e#3302#3458#0" />
-                <element signature="e#3486#6446#0" />
-                <element signature="e#3721#4632#0" />
-                <element signature="e#3735#4622#0" />
-                <element signature="e#4380#4608#0" />
-                <element signature="e#4402#4590#0" />
-                <element signature="e#4651#5562#0" />
-                <element signature="e#4665#5552#0" />
-                <element signature="e#5310#5538#0" />
-                <element signature="e#5332#5520#0" />
-                <element signature="e#5578#6236#0" />
-                <element signature="e#5592#6226#0" />
-                <element signature="e#5896#5952#0" />
-                <element signature="e#5984#6212#0" />
-                <element signature="e#6006#6194#0" />
-                <element signature="e#6260#6440#0" />
-                <element signature="e#6274#6430#0" />
-              </folding>
+            <state relative-caret-position="205">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_match_service.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
+      <file leaf-file-name="auth_routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/auth_routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="-341">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="match_controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/match_controller.js">
+      <file leaf-file-name="authentication.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="141" column="41" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="41" />
-              <folding>
-                <element signature="e#150#241#0" />
-                <element signature="e#266#307#0" />
-                <element signature="e#444#614#0" />
-                <element signature="e#490#598#0" />
-                <element signature="e#722#763#0" />
-                <element signature="e#794#1344#0" />
-                <element signature="e#901#1336#0" />
-                <element signature="e#924#1094#0" />
-                <element signature="e#970#1078#0" />
-                <element signature="e#1119#1245#0" />
-                <element signature="e#1165#1229#0" />
-                <element signature="e#1351#1394#0" />
-                <element signature="e#1427#1917#0" />
-                <element signature="e#1514#1566#0" />
-                <element signature="e#1658#1909#0" />
-                <element signature="e#1681#1851#0" />
-                <element signature="e#1727#1835#0" />
-                <element signature="e#1924#1967#0" />
-                <element signature="e#2000#2947#0" />
-                <element signature="e#2094#2939#0" />
-                <element signature="e#2117#2286#0" />
-                <element signature="e#2163#2270#0" />
-                <element signature="e#2311#2437#0" />
-                <element signature="e#2357#2421#0" />
-                <element signature="e#2514#2602#0" />
-                <element signature="e#2654#2927#0" />
-                <element signature="e#2681#2872#0" />
-                <element signature="e#2731#2852#0" />
-                <element signature="e#2954#2997#0" />
-                <element signature="e#3196#3309#0" />
-                <element signature="e#3720#3890#0" />
-                <element signature="e#3766#3874#0" />
-                <element signature="e#4319#4489#0" />
-                <element signature="e#4365#4473#0" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/app/home/home.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="24" column="63" lean-forward="true" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="football_user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/football_user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/src/client.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="1721" column="4" selection-start-line="1721" selection-start-column="4" selection-end-line="1721" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -181,43 +121,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>app-match-edit</find>
-      <find>match-edit</find>
-      <find>scServer</find>
-      <find>addMiddleware</find>
-      <find>scHotReboot</find>
-      <find>newAchievement</find>
-      <find>this.token</find>
-      <find>my-projects</find>
+      <find>remove</find>
+      <find>media_id</find>
+      <find>PlayerController</find>
+      <find>Service.</find>
+      <find>user_info</find>
+      <find>addMedia</find>
+      <find>football_recommendation</find>
+      <find>user_type</find>
+      <find>'team'</find>
+      <find>'user_info'</find>
+      <find>FootballUserInfo</find>
+      <find>addSkillVote</find>
+      <find>'/api/players'</find>
+      <find>/api/players'</find>
+      <find>findOneAndUpdate</find>
+      <find>.create(</find>
+      <find>updatePersonalInfo</find>
+      <find>user_type:</find>
+      <find>FootballMedia</find>
+      <find>team_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},</find>
+      <find>user_type: {type: String, enum: USER_TYPES},</find>
+      <find>var mongoose = require('mongoose');</find>
+      <find>var Schema = mongoose.Schema;</find>
       <find>var</find>
-      <find>ChatMessage</find>
-      <find>chatMessage</find>
-      <find>msg</find>
-      <find>.find({</find>
-      <find>Conv. #</find>
-      <find>findOne</find>
-      <find>populate</find>
-      <find>chat_conversation_id</find>
-      <find>conversation_id</find>
-      <find>essage</find>
-      <find>.id</find>
-      <find>socket.decoded_token.sub</find>
-      <find>foreach</find>
-      <find>updated_at_at</find>
-      <find>socket.</find>
-      <find>find(</find>
-      <find>findone(</find>
-      <find>.updateAndReturnByZeroZeroId</find>
-      <find>req.query</find>
-      <find>req.body.qu</find>
-      <find>getNextMatchesByTeamId</find>
+      <find>/api/users</find>
+      <find>sign</find>
+      <find>.signup</find>
+      <find>/api/auth</find>
+      <find>aggregate_profile</find>
+      <find>api/auth</find>
     </findStrings>
     <replaceStrings>
-      <replace>red_cards: []</replace>
-      <replace>achievements: []</replace>
-      <replace>goals.length</replace>
-      <replace>goals.length§</replace>
-      <replace>&lt;img class =&quot;icon&quot; *ngIf=&quot;player.goals &amp;&amp; players.goals.length &gt; 0&quot; src=&quot;/assets/ball.png&quot;&gt;{{player.goals.length}}</replace>
       <replace>goals: []</replace>
       <replace>player.goals</replace>
       <replace>&lt;div&gt;&lt;img class =&quot;icon&quot; src=&quot;/assets/ball.png&quot;&gt;{{player.goals.length}}&lt;/div</replace>
@@ -243,6 +178,11 @@
       <replace>conv</replace>
       <replace>chat_conversation_id</replace>
       <replace>essageAttachment</replace>
+      <replace>TeamController</replace>
+      <replace>TeamModel</replace>
+      <replace>const mongoose = require('mongoose');</replace>
+      <replace>const Schema = mongoose.Schema;</replace>
+      <replace>FootballNotification</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals</dir>
@@ -250,6 +190,7 @@
       <dir>$PROJECT_DIR$/Website</dir>
       <dir>$PROJECT_DIR$/Angular/APP BoilerPlate</dir>
       <dir>$PROJECT_DIR$/server</dir>
+      <dir>$PROJECT_DIR$/</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -259,35 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Website/routes/team_routes.js" />
-        <option value="$PROJECT_DIR$/Website/controllers/team_controller.js" />
-        <option value="$PROJECT_DIR$/Website/models/football_user_info.js" />
-        <option value="$PROJECT_DIR$/Website/controllers/user_info_controller.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/user_info.service.ts" />
-        <option value="$PROJECT_DIR$/Website/services/football_user_info_service.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_match.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_user_info.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_team.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/functions/football_competition.js" />
-        <option value="$PROJECT_DIR$/Website/crawlers/zerozero/proxy_handler.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/create-account/create-account.component.ts" />
-        <option value="$PROJECT_DIR$/Website/controllers/gloabal_controller.js" />
-        <option value="$PROJECT_DIR$/Website/routes/global_routes.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/filter-user-info/filter-user-info.component.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_services/generic_user.service.ts" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/Website/controllers/global_controller.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/styles.css" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-stats/user-info-stats.component.css" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.css" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.html" />
-        <option value="$PROJECT_DIR$/Website/app.js" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/header/header.component.html" />
-        <option value="$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/user-info-profile/user-info-profile.component.ts" />
-        <option value="$PROJECT_DIR$/server/models/football_user_info_season.js" />
-        <option value="$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts" />
-        <option value="$PROJECT_DIR$/server/models/message.js" />
-        <option value="$PROJECT_DIR$/server/models/conversation.js" />
         <option value="$PROJECT_DIR$/server/middleware/formidable-express" />
         <option value="$PROJECT_DIR$/server/package.json" />
         <option value="$PROJECT_DIR$/server/socketcluster/middleware.js" />
@@ -307,9 +219,38 @@
         <option value="$PROJECT_DIR$/server/models/chat_conversation.js" />
         <option value="$PROJECT_DIR$/server/services/chat_conversation_service.js" />
         <option value="$PROJECT_DIR$/server/notifications/app.js" />
-        <option value="$PROJECT_DIR$/server/services/football_team_service.js" />
+        <option value="$PROJECT_DIR$/server/routes/match_routes.js" />
         <option value="$PROJECT_DIR$/server/controllers/match_controller.js" />
         <option value="$PROJECT_DIR$/server/services/football_match_service.js" />
+        <option value="$PROJECT_DIR$/server/routes/player_routes.js" />
+        <option value="$PROJECT_DIR$/server/routes/team_routes.js" />
+        <option value="$PROJECT_DIR$/server/services/football_team_service.js" />
+        <option value="$PROJECT_DIR$/server/services/football_team_season_service.js" />
+        <option value="$PROJECT_DIR$/server/controllers/team_controller.js" />
+        <option value="$PROJECT_DIR$/server/models/football_recommendation.js" />
+        <option value="$PROJECT_DIR$/server/services/football_media_service.js" />
+        <option value="$PROJECT_DIR$/server/models/football_team_season.js" />
+        <option value="$PROJECT_DIR$/server/models/football_user_info_season.js" />
+        <option value="$PROJECT_DIR$/server/models/football_media.js" />
+        <option value="$PROJECT_DIR$/server/models/football_user_info.js" />
+        <option value="$PROJECT_DIR$/server/services/football_user_info_service.js" />
+        <option value="$PROJECT_DIR$/server/services/football_user_info_season_service.js" />
+        <option value="$PROJECT_DIR$/server/models/football_notification.js" />
+        <option value="$PROJECT_DIR$/server/services/football_notification_service.js" />
+        <option value="$PROJECT_DIR$/server/routes/notification_routes.js" />
+        <option value="$PROJECT_DIR$/server/controllers/notification_controller.js" />
+        <option value="$PROJECT_DIR$/server/app.js" />
+        <option value="$PROJECT_DIR$/server/routes/user_routes.js" />
+        <option value="$PROJECT_DIR$/server/models/football_user.js" />
+        <option value="$PROJECT_DIR$/server/controllers/user_info_controller.js" />
+        <option value="$PROJECT_DIR$/server/controllers/user_controller.js" />
+        <option value="$PROJECT_DIR$/app/src/app/_services/user.service.ts" />
+        <option value="$PROJECT_DIR$/app/out-tsc/spec/app/_services/authentication.service.js" />
+        <option value="$PROJECT_DIR$/server/controllers/auth_controller.js" />
+        <option value="$PROJECT_DIR$/server/auth/auth.js" />
+        <option value="$PROJECT_DIR$/server/routes/auth_routes.js" />
+        <option value="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/home/home.component.ts" />
       </list>
     </option>
   </component>
@@ -326,175 +267,6 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/app/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ansi-escapes/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ansi-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ansi-styles/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/async-limiter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/base64id/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/buffer-equal-constant-time/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/chalk/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/chardet/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/cli-cursor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/cli-width/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/color-convert/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/color-name/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/component-emitter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ecdsa-sig-formatter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/escape-string-regexp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/expirymanager/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/external-editor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/figures/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/fleximap/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/fs-extra/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/graceful-fs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/has-flag/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/inquirer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-fullwidth-code-point/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-promise/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jsonfile/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jsonwebtoken/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jwa/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jws/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.clonedeep/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.includes/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.isboolean/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.isinteger/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.isnumber/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.isplainobject/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.isstring/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.once/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/mimic-fn/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/minimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/mute-stream/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ncom/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/onetime/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/os-tmpdir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/restore-cursor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/run-async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/rxjs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/safe-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/safer-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-auth/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-broker-cluster/node_modules/async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-broker-cluster/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-broker/node_modules/async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-broker/node_modules/uuid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-broker/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-channel/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-errors/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-formatter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-hasher/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-simple-broker/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sc-uws/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/signal-exit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster-server/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/async-each/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/async-limiter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/balanced-match/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/base64id/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/brace-expansion/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/browser-stdout/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/buffer-equal-constant-time/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/buffer-from/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/cli-width/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/clone/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/concat-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/connect/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/core-util-is/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/diff/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/ecdsa-sig-formatter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/expirymanager/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/extend/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/finalhandler/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/fleximap/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/fs-extra/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/glob-parent/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/growl/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/is-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/is-promise/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/isarray/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/jsonfile/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/jwa/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/jws/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/linked-list/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.clonedeep/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.includes/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.isboolean/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.isinteger/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.isnumber/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.isplainobject/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.isstring/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash.once/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/lodash/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/minimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/mkdirp/node_modules/minimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/mkdirp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/mute-stream/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/ncom/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/os-shim/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/preserve/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/qs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/querystring/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/readable-stream/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/readdirp/examples/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/readdirp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/rx/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/safe-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-auth/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-broker-cluster/node_modules/async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-broker-cluster/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-broker/node_modules/uuid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-broker/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-channel/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-errors/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-formatter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-framework-health-check/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-hasher/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-hot-reboot/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-simple-broker/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/sc-uws/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/scc-broker-client/node_modules/socketcluster-client/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/scc-broker-client/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/skeleton-rendezvous/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/socketcluster-client/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/socketcluster-server/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/socketcluster/node_modules/minimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/socketcluster/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/socketcluster/sample/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/spawn-sync/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/string_decoder/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/through/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/tmp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/typedarray/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/uid-number/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/util-deprecate/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/utils-merge/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/uuid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/node_modules/xtend/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/socketcluster/sample/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/string-width/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/strip-ansi/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/supports-color/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/symbol-observable/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/through/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/tmp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/uid-number/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/universalify/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/uuid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ws/package.json" />
       <path value="$PROJECT_DIR$/server/package.json" />
     </packageJsonPaths>
   </component>
@@ -545,7 +317,7 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="code" type="cbb8eebc:String" user="code" />
               <item name="server" type="cbb8eebc:String" user="server" />
-              <item name="controllers" type="cbb8eebc:String" user="controllers" />
+              <item name="models" type="cbb8eebc:String" user="models" />
             </path>
           </expand>
           <select />
@@ -567,16 +339,16 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/controllers" />
+      <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="$PROJECT_DIR$/server/services" />
       <recent name="$PROJECT_DIR$/server/models" />
-      <recent name="$PROJECT_DIR$/server/controllers" />
       <recent name="$PROJECT_DIR$/server/services/notifications" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/services" />
@@ -705,16 +477,15 @@
       <workItem from="1549538048153" duration="240000" />
       <workItem from="1550184521139" duration="3253000" />
       <workItem from="1550449830572" duration="971000" />
-      <workItem from="1550691319019" duration="23470000" />
+      <workItem from="1550691319019" duration="71408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="619747000" />
+    <option name="totallyTimeSpent" value="667685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="845" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -727,18 +498,18 @@
       <window_info anchor="bottom" id="NativeScript" order="8" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.26588845" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
-      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.30869" />
+      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.39040208" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" weight="0.46562904" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" weight="0.51880676" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32935917" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -786,10 +557,48 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/football_match_service.js</url>
+          <line>53</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/football_match_service.js</url>
+          <line>31</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/football_media_service.js</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/football_media_service.js</url>
+          <line>12</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/auth/auth.js</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/auth/auth.js</url>
+          <line>18</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="296" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="284" />
+      <option name="time" value="297" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -861,416 +670,76 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/node_modules/bcryptjs/externs/minimal-env.js">
+    <entry file="file://$PROJECT_DIR$/server/services/football_team_season_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/match-edit/match-edit.component.ts" />
-    <entry file="file://$PROJECT_DIR$/app/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/dockerwait.js" />
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/worker.js" />
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/server.js" />
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/broker.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/public/socketcluster.js" />
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/README.md" />
-    <entry file="file://$PROJECT_DIR$/server/socket/socketcluster/package.json" />
-    <entry file="file://$PROJECT_DIR$/server/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socketcluster/worker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socketcluster/middleware.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socketcluster/broker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/middleware/formidable-express">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socketcluster/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="64" lean-forward="true" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/gary_processor/gary_processor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_achievement_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="60" column="54" lean-forward="true" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/_services/generic_user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="1888" column="32" lean-forward="true" selection-start-line="1888" selection-start-column="32" selection-end-line="1888" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="2600" selection-start-line="2600" selection-end-line="2600" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="97" column="25" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/chat_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/global_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/competition_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/global_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="112" column="2" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+        <state relative-caret-position="340">
+          <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+          <folding>
+            <element signature="e#146#184#0" />
+            <element signature="e#118#373#0" />
+            <element signature="e#210#369#0" />
+            <element signature="e#239#339#0" />
+            <element signature="e#442#917#0" />
+            <element signature="e#460#540#0" />
+            <element signature="e#560#836#0" />
+            <element signature="e#581#830#0" />
+            <element signature="e#596#820#0" />
+            <element signature="e#979#1713#0" />
+            <element signature="e#997#1073#0" />
+            <element signature="e#1093#1632#0" />
+            <element signature="e#1114#1626#0" />
+            <element signature="e#1127#1616#0" />
+            <element signature="e#1794#2442#0" />
+            <element signature="e#1812#2408#0" />
+            <element signature="e#1822#2402#0" />
+            <element signature="e#1844#2392#0" />
+            <element signature="e#1873#2111#0" />
+            <element signature="e#1895#2093#0" />
+            <element signature="e#1929#2071#0" />
+            <element signature="e#2140#2378#0" />
+            <element signature="e#2162#2360#0" />
+            <element signature="e#2196#2338#0" />
+            <element signature="e#2506#4606#0" />
+            <element signature="e#2643#4573#0" />
+            <element signature="e#2657#3603#0" />
+            <element signature="e#2686#3589#0" />
+            <element signature="e#2716#2916#0" />
+            <element signature="e#2946#3571#0" />
+            <element signature="e#2979#3440#0" />
+            <element signature="e#3473#3549#0" />
+            <element signature="e#3617#4563#0" />
+            <element signature="e#3646#4549#0" />
+            <element signature="e#3676#3876#0" />
+            <element signature="e#3906#4531#0" />
+            <element signature="e#3939#4400#0" />
+            <element signature="e#4433#4509#0" />
+            <element signature="e#4695#4908#0" />
+            <element signature="e#4715#4799#0" />
+            <element signature="e#4947#5028#0" />
+            <element signature="e#4967#5000#0" />
+            <element signature="e#5101#5794#0" />
+            <element signature="e#5220#5267#0" />
+            <element signature="e#5306#5749#0" />
+            <element signature="e#5372#5741#0" />
+            <element signature="e#5397#5731#0" />
+            <element signature="e#5423#5545#0" />
+            <element signature="e#5571#5717#0" />
+            <element signature="e#5600#5699#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/team_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="72" column="7" lean-forward="true" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_attachment_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding>
-            <element signature="e#141#1206#0" />
-            <element signature="e#578#814#0" />
-            <element signature="e#632#810#0" />
-            <element signature="e#651#690#0" />
-            <element signature="e#713#770#0" />
-            <element signature="e#862#947#0" />
-            <element signature="e#1030#1410#0" />
-            <element signature="e#1284#1361#0" />
-            <element signature="e#1460#1569#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/notifications/socket_client.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_attachment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_achievement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_competition.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="2839">
-            <caret line="167" column="10" selection-start-line="167" selection-start-column="10" selection-end-line="167" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_conversation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_message_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <element signature="e#569#805#0" />
-            <element signature="e#623#801#0" />
-            <element signature="e#642#681#0" />
-            <element signature="e#704#761#0" />
-            <element signature="e#853#938#0" />
-            <element signature="e#1215#1292#0" />
-            <element signature="e#1392#1501#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_unread_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="27" />
-          <folding>
-            <element signature="e#72#535#0" />
-            <element signature="e#101#164#0" />
-            <element signature="e#438#531#0" />
-            <element signature="e#457#495#0" />
-            <element signature="e#578#814#0" />
-            <element signature="e#632#810#0" />
-            <element signature="e#651#690#0" />
-            <element signature="e#713#770#0" />
-            <element signature="e#1460#1569#0" />
-            <element signature="e#716#872#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/chat_unread.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/chat_conversation_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#132#944#0" />
-            <element signature="e#215#231#0" />
-            <element signature="e#246#396#0" />
-            <element signature="e#460#620#0" />
-            <element signature="e#483#669#0" />
-            <element signature="e#774#868#0" />
-            <element signature="e#793#831#0" />
-            <element signature="e#934#1656#0" />
-            <element signature="e#948#1204#0" />
-            <element signature="e#1007#1200#0" />
-            <element signature="e#1026#1065#0" />
-            <element signature="e#1093#1155#0" />
-            <element signature="e#1569#1639#0" />
-            <element signature="e#1750#1837#0" />
-            <element signature="e#1893#2005#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="66" column="63" lean-forward="true" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_team_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
-          <folding>
-            <element signature="e#145#310#0" />
-            <element signature="e#365#843#0" />
-            <element signature="e#429#798#0" />
-            <element signature="e#495#790#0" />
-            <element signature="e#520#780#0" />
-            <element signature="e#546#612#0" />
-            <element signature="e#638#766#0" />
-            <element signature="e#667#748#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="108" column="3" lean-forward="true" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
-          <folding>
-            <element signature="e#211#259#0" />
-            <element signature="e#886#989#0" />
-            <element signature="e#359#401#0" />
-            <element signature="e#655#671#0" />
-            <element signature="e#670#814#0" />
-            <element signature="e#998#1289#0" />
-            <element signature="e#1666#1715#0" />
-            <element signature="e#1754#2117#0" />
-            <element signature="e#1015#1138#0" />
-            <element signature="e#1162#1267#0" />
-            <element signature="e#2161#2352#0" />
-            <element signature="e#2398#2515#0" />
-            <element signature="e#2554#2709#0" />
-            <element signature="e#1385#1433#0" />
-            <element signature="e#4359#4402#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/match_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="141" column="41" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="41" />
-          <folding>
-            <element signature="e#150#241#0" />
-            <element signature="e#266#307#0" />
-            <element signature="e#444#614#0" />
-            <element signature="e#490#598#0" />
-            <element signature="e#722#763#0" />
-            <element signature="e#794#1344#0" />
-            <element signature="e#901#1336#0" />
-            <element signature="e#924#1094#0" />
-            <element signature="e#970#1078#0" />
-            <element signature="e#1119#1245#0" />
-            <element signature="e#1165#1229#0" />
-            <element signature="e#1351#1394#0" />
-            <element signature="e#1427#1917#0" />
-            <element signature="e#1514#1566#0" />
-            <element signature="e#1658#1909#0" />
-            <element signature="e#1681#1851#0" />
-            <element signature="e#1727#1835#0" />
-            <element signature="e#1924#1967#0" />
-            <element signature="e#2000#2947#0" />
-            <element signature="e#2094#2939#0" />
-            <element signature="e#2117#2286#0" />
-            <element signature="e#2163#2270#0" />
-            <element signature="e#2311#2437#0" />
-            <element signature="e#2357#2421#0" />
-            <element signature="e#2514#2602#0" />
-            <element signature="e#2654#2927#0" />
-            <element signature="e#2681#2872#0" />
-            <element signature="e#2731#2852#0" />
-            <element signature="e#2954#2997#0" />
-            <element signature="e#3196#3309#0" />
-            <element signature="e#3720#3890#0" />
-            <element signature="e#3766#3874#0" />
-            <element signature="e#4319#4489#0" />
-            <element signature="e#4365#4473#0" />
-          </folding>
+          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/models/football_match.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="187" column="63" lean-forward="true" selection-start-line="187" selection-start-column="63" selection-end-line="187" selection-end-column="63" />
+        <state relative-caret-position="187">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="e#181#204#0" />
             <element signature="e#324#547#0" />
@@ -1310,10 +779,696 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/constants/values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+          <folding>
+            <element signature="n#!!block;n#_updateRegex#0" />
+            <element signature="e#199#228#0" />
+            <element signature="e#459#688#0" />
+            <element signature="e#523#623#0" />
+            <element signature="e#539#617#0" />
+            <element signature="e#753#2181#0" />
+            <element signature="e#771#2147#0" />
+            <element signature="e#781#2141#0" />
+            <element signature="e#803#2131#0" />
+            <element signature="e#832#1020#0" />
+            <element signature="e#854#1002#0" />
+            <element signature="e#888#980#0" />
+            <element signature="e#1058#1243#0" />
+            <element signature="e#1080#1225#0" />
+            <element signature="e#1114#1203#0" />
+            <element signature="e#1278#1460#0" />
+            <element signature="e#1300#1442#0" />
+            <element signature="e#1334#1420#0" />
+            <element signature="e#1489#1677#0" />
+            <element signature="e#1511#1659#0" />
+            <element signature="e#1545#1637#0" />
+            <element signature="e#1715#1900#0" />
+            <element signature="e#1737#1882#0" />
+            <element signature="e#1771#1860#0" />
+            <element signature="e#1935#2117#0" />
+            <element signature="e#1957#2099#0" />
+            <element signature="e#1991#2077#0" />
+            <element signature="e#2244#2427#0" />
+            <element signature="e#2264#2309#0" />
+            <element signature="e#2506#2671#0" />
+            <element signature="e#2736#3351#0" />
+            <element signature="e#2802#3307#0" />
+            <element signature="e#2873#3299#0" />
+            <element signature="e#2898#3289#0" />
+            <element signature="e#2924#3000#0" />
+            <element signature="e#3026#3275#0" />
+            <element signature="e#3054#3140#0" />
+            <element signature="e#3169#3257#0" />
+            <element signature="e#3425#3741#0" />
+            <element signature="e#3494#3529#0" />
+            <element signature="e#3551#3692#0" />
+            <element signature="e#3568#3686#0" />
+            <element signature="e#3816#3819#0" />
+            <element signature="e#3896#3899#0" />
+            <element signature="e#4002#4080#0" />
+            <element signature="e#4102#4216#0" />
+            <element signature="e#4123#4210#0" />
+            <element signature="e#4150#4200#0" />
+            <element signature="e#4331#4414#0" />
+            <element signature="e#4440#4545#0" />
+            <element signature="e#4461#4535#0" />
+            <element signature="e#4665#5653#0" />
+            <element signature="e#4694#5442#0" />
+            <element signature="e#4704#4817#0" />
+            <element signature="e#4827#4939#0" />
+            <element signature="e#4949#5059#0" />
+            <element signature="e#5069#5182#0" />
+            <element signature="e#5192#5302#0" />
+            <element signature="e#5312#5436#0" />
+            <element signature="e#5494#5566#0" />
+            <element signature="e#5510#5560#0" />
+            <element signature="e#5714#6302#0" />
+            <element signature="e#5763#5998#0" />
+            <element signature="e#5784#5992#0" />
+            <element signature="e#5806#5857#0" />
+            <element signature="e#5879#5982#0" />
+            <element signature="e#5904#5968#0" />
+            <element signature="e#6022#6257#0" />
+            <element signature="e#6043#6251#0" />
+            <element signature="e#6065#6115#0" />
+            <element signature="e#6137#6241#0" />
+            <element signature="e#6162#6227#0" />
+            <element signature="e#6366#6959#0" />
+            <element signature="e#6416#6653#0" />
+            <element signature="e#6437#6647#0" />
+            <element signature="e#6459#6510#0" />
+            <element signature="e#6532#6637#0" />
+            <element signature="e#6557#6623#0" />
+            <element signature="e#6677#6914#0" />
+            <element signature="e#6698#6908#0" />
+            <element signature="e#6720#6772#0" />
+            <element signature="e#6794#6898#0" />
+            <element signature="e#6819#6884#0" />
+            <element signature="e#7014#7471#0" />
+            <element signature="e#7099#7426#0" />
+            <element signature="e#7126#7418#0" />
+            <element signature="e#7151#7408#0" />
+            <element signature="e#7177#7236#0" />
+            <element signature="e#7262#7394#0" />
+            <element signature="e#7290#7376#0" />
+            <element signature="e#7546#7919#0" />
+            <element signature="e#7566#7651#0" />
+            <element signature="e#7672#7870#0" />
+            <element signature="e#7689#7864#0" />
+            <element signature="e#7719#7854#0" />
+            <element signature="e#7972#8381#0" />
+            <element signature="e#8430#8695#0" />
+            <element signature="e#8583#8687#0" />
+            <element signature="e#8606#8645#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="8" />
+          <folding>
+            <element signature="e#409#736#0" />
+            <element signature="e#410#735#0" />
+            <element signature="e#681#1008#0" />
+            <element signature="e#682#1007#0" />
+            <element signature="e#659#976#0" />
+            <element signature="e#669#970#0" />
+            <element signature="e#731#959#0" />
+            <element signature="e#823#1114#0" />
+            <element signature="e#829#1481#0" />
+            <element signature="e#916#1474#0" />
+            <element signature="e#930#1464#0" />
+            <element signature="e#956#1420#0" />
+            <element signature="e#1178#1401#0" />
+            <element signature="e#1501#1657#0" />
+            <element signature="e#1511#1651#0" />
+            <element signature="e#1972#2056#0" />
+            <element signature="e#1942#1989#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding>
+            <element signature="e#366#501#0" />
+            <element signature="e#367#500#0" />
+            <element signature="e#524#1110#0" />
+            <element signature="e#1008#1072#0" />
+            <element signature="e#1009#1071#0" />
+            <element signature="e#1283#1931#0" />
+            <element signature="e#1299#1385#0" />
+            <element signature="e#1402#1924#0" />
+            <element signature="e#1416#1914#0" />
+            <element signature="e#1442#1869#0" />
+            <element signature="e#1627#1850#0" />
+            <element signature="e#1951#2035#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/History.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="130">
+            <caret line="47" column="85" selection-start-line="47" selection-start-column="85" selection-end-line="47" selection-end-column="85" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="187">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="68" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="262" column="22" selection-start-line="262" selection-start-column="22" selection-end-line="262" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!block;n#addMedia#0" />
+            <element signature="e#125#190#0" />
+            <element signature="e#146#184#0" />
+            <element signature="e#346#878#0" />
+            <element signature="e#364#438#0" />
+            <element signature="e#458#799#0" />
+            <element signature="e#479#793#0" />
+            <element signature="e#502#783#0" />
+            <element signature="e#1227#3075#0" />
+            <element signature="e#1245#3041#0" />
+            <element signature="e#1255#3035#0" />
+            <element signature="e#1277#3025#0" />
+            <element signature="e#1306#1564#0" />
+            <element signature="e#1328#1546#0" />
+            <element signature="e#1362#1524#0" />
+            <element signature="e#1602#1857#0" />
+            <element signature="e#1624#1839#0" />
+            <element signature="e#1658#1817#0" />
+            <element signature="e#1892#2144#0" />
+            <element signature="e#1914#2126#0" />
+            <element signature="e#1948#2104#0" />
+            <element signature="e#2173#2431#0" />
+            <element signature="e#2195#2413#0" />
+            <element signature="e#2229#2391#0" />
+            <element signature="e#2469#2724#0" />
+            <element signature="e#2491#2706#0" />
+            <element signature="e#2525#2684#0" />
+            <element signature="e#2759#3011#0" />
+            <element signature="e#2781#2993#0" />
+            <element signature="e#2815#2971#0" />
+            <element signature="e#3170#3388#0" />
+            <element signature="e#3190#3274#0" />
+            <element signature="e#3454#8200#0" />
+            <element signature="e#3647#4729#0" />
+            <element signature="e#3673#4722#0" />
+            <element signature="e#3698#4712#0" />
+            <element signature="e#3724#3893#0" />
+            <element signature="e#3919#4698#0" />
+            <element signature="e#3947#4583#0" />
+            <element signature="e#4612#4680#0" />
+            <element signature="e#4791#5873#0" />
+            <element signature="e#4817#5866#0" />
+            <element signature="e#4842#5856#0" />
+            <element signature="e#4868#5037#0" />
+            <element signature="e#5063#5842#0" />
+            <element signature="e#5091#5727#0" />
+            <element signature="e#5756#5824#0" />
+            <element signature="e#5932#7014#0" />
+            <element signature="e#5958#7007#0" />
+            <element signature="e#5983#6997#0" />
+            <element signature="e#6009#6178#0" />
+            <element signature="e#6204#6983#0" />
+            <element signature="e#6232#6868#0" />
+            <element signature="e#6897#6965#0" />
+            <element signature="e#7073#8155#0" />
+            <element signature="e#7099#8148#0" />
+            <element signature="e#7124#8138#0" />
+            <element signature="e#7150#7319#0" />
+            <element signature="e#7345#8124#0" />
+            <element signature="e#7373#8009#0" />
+            <element signature="e#8038#8106#0" />
+            <element signature="e#8247#8325#0" />
+            <element signature="e#8267#8296#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_user_info_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
+          <folding>
+            <element signature="e#350#931#0" />
+            <element signature="e#390#616#0" />
+            <element signature="e#943#1162#0" />
+            <element signature="e#1175#1875#0" />
+            <element signature="e#1176#1874#0" />
+            <element signature="e#1890#2773#0" />
+            <element signature="e#1891#2772#0" />
+            <element signature="e#2007#2242#0" />
+            <element signature="e#2263#2504#0" />
+            <element signature="e#2525#2766#0" />
+            <element signature="e#2787#3700#0" />
+            <element signature="e#3251#3694#0" />
+            <element signature="e#3274#3400#0" />
+            <element signature="e#3275#3399#0" />
+            <element signature="e#3420#3539#0" />
+            <element signature="e#3421#3538#0" />
+            <element signature="e#3559#3683#0" />
+            <element signature="e#3560#3682#0" />
+            <element signature="e#3721#3791#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/storage/image_storage_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/_models/notification_viewmodel.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/team_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="18" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/storage_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_team_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="71" column="45" lean-forward="true" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_media_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="52" selection-start-line="52" selection-end-line="54" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#migrateUserInfoMediaToMediaDocument#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_notification_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/notification_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/notification_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="41" column="75" lean-forward="true" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
+          <folding>
+            <element signature="n#!!block;n#handleError#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/global_routes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/football_user_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/user_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/out-tsc/spec/app/home/home.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_recommendation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/out-tsc/spec/app/_services/user.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="46" column="43" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/create-account/create-account.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="57" column="50" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/out-tsc/spec/app/_services/authentication.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/passport/lib/http/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="12" selection-start-line="12" selection-end-line="53" selection-end-column="2" />
+          <folding>
+            <element signature="e#531#655#0" />
+            <element signature="e#569#647#0" />
+            <element signature="e#673#768#0" />
+            <element signature="e#711#760#0" />
+            <element signature="e#911#1029#0" />
+            <element signature="e#1098#1346#0" />
+            <element signature="e#1272#1340#0" />
+            <element signature="e#2622#4232#0" />
+            <element signature="e#2807#2865#0" />
+            <element signature="e#2915#4228#0" />
+            <element signature="e#2974#3073#0" />
+            <element signature="e#3247#4220#0" />
+            <element signature="e#3274#3475#0" />
+            <element signature="e#3324#3455#0" />
+            <element signature="e#3811#4204#0" />
+            <element signature="e#3850#4111#0" />
+            <element signature="e#3912#4079#0" />
+            <element signature="e#4272#5429#0" />
+            <element signature="e#4659#5425#0" />
+            <element signature="e#4678#4832#0" />
+            <element signature="e#4720#4820#0" />
+            <element signature="e#4854#5302#0" />
+            <element signature="e#4963#5290#0" />
+            <element signature="e#4990#5180#0" />
+            <element signature="e#5040#5160#0" />
+            <element signature="e#5316#5419#0" />
+            <element signature="e#5469#5795#0" />
+            <element signature="e#5568#5791#0" />
+            <element signature="e#5587#5746#0" />
+            <element signature="e#5629#5734#0" />
+            <element signature="e#5849#6454#0" />
+            <element signature="e#6166#6450#0" />
+            <element signature="e#6189#6359#0" />
+            <element signature="e#6235#6343#0" />
+            <element signature="e#6497#6898#0" />
+            <element signature="e#6610#6894#0" />
+            <element signature="e#6633#6803#0" />
+            <element signature="e#6679#6787#0" />
+            <element signature="e#6943#7779#0" />
+            <element signature="e#7030#7131#0" />
+            <element signature="e#7068#7123#0" />
+            <element signature="e#7158#7271#0" />
+            <element signature="e#7196#7263#0" />
+            <element signature="e#7449#7776#0" />
+            <element signature="e#7468#7618#0" />
+            <element signature="e#7510#7606#0" />
+            <element signature="e#7824#8105#0" />
+            <element signature="e#7913#8014#0" />
+            <element signature="e#7951#8006#0" />
+            <element signature="e#8150#8469#0" />
+            <element signature="e#8245#8464#0" />
+            <element signature="e#8264#8419#0" />
+            <element signature="e#8306#8407#0" />
+            <element signature="e#8542#8899#0" />
+            <element signature="e#8951#10216#0" />
+            <element signature="e#9068#9178#0" />
+            <element signature="e#9106#9170#0" />
+            <element signature="e#9417#10211#0" />
+            <element signature="e#9436#9595#0" />
+            <element signature="e#9478#9583#0" />
+            <element signature="e#9699#10203#0" />
+            <element signature="e#9722#9896#0" />
+            <element signature="e#9768#9880#0" />
+            <element signature="e#9925#10055#0" />
+            <element signature="e#9971#10039#0" />
+            <element signature="e#10272#10901#0" />
+            <element signature="e#10446#10897#0" />
+            <element signature="e#10469#10643#0" />
+            <element signature="e#10515#10627#0" />
+            <element signature="e#10672#10802#0" />
+            <element signature="e#10718#10786#0" />
+            <element signature="e#10949#11738#0" />
+            <element signature="e#11122#11238#0" />
+            <element signature="e#11160#11230#0" />
+            <element signature="e#11336#11735#0" />
+            <element signature="e#11355#11509#0" />
+            <element signature="e#11397#11497#0" />
+            <element signature="e#11534#11648#0" />
+            <element signature="e#11576#11636#0" />
+            <element signature="e#11792#12179#0" />
+            <element signature="e#11932#12034#0" />
+            <element signature="e#11970#12026#0" />
+            <element signature="e#12226#12583#0" />
+            <element signature="e#12631#12988#0" />
+            <element signature="e#13030#13380#0" />
+            <element signature="e#13139#13241#0" />
+            <element signature="e#13177#13233#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/auth_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding>
+            <element signature="e#4077#6922#0" />
+            <element signature="e#4100#4273#0" />
+            <element signature="e#4146#4257#0" />
+            <element signature="e#4302#4432#0" />
+            <element signature="e#4348#4416#0" />
+            <element signature="e#4600#6909#0" />
+            <element signature="e#4631#4839#0" />
+            <element signature="e#4685#4815#0" />
+            <element signature="e#4871#5028#0" />
+            <element signature="e#4925#5004#0" />
+            <element signature="e#5288#5356#0" />
+            <element signature="e#6432#6889#0" />
+            <element signature="e#6467#6697#0" />
+            <element signature="e#6525#6669#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/user_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="e#257#346#0" />
+            <element signature="n#!!block;n#handleError#0" />
+            <element signature="e#420#544#0" />
+            <element signature="e#458#536#0" />
+            <element signature="e#562#657#0" />
+            <element signature="e#600#649#0" />
+            <element signature="e#779#869#0" />
+            <element signature="e#907#1037#0" />
+            <element signature="e#1077#1633#0" />
+            <element signature="e#1111#1373#0" />
+            <element signature="e#1412#1629#0" />
+            <element signature="e#1431#1580#0" />
+            <element signature="e#1473#1568#0" />
+            <element signature="e#1673#2886#0" />
+            <element signature="e#1760#2882#0" />
+            <element signature="e#1779#1927#0" />
+            <element signature="e#1821#1915#0" />
+            <element signature="e#1947#2056#0" />
+            <element signature="e#1989#2044#0" />
+            <element signature="e#2635#2874#0" />
+            <element signature="e#2658#2828#0" />
+            <element signature="e#2704#2812#0" />
+            <element signature="e#2926#3238#0" />
+            <element signature="e#3016#3234#0" />
+            <element signature="e#3035#3189#0" />
+            <element signature="e#3077#3177#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app.js.orig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-915" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-127">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/src/client.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="1721" column="4" selection-start-line="1721" selection-start-column="4" selection-end-line="1721" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/football_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/auth_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-341">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="63" lean-forward="true" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
         </state>
       </provider>
     </entry>

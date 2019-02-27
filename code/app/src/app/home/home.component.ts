@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     // For demo purposes, let's insert a mock username and passowrd.
     this.authenticationService.signup(this.email, this.password)
       .subscribe(result => {
+        console.log(result);
         if (result === true) {
           this.router.navigate(['/create-account']);
         }
