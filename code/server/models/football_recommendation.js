@@ -1,5 +1,6 @@
 let mongoose = require('mongoose');
 let Schema   = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 /**
  *
@@ -8,7 +9,8 @@ let Schema   = mongoose.Schema;
  * */
 
 let FootballRecommendationSchema = new Schema({
-    user_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},
+    _id: String,
+    user_type: {type: String, enum: USER_TYPES},
     author: {
         author_type: String,
         name: String,

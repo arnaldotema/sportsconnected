@@ -50,15 +50,7 @@ Service.search = function (req, res) {
     FootballUserInfoSeason
         .find(query)
         .select(select)
-        .exec(function (err, user_infos) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting user_info.',
-                    error: err
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(user_infos))));
-        });
+        .exec((err, result) => handleError(err, result, res));
 };
 
 Service.list = function (req, res) {
@@ -67,15 +59,7 @@ Service.list = function (req, res) {
         .populate('current_season')
         .populate('previous_seasons', 'stats')
         .limit(5)
-        .exec(function (err, user_infos) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when getting user_info.',
-                    error: err
-                });
-            }
-            return res.json(JSON.parse(entities.decode(JSON.stringify(user_infos))));
-        });
+        .exec((err, result) => handleError(err, result, res));
 };
 
 Service.show = function (req, res) {
@@ -207,11 +191,10 @@ Service.listMedia = function (req, res) {
 };
 
 Service.showMedia = function (req, res) {
-    let userInfoId = req.params.id;
+    let id = req.params.id;
 
     FootballMedia
         .findOne({_id: id})
-        .where("user_info_id").equals(userInfoId)
         .exec(function (err, media) {
             if (err) {
                 return res.status(500).json({
