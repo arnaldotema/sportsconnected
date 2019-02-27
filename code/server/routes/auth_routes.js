@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 
 function loginMw(user, error, res, req, next) {
 
-    if (err || !user) {
+    if (error || !user) {
         let error_message = user ? 'An Error occured' : 'No such user';
         const error = new Error(error_message);
         return next(error);
