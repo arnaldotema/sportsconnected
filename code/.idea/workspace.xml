@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/_services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/auth/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth_routes.js" afterDir="false" />
-    </list>
+    <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,20 +65,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authentication.service.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="authentication.service.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="17">
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/app/home/home.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" column="63" lean-forward="true" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+            <state relative-caret-position="202">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -249,8 +241,8 @@
         <option value="$PROJECT_DIR$/server/controllers/auth_controller.js" />
         <option value="$PROJECT_DIR$/server/auth/auth.js" />
         <option value="$PROJECT_DIR$/server/routes/auth_routes.js" />
-        <option value="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" />
         <option value="$PROJECT_DIR$/app/src/app/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/_services/authentication.service.ts" />
       </list>
     </option>
   </component>
@@ -477,12 +469,12 @@
       <workItem from="1549538048153" duration="240000" />
       <workItem from="1550184521139" duration="3253000" />
       <workItem from="1550449830572" duration="971000" />
-      <workItem from="1550691319019" duration="71408000" />
+      <workItem from="1550691319019" duration="71726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="667685000" />
+    <option name="totallyTimeSpent" value="668003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="845" extended-state="6" />
@@ -1451,10 +1443,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/src/app/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="202">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1465,10 +1457,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/home/home.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="63" lean-forward="true" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+        <state relative-caret-position="17">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
         </state>
       </provider>
     </entry>
