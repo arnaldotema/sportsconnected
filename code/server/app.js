@@ -11,6 +11,7 @@ const config = require('./config/database');
 require('./auth/auth');
 
 //Routes
+const auth = require('./routes/auth_routes');
 const users = require('./routes/user_routes');
 const players = require('./routes/player_routes');
 const global = require('./routes/global_routes');
@@ -38,11 +39,12 @@ app.use(express.static(path.join(__dirname, 'dist')));
 //Controllers
 app.use('/api/global', passport.authenticate('jwt', {session: false}), global);
 app.use('/api/players', passport.authenticate('jwt', {session: false}), players);
-app.use('/api/teams', /*passport.authenticate('jwt', { session : false }),*/ teams);
+app.use('/api/teams', passport.authenticate('jwt', { session : false }), teams);
 app.use('/api/competitions', passport.authenticate('jwt', {session: false}), competitions);
-app.use('/api/matches', /*passport.authenticate('jwt', { session : false }),*/ matches);
+app.use('/api/matches', passport.authenticate('jwt', { session : false }), matches);
 app.use('/api/storage', storage);
 app.use('/api/users', users);
+app.use('/api/auth', auth);
 
 //Database
 mongoose.connect(config.database);

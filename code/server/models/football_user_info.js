@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var FootballUserInfoSchema = new Schema({
