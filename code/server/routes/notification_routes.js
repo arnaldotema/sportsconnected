@@ -6,7 +6,8 @@ router.get('/:id/', NotificationController.show);
 router.get('/player/:player_id/', NotificationController.listPlayerNotifications);
 router.get('/team/:team_id/', NotificationController.listTeamNotifications);
 
-router.post('/', NotificationController.createNotification);
+router.post('/player/', NotificationController.createPlayerNotification);
+router.post('/team/', NotificationController.createTeamNotification);
 router.put('/:id/', NotificationController.updateNotification);
 router.delete('/:id/', NotificationController.removeNotification);
 
