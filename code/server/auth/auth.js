@@ -10,10 +10,11 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 passport.use('signup', new localStrategy({
     usernameField: 'email',
     passwordField: 'password'
-}, async (user, done) => {
+}, async (email, password, done) => {
     try {
+        let user = {email: email, password: password, user_type: 'football_user_info'};
         //Save the information provided by the user to the the database
-        const user = await UserModel.create(user);
+        user = await UserModel.create(user);
         //Send the user information to the next middleware
         return done(null, user);
     } catch (error) {
