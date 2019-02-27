@@ -58,7 +58,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>('/api/users/login', JSON.stringify({
+    return this.http.post<any>('/api/auth/login', JSON.stringify({
       email: username,
       password: password
     }), this.requestOptions)
@@ -87,8 +87,15 @@ export class AuthenticationService {
 
   signup(username: string, password: string): Observable<boolean> {
 
-    return this.http.post<any>('/api/users', JSON.stringify({email: username, password: password}), this.requestOptions)
+    let user = {
+      email: username,
+      password: password
+    };
+    return this.http.post<any>('/api/auth', user, this.requestOptions)
       .map((json: any) => {
+
+        debugger;
+
         // login successful if there's a jwt token in the response
         if (json.token) {
 
