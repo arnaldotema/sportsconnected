@@ -4,11 +4,11 @@ const USER_TYPES = require('../constants/values.js').football_user_types;
 
 /**
  *
- * Admiting that only football users can receive recommendation now.
+ * Admitting that only football users can receive recommendation now.
  *
  * */
 
-let FootballRecommendationSchema = new Schema({
+const FootballRecommendationSchema = new Schema({
     _id: String,
     user_type: {type: String, enum: USER_TYPES},
     author: {
@@ -29,4 +29,4 @@ let FootballRecommendationSchema = new Schema({
 
 FootballRecommendationSchema.statics = require('../services/football_recommendation_service');
 
-//module.exports = mongoose.model('football_recommendation', FootballRecommendationSchema);
+module.exports = mongoose.model('football_recommendation', FootballRecommendationSchema);

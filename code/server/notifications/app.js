@@ -1,7 +1,6 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const worker = require('./../services/notifications/socket_client');// Todo doesn't exist.
 const ChatMessage = require('./../models/chat_message');
 const ChatUnread = require('./../models/chat_unread');
 const ChatAttachment = require('./../models/chat_attachment');
@@ -15,8 +14,10 @@ app.get('/', function (req, res) {
 
 io.on('connection', (socket) => {
 
+    let token = socket.handshake.query.token;
+    let userId = socket.handshake.query.token;
+    console.log(userId);
 
-    let userId = socket.decoded_token.sub;
     console.log(`User ${userId} has connected.`);
 
     // Join the user's private room (by id)
@@ -47,8 +48,12 @@ io.on('connection', (socket) => {
         });
     }
 
+    socket.on('reconnect', function (socket) {
+        console.log(`user ${socket.id} trying to reconnect.`);
+    });
+
     socket.on('room:create', function (data) {
-        let userId = socket.decoded_token.sub;
+        let userId = socket.handshake.query.token;
         let participants = data.participants;
 
         ChatConversation
@@ -60,14 +65,14 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', function () {
-        console.log(`user ${socket.decoded_token.sub} disconnected`);
+        console.log(`user ${socket.id} disconnected`);
     });
 
     socket.on('message', (data) => {
 
         let user = {
             name: data.user.name,
-            _id: socket.decoded_token.sub,
+            _id: socket.handshake.query.token,
             avatar: data.user.avatar
         };
         let msg = {
@@ -82,7 +87,7 @@ io.on('connection', (socket) => {
 
     socket.on('message:read', (data) => {
 
-        let userId = socket.decoded_token.sub;
+        let userId = socket.handshake.query.token;
         let msgId = data.chat_message_id
 
         ChatUnread
