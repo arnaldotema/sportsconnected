@@ -120,7 +120,8 @@ Service.create = function (req, res) {
 Service.update = function (req, res) {
 
     let id = req.params.id;
-    let team = JSON.parse(req.body.team);
+
+    let team = req.body.team ? JSON.parse(req.body.team) : null;
     let personal_info = JSON.parse(req.body.personal_info);
     let avatar = req.files.avatar;
 

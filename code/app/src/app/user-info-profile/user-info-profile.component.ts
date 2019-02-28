@@ -470,7 +470,6 @@ export class UserInfoProfileComponent implements OnInit, AfterViewInit {
     this.userInfoService.voteForSkill(skillName, this.session_user.profile_id, this.viewModel._id)
       .subscribe((user) => {
         if (user) {
-          debugger;
           this.labels = [];
           this.labels_values = [];
           this.viewModel.skill_set = user.skill_set;

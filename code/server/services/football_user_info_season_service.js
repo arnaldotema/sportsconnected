@@ -45,13 +45,17 @@ const addCompetitionToUserInfo = function (id, competition_season, cb) {
 
 const updateUserInfoSeason = function (id, personal_info, team, cb) {
     let query = {_id: id};
+    let update;
 
-    let update = {
-        $set: {
-            personal_info: personal_info,
-            team: team
-        }
-    };
+    if (team)
+        update = {
+            $set: {
+                personal_info: personal_info,
+                team: team
+            }
+        };
+    else
+        update =  {$set: {personal_info: personal_info}};
 
     this.findOneAndUpdate(query, update, {setDefaultsOnInsert: true}, cb);
 };
