@@ -519,8 +519,6 @@ export class FilterUserInfoComponent implements OnInit {
     this.genericUserService.detailedSearchUser(this.search_fields)
       .subscribe(players => {
 
-          debugger;
-
           if (!players) {
             this.loading = false;
             this.no_results = true;

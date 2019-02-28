@@ -31,4 +31,4 @@ let FootballMediaSchema = new Schema(
 
 FootballMediaSchema.statics = require('../services/football_media_service');
 
-module.exports = mongoose.model('football_recommendation', FootballMediaSchema);
+module.exports = mongoose.model('football_media', FootballMediaSchema);

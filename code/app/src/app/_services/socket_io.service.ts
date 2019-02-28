@@ -11,15 +11,16 @@ export class SocketIOService {
 
   constructor() { }
 
-  connect(): Rx.Subject<MessageEvent> {
+  connect(token): Rx.Subject<MessageEvent> {
 
-    this.socket = io("http://199.247.15.139:5000");
+    debugger;
+    this.socket = io("localhost:5000?token="+ token);
 
     let observable = new Observable(observer => {
       this.socket.on('recommendation', (data) => {
-        console.log("Received message from Websocket Server")
+        console.log("Received message from Websocket Server");
         observer.next(data);
-      })
+      });
       return () => {
         this.socket.disconnect();
       }

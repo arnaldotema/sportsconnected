@@ -50,6 +50,7 @@
     "ng2-toastr": "^4.1.2",
     "ngx-dropzone-wrapper": "^5.3.1",
     "ngx-image-cropper": "^1.0.2",
+    "node-gyp": "^3.8.0",
     "rxjs": "^5.5.2",
     "selectize": "^0.12.4",
     "socket.io-client": "^2.1.1",

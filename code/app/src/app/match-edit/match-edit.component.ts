@@ -46,13 +46,11 @@ export class MatchEditComponent implements OnInit, AfterViewInit {
   }
 
   onPlayerDropHome(e: any, index) {
-    debugger;
     // Get the dropped data here
     this.viewModel.home_team.main_lineup[index] = e.dragData;
   }
 
   onPlayerDropAway(e: any, index) {
-    debugger;
     // Get the dropped data here
     this.viewModel.away_team.main_lineup[index] = e.dragData;
   }

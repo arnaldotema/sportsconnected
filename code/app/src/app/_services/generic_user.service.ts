@@ -1944,8 +1944,6 @@ export class GenericUserService {
   //detailedSearchUser(search_obj: Array<FilterSearch>): Observable<UserInfoSearch[]> {
   detailedSearchUser(search_obj: Array<FilterSearch>): Observable<any[]> {
 
-    debugger;
-
     return this.http.post<SearchEntityViewmodel[]>('/api/players/search', {query: search_obj}, this.requestOptions)
       .pipe(
         tap(data => console.log('POST Player Search', data)),
