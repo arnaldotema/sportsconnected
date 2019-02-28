@@ -289,7 +289,6 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
     // Todo: Saves current information to the user model and returns to user-info
     this.userInfoService.editUserInfo(this.viewModel.current_season, this.avatar)
       .subscribe(res => {
-        debugger;
         this.authenticationService.setSessionAvatar(res['personal_info'].avatar + '?random=' + _make_random_text());
         this.router.navigate(['/user-info/' + this.id]);
       })
@@ -301,7 +300,6 @@ export class EditUserInfoComponent implements OnInit, AfterViewInit {
   }
 
   goToMatch(match) {
-    debugger;
     // Todo: Discards current information and returns to user-info
     this.router.navigate(['/match/' + match.id]);
   }

@@ -36,7 +36,7 @@ var FootballUserInfoSchema = new Schema({
         }
     ],
     recommendations: {
-        list: [{type: Schema.Types.ObjectId, ref: 'recommendation'}],
+        list: [{type: Schema.Types.ObjectId, ref: 'football_recommendation'}],
         top_5: [
             {
                 author: {

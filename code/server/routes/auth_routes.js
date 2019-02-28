@@ -96,15 +96,43 @@ function loginMw(user, error, res, req, next) {
 
 
 }
+function signUpMw(user, error, res, req, next) {
+
+    if (error) return next(error);
+
+    //We don't want to store the sensitive information such as the
+    //user password in the token so we pick only the email and id
+    let body = {_id: user._id, email: user.email};
+
+    //Sign the JWT token and populate the payload with the user email and id
+    let token = jwt.sign({user: body}, 'top_secret');
+
+    // Send back the token to the user
+
+    return res.json({
+        token: token,
+        _id: body._id,
+        email: body.email,
+        profile_id: '',
+        user_type: '',
+        avatar: '',
+        name: '',
+        team_id: '',
+        team_avatar: '',
+        team_acronym: '',
+        team_name: ''
+    });
+}
 
 router.post('/',
     passport.authenticate('signup', {session: false}),
     async (req, res, next) => {
-        let user = req._doc || req.user._doc;
+
+        let user = req.user._doc;
         req.login(
             user,
             {session: false},
-            async (error) => loginMw(user, error, res, req, next));
+            async (error) => signUpMw(user, error, res, req, next));
     });
 
 router.post('/login', async (req, res, next) => {
