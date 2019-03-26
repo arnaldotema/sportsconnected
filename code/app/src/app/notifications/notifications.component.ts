@@ -20,9 +20,10 @@ export class NotificationsComponent implements OnInit {
     this.show_notifications = false;
     this.notifications_list = [];
 
-    this.notificationsService.notifications.subscribe(notification => {
-      this.notifications_list.push(notification);
-    })
+    // Todo: Coded out
+    //this.notificationsService.notifications.subscribe(notification => {
+    //  this.notifications_list.push(notification);
+    //})
   }
 
 }

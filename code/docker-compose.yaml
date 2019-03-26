@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+
+  server:
+    container_name: sc-srv
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - './server/node_modules'
+      - '.:/server'
+    ports:
+      - '3000:3000'
+    expose:
+      - '3000'
+
+  app:
+    container_name: sc-app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - './app/node_modules'
+      - '.:/app'
+    ports:
+      - '4200:4200'

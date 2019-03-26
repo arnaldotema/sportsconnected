@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { SocketIOService } from "./socket_io.service";
-import { Observable, Subject } from 'rxjs/Rx';
-import { NotificationViewModel } from "../_models/notification_viewmodel";
+import {Injectable} from '@angular/core';
+import {SocketIOService} from "./socket_io.service";
+import {Observable, Subject} from 'rxjs/Rx';
+import {NotificationViewModel} from "../_models/notification_viewmodel";
 import {AuthenticationService} from "./authentication.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
@@ -10,7 +10,6 @@ export class NotificationsService {
 
   notifications: Subject<NotificationViewModel>;
   requestOptions;
-  requestOptionsMultipart;
 
   // Our constructor calls our wsService connect method
   constructor(private socketService: SocketIOService, private authenticationService: AuthenticationService) {
@@ -21,17 +20,16 @@ export class NotificationsService {
         'jwt': authenticationService.token
       })
     };
-    this.requestOptionsMultipart = {
-      headers: new HttpHeaders({
-        'jwt': authenticationService.token
-      })
-    };
 
+    /*
+    Todo: coded out
     this.notifications = <Subject<NotificationViewModel>>socketService
-      .connect(authenticationService.token)
+      .connect(this.requestOptions)
       .map((response: any): any => {
         return response;
       })
+    */
+
   }
 
   // Our simplified interface for sending

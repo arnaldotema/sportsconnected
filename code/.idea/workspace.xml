@@ -2,23 +2,340 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dca14c7-b390-47fd-997e-e520be589481" name="Default" comment="Age and DOB for listed users;&#10;Report files added">
+      <change afterPath="$PROJECT_DIR$/app/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/controllers/socket_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/ping.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/socket_routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/test/component/get-players.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/test/end-to-end/test.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ng-chat-sandy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/addNodeIcon.a1a2d01bcd034270a3bc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/9_imgbank_tp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/Liga_Portugal_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/PDF-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/SP_Logo_Black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/SP_Logo_Black_Symbol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/SP_Logo_RVB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/SP_Logo_White.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/SP_Logo_White_Symbol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/Tacadaligalogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/arnaldo_profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/ball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/blue-longcat-spinner.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/boots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/captain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/case.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/default-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/default_badge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/defender.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/dribble.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/fast.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/flags/pt-wave.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/flags/pt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/follow-check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/follow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/goal-keeper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/js/bootstrap-filestyle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-compass-1.13.1-darwin-x64.dmg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/GNU-AGPL-3.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/MPL-2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/THIRD-PARTY-NOTICES" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/bsondump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/install_compass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongodump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongoexport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongofiles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongoimport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongoperf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongoreplay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongorestore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongos" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongostat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/mongodb-osx-x86_64-3.6.4/bin/mongotop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/passer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/recomendation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/recomendation_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/scorer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/search_players.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/soccer-court.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/strong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/valid_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/valid_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/assets/yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/backIcon.dd0baa69a69937600dc3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/connectIcon.d5267b8db2498e44bd56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/cross.260c9c6535065674bb5e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/deleteIcon.02d321edc6e03aea1675.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/editIcon.d5422321c4f6feed4081.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/inline.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/inline.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/main.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/main.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/polyfills.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/polyfills.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/scripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/styles.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/styles.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/vendor.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/dist/vendor.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Old EA Model.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/Apresentação Sketch.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/Apresentação Sketch.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/Carol-Apresentação-Players-Net.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/Cartaz-Players-Net.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/Cartaz-Players-Net.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/PS_Proposta.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/PS_Proposta.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/PlayersNet Apresentação Final.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/cartaz.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/cartaz.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Pres/~$obal and technical Knowledge Share - Mobi.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Relatório final (Delivery).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Arquitetura BE - Confirmado.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Arquitetura BE - Por confirmar Diogo.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Back-end content.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Estrutura ISEL.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Relatório Beta.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Relatório Beta.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Relatório de Progresso.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Relatório de Progresso.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Relatório final (Delivery).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/Relatório final.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/2017-08-26_13-28-38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/2017-08-26_19-34-18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/5-key-benefits-angular-typescript.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/5011-16_Banners_B2CFreeTrial-250x250.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/ace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/amarkal.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/amazonpolly-public.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/amazonpolly-public.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/angularFlipboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/aspnetFlipboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/azureFlipboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/blue.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/bucket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/codeWithDanLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/comment-reply.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/comment_count.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/comment_embed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/common.bundle.e63a160a6bfb2f2953b5059c50baaf15.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/core.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/count-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/count.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/css(1)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/dockerFlipboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/embed(1).js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/embed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/font-awesome.min(1).css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/font-awesome.min(2).css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/highlight.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/javascriptFlipboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery-migrate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery.fancybox-1.3.4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery.fancybox-1.3.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/lounge.bundle.d9de07e390c24c083ffd3c2c531d3ebf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/lounge.fda8427fde61b6f55d19bcd47d8c54b0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/lounge.load.195734f552399ce2847dc11918da175b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/mivhak.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/mivhak.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/noavatar92.7b2fde640943965cc88df0cdee365907.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/noavatar92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/nodeFlipboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/oops-sign.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/saved_resource(1).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/saved_resource(2).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/saved_resource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/slim-081711.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/style(1).css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/tc-scripts.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/tc_common.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/vs.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/wp-embed.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/5 Key Benefits of Angular and TypeScript – Code with Dan Blog_files/wp-emoji-release.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/570a1636-cb4a-4b0a-9c4f-dc6d5d568f8d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/7fa06ff7-26d0-4086-891b-9021c4fa904f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/a9e72dc0-4b35-4de4-a51c-bbebd92410de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/avatar_simple_visitor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/b096067e-fd2f-481a-9a07-519df3c5355e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/f(1).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/f.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/f9041e6d-40aa-4956-94ce-f091d079bad2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/gtm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/imageMapResizer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/platform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/saved_resource" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/saved_resource(1).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/saved_resource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/scripts.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/styles.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/zeomag-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/7 Advantages of Developing Apps with MEAN Stack_files/zeomag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/0_QFz-hOFo2KHR9x8o(1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/0_QFz-hOFo2KHR9x8o(2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/0_QFz-hOFo2KHR9x8o.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/0_j-li1BWBlNJTPoWf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/0_kJkNtQ6AX3iXvApb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/0_obovUG_2AKdjTmSp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/1_2FFv4lX7xyBQNWHRkcMYPQ.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/1_lFVg0xp4FNsptSJYfImTQg(1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/1_lFVg0xp4FNsptSJYfImTQg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/m2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/main-base.bundle.UD9x5wGgfPhS7a6Kfm_tMQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/main-branding-base.Fc55unvcP5htkyH_Q-aGIA.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/main-common-async.bundle.GTCjjHStfeHy9_YZArT-9A.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/main-notes.bundle.TSqo1WEsWMW3P-KyiFetew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Single-page application vs. multiple-page application_files/p.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/1(1).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/131.8e8819822a8cc01bc51e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/21176.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/Figure-1-Conventional-Approach.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/Figure-2-Micro-Services-Approach-.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/Monolithic-Micro-services-Architecture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/Web-Services.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/addthis_widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/beradcum.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/ckeditor.comment-reply.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/ckeditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/ckeditor.utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/dmca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-australia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-ca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-finland(1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-finland.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-india-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-india.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-sweden(1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-sweden.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-uk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/fl-usa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/functions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/genericons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/inner-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/jquery-migrate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/layers.1457328982467cc82fb7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/mi-cmmi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/nasscom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/sh.e4e8af4de595fdb10ec1459d.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/skip-link-focus-fix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/style(1).css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/wp-embed.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/wp-syntax.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/The Difference between Web Services and Micro Services _ TatvaSoft_files/wp-syntax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/-3-chunk.web.main.js.out-34-5ab3df87de2ec947.webpack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/-3-chunk.web.qtext2.js.out-34-150eb10b88fafae3.webpack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/-3-images.new_grid.profile_pic_default_small.png-26-679bc670f786484c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/-3-main.css-26-c88b286bc5fe3b60.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/-3-web.entry.js.out-34-e10672b8dc1e6782.webpack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/QX17B8fU-Vm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-qimg-a7778c3be14de84c9ba43c585c8cc83d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-thumb-10098249-50-RNsRtIlvMx5gthhivhF8Nxarazk6o6ir.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-thumb-118080497-50-hyqguscbwpevtnuhhexftsphpubzbyvt.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-thumb-189674689-50-ezvdumoszymckzfvgbwcaeqllyunwfdn.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-thumb-286935490-50-odymgmdokigubeveznuldmoyrcpmepmj.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-thumb-43244874-50-ubniipnkayldstyzampesqesgvljngxk.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/main-thumb-60874139-50-anyhvxxmrmeacuuixzqodjhddwznbpip.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/saved_resource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/sdk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/widget_iframe.1025be460f33762a866ea882e1687ff4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/What is micro-services and how is it different from web services_ - Quora_files/widgets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 .htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/13038.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/1533742866index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/4528360(1).js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/4528360.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/AngularJS_logo.svg_-700x186.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/autoptimize_af0facaa6b23590af958ea7d972d3454.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/autoptimize_d1d7726ca1deebc9e39acdd186a33aa3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/conversations-embed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/embed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/fb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/fbevents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/get-loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/leadflows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/log.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/logo143x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/wp-emoji-release.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/web info/Why Angular 5 _files/www.venturi-group.com.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/~$latório Beta.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Reports/~$latório final - Topics and Notes.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/SC Architecture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/SC EA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/SC Mongo Models .xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/SC Mongo Models.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Structure Update ( Final ).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Structure Update ( Final ).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Structure.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/Work planning PS.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PS/overview2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.angular-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.angular-cli.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/_services/generic_user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/generic_user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proxy.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/proxy.conf.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/_services/notifications.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/notifications.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/_services/socket_io.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/_services/socket_io.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/edit-user-info/edit-user-info.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/filter-user-info/filter-user-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/filter-user-info/filter-user-info.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/match-edit/match-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/match-edit/match-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/user-info-profile/user-info-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/user-info-profile/user-info-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/user_info_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user_info_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_media.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_recommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_recommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/football_user_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/notifications/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/notifications/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_user_info_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/football_user_info_season_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/notifications/notifications.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/notifications/notifications.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/notifications/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/global_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/global_routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,59 +346,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
+      <file leaf-file-name="proxy.conf.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/proxy.conf.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth_routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/auth_routes.js">
+      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="135" column="7" selection-start-line="135" selection-start-column="7" selection-end-line="135" selection-end-column="7" />
-              <folding>
-                <element signature="n#!!block;n#loginMw#0" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="socket_io.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/_services/socket_io.service.ts">
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/app/_services/notifications.service.ts">
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-info-profile.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/user-info-profile/user-info-profile.component.ts">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="27" column="72" lean-forward="true" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#145#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -98,26 +412,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addSkillVote</find>
-      <find>'/api/players'</find>
-      <find>/api/players'</find>
-      <find>findOneAndUpdate</find>
-      <find>.create(</find>
-      <find>updatePersonalInfo</find>
-      <find>user_type:</find>
-      <find>FootballMedia</find>
-      <find>team_id: {type: Schema.Types.ObjectId, ref: 'football_user_info'},</find>
-      <find>user_type: {type: String, enum: USER_TYPES},</find>
-      <find>var mongoose = require('mongoose');</find>
-      <find>var Schema = mongoose.Schema;</find>
-      <find>var</find>
-      <find>/api/users</find>
-      <find>.signup</find>
-      <find>/api/auth</find>
-      <find>aggregate_profile</find>
-      <find>api/auth</find>
-      <find>sign</find>
-      <find>proxy.conf.json</find>
       <find>module.exports = mongoose.model('football_recommendation</find>
       <find>recomm</find>
       <find>recommendation</find>
@@ -125,13 +419,31 @@
       <find>socket</find>
       <find>api/players</find>
       <find>worker</find>
-      <find>debugger;</find>
       <find>socket.decoded_token.sub</find>
       <find>socket.query.token</find>
+      <find>socket.handshake.query.token</find>
+      <find>authenticate</find>
+      <find>passport</find>
+      <find>http</find>
+      <find>notifications/</find>
+      <find>§</find>
+      <find>index.</find>
+      <find>dist</find>
+      <find>outDir</find>
+      <find>IBB</find>
+      <find>build</find>
+      <find>sockets(</find>
+      <find>sockets</find>
+      <find>NotificationsService</find>
+      <find>debugger;</find>
+      <find>servç</find>
+      <find>let</find>
+      <find>@angular-devkit/core</find>
+      <find>/api</find>
+      <find>3000</find>
+      <find>ajv</find>
     </findStrings>
     <replaceStrings>
-      <replace>&lt;div&gt;&lt;img class =&quot;icon&quot; src=&quot;/assets/ball.png&quot;&gt;{{player.goals.length}}&lt;/div</replace>
-      <replace>length}}&lt;/div&gt;</replace>
       <replace>followers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],</replace>
       <replace>; // ._doc</replace>
       <replace>https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/13781724_10205190140152111_6495749405499267870_n.jpg?_nc_cat=106&amp;oh=c66e24c7f9b1ce391584fa0400b9414b&amp;oe=5C545952</replace>
@@ -160,6 +472,8 @@
       <replace>FootballNotification</replace>
       <replace>socket.query.token</replace>
       <replace>socket.handshake.query.token</replace>
+      <replace>socket.decoded_token.secret</replace>
+      <replace>const</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/Angular/APP BoilerPlate/src/app/_modals</dir>
@@ -169,6 +483,8 @@
       <dir>$PROJECT_DIR$/</dir>
       <dir>$PROJECT_DIR$/server</dir>
       <dir>$PROJECT_DIR$/app</dir>
+      <dir>$PROJECT_DIR$/app/src</dir>
+      <dir>$PROJECT_DIR$/app/</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -178,29 +494,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/socketcluster/worker.js" />
-        <option value="$PROJECT_DIR$/server/socketcluster/server.js" />
-        <option value="$PROJECT_DIR$/server/gary_processor/gary_processor.js" />
-        <option value="$PROJECT_DIR$/server/controllers/chat_controller.js" />
-        <option value="$PROJECT_DIR$/server/routes/global_routes.js" />
-        <option value="$PROJECT_DIR$/server/services/chat_message_service.js" />
-        <option value="$PROJECT_DIR$/server/models/chat_message.js" />
-        <option value="$PROJECT_DIR$/server/models/chat_attachment.js" />
-        <option value="$PROJECT_DIR$/server/services/chat_attachment_service.js" />
-        <option value="$PROJECT_DIR$/server/services/notifications/socket_client.js" />
-        <option value="$PROJECT_DIR$/server/services/notifications/notifications_service.js" />
-        <option value="$PROJECT_DIR$/server/models/chat_unread.js" />
-        <option value="$PROJECT_DIR$/server/services/chat_unread_service.js" />
-        <option value="$PROJECT_DIR$/server/models/chat_conversation.js" />
-        <option value="$PROJECT_DIR$/server/services/chat_conversation_service.js" />
-        <option value="$PROJECT_DIR$/server/routes/match_routes.js" />
-        <option value="$PROJECT_DIR$/server/controllers/match_controller.js" />
-        <option value="$PROJECT_DIR$/server/services/football_match_service.js" />
-        <option value="$PROJECT_DIR$/server/routes/player_routes.js" />
-        <option value="$PROJECT_DIR$/server/routes/team_routes.js" />
-        <option value="$PROJECT_DIR$/server/services/football_team_service.js" />
-        <option value="$PROJECT_DIR$/server/services/football_team_season_service.js" />
-        <option value="$PROJECT_DIR$/server/controllers/team_controller.js" />
         <option value="$PROJECT_DIR$/server/services/football_media_service.js" />
         <option value="$PROJECT_DIR$/server/models/football_team_season.js" />
         <option value="$PROJECT_DIR$/server/models/football_user_info_season.js" />
@@ -210,7 +503,6 @@
         <option value="$PROJECT_DIR$/server/services/football_notification_service.js" />
         <option value="$PROJECT_DIR$/server/routes/notification_routes.js" />
         <option value="$PROJECT_DIR$/server/controllers/notification_controller.js" />
-        <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/server/routes/user_routes.js" />
         <option value="$PROJECT_DIR$/server/models/football_user.js" />
         <option value="$PROJECT_DIR$/server/controllers/user_controller.js" />
@@ -226,9 +518,33 @@
         <option value="$PROJECT_DIR$/server/services/football_user_info_season_service.js" />
         <option value="$PROJECT_DIR$/server/controllers/user_info_controller.js" />
         <option value="$PROJECT_DIR$/app/src/app/user-info-profile/user-info-profile.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/_services/notifications.service.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/_services/socket_io.service.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/_services/user_info.service.ts" />
         <option value="$PROJECT_DIR$/server/notifications/app.js" />
+        <option value="$PROJECT_DIR$/server/routes/socket_routes.js" />
+        <option value="$PROJECT_DIR$/server/controllers/socket_controller.js" />
+        <option value="$PROJECT_DIR$/app/package-lock.json" />
+        <option value="$PROJECT_DIR$/app/tsconfig.json" />
+        <option value="$PROJECT_DIR$/app/src/tsconfig.spec.json" />
+        <option value="$PROJECT_DIR$/app/src/tsconfig.app.json" />
+        <option value="$PROJECT_DIR$/app/out-tsc/spec/test.js.map" />
+        <option value="$PROJECT_DIR$/app/.angular-cli.json" />
+        <option value="$PROJECT_DIR$/app/src/app/_services/socket_io.service.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/_services/notifications.service.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/notifications/notifications.component.ts" />
+        <option value="$PROJECT_DIR$/server/app.js" />
+        <option value="$PROJECT_DIR$/server/routes/ping.js" />
+        <option value="$PROJECT_DIR$/server/routes/global_routes.js" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/app/package.json" />
+        <option value="$PROJECT_DIR$/app/proxy.conf.json" />
+        <option value="$PROJECT_DIR$/docker-compose.yaml" />
+        <option value="$PROJECT_DIR$/server/Dockerfile" />
+        <option value="$PROJECT_DIR$/app/Dockerfile" />
+        <option value="$PROJECT_DIR$/test/end-to-end/test.spec.js" />
+        <option value="$PROJECT_DIR$/test/component/get-players.spec.js" />
+        <option value="$PROJECT_DIR$/server/package.json" />
+        <option value="$PROJECT_DIR$/server/.travis.yml" />
       </list>
     </option>
   </component>
@@ -245,22 +561,276 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/app/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-colors/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/argparse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-flatten/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-union/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/assign-symbols/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/atob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/braces/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/browser-stdout/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cache-base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/class-utils/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/class-utils/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/collection-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/color-convert/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/color-name/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/copy-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cross-spawn/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/decamelize/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/decode-uri-component/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-properties/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/detect-file/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/diff/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/end-of-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es-abstract/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es-to-primitive/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/escape-string-regexp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/esprima/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/execa/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-tilde/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extend-shallow/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/findup-sync/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/flat/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/flat/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fragment-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/function-bind/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-caller-file/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/global-modules/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/global-prefix/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/growl/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-symbols/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/he/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/homedir-polyfill/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/invert-kv/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-callable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-data-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-date-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-number/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-windows/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isexe/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/js-yaml/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lcid/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/locate-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/log-symbols/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-age-cleaner/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mem/node_modules/mimic-fn/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mem/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mixin-deep/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mkdirp/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mocha/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mocha/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nice-try/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/node-environment-flags/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/npm-run-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-keys/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object.assign/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object.getownpropertydescriptors/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object.pick/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/os-locale/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-defer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-finally/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-is-promise/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-limit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-locate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-try/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/parse-passwd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pascalcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-key/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/posix-character-classes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pump/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regex-not/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeat-element/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/require-directory/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/require-main-filename/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/resolve-dir/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/resolve-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ret/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safe-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/shebang-command/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/shebang-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-util/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-util/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map-resolve/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/split-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sprintf-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/static-extend/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/static-extend/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/strip-eof/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-object-path/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-object-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/urix/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/use/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/which-module/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/which/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrap-ansi/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrap-ansi/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrap-ansi/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrap-ansi/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrap-ansi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/y18n/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs-parser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs-unparser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs/package.json" />
       <path value="$PROJECT_DIR$/server/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="638" />
+    <option name="width" value="1080" />
     <option name="height" value="845" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+              <item name="server" type="cbb8eebc:String" user="server" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="code" type="cbb8eebc:String" user="code" />
+              <item name="server" type="cbb8eebc:String" user="server" />
+              <item name="auth" type="cbb8eebc:String" user="auth" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,55 +843,11 @@
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
             <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="user-info-profile" type="cbb8eebc:String" user="user-info-profile" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-              <item name="server" type="cbb8eebc:String" user="server" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="code" type="cbb8eebc:String" user="code" />
-              <item name="server" type="cbb8eebc:String" user="server" />
-              <item name="notifications" type="cbb8eebc:String" user="notifications" />
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,7 +861,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="9.10.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="/usr/local/bin/nodemon" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -347,16 +873,17 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/server/routes" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/server/services" />
       <recent name="$PROJECT_DIR$/Website/services/storage" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/controllers" />
-      <recent name="$PROJECT_DIR$/server/routes" />
-      <recent name="$PROJECT_DIR$/server/services" />
-      <recent name="$PROJECT_DIR$/server/models" />
-      <recent name="$PROJECT_DIR$/server/services/notifications" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -371,7 +898,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.socket">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -394,8 +921,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="server" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/Server" />
-    <configuration name="socket" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/server/notifications" />
+    <configuration name="server" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/Server" />
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -432,16 +958,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <list>
-      <item itemvalue="Node.js.server" />
-      <item itemvalue="Node.js.socket" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.socket" />
-        <item itemvalue="Node.js.server" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -488,15 +1004,19 @@
       <workItem from="1550184521139" duration="3253000" />
       <workItem from="1550449830572" duration="971000" />
       <workItem from="1550691319019" duration="71726000" />
+      <workItem from="1552383662542" duration="1806000" />
+      <workItem from="1553342252652" duration="328000" />
+      <workItem from="1553344819445" duration="12596000" />
+      <workItem from="1553544837463" duration="1310000" />
+      <workItem from="1553628986667" duration="564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="679974000" />
+    <option name="totallyTimeSpent" value="714431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="845" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -507,51 +1027,28 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="NativeScript" order="8" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.4773022" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
-      <window_info anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" weight="0.5239948" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
-      <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" visible="true" weight="0.44098574" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.20555556" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
-      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.39040208" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" weight="0.51880676" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="NativeScript" order="8" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.38125" weight="0.26588845" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32935917" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4984375" weight="0.32858595" />
+      <window_info active="true" anchor="bottom" x="1287" y="10" width="1920" height="376" id="Terminal" order="13" sideWeight="0.4340278" visible="true" weight="0.41893643" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32935917" />
       <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.34583333" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.19739583" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5659722" weight="0.51880676" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32935917" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.37708333" weight="0.44228274" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,44 +1113,38 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/controllers/user_info_controller.js</url>
           <line>131</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="305" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/controllers/user_info_controller.js</url>
           <line>150</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="306" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/controllers/user_info_controller.js</url>
           <line>146</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="307" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/notifications/app.js</url>
-          <line>50</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="309" />
+          <url>file://$PROJECT_DIR$/server/controllers/socket_controller.js</url>
+          <line>15</line>
+          <option name="timeStamp" value="321" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/notifications/app.js</url>
-          <line>69</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="311" />
+          <url>file://$PROJECT_DIR$/server/controllers/socket_controller.js</url>
+          <line>11</line>
+          <option name="timeStamp" value="322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/notifications/app.js</url>
-          <line>18</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="315" />
+          <url>file://$PROJECT_DIR$/server/controllers/socket_controller.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="326" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="316" />
+      <option name="time" value="328" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -725,388 +1216,52 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/models/football_user_info.js">
+    <entry file="file://$PROJECT_DIR$/app/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="e#409#736#0" />
-            <element signature="e#410#735#0" />
-            <element signature="e#681#1008#0" />
-            <element signature="e#682#1007#0" />
-            <element signature="e#659#976#0" />
-            <element signature="e#669#970#0" />
-            <element signature="e#731#959#0" />
-            <element signature="e#823#1114#0" />
-            <element signature="e#829#1481#0" />
-            <element signature="e#916#1474#0" />
-            <element signature="e#930#1464#0" />
-            <element signature="e#956#1420#0" />
-            <element signature="e#1178#1401#0" />
-            <element signature="e#1501#1657#0" />
-            <element signature="e#1511#1651#0" />
-            <element signature="e#1972#2056#0" />
-            <element signature="e#1942#1989#0" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_team.js">
+    <entry file="file://$PROJECT_DIR$/server/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding>
-            <element signature="e#366#501#0" />
-            <element signature="e#367#500#0" />
-            <element signature="e#524#1110#0" />
-            <element signature="e#1008#1072#0" />
-            <element signature="e#1009#1071#0" />
-            <element signature="e#1283#1931#0" />
-            <element signature="e#1299#1385#0" />
-            <element signature="e#1402#1924#0" />
-            <element signature="e#1416#1914#0" />
-            <element signature="e#1442#1869#0" />
-            <element signature="e#1627#1850#0" />
-            <element signature="e#1951#2035#0" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/History.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="130">
-            <caret line="47" column="85" selection-start-line="47" selection-start-column="85" selection-end-line="47" selection-end-column="85" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/server/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_match_service.js">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="68" selection-end-column="98" />
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/storage/image_storage_service.js">
+    <entry file="file://$PROJECT_DIR$/server/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
+    <entry file="file://$PROJECT_DIR$/app/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/team_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="18" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/storage_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_team_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="71" column="45" lean-forward="true" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_media_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="52" selection-start-line="52" selection-end-line="54" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#migrateUserInfoMediaToMediaDocument#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_notification_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_notification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/notification_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/notification_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="75" lean-forward="true" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/football_user_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/user_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/out-tsc/spec/app/home/home.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/out-tsc/spec/app/_services/user.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="46" column="43" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/create-account/create-account.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/_services/user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="57" column="50" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/out-tsc/spec/app/_services/authentication.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/passport/lib/http/request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/auth_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="e#4077#6922#0" />
-            <element signature="e#4100#4273#0" />
-            <element signature="e#4146#4257#0" />
-            <element signature="e#4302#4432#0" />
-            <element signature="e#4348#4416#0" />
-            <element signature="e#4600#6909#0" />
-            <element signature="e#4631#4839#0" />
-            <element signature="e#4685#4815#0" />
-            <element signature="e#4871#5028#0" />
-            <element signature="e#4925#5004#0" />
-            <element signature="e#5288#5356#0" />
-            <element signature="e#6432#6889#0" />
-            <element signature="e#6467#6697#0" />
-            <element signature="e#6525#6669#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/user_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#257#346#0" />
-            <element signature="n#!!block;n#handleError#0" />
-            <element signature="e#420#544#0" />
-            <element signature="e#458#536#0" />
-            <element signature="e#562#657#0" />
-            <element signature="e#600#649#0" />
-            <element signature="e#779#869#0" />
-            <element signature="e#907#1037#0" />
-            <element signature="e#1077#1633#0" />
-            <element signature="e#1111#1373#0" />
-            <element signature="e#1412#1629#0" />
-            <element signature="e#1431#1580#0" />
-            <element signature="e#1473#1568#0" />
-            <element signature="e#1673#2886#0" />
-            <element signature="e#1760#2882#0" />
-            <element signature="e#1779#1927#0" />
-            <element signature="e#1821#1915#0" />
-            <element signature="e#1947#2056#0" />
-            <element signature="e#1989#2044#0" />
-            <element signature="e#2635#2874#0" />
-            <element signature="e#2658#2828#0" />
-            <element signature="e#2704#2812#0" />
-            <element signature="e#2926#3238#0" />
-            <element signature="e#3016#3234#0" />
-            <element signature="e#3035#3189#0" />
-            <element signature="e#3077#3177#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-147" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js.orig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/src/client.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="1721" column="4" selection-start-line="1721" selection-start-column="4" selection-end-line="1721" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/proxy.conf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_media.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_recommendation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" column="89" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/player_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/football_user_info_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="70" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/user_info_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="150" column="12" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
-          <folding>
-            <element signature="e#531#655#0" />
-            <element signature="e#569#647#0" />
-            <element signature="e#673#768#0" />
-            <element signature="e#711#760#0" />
-            <element signature="e#911#1029#0" />
-            <element signature="e#1098#1346#0" />
-            <element signature="e#1272#1340#0" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1117,84 +1272,304 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/_services/user_info.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="567" column="87" lean-forward="true" selection-start-line="567" selection-start-column="68" selection-end-line="567" selection-end-column="87" />
-          <folding>
-            <element signature="e#711#15594#0" />
-            <element signature="e#15627#18799#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/services/football_user_info_season_service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!block;n#addMedia#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/auth/auth.js">
+    <entry file="file://$PROJECT_DIR$/server/node_modules/passport/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="114">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/auth_routes.js">
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/authentication.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="135" column="7" selection-start-line="135" selection-start-column="7" selection-end-line="135" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!block;n#loginMw#0" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/_models/session_user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/user_info.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/app/user-info-profile/user-info-profile.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="27" column="72" lean-forward="true" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#145#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="441">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/passport/lib/middleware/authenticate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="173" column="10" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="92" selection-start-line="54" selection-start-column="92" selection-end-line="54" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/auth_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/notifications/app.js" />
+    <entry file="file://$PROJECT_DIR$/app/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/node_modules/rxjs/src/Subject.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="51" column="2" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/competition_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/team.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="1419" selection-start-line="1419" selection-end-line="1424" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/dist/assets/js/bootstrap.js" />
     <entry file="file://$PROJECT_DIR$/app/src/app/_services/socket_io.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/notifications/app.js">
+    <entry file="file://$PROJECT_DIR$/app/src/app/notifications/notifications.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/socket_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/socket_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/notifications/notifications_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/app/_services/notifications.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="303">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/global_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/global_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile" />
+    <entry file="file://$PROJECT_DIR$/app/src/app/_services/match.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="770" column="76" selection-start-line="770" selection-start-column="76" selection-end-line="770" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.angular-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-659">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41441">
+          <caret line="2485" column="16" selection-start-line="2485" selection-start-column="16" selection-end-line="2485" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/tsconfig.spec.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="949">
+          <caret line="129" column="12" lean-forward="true" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/tsconfig.app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1645">
+          <caret line="90" column="58" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/end-to-end/test.test.js" />
+    <entry file="file://$PROJECT_DIR$/test/component/get-players.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proxy.conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <last-edited>jquery-3.2.1</last-edited>
@@ -1210,6 +1585,18 @@
       <state key="JdkListConfigurable.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>code</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
