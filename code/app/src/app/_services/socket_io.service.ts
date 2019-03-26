@@ -13,8 +13,7 @@ export class SocketIOService {
 
   connect(token): Rx.Subject<MessageEvent> {
 
-    debugger;
-    this.socket = io("localhost:5000?token="+ token);
+    this.socket = io("localhost:3000", token);
 
     let observable = new Observable(observer => {
       this.socket.on('recommendation', (data) => {
