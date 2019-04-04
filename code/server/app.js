@@ -47,7 +47,7 @@ sockets(io);
 
 
 //Controllers
-app.use('/api/ping', global);
+app.use('/api/healthcheck', global);
 app.use('/api/global', passport.authenticate('jwt', {session: false}), ping);
 app.use('/api/players', passport.authenticate('jwt', {session: false}), players);
 app.use('/api/teams', passport.authenticate('jwt', {session: false}), teams);
