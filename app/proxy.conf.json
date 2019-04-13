@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "sc-srv",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
