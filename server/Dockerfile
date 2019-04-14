@@ -9,3 +9,4 @@ RUN npm install
 
 # add server
 COPY . /server
+EXPOSE 3000
