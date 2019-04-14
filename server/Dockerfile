@@ -10,4 +10,3 @@ RUN npm install
 # add server
 COPY . /server
 
-RUN npm run build
