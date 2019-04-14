@@ -7,6 +7,7 @@ WORKDIR /server
 COPY package.json /server/package.json
 RUN npm install
 
+EXPOSE 3000
+
 # add server
 COPY . /server
-EXPOSE 3000
