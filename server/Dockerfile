@@ -11,3 +11,4 @@ EXPOSE 3000
 
 # add server
 COPY . /server
+RUN pm2 start app.js
