@@ -1,6 +1,6 @@
-const logger = require('../logging');
-const _ = require('underscore');
+const logger = require('../logging')
+const _ = require('underscore')
 
-let Service = {};
+let Service = {}
 
-module.exports = Service;
+module.exports = Service
