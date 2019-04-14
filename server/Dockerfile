@@ -5,8 +5,7 @@ WORKDIR /server
 
 # install and cache app dependencies
 COPY package.json /server/package.json
+RUN npm install
 
 # add server
 COPY . /server
-
-RUN npm install
