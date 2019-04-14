@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-let Service = {};
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+let Service = {}
 
-module.exports = Service;
+module.exports = Service

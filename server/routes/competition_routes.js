@@ -1,17 +1,17 @@
-var express = require('express');
-var router = express.Router();
-var CompetitionController = require('../controllers/competition_controller.js');
+var express = require('express')
+var router = express.Router()
+var CompetitionController = require('../controllers/competition_controller.js')
 
-router.get('/:id/teams', CompetitionController.teams);
+router.get('/:id/teams', CompetitionController.teams)
 
-router.get('/:id', CompetitionController.show);
+router.get('/:id', CompetitionController.show)
 
-router.get('/', CompetitionController.list);
+router.get('/', CompetitionController.list)
 
-router.post('/', CompetitionController.create);
+router.post('/', CompetitionController.create)
 
-router.put('/:id', CompetitionController.update);
+router.put('/:id', CompetitionController.update)
 
-router.delete('/:id', CompetitionController.remove);
+router.delete('/:id', CompetitionController.remove)
 
-module.exports = router;
+module.exports = router

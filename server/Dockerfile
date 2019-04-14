@@ -9,5 +9,4 @@ RUN npm install
 
 # add server
 COPY . /server
-
-ENTRYPOINT ["npm", "start"]
+EXPOSE 3000

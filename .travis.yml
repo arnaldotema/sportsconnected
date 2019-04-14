@@ -1,0 +1,30 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
+
+services:
+  - docker
+
+before_install:
+  - docker build -t arnaldolucientrindade/sportsconnected ./server
+
+script:
+  - docker run arnaldolucientrindade/sportsconnected npm run test --
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "sports-connected"
+  env: "SportsConnected-env"
+  bucket_name: "elasticbeanstalk-us-east-2-697350137372"
+  bucket_path: "sports-connected"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
