@@ -11,4 +11,3 @@ EXPOSE 3000
 
 # add server
 COPY . /server
-RUN npm start
