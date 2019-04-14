@@ -10,4 +10,4 @@ RUN npm install
 # add server
 COPY . /server
 
-ENTRYPOINT ["npm", "build"]
+RUN npm run build
