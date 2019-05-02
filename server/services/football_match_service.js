@@ -1,5 +1,5 @@
-'use strict'
-const _ = require('underscore')
+'use strict';
+const _ = require('underscore');
 
 function getLastPlayedMatchesByTeamId(teamId, nMatches, cb) {
   this.find({
@@ -23,8 +23,8 @@ function getLastPlayedMatchesByTeamId(teamId, nMatches, cb) {
     .limit(parseInt(nMatches))
     .sort({ date: 'desc' })
     .exec((err, matches) => {
-      cb(err, matches)
-    })
+      cb(err, matches);
+    });
 }
 
 function getNextMatchesByTeamId(teamId, nMatches, cb) {
@@ -52,8 +52,8 @@ function getNextMatchesByTeamId(teamId, nMatches, cb) {
     .limit(parseInt(nMatches))
     .sort({ date: 'asc' })
     .exec((err, matches) => {
-      cb(err, matches)
-    })
+      cb(err, matches);
+    });
 }
 
 function getMissingMatches(matchIds, cb) {
@@ -65,24 +65,24 @@ function getMissingMatches(matchIds, cb) {
       matches = _.difference(
         matchIds,
         matches.map(match => match.external_ids.zerozero)
-      )
+      );
     }
-    cb(err, matches)
-  })
+    cb(err, matches);
+  });
 }
 
 function updateAndReturnByZeroZeroId(zerozero_id, match, cb) {
-  const query = { 'external_ids.zerozero': zerozero_id }
+  const query = { 'external_ids.zerozero': zerozero_id };
   this.findOneAndUpdate(
     query,
     match,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
+  );
 }
 
 function insertFutureMaches(matches, cb) {
-  this.insertMany(matches, cb)
+  this.insertMany(matches, cb);
 }
 
 module.exports = {
@@ -91,4 +91,4 @@ module.exports = {
   getNextMatchesByTeamId,
   getMissingMatches,
   insertFutureMaches,
-}
+};

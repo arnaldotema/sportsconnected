@@ -1,13 +1,13 @@
-const logger = require('../logging')
-const _ = require('underscore')
+const logger = require('../logging');
+const _ = require('underscore');
 
 function addMedia(id, media, cb) {
   let update = {
     $addToSet: {
       media: media,
     },
-  }
-  this.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb)
+  };
+  this.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
 }
 
 function getMissingTeams(teamIds, cb) {
@@ -19,17 +19,17 @@ function getMissingTeams(teamIds, cb) {
       teams = _.difference(
         teamIds,
         teams.map(team => team.external_ids.zerozero)
-      )
+      );
     }
-    cb(err, teams)
-  })
+    cb(err, teams);
+  });
 }
 
 function addCompetitionToTeam(id, competition_season, cb) {
   let query = {
     _id: id,
     'standings.id': { $ne: competition_season._id },
-  }
+  };
 
   let update = {
     $addToSet: {
@@ -40,16 +40,16 @@ function addCompetitionToTeam(id, competition_season, cb) {
         avatar: competition_season.avatar,
       },
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb)
+  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 }
 
 function addPlayerToTeam(id, user_info_season, cb) {
   let query = {
     _id: id,
     'players.id': { $ne: user_info_season._id },
-  }
+  };
 
   let update = {
     $addToSet: {
@@ -64,9 +64,9 @@ function addPlayerToTeam(id, user_info_season, cb) {
         positions: user_info_season.personal_info.positions,
       },
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb)
+  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 }
 
 function getMatchTeamsByZeroZeroId(season_id, homeTeam, awayTeam, cb) {
@@ -91,14 +91,14 @@ function getMatchTeamsByZeroZeroId(season_id, homeTeam, awayTeam, cb) {
         ],
       },
     },
-  ]
+  ];
 
-  this.aggregate(query, cb)
+  this.aggregate(query, cb);
 }
 
 function updateTeamsStandings(match, nestedMatch, cb) {
-  const home_goals = match.home_team.goals.length
-  const away_goals = match.away_team.goals.length
+  const home_goals = match.home_team.goals.length;
+  const away_goals = match.away_team.goals.length;
 
   this.bulkWrite(
     [
@@ -149,42 +149,42 @@ function updateTeamsStandings(match, nestedMatch, cb) {
     ],
     {},
     cb
-  )
+  );
 }
 
 function updateAndReturnByZeroZeroId(zerozero_id, season_id, team_season, cb) {
   const query = {
     'external_ids.zerozero': zerozero_id,
     season_id: season_id,
-  }
+  };
 
   this.findOneAndUpdate(
     query,
     team_season,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
+  );
 }
 
 function getByIds(ids, cb) {
   const query = {
     _id: { $in: ids },
-  }
+  };
 
-  this.find(query, cb)
+  this.find(query, cb);
 }
 
 function updateTeamsPositions(competition_season, seasons, cb) {
-  let operations = []
+  let operations = [];
 
-  let placements = {}
+  let placements = {};
 
   competition_season.standings.forEach(function(team, index) {
-    placements[team.id] = index + 1
-  })
+    placements[team.id] = index + 1;
+  });
 
   seasons.forEach(function(season) {
-    let team_season = season._doc
+    let team_season = season._doc;
 
     operations.push({
       updateOne: {
@@ -198,10 +198,10 @@ function updateTeamsPositions(competition_season, seasons, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
-  this.bulkWrite(operations, {}, cb)
+  this.bulkWrite(operations, {}, cb);
 }
 
 module.exports = {
@@ -214,4 +214,4 @@ module.exports = {
   updateAndReturnByZeroZeroId,
   getByIds,
   updateTeamsPositions,
-}
+};

@@ -1,25 +1,25 @@
-'use strict'
+'use strict';
 
-const logger = require('../logging')
-const _ = require('underscore')
-const TeamSeason = require('./../models/football_team_season')
+const logger = require('../logging');
+const _ = require('underscore');
+const TeamSeason = require('./../models/football_team_season');
 
 function updateAndReturnByZeroZeroId(zerozero_id, user_info, cb) {
-  const query = { 'external_ids.zerozero': zerozero_id }
+  const query = { 'external_ids.zerozero': zerozero_id };
 
   this.findOneAndUpdate(
     query,
     user_info,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
+  );
 }
 
 function updateCurrentSeasons(seasons, cb) {
-  let operations = []
+  let operations = [];
 
   seasons.forEach(function(season) {
-    let team_season = season._doc
+    let team_season = season._doc;
 
     operations.push({
       updateOne: {
@@ -32,10 +32,10 @@ function updateCurrentSeasons(seasons, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
-  this.bulkWrite(operations, {}, cb)
+  this.bulkWrite(operations, {}, cb);
 }
 
 function addMedia(id, media, cb) {
@@ -57,19 +57,19 @@ function addMedia(id, media, cb) {
     * */
 
   this.findOne({ _id: id }, (err, userInfo) => {
-    let teamSeasonId = userInfo.current_season._id
+    let teamSeasonId = userInfo.current_season._id;
 
     TeamSeason.addMedia(media, teamSeasonId, (err, teamSeason) => {
       if (err) {
-        cb(err)
+        cb(err);
       }
-      cb(teamSeason)
-    })
-  })
+      cb(teamSeason);
+    });
+  });
 }
 
 module.exports = {
   updateAndReturnByZeroZeroId,
   addMedia,
   updateCurrentSeasons,
-}
+};

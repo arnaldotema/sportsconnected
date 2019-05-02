@@ -1,25 +1,25 @@
-const express = require('express')
-const passport = require('passport')
-const FootballUserInfo = require('../models/football_user_info.js')
-const FootballTeam = require('../models/football_team.js')
-const router = express.Router()
-const AuthController = require('../controllers/auth_controller.js')
-const Entities = require('html-entities').AllHtmlEntities
-const entities = new Entities()
-const jwt = require('jsonwebtoken')
+const express = require('express');
+const passport = require('passport');
+const FootballUserInfo = require('../models/football_user_info.js');
+const FootballTeam = require('../models/football_team.js');
+const router = express.Router();
+const AuthController = require('../controllers/auth_controller.js');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
+const jwt = require('jsonwebtoken');
 
 function loginMw(user, error, res, req, next) {
   if (error || !user) {
-    let error_message = user ? 'An Error occured' : 'No such user'
-    const error = new Error(error_message)
-    return next(error)
+    let error_message = user ? 'An Error occured' : 'No such user';
+    const error = new Error(error_message);
+    return next(error);
   }
 
   try {
     // TODO: Change this
     // This implementation makes us change this code scope whenever there's a new user type.
 
-    user = JSON.parse(entities.decode(JSON.stringify(user)))
+    user = JSON.parse(entities.decode(JSON.stringify(user)));
 
     // Obtaining more user information to keep in the JWT
 
@@ -27,12 +27,12 @@ function loginMw(user, error, res, req, next) {
       case 'football_team':
         FootballTeam.findOne({ _id: user.profile_id })
           .populate('current_season')
-          .exec(get_profile_info)
-        break
+          .exec(get_profile_info);
+        break;
       default:
         FootballUserInfo.findOne({ _id: user.profile_id })
           .populate('current_season')
-          .exec(get_profile_info)
+          .exec(get_profile_info);
     }
 
     function get_profile_info(err, result) {
@@ -40,15 +40,15 @@ function loginMw(user, error, res, req, next) {
         return res.status(500).json({
           message: 'Error when getting profile.',
           error: err,
-        })
+        });
       }
       if (!result) {
         return res.status(404).json({
           message: 'No such profile',
-        })
+        });
       }
 
-      let profile_info = JSON.parse(entities.decode(JSON.stringify(result)))
+      let profile_info = JSON.parse(entities.decode(JSON.stringify(result)));
 
       // We don't want to store the sensitive information
       // such as the password in the JWT
@@ -71,10 +71,10 @@ function loginMw(user, error, res, req, next) {
         team_name: profile_info.current_season.team
           ? profile_info.current_season.team.name
           : 'n/a',
-      }
+      };
 
       //Sign the JWT token and populate the payload with the user email, id and etc
-      const token = jwt.sign({ user: body }, 'top_secret')
+      const token = jwt.sign({ user: body }, 'top_secret');
       //Send back the token to the user
       return res.json({
         token: token,
@@ -88,21 +88,21 @@ function loginMw(user, error, res, req, next) {
         team_avatar: body.team_avatar,
         team_acronym: body.team_acronym,
         team_name: body.team_name,
-      })
+      });
     }
   } catch (error) {
-    return next(error)
+    return next(error);
   }
 }
 function signUpMw(user, error, res, req, next) {
-  if (error) return next(error)
+  if (error) return next(error);
 
   //We don't want to store the sensitive information such as the
   //user password in the token so we pick only the email and id
-  let body = { _id: user._id, email: user.email }
+  let body = { _id: user._id, email: user.email };
 
   //Sign the JWT token and populate the payload with the user email and id
-  let token = jwt.sign({ user: body }, 'top_secret')
+  let token = jwt.sign({ user: body }, 'top_secret');
 
   // Send back the token to the user
 
@@ -118,28 +118,28 @@ function signUpMw(user, error, res, req, next) {
     team_avatar: '',
     team_acronym: '',
     team_name: '',
-  })
+  });
 }
 
 router.post(
   '/',
   passport.authenticate('signup', { session: false }),
   async (req, res, next) => {
-    let user = req.user._doc
+    let user = req.user._doc;
     req.login(user, { session: false }, async error =>
       signUpMw(user, error, res, req, next)
-    )
+    );
   }
-)
+);
 
 router.post('/login', async (req, res, next) => {
   passport.authenticate('login', async (err, user, info) => {
     req.login(user, { session: false }, async error =>
       loginMw(user, error, res, req, next)
-    )
-  })(req, res, next)
-})
+    );
+  })(req, res, next);
+});
 
-router.post('/:id/aggregate-profile', AuthController.aggregate_profile)
+router.post('/:id/aggregate-profile', AuthController.aggregate_profile);
 
-module.exports = router
+module.exports = router;

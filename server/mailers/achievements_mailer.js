@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport(
   {
@@ -13,13 +13,13 @@ let transporter = nodemailer.createTransport(
   {
     from: 'SportsConnected <arnaldo.tema@sportsconnected.pt>',
   }
-)
+);
 
-let Service = {}
+let Service = {};
 
 Service.ownAchievementMail = function(user_info, achievement) {
-  const own_name = user_info.current_season.personal_info.name
-  const own_email = user_info.user_id ? user_info.user_id.email : ''
+  const own_name = user_info.current_season.personal_info.name;
+  const own_email = user_info.user_id ? user_info.user_id.email : '';
 
   // Message object
   let message = {
@@ -51,21 +51,21 @@ Service.ownAchievementMail = function(user_info, achievement) {
         cid: 'nyan@example.com', // should be as unique as possible
       },
     ],
-  }
+  };
 
   transporter.sendMail(message, (error, info) => {
     if (error) {
-      console.log('Error occurred')
-      console.log(error.message)
-      return process.exit(1)
+      console.log('Error occurred');
+      console.log(error.message);
+      return process.exit(1);
     }
 
-    console.log('Message sent successfully!')
-    console.log(nodemailer.getTestMessageUrl(info))
+    console.log('Message sent successfully!');
+    console.log(nodemailer.getTestMessageUrl(info));
 
     // only needed when using pooled connections
-    transporter.close()
-  })
-}
+    transporter.close();
+  });
+};
 
-module.exports = Service
+module.exports = Service;

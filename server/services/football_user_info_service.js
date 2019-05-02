@@ -1,32 +1,32 @@
-const logger = require('../logging')
-const _ = require('underscore')
-const FootballUserInfoSeason = require('./../models/football_user_info_season')
+const logger = require('../logging');
+const _ = require('underscore');
+const FootballUserInfoSeason = require('./../models/football_user_info_season');
 
 function _updateRegex(regex) {
   if (!regex) {
-    regex = '##'
+    regex = '##';
   }
 
-  regex = regex.slice(0, -1) // remove the last character "#"
+  regex = regex.slice(0, -1); // remove the last character "#"
 
-  regex += '!' //close game partition
+  regex += '!'; //close game partition
 
-  return regex + '#' //close regex
+  return regex + '#'; //close regex
 }
 
-let Service = {}
+let Service = {};
 
 Service.updateRecommendationRegex = function(user_info, cb) {
-  const query = { _id: user_info._id }
+  const query = { _id: user_info._id };
 
   const update = {
     $set: {
       actions_regex: _updateRegex(user_info.actions_regex),
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, { upsert: true }, cb)
-}
+  this.findOneAndUpdate(query, update, { upsert: true }, cb);
+};
 
 Service.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
   let query = [
@@ -76,38 +76,38 @@ Service.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
         ],
       },
     },
-  ]
+  ];
 
-  this.aggregate(query, cb)
-}
+  this.aggregate(query, cb);
+};
 
 Service.getUserInfosByUpdatedAt = function(updated_at, cb) {
   const query = {
     updated_at: { $gt: updated_at },
-  }
+  };
 
   this.find(query)
     .populate('current_season')
     .populate('user_id')
-    .exec(cb)
-}
+    .exec(cb);
+};
 
 Service.updateAndReturnByZeroZeroId = function(zerozero_id, user_info, cb) {
-  const query = { 'external_ids.zerozero': zerozero_id }
+  const query = { 'external_ids.zerozero': zerozero_id };
 
   this.findOneAndUpdate(
     query,
     user_info,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
-}
+  );
+};
 
 Service.updateUserInfosCurrentSeason = function(seasons, cb) {
-  let operations = []
+  let operations = [];
 
   seasons.forEach(function(season) {
-    let user_info_season = season._doc
+    let user_info_season = season._doc;
 
     operations.push({
       updateOne: {
@@ -123,37 +123,37 @@ Service.updateUserInfosCurrentSeason = function(seasons, cb) {
           },
         },
       },
-    })
-  })
-  this.bulkWrite(operations, {}, cb)
-}
+    });
+  });
+  this.bulkWrite(operations, {}, cb);
+};
 
 Service.addRecommendation = function(recommendation, user_info_id, cb) {
-  let recommendation_id = recommendation._id
+  let recommendation_id = recommendation._id;
 
   const query = {
     _id: user_info_id,
-  }
+  };
 
   const update = {
     $push: {
       'recommendations.list': recommendation_id,
       'recommendations.top_5': recommendation,
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, cb)
-}
+  this.findOneAndUpdate(query, update, cb);
+};
 
-Service.editRecommendation = function(recommendation, user_info_id, cb) {}
+Service.editRecommendation = function(recommendation, user_info_id, cb) {};
 
-Service.deleteRecommendation = function(recommendation, user_info_id, cb) {}
+Service.deleteRecommendation = function(recommendation, user_info_id, cb) {};
 
 Service.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
   const query = {
     _id: user_info_id,
     'skill_set.name': { $ne: skill_name },
-  }
+  };
 
   const update = {
     $addToSet: {
@@ -161,25 +161,25 @@ Service.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
         name: skill_name,
       },
     },
-  }
+  };
 
   this.update(query, update, (err, result) => {
-    if (err) cb(err)
+    if (err) cb(err);
 
     const query = {
       _id: user_info_id,
       'skill_set.name': skill_name,
-    }
+    };
 
     const update = {
       $push: {
         'skill_set.$.endorsements': author_user_id,
       },
-    }
+    };
 
-    this.findOneAndUpdate(query, update, { new: true }, cb)
-  })
-}
+    this.findOneAndUpdate(query, update, { new: true }, cb);
+  });
+};
 
 Service.setAllSkillVotes = function(cb) {
   let start_up_arrays = [
@@ -213,21 +213,21 @@ Service.setAllSkillVotes = function(cb) {
       avatar: '/assets/defender.png',
       endorsements: [],
     },
-  ]
+  ];
 
-  let conditions = { type: 1 }
+  let conditions = { type: 1 };
   let update = {
     $set: {
       skill_set: start_up_arrays,
     },
-  }
-  let options = { multi: true }
+  };
+  let options = { multi: true };
 
-  this.update(conditions, update, options, cb)
-}
+  this.update(conditions, update, options, cb);
+};
 
 Service.follow = function(follower_id, user_info_id, cb) {
-  let operations = []
+  let operations = [];
 
   operations.push({
     updateOne: {
@@ -240,7 +240,7 @@ Service.follow = function(follower_id, user_info_id, cb) {
         },
       },
     },
-  })
+  });
 
   operations.push({
     updateOne: {
@@ -253,13 +253,13 @@ Service.follow = function(follower_id, user_info_id, cb) {
         },
       },
     },
-  })
+  });
 
-  this.bulkWrite(operations, {}, cb)
-}
+  this.bulkWrite(operations, {}, cb);
+};
 
 Service.unfollow = function(unfollower_id, user_info_id, cb) {
-  let operations = []
+  let operations = [];
 
   operations.push({
     updateOne: {
@@ -272,7 +272,7 @@ Service.unfollow = function(unfollower_id, user_info_id, cb) {
         },
       },
     },
-  })
+  });
 
   operations.push({
     updateOne: {
@@ -285,13 +285,13 @@ Service.unfollow = function(unfollower_id, user_info_id, cb) {
         },
       },
     },
-  })
+  });
 
-  this.bulkWrite(operations, {}, cb)
-}
+  this.bulkWrite(operations, {}, cb);
+};
 
 Service.updateRegexNewMatch = function(regexes, cb) {
-  let operations = []
+  let operations = [];
 
   Object.keys(regexes).forEach(function(user_info_id) {
     operations.push({
@@ -305,17 +305,17 @@ Service.updateRegexNewMatch = function(regexes, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
-  this.bulkWrite(operations, {}, cb)
-}
+  this.bulkWrite(operations, {}, cb);
+};
 
 Service.addAchievementToUserInfo = function(achievement, user_info, cb) {
   const query = {
     _id: user_info._id,
     'achievements.id': { $ne: achievement._id },
-  }
+  };
 
   const update = {
     $push: {
@@ -325,10 +325,10 @@ Service.addAchievementToUserInfo = function(achievement, user_info, cb) {
         avatar: achievement.avatar,
       },
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, cb)
-}
+  this.findOneAndUpdate(query, update, cb);
+};
 
 Service.addMedia = function(id, media, cb) {
   /*
@@ -349,19 +349,19 @@ Service.addMedia = function(id, media, cb) {
     * */
 
   this.findOne({ _id: id }, (err, userInfo) => {
-    let userInfoSeasonId = userInfo.current_season._id
+    let userInfoSeasonId = userInfo.current_season._id;
 
     FootballUserInfoSeason.addMedia(
       media,
       userInfoSeasonId,
       (err, userInfoSeason) => {
         if (err) {
-          cb(err)
+          cb(err);
         }
-        cb(userInfoSeason)
+        cb(userInfoSeason);
       }
-    )
-  })
-}
+    );
+  });
+};
 
-module.exports = Service
+module.exports = Service;

@@ -1,11 +1,11 @@
-const mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 const addTeamToCompetition = function(id, team_season, cb) {
   query = {
     _id: id,
     'standings.id': { $ne: team_season._id },
-  }
+  };
 
   update = {
     $push: {
@@ -16,16 +16,16 @@ const addTeamToCompetition = function(id, team_season, cb) {
         avatar: team_season.avatar,
       },
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb)
-}
+  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+};
 
 const addUserInfoToCompetition = function(id, user_info_season, cb) {
   query = {
     _id: id,
     'stats.id': { $ne: user_info_season._id },
-  }
+  };
 
   update = {
     $push: {
@@ -38,16 +38,16 @@ const addUserInfoToCompetition = function(id, user_info_season, cb) {
         positions: user_info_season.personal_info.positions,
       },
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb)
-}
+  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+};
 
 const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
-  const home_goals = match.home_team.goals.length
-  const away_goals = match.away_team.goals.length
+  const home_goals = match.home_team.goals.length;
+  const away_goals = match.away_team.goals.length;
 
-  let operations = []
+  let operations = [];
 
   //standings
 
@@ -71,7 +71,7 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
         },
       },
     },
-  })
+  });
 
   operations.push({
     updateOne: {
@@ -93,7 +93,7 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
         },
       },
     },
-  })
+  });
 
   //stats
 
@@ -118,8 +118,8 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   match.away_team.main_lineup.forEach(function(player) {
     operations.push({
@@ -142,8 +142,8 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   match.home_team.reserves.forEach(function(player) {
     operations.push({
@@ -166,8 +166,8 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   match.away_team.reserves.forEach(function(player) {
     operations.push({
@@ -190,8 +190,8 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   //sort standings and match
 
@@ -210,29 +210,29 @@ const updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
         },
       },
     },
-  })
+  });
 
-  this.bulkWrite(operations, {}, cb)
-}
+  this.bulkWrite(operations, {}, cb);
+};
 
 const updateAndReturnByZeroZeroId = function(
   zerozero_id,
   competition_season,
   cb
 ) {
-  const query = { 'external_ids.zerozero': zerozero_id }
+  const query = { 'external_ids.zerozero': zerozero_id };
 
   this.findOneAndUpdate(
     query,
     competition_season,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
-}
+  );
+};
 
 const getById = function(id, cb) {
-  this.findById(id, cb)
-}
+  this.findById(id, cb);
+};
 
 module.exports = {
   addTeamToCompetition: addTeamToCompetition,
@@ -240,4 +240,4 @@ module.exports = {
   updateAndReturnByZeroZeroId: updateAndReturnByZeroZeroId,
   updateCompetitionStandingsAndStats: updateCompetitionStandingsAndStats,
   getById: getById,
-}
+};

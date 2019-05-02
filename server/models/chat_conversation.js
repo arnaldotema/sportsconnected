@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var ChatConversationSchema = new Schema({
   user_id: String,
@@ -25,8 +25,8 @@ var ChatConversationSchema = new Schema({
   removed: [{ type: Schema.Types.ObjectId, ref: 'football_user_info' }],
   created_at: Date,
   updated_at: Date,
-})
+});
 
-ChatConversationSchema.statics = require('../services/chat_conversation_service')
+ChatConversationSchema.statics = require('../services/chat_conversation_service');
 
-module.exports = mongoose.model('chat_conversation', ChatConversationSchema)
+module.exports = mongoose.model('chat_conversation', ChatConversationSchema);

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var FootballCompetitionSchema = new Schema({
   name: String,
@@ -14,11 +14,11 @@ var FootballCompetitionSchema = new Schema({
   external_ids: {
     zerozero: { type: Number, required: true, unique: true, index: true },
   },
-})
+});
 
-FootballCompetitionSchema.statics = require('../services/football_competition_service')
+FootballCompetitionSchema.statics = require('../services/football_competition_service');
 
 module.exports = mongoose.model(
   'football_competition',
   FootballCompetitionSchema
-)
+);

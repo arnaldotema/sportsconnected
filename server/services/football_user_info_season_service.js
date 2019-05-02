@@ -1,12 +1,12 @@
-const logger = require('../logging')
+const logger = require('../logging');
 
 function addMedia(id, media, cb) {
   let update = {
     $addToSet: {
       media: media,
     },
-  }
-  this.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb)
+  };
+  this.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
 }
 
 function createNew(user_info_id, season_id, personal_info, team, cb) {
@@ -15,16 +15,16 @@ function createNew(user_info_id, season_id, personal_info, team, cb) {
     season_id: season_id,
     personal_info: personal_info,
     team: team,
-  }
+  };
 
-  this.create({ user_info_season }, cb)
+  this.create({ user_info_season }, cb);
 }
 
 const addCompetitionToUserInfo = function(id, competition_season, cb) {
   let query = {
     _id: id,
     'stats.id': { $ne: competition_season._id },
-  }
+  };
 
   let update = {
     $addToSet: {
@@ -36,14 +36,14 @@ const addCompetitionToUserInfo = function(id, competition_season, cb) {
         avatar: competition_season.avatar,
       },
     },
-  }
+  };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb)
-}
+  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+};
 
 const updateUserInfoSeason = function(id, personal_info, team, cb) {
-  let query = { _id: id }
-  let update
+  let query = { _id: id };
+  let update;
 
   if (team)
     update = {
@@ -51,11 +51,11 @@ const updateUserInfoSeason = function(id, personal_info, team, cb) {
         personal_info: personal_info,
         team: team,
       },
-    }
-  else update = { $set: { personal_info: personal_info } }
+    };
+  else update = { $set: { personal_info: personal_info } };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb)
-}
+  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+};
 
 const getMatchUserInfosByZeroZeroId = function(
   season_id,
@@ -116,10 +116,10 @@ const getMatchUserInfosByZeroZeroId = function(
         ],
       },
     },
-  ]
+  ];
 
-  this.aggregate(query, cb)
-}
+  this.aggregate(query, cb);
+};
 
 const updateAndReturnByZeroZeroId = function(
   zerozero_id,
@@ -130,21 +130,21 @@ const updateAndReturnByZeroZeroId = function(
   const query = {
     'external_ids.zerozero': zerozero_id,
     season_id: season_id,
-  }
+  };
 
   this.findOneAndUpdate(
     query,
     user_info_season,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
-}
+  );
+};
 
 const updateUserInfosStats = function(match, nestedMatch, cb) {
-  const home_goals = match.home_team.goals.length
-  const away_goals = match.away_team.goals.length
+  const home_goals = match.home_team.goals.length;
+  const away_goals = match.away_team.goals.length;
 
-  let operations = []
+  let operations = [];
 
   match.home_team.main_lineup.forEach(function(player) {
     operations.push({
@@ -171,8 +171,8 @@ const updateUserInfosStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   match.away_team.main_lineup.forEach(function(player) {
     operations.push({
@@ -199,8 +199,8 @@ const updateUserInfosStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   match.home_team.reserves.forEach(function(player) {
     operations.push({
@@ -227,8 +227,8 @@ const updateUserInfosStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
   match.away_team.reserves.forEach(function(player) {
     operations.push({
@@ -255,19 +255,19 @@ const updateUserInfosStats = function(match, nestedMatch, cb) {
           },
         },
       },
-    })
-  })
+    });
+  });
 
-  this.bulkWrite(operations, {}, cb)
-}
+  this.bulkWrite(operations, {}, cb);
+};
 
 const getByTeamSeasonId = function(id, cb) {
   const query = {
     'team.id': id,
-  }
+  };
 
-  this.find(query, cb)
-}
+  this.find(query, cb);
+};
 
 module.exports = {
   createNew,
@@ -278,4 +278,4 @@ module.exports = {
   updateUserInfosStats,
   getByTeamSeasonId,
   updateUserInfoSeason,
-}
+};

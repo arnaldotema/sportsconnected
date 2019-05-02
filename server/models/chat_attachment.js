@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var ChatMessageSchema = new Schema({
   sender: {
@@ -23,8 +23,8 @@ var ChatMessageSchema = new Schema({
   text: String,
   deleted: { type: Boolean, required: true, index: true },
   archived: { type: Boolean, required: true, index: true },
-})
+});
 
-ChatMessageSchema.statics = require('../services/chat_attachment_service')
+ChatMessageSchema.statics = require('../services/chat_attachment_service');
 
-module.exports = mongoose.model('chat_attachment', ChatMessageSchema)
+module.exports = mongoose.model('chat_attachment', ChatMessageSchema);

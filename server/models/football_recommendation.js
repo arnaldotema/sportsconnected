@@ -1,6 +1,6 @@
-let mongoose = require('mongoose')
-let Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 /**
  *
@@ -25,11 +25,11 @@ const FootballRecommendationSchema = new Schema({
     },
   },
   text: String,
-})
+});
 
-FootballRecommendationSchema.statics = require('../services/football_recommendation_service')
+FootballRecommendationSchema.statics = require('../services/football_recommendation_service');
 
 module.exports = mongoose.model(
   'football_recommendation',
   FootballRecommendationSchema
-)
+);

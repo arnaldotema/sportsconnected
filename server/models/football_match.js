@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var FootballMatchSchema = new Schema({
   played: { type: Boolean, required: true, index: true },
@@ -204,8 +204,8 @@ var FootballMatchSchema = new Schema({
       },
     ],
   },
-})
+});
 
-FootballMatchSchema.statics = require('../services/football_match_service')
+FootballMatchSchema.statics = require('../services/football_match_service');
 
-module.exports = mongoose.model('football_match', FootballMatchSchema)
+module.exports = mongoose.model('football_match', FootballMatchSchema);
