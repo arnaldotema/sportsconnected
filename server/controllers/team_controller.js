@@ -1,8 +1,8 @@
-var TeamModel = require('../models/football_team.js')
-var TeamModelSeason = require('../models/football_team_season')
-var FootballMedia = require('../models/football_media')
-const Entities = require('html-entities').AllHtmlEntities
-const entities = new Entities()
+var TeamModel = require('../models/football_team.js');
+var TeamModelSeason = require('../models/football_team_season');
+var FootballMedia = require('../models/football_media');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 /**
  * team_controller.js
  *
@@ -19,18 +19,18 @@ module.exports = {
       personal_info: 1,
       team: 1,
       stats: 1,
-    }
+    };
 
-    let query = {}
+    let query = {};
 
     req.body.query.forEach(function(filter) {
-      query[filter.search_item] = {}
-      query[filter.search_item][filter.selected_filter] = filter.selected_value
+      query[filter.search_item] = {};
+      query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
       if (filter.selected_filter == '$regex') {
-        query[filter.search_item]['$options'] = 'i'
+        query[filter.search_item]['$options'] = 'i';
       }
-    })
+    });
 
     TeamModel.find(query)
       .select(select)
@@ -39,10 +39,10 @@ module.exports = {
           return res.status(500).json({
             message: 'Error when getting teams.',
             error: err,
-          })
+          });
         }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(teams))))
-      })
+        return res.json(JSON.parse(entities.decode(JSON.stringify(teams))));
+      });
   },
 
   /**
@@ -58,17 +58,17 @@ module.exports = {
           return res.status(500).json({
             message: 'Error when getting Team.',
             error: err,
-          })
+          });
         }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(Teams))))
-      })
+        return res.json(JSON.parse(entities.decode(JSON.stringify(Teams))));
+      });
   },
 
   /**
    * TeamController.show()
    */
   show: function(req, res) {
-    var id = req.params.id
+    var id = req.params.id;
     TeamModel.findOne({ _id: id })
       .populate('current_season')
       .populate('previous_seasons', 'standings')
@@ -77,33 +77,35 @@ module.exports = {
           return res.status(500).json({
             message: 'Error when getting Team.',
             error: err,
-          })
+          });
         }
         if (!Team) {
           return res.status(404).json({
             message: 'No such Team',
-          })
+          });
         }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(Team))))
-      })
+        return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
+      });
   },
 
   players: function(req, res) {
-    var id = req.params.id
+    var id = req.params.id;
     TeamModelSeason.findOne({ _id: id }).exec(function(err, Team) {
       if (err) {
         return res.status(500).json({
           message: 'Error when getting Team.',
           error: err,
-        })
+        });
       }
       if (!Team) {
         return res.status(404).json({
           message: 'No such Team',
-        })
+        });
       }
-      return res.json(JSON.parse(entities.decode(JSON.stringify(Team.players))))
-    })
+      return res.json(
+        JSON.parse(entities.decode(JSON.stringify(Team.players)))
+      );
+    });
   },
 
   /**
@@ -114,77 +116,77 @@ module.exports = {
       user_id: req.body.user_id,
       name: req.body.name,
       admins: req.body.admins,
-    })
+    });
 
     Team.save(function(err, Team) {
       if (err) {
         return res.status(500).json({
           message: 'Error when creating Team',
           error: err,
-        })
+        });
       }
-      return res.status(201).json(Team)
-    })
+      return res.status(201).json(Team);
+    });
   },
 
   /**
    * TeamController.update()
    */
   update: function(req, res) {
-    var id = req.params.id
+    var id = req.params.id;
     TeamModel.findOne({ _id: id }, function(err, Team) {
       if (err) {
         return res.status(500).json({
           message: 'Error when getting Team',
           error: err,
-        })
+        });
       }
       if (!Team) {
         return res.status(404).json({
           message: 'No such Team',
-        })
+        });
       }
 
-      Team.user_info_id = req.body.user_id ? req.body.user_id : Team.user_id
-      Team.name = req.body.name ? req.body.name : Team.name
-      Team.admins = req.body.admins ? req.body.admins : Team.admins
+      Team.user_info_id = req.body.user_id ? req.body.user_id : Team.user_id;
+      Team.name = req.body.name ? req.body.name : Team.name;
+      Team.admins = req.body.admins ? req.body.admins : Team.admins;
 
       Team.save(function(err, Team) {
         if (err) {
           return res.status(500).json({
             message: 'Error when updating Team.',
             error: err,
-          })
+          });
         }
 
-        return res.json(Team)
-      })
-    })
+        return res.json(Team);
+      });
+    });
   },
 
   /**
    * TeamController.remove()
    */
   remove: function(req, res) {
-    var id = req.params.id
+    var id = req.params.id;
     TeamModel.findByIdAndRemove(id, function(err, Team) {
       if (err) {
         return res.status(500).json({
           message: 'Error when deleting the Team.',
           error: err,
-        })
+        });
       }
-      return res.status(204).json()
-    })
+      return res.status(204).json();
+    });
   },
 
   // Media
 
   listMedia: function(req, res) {
-    let id = req.params.id
+    let id = req.params.id;
 
-    let offset = parseInt(req.query.offset || '0')
-    let size = parseInt(req.query.size || '100')
+    let offset = parseInt(req.query.offset || '0');
+    let size = parseInt(req.query.size || '100');
 
     FootballMedia.find()
       .where('team_id')
@@ -196,14 +198,14 @@ module.exports = {
           return res.status(500).json({
             message: 'Error when getting media.',
             error: err,
-          })
+          });
         }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(media))))
-      })
+        return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
+      });
   },
 
   showMedia: function(req, res) {
-    let id = req.params.id
+    let id = req.params.id;
 
     FootballMedia.findOne({ _id: id })
       .where('team_id')
@@ -213,37 +215,37 @@ module.exports = {
           return res.status(500).json({
             message: 'Error when getting media.',
             error: err,
-          })
+          });
         }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(media))))
-      })
+        return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
+      });
   },
 
   createMedia: function(req, res) {
-    let userInfoId = req.params.id
-    let media = req.body.media
+    let userInfoId = req.params.id;
+    let media = req.body.media;
 
     if (!media) {
       return res.status(404).json({
         message: 'Missing media object',
-      })
+      });
     }
     if (!media.season_id) {
       return res.status(404).json({
         message: 'Media object requires season id.',
-      })
+      });
     }
 
-    media.user_info_id = user_info_id
-    media.user_type = 'football_team'
-    let newMedia = new FootballMedia(media)
+    media.user_info_id = user_info_id;
+    media.user_type = 'football_team';
+    let newMedia = new FootballMedia(media);
 
     newMedia.save(function(err, createdMedia) {
       if (err) {
         return res.status(500).json({
           message: 'Error when creating media',
           error: err,
-        })
+        });
       }
 
       TeamModel.addMedia(createdMedia, userInfoId, (err, team) => {
@@ -251,25 +253,25 @@ module.exports = {
           return res.status(500).json({
             message: 'Error when updating team_season',
             error: err,
-          })
+          });
         }
         if (!team) {
           return res.status(404).json({
             message: 'No such team',
-          })
+          });
         }
-      })
-    })
+      });
+    });
   },
 
   updateMedia: function(req, res) {
-    let mediaId = req.params.mediaId
-    let media = req.body.media
+    let mediaId = req.params.mediaId;
+    let media = req.body.media;
 
     if (!media) {
       return res.status(404).json({
         message: 'Missing media object',
-      })
+      });
     }
 
     FootballMedia.update(mediaId, media, (err, media) => {
@@ -277,23 +279,23 @@ module.exports = {
         return res.status(500).json({
           message: 'Error when getting media.',
           error: err,
-        })
+        });
       }
-      return res.json(JSON.parse(entities.decode(JSON.stringify(media))))
-    })
+      return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
+    });
   },
 
   removeMedia: function(req, res) {
-    let mediaId = req.params.mediaId
+    let mediaId = req.params.mediaId;
 
     FootballMedia.findByIdAndRemove(mediaId, err => {
       if (err) {
         return res.status(500).json({
           message: 'Error when deleting the media.',
           error: err,
-        })
+        });
       }
-      return res.status(204).json()
-    })
+      return res.status(204).json();
+    });
   },
-}
+};

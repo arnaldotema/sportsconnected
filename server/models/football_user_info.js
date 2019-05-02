@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var FootballUserInfoSchema = new Schema({
   user_id: { type: Schema.Types.ObjectId, ref: 'football_user' },
@@ -80,13 +80,13 @@ var FootballUserInfoSchema = new Schema({
   external_ids: {
     zerozero: { type: Number, required: true, unique: true, index: true },
   },
-})
+});
 
 FootballUserInfoSchema.pre('save', function(next) {
-  this.updated_at = Date.now()
-  next()
-})
+  this.updated_at = Date.now();
+  next();
+});
 
-FootballUserInfoSchema.statics = require('../services/football_user_info_service')
+FootballUserInfoSchema.statics = require('../services/football_user_info_service');
 
-module.exports = mongoose.model('football_user_info', FootballUserInfoSchema)
+module.exports = mongoose.model('football_user_info', FootballUserInfoSchema);

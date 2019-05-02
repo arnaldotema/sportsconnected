@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-var Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var FootballTeamSeasonSchema = new Schema({
   team_id: { type: Schema.Types.ObjectId, ref: 'football_team' },
@@ -110,11 +110,11 @@ var FootballTeamSeasonSchema = new Schema({
   external_ids: {
     zerozero: { type: Number, required: true, index: true },
   },
-})
+});
 
-FootballTeamSeasonSchema.statics = require('../services/football_team_season_service')
+FootballTeamSeasonSchema.statics = require('../services/football_team_season_service');
 
 module.exports = mongoose.model(
   'football_team_season',
   FootballTeamSeasonSchema
-)
+);

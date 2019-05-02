@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
 function createNotification(notification, cb) {
   this.create(
     notification,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
+  );
 }
 
 function getAll(cb) {
-  this.find({}, cb)
+  this.find({}, cb);
 }
 
 function update(id, notification, cb) {
@@ -18,11 +18,11 @@ function update(id, notification, cb) {
     notification,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
-  )
+  );
 }
 
 module.exports = {
   update,
   getAll,
   createNotification,
-}
+};

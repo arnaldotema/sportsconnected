@@ -1,6 +1,6 @@
-let mongoose = require('mongoose')
-let Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 let FootballMediaSchema = new Schema({
   _id: String,
@@ -31,8 +31,8 @@ let FootballMediaSchema = new Schema({
       },
     ],
   },
-})
+});
 
-FootballMediaSchema.statics = require('../services/football_media_service')
+FootballMediaSchema.statics = require('../services/football_media_service');
 
-module.exports = mongoose.model('football_media', FootballMediaSchema)
+module.exports = mongoose.model('football_media', FootballMediaSchema);

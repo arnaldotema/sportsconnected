@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const USER_TYPES = require('../constants/values.js').football_user_types
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').football_user_types;
 
 var FootballNotificationSchema = new Schema({
   author: {
@@ -17,11 +17,11 @@ var FootballNotificationSchema = new Schema({
     _id: { type: Schema.Types.ObjectId, ref: 'football_media' },
     avatar: String,
   },
-})
+});
 
-FootballNotificationSchema.statics = require('../services/football_notification_service')
+FootballNotificationSchema.statics = require('../services/football_notification_service');
 
 module.exports = mongoose.model(
   'football_notification',
   FootballNotificationSchema
-)
+);
