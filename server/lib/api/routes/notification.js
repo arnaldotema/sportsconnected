@@ -14,4 +14,4 @@ router.post('/team/', NotificationController.createTeamNotification);
 router.put('/:id/', NotificationController.updateNotification);
 router.delete('/:id/', NotificationController.removeNotification);
 
-exports = router;
+module.exports = router;

@@ -1,10 +1,8 @@
-const Entities = require('html-entities').AllHtmlEntities;
-const entities = new Entities();
 const ChatMessage = require('../../models/chat_message');
 const ChatUnread = require('../../models/chat_unread');
 const ChatConversation = require('../../models/chat_conversation');
 
-exports = io => {
+module.exports = io => {
   io.sockets
     .on('connection', () => {
       /*Todo*/

@@ -16,4 +16,4 @@ router.put('/:id', MatchController.update);
 
 router.delete('/:id', MatchController.remove);
 
-exports = router;
+module.exports = router;

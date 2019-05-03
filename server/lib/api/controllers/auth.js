@@ -6,13 +6,11 @@ const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 const jwt = require('jsonwebtoken');
 
-let Service = {};
-
-Service.signup = function(req, res) {
+exports.signup = function(req, res) {
   return res.json({ message: 'Signed UP!' });
 };
 
-Service.aggregate_profile = function(req, res) {
+exports.aggregate_profile = function(req, res) {
   let id = req.params.id;
   let profile_id = req.body.id;
   let user_session = {};
@@ -90,5 +88,3 @@ Service.aggregate_profile = function(req, res) {
       });
     });
 };
-
-exports = Service;

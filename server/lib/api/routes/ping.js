@@ -4,4 +4,4 @@ const GlobalController = require('../controllers/global.js');
 
 router.post('/ping', GlobalController.search);
 
-exports = router;
+module.exports = router;

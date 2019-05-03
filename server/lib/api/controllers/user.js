@@ -1,15 +1,12 @@
-var FootballUser = require('../../models/football_user.js');
-var FootballUserInfo = require('../../models/football_user_info.js');
+const FootballUser = require('../../models/football_user.js');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
-const jwt = require('jsonwebtoken');
 
 /**
  * user.js
  *
  * @description :: Server-side logic for managing Users.
  */
-let Service = {};
 
 function handleError(err, result, res) {
   if (err) {
@@ -26,20 +23,18 @@ function handleError(err, result, res) {
   return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
 }
 
-// User
-
-Service.list = function(req, res) {
+exports.list = function(req, res) {
   FootballUser.find().exec((err, result) => handleError(err, result, res));
 };
 
-Service.show = function(req, res) {
+exports.show = function(req, res) {
   let id = req.params.id;
   FootballUser.findOne({ _id: id }).exec((err, result) =>
     handleError(err, result, res)
   );
 };
 
-Service.create = function(req, res) {
+exports.create = function(req, res) {
   let User = new FootballUser({
     email: req.body.email,
     password: req.body.password,
@@ -60,7 +55,7 @@ Service.create = function(req, res) {
   });
 };
 
-Service.update = function(req, res) {
+exports.update = function(req, res) {
   let id = req.params.id;
   FootballUser.findOne({ _id: id }, function(err, User) {
     if (err) {
@@ -99,8 +94,8 @@ Service.update = function(req, res) {
   });
 };
 
-Service.remove = function(req, res) {
-  var id = req.params.id;
+exports.remove = function(req, res) {
+  const id = req.params.id;
   FootballUser.findByIdAndRemove(id, function(err, User) {
     if (err) {
       return res.status(500).json({
@@ -111,5 +106,3 @@ Service.remove = function(req, res) {
     return res.status(204).json();
   });
 };
-
-exports = Service;

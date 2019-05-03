@@ -1,12 +1,10 @@
-var FootballUserInfo = require('../../models/football_user_info');
-var FootballMedia = require('../../models/football_media');
-var FootballRecommendation = require('../../models/football_recommendation');
-var FootballUserInfoSeason = require('../../models/football_user_info_season');
-var ImageStorageService = require('../services/storage/image');
+const FootballUserInfo = require('../../models/football_user_info');
+const FootballMedia = require('../../models/football_media');
+const FootballRecommendation = require('../../models/football_recommendation');
+const FootballUserInfoSeason = require('../../models/football_user_info_season');
+const ImageStorageService = require('../services/storage/image');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
-
-let Service = {};
 
 // Helpers
 
@@ -27,7 +25,7 @@ function handleError(err, result, res) {
 
 // User
 
-Service.search = function(req, res) {
+exports.search = function(req, res) {
   let select = {
     _id: 1,
     user_info_id: 1,
@@ -42,7 +40,7 @@ Service.search = function(req, res) {
     query[filter.search_item] = {};
     query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
-    if (filter.selected_filter == '$regex') {
+    if (filter.selected_filter === '$regex') {
       query[filter.search_item]['$options'] = 'i';
     }
   });
@@ -52,7 +50,7 @@ Service.search = function(req, res) {
     .exec((err, result) => handleError(err, result, res));
 };
 
-Service.list = function(req, res) {
+exports.list = function(req, res) {
   FootballUserInfo.find()
     .populate('current_season')
     .populate('previous_seasons', 'stats')
@@ -60,7 +58,7 @@ Service.list = function(req, res) {
     .exec((err, result) => handleError(err, result, res));
 };
 
-Service.show = function(req, res) {
+exports.show = function(req, res) {
   let id = req.params.id;
   FootballUserInfo.findOne({ _id: id })
     .populate('current_season')
@@ -69,7 +67,7 @@ Service.show = function(req, res) {
     .exec((err, result) => handleError(err, result, res));
 };
 
-Service.create = function(req, res) {
+exports.create = function(req, res) {
   let personal_info = JSON.parse(req.body.personal_info);
   let team = JSON.parse(req.body.team);
   let season_id = req.body.season_id;
@@ -119,7 +117,7 @@ Service.create = function(req, res) {
   });
 };
 
-Service.update = function(req, res) {
+exports.update = function(req, res) {
   let id = req.params.id;
 
   let team = req.body.team ? JSON.parse(req.body.team) : null;
@@ -167,8 +165,8 @@ Service.update = function(req, res) {
   });
 };
 
-Service.remove = function(req, res) {
-  var id = req.params.id;
+exports.remove = function(req, res) {
+  const id = req.params.id;
   FootballUserInfo.findByIdAndRemove(id, function(err, user_info) {
     if (err) {
       return res.status(500).json({
@@ -182,7 +180,7 @@ Service.remove = function(req, res) {
 
 // Media
 
-Service.listMedia = function(req, res) {
+exports.listMedia = function(req, res) {
   let user_info__id = req.params.id;
 
   let offset = parseInt(req.query.offset || '0');
@@ -204,7 +202,7 @@ Service.listMedia = function(req, res) {
     });
 };
 
-Service.showMedia = function(req, res) {
+exports.showMedia = function(req, res) {
   let id = req.params.id;
 
   FootballMedia.findOne({ _id: id }).exec(function(err, media) {
@@ -218,7 +216,7 @@ Service.showMedia = function(req, res) {
   });
 };
 
-Service.createMedia = function(req, res) {
+exports.createMedia = function(req, res) {
   let userInfoId = req.params.id;
   let media = req.body.media;
 
@@ -251,7 +249,7 @@ Service.createMedia = function(req, res) {
   });
 };
 
-Service.updateMedia = function(req, res) {
+exports.updateMedia = function(req, res) {
   let mediaId = req.params.mediaId;
   let media = req.body.media;
 
@@ -266,7 +264,7 @@ Service.updateMedia = function(req, res) {
   );
 };
 
-Service.removeMedia = function(req, res) {
+exports.removeMedia = function(req, res) {
   let mediaId = req.params.mediaId;
 
   FootballMedia.findByIdAndRemove(mediaId, err => {
@@ -282,7 +280,7 @@ Service.removeMedia = function(req, res) {
 
 // Recommendation
 
-Service.list_recommendations = function(req, res) {
+exports.list_recommendations = function(req, res) {
   let offset = parseInt(req.query.offset || '0');
   let size = parseInt(req.query.size || '10');
 
@@ -294,7 +292,7 @@ Service.list_recommendations = function(req, res) {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-Service.add_recommendation = function(req, res) {
+exports.add_recommendation = function(req, res) {
   let user_info__id = req.params.id;
   let recommendation = req.body.recommendation;
 
@@ -344,7 +342,7 @@ Service.add_recommendation = function(req, res) {
 
 // Skills
 
-Service.list_skills = function(req, res) {
+exports.list_skills = function(req, res) {
   FootballUserInfo.findOne({ _id: id })
     .populate('current_season')
     .populate('previous_seasons', 'stats')
@@ -364,7 +362,7 @@ Service.list_skills = function(req, res) {
     });
 };
 
-Service.add_skill_vote = function(req, res) {
+exports.add_skill_vote = function(req, res) {
   let user_info_id = req.params.id;
   let author_user_id = req.body.author_user_id;
   let skill_name = req.body.skill_name;
@@ -398,7 +396,7 @@ Service.add_skill_vote = function(req, res) {
 
 // Followers
 
-Service.follow = function(req, res) {
+exports.follow = function(req, res) {
   let user_info_id = req.params.id;
   let author_user_info_id = req.body.author_user_info_id; // ._doc
 
@@ -413,7 +411,7 @@ Service.follow = function(req, res) {
   );
 };
 
-Service.list_followed = function(req, res) {
+exports.list_followed = function(req, res) {
   let offset = parseInt(req.query.offset || '0');
   let size = parseInt(req.query.size || '10');
 
@@ -425,7 +423,7 @@ Service.list_followed = function(req, res) {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-Service.list_followers = function(req, res) {
+exports.list_followers = function(req, res) {
   let offset = parseInt(req.query.offset || '0');
   let size = parseInt(req.query.size || '10');
 
@@ -437,7 +435,7 @@ Service.list_followers = function(req, res) {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-Service.unfollow = function(req, res) {
+exports.unfollow = function(req, res) {
   let user_info_id = req.params.id;
   let follower_id = req.params.follower_id;
 
@@ -451,5 +449,3 @@ Service.unfollow = function(req, res) {
     handleError(err, user_info, res)
   );
 };
-
-exports = Service;

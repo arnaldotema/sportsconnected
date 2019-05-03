@@ -1,6 +1,6 @@
-var TeamModel = require('../../models/football_team.js');
-var TeamModelSeason = require('../../models/football_team_season');
-var FootballMedia = require('../../models/football_media');
+const TeamModel = require('../../models/football_team.js');
+const TeamModelSeason = require('../../models/football_team_season');
+const FootballMedia = require('../../models/football_media');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 /**
@@ -8,7 +8,7 @@ const entities = new Entities();
  *
  * @description :: Server-side logic for managing Teams.
  */
-exports = {
+module.exports = {
   /**
    * TeamController.search()
    */
@@ -27,7 +27,7 @@ exports = {
       query[filter.search_item] = {};
       query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
-      if (filter.selected_filter == '$regex') {
+      if (filter.selected_filter === '$regex') {
         query[filter.search_item]['$options'] = 'i';
       }
     });
@@ -68,7 +68,7 @@ exports = {
    * TeamController.show()
    */
   show: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     TeamModel.findOne({ _id: id })
       .populate('current_season')
       .populate('previous_seasons', 'standings')
@@ -89,7 +89,7 @@ exports = {
   },
 
   players: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     TeamModelSeason.findOne({ _id: id }).exec(function(err, Team) {
       if (err) {
         return res.status(500).json({
@@ -112,7 +112,7 @@ exports = {
    * TeamController.create()
    */
   create: function(req, res) {
-    var Team = new TeamModel({
+    const Team = new TeamModel({
       user_id: req.body.user_id,
       name: req.body.name,
       admins: req.body.admins,
@@ -133,7 +133,7 @@ exports = {
    * TeamController.update()
    */
   update: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     TeamModel.findOne({ _id: id }, function(err, Team) {
       if (err) {
         return res.status(500).json({
@@ -168,7 +168,7 @@ exports = {
    * TeamController.remove()
    */
   remove: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     TeamModel.findByIdAndRemove(id, function(err, Team) {
       if (err) {
         return res.status(500).json({

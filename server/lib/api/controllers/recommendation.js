@@ -2,11 +2,9 @@ var FootballRecommendation = require('../../models/football_recommendation.js');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 
-let Service = {};
-
 // Recommendation DB Interactions
 
-Service.search = function(req, res) {
+exports.search = function(req, res) {
   let select = {
     _id: 1,
     author: 1,
@@ -19,7 +17,7 @@ Service.search = function(req, res) {
     query[filter.search_item] = {};
     query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
-    if (filter.selected_filter == '$regex') {
+    if (filter.selected_filter === '$regex') {
       query[filter.search_item]['$options'] = 'i';
     }
   });
@@ -40,7 +38,7 @@ Service.search = function(req, res) {
     });
 };
 
-Service.list = function(req, res) {
+exports.list = function(req, res) {
   FootballRecommendation.find()
     .populate('author')
     .limit(5)
@@ -57,8 +55,8 @@ Service.list = function(req, res) {
     });
 };
 
-Service.show = function(req, res) {
-  var id = req.params.id;
+exports.show = function(req, res) {
+  const id = req.params.id;
   FootballRecommendation.findOne({ _id: id })
     .populate('author')
     .exec(function(err, recommendations) {
@@ -79,8 +77,8 @@ Service.show = function(req, res) {
     });
 };
 
-Service.create = function(req, res) {
-  var recommendation = new FootballRecommendation(req.body);
+exports.create = function(req, res) {
+  const recommendation = new FootballRecommendation(req.body);
 
   recommendation.save(function(err, created_recommendation) {
     if (err) {
@@ -93,7 +91,7 @@ Service.create = function(req, res) {
   });
 };
 
-Service.update = function(req, res) {
+exports.update = function(req, res) {
   let id = req.params.id || req.body._id;
   FootballRecommendation.findOne({ _id: id }, function(err, recommendation) {
     if (err) {
@@ -153,8 +151,8 @@ Service.update = function(req, res) {
   });
 };
 
-Service.remove = function(req, res) {
-  var id = req.params.id || req.body._id;
+exports.remove = function(req, res) {
+  const id = req.params.id || req.body._id;
   FootballRecommendation.findByIdAndRemove(id, function(err, recommendation) {
     if (err) {
       return res.status(500).json({
@@ -165,5 +163,3 @@ Service.remove = function(req, res) {
     return res.status(204).json();
   });
 };
-
-exports = Service;

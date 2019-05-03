@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "debug": "nodemon --inspect ./app.js",
-    "test": "mocha --recursive",
+    "test": "mocha --recursive --exit",
     "start": "node app",
     "start:docker": "node dockerwait.js && node ${SOCKETCLUSTER_MASTER_CONTROLLER:-server.js}"
   },
@@ -18,10 +18,11 @@
     "bcrypt": "^3.0.0",
     "bcryptjs": "*",
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
     "cheerio": "^1.0.0-rc.2",
     "cors": "*",
     "crawler": "^1.2.1",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "express-formidable": "^1.0.0",
     "html-entities": "^1.2.1",
     "jsonwebtoken": "^8.3.0",
@@ -46,6 +47,7 @@
     "socket.io-emitter": "^3.1.1",
     "socketcluster": "^14.3.3",
     "string-template": "^1.0.0",
+    "supertest": "^4.0.2",
     "underscore": "^1.9.0",
     "utf8": "^3.0.0",
     "winston": "^3.0.0-rc5"

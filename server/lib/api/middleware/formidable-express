@@ -22,5 +22,5 @@ function parse(opts) {
     };
 }
 
-exports = parse;
-exports.parse = parse; // backward compatibility
+module.exports = parse;
+module.exports.parse = parse; // backward compatibility
