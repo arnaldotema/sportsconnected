@@ -1,4 +1,4 @@
-const zerozero = require('../crawler');
+const zerozero = require('../index');
 const proxyHandler = require('../proxy_handler');
 const logger = require('../../../logging');
 const baseUris = require('../base_uris');

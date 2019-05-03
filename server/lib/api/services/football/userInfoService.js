@@ -328,7 +328,7 @@ exports.addAchievementToUserInfo = function(achievement, user_info, cb) {
   this.findOneAndUpdate(query, update, cb);
 };
 
-exports.addMedia = function(id, media, cb) {
+exports.addMedia = function(id, media, cb)  {
   /*
     * This is not yet implemented because the DB structure is not well done.
     *
@@ -343,7 +343,7 @@ exports.addMedia = function(id, media, cb) {
         }
     };
 
-    But, for now, we'll not do anything, we'll just insert the media in the user's current season object.
+    But for now, we'll just insert the media in the user's current season object.
     * */
 
   this.findOne({ _id: id }, (err, userInfo) => {

@@ -1,6 +1,6 @@
 // LIBS
 const Crawler = require("crawler");
-const logger = require('../../logging');
+const logger = require('../../../logging');
 const proxyHandler = require('./proxy_handler');
 const request = require('request');
 const format = require("string-template");

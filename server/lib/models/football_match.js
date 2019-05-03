@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var FootballMatchSchema = new Schema({
+const FootballMatchSchema = new Schema({
   played: { type: Boolean, required: true, index: true },
   external_ids: {
     zerozero: Number,

@@ -2,87 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3866fe50-9b49-4c50-a7af-0dcba537e878" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/server/lib/api/middleware/logIn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/lib/api/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/auth/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/constants/values.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/constants/values.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/auth_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/chat_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/competition_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/global_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/match_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/notification_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/recommendation_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/recommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/socket_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/storage_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/storage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/team_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/user_info_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/controllers/userInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/base_uris.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/base_uris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/crawler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/crawler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/functions/checkingtemplates.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/checkingtemplates.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_competition.js.orig" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_competition.js.orig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/functions/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_user_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/crawlers/zerozero/proxy_handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/proxy_handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dispatcher/dispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/dispatcher/dispatcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/gary_processor/gary_processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/gary_processor/gary_processor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mailers/achievements_mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middleware/formidable-express" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/middleware/formidable-express" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middleware/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/utils/extractProfileData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middleware/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/middleware/signUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/chat_attachment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_attachment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/chat_conversation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_conversation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/chat_message.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/chat_unread.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_unread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_achievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_achievement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_competition_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_competition_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_media.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_recommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_recommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_team_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_team_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/football_user_info_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth_routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/competition_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/global_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/match_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/notification_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/ping.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/ping.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/player_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/socket_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/storage_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/storage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/team_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/chat_attachment_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/chat/attachment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/chat_conversation_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/chat/conversation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/chat_message_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/chat/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/chat_unread_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/chat/unread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_achievement_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/achievement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_competition_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/competitionSeason.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_competition_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_match_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_media_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_notification_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_recommendation_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/recommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_team_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/teamSeason.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_team_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_user_info_season_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/userInfoSeason.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_user_info_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/football_user_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/notifications/notifications_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/notifications/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/storage/image_storage_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/storage/image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/constants/values.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/constants/values.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/crawler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_competition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_user_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/dispatcher/dispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/dispatcher/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/gary_processor/gary_processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/gary_processor/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/chat_attachment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_attachment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/chat_conversation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_conversation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/chat_message.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_achievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_achievement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_competition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_competition_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_competition_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_media.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_media.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_recommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_recommendation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_team_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_team_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/dist/" />
     <ignored path="$PROJECT_DIR$/app/tmp/" />
@@ -96,186 +41,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="season.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/season.js">
+      <file leaf-file-name="football_team.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/models/football_team.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            <state relative-caret-position="45">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/team.js">
+      <file leaf-file-name="football_team_season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/models/football_team_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
-              <folding>
-                <element signature="n#!!block;n#updateAndReturnByZeroZeroId#0" />
-                <element signature="n#!!block;n#updateCurrentSeasons#0" />
-                <element signature="e#511#780#0" />
-                <element signature="e#569#774#0" />
-                <element signature="e#588#767#0" />
-                <element signature="e#606#653#0" />
-                <element signature="e#671#758#0" />
-                <element signature="e#689#747#0" />
-                <element signature="n#!!block;n#addMedia#0" />
-                <element signature="e#862#1271#0" />
-                <element signature="e#1320#1518#0" />
-                <element signature="e#1441#1512#0" />
-                <element signature="e#1458#1484#0" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teamSeason.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/teamSeason.js">
+      <file leaf-file-name="football_user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/models/football_user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="205" column="2" selection-start-line="205" selection-start-column="2" selection-end-line="205" selection-end-column="2" />
-              <folding>
-                <element signature="n#!!block;n#addMedia#0" />
-                <element signature="e#125#174#0" />
-                <element signature="e#142#169#0" />
-                <element signature="e#309#578#0" />
-                <element signature="e#410#574#0" />
-                <element signature="e#435#550#0" />
-                <element signature="n#!!block;n#addCompetitionToTeam#0" />
-                <element signature="e#643#714#0" />
-                <element signature="e#732#966#0" />
-                <element signature="e#749#961#0" />
-                <element signature="e#768#954#0" />
-                <element signature="n#!!block;n#addPlayerToTeam#0" />
-                <element signature="e#1114#1181#0" />
-                <element signature="e#1199#1663#0" />
-                <element signature="e#1216#1658#0" />
-                <element signature="e#1233#1651#0" />
-                <element signature="n#!!block;n#getMatchTeamsByZeroZeroId#0" />
-                <element signature="e#1830#2233#0" />
-                <element signature="e#1836#2228#0" />
-                <element signature="e#1852#2221#0" />
-                <element signature="e#1873#2032#0" />
-                <element signature="e#1885#2021#0" />
-                <element signature="e#1907#2008#0" />
-                <element signature="e#2053#2212#0" />
-                <element signature="e#2065#2201#0" />
-                <element signature="e#2087#2188#0" />
-                <element signature="n#!!block;n#updateTeamsStandings#0" />
-                <element signature="e#2449#3870#0" />
-                <element signature="e#2457#3156#0" />
-                <element signature="e#2478#3147#0" />
-                <element signature="e#2498#2651#0" />
-                <element signature="e#2671#3136#0" />
-                <element signature="e#2691#3051#0" />
-                <element signature="e#3072#3123#0" />
-                <element signature="e#3164#3863#0" />
-                <element signature="e#3185#3854#0" />
-                <element signature="e#3205#3358#0" />
-                <element signature="e#3378#3843#0" />
-                <element signature="e#3398#3758#0" />
-                <element signature="e#3779#3830#0" />
-                <element signature="n#!!block;n#updateAndReturnByZeroZeroId#0" />
-                <element signature="e#3991#4064#0" />
-                <element signature="n#!!block;n#getByIds#0" />
-                <element signature="e#4240#4268#0" />
-                <element signature="n#!!block;n#updateTeamsPositions#0" />
-                <element signature="e#4472#4514#0" />
-                <element signature="e#4553#4888#0" />
-                <element signature="e#4611#4882#0" />
-                <element signature="e#4630#4875#0" />
-                <element signature="e#4648#4741#0" />
-                <element signature="e#4759#4866#0" />
-                <element signature="e#4777#4855#0" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/user.js">
+      <file leaf-file-name="football_user_info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userInfoSeason.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoSeason.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-              <folding>
-                <element signature="n#!!block;n#addMedia#0" />
-                <element signature="e#92#141#0" />
-                <element signature="e#109#136#0" />
-                <element signature="n#!!block;n#createNew#0" />
-                <element signature="e#325#438#0" />
-                <element signature="e#555#1014#0" />
-                <element signature="e#571#638#0" />
-                <element signature="e#656#935#0" />
-                <element signature="e#673#930#0" />
-                <element signature="e#688#923#0" />
-                <element signature="e#1084#1380#0" />
-                <element signature="e#1153#1241#0" />
-                <element signature="e#1167#1234#0" />
-                <element signature="e#1475#2779#0" />
-                <element signature="e#1491#2746#0" />
-                <element signature="e#1497#2741#0" />
-                <element signature="e#1513#2734#0" />
-                <element signature="e#1534#1713#0" />
-                <element signature="e#1546#1702#0" />
-                <element signature="e#1568#1689#0" />
-                <element signature="e#1743#1919#0" />
-                <element signature="e#1755#1908#0" />
-                <element signature="e#1777#1895#0" />
-                <element signature="e#1946#2119#0" />
-                <element signature="e#1958#2108#0" />
-                <element signature="e#1980#2095#0" />
-                <element signature="e#2140#2319#0" />
-                <element signature="e#2152#2308#0" />
-                <element signature="e#2174#2295#0" />
-                <element signature="e#2349#2525#0" />
-                <element signature="e#2361#2514#0" />
-                <element signature="e#2383#2501#0" />
-                <element signature="e#2552#2725#0" />
-                <element signature="e#2564#2714#0" />
-                <element signature="e#2586#2701#0" />
-                <element signature="e#2883#3108#0" />
-                <element signature="e#2901#2974#0" />
-                <element signature="e#3173#6951#0" />
-                <element signature="e#3357#4202#0" />
-                <element signature="e#3379#4196#0" />
-                <element signature="e#3398#4189#0" />
-                <element signature="e#3416#3548#0" />
-                <element signature="e#3566#4180#0" />
-                <element signature="e#3584#4103#0" />
-                <element signature="e#4122#4169#0" />
-                <element signature="e#4261#5106#0" />
-                <element signature="e#4283#5100#0" />
-                <element signature="e#4302#5093#0" />
-                <element signature="e#4320#4452#0" />
-                <element signature="e#4470#5084#0" />
-                <element signature="e#4488#5007#0" />
-                <element signature="e#5026#5073#0" />
-                <element signature="e#5162#6007#0" />
-                <element signature="e#5184#6001#0" />
-                <element signature="e#5203#5994#0" />
-                <element signature="e#5221#5353#0" />
-                <element signature="e#5371#5985#0" />
-                <element signature="e#5389#5908#0" />
-                <element signature="e#5927#5974#0" />
-                <element signature="e#6063#6908#0" />
-                <element signature="e#6085#6902#0" />
-                <element signature="e#6104#6895#0" />
-                <element signature="e#6122#6254#0" />
-                <element signature="e#6272#6886#0" />
-                <element signature="e#6290#6809#0" />
-                <element signature="e#6828#6875#0" />
-                <element signature="e#6997#7067#0" />
-                <element signature="e#7015#7039#0" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -283,138 +80,103 @@
       <file leaf-file-name="userInfoService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="419">
+              <caret line="351" column="16" lean-forward="true" selection-start-line="351" selection-start-column="16" selection-end-line="351" selection-end-column="16" />
               <folding>
                 <element signature="n#!!block;n#_updateRegex#0" />
-                <element signature="e#202#225#0" />
-                <element signature="e#449#659#0" />
-                <element signature="e#509#593#0" />
-                <element signature="e#521#588#0" />
-                <element signature="e#723#1691#0" />
-                <element signature="e#739#1658#0" />
-                <element signature="e#745#1653#0" />
-                <element signature="e#761#1646#0" />
-                <element signature="e#782#905#0" />
-                <element signature="e#794#894#0" />
-                <element signature="e#816#881#0" />
-                <element signature="e#935#1055#0" />
-                <element signature="e#947#1044#0" />
-                <element signature="e#969#1031#0" />
-                <element signature="e#1082#1199#0" />
-                <element signature="e#1094#1188#0" />
-                <element signature="e#1116#1175#0" />
-                <element signature="e#1220#1343#0" />
-                <element signature="e#1232#1332#0" />
-                <element signature="e#1254#1319#0" />
-                <element signature="e#1373#1493#0" />
-                <element signature="e#1385#1482#0" />
-                <element signature="e#1407#1469#0" />
-                <element signature="e#1520#1637#0" />
-                <element signature="e#1532#1626#0" />
-                <element signature="e#1554#1613#0" />
-                <element signature="e#1753#1908#0" />
-                <element signature="e#1771#1813#0" />
-                <element signature="e#1986#2171#0" />
-                <element signature="e#2235#2711#0" />
-                <element signature="e#2296#2669#0" />
-                <element signature="e#2359#2663#0" />
-                <element signature="e#2378#2656#0" />
-                <element signature="e#2396#2453#0" />
-                <element signature="e#2471#2647#0" />
-                <element signature="e#2489#2552#0" />
-                <element signature="e#2571#2636#0" />
-                <element signature="e#2785#3067#0" />
-                <element signature="e#2850#2878#0" />
-                <element signature="e#2898#3019#0" />
-                <element signature="e#2911#3014#0" />
-                <element signature="e#3304#3832#0" />
-                <element signature="e#3322#3393#0" />
-                <element signature="e#3413#3496#0" />
-                <element signature="e#3430#3491#0" />
-                <element signature="e#3449#3484#0" />
-                <element signature="e#3545#3828#0" />
-                <element signature="e#3588#3656#0" />
-                <element signature="e#3678#3761#0" />
-                <element signature="e#3693#3754#0" />
-                <element signature="e#3875#4685#0" />
-                <element signature="e#3901#4492#0" />
-                <element signature="e#3907#3998#0" />
-                <element signature="e#4004#4094#0" />
-                <element signature="e#4100#4188#0" />
-                <element signature="e#4194#4285#0" />
-                <element signature="e#4291#4379#0" />
-                <element signature="e#4385#4487#0" />
-                <element signature="e#4542#4600#0" />
-                <element signature="e#4554#4595#0" />
-                <element signature="e#4745#5190#0" />
-                <element signature="e#4789#4957#0" />
-                <element signature="e#4806#4952#0" />
-                <element signature="e#4822#4858#0" />
-                <element signature="e#4874#4945#0" />
-                <element signature="e#4891#4936#0" />
-                <element signature="e#4979#5147#0" />
-                <element signature="e#4996#5142#0" />
-                <element signature="e#5012#5047#0" />
-                <element signature="e#5063#5135#0" />
-                <element signature="e#5080#5126#0" />
-                <element signature="e#5254#5703#0" />
-                <element signature="e#5298#5468#0" />
-                <element signature="e#5315#5463#0" />
-                <element signature="e#5331#5367#0" />
-                <element signature="e#5383#5456#0" />
-                <element signature="e#5400#5447#0" />
-                <element signature="e#5490#5660#0" />
-                <element signature="e#5507#5655#0" />
-                <element signature="e#5523#5560#0" />
-                <element signature="e#5576#5648#0" />
-                <element signature="e#5593#5639#0" />
-                <element signature="e#5758#6112#0" />
-                <element signature="e#5838#6069#0" />
-                <element signature="e#5860#6063#0" />
-                <element signature="e#5879#6056#0" />
-                <element signature="e#5897#5937#0" />
-                <element signature="e#5955#6047#0" />
-                <element signature="e#5973#6036#0" />
-                <element signature="e#6187#6504#0" />
-                <element signature="e#6205#6283#0" />
-                <element signature="e#6303#6456#0" />
-                <element signature="e#6316#6451#0" />
-                <element signature="e#6338#6444#0" />
-                <element signature="e#6550#7276#0" />
-                <element signature="e#6554#6963#0" />
-                <element signature="e#7012#7272#0" />
-                <element signature="e#7176#7261#0" />
-                <element signature="e#7195#7225#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/notifications/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="129" selection-start-line="4" selection-start-column="129" selection-end-line="4" selection-end-column="129" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/api/services/storage/image.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#260#608#0" />
-                <element signature="e#305#599#0" />
-                <element signature="e#688#1004#0" />
-                <element signature="e#807#1000#0" />
-                <element signature="e#870#994#0" />
-                <element signature="e#1060#1310#0" />
-                <element signature="e#1081#1290#0" />
-                <element signature="e#1110#1204#0" />
-                <element signature="e#1213#1284#0" />
+                <element signature="e#146#169#0" />
+                <element signature="e#374#584#0" />
+                <element signature="e#434#518#0" />
+                <element signature="e#446#513#0" />
+                <element signature="e#648#1616#0" />
+                <element signature="e#664#1583#0" />
+                <element signature="e#670#1578#0" />
+                <element signature="e#686#1571#0" />
+                <element signature="e#707#830#0" />
+                <element signature="e#719#819#0" />
+                <element signature="e#741#806#0" />
+                <element signature="e#860#980#0" />
+                <element signature="e#872#969#0" />
+                <element signature="e#894#956#0" />
+                <element signature="e#1007#1124#0" />
+                <element signature="e#1019#1113#0" />
+                <element signature="e#1041#1100#0" />
+                <element signature="e#1145#1268#0" />
+                <element signature="e#1157#1257#0" />
+                <element signature="e#1179#1244#0" />
+                <element signature="e#1298#1418#0" />
+                <element signature="e#1310#1407#0" />
+                <element signature="e#1332#1394#0" />
+                <element signature="e#1445#1562#0" />
+                <element signature="e#1457#1551#0" />
+                <element signature="e#1479#1538#0" />
+                <element signature="e#1678#1833#0" />
+                <element signature="e#1696#1738#0" />
+                <element signature="e#1911#2096#0" />
+                <element signature="e#2160#2636#0" />
+                <element signature="e#2221#2594#0" />
+                <element signature="e#2284#2588#0" />
+                <element signature="e#2303#2581#0" />
+                <element signature="e#2321#2378#0" />
+                <element signature="e#2396#2572#0" />
+                <element signature="e#2414#2477#0" />
+                <element signature="e#2496#2561#0" />
+                <element signature="e#2710#2992#0" />
+                <element signature="e#2775#2803#0" />
+                <element signature="e#2823#2944#0" />
+                <element signature="e#2836#2939#0" />
+                <element signature="e#3229#3757#0" />
+                <element signature="e#3247#3318#0" />
+                <element signature="e#3338#3421#0" />
+                <element signature="e#3355#3416#0" />
+                <element signature="e#3374#3409#0" />
+                <element signature="e#3470#3753#0" />
+                <element signature="e#3513#3581#0" />
+                <element signature="e#3603#3686#0" />
+                <element signature="e#3618#3679#0" />
+                <element signature="e#3800#4610#0" />
+                <element signature="e#3826#4417#0" />
+                <element signature="e#3832#3923#0" />
+                <element signature="e#3929#4019#0" />
+                <element signature="e#4025#4113#0" />
+                <element signature="e#4119#4210#0" />
+                <element signature="e#4216#4304#0" />
+                <element signature="e#4310#4412#0" />
+                <element signature="e#4467#4525#0" />
+                <element signature="e#4479#4520#0" />
+                <element signature="e#4670#5115#0" />
+                <element signature="e#4714#4882#0" />
+                <element signature="e#4731#4877#0" />
+                <element signature="e#4747#4783#0" />
+                <element signature="e#4799#4870#0" />
+                <element signature="e#4816#4861#0" />
+                <element signature="e#4904#5072#0" />
+                <element signature="e#4921#5067#0" />
+                <element signature="e#4937#4972#0" />
+                <element signature="e#4988#5060#0" />
+                <element signature="e#5005#5051#0" />
+                <element signature="e#5179#5628#0" />
+                <element signature="e#5223#5393#0" />
+                <element signature="e#5240#5388#0" />
+                <element signature="e#5256#5292#0" />
+                <element signature="e#5308#5381#0" />
+                <element signature="e#5325#5372#0" />
+                <element signature="e#5415#5585#0" />
+                <element signature="e#5432#5580#0" />
+                <element signature="e#5448#5485#0" />
+                <element signature="e#5501#5573#0" />
+                <element signature="e#5518#5564#0" />
+                <element signature="e#5683#6037#0" />
+                <element signature="e#5763#5994#0" />
+                <element signature="e#5785#5988#0" />
+                <element signature="e#5804#5981#0" />
+                <element signature="e#5822#5862#0" />
+                <element signature="e#5880#5972#0" />
+                <element signature="e#5898#5961#0" />
+                <element signature="e#6130#6208#0" />
+                <element signature="e#6228#6381#0" />
+                <element signature="e#6241#6376#0" />
+                <element signature="e#6263#6369#0" />
               </folding>
             </state>
           </provider>
@@ -423,31 +185,56 @@
       <file leaf-file-name="values.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/lib/constants/values.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="achievements_mailer.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js">
+      <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/config/database.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/api/auth/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="315">
+              <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
               <folding>
-                <element signature="e#106#295#0" />
-                <element signature="e#140#217#0" />
-                <element signature="e#299#367#0" />
-                <element signature="e#453#1791#0" />
-                <element signature="e#626#1430#0" />
-                <element signature="e#632#669#0" />
-                <element signature="e#1255#1425#0" />
-                <element signature="e#1263#1418#0" />
-                <element signature="e#1482#1787#0" />
-                <element signature="e#1499#1607#0" />
+                <element signature="e#352#875#0" />
+                <element signature="e#384#603#0" />
+                <element signature="e#885#1087#0" />
+                <element signature="e#1098#1827#0" />
+                <element signature="e#1104#1822#0" />
+                <element signature="e#1207#1290#0" />
+                <element signature="e#1840#2707#0" />
+                <element signature="e#1846#2702#0" />
+                <element signature="e#1958#2209#0" />
+                <element signature="e#2065#2154#0" />
+                <element signature="e#2228#2452#0" />
+                <element signature="e#2471#2695#0" />
+                <element signature="e#3044#3515#0" />
+                <element signature="e#3063#3203#0" />
+                <element signature="e#3075#3192#0" />
+                <element signature="e#3219#3352#0" />
+                <element signature="e#3231#3341#0" />
+                <element signature="e#3368#3506#0" />
+                <element signature="e#3380#3495#0" />
+                <element signature="e#3545#3611#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="extractProfileData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/utils/extractProfileData.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -465,10 +252,26 @@
       <find>braces</find>
       <find>competition_rou</find>
       <find>Service.</find>
+      <find>module.exports</find>
+      <find>var</find>
+      <find>let</find>
+      <find>var</find>
+      <find>addMedia</find>
+      <find>5D14 1B23 1050 6464 A956 AA84 2109 34EF B34A 0A06</find>
+      <find>USER_TYPES</find>
     </findStrings>
     <replaceStrings>
       <replace>module.exports.</replace>
+      <replace>exports</replace>
+      <replace />
+      <replace>const</replace>
+      <replace>const</replace>
+      <replace>footballUserTypes</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/server/lib/api</dir>
+      <dir>$PROJECT_DIR$/server/lib/api/models</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -476,26 +279,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/lib/api/auth/auth.js" />
-        <option value="$PROJECT_DIR$/server/lib/api/controllers/auth.js" />
         <option value="$PROJECT_DIR$/server/lib/api/controllers/chat.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/chat_conversation.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/chat_attachment.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/chat_message.js" />
         <option value="$PROJECT_DIR$/server/lib/models/chat_unread.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_achievement.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_competition.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_competition_season.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_match.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_media.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_notification.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_recommendation.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_season.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_team.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_team_season.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_user.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_user_info.js" />
-        <option value="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" />
         <option value="$PROJECT_DIR$/server/lib/gary_processor/gary_processor.js" />
         <option value="$PROJECT_DIR$/server/lib/api/routes/competition.js" />
         <option value="$PROJECT_DIR$/server/lib/api/routes/match.js" />
@@ -522,11 +307,29 @@
         <option value="$PROJECT_DIR$/server/lib/api/services/football/teamSeason.js" />
         <option value="$PROJECT_DIR$/server/lib/api/services/football/user.js" />
         <option value="$PROJECT_DIR$/server/lib/api/services/football/userInfoSeason.js" />
-        <option value="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" />
         <option value="$PROJECT_DIR$/server/lib/api/services/notifications/index.js" />
         <option value="$PROJECT_DIR$/server/lib/api/services/storage/image.js" />
-        <option value="$PROJECT_DIR$/server/lib/constants/values.js" />
         <option value="$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js" />
+        <option value="$PROJECT_DIR$/server/lib/crawlers/zerozero/index.js" />
+        <option value="$PROJECT_DIR$/server/lib/crawlers/zerozero/crawler.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/chat_attachment.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/chat_conversation.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/chat_message.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_match.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_competition_season.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_competition.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_achievement.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_media.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_notification.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_recommendation.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_season.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_team.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_team_season.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_user.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_user_info.js" />
+        <option value="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" />
+        <option value="$PROJECT_DIR$/server/lib/constants/values.js" />
+        <option value="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" />
       </list>
     </option>
   </component>
@@ -568,7 +371,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -600,42 +402,7 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="football" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="notifications" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
@@ -651,7 +418,28 @@
               <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="crawlers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="gary_processor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
@@ -660,12 +448,27 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="mailers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -789,12 +592,13 @@
       <option name="presentableId" value="Default" />
       <updated>1555159887482</updated>
       <workItem from="1555159889144" duration="1196000" />
-      <workItem from="1556821242308" duration="8205000" />
+      <workItem from="1556821242308" duration="8502000" />
+      <workItem from="1556912354995" duration="2066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18261000" />
+    <option name="totallyTimeSpent" value="20624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
@@ -805,7 +609,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info id="Designer" order="2" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -821,7 +625,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24305555" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939634" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -829,9 +633,9 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -841,124 +645,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/gary_processor/gary_processor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/utils/extractProfileData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/auth/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/competition.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/global.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/match.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/notification.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/recommendation.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/socket.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/storage.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/team.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/user.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/controllers/userInfo.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/middleware/formidable-express">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/middleware/logIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/middleware/signUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/routes/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/routes/competition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/routes/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/routes/match.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1015,69 +701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/services/chat/attachment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="52" column="2" lean-forward="true" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
-          <folding>
-            <element signature="e#84#640#0" />
-            <element signature="e#116#505#0" />
-            <element signature="e#130#212#0" />
-            <element signature="e#224#351#0" />
-            <element signature="e#562#636#0" />
-            <element signature="e#577#606#0" />
-            <element signature="e#692#933#0" />
-            <element signature="e#755#929#0" />
-            <element signature="e#770#799#0" />
-            <element signature="e#828#885#0" />
-            <element signature="e#990#1095#0" />
-            <element signature="e#1193#1612#0" />
-            <element signature="e#1212#1295#0" />
-            <element signature="e#1385#1605#0" />
-            <element signature="e#1402#1435#0" />
-            <element signature="e#1471#1552#0" />
-            <element signature="e#1671#1798#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/services/chat/conversation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="87" column="2" selection-start-line="87" selection-start-column="2" selection-end-line="87" selection-end-column="2" />
-          <folding>
-            <element signature="e#145#737#0" />
-            <element signature="e#808#874#0" />
-            <element signature="e#921#1142#0" />
-            <element signature="e#1198#1554#0" />
-            <element signature="e#1607#1714#0" />
-            <element signature="e#1769#1899#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/chat/message.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="13" selection-start-column="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#71#462#0" />
-            <element signature="e#93#337#0" />
-            <element signature="e#107#189#0" />
-            <element signature="e#384#458#0" />
-            <element signature="e#399#428#0" />
-            <element signature="e#504#705#0" />
-            <element signature="e#557#701#0" />
-            <element signature="e#572#601#0" />
-            <element signature="e#620#667#0" />
-            <element signature="e#752#857#0" />
-            <element signature="e#939#1318#0" />
-            <element signature="e#958#1041#0" />
-            <element signature="e#1121#1311#0" />
-            <element signature="e#1138#1171#0" />
-            <element signature="e#1197#1268#0" />
-            <element signature="e#1367#1494#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,18 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-          <folding>
-            <element signature="e#92#293#0" />
-            <element signature="e#114#168#0" />
-            <element signature="e#215#289#0" />
-            <element signature="e#230#259#0" />
-            <element signature="e#344#546#0" />
-            <element signature="e#398#542#0" />
-            <element signature="e#413#442#0" />
-            <element signature="e#461#508#0" />
-            <element signature="e#599#776#0" />
-            <element signature="e#656#772#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1104,14 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
-          <folding>
-            <element signature="e#143#250#0" />
-            <element signature="e#283#307#0" />
-            <element signature="e#382#591#0" />
-            <element signature="e#400#468#0" />
-            <element signature="e#488#543#0" />
-            <element signature="e#501#538#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,60 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#140#204#0" />
-            <element signature="e#218#406#0" />
-            <element signature="e#231#401#0" />
-            <element signature="e#250#394#0" />
-            <element signature="e#556#1094#0" />
-            <element signature="e#568#633#0" />
-            <element signature="e#647#1015#0" />
-            <element signature="e#660#1010#0" />
-            <element signature="e#675#1003#0" />
-            <element signature="e#1173#6253#0" />
-            <element signature="e#1335#1998#0" />
-            <element signature="e#1352#1993#0" />
-            <element signature="e#1368#1505#0" />
-            <element signature="e#1521#1986#0" />
-            <element signature="e#1537#1977#0" />
-            <element signature="e#2020#2683#0" />
-            <element signature="e#2037#2678#0" />
-            <element signature="e#2053#2190#0" />
-            <element signature="e#2206#2671#0" />
-            <element signature="e#2222#2662#0" />
-            <element signature="e#2753#3493#0" />
-            <element signature="e#2775#3487#0" />
-            <element signature="e#2794#3480#0" />
-            <element signature="e#2812#2944#0" />
-            <element signature="e#2962#3471#0" />
-            <element signature="e#2980#3460#0" />
-            <element signature="e#3552#4292#0" />
-            <element signature="e#3574#4286#0" />
-            <element signature="e#3593#4279#0" />
-            <element signature="e#3611#3743#0" />
-            <element signature="e#3761#4270#0" />
-            <element signature="e#3779#4259#0" />
-            <element signature="e#4348#5088#0" />
-            <element signature="e#4370#5082#0" />
-            <element signature="e#4389#5075#0" />
-            <element signature="e#4407#4539#0" />
-            <element signature="e#4557#5066#0" />
-            <element signature="e#4575#5055#0" />
-            <element signature="e#5144#5884#0" />
-            <element signature="e#5166#5878#0" />
-            <element signature="e#5185#5871#0" />
-            <element signature="e#5203#5335#0" />
-            <element signature="e#5353#5862#0" />
-            <element signature="e#5371#5851#0" />
-            <element signature="e#5936#6210#0" />
-            <element signature="e#5953#6205#0" />
-            <element signature="e#5969#6020#0" />
-            <element signature="e#6036#6198#0" />
-            <element signature="e#6053#6189#0" />
-            <element signature="e#6076#6146#0" />
-            <element signature="e#6346#6540#0" />
-            <element signature="e#6576#6604#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1187,20 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="85" column="2" lean-forward="true" selection-start-line="85" selection-start-column="2" selection-end-line="85" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!block;n#getLastPlayedMatchesByTeamId#0" />
-            <element signature="e#122#204#0" />
-            <element signature="e#685#716#0" />
-            <element signature="n#!!block;n#getNextMatchesByTeamId#0" />
-            <element signature="e#790#917#0" />
-            <element signature="e#801#912#0" />
-            <element signature="e#1398#1429#0" />
-            <element signature="n#!!block;n#getMissingMatches#0" />
-            <element signature="e#1573#1748#0" />
-            <element signature="e#1600#1722#0" />
-            <element signature="n#!!block;n#updateAndReturnByZeroZeroId#0" />
-            <element signature="e#2068#2103#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1208,20 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="n#!!block;n#migrateUserInfoMediaToMediaDocument#0" />
-            <element signature="e#381#1170#0" />
-            <element signature="e#524#1162#0" />
-            <element signature="e#670#1154#0" />
-            <element signature="e#754#1142#0" />
-            <element signature="e#953#1128#0" />
-            <element signature="n#!!block;n#migrateTeamMediaToMediaDocument#0" />
-            <element signature="e#1308#1697#0" />
-            <element signature="e#1369#1689#0" />
-            <element signature="e#1445#1679#0" />
-            <element signature="e#1618#1667#0" />
-            <element signature="n#!!block;n#update#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1229,16 +754,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="n#!!block;n#createNotification#0" />
-            <element signature="n#!!block;n#getAll#0" />
-            <element signature="n#!!block;n#update#0" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/recommendation.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/season.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1249,84 +766,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/team.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="n#!!block;n#updateAndReturnByZeroZeroId#0" />
-            <element signature="n#!!block;n#updateCurrentSeasons#0" />
-            <element signature="e#511#780#0" />
-            <element signature="e#569#774#0" />
-            <element signature="e#588#767#0" />
-            <element signature="e#606#653#0" />
-            <element signature="e#671#758#0" />
-            <element signature="e#689#747#0" />
-            <element signature="n#!!block;n#addMedia#0" />
-            <element signature="e#862#1271#0" />
-            <element signature="e#1320#1518#0" />
-            <element signature="e#1441#1512#0" />
-            <element signature="e#1458#1484#0" />
-          </folding>
+        <state relative-caret-position="1005">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/teamSeason.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="3075">
           <caret line="205" column="2" selection-start-line="205" selection-start-column="2" selection-end-line="205" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!block;n#addMedia#0" />
-            <element signature="e#125#174#0" />
-            <element signature="e#142#169#0" />
-            <element signature="e#309#578#0" />
-            <element signature="e#410#574#0" />
-            <element signature="e#435#550#0" />
-            <element signature="n#!!block;n#addCompetitionToTeam#0" />
-            <element signature="e#643#714#0" />
-            <element signature="e#732#966#0" />
-            <element signature="e#749#961#0" />
-            <element signature="e#768#954#0" />
-            <element signature="n#!!block;n#addPlayerToTeam#0" />
-            <element signature="e#1114#1181#0" />
-            <element signature="e#1199#1663#0" />
-            <element signature="e#1216#1658#0" />
-            <element signature="e#1233#1651#0" />
-            <element signature="n#!!block;n#getMatchTeamsByZeroZeroId#0" />
-            <element signature="e#1830#2233#0" />
-            <element signature="e#1836#2228#0" />
-            <element signature="e#1852#2221#0" />
-            <element signature="e#1873#2032#0" />
-            <element signature="e#1885#2021#0" />
-            <element signature="e#1907#2008#0" />
-            <element signature="e#2053#2212#0" />
-            <element signature="e#2065#2201#0" />
-            <element signature="e#2087#2188#0" />
-            <element signature="n#!!block;n#updateTeamsStandings#0" />
-            <element signature="e#2449#3870#0" />
-            <element signature="e#2457#3156#0" />
-            <element signature="e#2478#3147#0" />
-            <element signature="e#2498#2651#0" />
-            <element signature="e#2671#3136#0" />
-            <element signature="e#2691#3051#0" />
-            <element signature="e#3072#3123#0" />
-            <element signature="e#3164#3863#0" />
-            <element signature="e#3185#3854#0" />
-            <element signature="e#3205#3358#0" />
-            <element signature="e#3378#3843#0" />
-            <element signature="e#3398#3758#0" />
-            <element signature="e#3779#3830#0" />
-            <element signature="n#!!block;n#updateAndReturnByZeroZeroId#0" />
-            <element signature="e#3991#4064#0" />
-            <element signature="n#!!block;n#getByIds#0" />
-            <element signature="e#4240#4268#0" />
-            <element signature="n#!!block;n#updateTeamsPositions#0" />
-            <element signature="e#4472#4514#0" />
-            <element signature="e#4553#4888#0" />
-            <element signature="e#4611#4882#0" />
-            <element signature="e#4630#4875#0" />
-            <element signature="e#4648#4741#0" />
-            <element signature="e#4759#4866#0" />
-            <element signature="e#4777#4855#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1340,186 +788,7 @@
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoSeason.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!block;n#addMedia#0" />
-            <element signature="e#92#141#0" />
-            <element signature="e#109#136#0" />
-            <element signature="n#!!block;n#createNew#0" />
-            <element signature="e#325#438#0" />
-            <element signature="e#555#1014#0" />
-            <element signature="e#571#638#0" />
-            <element signature="e#656#935#0" />
-            <element signature="e#673#930#0" />
-            <element signature="e#688#923#0" />
-            <element signature="e#1084#1380#0" />
-            <element signature="e#1153#1241#0" />
-            <element signature="e#1167#1234#0" />
-            <element signature="e#1475#2779#0" />
-            <element signature="e#1491#2746#0" />
-            <element signature="e#1497#2741#0" />
-            <element signature="e#1513#2734#0" />
-            <element signature="e#1534#1713#0" />
-            <element signature="e#1546#1702#0" />
-            <element signature="e#1568#1689#0" />
-            <element signature="e#1743#1919#0" />
-            <element signature="e#1755#1908#0" />
-            <element signature="e#1777#1895#0" />
-            <element signature="e#1946#2119#0" />
-            <element signature="e#1958#2108#0" />
-            <element signature="e#1980#2095#0" />
-            <element signature="e#2140#2319#0" />
-            <element signature="e#2152#2308#0" />
-            <element signature="e#2174#2295#0" />
-            <element signature="e#2349#2525#0" />
-            <element signature="e#2361#2514#0" />
-            <element signature="e#2383#2501#0" />
-            <element signature="e#2552#2725#0" />
-            <element signature="e#2564#2714#0" />
-            <element signature="e#2586#2701#0" />
-            <element signature="e#2883#3108#0" />
-            <element signature="e#2901#2974#0" />
-            <element signature="e#3173#6951#0" />
-            <element signature="e#3357#4202#0" />
-            <element signature="e#3379#4196#0" />
-            <element signature="e#3398#4189#0" />
-            <element signature="e#3416#3548#0" />
-            <element signature="e#3566#4180#0" />
-            <element signature="e#3584#4103#0" />
-            <element signature="e#4122#4169#0" />
-            <element signature="e#4261#5106#0" />
-            <element signature="e#4283#5100#0" />
-            <element signature="e#4302#5093#0" />
-            <element signature="e#4320#4452#0" />
-            <element signature="e#4470#5084#0" />
-            <element signature="e#4488#5007#0" />
-            <element signature="e#5026#5073#0" />
-            <element signature="e#5162#6007#0" />
-            <element signature="e#5184#6001#0" />
-            <element signature="e#5203#5994#0" />
-            <element signature="e#5221#5353#0" />
-            <element signature="e#5371#5985#0" />
-            <element signature="e#5389#5908#0" />
-            <element signature="e#5927#5974#0" />
-            <element signature="e#6063#6908#0" />
-            <element signature="e#6085#6902#0" />
-            <element signature="e#6104#6895#0" />
-            <element signature="e#6122#6254#0" />
-            <element signature="e#6272#6886#0" />
-            <element signature="e#6290#6809#0" />
-            <element signature="e#6828#6875#0" />
-            <element signature="e#6997#7067#0" />
-            <element signature="e#7015#7039#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="n#!!block;n#_updateRegex#0" />
-            <element signature="e#202#225#0" />
-            <element signature="e#449#659#0" />
-            <element signature="e#509#593#0" />
-            <element signature="e#521#588#0" />
-            <element signature="e#723#1691#0" />
-            <element signature="e#739#1658#0" />
-            <element signature="e#745#1653#0" />
-            <element signature="e#761#1646#0" />
-            <element signature="e#782#905#0" />
-            <element signature="e#794#894#0" />
-            <element signature="e#816#881#0" />
-            <element signature="e#935#1055#0" />
-            <element signature="e#947#1044#0" />
-            <element signature="e#969#1031#0" />
-            <element signature="e#1082#1199#0" />
-            <element signature="e#1094#1188#0" />
-            <element signature="e#1116#1175#0" />
-            <element signature="e#1220#1343#0" />
-            <element signature="e#1232#1332#0" />
-            <element signature="e#1254#1319#0" />
-            <element signature="e#1373#1493#0" />
-            <element signature="e#1385#1482#0" />
-            <element signature="e#1407#1469#0" />
-            <element signature="e#1520#1637#0" />
-            <element signature="e#1532#1626#0" />
-            <element signature="e#1554#1613#0" />
-            <element signature="e#1753#1908#0" />
-            <element signature="e#1771#1813#0" />
-            <element signature="e#1986#2171#0" />
-            <element signature="e#2235#2711#0" />
-            <element signature="e#2296#2669#0" />
-            <element signature="e#2359#2663#0" />
-            <element signature="e#2378#2656#0" />
-            <element signature="e#2396#2453#0" />
-            <element signature="e#2471#2647#0" />
-            <element signature="e#2489#2552#0" />
-            <element signature="e#2571#2636#0" />
-            <element signature="e#2785#3067#0" />
-            <element signature="e#2850#2878#0" />
-            <element signature="e#2898#3019#0" />
-            <element signature="e#2911#3014#0" />
-            <element signature="e#3304#3832#0" />
-            <element signature="e#3322#3393#0" />
-            <element signature="e#3413#3496#0" />
-            <element signature="e#3430#3491#0" />
-            <element signature="e#3449#3484#0" />
-            <element signature="e#3545#3828#0" />
-            <element signature="e#3588#3656#0" />
-            <element signature="e#3678#3761#0" />
-            <element signature="e#3693#3754#0" />
-            <element signature="e#3875#4685#0" />
-            <element signature="e#3901#4492#0" />
-            <element signature="e#3907#3998#0" />
-            <element signature="e#4004#4094#0" />
-            <element signature="e#4100#4188#0" />
-            <element signature="e#4194#4285#0" />
-            <element signature="e#4291#4379#0" />
-            <element signature="e#4385#4487#0" />
-            <element signature="e#4542#4600#0" />
-            <element signature="e#4554#4595#0" />
-            <element signature="e#4745#5190#0" />
-            <element signature="e#4789#4957#0" />
-            <element signature="e#4806#4952#0" />
-            <element signature="e#4822#4858#0" />
-            <element signature="e#4874#4945#0" />
-            <element signature="e#4891#4936#0" />
-            <element signature="e#4979#5147#0" />
-            <element signature="e#4996#5142#0" />
-            <element signature="e#5012#5047#0" />
-            <element signature="e#5063#5135#0" />
-            <element signature="e#5080#5126#0" />
-            <element signature="e#5254#5703#0" />
-            <element signature="e#5298#5468#0" />
-            <element signature="e#5315#5463#0" />
-            <element signature="e#5331#5367#0" />
-            <element signature="e#5383#5456#0" />
-            <element signature="e#5400#5447#0" />
-            <element signature="e#5490#5660#0" />
-            <element signature="e#5507#5655#0" />
-            <element signature="e#5523#5560#0" />
-            <element signature="e#5576#5648#0" />
-            <element signature="e#5593#5639#0" />
-            <element signature="e#5758#6112#0" />
-            <element signature="e#5838#6069#0" />
-            <element signature="e#5860#6063#0" />
-            <element signature="e#5879#6056#0" />
-            <element signature="e#5897#5937#0" />
-            <element signature="e#5955#6047#0" />
-            <element signature="e#5973#6036#0" />
-            <element signature="e#6187#6504#0" />
-            <element signature="e#6205#6283#0" />
-            <element signature="e#6303#6456#0" />
-            <element signature="e#6316#6451#0" />
-            <element signature="e#6338#6444#0" />
-            <element signature="e#6550#7276#0" />
-            <element signature="e#6554#6963#0" />
-            <element signature="e#7012#7272#0" />
-            <element signature="e#7176#7261#0" />
-            <element signature="e#7195#7225#0" />
-          </folding>
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1532,44 +801,350 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/storage/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="630">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/api/services/chat/attachment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
           <folding>
-            <element signature="e#260#608#0" />
-            <element signature="e#305#599#0" />
-            <element signature="e#688#1004#0" />
-            <element signature="e#807#1000#0" />
-            <element signature="e#870#994#0" />
-            <element signature="e#1060#1310#0" />
-            <element signature="e#1081#1290#0" />
-            <element signature="e#1110#1204#0" />
-            <element signature="e#1213#1284#0" />
+            <element signature="e#80#636#0" />
+            <element signature="e#112#501#0" />
+            <element signature="e#126#208#0" />
+            <element signature="e#220#347#0" />
+            <element signature="e#558#632#0" />
+            <element signature="e#573#602#0" />
+            <element signature="e#688#929#0" />
+            <element signature="e#751#925#0" />
+            <element signature="e#766#795#0" />
+            <element signature="e#824#881#0" />
+            <element signature="e#986#1091#0" />
+            <element signature="e#1189#1608#0" />
+            <element signature="e#1208#1291#0" />
+            <element signature="e#1381#1601#0" />
+            <element signature="e#1398#1431#0" />
+            <element signature="e#1467#1548#0" />
+            <element signature="e#1667#1794#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/api/services/chat/conversation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#127#719#0" />
+            <element signature="e#197#334#0" />
+            <element signature="e#225#328#0" />
+            <element signature="e#366#715#0" />
+            <element signature="e#395#569#0" />
+            <element signature="e#624#709#0" />
+            <element signature="e#641#674#0" />
+            <element signature="e#790#856#0" />
+            <element signature="e#903#1124#0" />
+            <element signature="e#961#1120#0" />
+            <element signature="e#976#1005#0" />
+            <element signature="e#1029#1081#0" />
+            <element signature="e#1180#1536#0" />
+            <element signature="e#1199#1317#0" />
+            <element signature="e#1214#1278#0" />
+            <element signature="e#1352#1529#0" />
+            <element signature="e#1369#1402#0" />
+            <element signature="e#1429#1485#0" />
+            <element signature="e#1589#1696#0" />
+            <element signature="e#1751#1881#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/logging.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/crawlers/zerozero/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/chat_attachment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/chat_conversation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_competition_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_competition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_achievement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/chat_unread.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/chat_message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_match.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_recommendation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_team_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/utils/extractProfileData.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/config/database.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/api/auth/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="351" column="16" lean-forward="true" selection-start-line="351" selection-start-column="16" selection-end-line="351" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!block;n#_updateRegex#0" />
+            <element signature="e#146#169#0" />
+            <element signature="e#374#584#0" />
+            <element signature="e#434#518#0" />
+            <element signature="e#446#513#0" />
+            <element signature="e#648#1616#0" />
+            <element signature="e#664#1583#0" />
+            <element signature="e#670#1578#0" />
+            <element signature="e#686#1571#0" />
+            <element signature="e#707#830#0" />
+            <element signature="e#719#819#0" />
+            <element signature="e#741#806#0" />
+            <element signature="e#860#980#0" />
+            <element signature="e#872#969#0" />
+            <element signature="e#894#956#0" />
+            <element signature="e#1007#1124#0" />
+            <element signature="e#1019#1113#0" />
+            <element signature="e#1041#1100#0" />
+            <element signature="e#1145#1268#0" />
+            <element signature="e#1157#1257#0" />
+            <element signature="e#1179#1244#0" />
+            <element signature="e#1298#1418#0" />
+            <element signature="e#1310#1407#0" />
+            <element signature="e#1332#1394#0" />
+            <element signature="e#1445#1562#0" />
+            <element signature="e#1457#1551#0" />
+            <element signature="e#1479#1538#0" />
+            <element signature="e#1678#1833#0" />
+            <element signature="e#1696#1738#0" />
+            <element signature="e#1911#2096#0" />
+            <element signature="e#2160#2636#0" />
+            <element signature="e#2221#2594#0" />
+            <element signature="e#2284#2588#0" />
+            <element signature="e#2303#2581#0" />
+            <element signature="e#2321#2378#0" />
+            <element signature="e#2396#2572#0" />
+            <element signature="e#2414#2477#0" />
+            <element signature="e#2496#2561#0" />
+            <element signature="e#2710#2992#0" />
+            <element signature="e#2775#2803#0" />
+            <element signature="e#2823#2944#0" />
+            <element signature="e#2836#2939#0" />
+            <element signature="e#3229#3757#0" />
+            <element signature="e#3247#3318#0" />
+            <element signature="e#3338#3421#0" />
+            <element signature="e#3355#3416#0" />
+            <element signature="e#3374#3409#0" />
+            <element signature="e#3470#3753#0" />
+            <element signature="e#3513#3581#0" />
+            <element signature="e#3603#3686#0" />
+            <element signature="e#3618#3679#0" />
+            <element signature="e#3800#4610#0" />
+            <element signature="e#3826#4417#0" />
+            <element signature="e#3832#3923#0" />
+            <element signature="e#3929#4019#0" />
+            <element signature="e#4025#4113#0" />
+            <element signature="e#4119#4210#0" />
+            <element signature="e#4216#4304#0" />
+            <element signature="e#4310#4412#0" />
+            <element signature="e#4467#4525#0" />
+            <element signature="e#4479#4520#0" />
+            <element signature="e#4670#5115#0" />
+            <element signature="e#4714#4882#0" />
+            <element signature="e#4731#4877#0" />
+            <element signature="e#4747#4783#0" />
+            <element signature="e#4799#4870#0" />
+            <element signature="e#4816#4861#0" />
+            <element signature="e#4904#5072#0" />
+            <element signature="e#4921#5067#0" />
+            <element signature="e#4937#4972#0" />
+            <element signature="e#4988#5060#0" />
+            <element signature="e#5005#5051#0" />
+            <element signature="e#5179#5628#0" />
+            <element signature="e#5223#5393#0" />
+            <element signature="e#5240#5388#0" />
+            <element signature="e#5256#5292#0" />
+            <element signature="e#5308#5381#0" />
+            <element signature="e#5325#5372#0" />
+            <element signature="e#5415#5585#0" />
+            <element signature="e#5432#5580#0" />
+            <element signature="e#5448#5485#0" />
+            <element signature="e#5501#5573#0" />
+            <element signature="e#5518#5564#0" />
+            <element signature="e#5683#6037#0" />
+            <element signature="e#5763#5994#0" />
+            <element signature="e#5785#5988#0" />
+            <element signature="e#5804#5981#0" />
+            <element signature="e#5822#5862#0" />
+            <element signature="e#5880#5972#0" />
+            <element signature="e#5898#5961#0" />
+            <element signature="e#6130#6208#0" />
+            <element signature="e#6228#6381#0" />
+            <element signature="e#6241#6376#0" />
+            <element signature="e#6263#6369#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/constants/values.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js">
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info_season.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="315">
+          <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
           <folding>
-            <element signature="e#106#295#0" />
-            <element signature="e#140#217#0" />
-            <element signature="e#299#367#0" />
-            <element signature="e#453#1791#0" />
-            <element signature="e#626#1430#0" />
-            <element signature="e#632#669#0" />
-            <element signature="e#1255#1425#0" />
-            <element signature="e#1263#1418#0" />
-            <element signature="e#1482#1787#0" />
-            <element signature="e#1499#1607#0" />
+            <element signature="e#352#875#0" />
+            <element signature="e#384#603#0" />
+            <element signature="e#885#1087#0" />
+            <element signature="e#1098#1827#0" />
+            <element signature="e#1104#1822#0" />
+            <element signature="e#1207#1290#0" />
+            <element signature="e#1840#2707#0" />
+            <element signature="e#1846#2702#0" />
+            <element signature="e#1958#2209#0" />
+            <element signature="e#2065#2154#0" />
+            <element signature="e#2228#2452#0" />
+            <element signature="e#2471#2695#0" />
+            <element signature="e#3044#3515#0" />
+            <element signature="e#3063#3203#0" />
+            <element signature="e#3075#3192#0" />
+            <element signature="e#3219#3352#0" />
+            <element signature="e#3231#3341#0" />
+            <element signature="e#3368#3506#0" />
+            <element signature="e#3380#3495#0" />
+            <element signature="e#3545#3611#0" />
           </folding>
         </state>
       </provider>

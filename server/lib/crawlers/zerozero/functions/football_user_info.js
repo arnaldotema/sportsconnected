@@ -1,4 +1,4 @@
-const zerozero = require('../crawler');
+const zerozero = require('../index');
 const proxyHandler = require('../proxy_handler');
 const utf8 = require('utf8');
 const logger = require('../../../logging');

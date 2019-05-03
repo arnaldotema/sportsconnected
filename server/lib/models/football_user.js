@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
-const USER_TYPES = require('../constants/values.js').football_user_types;
+const USER_TYPES = require('../constants/values.js').footballUserTypes;
 
-var FootballUserSchema = new Schema({
+const FootballUserSchema = new Schema({
   profile_id: String, // This is not this schema's ID. It's a reference for either the player, team or other type document.
   user_type: { type: String, enum: USER_TYPES },
   email: { type: String, required: true, unique: true },
