@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const USER_TYPES = require('../constants/values.js').football_user_types;
+const USER_TYPES = require('../constants/values.js').footballUserTypes;
 
-var FootballUserInfoSchema = new Schema({
+const FootballUserInfoSchema = new Schema({
   user_id: { type: Schema.Types.ObjectId, ref: 'football_user' },
   type: { type: Number, required: true, index: true },
   followers: [

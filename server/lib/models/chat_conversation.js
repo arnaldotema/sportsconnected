@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const USER_TYPES = require('../constants/values.js').football_user_types;
+const USER_TYPES = require('../constants/values.js').footballUserTypes;
 
-var ChatConversationSchema = new Schema({
+const ChatConversationSchema = new Schema({
   user_id: String,
   participants: [
     {

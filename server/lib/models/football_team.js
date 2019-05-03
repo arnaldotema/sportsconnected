@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var FootballTeamSchema = new Schema({
+const FootballTeamSchema = new Schema({
   acronym: String,
   avatar: String,
   name: String,

@@ -1,8 +1,8 @@
-let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
-const USER_TYPES = require('../constants/values.js').football_user_types;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').footballUserTypes;
 
-let FootballMediaSchema = new Schema({
+const FootballMediaSchema = new Schema({
   _id: String,
   user_type: { type: String, enum: USER_TYPES },
   season_id: { type: Schema.Types.ObjectId, ref: 'football_season' },

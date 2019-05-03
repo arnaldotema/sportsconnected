@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var FootballCompetitionSeasonSchema = new Schema({
+const FootballCompetitionSeasonSchema = new Schema({
   competition_id: { type: Schema.Types.ObjectId, ref: 'football_competition' },
   season_id: { type: Schema.Types.ObjectId, ref: 'football_season' },
   name: String,

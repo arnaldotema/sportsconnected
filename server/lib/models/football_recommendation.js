@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
-const USER_TYPES = require('../constants/values.js').football_user_types;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const USER_TYPES = require('../constants/values.js').footballUserTypes;
 
 /**
  *
