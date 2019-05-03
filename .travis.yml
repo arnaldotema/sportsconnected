@@ -24,7 +24,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-697350137372"
   bucket_path: "sports-connected"
   on:
-    branch: master
+    branch: refactor
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
