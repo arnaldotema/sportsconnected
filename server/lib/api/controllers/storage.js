@@ -1,16 +1,11 @@
-const Entities = require('html-entities').AllHtmlEntities;
-const entities = new Entities();
-const path = require('path');
+'use strict';
 
-let Service = {};
+const path = require('path');
 
 // User DB Interactions
 
-Service.retrieve_image = function(req, res) {
-  //Removing query in the images with the '?' Split
+exports.retrieve_image = function(req, res) {
   const file_path = path.join(__dirname, '../storage' + req.url.split('?')[0]);
 
   res.sendFile(file_path);
 };
-
-exports = Service;

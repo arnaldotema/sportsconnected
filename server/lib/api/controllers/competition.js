@@ -8,7 +8,7 @@ const entities = new Entities();
  *
  * @description :: Server-side logic for managing Competitions.
  */
-exports = {
+module.exports = {
   /**
    * CompetitionController.list()
    */

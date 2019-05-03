@@ -1,8 +1,8 @@
 'use strict';
 
-const FootballUserInfo = require('../models/football_user_info.js');
-const FootballTeam = require('../models/football_team.js');
-const extractProfileData = require ('../utils/extractProfileData.js');
+const FootballUserInfo = require('../../models/football_user_info.js');
+const FootballTeam = require('../../models/football_team.js');
+const extractProfileData = require ('../../utils/extractProfileData.js');
 
 exports = async (user, error, res, req, next) => {
   if (error || !user) {

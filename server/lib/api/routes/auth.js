@@ -29,4 +29,4 @@ router.post('/login', async (req, res, next) => {
 
 router.post('/:id/aggregate-profile', AuthController.aggregate_profile);
 
-exports = router;
+module.exports = router;

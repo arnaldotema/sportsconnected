@@ -7,4 +7,4 @@ const ping = (req, res) => {
 };
 router.get('/', ping);
 
-exports = router;
+module.exports = router;

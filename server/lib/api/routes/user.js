@@ -9,4 +9,4 @@ router.get('/:id', UserController.show);
 router.put('/:id', UserController.update);
 router.delete('/:id', UserController.remove);
 
-exports = router;
+module.exports = router;

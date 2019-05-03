@@ -14,4 +14,4 @@ router.put('/:id', CompetitionController.update);
 
 router.delete('/:id', CompetitionController.remove);
 
-exports = router;
+module.exports = router;

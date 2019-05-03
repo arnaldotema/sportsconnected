@@ -67,9 +67,7 @@ app.use('/api/storage', storage);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 
-//Database
-mongoose.connect(config.database);
-
+// Database setup
 mongoose.connection.on('connected', function() {
   console.log('im connected to ' + config.database);
   // const crawler = require('./crawlers/zerozero/crawler')
@@ -80,15 +78,28 @@ mongoose.connection.on('error', function(err) {
   console.log('Database error: ' + err);
 });
 
-//Start
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
+async function startServer () {
+  mongoose.connect(config.database);
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+  });
 
-app.listen(port, function() {
-  console.log('Server started on port ' + port);
-});
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+  });
+
+  app.listen(port, function() {
+    console.log('Server started on port ' + port);
+  });
+}
+
+async function stopServer () {
+  await mongoose.disconnect();
+}
+
+module.exports = { app, startServer, stopServer };
+
+if (require.main === module) {
+  startServer().catch(err => logger.error(err, 'There was a problem starting the server'));
+}

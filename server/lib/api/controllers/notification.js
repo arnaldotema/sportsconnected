@@ -19,15 +19,15 @@ function handleError(err, result, res) {
   return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
 }
 
-function show(req, res) {
+exports.show = function(req, res) {
   let id = req.params.id;
 
   FootballNotification.findOne({ _id: id }).exec((err, notification) =>
     handleError(err, notification, res)
   );
-}
+};
 
-function listPlayerNotifications(req, res) {
+exports.listPlayerNotifications = function(req, res) {
   let userInfoId = req.params.id;
 
   let offset = parseInt(req.query.offset || '0');
@@ -41,9 +41,9 @@ function listPlayerNotifications(req, res) {
     .skip(offset * size)
     .limit(size)
     .exec((err, notifications) => handleError(err, notifications, res));
-}
+};
 
-function listTeamNotifications(req, res) {
+exports.listTeamNotifications = function(req, res) {
   let teamId = req.params.id;
 
   let offset = parseInt(req.query.offset || '0');
@@ -57,9 +57,9 @@ function listTeamNotifications(req, res) {
     .skip(offset * size)
     .limit(size)
     .exec((err, notifications) => handleError(err, notifications, res));
-}
+};
 
-function removeNotification(req, res) {
+exports.removeNotification = function(req, res) {
   let notificationId = req.params.notificationId;
 
   FootballNotification.findByIdAndRemove(notificationId, err => {
@@ -71,9 +71,9 @@ function removeNotification(req, res) {
     }
     return res.status(204).json();
   });
-}
+};
 
-function updateNotification(req, res) {
+exports.updateNotification = function(req, res) {
   let notificationId = req.params.notificationId;
   let notification = req.body.notification;
 
@@ -86,9 +86,9 @@ function updateNotification(req, res) {
   FootballNotification.update(notificationId, notification, (err, media) =>
     handleError(err, media, res)
   );
-}
+};
 
-function createPlayerNotification(req, res) {
+exports.createPlayerNotification = function(req, res) {
   let userInfoId = req.params.id;
   let notification = req.body.notification;
 
@@ -105,9 +105,9 @@ function createPlayerNotification(req, res) {
   newNotification.save((err, n) => handleError(err, n, res));
 
   // Todo Socket emit the notification to its listeners
-}
+};
 
-function createTeamNotification(req, res) {
+exports.createTeamNotification = function(req, res) {
   let teamId = req.params.id;
   let notification = req.body.notification;
 
@@ -124,14 +124,4 @@ function createTeamNotification(req, res) {
   newNotification.save((err, n) => handleError(err, n, res));
 
   // Todo Socket emit the notification to its listeners
-}
-
-exports = {
-  show,
-  listPlayerNotifications,
-  listTeamNotifications,
-  createPlayerNotification,
-  createTeamNotification,
-  updateNotification,
-  removeNotification,
 };

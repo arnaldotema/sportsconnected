@@ -1,14 +1,12 @@
-var FootballUserInfoSeason = require('../../models/football_user_info_season');
-var FootballTeam = require('../../models/football_team');
+const FootballUserInfoSeason = require('../../models/football_user_info_season');
+const FootballTeam = require('../../models/football_team');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 
-let Service = {};
-
 // User DB Interactions
 
-Service.search = function(req, res) {
-  let user_info_select = {
+exports.search = function(req, res) {
+  const user_info_select = {
     _id: 1,
     user_info_id: 1,
     personal_info: 1,
@@ -16,28 +14,28 @@ Service.search = function(req, res) {
     stats: 1,
   };
 
-  let team_select = {
+  const team_select = {
     _id: 1,
     avatar: 1,
     name: 1,
     acronym: 1,
   };
 
-  let user_info_season_query = {
+  const user_info_season_query = {
     'personal_info.name': {
       $regex: req.body.query,
       $options: 'i',
     },
   };
 
-  let team_query = {
+  const team_query = {
     name: {
       $regex: req.body.query,
       $options: 'i',
     },
   };
 
-  let global_search_result = [];
+  const global_search_result = [];
 
   /*
   personal_info:{
@@ -106,5 +104,3 @@ Service.search = function(req, res) {
         });
     });
 };
-
-exports = Service;

@@ -1,4 +1,4 @@
-var MatchModel = require('../../models/football_match.js');
+const MatchModel = require('../../models/football_match.js');
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 
@@ -7,13 +7,11 @@ const entities = new Entities();
  *
  * @description :: Server-side logic for managing matchs.
  */
-exports = {
+module.exports = {
   /**
    * matchController.list()
    */
   list: function(req, res) {
-    var id = req.params.id;
-
     MatchModel.find(function(err, matches) {
       if (err) {
         return res.status(500).json({
@@ -29,7 +27,7 @@ exports = {
    * matchController.show()
    */
   show: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     MatchModel.findOne({ _id: id }, function(err, match) {
       if (err) {
         return res.status(500).json({
@@ -50,13 +48,13 @@ exports = {
    * matchController.create()
    */
   create: function(req, res) {
-    var object = {};
+    const object = {};
 
     Object.keys(MatchModel.schema.obj).forEach(function(key) {
       object[key] = req.body[key];
     });
 
-    var match = new MatchModel(object);
+    const match = new MatchModel(object);
 
     match.save(function(err, match) {
       if (err) {
@@ -73,7 +71,7 @@ exports = {
    * matchController.update()
    */
   update: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     MatchModel.findOne({ _id: id }, function(err, match) {
       if (err) {
         return res.status(500).json({
@@ -108,7 +106,7 @@ exports = {
    * matchController.remove()
    */
   remove: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     MatchModel.findByIdAndRemove(id, function(err, match) {
       if (err) {
         return res.status(500).json({

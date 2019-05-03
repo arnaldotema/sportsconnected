@@ -1,6 +1,5 @@
-const express = require('express');
 const SocketController = require('../controllers/socket.js');
 
-exports = io => {
+module.exports = io => {
   SocketController(io);
 };

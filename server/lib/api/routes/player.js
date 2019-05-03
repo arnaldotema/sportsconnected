@@ -29,4 +29,4 @@ router.delete('/:id/followers/:follower_id', PlayerController.unfollow);
 
 router.get('/:id/followed', PlayerController.list_followed);
 
-exports = router;
+module.exports = router;

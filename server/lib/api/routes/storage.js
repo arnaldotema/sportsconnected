@@ -10,4 +10,4 @@ router.get('/videos/user_info_season/:id/*', StorageController.retrieve_image);
 
 router.get('/videos/team_info_season/:id/*', StorageController.retrieve_image);
 
-exports = router;
+module.exports = router;
