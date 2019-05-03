@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3866fe50-9b49-4c50-a7af-0dcba537e878" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/constants/values.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/constants/values.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/crawler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/crawlers/zerozero/functions/football_user_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/dispatcher/dispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/dispatcher/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/gary_processor/gary_processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/gary_processor/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/chat_attachment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_attachment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/chat_conversation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_conversation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/chat_message.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/chat_message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_achievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_achievement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_competition_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_competition_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_media.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_recommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_recommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_team_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_team_season.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_user_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/gary_processor/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/gary_processor/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/mailers/achievements.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/dist/" />
     <ignored path="$PROJECT_DIR$/app/tmp/" />
@@ -77,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userInfoService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userInfoService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="351" column="16" lean-forward="true" selection-start-line="351" selection-start-column="16" selection-end-line="351" selection-end-column="16" />
+            <state relative-caret-position="510">
+              <caret line="330" column="44" selection-start-line="330" selection-start-column="44" selection-end-line="330" selection-end-column="44" />
               <folding>
                 <element signature="n#!!block;n#_updateRegex#0" />
                 <element signature="e#146#169#0" />
@@ -173,10 +149,16 @@
                 <element signature="e#5822#5862#0" />
                 <element signature="e#5880#5972#0" />
                 <element signature="e#5898#5961#0" />
+                <element signature="e#6112#6429#0" />
                 <element signature="e#6130#6208#0" />
                 <element signature="e#6228#6381#0" />
                 <element signature="e#6241#6376#0" />
                 <element signature="e#6263#6369#0" />
+                <element signature="e#6475#7177#0" />
+                <element signature="e#6479#6864#0" />
+                <element signature="e#6913#7173#0" />
+                <element signature="e#7077#7162#0" />
+                <element signature="e#7096#7126#0" />
               </folding>
             </state>
           </provider>
@@ -201,11 +183,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="football_user_info_season.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info_season.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
+              <caret line="112" column="8" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
               <folding>
                 <element signature="e#352#875#0" />
                 <element signature="e#384#603#0" />
@@ -327,9 +309,9 @@
         <option value="$PROJECT_DIR$/server/lib/models/football_team_season.js" />
         <option value="$PROJECT_DIR$/server/lib/models/football_user.js" />
         <option value="$PROJECT_DIR$/server/lib/models/football_user_info.js" />
-        <option value="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" />
         <option value="$PROJECT_DIR$/server/lib/constants/values.js" />
         <option value="$PROJECT_DIR$/server/lib/models/football_user_info_season.js" />
+        <option value="$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js" />
       </list>
     </option>
   </component>
@@ -351,6 +333,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
@@ -394,44 +377,6 @@
               <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="crawlers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -439,28 +384,7 @@
               <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="gary_processor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="mailers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sportsconnected" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sportsconnected" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -593,16 +517,15 @@
       <updated>1555159887482</updated>
       <workItem from="1555159889144" duration="1196000" />
       <workItem from="1556821242308" duration="8502000" />
-      <workItem from="1556912354995" duration="2066000" />
+      <workItem from="1556912354995" duration="2306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20624000" />
+    <option name="totallyTimeSpent" value="20864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -806,7 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/mailers/achievements_mailer.js">
+    <entry file="file://$PROJECT_DIR$/server/lib/mailers/achievements.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
@@ -1010,10 +933,46 @@
     <entry file="file://$PROJECT_DIR$/server/lib/api/auth/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/constants/values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info_season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="112" column="8" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
+          <folding>
+            <element signature="e#352#875#0" />
+            <element signature="e#384#603#0" />
+            <element signature="e#885#1087#0" />
+            <element signature="e#1098#1827#0" />
+            <element signature="e#1104#1822#0" />
+            <element signature="e#1207#1290#0" />
+            <element signature="e#1840#2707#0" />
+            <element signature="e#1846#2702#0" />
+            <element signature="e#1958#2209#0" />
+            <element signature="e#2065#2154#0" />
+            <element signature="e#2228#2452#0" />
+            <element signature="e#2471#2695#0" />
+            <element signature="e#3044#3515#0" />
+            <element signature="e#3063#3203#0" />
+            <element signature="e#3075#3192#0" />
+            <element signature="e#3219#3352#0" />
+            <element signature="e#3231#3341#0" />
+            <element signature="e#3368#3506#0" />
+            <element signature="e#3380#3495#0" />
+            <element signature="e#3545#3611#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/api/services/football/userInfoService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="351" column="16" lean-forward="true" selection-start-line="351" selection-start-column="16" selection-end-line="351" selection-end-column="16" />
+        <state relative-caret-position="510">
+          <caret line="330" column="44" selection-start-line="330" selection-start-column="44" selection-end-line="330" selection-end-column="44" />
           <folding>
             <element signature="n#!!block;n#_updateRegex#0" />
             <element signature="e#146#169#0" />
@@ -1105,46 +1064,16 @@
             <element signature="e#5822#5862#0" />
             <element signature="e#5880#5972#0" />
             <element signature="e#5898#5961#0" />
+            <element signature="e#6112#6429#0" />
             <element signature="e#6130#6208#0" />
             <element signature="e#6228#6381#0" />
             <element signature="e#6241#6376#0" />
             <element signature="e#6263#6369#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/constants/values.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/models/football_user_info_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
-          <folding>
-            <element signature="e#352#875#0" />
-            <element signature="e#384#603#0" />
-            <element signature="e#885#1087#0" />
-            <element signature="e#1098#1827#0" />
-            <element signature="e#1104#1822#0" />
-            <element signature="e#1207#1290#0" />
-            <element signature="e#1840#2707#0" />
-            <element signature="e#1846#2702#0" />
-            <element signature="e#1958#2209#0" />
-            <element signature="e#2065#2154#0" />
-            <element signature="e#2228#2452#0" />
-            <element signature="e#2471#2695#0" />
-            <element signature="e#3044#3515#0" />
-            <element signature="e#3063#3203#0" />
-            <element signature="e#3075#3192#0" />
-            <element signature="e#3219#3352#0" />
-            <element signature="e#3231#3341#0" />
-            <element signature="e#3368#3506#0" />
-            <element signature="e#3380#3495#0" />
-            <element signature="e#3545#3611#0" />
+            <element signature="e#6475#7177#0" />
+            <element signature="e#6479#6864#0" />
+            <element signature="e#6913#7173#0" />
+            <element signature="e#7077#7162#0" />
+            <element signature="e#7096#7126#0" />
           </folding>
         </state>
       </provider>

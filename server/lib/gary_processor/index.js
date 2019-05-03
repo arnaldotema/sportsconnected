@@ -2,7 +2,7 @@ const schedule = require('node-schedule');
 const logger = require('../../logging');
 const FootballAchievement = require('../models/football_achievement');
 const FootballUserInfo = require('../models/football_user_info');
-const achievementsMailer = require('../mailers/achievements_mailer');
+const achievementsMailer = require('../mailers/achievements');
 const achievementsNotifications = require('../api/services/notifications/index');
 
 let Service = {};
