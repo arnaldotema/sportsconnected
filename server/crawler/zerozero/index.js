@@ -1,11 +1,11 @@
 // LIBS
 const Crawler = require("crawler");
-const logger = require('../../../logging');
+const logger = require('../../logging');
 const proxyHandler = require('./proxy_handler');
 const request = require('request');
 const format = require("string-template");
 
-const footballTeam = require("../../models/football_team");
+const footballTeam = require("../../lib/models/football_team");
 
 // CRAWLER RELATED
 const baseUris = require('./base_uris');
@@ -25,18 +25,18 @@ let zerozero = new Crawler({
 zerozero.on('schedule',function(options){
     let session = proxyHandler.getSession();
 
-    var j = request.jar();
-    var cookie = request.cookie('jcenable=1');
-    var captcha = request.cookie('cf_clearance=ffce9ae767f38d597cc9aaf347d6ebf58311e8f9-1530892002-3600');
-    var user = request.cookie('zzptremember=' + session.user);
-    var url = 'http://www.zerozero.pt';
+    const j = request.jar();
+    const cookie = request.cookie('jcenable=1');
+    const captcha = request.cookie('cf_clearance=ffce9ae767f38d597cc9aaf347d6ebf58311e8f9-1530892002-3600');
+    const user = request.cookie('zzptremember=' + session.user);
+    const url = 'http://www.zerozero.pt';
 
     j.setCookie(cookie, url);
     j.setCookie(captcha, url);
     j.setCookie(user, url);
 
     options.proxy = session.proxy;
-    options.jar = j,
+    options.jar = j;
     logger.info("ADDED " + options.uri + " to the queue: PROXY = " + options.proxy);
 });
 
@@ -59,14 +59,12 @@ zerozero.on('drain',function(options){
 zerozero.proxyFailCallback = function (res, done){
     zerozero.queue(res.options);
     done();
-}
+};
 
 module.exports = zerozero;
 
 // The class should end here
-
-
-// The remain code serves for forcing to run the crawler
+// The remaining code serves for forcing to run the crawler
 
 const competitionCrawler = require('./functions/football_competition');
 

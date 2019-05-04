@@ -12,4 +12,4 @@ module.exports = {
     PLAYER_INFO: 'http://www.zerozero.pt/player.php?id={player_id}',
     //MATCHES
     MATCH_INFO: 'http://www.zerozero.pt/jogo.php?id={match_id}'
-}
+};

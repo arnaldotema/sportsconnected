@@ -3,10 +3,10 @@ const proxyHandler = require('../proxy_handler');
 const logger = require('../../../logging');
 const baseUris = require('../base_uris');
 var format = require("string-template");
-const footballTeam = require('../../../models/football_team');
-const footballTeamSeason = require('../../../models/football_team_season');
-const footballCompetitionSeason = require('../../../models/football_competition_season');
-const footballUserInfoCrawler = require('../functions/football_user_info');
+const footballTeam = require('../../../lib/models/football_team');
+const footballTeamSeason = require('../../../lib/models/football_team_season');
+const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
+const footballUserInfoCrawler = require('./football_user_info');
 
 
 const updateTeamInfo = function (err, res, done) {

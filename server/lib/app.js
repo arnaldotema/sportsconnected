@@ -69,9 +69,9 @@ app.use('/api/auth', auth);
 
 // Database setup
 mongoose.connection.on('connected', function() {
-  console.log('im connected to ' + config.database);
-  // const crawler = require('./crawlers/zerozero/crawler')
-  // const gary_processor = require('./gary_processor/gary_processor')
+  console.log('Connected to ' + config.database);
+  // const crawler = require('./crawlers/zerozero/index')
+  // const gary_processor = require('./gary_processor/index')
 });
 
 mongoose.connection.on('error', function(err) {

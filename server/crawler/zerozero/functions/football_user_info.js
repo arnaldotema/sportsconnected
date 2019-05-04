@@ -6,11 +6,11 @@ const baseUris = require('../base_uris');
 var format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
-const footballUserInfo = require('../../../models/football_user_info');
-const footballUserInfoSeason = require('../../../models/football_user_info_season');
-const footballCompetitionSeason = require('../../../models/football_competition_season');
-const footballTeamSeason = require('../../../models/football_team_season');
-const footballUserInfoCrawler = require('../functions/football_match');
+const footballUserInfo = require('../../../lib/models/football_user_info');
+const footballUserInfoSeason = require('../../../lib/models/football_user_info_season');
+const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
+const footballTeamSeason = require('../../../lib/models/football_team_season');
+const footballUserInfoCrawler = require('./football_match');
 
 function cascadeUserInfoSeasonUpdates(res, done) {
     footballTeamSeason.addPlayerToTeam(res.options.team_season._id, res.options.user_info_season, function (err, result) {

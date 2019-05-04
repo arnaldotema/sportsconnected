@@ -5,11 +5,11 @@ const baseUris = require('../base_uris');
 const format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
-const footballUserInfo = require('../../../models/football_user_info');
-const footballUserInfoSeason = require('../../../models/football_user_info_season');
-const footballCompetitionSeason = require('../../../models/football_competition_season');
-const footballMatch = require('../../../models/football_match');
-const footballTeamSeason = require('../../../models/football_team_season');
+const footballUserInfo = require('../../../lib/models/football_user_info');
+const footballUserInfoSeason = require('../../../lib/models/football_user_info_season');
+const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
+const footballMatch = require('../../../lib/models/football_match');
+const footballTeamSeason = require('../../../lib/models/football_team_season');
 
 function initializeMatchModel(match, res, done, cb){
 
