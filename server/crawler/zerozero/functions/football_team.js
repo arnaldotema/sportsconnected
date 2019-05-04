@@ -2,14 +2,14 @@ const zerozero = require('../index');
 const proxyHandler = require('../proxy_handler');
 const logger = require('../../../logging');
 const baseUris = require('../base_uris');
-var format = require("string-template");
+const format = require("string-template");
 const footballTeam = require('../../../lib/models/football_team');
 const footballTeamSeason = require('../../../lib/models/football_team_season');
 const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
 const footballUserInfoCrawler = require('./football_user_info');
 
 
-const updateTeamInfo = function (err, res, done) {
+exports.updateTeamInfo = function (err, res, done) {
 
     let team = {
         acronym: '',
@@ -34,8 +34,8 @@ const updateTeamInfo = function (err, res, done) {
         '';
 
     //Different age groups from seniors
-    if (team.name != '') {
-        if (team.name.split('<')[1] != undefined) {
+    if (team.name !== '') {
+        if (team.name.split('<')[1] !==undefined) {
             team.name = team.name = team.name.split('<')[0].trim() + " " + team.name.split('<')[1].split('>')[1];
         }
         else {
@@ -64,7 +64,7 @@ const updateTeamInfo = function (err, res, done) {
     });
 };
 
-const updateTeamSeasonInfo = function (err, res, done) {
+exports.updateTeamSeasonInfo = function (err, res, done) {
 
     let team_season = {
         team_id: res.options.team._id,
@@ -89,8 +89,7 @@ const updateTeamSeasonInfo = function (err, res, done) {
     });
 };
 
-// Adds team to the copetition and the other way around
-function cascadeTeamUpdates(res, done) {
+exports.cascadeTeamUpdates = function(res, done) {
     const team_season = res.options.team_season;
     const competition_season = res.options.competition_season;
 
@@ -114,9 +113,9 @@ function cascadeTeamUpdates(res, done) {
             });
         }
     });
-}
+};
 
-function processAllTeamPlayers(res, done) {
+exports.processAllTeamPlayers = function(res, done) {
     let playerIds = [];
 
     res.$("#team_squad .staff").each(function () {
@@ -152,10 +151,9 @@ function processAllTeamPlayers(res, done) {
 
     done();
 
-}
+};
 
-//not used, may be useful in the future...
-const processAllTeamGames = function (err, res, done) {
+exports.processAllTeamGames = function (err, res, done) {
     let matchIds = [];
 
     res.$("#team_games table tr .result a").each(function () {
@@ -178,7 +176,7 @@ const processAllTeamGames = function (err, res, done) {
     done();
 };
 
-function processTeamPositionsAndSeason(err, res, done) {
+exports.processTeamPositionsAndSeason = function(err, res, done) {
     footballCompetitionSeason.getById(res.options.competition_season._id, function (err, result) {
         if (err) {
             logger.error(err);
@@ -193,7 +191,7 @@ function processTeamPositionsAndSeason(err, res, done) {
             competition_season.standings.forEach(function (team) {
                 ids.push(team.id);
                 team_ids.push(team.team_id);
-            })
+            });
 
             footballTeamSeason.getByIds(ids, function (err, result) {
                 if (err) {
@@ -224,9 +222,4 @@ function processTeamPositionsAndSeason(err, res, done) {
             })
         }
     })
-}
-
-module.exports = {
-    updateTeamInfo: updateTeamInfo,
-    processTeamPositionsAndSeason: processTeamPositionsAndSeason
-}
+};

@@ -1,18 +1,14 @@
 const zerozero = require('../index');
-const proxyHandler = require('../proxy_handler');
 const utf8 = require('utf8');
 const logger = require('../../../logging');
-const baseUris = require('../base_uris');
-var format = require("string-template");
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 const footballUserInfo = require('../../../lib/models/football_user_info');
 const footballUserInfoSeason = require('../../../lib/models/football_user_info_season');
 const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
 const footballTeamSeason = require('../../../lib/models/football_team_season');
-const footballUserInfoCrawler = require('./football_match');
 
-function cascadeUserInfoSeasonUpdates(res, done) {
+exports.cascadeUserInfoSeasonUpdates = function (res, done) {
     footballTeamSeason.addPlayerToTeam(res.options.team_season._id, res.options.user_info_season, function (err, result) {
         if (err) {
             logger.error("Error when adding player to team:", err);
@@ -42,9 +38,9 @@ function cascadeUserInfoSeasonUpdates(res, done) {
             });
         }
     });
-}
+};
 
-const updateUserInfo = function (err, res, done) {
+exports.updateUserInfo = function (err, res, done) {
 
     const user_info = {
         type: 1,
@@ -70,7 +66,7 @@ const updateUserInfo = function (err, res, done) {
     });
 };
 
-const updateUserInfoSeason = function (err, res, done) {
+exports.updateUserInfoSeason = function (err, res, done) {
     const user_info_season = {
         user_info_id: res.options.user_info._id,
         season_id: res.options.team_season.season_id,
@@ -176,7 +172,7 @@ const updateUserInfoSeason = function (err, res, done) {
     });
 };
 
-const updateUserInfoCurrentSeasons = function (err, res, done) {
+exports.updateUserInfoCurrentSeasons = function (err, res, done) {
     footballUserInfoSeason.getByTeamSeasonId(res.options.team_season._id, function (err, result) {
         if (err) {
             logger.error(err);
@@ -194,10 +190,4 @@ const updateUserInfoCurrentSeasons = function (err, res, done) {
             })
         }
     })
-}
-
-module.exports = {
-    updateUserInfo: updateUserInfo,
-    updateUserInfoSeason: updateUserInfoSeason,
-    updateUserInfoCurrentSeasons: updateUserInfoCurrentSeasons
-}
+};

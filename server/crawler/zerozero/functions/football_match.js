@@ -1,17 +1,151 @@
 const zerozero = require('../index');
-const proxyHandler = require('../proxy_handler');
 const logger = require('../../../logging');
-const baseUris = require('../base_uris');
-const format = require("string-template");
-const Entities = require('html-entities').AllHtmlEntities;
-const entities = new Entities();
 const footballUserInfo = require('../../../lib/models/football_user_info');
 const footballUserInfoSeason = require('../../../lib/models/football_user_info_season');
 const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
 const footballMatch = require('../../../lib/models/football_match');
 const footballTeamSeason = require('../../../lib/models/football_team_season');
 
-function initializeMatchModel(match, res, done, cb){
+function _getEventsTimes(times){
+  let result = [];
+
+  let parsedTimes = times.html().match(/(\d+\+*\d*)/g);
+
+  if(parsedTimes != null) {
+    parsedTimes.forEach(function (time) {
+      if (time.includes('+')) {
+        let overtime = time.split('+');
+        result.push((+overtime[0]) + (+overtime[1] / 10));
+      }
+      else {
+        result.push(+time);
+      }
+    });
+  }
+  else{
+    times.html().split(' ').forEach(function() {
+      result.push('-1');
+    });
+  }
+
+  return result;
+}
+
+function _processPlayerEvents(match, res, player, starter, ids, team){
+  ids.push(+res.$(player).find(".name .text a").attr('href').match(/\d+/g)[0]);
+
+  const eventsLabels = res.$(player).find(".events span");
+  const eventsTimes = res.$(player).find(".events div");
+
+  let goIn = starter ? 0 : match.duration;
+  let goOut = match.duration;
+
+  let playerStats = {
+    number: +res.$(player).find(".number").html(),
+    goals: [],
+    assists: [],
+    yellow_cards: [],
+    red_cards: [],
+    minutes_played: 0,
+    go_in:[],
+    go_out:[]
+  };
+
+  /*
+
+  Events Mapping:
+
+      Goal ->  Q
+      Assist -> B
+
+      Red Cards -> R title="Vermelhos"
+      Yellow Cards -> R title="Amarelos"
+      Double Yellow -> S
+
+      Defend Penalti -> C
+      Miss Penalti -> A
+
+      Leave match -> 8
+      Enter match -> 7
+
+   */
+
+  for(let i = 0; i < eventsLabels.length ; i++){
+    const label = res.$(eventsLabels[i]);
+    const times = res.$(eventsTimes[i]);
+
+    switch(label.html()) {
+      case "Q":
+        playerStats.goals = _getEventsTimes(times);
+        break;
+      case "B":
+        playerStats.assists = _getEventsTimes(times);
+        break;
+      case "R":
+        if(label.attr("title") === "Vermelhos") {
+          playerStats.red_cards = _getEventsTimes(times);
+        }
+        else if(label.attr("title") === "Amarelos") {
+          playerStats.yellow_cards = _getEventsTimes(times);
+        }
+        break;
+      case "S":
+        playerStats.yellow_cards = playerStats.yellow_cards.concat(_getEventsTimes(times));
+        i = eventsLabels.length;
+        break;
+      case "C":
+        //Not counted, may be in the future
+        break;
+      case "A":
+        //Not counted, may be in the future
+        break;
+      case "8":
+        playerStats.goOut = _getEventsTimes(times);
+        goOut = playerStats.goOut[0];
+        break;
+      case "7":
+        playerStats.goIn = _getEventsTimes(times);
+        goIn = playerStats.goIn[0];
+        break;
+      default:
+    }
+  }
+
+  playerStats.minutes_played = goOut - goIn;
+
+  team.push(playerStats);
+}
+
+function _updateRegex(regex, match_info){
+  if(!regex){
+    regex = "##";
+  }
+
+  regex = regex.slice(0, -1); // remove the last character "#"
+
+  let game_partition = "=";
+
+  match_info.goals.forEach(function(value){
+    game_partition += "G"
+  });
+  match_info.assists.forEach(function(value){
+    game_partition += "A"
+  });
+  match_info.red_cards.forEach(function(value){
+    game_partition += "R"
+  });
+  match_info.yellow_cards.forEach(function(value){
+    game_partition += "Y"
+  });
+
+  game_partition += match_info.minutes_played;
+
+  regex += game_partition + "= "; //close game partition
+
+  return regex + "#"; //close regex
+}
+
+exports.initializeMatchModel = function (match, res, done, cb){
 
     //Competition
 
@@ -31,7 +165,7 @@ function initializeMatchModel(match, res, done, cb){
 
     //Duration (went to overtime?)
 
-    match.duration = res.$(".extratime").length == 0 ?
+    match.duration = res.$(".extratime").length === 0 ?
         90 :
         120;
 
@@ -46,7 +180,7 @@ function initializeMatchModel(match, res, done, cb){
         0;
 
     res.$(".info .home .scorers .time").each(function(){
-        var number = res.$(this).html().trim();
+        const number = res.$(this).html().trim();
         if(number.split(" ").length > 0){
             match.home_team.goals = match.home_team.goals.concat(number.split(" "));
         }
@@ -56,7 +190,7 @@ function initializeMatchModel(match, res, done, cb){
     });
 
     res.$(".info .away .scorers .time").each(function(){
-        var number = res.$(this).html().trim();
+        const number = res.$(this).html().trim();
         if(number.split(" ").length > 0){
             match.away_team.goals = match.away_team.goals.concat(number.split(" "));
         }
@@ -96,148 +230,9 @@ function initializeMatchModel(match, res, done, cb){
             cb(match, res, done);
         }
     })
-}
+};
 
-function _getEventsTimes(times){
-    let result = [];
-
-    let parsedTimes = times.html().match(/(\d+\+*\d*)/g);
-
-    if(parsedTimes != null) {
-        parsedTimes.forEach(function (time) {
-            if (time.includes('+')) {
-                let overtime = time.split('+');
-                result.push((+overtime[0]) + (+overtime[1] / 10));
-            }
-            else {
-                result.push(+time);
-            }
-        });
-    }
-    else{
-        times.html().split(' ').forEach(function() {
-            result.push('-1');
-        });
-    }
-
-    return result;
-}
-
-function _processPlayerEvents(match, res, player, starter, ids, team){
-        ids.push(+res.$(player).find(".name .text a").attr('href').match(/\d+/g)[0]);
-
-        const eventsLabels = res.$(player).find(".events span");
-        const eventsTimes = res.$(player).find(".events div");
-
-        let goIn = starter ? 0 : match.duration;
-        let goOut = match.duration;
-
-        let playerStats = {
-            number: +res.$(player).find(".number").html(),
-            goals: [],
-            assists: [],
-            yellow_cards: [],
-            red_cards: [],
-            minutes_played: 0,
-            go_in:[],
-            go_out:[]
-        };
-
-        /*
-
-        Events Mapping:
-
-            Goal ->  Q
-            Assist -> B
-
-            Red Cards -> R title="Vermelhos"
-            Yellow Cards -> R title="Amarelos"
-            Double Yellow -> S
-
-            Defend Penalti -> C
-            Miss Penalti -> A
-
-            Leave match -> 8
-            Enter match -> 7
-
-         */
-
-        for(let i = 0; i < eventsLabels.length ; i++){
-            const label = res.$(eventsLabels[i]);
-            const times = res.$(eventsTimes[i]);
-
-            switch(label.html()) {
-                case "Q":
-                    playerStats.goals = _getEventsTimes(times);
-                    break;
-                case "B":
-                    playerStats.assists = _getEventsTimes(times);
-                    break;
-                case "R":
-                    if(label.attr("title") == "Vermelhos") {
-                        playerStats.red_cards = _getEventsTimes(times);
-                    }
-                    else if(label.attr("title") == "Amarelos") {
-                        playerStats.yellow_cards = _getEventsTimes(times);
-                    }
-                    break;
-                case "S":
-                    playerStats.yellow_cards = playerStats.yellow_cards.concat(_getEventsTimes(times));
-                    i = eventsLabels.length;
-                    break;
-                case "C":
-                    //Not counted, may be in the future
-                    break;
-                case "A":
-                    //Not counted, may be in the future
-                    break;
-                case "8":
-                    playerStats.goOut = _getEventsTimes(times);
-                    goOut = playerStats.goOut[0];
-                    break;
-                case "7":
-                    playerStats.goIn = _getEventsTimes(times);
-                    goIn = playerStats.goIn[0];
-                    break;
-                default:
-            }
-        }
-
-        playerStats.minutes_played = goOut - goIn;
-
-        team.push(playerStats);
-}
-
-function _updateRegex(regex, match_info){
-    if(!regex){
-        regex = "##";
-    }
-
-    regex = regex.slice(0, -1); // remove the last character "#"
-
-    let game_partition = "=";
-
-    match_info.goals.forEach(function(value){
-        game_partition += "G"
-    });
-    match_info.assists.forEach(function(value){
-        game_partition += "A"
-    });
-    match_info.red_cards.forEach(function(value){
-        game_partition += "R"
-    });
-    match_info.yellow_cards.forEach(function(value){
-        game_partition += "Y"
-    });
-
-    game_partition += match_info.minutes_played;
-
-    regex += game_partition + "= "; //close game partition
-
-    return regex + "#"; //close regex
-}
-
-function processMatchIds(match, res, done, cb){
+exports.processMatchIds = function (match, res, done, cb){
     // User_Infos
 
     let homeTeamIds = {
@@ -257,7 +252,7 @@ function processMatchIds(match, res, done, cb){
 
     //Populate the players with events...
 
-    if(report.length == 0){
+    if(report.length === 0){
         logger.error("Match with zerozero team_id: " + res.options.zerozeroId + " has no report");
         //zerozero.proxyFailCallback(res, done);
     }
@@ -357,15 +352,15 @@ function processMatchIds(match, res, done, cb){
                             avatar: res.options.match.away_team.avatar,
                             goals: res.options.match.away_team.goals.length
                         }
-                    }
+                    };
                     cb(embedMatch, res, done);
                 }
             });
         }
     })
-}
+};
 
-function processMatchPlayers(nestedMatch, res, done, cb){
+exports.processMatchPlayers = function (nestedMatch, res, done, cb){
 
     footballUserInfoSeason.updateUserInfosStats(res.options.match, nestedMatch, function (err, result) {
         if (err) {
@@ -378,9 +373,9 @@ function processMatchPlayers(nestedMatch, res, done, cb){
             cb(res, done);
         }
     })
-}
+};
 
-function processMatchTeams(nestedMatch, res, done, cb){
+exports.processMatchTeams = function (nestedMatch, res, done, cb){
     footballTeamSeason.updateTeamsStandings(res.options.match, nestedMatch, function (err, result) {
         if (err) {
             logger.error(err);
@@ -392,9 +387,9 @@ function processMatchTeams(nestedMatch, res, done, cb){
             cb(nestedMatch, res, done);
         }
     })
-}
+};
 
-function processMatchCompetition(nestedMatch, res, done, cb){
+exports.processMatchCompetition = function (nestedMatch, res, done, cb){
     footballCompetitionSeason.updateCompetitionStandingsAndStats(res.options.match, nestedMatch, function(err, result){
         if (err) {
             logger.error(err);
@@ -406,9 +401,9 @@ function processMatchCompetition(nestedMatch, res, done, cb){
             cb(nestedMatch, res, done);
         }
     })
-}
+};
 
-function processUserInfoRegex(res, done){
+exports.processUserInfoRegex = function (res, done){
     let homeTeamIds = {
         main_lineup: [],
         reserves: [],
@@ -476,9 +471,9 @@ function processUserInfoRegex(res, done){
             });
         }
     })
-}
+};
 
-const processMatchInfo = function (err, res, done){
+exports.processMatchInfo = function (err, res, done){
     let match = {
         played: true,
         external_ids: {
@@ -533,8 +528,4 @@ const processMatchInfo = function (err, res, done){
             });
         });
     });
-}
-
-module.exports = {
-    processMatchInfo: processMatchInfo
-}
+};

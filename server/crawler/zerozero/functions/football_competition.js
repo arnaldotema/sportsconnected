@@ -11,7 +11,7 @@ const footballMatch = require('../../../lib/models/football_match');
 const footballMatchCrawler = require('./football_match');
 const footballSeason = require('../../../lib/models/football_season');
 
-const updateCompetition = function (err, res, done) {
+exports.updateCompetition = function (err, res, done) {
     let competition = {
         name: '',
         avatar: ''
@@ -92,12 +92,12 @@ const updateCompetition = function (err, res, done) {
         }
     });
 
-}
+};
 
-const updateCompetitionSeason = function (err, res, done) {
+exports.updateCompetitionSeason = function (err, res, done) {
 
     // Checking if there are any teams in this template
-    if (res.$('#edition_table').length == 0) {
+    if (res.$('#edition_table').length === 0) {
         res.$('#page_main tr td .text a').each(function () {
 
                 if (res.$(this)[0].children[0].data !== "Fase Final") {
@@ -180,9 +180,9 @@ const updateCompetitionSeason = function (err, res, done) {
 
     // Todo - Add an "Else" statement: we need to have a new condition checking if the template has Like (1ª Divisão, etc - like here: http://www.zerozero.pt/associacao.php?id=15)
 
-}
+};
 
-const updateCompetitionSeasonTeams = function (err, res, done) {
+exports.updateCompetitionSeasonTeams = function (err, res, done) {
     let teamIds = [];
 
     res.$('#edition_table tbody tr .text a').each(function () {
@@ -204,9 +204,9 @@ const updateCompetitionSeasonTeams = function (err, res, done) {
     logger.info("Edition Teams IDs: ", teamIds);
 
     done();
-}
+};
 
-const updateCompetitionSeasonCalendar = function (err, res, done) {
+exports.updateCompetitionSeasonCalendar = function (err, res, done) {
 
     res.$("#pagination li").each(function (index) {
         zerozero.queue({
@@ -230,9 +230,9 @@ const updateCompetitionSeasonCalendar = function (err, res, done) {
 
     done();
 
-}
+};
 
-const updateCompetitionSeasonMatches = function (err, res, done) {
+exports.updateCompetitionSeasonMatches = function (err, res, done) {
     let matchesToSchedule = [];
 
     const test = res.$("#team_games tbody .parent").each(function () {
@@ -277,12 +277,4 @@ const updateCompetitionSeasonMatches = function (err, res, done) {
             done();
         }
     });
-}
-
-module.exports = {
-    updateCompetition: updateCompetition,
-    updateCompetitionSeason: updateCompetitionSeason,
-    updateCompetitionSeasonTeams: updateCompetitionSeasonTeams,
-    updateCompetitionSeasonMatches: updateCompetitionSeasonMatches,
-    updateCompetitionSeasonCalendar: updateCompetitionSeasonCalendar
-}
+};

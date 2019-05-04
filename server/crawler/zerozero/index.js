@@ -4,13 +4,9 @@ const logger = require('../../logging');
 const proxyHandler = require('./proxy_handler');
 const request = require('request');
 const format = require("string-template");
-
-const footballTeam = require("../../lib/models/football_team");
-
-// CRAWLER RELATED
 const baseUris = require('./base_uris');
 
-let zerozero = new Crawler({
+const zerozero = new Crawler({
     rateLimit: 50,
     jQuery: {
         name: 'cheerio',
@@ -21,9 +17,11 @@ let zerozero = new Crawler({
     }
 });
 
-// When a crawl task enters the queue
+/**
+ * Crawl task enters the queue
+ * */
 zerozero.on('schedule',function(options){
-    let session = proxyHandler.getSession();
+    const session = proxyHandler.getSession();
 
     const j = request.jar();
     const cookie = request.cookie('jcenable=1');
@@ -40,50 +38,52 @@ zerozero.on('schedule',function(options){
     logger.info("ADDED " + options.uri + " to the queue: PROXY = " + options.proxy);
 });
 
-
-// When debugging, since the last crawled link is attached,
-// it's easy to see what the problem was by clicking on the link and visiting the web page
-
-// When the queue pops a task
+/**
+ Queue pops a task
+ * */
 zerozero.on('request',function(options){
     logger.info("CRAWLING " + options.uri + ", PROXY = " + options.proxy);
 });
 
-// No more requests
 zerozero.on('drain',function(options){
-    logger.info("NO MORE REQUESTS! DRAINED!");
+    logger.info("No more requests!");
 });
 
-// When it fails, it sets it up to the queue again with the same priorities
-// (the queue will always pop the tasks with more priorities)
+/**
+ When it fails, it sets it up to the queue again with the same priorities
+ (the queue will always pop the tasks with more priorities)
+ * */
 zerozero.proxyFailCallback = function (res, done){
     zerozero.queue(res.options);
     done();
 };
 
-module.exports = zerozero;
+function start () {
+  const competitionCrawler = require('./functions/football_competition');
 
-// The class should end here
-// The remaining code serves for forcing to run the crawler
+  logger.info("Testing the editions...");
 
-const competitionCrawler = require('./functions/football_competition');
+  /*
+  zerozero.queue({
+      uri: format(baseUris.COMPETITION, {competition_id: 2380}), // 3 - ID da Super Liga, 2380 - Campeonato de Portugal
+      callback: proxyHandler.crawl,
+      successCallback: competitionCrawler.updateCompetition,
+      proxyFailCallback: zerozero.proxyFailCallback,
+      zerozeroId: 2380
+  });
+  */
 
-logger.info("Testing the editions...");
-
-/*
-zerozero.queue({
-    uri: format(baseUris.COMPETITION, {competition_id: 2380}), // 3 - ID da Super Liga, 2380 - Campeonato de Portugal
-    callback: proxyHandler.crawl,
-    successCallback: competitionCrawler.updateCompetition,
-    proxyFailCallback: zerozero.proxyFailCallback,
-    zerozeroId: 2380
-});
-*/
-
-zerozero.queue({
+  zerozero.queue({
     uri: format(baseUris.ASSOCIATION, {competition_id: 15}), // 15 - ID da A.Setúbal
     callback: proxyHandler.crawl,
     successCallback: competitionCrawler.updateCompetition,
     proxyFailCallback: zerozero.proxyFailCallback,
     zerozeroId: 15
-});
+  });
+}
+
+module.exports = { zerozero, start };
+
+start();
+
+
