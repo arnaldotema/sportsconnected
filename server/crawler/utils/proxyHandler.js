@@ -12,10 +12,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-/*
- * Detecta certos erros no pedido e automaticamente muda de proxy (Caso haja mais proxies disponíveis)
- */
-const crawl = function (err, res, done) {
+exports.crawl = function (err, res, done) {
     if( res.$(".g-recaptcha").length > 0){
         logger.error("Proxy failed at request: " + res.options.uri + " with PROXY: " + res.options.proxy);
         res.options.proxyFailCallback(err, res, done);
@@ -25,7 +22,7 @@ const crawl = function (err, res, done) {
     }
 };
 
-const getSession = function() {
+exports.getSession = function() {
     const proxy = proxies[getRandomInt(proxies.length)];
     const user = users[proxy];
 
@@ -33,9 +30,4 @@ const getSession = function() {
         proxy: proxies[getRandomInt(proxies.length)],
         user: user
     };
-};
-
-module.exports = {
-    crawl: crawl,
-    getSession: getSession
 };

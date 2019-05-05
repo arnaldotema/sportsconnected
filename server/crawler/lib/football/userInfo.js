@@ -1,4 +1,4 @@
-const zerozero = require('../index');
+const zerozero = require('../../index');
 const utf8 = require('utf8');
 const logger = require('../../../logging');
 const Entities = require('html-entities').AllHtmlEntities;

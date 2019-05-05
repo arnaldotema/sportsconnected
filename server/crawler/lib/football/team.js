@@ -1,13 +1,12 @@
-const zerozero = require('../index');
-const proxyHandler = require('../proxy_handler');
+const zerozero = require('../../index');
+const proxyHandler = require('../../utils/proxyHandler');
 const logger = require('../../../logging');
-const baseUris = require('../base_uris');
+const baseUris = require('../../config/baseUris');
 const format = require("string-template");
-const footballTeam = require('../../../lib/models/football_team');
-const footballTeamSeason = require('../../../lib/models/football_team_season');
-const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
-const footballUserInfoCrawler = require('./football_user_info');
-
+const Team = require('../../../lib/models/football_team');
+const TeamSeason = require('../../../lib/models/football_team_season');
+const CompetitionSeason = require('../../../lib/models/football_competition_season');
+const userInfoCrawler = require('./userInfo');
 
 exports.updateTeamInfo = function (err, res, done) {
 
@@ -49,7 +48,7 @@ exports.updateTeamInfo = function (err, res, done) {
 
     logger.info("Team Info:", team);
 
-    footballTeam.updateAndReturnByZeroZeroId(res.options.zerozeroId, team, function (err, result) {
+    Team.updateAndReturnByZeroZeroId(res.options.zerozeroId, team, function (err, result) {
         if (err) {
             logger.error(err);
             zerozero.proxyFailCallback(res, done);
@@ -76,7 +75,7 @@ exports.updateTeamSeasonInfo = function (err, res, done) {
         }
     };
 
-    footballTeamSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, team_season, function (err, result) {
+    TeamSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, team_season, function (err, result) {
         if (err) {
             logger.error(err);
             zerozero.proxyFailCallback(res, done);
@@ -93,7 +92,7 @@ exports.cascadeTeamUpdates = function(res, done) {
     const team_season = res.options.team_season;
     const competition_season = res.options.competition_season;
 
-    footballTeamSeason.addCompetitionToTeam(team_season._id, competition_season, function (err, result) {
+    TeamSeason.addCompetitionToTeam(team_season._id, competition_season, function (err, result) {
         if (err) {
             logger.error("Error when adding competition_season to team:", err);
             zerozero.proxyFailCallback(res, done);
@@ -101,7 +100,7 @@ exports.cascadeTeamUpdates = function(res, done) {
         else {
             logger.info("Successfully added competition_season " + competition_season.name + " to team " + team_season.name, result);
 
-            footballCompetitionSeason.addTeamToCompetition(competition_season._id, team_season, function (err, result) {
+            CompetitionSeason.addTeamToCompetition(competition_season._id, team_season, function (err, result) {
                 if (err) {
                     logger.error("Error when adding team to competition_season:", err);
                     zerozero.proxyFailCallback(res, done);
@@ -126,7 +125,7 @@ exports.processAllTeamPlayers = function(res, done) {
             uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
             priority: 3,
             callback: proxyHandler.crawl,
-            successCallback: footballUserInfoCrawler.updateUserInfo,
+            successCallback: userInfoCrawler.updateUserInfo,
             proxyFailCallback: zerozero.proxyFailCallback,
             zerozeroId: playerId,
             competition_season: res.options.competition_season,
@@ -138,7 +137,7 @@ exports.processAllTeamPlayers = function(res, done) {
             uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
             priority: 4,
             callback: proxyHandler.crawl,
-            successCallback: footballUserInfoCrawler.updateUserInfoCurrentSeasons,
+            successCallback: userInfoCrawler.updateUserInfoCurrentSeasons,
             proxyFailCallback: zerozero.proxyFailCallback,
             competition_season: res.options.competition_season,
             team_season: res.options.team_season
@@ -177,7 +176,7 @@ exports.processAllTeamGames = function (err, res, done) {
 };
 
 exports.processTeamPositionsAndSeason = function(err, res, done) {
-    footballCompetitionSeason.getById(res.options.competition_season._id, function (err, result) {
+    CompetitionSeason.getById(res.options.competition_season._id, function (err, result) {
         if (err) {
             logger.error(err);
             zerozero.proxyFailCallback(res, done);
@@ -193,7 +192,7 @@ exports.processTeamPositionsAndSeason = function(err, res, done) {
                 team_ids.push(team.team_id);
             });
 
-            footballTeamSeason.getByIds(ids, function (err, result) {
+            TeamSeason.getByIds(ids, function (err, result) {
                 if (err) {
                     logger.error(err);
                     zerozero.proxyFailCallback(res, done);
@@ -201,13 +200,13 @@ exports.processTeamPositionsAndSeason = function(err, res, done) {
                 else {
                     let seasons = result;
 
-                    footballTeamSeason.updateTeamsPositions(competition_season, seasons, function (err, result) {
+                    TeamSeason.updateTeamsPositions(competition_season, seasons, function (err, result) {
                         if (err) {
                             logger.error(err);
                             zerozero.proxyFailCallback(res, done);
                         }
                         else {
-                            footballTeam.updateCurrentSeasons(seasons, function (err, result) {
+                            Team.updateCurrentSeasons(seasons, function (err, result) {
                                 if (err) {
                                     logger.error(err);
                                     zerozero.proxyFailCallback(res, done);

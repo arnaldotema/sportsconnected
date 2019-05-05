@@ -10,7 +10,7 @@
 // LIBS
 const logger = require('../logging');
 const format = require('string-template');
-const baseUris = require('../crawler/zerozero/base_uris');
+const baseUris = require('../crawler/config/baseUris');
 
 zerozero.on('schedule', function(options) {
   options.proxy = proxyHandler.getProxy();
@@ -36,8 +36,8 @@ module.exports = zerozero;
 
 //Testing
 
-const footballTeamCrawler = require('./../crawler/zerozero/functions/football_team');
-const competitionCrawler = require('./../crawler/zerozero/functions/football_competition');
+const footballTeamCrawler = require('../crawler/lib/football/team');
+const competitionCrawler = require('../crawler/lib/football/competition');
 
 logger.info('Testing the editions...');
 

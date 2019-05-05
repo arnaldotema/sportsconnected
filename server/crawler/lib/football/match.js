@@ -1,4 +1,4 @@
-const zerozero = require('../index');
+const zerozero = require('../../index');
 const logger = require('../../../logging');
 const footballUserInfo = require('../../../lib/models/football_user_info');
 const footballUserInfoSeason = require('../../../lib/models/football_user_info_season');

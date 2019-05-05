@@ -1,10 +1,11 @@
 // LIBS
 const Crawler = require("crawler");
-const logger = require('../../logging');
-const proxyHandler = require('./proxy_handler');
+const logger = require('../logging');
+const proxyHandler = require('./utils/proxyHandler');
 const request = require('request');
 const format = require("string-template");
-const baseUris = require('./base_uris');
+const baseUris = require('./config/baseUris');
+const competitionCrawler = require('./lib/football/competition');
 
 const zerozero = new Crawler({
     rateLimit: 50,
@@ -59,7 +60,6 @@ zerozero.proxyFailCallback = function (res, done){
 };
 
 function start () {
-  const competitionCrawler = require('./functions/football_competition');
 
   logger.info("Testing the editions...");
 
@@ -82,8 +82,4 @@ function start () {
   });
 }
 
-module.exports = { zerozero, start };
-
 start();
-
-

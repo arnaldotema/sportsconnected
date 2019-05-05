@@ -1,14 +1,14 @@
-const zerozero = require('../index');
-const proxyHandler = require('../proxy_handler');
+const zerozero = require('../../index');
+const proxyHandler = require('../../utils/proxyHandler');
 const logger = require('../../../logging');
-const baseUris = require('../base_uris');
+const baseUris = require('../../config/baseUris');
 const format = require("string-template");
 const footballCompetition = require('../../../lib/models/football_competition');
 const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
 const footballTeam = require('../../../lib/models/football_team');
-const footballTeamCrawler = require('./football_team');
+const footballTeamCrawler = require('./team');
 const footballMatch = require('../../../lib/models/football_match');
-const footballMatchCrawler = require('./football_match');
+const footballMatchCrawler = require('./match');
 const footballSeason = require('../../../lib/models/football_season');
 
 exports.updateCompetition = function (err, res, done) {
