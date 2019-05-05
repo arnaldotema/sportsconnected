@@ -1,188 +1,18 @@
-const zerozero = require('../../index');
+'use strict';
+
 const proxyHandler = require('../../utils/proxyHandler');
 const logger = require('../../../logging');
 const baseUris = require('../../config/baseUris');
 const format = require("string-template");
 const footballCompetition = require('../../../lib/models/football_competition');
 const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
-const footballTeam = require('../../../lib/models/football_team');
 const footballTeamCrawler = require('./team');
 const footballMatch = require('../../../lib/models/football_match');
 const footballMatchCrawler = require('./match');
 const footballSeason = require('../../../lib/models/football_season');
+const { zerozero } = require('../../index');
 
-exports.updateCompetition = function (err, res, done) {
-    let competition = {
-        name: '',
-        avatar: ''
-    };
-
-    competition.name = res.$('#page_header .factsheet .name').length > 0 ?
-        res.$('#page_header .factsheet .name').html() :
-        '';
-
-    competition.avatar = res.$('#page_header_container .logo img').length > 0 ?
-        "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
-        '';
-
-    logger.info("Competition info:", competition);
-
-    //Fetch Editions Id's
-
-    let editionIds = [];
-
-    // When it's an association instead of a competition, the division name is being mapped as season_name.
-    // Todo - We need to aggregate the division name to the competition name
-    // and then develop the logic to get the season_name out of the dropdown
-
-    if (res.$(".nivel1 a").length) {
-
-
-        res.$(".nivel1 a").each(function () {
-
-            // Forcing to only fecth 1st division teams - 1ª Divisão
-            if (res.$(this).html() === '1&#xAA; Divis&#xE3;o') {
-
-                editionIds.push(
-                    {
-                        edition_id: res.$(this).attr("href").match(/\d+/g)[0],
-                        season_name: res.$(this).html()
-                    }
-                );
-            }
-        });
-
-    }
-    else {
-        res.$("#page_main .box table td a").each(function () {
-            editionIds.push(
-                {
-                    edition_id: res.$(this).attr("href").match(/\d+/g)[0],
-                    season_name: res.$(res.$(this).find("div div")[1]).html()
-                }
-            );
-        });
-    }
-
-    // Beta, first X years.
-    //editionIds = editionIds.splice(0, 1);
-    editionIds = [editionIds[1]];
-
-    footballCompetition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, function (err, result) {
-        if (err) {
-            logger.error(err);
-            zerozero.proxyFailCallback(res, done);
-        }
-        else {
-
-            logger.info("Updated competition", result._doc);
-
-            editionIds.forEach(function (edition) {
-                zerozero.queue({
-                    uri: format(baseUris.COMPETITION_EDITION, {edition_id: edition.edition_id}),
-                    priority: 1,
-                    callback: proxyHandler.crawl,
-                    successCallback: updateCompetitionSeason,
-                    zerozeroId: edition.edition_id,
-                    competition: result._doc,
-                    season_name: edition.season_name
-                });
-            });
-            done();
-        }
-    });
-
-};
-
-exports.updateCompetitionSeason = function (err, res, done) {
-
-    // Checking if there are any teams in this template
-    if (res.$('#edition_table').length === 0) {
-        res.$('#page_main tr td .text a').each(function () {
-
-                if (res.$(this)[0].children[0].data !== "Fase Final") {
-
-
-                    let seasonId = res.$(this).attr('href').match(/\d+/g)[0];
-
-                    zerozero.queue({
-                        uri: format(baseUris.COMPETITION_EDITION, {edition_id: seasonId}),
-                        priority: 1,
-                        callback: proxyHandler.crawl,
-                        successCallback: updateCompetitionSeason,
-                        zerozeroId: seasonId,
-                        competition: res.options.competition,
-                        season_name: res.options.season_name
-                    });
-                }
-                else {
-                    logger.info("SKIPPING FASE FINAL.");
-                }
-            }
-        );
-
-        done();
-    }
-    else {
-        footballSeason.getSeasonByName(res.options.season_name, function (err, result) {
-            if (err) {
-                logger.error(err);
-                zerozero.proxyFailCallback(res, done);
-            }
-            else {
-                let competition_season = {
-                    competition_id: res.options.competition._id,
-                    season_id: result._doc._id,
-                    name: '',
-                    avatar: '',
-                    external_ids: {
-                        zerozero: res.options.zerozeroId,
-                    }
-                };
-
-                competition_season.name = res.$('#page_header .factsheet .name').length > 0 ?
-                    res.$('#page_header .factsheet .name').html() :
-                    '';
-
-                competition_season.avatar = res.$('#page_header_container .logo img').length > 0 ?
-                    "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
-                    '';
-
-                footballCompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, function (err, result) {
-                    if (err) {
-                        logger.error(err);
-                        zerozero.proxyFailCallback(res, done);
-                    }
-                    else {
-
-                        logger.info("Updated competition season", result._doc);
-
-                        zerozero.queue({
-                            uri: format(baseUris.COMPETITION_EDITION_MATCHES, {
-                                edition_id: res.options.zerozeroId,
-                                page: 1
-                            }),
-                            priority: 1,
-                            callback: proxyHandler.crawl,
-                            successCallback: updateCompetitionSeasonCalendar,
-                            zerozeroId: res.options.zerozeroId,
-                            competition_season: result._doc
-                        });
-
-                        res.options.competition_season = result._doc;
-
-                        updateCompetitionSeasonTeams(err, res, done)
-                    }
-                });
-            }
-        })
-    }
-
-    // Todo - Add an "Else" statement: we need to have a new condition checking if the template has Like (1ª Divisão, etc - like here: http://www.zerozero.pt/associacao.php?id=15)
-
-};
-
-exports.updateCompetitionSeasonTeams = function (err, res, done) {
+const updateCompetitionSeasonTeams = function (err, res, done) {
     let teamIds = [];
 
     res.$('#edition_table tbody tr .text a').each(function () {
@@ -206,7 +36,95 @@ exports.updateCompetitionSeasonTeams = function (err, res, done) {
     done();
 };
 
-exports.updateCompetitionSeasonCalendar = function (err, res, done) {
+const updateCompetitionSeason = function (err, res, done) {
+
+  // Checking if there are any teams in this template
+  if (res.$('#edition_table').length === 0) {
+    res.$('#page_main tr td .text a').each(function () {
+
+        if (res.$(this)[0].children[0].data !== "Fase Final") {
+
+
+          let seasonId = res.$(this).attr('href').match(/\d+/g)[0];
+
+          zerozero.queue({
+            uri: format(baseUris.COMPETITION_EDITION, {edition_id: seasonId}),
+            priority: 1,
+            callback: proxyHandler.crawl,
+            successCallback: updateCompetitionSeason,
+            zerozeroId: seasonId,
+            competition: res.options.competition,
+            season_name: res.options.season_name
+          });
+        }
+        else {
+          logger.info("SKIPPING FASE FINAL.");
+        }
+      }
+    );
+
+    done();
+  }
+  else {
+    footballSeason.getSeasonByName(res.options.season_name, function (err, result) {
+      if (err) {
+        logger.error(err);
+        zerozero.proxyFailCallback(res, done);
+      }
+      else {
+        let competition_season = {
+          competition_id: res.options.competition._id,
+          season_id: result._doc._id,
+          name: '',
+          avatar: '',
+          external_ids: {
+            zerozero: res.options.zerozeroId,
+          }
+        };
+
+        competition_season.name = res.$('#page_header .factsheet .name').length > 0 ?
+          res.$('#page_header .factsheet .name').html() :
+          '';
+
+        competition_season.avatar = res.$('#page_header_container .logo img').length > 0 ?
+          "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
+          '';
+
+        footballCompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, function (err, result) {
+          if (err) {
+            logger.error(err);
+            zerozero.proxyFailCallback(res, done);
+          }
+          else {
+
+            logger.info("Updated competition season", result._doc);
+
+            zerozero.queue({
+              uri: format(baseUris.COMPETITION_EDITION_MATCHES, {
+                edition_id: res.options.zerozeroId,
+                page: 1
+              }),
+              priority: 1,
+              callback: proxyHandler.crawl,
+              successCallback: updateCompetitionSeasonCalendar,
+              zerozeroId: res.options.zerozeroId,
+              competition_season: result._doc
+            });
+
+            res.options.competition_season = result._doc;
+
+            updateCompetitionSeasonTeams(err, res, done)
+          }
+        });
+      }
+    })
+  }
+
+  // Todo - Add an "Else" statement: we need to have a new condition checking if the template has Like (1ª Divisão, etc - like here: http://www.zerozero.pt/associacao.php?id=15)
+
+};
+
+const updateCompetitionSeasonCalendar = function (err, res, done) {
 
     res.$("#pagination li").each(function (index) {
         zerozero.queue({
@@ -232,7 +150,7 @@ exports.updateCompetitionSeasonCalendar = function (err, res, done) {
 
 };
 
-exports.updateCompetitionSeasonMatches = function (err, res, done) {
+const updateCompetitionSeasonMatches = function (err, res, done) {
     let matchesToSchedule = [];
 
     const test = res.$("#team_games tbody .parent").each(function () {
@@ -277,4 +195,87 @@ exports.updateCompetitionSeasonMatches = function (err, res, done) {
             done();
         }
     });
+};
+
+exports.updateCompetition = function (err, res, done) {
+  let competition = {
+    name: '',
+    avatar: ''
+  };
+
+  competition.name = res.$('#page_header .factsheet .name').length > 0 ?
+    res.$('#page_header .factsheet .name').html() :
+    '';
+
+  competition.avatar = res.$('#page_header_container .logo img').length > 0 ?
+    "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
+    '';
+
+  logger.info("Competition info:", competition);
+
+  //Fetch Editions Id's
+
+  let editionIds = [];
+
+  // When it's an association instead of a competition, the division name is being mapped as season_name.
+  // Todo - We need to aggregate the division name to the competition name
+  // and then develop the logic to get the season_name out of the dropdown
+
+  if (res.$(".nivel1 a").length) {
+
+
+    res.$(".nivel1 a").each(function () {
+
+      // Forcing to only fecth 1st division teams - 1ª Divisão
+      if (res.$(this).html() === '1&#xAA; Divis&#xE3;o') {
+
+        editionIds.push(
+          {
+            edition_id: res.$(this).attr("href").match(/\d+/g)[0],
+            season_name: res.$(this).html()
+          }
+        );
+      }
+    });
+
+  }
+  else {
+    res.$("#page_main .box table td a").each(function () {
+      editionIds.push(
+        {
+          edition_id: res.$(this).attr("href").match(/\d+/g)[0],
+          season_name: res.$(res.$(this).find("div div")[1]).html()
+        }
+      );
+    });
+  }
+
+  // Beta, first X years.
+  //editionIds = editionIds.splice(0, 1);
+  editionIds = [editionIds[1]];
+
+  footballCompetition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, function (err, result) {
+    if (err) {
+      logger.error(err);
+      zerozero.proxyFailCallback(res, done);
+    }
+    else {
+
+      logger.info("Updated competition", result._doc);
+
+      editionIds.forEach(function (edition) {
+        zerozero.queue({
+          uri: format(baseUris.COMPETITION_EDITION, {edition_id: edition.edition_id}),
+          priority: 1,
+          callback: proxyHandler.crawl,
+          successCallback: updateCompetitionSeason,
+          zerozeroId: edition.edition_id,
+          competition: result._doc,
+          season_name: edition.season_name
+        });
+      });
+      done();
+    }
+  });
+
 };

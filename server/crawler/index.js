@@ -6,7 +6,7 @@ const request = require('request');
 const format = require("string-template");
 const baseUris = require('./config/baseUris');
 const competitionCrawler = require('./lib/football/competition');
-
+const db = require('./../db');
 const zerozero = new Crawler({
     rateLimit: 50,
     jQuery: {
@@ -18,9 +18,6 @@ const zerozero = new Crawler({
     }
 });
 
-/**
- * Crawl task enters the queue
- * */
 zerozero.on('schedule',function(options){
     const session = proxyHandler.getSession();
 
@@ -39,9 +36,6 @@ zerozero.on('schedule',function(options){
     logger.info("ADDED " + options.uri + " to the queue: PROXY = " + options.proxy);
 });
 
-/**
- Queue pops a task
- * */
 zerozero.on('request',function(options){
     logger.info("CRAWLING " + options.uri + ", PROXY = " + options.proxy);
 });
@@ -50,16 +44,13 @@ zerozero.on('drain',function(options){
     logger.info("No more requests!");
 });
 
-/**
- When it fails, it sets it up to the queue again with the same priorities
- (the queue will always pop the tasks with more priorities)
- * */
 zerozero.proxyFailCallback = function (res, done){
     zerozero.queue(res.options);
     done();
 };
 
-function start () {
+async function start () {
+  await db.connect();
 
   logger.info("Testing the editions...");
 
@@ -82,4 +73,4 @@ function start () {
   });
 }
 
-start();
+module.exports = { zerozero, start };

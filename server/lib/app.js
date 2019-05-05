@@ -3,11 +3,9 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const passport = require('passport');
-const mongoose = require('mongoose');
 const formidable = require('./api/middleware/formidable-express');
-
+const db = require('./../db');
 //Configs
-const config = require('./config/database');
 require('./api/auth/index');
 
 //Routes
@@ -67,19 +65,8 @@ app.use('/api/storage', storage);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 
-// Database setup
-mongoose.connection.on('connected', function() {
-  console.log('Connected to ' + config.database);
-  // const crawler = require('./crawlers/zerozero/index')
-  // const gary_processor = require('./gary_processor/index')
-});
-
-mongoose.connection.on('error', function(err) {
-  console.log('Database error: ' + err);
-});
-
 async function startServer () {
-  mongoose.connect(config.database);
+  await db.connect();
 
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
@@ -95,7 +82,7 @@ async function startServer () {
 }
 
 async function stopServer () {
-  await mongoose.disconnect();
+  await db.disconnect();
 }
 
 module.exports = { app, startServer, stopServer };
