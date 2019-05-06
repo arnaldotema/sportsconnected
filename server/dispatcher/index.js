@@ -12,27 +12,27 @@ const logger = require('../logging');
 const format = require('string-template');
 const baseUris = require('../crawler/config/baseUris');
 
-zerozero.on('schedule', function(options) {
+crawler.on('schedule', function(options) {
   options.proxy = proxyHandler.getProxy();
   logger.info(
     'ADDED ' + options.uri + ' to the queue: PROXY = ' + options.proxy
   );
 });
 
-zerozero.on('request', function(options) {
+crawler.on('request', function(options) {
   logger.info('CRAWLING ' + options.uri + ', PROXY = ' + options.proxy);
 });
 
-zerozero.on('drain', function(options) {
+crawler.on('drain', function(options) {
   logger.info('NO MORE REQUESTS! DRAINED!');
 });
 
-zerozero.proxyFailCallback = function(res, done) {
-  zerozero.queue(res.options);
+crawler.failBack = function(res, done) {
+  crawler.queue(res.options);
   done();
 };
 
-module.exports = zerozero;
+module.exports = crawler;
 
 //Testing
 
@@ -41,18 +41,18 @@ const competitionCrawler = require('../crawler/lib/football/competition');
 
 logger.info('Testing the editions...');
 
-zerozero.queue({
+crawler.queue({
   uri: format(baseUris.TEAM_INFO, { team_id: 9 }),
-  callback: proxyHandler.crawl,
+  callback: proxyHandler.handleProxy,
   successCallback: footballTeamCrawler.updateTeamInfo,
-  proxyFailCallback: zerozero.proxyFailCallback,
+  failBack: crawler.failBack,
   zerozeroId: 9,
 });
 
-zerozero.queue({
+crawler.queue({
   uri: format(baseUris.COMPETITION_EDITION_MATCHES, { edition_id: 109369 }),
-  callback: proxyHandler.crawl,
+  callback: proxyHandler.handleProxy,
   successCallback: competitionCrawler.updateCompetitionMatches,
-  proxyFailCallback: zerozero.proxyFailCallback,
+  failBack: crawler.failBack,
   zerozeroId: 109369,
 });

@@ -19,7 +19,7 @@ exports.getMissingTeams = function (teamIds, cb) {
     if (teams && !err) {
       teams = _.difference(
         teamIds,
-        teams.map(team => team.external_ids.zerozero)
+        teams.map(team => team.external_ids.crawler)
       );
     }
     cb(err, teams);

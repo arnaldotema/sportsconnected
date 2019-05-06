@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const FootballSeasonSchema = new Schema({
   name: String,
   external_ids: {
-    zerozero: Number,
+    crawler: Number,
   },
 });
 

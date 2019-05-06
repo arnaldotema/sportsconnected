@@ -12,14 +12,14 @@ exports.cascadeUserInfoSeasonUpdates = function (res, done) {
     footballTeamSeason.addPlayerToTeam(res.options.team_season._id, res.options.user_info_season, function (err, result) {
         if (err) {
             logger.error("Error when adding player to team:", err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             logger.info("Successfully added player " + res.options.user_info_season.personal_info.name + " to team " + res.options.team_season.name);
             footballUserInfoSeason.addCompetitionToUserInfo(res.options.user_info_season._id, res.options.competition_season, function (err, result) {
                 if (err) {
                     logger.error("Error when adding competition_season to user info:", err);
-                    zerozero.proxyFailCallback(res, done);
+                    zerozero.failBack(res, done);
                 }
                 else {
                     logger.info("Successfully added competition_season " + res.options.competition_season.name + " to user info " + res.options.user_info_season.personal_info.name);
@@ -27,7 +27,7 @@ exports.cascadeUserInfoSeasonUpdates = function (res, done) {
                     footballCompetitionSeason.addUserInfoToCompetition(res.options.competition_season._id, res.options.user_info_season, function (err, result) {
                         if (err) {
                             logger.error("Error when adding user info to competition_season:", err);
-                            zerozero.proxyFailCallback(res, done);
+                            zerozero.failBack(res, done);
                         }
                         else {
                             logger.info("Successfully added user info " + res.options.user_info_season.personal_info.name + " to competition_season " + res.options.competition_season.name);
@@ -45,7 +45,7 @@ exports.updateUserInfo = function (err, res, done) {
     const user_info = {
         type: 1,
         external_ids: {
-            zerozero: res.options.zerozeroId
+            crawler: res.options.zerozeroId
         }
     };
 
@@ -54,7 +54,7 @@ exports.updateUserInfo = function (err, res, done) {
     footballUserInfo.updateAndReturnByZeroZeroId(res.options.zerozeroId, user_info, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             logger.info("Successfully updated user info ", res.options.zerozeroId);
@@ -93,7 +93,7 @@ exports.updateUserInfoSeason = function (err, res, done) {
             name: res.options.team_season ? res.options.team_season.name : ''
         },
         external_ids: {
-            zerozero: res.options.zerozeroId
+            crawler: res.options.zerozeroId
         }
     };
 
@@ -162,7 +162,7 @@ exports.updateUserInfoSeason = function (err, res, done) {
     footballUserInfoSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, user_info_season, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             res.options.user_info_season = result._doc;
@@ -176,13 +176,13 @@ exports.updateUserInfoCurrentSeasons = function (err, res, done) {
     footballUserInfoSeason.getByTeamSeasonId(res.options.team_season._id, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             footballUserInfo.updateUserInfosCurrentSeason(result, function (err, result) {
                 if (err) {
                     logger.error(err);
-                    zerozero.proxyFailCallback(res, done);
+                    zerozero.failBack(res, done);
                 }
                 else {
                     done();

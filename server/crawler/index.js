@@ -1,13 +1,15 @@
-// LIBS
+'use strict';
+
 const Crawler = require("crawler");
 const logger = require('../logging');
-const proxyHandler = require('./utils/proxyHandler');
+const { handleProxy, getSession } = require('./utils/proxyHandler');
 const request = require('request');
 const format = require("string-template");
 const baseUris = require('./config/baseUris');
-const competitionCrawler = require('./lib/football/competition');
+const { updateCompetition } = require('./lib/football/competition');
 const db = require('./../db');
-const zerozero = new Crawler({
+
+const crawler = new Crawler({
     rateLimit: 50,
     jQuery: {
         name: 'cheerio',
@@ -18,8 +20,8 @@ const zerozero = new Crawler({
     }
 });
 
-zerozero.on('schedule',function(options){
-    const session = proxyHandler.getSession();
+crawler.on('schedule',function(options){
+    const session = getSession();
 
     const j = request.jar();
     const cookie = request.cookie('jcenable=1');
@@ -36,41 +38,36 @@ zerozero.on('schedule',function(options){
     logger.info("ADDED " + options.uri + " to the queue: PROXY = " + options.proxy);
 });
 
-zerozero.on('request',function(options){
+crawler.on('request',function(options){
     logger.info("CRAWLING " + options.uri + ", PROXY = " + options.proxy);
 });
 
-zerozero.on('drain',function(options){
+crawler.on('drain',function(options){
     logger.info("No more requests!");
 });
 
-zerozero.proxyFailCallback = function (res, done){
-    zerozero.queue(res.options);
-    done();
-};
-
-async function start () {
+// 15 - ID da A.Setúbal, baseUris.COMPETITION, {competition_id: 2380}),
+// 3 - ID da Super Liga, 2380 - Campeonato de Portugal
+const start = async function () {
   await db.connect();
-
   logger.info("Testing the editions...");
 
-  /*
-  zerozero.queue({
-      uri: format(baseUris.COMPETITION, {competition_id: 2380}), // 3 - ID da Super Liga, 2380 - Campeonato de Portugal
-      callback: proxyHandler.crawl,
-      successCallback: competitionCrawler.updateCompetition,
-      proxyFailCallback: zerozero.proxyFailCallback,
-      zerozeroId: 2380
-  });
-  */
-
-  zerozero.queue({
-    uri: format(baseUris.ASSOCIATION, {competition_id: 15}), // 15 - ID da A.Setúbal
-    callback: proxyHandler.crawl,
-    successCallback: competitionCrawler.updateCompetition,
-    proxyFailCallback: zerozero.proxyFailCallback,
+  crawler.queue({
+    uri: format(baseUris.ASSOCIATION, {competition_id: 15}),
+    callback: handleProxy,
+    successCallback: updateCompetition,
+    failBack: failBack,
     zerozeroId: 15
   });
-}
+};
 
-module.exports = { zerozero, start };
+const queue = async function(options) {
+  await crawler.queue(options);
+};
+
+const failBack = async function(res, done) {
+  crawler.queue(res.options);
+  done();
+};
+
+module.exports = { queue, start, failBack};

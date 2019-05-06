@@ -202,7 +202,7 @@ exports.initializeMatchModel = function (match, res, done, cb){
     footballTeamSeason.getMatchTeamsByZeroZeroId(res.options.competition_season.season_id, homeZeroZeroId, awayZeroZeroId, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done)
+            zerozero.failBack(res, done)
         }
         else {
             logger.info("Successfully fetched match teams", result);
@@ -365,7 +365,7 @@ exports.processMatchPlayers = function (nestedMatch, res, done, cb){
     footballUserInfoSeason.updateUserInfosStats(res.options.match, nestedMatch, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             logger.info("Successfully updated user infos game", result);
@@ -379,7 +379,7 @@ exports.processMatchTeams = function (nestedMatch, res, done, cb){
     footballTeamSeason.updateTeamsStandings(res.options.match, nestedMatch, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             logger.info("Successfully updated team game", result);
@@ -393,7 +393,7 @@ exports.processMatchCompetition = function (nestedMatch, res, done, cb){
     footballCompetitionSeason.updateCompetitionStandingsAndStats(res.options.match, nestedMatch, function(err, result){
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             logger.info("Successfully updated competition_season season", result);
@@ -435,7 +435,7 @@ exports.processUserInfoRegex = function (res, done){
     footballUserInfo.getMatchUserInfos(homeTeamIds, awayTeamIds, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            zerozero.failBack(res, done);
         }
         else {
             logger.info("Successfully fetched match user infos", result);
@@ -461,7 +461,7 @@ exports.processUserInfoRegex = function (res, done){
             footballUserInfo.updateRegexNewMatch(regexes, function (err, result) {
                 if (err) {
                     logger.error(err);
-                    zerozero.proxyFailCallback(res, done);
+                    zerozero.failBack(res, done);
                 }
                 else {
                     logger.info("Successfully updated user infos regexes", result);
@@ -477,7 +477,7 @@ exports.processMatchInfo = function (err, res, done){
     let match = {
         played: true,
         external_ids: {
-            zerozero: res.options.zerozeroId
+            crawler: res.options.zerozeroId
         },
         date: res.options.matchDate,
         duration: 0,

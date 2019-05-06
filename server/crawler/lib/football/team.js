@@ -1,4 +1,6 @@
-const zerozero = require('../../index');
+'use strict';
+
+const crawler = require('./../../index');
 const proxyHandler = require('../../utils/proxyHandler');
 const logger = require('../../../logging');
 const baseUris = require('../../config/baseUris');
@@ -16,7 +18,7 @@ exports.updateTeamInfo = function (err, res, done) {
         name: '',
         full_name: '',
         external_ids: {
-            zerozero: res.options.zerozeroId
+            crawler: res.options.zerozeroId
         }
     };
 
@@ -51,7 +53,7 @@ exports.updateTeamInfo = function (err, res, done) {
     Team.updateAndReturnByZeroZeroId(res.options.zerozeroId, team, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            crawler.crawler.failBack(res, done);
         }
         else {
             logger.info("Successfully updated team " + result._doc);
@@ -63,7 +65,7 @@ exports.updateTeamInfo = function (err, res, done) {
     });
 };
 
-exports.updateTeamSeasonInfo = function (err, res, done) {
+const updateTeamSeasonInfo = function (err, res, done) {
 
     let team_season = {
         team_id: res.options.team._id,
@@ -71,14 +73,14 @@ exports.updateTeamSeasonInfo = function (err, res, done) {
         name: res.options.team.name,
         avatar: res.options.team.avatar,
         external_ids: {
-            zerozero: res.options.team.external_ids.zerozero,
+            crawler: res.options.team.external_ids.crawler,
         }
     };
 
     TeamSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, team_season, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            crawler.crawler.failBack(res, done);
         }
         else {
             res.options.team_season = result._doc;
@@ -88,14 +90,14 @@ exports.updateTeamSeasonInfo = function (err, res, done) {
     });
 };
 
-exports.cascadeTeamUpdates = function(res, done) {
+const cascadeTeamUpdates = function(res, done) {
     const team_season = res.options.team_season;
     const competition_season = res.options.competition_season;
 
     TeamSeason.addCompetitionToTeam(team_season._id, competition_season, function (err, result) {
         if (err) {
             logger.error("Error when adding competition_season to team:", err);
-            zerozero.proxyFailCallback(res, done);
+            crawler.crawler.failBack(res, done);
         }
         else {
             logger.info("Successfully added competition_season " + competition_season.name + " to team " + team_season.name, result);
@@ -103,7 +105,7 @@ exports.cascadeTeamUpdates = function(res, done) {
             CompetitionSeason.addTeamToCompetition(competition_season._id, team_season, function (err, result) {
                 if (err) {
                     logger.error("Error when adding team to competition_season:", err);
-                    zerozero.proxyFailCallback(res, done);
+                    crawler.crawler.failBack(res, done);
                 }
                 else {
                     logger.info("Successfully added team " + team_season.name + " to competition_season " + competition_season.name, result);
@@ -114,31 +116,31 @@ exports.cascadeTeamUpdates = function(res, done) {
     });
 };
 
-exports.processAllTeamPlayers = function(res, done) {
+const processAllTeamPlayers = function(res, done) {
     let playerIds = [];
 
     res.$("#team_squad .staff").each(function () {
         let playerId = res.$(res.$(this).find(".name .micrologo_and_text .text a")[0]).attr('href').match(/\d+/g)[0];
         let playerNumber = res.$(res.$(this).find(".number")[0]).html();
 
-        zerozero.queue({
+        crawler.crawler.queue({
             uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
             priority: 3,
-            callback: proxyHandler.crawl,
+            callback: proxyHandler.handleProxy,
             successCallback: userInfoCrawler.updateUserInfo,
-            proxyFailCallback: zerozero.proxyFailCallback,
+            failBack: crawler.crawler.failBack,
             zerozeroId: playerId,
             competition_season: res.options.competition_season,
             team_season: res.options.team_season,
             player_number: playerNumber
         });
 
-        zerozero.queue({
+        crawler.crawler.queue({
             uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
             priority: 4,
-            callback: proxyHandler.crawl,
+            callback: proxyHandler.handleProxy,
             successCallback: userInfoCrawler.updateUserInfoCurrentSeasons,
-            proxyFailCallback: zerozero.proxyFailCallback,
+            failBack: crawler.crawler.failBack,
             competition_season: res.options.competition_season,
             team_season: res.options.team_season
         });
@@ -152,17 +154,17 @@ exports.processAllTeamPlayers = function(res, done) {
 
 };
 
-exports.processAllTeamGames = function (err, res, done) {
+const processAllTeamGames = function (err, res, done) {
     let matchIds = [];
 
     res.$("#team_games table tr .result a").each(function () {
         let matchId = res.$(this).attr('href').match(/\d+/g)[0];
         let seasonId = res.$(this).attr('href').match(/\d+/g)[1];
 
-        zerozero.queue({
+        crawler.crawler.queue({
             uri: format(baseUris.MATCH_INFO, {match_id: matchId, season_id: seasonId}),
             priority: 9,
-            callback: proxyHandler.crawl,
+            callback: proxyHandler.handleProxy,
             successCallback: footballMatchCrawler.processMatchInfo,
             zerozeroId: matchId
         });
@@ -179,7 +181,7 @@ exports.processTeamPositionsAndSeason = function(err, res, done) {
     CompetitionSeason.getById(res.options.competition_season._id, function (err, result) {
         if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            crawler.crawler.failBack(res, done);
         }
         else {
             let competition_season = result._doc;
@@ -195,7 +197,7 @@ exports.processTeamPositionsAndSeason = function(err, res, done) {
             TeamSeason.getByIds(ids, function (err, result) {
                 if (err) {
                     logger.error(err);
-                    zerozero.proxyFailCallback(res, done);
+                    crawler.crawler.failBack(res, done);
                 }
                 else {
                     let seasons = result;
@@ -203,13 +205,13 @@ exports.processTeamPositionsAndSeason = function(err, res, done) {
                     TeamSeason.updateTeamsPositions(competition_season, seasons, function (err, result) {
                         if (err) {
                             logger.error(err);
-                            zerozero.proxyFailCallback(res, done);
+                            crawler.crawler.failBack(res, done);
                         }
                         else {
                             Team.updateCurrentSeasons(seasons, function (err, result) {
                                 if (err) {
                                     logger.error(err);
-                                    zerozero.proxyFailCallback(res, done);
+                                    crawler.crawler.failBack(res, done);
                                 }
                                 else {
                                     done();

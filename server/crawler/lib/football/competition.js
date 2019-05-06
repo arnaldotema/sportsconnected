@@ -1,43 +1,71 @@
 'use strict';
 
-const proxyHandler = require('../../utils/proxyHandler');
+const format = require("string-template");
+
 const logger = require('../../../logging');
 const baseUris = require('../../config/baseUris');
-const format = require("string-template");
-const footballCompetition = require('../../../lib/models/football_competition');
-const footballCompetitionSeason = require('../../../lib/models/football_competition_season');
-const footballTeamCrawler = require('./team');
-const footballMatch = require('../../../lib/models/football_match');
-const footballMatchCrawler = require('./match');
-const footballSeason = require('../../../lib/models/football_season');
-const { zerozero } = require('../../index');
 
-const updateCompetitionSeasonTeams = function (err, res, done) {
-    let teamIds = [];
+const Competition = require('../../../lib/models/football_competition');
+const CompetitionSeason = require('../../../lib/models/football_competition_season');
+const Match = require('../../../lib/models/football_match');
+const Season = require('../../../lib/models/football_season');
 
-    res.$('#edition_table tbody tr .text a').each(function () {
-        let teamId = res.$(this).attr('href').match(/\d+/g)[0];
-        let seasonId = res.$(this).attr('href').match(/\d+/g)[1];
+const teamCrawler = require('./team');
+const matchCrawler = require('./match');
 
-        zerozero.queue({
-            uri: format(baseUris.TEAM_INFO, {team_id: teamId, season_id: seasonId}),
-            priority: 2,
-            callback: proxyHandler.crawl,
-            successCallback: footballTeamCrawler.updateTeamInfo,
-            zerozeroId: teamId,
-            competition_season: res.options.competition_season
-        });
+const { handle: handleProxy } = require('../../utils/proxyHandler');
+const { queue, failBack } = require('../../index');
 
-        teamIds.push(teamId);
+const updateCompetitionSeasonTeams = async (err, res, done) => {
+  let teamIds = [];
+
+  res.$('#edition_table tbody tr .text a').each(function () {
+    let teamId = res.$(this).attr('href').match(/\d+/g)[0];
+    let seasonId = res.$(this).attr('href').match(/\d+/g)[1];
+
+    queue({
+      uri: format(baseUris.TEAM_INFO, {team_id: teamId, season_id: seasonId}),
+      priority: 2,
+      callback: handleProxy,
+      successCallback: teamCrawler.updateTeamInfo,
+      zerozeroId: teamId,
+      competition_season: res.options.competition_season
     });
 
-    logger.info("Edition Teams IDs: ", teamIds);
+    teamIds.push(teamId);
+  });
 
-    done();
+  logger.info("Edition Teams IDs: ", teamIds);
+
+  done();
 };
 
-const updateCompetitionSeason = function (err, res, done) {
+const updateCompetitionSeasonCalendar = async (err, res, done) => {
+  res.$("#pagination li").each(function (index) {
+    queue({
+      uri: format(baseUris.COMPETITION_EDITION_MATCHES, {edition_id: res.options.zerozeroId, page: index + 1}),
+      priority: 1,
+      callback: handleProxy,
+      successCallback: updateCompetitionSeasonMatches,
+      zerozeroId: res.options.zerozeroId,
+      competition_season: res.options.competition_season
+    });
+  });
 
+  queue({
+    uri: format(baseUris.COMPETITION_EDITION_MATCHES, {edition_id: res.options.zerozeroId, page: 1}),
+    priority: 10,
+    callback: handleProxy,
+    successCallback: teamCrawler.processTeamPositionsAndSeason,
+    zerozeroId: res.options.zerozeroId,
+    competition_season: res.options.competition_season
+  });
+
+  done();
+
+};
+
+const updateCompetitionSeason = async (err, res, done) => {
   // Checking if there are any teams in this template
   if (res.$('#edition_table').length === 0) {
     res.$('#page_main tr td .text a').each(function () {
@@ -47,10 +75,10 @@ const updateCompetitionSeason = function (err, res, done) {
 
           let seasonId = res.$(this).attr('href').match(/\d+/g)[0];
 
-          zerozero.queue({
+          queue({
             uri: format(baseUris.COMPETITION_EDITION, {edition_id: seasonId}),
             priority: 1,
-            callback: proxyHandler.crawl,
+            callback: handleProxy,
             successCallback: updateCompetitionSeason,
             zerozeroId: seasonId,
             competition: res.options.competition,
@@ -66,10 +94,10 @@ const updateCompetitionSeason = function (err, res, done) {
     done();
   }
   else {
-    footballSeason.getSeasonByName(res.options.season_name, function (err, result) {
+    Season.getSeasonByName(res.options.season_name, function (err, result) {
       if (err) {
         logger.error(err);
-        zerozero.proxyFailCallback(res, done);
+        failBack(res, done);
       }
       else {
         let competition_season = {
@@ -78,7 +106,7 @@ const updateCompetitionSeason = function (err, res, done) {
           name: '',
           avatar: '',
           external_ids: {
-            zerozero: res.options.zerozeroId,
+            crawler: res.options.zerozeroId,
           }
         };
 
@@ -90,22 +118,22 @@ const updateCompetitionSeason = function (err, res, done) {
           "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
           '';
 
-        footballCompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, function (err, result) {
+        CompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, async function (err, result) {
           if (err) {
             logger.error(err);
-            zerozero.proxyFailCallback(res, done);
+            failBack(res, done);
           }
           else {
 
             logger.info("Updated competition season", result._doc);
 
-            zerozero.queue({
+            queue({
               uri: format(baseUris.COMPETITION_EDITION_MATCHES, {
                 edition_id: res.options.zerozeroId,
                 page: 1
               }),
               priority: 1,
-              callback: proxyHandler.crawl,
+              callback: handleProxy,
               successCallback: updateCompetitionSeasonCalendar,
               zerozeroId: res.options.zerozeroId,
               competition_season: result._doc
@@ -113,91 +141,66 @@ const updateCompetitionSeason = function (err, res, done) {
 
             res.options.competition_season = result._doc;
 
-            updateCompetitionSeasonTeams(err, res, done)
+            await updateCompetitionSeasonTeams(err, res, done)
           }
         });
       }
     })
   }
-
-  // Todo - Add an "Else" statement: we need to have a new condition checking if the template has Like (1ª Divisão, etc - like here: http://www.zerozero.pt/associacao.php?id=15)
-
+  // Todo - Add an "Else" statement:
+  // we need to have a new condition checking if the template has Like (1ª Divisão, etc - like here: http://www.zerozero.pt/associacao.php?id=15)
 };
 
-const updateCompetitionSeasonCalendar = function (err, res, done) {
+const updateCompetitionSeasonMatches = async (err, res, done) => {
 
-    res.$("#pagination li").each(function (index) {
-        zerozero.queue({
-            uri: format(baseUris.COMPETITION_EDITION_MATCHES, {edition_id: res.options.zerozeroId, page: index + 1}),
-            priority: 1,
-            callback: proxyHandler.crawl,
-            successCallback: updateCompetitionSeasonMatches,
-            zerozeroId: res.options.zerozeroId,
-            competition_season: res.options.competition_season
+  let matchesToSchedule = [];
+
+  res.$("#team_games tbody .parent").each( () => {
+    const matchDate = new Date(res.$(this.children[1]).html() + " " + res.$(this.children[2]).html());
+    const matchId = res.$(this).attr("id");
+
+    if (matchId) {
+      //Dar meio dia para o jogo processar
+      if (matchDate + 0.5 > Date.now()) {
+        matchesToSchedule.push({
+          played: false,
+          date: matchDate,
+          competition_season: {
+            id: res.options.competition_season._id
+          },
+          external_ids: {
+            zerozero: matchId
+          }
+        })
+      }
+      else {
+        queue({
+          uri: format(baseUris.MATCH_INFO, {match_id: matchId}),
+          callback: failBack,
+          priority: 9,
+          successCallback: matchCrawler.processMatchInfo,
+          zerozeroId: matchId,
+          matchDate: matchDate,
+          competition_season: res.options.competition_season
         });
-    });
+      }
+    }
+  });
 
-    zerozero.queue({
-        uri: format(baseUris.COMPETITION_EDITION_MATCHES, {edition_id: res.options.zerozeroId, page: 1}),
-        priority: 10,
-        callback: proxyHandler.crawl,
-        successCallback: footballTeamCrawler.processTeamPositionsAndSeason,
-        zerozeroId: res.options.zerozeroId,
-        competition_season: res.options.competition_season
-    });
-
-    done();
-
+  Match.insertFutureMaches(matchesToSchedule, (err, matches) => {
+    if (err) {
+      logger.error(err);
+      failBack(res, done);
+    }
+    else {
+      logger.info("Matches not played: ", matches);
+      done();
+    }
+  });
 };
 
-const updateCompetitionSeasonMatches = function (err, res, done) {
-    let matchesToSchedule = [];
+exports.updateCompetition = (err, res, done) => {
 
-    const test = res.$("#team_games tbody .parent").each(function () {
-        const matchDate = new Date(res.$(this.children[1]).html() + " " + res.$(this.children[2]).html());
-        const matchId = res.$(this).attr("id");
-
-        if (matchId) {
-            //Dar meio dia para o jogo processar
-            if (matchDate + 0.5 > Date.now()) {
-                matchesToSchedule.push({
-                    played: false,
-                    date: matchDate,
-                    competition_season: {
-                        id: res.options.competition_season._id
-                    },
-                    external_ids: {
-                        zerozero: matchId
-                    }
-                })
-            }
-            else {
-                zerozero.queue({
-                    uri: format(baseUris.MATCH_INFO, {match_id: matchId}),
-                    callback: proxyHandler.crawl,
-                    priority: 9,
-                    successCallback: footballMatchCrawler.processMatchInfo,
-                    zerozeroId: matchId,
-                    matchDate: matchDate,
-                    competition_season: res.options.competition_season
-                });
-            }
-        }
-    });
-
-    footballMatch.insertFutureMaches(matchesToSchedule, function (err, matches) {
-        if (err) {
-            logger.error(err);
-            zerozero.proxyFailCallback(res, done);
-        }
-        else {
-            logger.info("Matches not played: ", matches);
-            done();
-        }
-    });
-};
-
-exports.updateCompetition = function (err, res, done) {
   let competition = {
     name: '',
     avatar: ''
@@ -222,10 +225,7 @@ exports.updateCompetition = function (err, res, done) {
   // and then develop the logic to get the season_name out of the dropdown
 
   if (res.$(".nivel1 a").length) {
-
-
     res.$(".nivel1 a").each(function () {
-
       // Forcing to only fecth 1st division teams - 1ª Divisão
       if (res.$(this).html() === '1&#xAA; Divis&#xE3;o') {
 
@@ -237,7 +237,6 @@ exports.updateCompetition = function (err, res, done) {
         );
       }
     });
-
   }
   else {
     res.$("#page_main .box table td a").each(function () {
@@ -254,20 +253,20 @@ exports.updateCompetition = function (err, res, done) {
   //editionIds = editionIds.splice(0, 1);
   editionIds = [editionIds[1]];
 
-  footballCompetition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, function (err, result) {
+  Competition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, (err, result) => {
     if (err) {
       logger.error(err);
-      zerozero.proxyFailCallback(res, done);
+      failBack(res, done);
     }
     else {
 
       logger.info("Updated competition", result._doc);
 
       editionIds.forEach(function (edition) {
-        zerozero.queue({
+        queue({
           uri: format(baseUris.COMPETITION_EDITION, {edition_id: edition.edition_id}),
           priority: 1,
-          callback: proxyHandler.crawl,
+          callback: handleProxy,
           successCallback: updateCompetitionSeason,
           zerozeroId: edition.edition_id,
           competition: result._doc,
@@ -279,3 +278,4 @@ exports.updateCompetition = function (err, res, done) {
   });
 
 };
+

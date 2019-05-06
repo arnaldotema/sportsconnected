@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const FootballMatchSchema = new Schema({
   played: { type: Boolean, required: true, index: true },
   external_ids: {
-    zerozero: Number,
+    crawler: Number,
   },
   date: { type: Date, required: true },
   duration: Number,
@@ -93,7 +93,7 @@ const FootballMatchSchema = new Schema({
         avatar: String,
         nationality: String,
         external_ids: {
-          zerozero: Number,
+          crawler: Number,
         },
         achievements: [
           {
@@ -185,7 +185,7 @@ const FootballMatchSchema = new Schema({
         avatar: String,
         nationality: String,
         external_ids: {
-          zerozero: Number,
+          crawler: Number,
         },
         achievements: [
           {

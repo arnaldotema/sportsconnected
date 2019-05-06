@@ -78,7 +78,7 @@ const FootballUserInfoSchema = new Schema({
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
   external_ids: {
-    zerozero: { type: Number, required: true, unique: true, index: true },
+    crawler: { type: Number, required: true, unique: true, index: true },
   },
 });
 

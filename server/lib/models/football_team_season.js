@@ -108,7 +108,7 @@ const FootballTeamSeasonSchema = new Schema({
     },
   ],
   external_ids: {
-    zerozero: { type: Number, required: true, index: true },
+    crawler: { type: Number, required: true, index: true },
   },
 });
 

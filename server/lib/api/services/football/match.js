@@ -64,7 +64,7 @@ exports.getMissingMatches = function (matchIds, cb) {
     if (matches && !err) {
       matches = _.difference(
         matchIds,
-        matches.map(match => match.external_ids.zerozero)
+        matches.map(match => match.external_ids.crawler)
       );
     }
     cb(err, matches);

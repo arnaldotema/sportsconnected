@@ -6,8 +6,8 @@
   "scripts": {
     "debug": "nodemon --inspect ./app.js",
     "test": "mocha --recursive --exit",
-    "start": "node /lib/app.js",
-    "start:crawler": "node /crawler/zerozero/index.js",
+    "start": "node lib/app.js",
+    "crawler": "node crawler/start.js",
     "start:docker": "node dockerwait.js && node ${SOCKETCLUSTER_MASTER_CONTROLLER:-server.js}"
   },
   "husky": {

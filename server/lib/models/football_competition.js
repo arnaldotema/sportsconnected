@@ -12,7 +12,7 @@ const FootballCompetitionSchema = new Schema({
     { type: Schema.Types.ObjectId, ref: 'football_competition_season' },
   ],
   external_ids: {
-    zerozero: { type: Number, required: true, unique: true, index: true },
+    crawler: { type: Number, required: true, unique: true, index: true },
   },
 });
 
