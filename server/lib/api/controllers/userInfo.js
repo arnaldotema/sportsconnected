@@ -1,9 +1,9 @@
-const FootballUserInfo = require('../../models/football_user_info');
-const FootballMedia = require('../../models/football_media');
-const FootballRecommendation = require('../../models/football_recommendation');
-const FootballUserInfoSeason = require('../../models/football_user_info_season');
-const ImageStorageService = require('../services/storage/image');
-const Entities = require('html-entities').AllHtmlEntities;
+const FootballUserInfo = require("../../models/football_user_info");
+const FootballMedia = require("../../models/football_media");
+const FootballRecommendation = require("../../models/football_recommendation");
+const FootballUserInfoSeason = require("../../models/football_user_info_season");
+const ImageStorageService = require("../services/storage/image");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 // Helpers
@@ -11,13 +11,13 @@ const entities = new Entities();
 function handleError(err, result, res) {
   if (err) {
     return res.status(500).json({
-      message: 'Error from the API.',
-      error: err,
+      message: "Error from the API.",
+      error: err
     });
   }
   if (!result) {
     return res.status(404).json({
-      message: 'No such object',
+      message: "No such object"
     });
   }
   return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
@@ -31,7 +31,7 @@ exports.search = function(req, res) {
     user_info_id: 1,
     personal_info: 1,
     team: 1,
-    stats: 1,
+    stats: 1
   };
 
   let query = {};
@@ -40,8 +40,8 @@ exports.search = function(req, res) {
     query[filter.search_item] = {};
     query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
-    if (filter.selected_filter === '$regex') {
-      query[filter.search_item]['$options'] = 'i';
+    if (filter.selected_filter === "$regex") {
+      query[filter.search_item]["$options"] = "i";
     }
   });
 
@@ -52,8 +52,8 @@ exports.search = function(req, res) {
 
 exports.list = function(req, res) {
   FootballUserInfo.find()
-    .populate('current_season')
-    .populate('previous_seasons', 'stats')
+    .populate("current_season")
+    .populate("previous_seasons", "stats")
     .limit(5)
     .exec((err, result) => handleError(err, result, res));
 };
@@ -61,9 +61,9 @@ exports.list = function(req, res) {
 exports.show = function(req, res) {
   let id = req.params.id;
   FootballUserInfo.findOne({ _id: id })
-    .populate('current_season')
-    .populate('previous_seasons', 'stats')
-    .populate('recommendations.list')
+    .populate("current_season")
+    .populate("previous_seasons", "stats")
+    .populate("recommendations.list")
     .exec((err, result) => handleError(err, result, res));
 };
 
@@ -74,14 +74,14 @@ exports.create = function(req, res) {
 
   let userInfo = new FootballUserInfo({
     user_id: req.body.user_id,
-    type: 1,
+    type: 1
   });
 
   userInfo.save(function(err, newUserInfo) {
     if (err)
       return res.status(500).json({
-        message: 'Error when creating userInfo',
-        error: err,
+        message: "Error when creating userInfo",
+        error: err
       });
     let user_info_id = newUserInfo._id;
     FootballUserInfoSeason.createNew(
@@ -92,8 +92,8 @@ exports.create = function(req, res) {
       (err, user_info_season) => {
         if (err) {
           return res.status(500).json({
-            message: 'Error when creating user_info_season',
-            error: err,
+            message: "Error when creating user_info_season",
+            error: err
           });
         }
         let update = { current_season: user_info_season._id };
@@ -105,8 +105,8 @@ exports.create = function(req, res) {
           (err, userInfo) => {
             if (err) {
               return res.status(500).json({
-                message: 'Error when creating user_info_season',
-                error: err,
+                message: "Error when creating user_info_season",
+                error: err
               });
             }
             return res.status(201).json(userInfo);
@@ -126,7 +126,7 @@ exports.update = function(req, res) {
 
   if (avatar)
     personal_info.avatar =
-      'api/storage/images/user_info_season/' + id + '/system/avatar';
+      "api/storage/images/user_info_season/" + id + "/system/avatar";
 
   FootballUserInfoSeason.updateUserInfoSeason(id, personal_info, team, function(
     err,
@@ -134,22 +134,22 @@ exports.update = function(req, res) {
   ) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when updating user_info',
-        error: err,
+        message: "Error when updating user_info",
+        error: err
       });
     }
 
     if (avatar) {
       ImageStorageService.save_from_file(
         avatar,
-        'user',
+        "user",
         id,
-        'system/avatar',
+        "system/avatar",
         function(err, result) {
           if (err) {
             return res.status(500).json({
-              message: 'Error when storing image.',
-              error: err,
+              message: "Error when storing image.",
+              error: err
             });
           }
           return res.json(
@@ -170,8 +170,8 @@ exports.remove = function(req, res) {
   FootballUserInfo.findByIdAndRemove(id, function(err, user_info) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when deleting the user_info.',
-        error: err,
+        message: "Error when deleting the user_info.",
+        error: err
       });
     }
     return res.status(204).json();
@@ -183,19 +183,19 @@ exports.remove = function(req, res) {
 exports.listMedia = function(req, res) {
   let user_info__id = req.params.id;
 
-  let offset = parseInt(req.query.offset || '0');
-  let size = parseInt(req.query.size || '10');
+  let offset = parseInt(req.query.offset || "0");
+  let size = parseInt(req.query.size || "10");
 
   FootballMedia.find()
-    .where('user_info_id')
+    .where("user_info_id")
     .equals(user_info__id)
     .skip(offset * size)
     .limit(size)
     .exec(function(err, media) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting media.',
-          error: err,
+          message: "Error when getting media.",
+          error: err
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
@@ -208,8 +208,8 @@ exports.showMedia = function(req, res) {
   FootballMedia.findOne({ _id: id }).exec(function(err, media) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when getting media.',
-        error: err,
+        message: "Error when getting media.",
+        error: err
       });
     }
     return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
@@ -222,24 +222,24 @@ exports.createMedia = function(req, res) {
 
   if (!media) {
     return res.status(404).json({
-      message: 'Missing media object',
+      message: "Missing media object"
     });
   }
   if (!media.season_id) {
     return res.status(404).json({
-      message: 'Media object requires season id.',
+      message: "Media object requires season id."
     });
   }
 
   media.user_info_id = user_info_id;
-  media.user_type = 'football_user_info';
+  media.user_type = "football_user_info";
   let newMedia = new FootballMedia(media);
 
   newMedia.save(function(err, createdMedia) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when creating media',
-        error: err,
+        message: "Error when creating media",
+        error: err
       });
     }
 
@@ -255,7 +255,7 @@ exports.updateMedia = function(req, res) {
 
   if (!media) {
     return res.status(404).json({
-      message: 'Missing media object',
+      message: "Missing media object"
     });
   }
 
@@ -270,8 +270,8 @@ exports.removeMedia = function(req, res) {
   FootballMedia.findByIdAndRemove(mediaId, err => {
     if (err) {
       return res.status(500).json({
-        message: 'Error when deleting the media.',
-        error: err,
+        message: "Error when deleting the media.",
+        error: err
       });
     }
     return res.status(204).json();
@@ -281,12 +281,12 @@ exports.removeMedia = function(req, res) {
 // Recommendation
 
 exports.list_recommendations = function(req, res) {
-  let offset = parseInt(req.query.offset || '0');
-  let size = parseInt(req.query.size || '10');
+  let offset = parseInt(req.query.offset || "0");
+  let size = parseInt(req.query.size || "10");
 
   FootballUserInfo.findOne({ _id: id })
-    .populate('current_season')
-    .populate('previous_seasons', 'stats')
+    .populate("current_season")
+    .populate("previous_seasons", "stats")
     .skip(offset * size)
     .limit(size)
     .exec((err, user_info) => handleError(err, user_info, res));
@@ -298,7 +298,7 @@ exports.add_recommendation = function(req, res) {
 
   if (!recommendation) {
     return res.status(404).json({
-      message: 'Missing recommendation object',
+      message: "Missing recommendation object"
     });
   }
 
@@ -310,8 +310,8 @@ exports.add_recommendation = function(req, res) {
   new_recommendation.save(function(err, created_recommendation) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when creating recommendation',
-        error: err,
+        message: "Error when creating recommendation",
+        error: err
       });
     }
 
@@ -321,13 +321,13 @@ exports.add_recommendation = function(req, res) {
       (err, user_info) => {
         if (err) {
           return res.status(500).json({
-            message: 'Error when updating user_info',
-            error: err,
+            message: "Error when updating user_info",
+            error: err
           });
         }
         if (!user_info) {
           return res.status(404).json({
-            message: 'No such user_info',
+            message: "No such user_info"
           });
         }
 
@@ -344,18 +344,18 @@ exports.add_recommendation = function(req, res) {
 
 exports.list_skills = function(req, res) {
   FootballUserInfo.findOne({ _id: id })
-    .populate('current_season')
-    .populate('previous_seasons', 'stats')
+    .populate("current_season")
+    .populate("previous_seasons", "stats")
     .exec(function(err, user_info) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting user_info.',
-          error: err,
+          message: "Error when getting user_info.",
+          error: err
         });
       }
       if (!user_info) {
         return res.status(404).json({
-          message: 'No such user_info',
+          message: "No such user_info"
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
@@ -369,7 +369,7 @@ exports.add_skill_vote = function(req, res) {
 
   if (!author_user_id || !skill_name) {
     return res.status(404).json({
-      message: 'Missing author or skill_name object',
+      message: "Missing author or skill_name object"
     });
   }
 
@@ -380,13 +380,13 @@ exports.add_skill_vote = function(req, res) {
     (err, user_info) => {
       if (err) {
         return res.status(500).json({
-          message: 'Error when updating user_info',
-          error: err,
+          message: "Error when updating user_info",
+          error: err
         });
       }
       if (!user_info) {
         return res.status(404).json({
-          message: 'No such user_info',
+          message: "No such user_info"
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(user_info))));
@@ -402,7 +402,7 @@ exports.follow = function(req, res) {
 
   if (!author_user_info_id) {
     return res.status(404).json({
-      message: 'Missing author object',
+      message: "Missing author object"
     });
   }
 
@@ -412,24 +412,24 @@ exports.follow = function(req, res) {
 };
 
 exports.list_followed = function(req, res) {
-  let offset = parseInt(req.query.offset || '0');
-  let size = parseInt(req.query.size || '10');
+  let offset = parseInt(req.query.offset || "0");
+  let size = parseInt(req.query.size || "10");
 
   FootballUserInfo.findOne({ _id: id })
-    .populate('current_season')
-    .populate('previous_seasons', 'stats')
+    .populate("current_season")
+    .populate("previous_seasons", "stats")
     .skip(offset * size)
     .limit(size)
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
 exports.list_followers = function(req, res) {
-  let offset = parseInt(req.query.offset || '0');
-  let size = parseInt(req.query.size || '10');
+  let offset = parseInt(req.query.offset || "0");
+  let size = parseInt(req.query.size || "10");
 
   FootballUserInfo.findOne({ _id: id })
-    .populate('current_season')
-    .populate('previous_seasons', 'stats')
+    .populate("current_season")
+    .populate("previous_seasons", "stats")
     .skip(offset * size)
     .limit(size)
     .exec((err, user_info) => handleError(err, user_info, res));
@@ -441,7 +441,7 @@ exports.unfollow = function(req, res) {
 
   if (!follower_id) {
     return res.status(404).json({
-      message: 'Missing author object',
+      message: "Missing author object"
     });
   }
 

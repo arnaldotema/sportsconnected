@@ -1,19 +1,19 @@
-'use strict';
+"use strict";
 
-const Entities = require('html-entities').AllHtmlEntities;
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 module.exports = (err, result, user) => {
   if (err) {
     return res.status(500).json({
-      message: 'Error when getting profile.',
-      error: err,
+      message: "Error when getting profile.",
+      error: err
     });
   }
   if (!result) {
     return res.status(404).json({
-      message: 'No such profile',
+      message: "No such profile"
     });
   }
 
@@ -30,20 +30,20 @@ module.exports = (err, result, user) => {
     name: profile_info.current_season.personal_info.name,
     team_id: profile_info.current_season.team
       ? profile_info.current_season.team.id
-      : 'n/a',
+      : "n/a",
     team_avatar: profile_info.current_season.team
       ? profile_info.current_season.team.avatar
-      : 'n/a',
+      : "n/a",
     team_acronym: profile_info.current_season.team
       ? profile_info.current_season.team.acronym
-      : 'n/a',
+      : "n/a",
     team_name: profile_info.current_season.team
       ? profile_info.current_season.team.name
-      : 'n/a',
+      : "n/a"
   };
 
   //Sign the JWT token and populate the payload with the user email, id and etc
-  const token = jwt.sign({user: body}, 'top_secret');
+  const token = jwt.sign({ user: body }, "top_secret");
   //Send back the token to the user
   return res.json({
     token: token,
@@ -56,6 +56,6 @@ module.exports = (err, result, user) => {
     team_id: body.team_id,
     team_avatar: body.team_avatar,
     team_acronym: body.team_acronym,
-    team_name: body.team_name,
+    team_name: body.team_name
   });
 };

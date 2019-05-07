@@ -1,26 +1,28 @@
-'use strict';
+"use strict";
+
+const ChatAttachment = require("./../../../models/chat_attachment");
 
 exports.createChatMessageAttachment = function(user, msgAtt, cb) {
   let chatMessageAttachment = {
     sender: {
       name: user.name,
       info_id: user._id,
-      avatar: user.avatar,
+      avatar: user.avatar
     },
     file: {
       path: msgAtt.file.path,
       name: msgAtt.file.name,
       type: msgAtt.file.type,
-      size: msgAtt.file.size,
+      size: msgAtt.file.size
     },
     text: msgAtt.text,
     time_created: Date.now(),
     chat_conversation_id: msgAtt.chat_conversation_id,
     deleted: false,
-    archived: false,
+    archived: false
   };
 
-  this.save(chatMessageAttachment, function(err, msg) {
+  ChatAttachment.save(chatMessageAttachment, function(err, msg) {
     if (err) {
       return cb(err);
     }
@@ -29,19 +31,19 @@ exports.createChatMessageAttachment = function(user, msgAtt, cb) {
 };
 
 exports.showChatMessageAttachment = function(id) {
-  this.findOne({ _id: id }, function(err, messageAttachment) {
+  ChatAttachment.findOne({ _id: id }, function(err, messageAttachment) {
     if (err) {
       return cb(err);
     }
     if (!messageAttachment) {
-      return cb('No such chatMessageAttachment');
+      return cb("No such chatMessageAttachment");
     }
     return cb(null, messageAttachment);
   });
 };
 
 exports.editChatMessageAttachment = function(msg, cb) {
-  this.findOneAndUpdate(
+  ChatAttachment.findOneAndUpdate(
     { _id: msg._id },
     msg,
     { upsert: false, new: true },
@@ -53,10 +55,10 @@ exports.loadMessageAttachmentsByConversationAndUserId = function(
   conversationId,
   userId
 ) {
-  this.find(
+  ChatAttachment.find(
     {
       chat_conversation_id: conversationId,
-      removed: { $ne: userId },
+      removed: { $ne: userId }
     },
     null,
     { sort: { time_created: -1 } },
@@ -65,7 +67,7 @@ exports.loadMessageAttachmentsByConversationAndUserId = function(
         return cb(err);
       }
       if (!chatMessageAttachments) {
-        return cb('No messageAttachments for such chatConversationId');
+        return cb("No messageAttachments for such chatConversationId");
       }
       return cb(null, chatMessageAttachments);
     }
@@ -74,7 +76,7 @@ exports.loadMessageAttachmentsByConversationAndUserId = function(
 
 exports.deleteChatMessageAttachment = function(msg, cb) {
   msg.deleted = true;
-  this.findOneAndUpdate(
+  ChatAttachment.findOneAndUpdate(
     { _id: msg._id },
     msg,
     { upsert: false, new: true },

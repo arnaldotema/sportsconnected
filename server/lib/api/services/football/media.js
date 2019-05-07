@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-const UserInfo = require('../../../models/football_user_info');
-const Team = require('../../../models/football_team');
-const Media = require('./../../../models/football_media');
+const UserInfo = require("../../../models/football_user_info");
+const Team = require("../../../models/football_team");
+const Media = require("./../../../models/football_media");
 
-const Entities = require('html-entities').AllHtmlEntities;
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-exports.migrateUserInfoMediaToMediaDocument = function (cb) {
+exports.migrateUserInfoMediaToMediaDocument = function(cb) {
   UserInfo.find()
-    .populate('current_season')
+    .populate("current_season")
     .exec(function(err, userInfos) {
       userInfos = JSON.parse(entities.decode(JSON.stringify(userInfos)));
       if (err) return cb(err);
@@ -19,7 +19,7 @@ exports.migrateUserInfoMediaToMediaDocument = function (cb) {
           let media = userInfo.current_season.media;
           media.forEach(m => {
             m.user_info_id = userInfo._id;
-            m.user_type = 'football_user_info';
+            m.user_type = "football_user_info";
             m.season_id = userInfo.current_season._id;
             Media.create(m, (err, insertedMedia) => {
               insertedMedia = JSON.parse(
@@ -33,16 +33,16 @@ exports.migrateUserInfoMediaToMediaDocument = function (cb) {
     });
 };
 
-exports.migrateTeamMediaToMediaDocument = function (cb) {
+exports.migrateTeamMediaToMediaDocument = function(cb) {
   Team.find()
-    .populate('current_season')
+    .populate("current_season")
     .exec(function(err, teams) {
       if (err) return cb(err);
       teams.forEach(team => {
         let media = team.current_season.media;
         media.forEach(m => {
           m.team_id = team._id;
-          m.user_type = 'football_team';
+          m.user_type = "football_team";
           m.season_id = team.current_season._id;
           Media.create(m, (err, insertedMedia) => {
             cb(err, insertedMedia);
@@ -52,7 +52,7 @@ exports.migrateTeamMediaToMediaDocument = function (cb) {
     });
 };
 
-exports.update = function (id, media, cb) {
+exports.update = function(id, media, cb) {
   Media.findOneAndUpdate(
     { _id: id },
     media,

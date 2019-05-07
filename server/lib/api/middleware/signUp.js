@@ -1,5 +1,3 @@
-'use strict';
+"use strict";
 
-exports = async payload => {
-
-};
+exports = async payload => {};

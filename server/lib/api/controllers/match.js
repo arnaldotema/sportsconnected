@@ -1,5 +1,5 @@
-const MatchModel = require('../../models/football_match.js');
-const Entities = require('html-entities').AllHtmlEntities;
+const MatchModel = require("../../models/football_match.js");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 /**
@@ -15,8 +15,8 @@ module.exports = {
     MatchModel.find(function(err, matches) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting match.',
-          error: err,
+          message: "Error when getting match.",
+          error: err
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(matches))));
@@ -31,13 +31,13 @@ module.exports = {
     MatchModel.findOne({ _id: id }, function(err, match) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting match.',
-          error: err,
+          message: "Error when getting match.",
+          error: err
         });
       }
       if (!match) {
         return res.status(404).json({
-          message: 'No such match',
+          message: "No such match"
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(match))));
@@ -59,8 +59,8 @@ module.exports = {
     match.save(function(err, match) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when creating match',
-          error: err,
+          message: "Error when creating match",
+          error: err
         });
       }
       return res.status(201).json(match);
@@ -75,13 +75,13 @@ module.exports = {
     MatchModel.findOne({ _id: id }, function(err, match) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting match',
-          error: err,
+          message: "Error when getting match",
+          error: err
         });
       }
       if (!match) {
         return res.status(404).json({
-          message: 'No such match',
+          message: "No such match"
         });
       }
 
@@ -92,8 +92,8 @@ module.exports = {
       match.save(function(err, match) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when updating match.',
-            error: err,
+            message: "Error when updating match.",
+            error: err
           });
         }
 
@@ -110,8 +110,8 @@ module.exports = {
     MatchModel.findByIdAndRemove(id, function(err, match) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the match.',
-          error: err,
+          message: "Error when deleting the match.",
+          error: err
         });
       }
       return res.status(204).json();
@@ -128,8 +128,8 @@ module.exports = {
     ) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting match.',
-          error: err,
+          message: "Error when getting match.",
+          error: err
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(matches))));
@@ -142,11 +142,11 @@ module.exports = {
     MatchModel.getNextMatchesByTeamId(teamId, nMatches, function(err, matches) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting match.',
-          error: err,
+          message: "Error when getting match.",
+          error: err
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(matches))));
     });
-  },
+  }
 };

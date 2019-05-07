@@ -1,7 +1,7 @@
-const TeamModel = require('../../models/football_team.js');
-const TeamModelSeason = require('../../models/football_team_season');
-const FootballMedia = require('../../models/football_media');
-const Entities = require('html-entities').AllHtmlEntities;
+const TeamModel = require("../../models/football_team.js");
+const TeamModelSeason = require("../../models/football_team_season");
+const FootballMedia = require("../../models/football_media");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 /**
  * team.js
@@ -18,7 +18,7 @@ module.exports = {
       user_info_id: 1,
       personal_info: 1,
       team: 1,
-      stats: 1,
+      stats: 1
     };
 
     let query = {};
@@ -27,8 +27,8 @@ module.exports = {
       query[filter.search_item] = {};
       query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
-      if (filter.selected_filter === '$regex') {
-        query[filter.search_item]['$options'] = 'i';
+      if (filter.selected_filter === "$regex") {
+        query[filter.search_item]["$options"] = "i";
       }
     });
 
@@ -37,8 +37,8 @@ module.exports = {
       .exec(function(err, teams) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting teams.',
-            error: err,
+            message: "Error when getting teams.",
+            error: err
           });
         }
         return res.json(JSON.parse(entities.decode(JSON.stringify(teams))));
@@ -50,14 +50,14 @@ module.exports = {
    */
   list: function(req, res) {
     TeamModel.find()
-      .populate('current_season')
-      .populate('previous_seasons', 'standings')
+      .populate("current_season")
+      .populate("previous_seasons", "standings")
       .limit(5)
       .exec(function(err, Teams) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting Team.',
-            error: err,
+            message: "Error when getting Team.",
+            error: err
           });
         }
         return res.json(JSON.parse(entities.decode(JSON.stringify(Teams))));
@@ -70,18 +70,18 @@ module.exports = {
   show: function(req, res) {
     const id = req.params.id;
     TeamModel.findOne({ _id: id })
-      .populate('current_season')
-      .populate('previous_seasons', 'standings')
+      .populate("current_season")
+      .populate("previous_seasons", "standings")
       .exec(function(err, Team) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting Team.',
-            error: err,
+            message: "Error when getting Team.",
+            error: err
           });
         }
         if (!Team) {
           return res.status(404).json({
-            message: 'No such Team',
+            message: "No such Team"
           });
         }
         return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
@@ -93,13 +93,13 @@ module.exports = {
     TeamModelSeason.findOne({ _id: id }).exec(function(err, Team) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting Team.',
-          error: err,
+          message: "Error when getting Team.",
+          error: err
         });
       }
       if (!Team) {
         return res.status(404).json({
-          message: 'No such Team',
+          message: "No such Team"
         });
       }
       return res.json(
@@ -115,14 +115,14 @@ module.exports = {
     const Team = new TeamModel({
       user_id: req.body.user_id,
       name: req.body.name,
-      admins: req.body.admins,
+      admins: req.body.admins
     });
 
     Team.save(function(err, Team) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when creating Team',
-          error: err,
+          message: "Error when creating Team",
+          error: err
         });
       }
       return res.status(201).json(Team);
@@ -137,13 +137,13 @@ module.exports = {
     TeamModel.findOne({ _id: id }, function(err, Team) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting Team',
-          error: err,
+          message: "Error when getting Team",
+          error: err
         });
       }
       if (!Team) {
         return res.status(404).json({
-          message: 'No such Team',
+          message: "No such Team"
         });
       }
 
@@ -154,8 +154,8 @@ module.exports = {
       Team.save(function(err, Team) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when updating Team.',
-            error: err,
+            message: "Error when updating Team.",
+            error: err
           });
         }
 
@@ -172,8 +172,8 @@ module.exports = {
     TeamModel.findByIdAndRemove(id, function(err, Team) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the Team.',
-          error: err,
+          message: "Error when deleting the Team.",
+          error: err
         });
       }
       return res.status(204).json();
@@ -185,19 +185,19 @@ module.exports = {
   listMedia: function(req, res) {
     let id = req.params.id;
 
-    let offset = parseInt(req.query.offset || '0');
-    let size = parseInt(req.query.size || '100');
+    let offset = parseInt(req.query.offset || "0");
+    let size = parseInt(req.query.size || "100");
 
     FootballMedia.find()
-      .where('team_id')
+      .where("team_id")
       .equals(id)
       .skip(offset * size)
       .limit(size)
       .exec(function(err, media) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting media.',
-            error: err,
+            message: "Error when getting media.",
+            error: err
           });
         }
         return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
@@ -208,13 +208,13 @@ module.exports = {
     let id = req.params.id;
 
     FootballMedia.findOne({ _id: id })
-      .where('team_id')
+      .where("team_id")
       .equals(id)
       .exec(function(err, media) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting media.',
-            error: err,
+            message: "Error when getting media.",
+            error: err
           });
         }
         return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
@@ -227,37 +227,37 @@ module.exports = {
 
     if (!media) {
       return res.status(404).json({
-        message: 'Missing media object',
+        message: "Missing media object"
       });
     }
     if (!media.season_id) {
       return res.status(404).json({
-        message: 'Media object requires season id.',
+        message: "Media object requires season id."
       });
     }
 
     media.user_info_id = user_info_id;
-    media.user_type = 'football_team';
+    media.user_type = "football_team";
     let newMedia = new FootballMedia(media);
 
     newMedia.save(function(err, createdMedia) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when creating media',
-          error: err,
+          message: "Error when creating media",
+          error: err
         });
       }
 
       TeamModel.addMedia(createdMedia, userInfoId, (err, team) => {
         if (err) {
           return res.status(500).json({
-            message: 'Error when updating team_season',
-            error: err,
+            message: "Error when updating team_season",
+            error: err
           });
         }
         if (!team) {
           return res.status(404).json({
-            message: 'No such team',
+            message: "No such team"
           });
         }
       });
@@ -270,15 +270,15 @@ module.exports = {
 
     if (!media) {
       return res.status(404).json({
-        message: 'Missing media object',
+        message: "Missing media object"
       });
     }
 
     FootballMedia.update(mediaId, media, (err, media) => {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting media.',
-          error: err,
+          message: "Error when getting media.",
+          error: err
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
@@ -291,11 +291,11 @@ module.exports = {
     FootballMedia.findByIdAndRemove(mediaId, err => {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the media.',
-          error: err,
+          message: "Error when deleting the media.",
+          error: err
         });
       }
       return res.status(204).json();
     });
-  },
+  }
 };

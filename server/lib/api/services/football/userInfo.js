@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
-const UserInfoSeason = require('../../../models/football_user_info_season');
-const UserInfo = require('../../../models/football_user_info');
+const UserInfoSeason = require("../../../models/football_user_info_season");
+const UserInfo = require("../../../models/football_user_info");
 
 function _updateRegex(regex) {
   if (!regex) {
-    regex = '##';
+    regex = "##";
   }
 
   regex = regex.slice(0, -1); // remove the last character "#"
 
-  regex += '!'; //close game partition
+  regex += "!"; //close game partition
 
-  return regex + '#'; //close regex
+  return regex + "#"; //close regex
 }
 
 exports.updateRecommendationRegex = function(user_info, cb) {
@@ -20,8 +20,8 @@ exports.updateRecommendationRegex = function(user_info, cb) {
 
   const update = {
     $set: {
-      actions_regex: _updateRegex(user_info.actions_regex),
-    },
+      actions_regex: _updateRegex(user_info.actions_regex)
+    }
   };
 
   UserInfo.findOneAndUpdate(query, update, { upsert: true }, cb);
@@ -34,47 +34,47 @@ exports.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
         home_team: [
           {
             $match: {
-              _id: { $in: homeTeam.main_lineup },
-            },
-          },
+              _id: { $in: homeTeam.main_lineup }
+            }
+          }
         ],
         home_team_reserves: [
           {
             $match: {
-              _id: { $in: homeTeam.reserves },
-            },
-          },
+              _id: { $in: homeTeam.reserves }
+            }
+          }
         ],
         home_team_staff: [
           {
             $match: {
-              _id: { $in: homeTeam.staff },
-            },
-          },
+              _id: { $in: homeTeam.staff }
+            }
+          }
         ],
         away_team: [
           {
             $match: {
-              _id: { $in: awayTeam.main_lineup },
-            },
-          },
+              _id: { $in: awayTeam.main_lineup }
+            }
+          }
         ],
         away_team_reserves: [
           {
             $match: {
-              _id: { $in: awayTeam.reserves },
-            },
-          },
+              _id: { $in: awayTeam.reserves }
+            }
+          }
         ],
         away_team_staff: [
           {
             $match: {
-              _id: { $in: awayTeam.staff },
-            },
-          },
-        ],
-      },
-    },
+              _id: { $in: awayTeam.staff }
+            }
+          }
+        ]
+      }
+    }
   ];
 
   UserInfo.aggregate(query, cb);
@@ -82,17 +82,17 @@ exports.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
 
 exports.getUserInfosByUpdatedAt = function(updated_at, cb) {
   const query = {
-    updated_at: { $gt: updated_at },
+    updated_at: { $gt: updated_at }
   };
 
   UserInfo.find(query)
-    .populate('current_season')
-    .populate('user_id')
+    .populate("current_season")
+    .populate("user_id")
     .exec(cb);
 };
 
-exports.updateAndReturnByZeroZeroId = function(zerozero_id, user_info, cb) {
-  const query = { 'external_ids.zerozero': zerozero_id };
+exports.updateByZeroZeroId = function(zerozero_id, user_info, cb) {
+  const query = { "external_ids.zerozero": zerozero_id };
 
   UserInfo.findOneAndUpdate(
     query,
@@ -111,17 +111,17 @@ exports.updateUserInfosCurrentSeason = function(seasons, cb) {
     operations.push({
       updateOne: {
         filter: {
-          _id: user_info_season.user_info_id,
+          _id: user_info_season.user_info_id
         },
         update: {
           $set: {
-            current_season: user_info_season._id,
+            current_season: user_info_season._id
           },
           $push: {
-            previous_seasons: user_info_season._id,
-          },
-        },
-      },
+            previous_seasons: user_info_season._id
+          }
+        }
+      }
     });
   });
   UserInfo.bulkWrite(operations, {}, cb);
@@ -131,14 +131,14 @@ exports.addRecommendation = function(recommendation, user_info_id, cb) {
   let recommendation_id = recommendation._id;
 
   const query = {
-    _id: user_info_id,
+    _id: user_info_id
   };
 
   const update = {
     $push: {
-      'recommendations.list': recommendation_id,
-      'recommendations.top_5': recommendation,
-    },
+      "recommendations.list": recommendation_id,
+      "recommendations.top_5": recommendation
+    }
   };
 
   UserInfo.findOneAndUpdate(query, update, cb);
@@ -151,15 +151,15 @@ exports.deleteRecommendation = function(recommendation, user_info_id, cb) {};
 exports.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
   const query = {
     _id: user_info_id,
-    'skill_set.name': { $ne: skill_name },
+    "skill_set.name": { $ne: skill_name }
   };
 
   const update = {
     $addToSet: {
       skill_set: {
-        name: skill_name,
-      },
-    },
+        name: skill_name
+      }
+    }
   };
 
   UserInfo.update(query, update, (err, result) => {
@@ -167,13 +167,13 @@ exports.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
 
     const query = {
       _id: user_info_id,
-      'skill_set.name': skill_name,
+      "skill_set.name": skill_name
     };
 
     const update = {
       $push: {
-        'skill_set.$.endorsements': author_user_id,
-      },
+        "skill_set.$.endorsements": author_user_id
+      }
     };
 
     UserInfo.findOneAndUpdate(query, update, { new: true }, cb);
@@ -183,42 +183,42 @@ exports.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
 exports.setAllSkillVotes = function(cb) {
   let start_up_arrays = [
     {
-      name: 'Goleador',
-      avatar: '/assets/scorer.png',
-      endorsements: [],
+      name: "Goleador",
+      avatar: "/assets/scorer.png",
+      endorsements: []
     },
     {
-      name: 'Drible',
-      avatar: '/assets/dribble.png',
-      endorsements: [],
+      name: "Drible",
+      avatar: "/assets/dribble.png",
+      endorsements: []
     },
     {
-      name: 'Rapidez',
-      avatar: '/assets/fast.png',
-      endorsements: [],
+      name: "Rapidez",
+      avatar: "/assets/fast.png",
+      endorsements: []
     },
     {
-      name: 'Passador',
-      avatar: '/assets/passer.png',
-      endorsements: [],
+      name: "Passador",
+      avatar: "/assets/passer.png",
+      endorsements: []
     },
     {
-      name: 'Força',
-      avatar: '/assets/strong.png',
-      endorsements: [],
+      name: "Força",
+      avatar: "/assets/strong.png",
+      endorsements: []
     },
     {
-      name: 'Muralha defensiva',
-      avatar: '/assets/defender.png',
-      endorsements: [],
-    },
+      name: "Muralha defensiva",
+      avatar: "/assets/defender.png",
+      endorsements: []
+    }
   ];
 
   let conditions = { type: 1 };
   let update = {
     $set: {
-      skill_set: start_up_arrays,
-    },
+      skill_set: start_up_arrays
+    }
   };
   let options = { multi: true };
 
@@ -231,27 +231,27 @@ exports.follow = function(follower_id, user_info_id, cb) {
   operations.push({
     updateOne: {
       filter: {
-        _id: user_info_id,
+        _id: user_info_id
       },
       update: {
         $push: {
-          followers: follower_id,
-        },
-      },
-    },
+          followers: follower_id
+        }
+      }
+    }
   });
 
   operations.push({
     updateOne: {
       filter: {
-        _id: follower_id,
+        _id: follower_id
       },
       update: {
         $push: {
-          following: user_info_id,
-        },
-      },
-    },
+          following: user_info_id
+        }
+      }
+    }
   });
 
   UserInfo.bulkWrite(operations, {}, cb);
@@ -263,27 +263,27 @@ exports.unfollow = function(unfollower_id, user_info_id, cb) {
   operations.push({
     updateOne: {
       filter: {
-        _id: user_info_id,
+        _id: user_info_id
       },
       update: {
         $pull: {
-          followers: unfollower_id,
-        },
-      },
-    },
+          followers: unfollower_id
+        }
+      }
+    }
   });
 
   operations.push({
     updateOne: {
       filter: {
-        _id: unfollower_id,
+        _id: unfollower_id
       },
       update: {
         $pull: {
-          following: user_info_id,
-        },
-      },
-    },
+          following: user_info_id
+        }
+      }
+    }
   });
 
   UserInfo.bulkWrite(operations, {}, cb);
@@ -296,14 +296,14 @@ exports.updateRegexNewMatch = function(regexes, cb) {
     operations.push({
       updateOne: {
         filter: {
-          _id: user_info_id,
+          _id: user_info_id
         },
         update: {
           $set: {
-            actions_regex: regexes[user_info_id],
-          },
-        },
-      },
+            actions_regex: regexes[user_info_id]
+          }
+        }
+      }
     });
   });
 
@@ -313,7 +313,7 @@ exports.updateRegexNewMatch = function(regexes, cb) {
 exports.addAchievementToUserInfo = function(achievement, user_info, cb) {
   const query = {
     _id: user_info._id,
-    'achievements.id': { $ne: achievement._id },
+    "achievements.id": { $ne: achievement._id }
   };
 
   const update = {
@@ -321,15 +321,15 @@ exports.addAchievementToUserInfo = function(achievement, user_info, cb) {
       achievements: {
         id: achievement._id,
         name: achievement.name,
-        avatar: achievement.avatar,
-      },
-    },
+        avatar: achievement.avatar
+      }
+    }
   };
 
   UserInfo.findOneAndUpdate(query, update, cb);
 };
 
-exports.addMedia = function(id, media, cb)  {
+exports.addMedia = function(id, media, cb) {
   /*
     * This is not yet implemented because the DB structure is not well done.
     *
@@ -350,15 +350,11 @@ exports.addMedia = function(id, media, cb)  {
   UserInfo.findOne({ _id: id }, (err, userInfo) => {
     let userInfoSeasonId = userInfo.current_season._id;
 
-    UserInfoSeason.addMedia(
-      media,
-      userInfoSeasonId,
-      (err, userInfoSeason) => {
-        if (err) {
-          cb(err);
-        }
-        cb(userInfoSeason);
+    UserInfoSeason.addMedia(media, userInfoSeasonId, (err, userInfoSeason) => {
+      if (err) {
+        cb(err);
       }
-    );
+      cb(userInfoSeason);
+    });
   });
 };

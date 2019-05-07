@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const Season = require('./../../../models/football_season');
+const Season = require("./../../../models/football_season");
 
 exports.getSeasonByName = function(name, cb) {
   const query = {
-    name: name,
+    name: name
   };
 
   Season.findOneAndUpdate(

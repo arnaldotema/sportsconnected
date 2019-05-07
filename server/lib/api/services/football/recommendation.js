@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-const Recommendation = require('./../../../models/football_recommendation');
+const Recommendation = require("./../../../models/football_recommendation");

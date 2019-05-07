@@ -1,17 +1,24 @@
-const express = require('express');
-const router = express.Router();
-const NotificationController = require('../controllers/notification.js');
+"use strict";
 
-router.get('/:id/', NotificationController.show);
+const express = require("express");
+const router = express.Router();
+const NotificationController = require("../controllers/notification.js");
+
+router.get("/:id/", NotificationController.show);
+
 router.get(
-  '/player/:player_id/',
+  "/player/:player_id/",
   NotificationController.listPlayerNotifications
 );
-router.get('/team/:team_id/', NotificationController.listTeamNotifications);
 
-router.post('/player/', NotificationController.createPlayerNotification);
-router.post('/team/', NotificationController.createTeamNotification);
-router.put('/:id/', NotificationController.updateNotification);
-router.delete('/:id/', NotificationController.removeNotification);
+router.get("/team/:team_id/", NotificationController.listTeamNotifications);
+
+router.post("/player/", NotificationController.createPlayerNotification);
+
+router.post("/team/", NotificationController.createTeamNotification);
+
+router.put("/:id/", NotificationController.updateNotification);
+
+router.delete("/:id/", NotificationController.removeNotification);
 
 module.exports = router;

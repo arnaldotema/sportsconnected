@@ -7,7 +7,6 @@
     "debug": "nodemon --inspect ./app.js",
     "test": "mocha --recursive --exit",
     "start": "node lib/app.js",
-    "crawler": "node crawler/start.js",
     "start:docker": "node dockerwait.js && node ${SOCKETCLUSTER_MASTER_CONTROLLER:-server.js}"
   },
   "husky": {
@@ -52,7 +51,9 @@
     "supertest": "^4.0.2",
     "underscore": "^1.9.0",
     "utf8": "^3.0.0",
-    "winston": "^3.0.0-rc5"
+    "winston": "^3.0.0-rc5",
+    "husky": "^2.2.0",
+    "pretty-quick": "^1.10.0"
   },
   "author": "Arnaldo Tema",
   "license": "ISC"

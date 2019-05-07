@@ -1,20 +1,22 @@
-'use strict';
+"use strict";
+
+const ChatMessage = require("./../../../models/chat_message");
 
 exports.createChatMessage = function(user, msg, cb) {
   let chatMessage = {
     sender: {
       name: user.name,
       info_id: user._id,
-      avatar: user.avatar,
+      avatar: user.avatar
     },
     text: msg.text,
     time_created: Date.now(),
     chat_conversation_id: msg.chat_conversation_id,
     deleted: false,
-    archived: false,
+    archived: false
   };
 
-  this.save(chatMessage, function(err, msg) {
+  ChatMessage.save(chatMessage, function(err, msg) {
     if (err) {
       return cb(err);
     }
@@ -23,19 +25,19 @@ exports.createChatMessage = function(user, msg, cb) {
 };
 
 exports.showChatMessage = function(id) {
-  this.findOne({ _id: id }, function(err, message) {
+  ChatMessage.findOne({ _id: id }, function(err, message) {
     if (err) {
       return cb(err);
     }
     if (!message) {
-      return cb('No such chatMessage');
+      return cb("No such chatMessage");
     }
     return cb(null, message);
   });
 };
 
 exports.editChatMessage = function(msg, cb) {
-  this.findOneAndUpdate(
+  ChatMessage.findOneAndUpdate(
     { _id: msg._id },
     msg,
     { upsert: false, new: true },
@@ -44,10 +46,10 @@ exports.editChatMessage = function(msg, cb) {
 };
 
 exports.loadMessagesByConversationAndUserId = function(conversationId, userId) {
-  this.find(
+  ChatMessage.find(
     {
       chat_conversation_id: conversationId,
-      removed: { $ne: userId },
+      removed: { $ne: userId }
     },
     null,
     { sort: { time_created: -1 } },
@@ -56,7 +58,7 @@ exports.loadMessagesByConversationAndUserId = function(conversationId, userId) {
         return cb(err);
       }
       if (!chatMessages) {
-        return cb('No messages for such chatConversationId');
+        return cb("No messages for such chatConversationId");
       }
       return cb(null, chatMessages);
     }
@@ -65,7 +67,7 @@ exports.loadMessagesByConversationAndUserId = function(conversationId, userId) {
 
 exports.deleteChatMessage = function(msg, cb) {
   msg.deleted = true;
-  this.findOneAndUpdate(
+  ChatMessage.findOneAndUpdate(
     { _id: msg._id },
     msg,
     { upsert: false, new: true },

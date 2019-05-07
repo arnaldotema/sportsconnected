@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "husky": "^2.2.0",
-    "pretty-quick": "^1.10.0"
-  }
-}

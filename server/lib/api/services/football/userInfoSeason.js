@@ -1,14 +1,19 @@
-'use strict';
+"use strict";
 
-const UserInfoSeason = require('./../../../models/football_user_info_season');
+const UserInfoSeason = require("./../../../models/football_user_info_season");
 
 exports.addMedia = function(id, media, cb) {
   let update = {
     $addToSet: {
-      media: media,
-    },
+      media: media
+    }
   };
-  UserInfoSeason.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
+  UserInfoSeason.findOneAndUpdate(
+    { _id: id },
+    update,
+    { setDefaultsOnInsert: true },
+    cb
+  );
 };
 
 exports.createNew = function(user_info_id, season_id, personal_info, team, cb) {
@@ -16,7 +21,7 @@ exports.createNew = function(user_info_id, season_id, personal_info, team, cb) {
     user_info_id: user_info_id,
     season_id: season_id,
     personal_info: personal_info,
-    team: team,
+    team: team
   };
 
   UserInfoSeason.create({ user_info_season }, cb);
@@ -25,7 +30,7 @@ exports.createNew = function(user_info_id, season_id, personal_info, team, cb) {
 exports.addCompetitionToUserInfo = function(id, competition_season, cb) {
   let query = {
     _id: id,
-    'stats.id': { $ne: competition_season._id },
+    "stats.id": { $ne: competition_season._id }
   };
 
   let update = {
@@ -35,12 +40,17 @@ exports.addCompetitionToUserInfo = function(id, competition_season, cb) {
         competition_id: competition_season.competition_id,
         season_id: competition_season.season_id,
         name: competition_season.name,
-        avatar: competition_season.avatar,
-      },
-    },
+        avatar: competition_season.avatar
+      }
+    }
   };
 
-  UserInfoSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+  UserInfoSeason.findOneAndUpdate(
+    query,
+    update,
+    { setDefaultsOnInsert: true },
+    cb
+  );
 };
 
 exports.updateUserInfoSeason = function(id, personal_info, team, cb) {
@@ -51,12 +61,17 @@ exports.updateUserInfoSeason = function(id, personal_info, team, cb) {
     update = {
       $set: {
         personal_info: personal_info,
-        team: team,
-      },
+        team: team
+      }
     };
   else update = { $set: { personal_info: personal_info } };
 
-  UserInfoSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+  UserInfoSeason.findOneAndUpdate(
+    query,
+    update,
+    { setDefaultsOnInsert: true },
+    cb
+  );
 };
 
 exports.getMatchUserInfosByZeroZeroId = function(
@@ -72,66 +87,66 @@ exports.getMatchUserInfosByZeroZeroId = function(
           {
             $match: {
               season_id: season_id,
-              'external_ids.zerozero': { $in: homeTeam.main_lineup },
-            },
-          },
+              "external_ids.zerozero": { $in: homeTeam.main_lineup }
+            }
+          }
         ],
         home_team_reserves: [
           {
             $match: {
               season_id: season_id,
-              'external_ids.zerozero': { $in: homeTeam.reserves },
-            },
-          },
+              "external_ids.zerozero": { $in: homeTeam.reserves }
+            }
+          }
         ],
         home_team_staff: [
           {
             $match: {
               season_id: season_id,
-              'external_ids.zerozero': { $in: homeTeam.staff },
-            },
-          },
+              "external_ids.zerozero": { $in: homeTeam.staff }
+            }
+          }
         ],
         away_team: [
           {
             $match: {
               season_id: season_id,
-              'external_ids.zerozero': { $in: awayTeam.main_lineup },
-            },
-          },
+              "external_ids.zerozero": { $in: awayTeam.main_lineup }
+            }
+          }
         ],
         away_team_reserves: [
           {
             $match: {
               season_id: season_id,
-              'external_ids.zerozero': { $in: awayTeam.reserves },
-            },
-          },
+              "external_ids.zerozero": { $in: awayTeam.reserves }
+            }
+          }
         ],
         away_team_staff: [
           {
             $match: {
               season_id: season_id,
-              'external_ids.zerozero': { $in: awayTeam.staff },
-            },
-          },
-        ],
-      },
-    },
+              "external_ids.zerozero": { $in: awayTeam.staff }
+            }
+          }
+        ]
+      }
+    }
   ];
 
   UserInfoSeason.aggregate(query, cb);
 };
 
-exports.updateAndReturnByZeroZeroId = function(
+exports.updateByZeroZeroId = function(
   zerozero_id,
   season_id,
   user_info_season,
   cb
 ) {
   const query = {
-    'external_ids.zerozero': zerozero_id,
-    season_id: season_id,
+    "external_ids.zerozero": zerozero_id,
+    season_id: season_id
   };
 
   UserInfoSeason.findOneAndUpdate(
@@ -153,26 +168,26 @@ exports.updateUserInfosStats = function(match, nestedMatch, cb) {
       updateOne: {
         filter: {
           _id: player.id,
-          'stats.id': match.competition_season.id,
-          'matches.id': { $ne: match._id },
+          "stats.id": match.competition_season.id,
+          "matches.id": { $ne: match._id }
         },
         update: {
           $inc: {
-            'stats.$.goals': player.goals.length,
-            'stats.$.assists': player.assists.length,
-            'stats.$.minutes_played': player.minutes_played,
-            'stats.$.games': 1,
-            'stats.$.wins': home_goals > away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
-            'stats.$.losses': home_goals < away_goals ? 1 : 0,
-            'stats.$.yellow_cards': player.yellow_cards.length,
-            'stats.$.red_cards': player.red_cards.length,
+            "stats.$.goals": player.goals.length,
+            "stats.$.assists": player.assists.length,
+            "stats.$.minutes_played": player.minutes_played,
+            "stats.$.games": 1,
+            "stats.$.wins": home_goals > away_goals ? 1 : 0,
+            "stats.$.draws": home_goals === away_goals ? 1 : 0,
+            "stats.$.losses": home_goals < away_goals ? 1 : 0,
+            "stats.$.yellow_cards": player.yellow_cards.length,
+            "stats.$.red_cards": player.red_cards.length
           },
           $push: {
-            matches: nestedMatch,
-          },
-        },
-      },
+            matches: nestedMatch
+          }
+        }
+      }
     });
   });
 
@@ -181,26 +196,26 @@ exports.updateUserInfosStats = function(match, nestedMatch, cb) {
       updateOne: {
         filter: {
           _id: player.id,
-          'stats.id': match.competition_season.id,
-          'matches.id': { $ne: match._id },
+          "stats.id": match.competition_season.id,
+          "matches.id": { $ne: match._id }
         },
         update: {
           $inc: {
-            'stats.$.goals': player.goals.length,
-            'stats.$.assists': player.assists.length,
-            'stats.$.minutes_played': player.minutes_played,
-            'stats.$.games': 1,
-            'stats.$.wins': home_goals < away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
-            'stats.$.losses': home_goals > away_goals ? 1 : 0,
-            'stats.$.yellow_cards': player.yellow_cards.length,
-            'stats.$.red_cards': player.red_cards.length,
+            "stats.$.goals": player.goals.length,
+            "stats.$.assists": player.assists.length,
+            "stats.$.minutes_played": player.minutes_played,
+            "stats.$.games": 1,
+            "stats.$.wins": home_goals < away_goals ? 1 : 0,
+            "stats.$.draws": home_goals === away_goals ? 1 : 0,
+            "stats.$.losses": home_goals > away_goals ? 1 : 0,
+            "stats.$.yellow_cards": player.yellow_cards.length,
+            "stats.$.red_cards": player.red_cards.length
           },
           $push: {
-            matches: nestedMatch,
-          },
-        },
-      },
+            matches: nestedMatch
+          }
+        }
+      }
     });
   });
 
@@ -209,26 +224,26 @@ exports.updateUserInfosStats = function(match, nestedMatch, cb) {
       updateOne: {
         filter: {
           _id: player.id,
-          'stats.id': match.competition_season.id,
-          'matches.id': { $ne: match._id },
+          "stats.id": match.competition_season.id,
+          "matches.id": { $ne: match._id }
         },
         update: {
           $inc: {
-            'stats.$.goals': player.goals.length,
-            'stats.$.assists': player.assists.length,
-            'stats.$.minutes_played': player.minutes_played,
-            'stats.$.games': 1,
-            'stats.$.wins': home_goals > away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
-            'stats.$.losses': home_goals < away_goals ? 1 : 0,
-            'stats.$.yellow_cards': player.yellow_cards.length,
-            'stats.$.red_cards': player.red_cards.length,
+            "stats.$.goals": player.goals.length,
+            "stats.$.assists": player.assists.length,
+            "stats.$.minutes_played": player.minutes_played,
+            "stats.$.games": 1,
+            "stats.$.wins": home_goals > away_goals ? 1 : 0,
+            "stats.$.draws": home_goals === away_goals ? 1 : 0,
+            "stats.$.losses": home_goals < away_goals ? 1 : 0,
+            "stats.$.yellow_cards": player.yellow_cards.length,
+            "stats.$.red_cards": player.red_cards.length
           },
           $push: {
-            matches: nestedMatch,
-          },
-        },
-      },
+            matches: nestedMatch
+          }
+        }
+      }
     });
   });
 
@@ -237,26 +252,26 @@ exports.updateUserInfosStats = function(match, nestedMatch, cb) {
       updateOne: {
         filter: {
           _id: player.id,
-          'stats.id': match.competition_season.id,
-          'matches.id': { $ne: match._id },
+          "stats.id": match.competition_season.id,
+          "matches.id": { $ne: match._id }
         },
         update: {
           $inc: {
-            'stats.$.goals': player.goals.length,
-            'stats.$.assists': player.assists.length,
-            'stats.$.minutes_played': player.minutes_played,
-            'stats.$.games': 1,
-            'stats.$.wins': home_goals < away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
-            'stats.$.losses': home_goals > away_goals ? 1 : 0,
-            'stats.$.yellow_cards': player.yellow_cards.length,
-            'stats.$.red_cards': player.red_cards.length,
+            "stats.$.goals": player.goals.length,
+            "stats.$.assists": player.assists.length,
+            "stats.$.minutes_played": player.minutes_played,
+            "stats.$.games": 1,
+            "stats.$.wins": home_goals < away_goals ? 1 : 0,
+            "stats.$.draws": home_goals === away_goals ? 1 : 0,
+            "stats.$.losses": home_goals > away_goals ? 1 : 0,
+            "stats.$.yellow_cards": player.yellow_cards.length,
+            "stats.$.red_cards": player.red_cards.length
           },
           $push: {
-            matches: nestedMatch,
-          },
-        },
-      },
+            matches: nestedMatch
+          }
+        }
+      }
     });
   });
 
@@ -265,7 +280,7 @@ exports.updateUserInfosStats = function(match, nestedMatch, cb) {
 
 exports.getByTeamSeasonId = function(id, cb) {
   const query = {
-    'team.id': id,
+    "team.id": id
   };
 
   UserInfoSeason.find(query, cb);

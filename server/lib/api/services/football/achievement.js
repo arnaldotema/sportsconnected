@@ -1,7 +1,9 @@
-'use strict';
+"use strict";
+
+const Achievement = require("./../../../models/football_achievement");
 
 exports.createAchievement = function(achievement, cb) {
-  this.create(
+  Achievement.create(
     achievement,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
@@ -9,20 +11,20 @@ exports.createAchievement = function(achievement, cb) {
 };
 
 exports.getAll = function(cb) {
-  this.find({}, cb);
+  Achievement.find({}, cb);
 };
 
 exports.addUserInfoToAchievement = function(user_info, achievement, cb) {
   const query = {
     _id: achievement._id,
-    bearers: { $ne: user_info._id },
+    bearers: { $ne: user_info._id }
   };
 
   const update = {
     $push: {
-      bearers: user_info._id,
-    },
+      bearers: user_info._id
+    }
   };
 
-  this.findOneAndUpdate(query, update, cb);
+  Achievement.findOneAndUpdate(query, update, cb);
 };

@@ -1,0 +1,46 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "A Web crawler to retrieve information from sports public platforms",
+  "main": "start.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "debug": "nodemon --inspect ./start.js",
+    "start": "node start.js",
+    "test": "mocha --recursive --exit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "cheerio": "^1.0.0-rc.2",
+    "crawler": "^1.2.1",
+    "html-entities": "^1.2.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^6.1.4",
+    "mongoose": "^5.2.13",
+    "node-schedule": "^1.3.0",
+    "prettier": "^1.17.0",
+    "string-template": "^1.0.0",
+    "underscore": "^1.9.0",
+    "utf8": "^3.0.0",
+    "winston": "^3.0.0-rc5",
+    "husky": "^2.2.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnaldoLucienTema/sportsconnected.git"
+  },
+  "author": "ArnaldoLucienTema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArnaldoLucienTema/sportsconnected/issues"
+  },
+  "homepage": "https://github.com/ArnaldoLucienTema/sportsconnected#readme"
+}

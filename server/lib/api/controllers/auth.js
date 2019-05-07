@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const UserModel = require('../../models/football_user.js');
-const FootballUserInfo = require('../../models/football_user_info.js');
-const Entities = require('html-entities').AllHtmlEntities;
+const UserModel = require("../../models/football_user.js");
+const UserInfo = require("../../models/football_user_info.js");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 exports.signup = function(req, res) {
-  return res.json({ message: 'Signed UP!' });
+  return res.json({ message: "Signed UP!" });
 };
 
 exports.aggregate_profile = function(req, res) {
@@ -15,18 +15,18 @@ exports.aggregate_profile = function(req, res) {
   let profile_id = req.body.id;
   let user_session = {};
 
-  FootballUserInfo.findOne({ _id: profile_id })
-    .populate('current_season')
+  UserInfo.findOne({ _id: profile_id })
+    .populate("current_season")
     .exec(function(err, user_info) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting user_info',
-          error: err,
+          message: "Error when getting user_info",
+          error: err
         });
       }
       if (!user_info) {
         return res.status(404).json({
-          message: 'No such user_info',
+          message: "No such user_info"
         });
       }
 
@@ -35,50 +35,50 @@ exports.aggregate_profile = function(req, res) {
       UserModel.findOne({ _id: id }).exec(function(err, user) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting user',
-            error: err,
+            message: "Error when getting user",
+            error: err
           });
         }
         if (!user) {
           return res.status(404).json({
-            message: 'No such user',
+            message: "No such user"
           });
         }
 
         // Storing the aggregated profile to the current user
         user.profile_id = user_info._id;
         user.user_type = user_info.current_season.team
-          ? 'football_user_info'
-          : 'football_team';
+          ? "football_user_info"
+          : "football_team";
 
         // Sending the user information based on the user aggregated profile
         // This information will be used as session user in the front end
         user_session.profile_id = user_info._id;
         user_session.user_type = user_info.current_season.team
-          ? 'football_user_info'
-          : 'football_team';
+          ? "football_user_info"
+          : "football_team";
         user_session.avatar = user_info.current_season.personal_info.avatar;
         user_session.name = user_info.current_season.personal_info.name;
         user_session.team_avatar = user_info.current_season.team
           ? user_info.current_season.team.avatar
-          : 'n/a';
+          : "n/a";
         user_session.team_id = user_info.current_season.team
           ? user_info.current_season.team._id
-          : 'n/a';
+          : "n/a";
         user_session.team_acronym = user_info.current_season.team
           ? user_info.current_season.team.acronym
-          : 'n/a';
+          : "n/a";
         user_session.team_name = user_info.current_season.team
           ? user_info.current_season.team.name
-          : 'n/a';
+          : "n/a";
 
-        user_session.token = jwt.sign({ user: user_session }, 'top_secret');
+        user_session.token = jwt.sign({ user: user_session }, "top_secret");
 
         user.save(function(err, saved_user) {
           if (err) {
             return res.status(500).json({
-              message: 'Error when updating user.',
-              error: err,
+              message: "Error when updating user.",
+              error: err
             });
           }
 

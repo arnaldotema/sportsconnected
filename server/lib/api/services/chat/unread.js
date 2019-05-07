@@ -1,9 +1,11 @@
-'use strict';
+"use strict";
+
+const ChatUnread = require("./../../../models/chat_unread");
 
 exports.createUnreadMessage = function(userId, msgId, cb) {
   let chatMessage = {
     user_id: userId,
-    chat_message_id: msgId,
+    chat_message_id: msgId
   };
 
   this.save(chatMessage, function(err, msg) {
@@ -15,21 +17,21 @@ exports.createUnreadMessage = function(userId, msgId, cb) {
 };
 
 exports.showUnreadMessagesByUser = function(id) {
-  this.find({ user_id: id }, function(err, message) {
+  ChatUnread.find({ user_id: id }, function(err, message) {
     if (err) {
       return cb(err);
     }
     if (!message) {
-      return cb('No such chatMessage');
+      return cb("No such chatMessage");
     }
     return cb(null, message);
   });
 };
 
 exports.removeUnreadMessage = function(msgID, cb) {
-  this.findByIdAndRemove(msgID, function(err, message) {
+  ChatUnread.findByIdAndRemove(msgID, function(err, message) {
     if (err) return cb(err);
-    if (!message) return cb('No such chatMessage');
+    if (!message) return cb("No such chatMessage");
     return cb(null, message);
   });
 };

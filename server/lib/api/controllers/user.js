@@ -1,5 +1,5 @@
-const FootballUser = require('../../models/football_user.js');
-const Entities = require('html-entities').AllHtmlEntities;
+const FootballUser = require("../../models/football_user.js");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 /**
@@ -11,13 +11,13 @@ const entities = new Entities();
 function handleError(err, result, res) {
   if (err) {
     return res.status(500).json({
-      message: 'Error from the API.',
-      error: err,
+      message: "Error from the API.",
+      error: err
     });
   }
   if (!result) {
     return res.status(404).json({
-      message: 'No such object',
+      message: "No such object"
     });
   }
   return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
@@ -41,14 +41,14 @@ exports.create = function(req, res) {
     last_login: req.body.last_login,
     subscription_expiration: req.body.subscription_expiration,
     profile_id: req.body.profile_id,
-    user_type: req.body.user_type,
+    user_type: req.body.user_type
   });
 
   User.save(function(err, User) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when creating User',
-        error: err,
+        message: "Error when creating User",
+        error: err
       });
     }
     return res.status(201).json(User);
@@ -60,13 +60,13 @@ exports.update = function(req, res) {
   FootballUser.findOne({ _id: id }, function(err, User) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when getting User',
-        error: err,
+        message: "Error when getting User",
+        error: err
       });
     }
     if (!User) {
       return res.status(404).json({
-        message: 'No such User',
+        message: "No such User"
       });
     }
 
@@ -84,8 +84,8 @@ exports.update = function(req, res) {
     User.save(function(err, User) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when updating User.',
-          error: err,
+          message: "Error when updating User.",
+          error: err
         });
       }
 
@@ -99,8 +99,8 @@ exports.remove = function(req, res) {
   FootballUser.findByIdAndRemove(id, function(err, User) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when deleting the User.',
-        error: err,
+        message: "Error when deleting the User.",
+        error: err
       });
     }
     return res.status(204).json();

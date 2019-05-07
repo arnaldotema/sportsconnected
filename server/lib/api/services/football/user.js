@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-const User = require('./../../../models/football_user');
+const User = require("./../../../models/football_user");

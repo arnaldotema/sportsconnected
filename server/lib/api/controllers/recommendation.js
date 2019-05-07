@@ -1,5 +1,5 @@
-var FootballRecommendation = require('../../models/football_recommendation.js');
-const Entities = require('html-entities').AllHtmlEntities;
+var FootballRecommendation = require("../../models/football_recommendation.js");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 // Recommendation DB Interactions
@@ -8,7 +8,7 @@ exports.search = function(req, res) {
   let select = {
     _id: 1,
     author: 1,
-    text: 1,
+    text: 1
   };
 
   let query = {};
@@ -17,19 +17,19 @@ exports.search = function(req, res) {
     query[filter.search_item] = {};
     query[filter.search_item][filter.selected_filter] = filter.selected_value;
 
-    if (filter.selected_filter === '$regex') {
-      query[filter.search_item]['$options'] = 'i';
+    if (filter.selected_filter === "$regex") {
+      query[filter.search_item]["$options"] = "i";
     }
   });
 
   FootballRecommendation.find(query)
     .select(select)
-    .populate('author')
+    .populate("author")
     .exec(function(err, recommendations) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting recommendations.',
-          error: err,
+          message: "Error when getting recommendations.",
+          error: err
         });
       }
       return res.json(
@@ -40,13 +40,13 @@ exports.search = function(req, res) {
 
 exports.list = function(req, res) {
   FootballRecommendation.find()
-    .populate('author')
+    .populate("author")
     .limit(5)
     .exec(function(err, recommendations) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting recommendations.',
-          error: err,
+          message: "Error when getting recommendations.",
+          error: err
         });
       }
       return res.json(
@@ -58,17 +58,17 @@ exports.list = function(req, res) {
 exports.show = function(req, res) {
   const id = req.params.id;
   FootballRecommendation.findOne({ _id: id })
-    .populate('author')
+    .populate("author")
     .exec(function(err, recommendations) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting the requested recommendation.',
-          error: err,
+          message: "Error when getting the requested recommendation.",
+          error: err
         });
       }
       if (!recommendations) {
         return res.status(404).json({
-          message: 'No such recommendation',
+          message: "No such recommendation"
         });
       }
       return res.json(
@@ -83,8 +83,8 @@ exports.create = function(req, res) {
   recommendation.save(function(err, created_recommendation) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when creating recommendation',
-        error: err,
+        message: "Error when creating recommendation",
+        error: err
       });
     }
     return res.status(201).json(created_recommendation);
@@ -96,13 +96,13 @@ exports.update = function(req, res) {
   FootballRecommendation.findOne({ _id: id }, function(err, recommendation) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when getting recommendation',
-        error: err,
+        message: "Error when getting recommendation",
+        error: err
       });
     }
     if (!recommendation) {
       return res.status(404).json({
-        message: 'No such recommendation',
+        message: "No such recommendation"
       });
     }
 
@@ -141,8 +141,8 @@ exports.update = function(req, res) {
     recommendation.save(function(err, updated_recommendation) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when updating recommendation.',
-          error: err,
+          message: "Error when updating recommendation.",
+          error: err
         });
       }
 
@@ -156,8 +156,8 @@ exports.remove = function(req, res) {
   FootballRecommendation.findByIdAndRemove(id, function(err, recommendation) {
     if (err) {
       return res.status(500).json({
-        message: 'Error when deleting the recommendation.',
-        error: err,
+        message: "Error when deleting the recommendation.",
+        error: err
       });
     }
     return res.status(204).json();

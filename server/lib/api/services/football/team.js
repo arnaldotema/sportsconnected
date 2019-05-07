@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const TeamSeason = require('../../../models/football_team_season');
-const Team = require('../../../models/football_team');
+const TeamSeason = require("../../../models/football_team_season");
+const Team = require("../../../models/football_team");
 
-exports.updateAndReturnByZeroZeroId = function (zerozeroId, userInfo, cb) {
-  const query = { 'external_ids.zerozero': zerozeroId };
+exports.updateByZeroZeroId = function(zerozeroId, userInfo, cb) {
+  const query = { "external_ids.zerozero": zerozeroId };
 
   Team.findOneAndUpdate(
     query,
@@ -14,7 +14,7 @@ exports.updateAndReturnByZeroZeroId = function (zerozeroId, userInfo, cb) {
   );
 };
 
-exports.updateCurrentSeasons = function (seasons, cb) {
+exports.updateCurrentSeasons = function(seasons, cb) {
   let operations = [];
 
   seasons.forEach(function(season) {
@@ -23,21 +23,21 @@ exports.updateCurrentSeasons = function (seasons, cb) {
     operations.push({
       updateOne: {
         filter: {
-          _id: team_season.team_id,
+          _id: team_season.team_id
         },
         update: {
           $set: {
-            current_season: team_season._id,
-          },
-        },
-      },
+            current_season: team_season._id
+          }
+        }
+      }
     });
   });
 
   Team.bulkWrite(operations, {}, cb);
 };
 
-exports.addMedia = function (id, media, cb) {
+exports.addMedia = function(id, media, cb) {
   /*
     * This is not yet implemented because the DB structure is not well done.
     *

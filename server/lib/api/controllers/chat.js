@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-const ChatMessage = require('../../models/chat_message');
-const ChatConversation = require('../../models/chat_conversation');
+const ChatMessage = require("../../models/chat_message");
+const ChatConversation = require("../../models/chat_conversation");
 
-const Entities = require('html-entities').AllHtmlEntities;
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 exports.loadConversations = function(req, res) {
@@ -13,12 +13,12 @@ exports.loadConversations = function(req, res) {
   let ids = req.params.id;
 
   ChatConversation.find({ id: { $in: ids } })
-    .populate('participants')
+    .populate("participants")
     .exec(function(err, Competitions) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting Competition.',
-          error: err,
+          message: "Error when getting Competition.",
+          error: err
         });
       }
       return res.json(
@@ -37,8 +37,8 @@ exports.createChatConversation = function(req, res) {
   ChatConversation.createChatConversation(conversation, (err, convo) => {
     if (err) {
       return res.status(500).json({
-        message: 'Error when creating ChatConversation',
-        error: err,
+        message: "Error when creating ChatConversation",
+        error: err
       });
     }
     return res.status(201).json(convo);
@@ -57,8 +57,8 @@ exports.createChatMessage = function(req, res) {
   ChatMessage.createChatMessage(message, (err, msg) => {
     if (err) {
       return res.status(500).json({
-        message: 'Error when creating ChatMessage',
-        error: err,
+        message: "Error when creating ChatMessage",
+        error: err
       });
     }
     return res.status(201).json(msg);

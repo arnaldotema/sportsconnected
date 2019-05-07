@@ -1,4 +1,6 @@
-const SocketController = require('../controllers/socket.js');
+"use strict";
+
+const SocketController = require("../controllers/socket.js");
 
 module.exports = io => {
   SocketController(io);

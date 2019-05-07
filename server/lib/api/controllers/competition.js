@@ -1,6 +1,6 @@
-var CompetitionModel = require('../../models/football_competition.js');
-var CompetitionSeasonModel = require('../../models/football_competition_season');
-const Entities = require('html-entities').AllHtmlEntities;
+var CompetitionModel = require("../../models/football_competition.js");
+var CompetitionSeasonModel = require("../../models/football_competition_season");
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 /**
@@ -17,15 +17,15 @@ module.exports = {
       .select({
         standings: 0,
         matches: 0,
-        stats: 0,
+        stats: 0
       })
-      .populate('current_season')
-      .populate('previous_seasons', 'stats')
+      .populate("current_season")
+      .populate("previous_seasons", "stats")
       .exec(function(err, Competitions) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting Competition.',
-            error: err,
+            message: "Error when getting Competition.",
+            error: err
           });
         }
         return res.json(
@@ -42,13 +42,13 @@ module.exports = {
     CompetitionSeasonModel.findOne({ _id: id }, function(err, Competition) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting Competition.',
-          error: err,
+          message: "Error when getting Competition.",
+          error: err
         });
       }
       if (!Competition) {
         return res.status(404).json({
-          message: 'No such Competition',
+          message: "No such Competition"
         });
       }
       return res.json(JSON.parse(entities.decode(JSON.stringify(Competition))));
@@ -70,8 +70,8 @@ module.exports = {
     Competition.save(function(err, Competition) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when creating Competition',
-          error: err,
+          message: "Error when creating Competition",
+          error: err
         });
       }
       return res.status(201).json(Competition);
@@ -86,13 +86,13 @@ module.exports = {
     CompetitionSeasonModel.findOne({ _id: id }, function(err, Competition) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting Competition',
-          error: err,
+          message: "Error when getting Competition",
+          error: err
         });
       }
       if (!Competition) {
         return res.status(404).json({
-          message: 'No such Competition',
+          message: "No such Competition"
         });
       }
 
@@ -103,8 +103,8 @@ module.exports = {
       Competition.save(function(err, Competition) {
         if (err) {
           return res.status(500).json({
-            message: 'Error when updating Competition.',
-            error: err,
+            message: "Error when updating Competition.",
+            error: err
           });
         }
 
@@ -121,8 +121,8 @@ module.exports = {
     CompetitionSeasonModel.findByIdAndRemove(id, function(err, Competition) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the Competition.',
-          error: err,
+          message: "Error when deleting the Competition.",
+          error: err
         });
       }
       return res.status(204).json();
@@ -137,18 +137,18 @@ module.exports = {
     ) {
       if (err) {
         return res.status(500).json({
-          message: 'Error when getting Competition.',
-          error: err,
+          message: "Error when getting Competition.",
+          error: err
         });
       }
       if (!Competition) {
         return res.status(404).json({
-          message: 'No such Competition',
+          message: "No such Competition"
         });
       }
       return res.json(
         JSON.parse(entities.decode(JSON.stringify(Competition.standings)))
       );
     });
-  },
+  }
 };
