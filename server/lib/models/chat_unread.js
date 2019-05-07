@@ -10,6 +10,4 @@ const MessageSchema = new Schema({
   },
 });
 
-MessageSchema.statics = require('../api/services/chat/unread');
-
 module.exports = mongoose.model('chat_unread', MessageSchema);

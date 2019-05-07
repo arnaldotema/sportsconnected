@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('underscore');
+const TeamSeason = require('./../../../models/football_team_season');
 
 exports.addMedia = function (id, media, cb) {
   let update = {
@@ -8,18 +9,18 @@ exports.addMedia = function (id, media, cb) {
       media: media,
     },
   };
-  this.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
+  TeamSeason.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.getMissingTeams = function (teamIds, cb) {
-  return this.find({ 'external_ids.zerozero': { $in: teamIds } }, function(
+  return TeamSeason.find({ 'external_ids.zerozero': { $in: teamIds } }, function(
     err,
     teams
   ) {
     if (teams && !err) {
       teams = _.difference(
         teamIds,
-        teams.map(team => team.external_ids.crawler)
+        teams.map(team => team.external_ids.zerozero)
       );
     }
     cb(err, teams);
@@ -43,7 +44,7 @@ exports.addCompetitionToTeam = function (id, competition_season, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+  TeamSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.addPlayerToTeam = function (id, user_info_season, cb) {
@@ -67,7 +68,7 @@ exports.addPlayerToTeam = function (id, user_info_season, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+  TeamSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.getMatchTeamsByZeroZeroId = function (season_id, homeTeam, awayTeam, cb) {
@@ -94,14 +95,14 @@ exports.getMatchTeamsByZeroZeroId = function (season_id, homeTeam, awayTeam, cb)
     },
   ];
 
-  this.aggregate(query, cb);
+  TeamSeason.aggregate(query, cb);
 };
 
 exports.updateTeamsStandings = function (match, nestedMatch, cb) {
   const home_goals = match.home_team.goals.length;
   const away_goals = match.away_team.goals.length;
 
-  this.bulkWrite(
+  TeamSeason.bulkWrite(
     [
       {
         updateOne: {
@@ -159,7 +160,7 @@ exports.updateAndReturnByZeroZeroId = function (zerozero_id, season_id, team_sea
     season_id: season_id,
   };
 
-  this.findOneAndUpdate(
+  TeamSeason.findOneAndUpdate(
     query,
     team_season,
     { upsert: true, new: true, setDefaultsOnInsert: true },
@@ -172,7 +173,7 @@ exports.getByIds = function (ids, cb) {
     _id: { $in: ids },
   };
 
-  this.find(query, cb);
+  TeamSeason.find(query, cb);
 };
 
 exports.updateTeamsPositions = function (competition_season, seasons, cb) {
@@ -202,5 +203,5 @@ exports.updateTeamsPositions = function (competition_season, seasons, cb) {
     });
   });
 
-  this.bulkWrite(operations, {}, cb);
+  TeamSeason.bulkWrite(operations, {}, cb);
 };

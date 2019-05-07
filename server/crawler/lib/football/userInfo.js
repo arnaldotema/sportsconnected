@@ -45,7 +45,7 @@ exports.updateUserInfo = function (err, res, done) {
     const user_info = {
         type: 1,
         external_ids: {
-            crawler: res.options.zerozeroId
+            zerozer: res.options.zerozeroId
         }
     };
 
@@ -93,7 +93,7 @@ exports.updateUserInfoSeason = function (err, res, done) {
             name: res.options.team_season ? res.options.team_season.name : ''
         },
         external_ids: {
-            crawler: res.options.zerozeroId
+            zerozero: res.options.zerozeroId
         }
     };
 

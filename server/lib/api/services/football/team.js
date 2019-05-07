@@ -1,11 +1,12 @@
 'use strict';
 
 const TeamSeason = require('../../../models/football_team_season');
+const Team = require('../../../models/football_team');
 
 exports.updateAndReturnByZeroZeroId = function (zerozeroId, userInfo, cb) {
   const query = { 'external_ids.zerozero': zerozeroId };
 
-  this.findOneAndUpdate(
+  Team.findOneAndUpdate(
     query,
     userInfo,
     { upsert: true, new: true, setDefaultsOnInsert: true },
@@ -33,7 +34,7 @@ exports.updateCurrentSeasons = function (seasons, cb) {
     });
   });
 
-  this.bulkWrite(operations, {}, cb);
+  Team.bulkWrite(operations, {}, cb);
 };
 
 exports.addMedia = function (id, media, cb) {
@@ -54,7 +55,7 @@ exports.addMedia = function (id, media, cb) {
     But, for now, we'll not do anything, we'll just insert the media in the user's current season object.
     * */
 
-  this.findOne({ _id: id }, (err, userInfo) => {
+  Team.findOne({ _id: id }, (err, userInfo) => {
     let teamSeasonId = userInfo.current_season._id;
 
     TeamSeason.addMedia(media, teamSeasonId, (err, teamSeason) => {

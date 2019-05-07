@@ -5,16 +5,16 @@ const format = require("string-template");
 const logger = require('../../../logging');
 const baseUris = require('../../config/baseUris');
 
-const Competition = require('../../../lib/models/football_competition');
-const CompetitionSeason = require('../../../lib/models/football_competition_season');
-const Match = require('../../../lib/models/football_match');
-const Season = require('../../../lib/models/football_season');
-
 const teamCrawler = require('./team');
 const matchCrawler = require('./match');
 
-const { handle: handleProxy } = require('../../utils/proxyHandler');
-const { queue, failBack } = require('../../index');
+const { updateAndReturnByZeroZeroId: updateCompetitionByZeroZeroId } = require('../../../lib/api/services/football/competition');
+const { updateAndReturnByZeroZeroId: updateCompetitionSeasonByZeroZeroId  } = require('../../../lib/api/services/football/competitionSeason');
+const { insertFutureMatches } = require('../../../lib/api/services/football/match');
+const { getSeasonByName } = require('../../../lib/api/services/football/season');
+const { handleProxy } = require('../../utils/proxyHandler');
+
+let { queue, failBack } = require('../../index');
 
 const updateCompetitionSeasonTeams = async (err, res, done) => {
   let teamIds = [];
@@ -94,7 +94,7 @@ const updateCompetitionSeason = async (err, res, done) => {
     done();
   }
   else {
-    Season.getSeasonByName(res.options.season_name, function (err, result) {
+    getSeasonByName(res.options.season_name, function (err, result) {
       if (err) {
         logger.error(err);
         failBack(res, done);
@@ -106,7 +106,7 @@ const updateCompetitionSeason = async (err, res, done) => {
           name: '',
           avatar: '',
           external_ids: {
-            crawler: res.options.zerozeroId,
+            zerozero: res.options.zerozeroId,
           }
         };
 
@@ -118,7 +118,7 @@ const updateCompetitionSeason = async (err, res, done) => {
           "http://www.zerozero.pt/" + res.$('#page_header_container .logo img')[0].attribs["data-cfsrc"] :
           '';
 
-        CompetitionSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition_season, async function (err, result) {
+        updateCompetitionSeasonByZeroZeroId(res.options.zerozeroId, competition_season, async function (err, result) {
           if (err) {
             logger.error(err);
             failBack(res, done);
@@ -187,7 +187,7 @@ const updateCompetitionSeasonMatches = async (err, res, done) => {
     }
   });
 
-  Match.insertFutureMaches(matchesToSchedule, (err, matches) => {
+  insertFutureMatches(matchesToSchedule, (err, matches) => {
     if (err) {
       logger.error(err);
       failBack(res, done);
@@ -200,6 +200,9 @@ const updateCompetitionSeasonMatches = async (err, res, done) => {
 };
 
 exports.updateCompetition = (err, res, done) => {
+
+  queue = require('../../index').queue;
+  failBack = require('../../index').failBack;
 
   let competition = {
     name: '',
@@ -219,10 +222,6 @@ exports.updateCompetition = (err, res, done) => {
   //Fetch Editions Id's
 
   let editionIds = [];
-
-  // When it's an association instead of a competition, the division name is being mapped as season_name.
-  // Todo - We need to aggregate the division name to the competition name
-  // and then develop the logic to get the season_name out of the dropdown
 
   if (res.$(".nivel1 a").length) {
     res.$(".nivel1 a").each(function () {
@@ -253,7 +252,7 @@ exports.updateCompetition = (err, res, done) => {
   //editionIds = editionIds.splice(0, 1);
   editionIds = [editionIds[1]];
 
-  Competition.updateAndReturnByZeroZeroId(res.options.zerozeroId, competition, (err, result) => {
+  updateCompetitionByZeroZeroId(res.options.zerozeroId, competition, (err, result) => {
     if (err) {
       logger.error(err);
       failBack(res, done);

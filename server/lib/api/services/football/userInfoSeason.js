@@ -1,13 +1,15 @@
 'use strict';
 
+const UserInfoSeason = require('./../../../models/football_user_info_season');
+
 exports.addMedia = function(id, media, cb) {
   let update = {
     $addToSet: {
       media: media,
     },
   };
-  this.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
-}
+  UserInfoSeason.findOneAndUpdate({ _id: id }, update, { setDefaultsOnInsert: true }, cb);
+};
 
 exports.createNew = function(user_info_id, season_id, personal_info, team, cb) {
   const user_info_season = {
@@ -17,8 +19,8 @@ exports.createNew = function(user_info_id, season_id, personal_info, team, cb) {
     team: team,
   };
 
-  this.create({ user_info_season }, cb);
-}
+  UserInfoSeason.create({ user_info_season }, cb);
+};
 
 exports.addCompetitionToUserInfo = function(id, competition_season, cb) {
   let query = {
@@ -38,7 +40,7 @@ exports.addCompetitionToUserInfo = function(id, competition_season, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+  UserInfoSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.updateUserInfoSeason = function(id, personal_info, team, cb) {
@@ -54,7 +56,7 @@ exports.updateUserInfoSeason = function(id, personal_info, team, cb) {
     };
   else update = { $set: { personal_info: personal_info } };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+  UserInfoSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.getMatchUserInfosByZeroZeroId = function(
@@ -118,7 +120,7 @@ exports.getMatchUserInfosByZeroZeroId = function(
     },
   ];
 
-  this.aggregate(query, cb);
+  UserInfoSeason.aggregate(query, cb);
 };
 
 exports.updateAndReturnByZeroZeroId = function(
@@ -132,7 +134,7 @@ exports.updateAndReturnByZeroZeroId = function(
     season_id: season_id,
   };
 
-  this.findOneAndUpdate(
+  UserInfoSeason.findOneAndUpdate(
     query,
     user_info_season,
     { upsert: true, new: true, setDefaultsOnInsert: true },
@@ -258,7 +260,7 @@ exports.updateUserInfosStats = function(match, nestedMatch, cb) {
     });
   });
 
-  this.bulkWrite(operations, {}, cb);
+  UserInfoSeason.bulkWrite(operations, {}, cb);
 };
 
 exports.getByTeamSeasonId = function(id, cb) {
@@ -266,5 +268,5 @@ exports.getByTeamSeasonId = function(id, cb) {
     'team.id': id,
   };
 
-  this.find(query, cb);
+  UserInfoSeason.find(query, cb);
 };

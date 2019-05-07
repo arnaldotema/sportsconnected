@@ -20,6 +20,4 @@ const MessageSchema = new Schema({
   archived: { type: Boolean, required: true, index: true },
 });
 
-MessageSchema.statics = require('../api/services/chat/message');
-
 module.exports = mongoose.model('chat_message', MessageSchema);

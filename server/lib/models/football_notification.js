@@ -19,8 +19,6 @@ const FootballNotificationSchema = new Schema({
   },
 });
 
-FootballNotificationSchema.statics = require('../api/services/football/notification');
-
 module.exports = mongoose.model(
   'football_notification',
   FootballNotificationSchema

@@ -1,7 +1,9 @@
 'use strict';
 
+const Notification = require('./../../../models/football_notification');
+
 exports.createNotification = function (notification, cb) {
-  this.create(
+  Notification.create(
     notification,
     { upsert: true, new: true, setDefaultsOnInsert: true },
     cb
@@ -9,11 +11,11 @@ exports.createNotification = function (notification, cb) {
 };
 
 exports.getAll = function (cb) {
-  this.find({}, cb);
+  Notification.find({}, cb);
 };
 
 exports.update = function (id, notification, cb) {
-  this.findOneAndUpdate(
+  Notification.findOneAndUpdate(
     { _id: id },
     notification,
     { upsert: true, new: true, setDefaultsOnInsert: true },

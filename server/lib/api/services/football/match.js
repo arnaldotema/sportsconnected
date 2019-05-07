@@ -1,8 +1,10 @@
 'use strict';
+
 const _ = require('underscore');
+const Match = require('./../../../models/football_match');
 
 exports.getLastPlayedMatchesByTeamId = function (teamId, nMatches, cb) {
-  this.find({
+  Match.find({
     $or: [{ 'home_team.team_id': teamId }, { 'away_team.team_id': teamId }],
   })
     .and({ played: true })
@@ -28,7 +30,7 @@ exports.getLastPlayedMatchesByTeamId = function (teamId, nMatches, cb) {
 };
 
 exports.getNextMatchesByTeamId = function (teamId, nMatches, cb) {
-  this.find({
+  Match.find({
     $or: [
       { 'home_team.team_id': { team_id: teamId } },
       { 'away_team.team_id': { team_id: teamId } },
@@ -57,14 +59,14 @@ exports.getNextMatchesByTeamId = function (teamId, nMatches, cb) {
 };
 
 exports.getMissingMatches = function (matchIds, cb) {
-  this.find({ 'external_ids.zerozero': { $in: matchIds } }, function(
+  Match.find({ 'external_ids.zerozero': { $in: matchIds } }, function(
     err,
     matches
   ) {
     if (matches && !err) {
       matches = _.difference(
         matchIds,
-        matches.map(match => match.external_ids.crawler)
+        matches.map(match => match.external_ids.zerozero)
       );
     }
     cb(err, matches);
@@ -73,7 +75,7 @@ exports.getMissingMatches = function (matchIds, cb) {
 
 exports.updateAndReturnByZeroZeroId = function (zerozero_id, match, cb) {
   const query = { 'external_ids.zerozero': zerozero_id };
-  this.findOneAndUpdate(
+  Match.findOneAndUpdate(
     query,
     match,
     { upsert: true, new: true, setDefaultsOnInsert: true },
@@ -81,6 +83,6 @@ exports.updateAndReturnByZeroZeroId = function (zerozero_id, match, cb) {
   );
 };
 
-exports.insertFutureMaches = function (matches, cb) {
-  this.insertMany(matches, cb);
+exports.insertFutureMatches = function (matches, cb) {
+  Match.insertMany(matches, cb);
 };

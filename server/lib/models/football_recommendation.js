@@ -27,8 +27,6 @@ const FootballRecommendationSchema = new Schema({
   text: String,
 });
 
-FootballRecommendationSchema.statics = require('../api/services/football/recommendation');
-
 module.exports = mongoose.model(
   'football_recommendation',
   FootballRecommendationSchema

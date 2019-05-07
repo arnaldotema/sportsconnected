@@ -477,7 +477,7 @@ exports.processMatchInfo = function (err, res, done){
     let match = {
         played: true,
         external_ids: {
-            crawler: res.options.zerozeroId
+          zerozero: res.options.zerozeroId
         },
         date: res.options.matchDate,
         duration: 0,

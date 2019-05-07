@@ -1,6 +1,7 @@
 'use strict';
 
-const FootballUserInfoSeason = require('../../../models/football_user_info_season');
+const UserInfoSeason = require('../../../models/football_user_info_season');
+const UserInfo = require('../../../models/football_user_info');
 
 function _updateRegex(regex) {
   if (!regex) {
@@ -23,7 +24,7 @@ exports.updateRecommendationRegex = function(user_info, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, { upsert: true }, cb);
+  UserInfo.findOneAndUpdate(query, update, { upsert: true }, cb);
 };
 
 exports.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
@@ -76,7 +77,7 @@ exports.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
     },
   ];
 
-  this.aggregate(query, cb);
+  UserInfo.aggregate(query, cb);
 };
 
 exports.getUserInfosByUpdatedAt = function(updated_at, cb) {
@@ -84,7 +85,7 @@ exports.getUserInfosByUpdatedAt = function(updated_at, cb) {
     updated_at: { $gt: updated_at },
   };
 
-  this.find(query)
+  UserInfo.find(query)
     .populate('current_season')
     .populate('user_id')
     .exec(cb);
@@ -93,7 +94,7 @@ exports.getUserInfosByUpdatedAt = function(updated_at, cb) {
 exports.updateAndReturnByZeroZeroId = function(zerozero_id, user_info, cb) {
   const query = { 'external_ids.zerozero': zerozero_id };
 
-  this.findOneAndUpdate(
+  UserInfo.findOneAndUpdate(
     query,
     user_info,
     { upsert: true, new: true, setDefaultsOnInsert: true },
@@ -123,7 +124,7 @@ exports.updateUserInfosCurrentSeason = function(seasons, cb) {
       },
     });
   });
-  this.bulkWrite(operations, {}, cb);
+  UserInfo.bulkWrite(operations, {}, cb);
 };
 
 exports.addRecommendation = function(recommendation, user_info_id, cb) {
@@ -140,7 +141,7 @@ exports.addRecommendation = function(recommendation, user_info_id, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, cb);
+  UserInfo.findOneAndUpdate(query, update, cb);
 };
 
 exports.editRecommendation = function(recommendation, user_info_id, cb) {};
@@ -161,7 +162,7 @@ exports.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
     },
   };
 
-  this.update(query, update, (err, result) => {
+  UserInfo.update(query, update, (err, result) => {
     if (err) cb(err);
 
     const query = {
@@ -175,7 +176,7 @@ exports.addSkillVote = function(skill_name, author_user_id, user_info_id, cb) {
       },
     };
 
-    this.findOneAndUpdate(query, update, { new: true }, cb);
+    UserInfo.findOneAndUpdate(query, update, { new: true }, cb);
   });
 };
 
@@ -221,7 +222,7 @@ exports.setAllSkillVotes = function(cb) {
   };
   let options = { multi: true };
 
-  this.update(conditions, update, options, cb);
+  UserInfo.update(conditions, update, options, cb);
 };
 
 exports.follow = function(follower_id, user_info_id, cb) {
@@ -253,7 +254,7 @@ exports.follow = function(follower_id, user_info_id, cb) {
     },
   });
 
-  this.bulkWrite(operations, {}, cb);
+  UserInfo.bulkWrite(operations, {}, cb);
 };
 
 exports.unfollow = function(unfollower_id, user_info_id, cb) {
@@ -285,7 +286,7 @@ exports.unfollow = function(unfollower_id, user_info_id, cb) {
     },
   });
 
-  this.bulkWrite(operations, {}, cb);
+  UserInfo.bulkWrite(operations, {}, cb);
 };
 
 exports.updateRegexNewMatch = function(regexes, cb) {
@@ -306,7 +307,7 @@ exports.updateRegexNewMatch = function(regexes, cb) {
     });
   });
 
-  this.bulkWrite(operations, {}, cb);
+  UserInfo.bulkWrite(operations, {}, cb);
 };
 
 exports.addAchievementToUserInfo = function(achievement, user_info, cb) {
@@ -325,7 +326,7 @@ exports.addAchievementToUserInfo = function(achievement, user_info, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, cb);
+  UserInfo.findOneAndUpdate(query, update, cb);
 };
 
 exports.addMedia = function(id, media, cb)  {
@@ -346,10 +347,10 @@ exports.addMedia = function(id, media, cb)  {
     But for now, we'll just insert the media in the user's current season object.
     * */
 
-  this.findOne({ _id: id }, (err, userInfo) => {
+  UserInfo.findOne({ _id: id }, (err, userInfo) => {
     let userInfoSeasonId = userInfo.current_season._id;
 
-    FootballUserInfoSeason.addMedia(
+    UserInfoSeason.addMedia(
       media,
       userInfoSeasonId,
       (err, userInfoSeason) => {

@@ -33,6 +33,4 @@ const FootballMediaSchema = new Schema({
   },
 });
 
-FootballMediaSchema.statics = require('../api/services/football/media');
-
 module.exports = mongoose.model('football_media', FootballMediaSchema);

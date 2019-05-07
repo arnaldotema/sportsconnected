@@ -404,3 +404,281 @@
 {"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
 {"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
 {"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"message":"Path \"external_ids.zerozero\" is not in schema, strict mode is `true`, and upsert is `true`.","name":"StrictModeError","path":"external_ids.zerozero","level":"error"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"external_ids":{"zerozero":15},"previous_seasons":[],"_id":"5cb0af5e98ce9f3c30d39514","__v":0,"avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","level":"info","message":"Updated competition"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=126365 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=126365, PROXY = undefined","level":"info"}
+{"message":"No more requests!","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin","level":"info"}
+{"message":"Testing the editions...","level":"info"}
+{"message":"ADDED http://www.zerozero.pt/associacao.php?id=15 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/associacao.php?id=15, PROXY = undefined","level":"info"}
+{"name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","level":"info","message":"Competition info:"}
+{"external_ids":{"zerozero":15},"previous_seasons":[],"_id":"5cb0af5e98ce9f3c30d39514","__v":0,"avatar":"http://www.zerozero.pt//img/logos/associacoes/15_af_setubal_imgbank.png","name":"Associa&#xE7;&#xE3;o de Futebol de Set&#xFA;bal","level":"info","message":"Updated competition"}
+{"message":"ADDED http://www.zerozero.pt/edition.php?id=126365 to the queue: PROXY = undefined","level":"info"}
+{"message":"CRAWLING http://www.zerozero.pt/edition.php?id=126365, PROXY = undefined","level":"info"}
+{"message":"No more requests!","level":"info"}

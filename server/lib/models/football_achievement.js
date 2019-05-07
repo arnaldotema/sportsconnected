@@ -9,8 +9,6 @@ const FootballAchievementSchema = new Schema({
   regex_matches: Number,
 });
 
-FootballAchievementSchema.statics = require('../api/services/football/achievement');
-
 module.exports = mongoose.model(
   'football_achievement',
   FootballAchievementSchema

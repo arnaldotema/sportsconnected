@@ -25,6 +25,4 @@ const ChatMessageSchema = new Schema({
   archived: { type: Boolean, required: true, index: true },
 });
 
-ChatMessageSchema.statics = require('../api/services/chat/attachment');
-
 module.exports = mongoose.model('chat_attachment', ChatMessageSchema);

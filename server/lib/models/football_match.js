@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const FootballMatchSchema = new Schema({
   played: { type: Boolean, required: true, index: true },
   external_ids: {
-    crawler: Number,
+    zerozero: Number,
   },
   date: { type: Date, required: true },
   duration: Number,
@@ -93,7 +93,7 @@ const FootballMatchSchema = new Schema({
         avatar: String,
         nationality: String,
         external_ids: {
-          crawler: Number,
+          zerozero: Number,
         },
         achievements: [
           {
@@ -185,7 +185,7 @@ const FootballMatchSchema = new Schema({
         avatar: String,
         nationality: String,
         external_ids: {
-          crawler: Number,
+          zerozero: Number,
         },
         achievements: [
           {
@@ -205,7 +205,5 @@ const FootballMatchSchema = new Schema({
     ],
   },
 });
-
-FootballMatchSchema.statics = require('../api/services/football/match');
 
 module.exports = mongoose.model('football_match', FootballMatchSchema);

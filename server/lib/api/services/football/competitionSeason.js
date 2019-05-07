@@ -1,12 +1,14 @@
+'use strict';
 
+const CompetitionSeason = require('./../../../models/football_competition_season');
 
 exports.addTeamToCompetition = function(id, team_season, cb) {
-  query = {
+  const query = {
     _id: id,
     'standings.id': { $ne: team_season._id },
   };
 
-  update = {
+  const update = {
     $push: {
       standings: {
         id: team_season._id,
@@ -17,16 +19,16 @@ exports.addTeamToCompetition = function(id, team_season, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+   CompetitionSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.addUserInfoToCompetition = function(id, user_info_season, cb) {
-  query = {
+  const query = {
     _id: id,
     'stats.id': { $ne: user_info_season._id },
   };
 
-  update = {
+  const update = {
     $push: {
       stats: {
         id: user_info_season._id,
@@ -39,7 +41,7 @@ exports.addUserInfoToCompetition = function(id, user_info_season, cb) {
     },
   };
 
-  this.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
+   CompetitionSeason.findOneAndUpdate(query, update, { setDefaultsOnInsert: true }, cb);
 };
 
 exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
@@ -60,10 +62,10 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
       update: {
         $inc: {
           'standings.$.points':
-            home_goals > away_goals ? 3 : home_goals == away_goals ? 1 : 0,
+            home_goals > away_goals ? 3 : home_goals === away_goals ? 1 : 0,
           'standings.$.matches': 1,
           'standings.$.wins': home_goals > away_goals ? 1 : 0,
-          'standings.$.draws': home_goals == away_goals ? 1 : 0,
+          'standings.$.draws': home_goals === away_goals ? 1 : 0,
           'standings.$.losses': home_goals < away_goals ? 1 : 0,
           'standings.$.goals': home_goals,
           'standings.$.goals_taken': away_goals,
@@ -82,10 +84,10 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
       update: {
         $inc: {
           'standings.$.points':
-            away_goals > home_goals ? 3 : home_goals == away_goals ? 1 : 0,
+            away_goals > home_goals ? 3 : home_goals === away_goals ? 1 : 0,
           'standings.$.matches': 1,
           'standings.$.wins': home_goals < away_goals ? 1 : 0,
-          'standings.$.draws': home_goals == away_goals ? 1 : 0,
+          'standings.$.draws': home_goals === away_goals ? 1 : 0,
           'standings.$.losses': home_goals > away_goals ? 1 : 0,
           'standings.$.goals': away_goals,
           'standings.$.goals_taken': home_goals,
@@ -110,7 +112,7 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
             'stats.$.assists': player.assists.length,
             'stats.$.minutes': player.minutes_played,
             'stats.$.wins': home_goals > away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
+            'stats.$.draws': home_goals === away_goals ? 1 : 0,
             'stats.$.losses': home_goals < away_goals ? 1 : 0,
             'stats.$.yellow_cards': player.yellow_cards.length,
             'stats.$.red_cards': player.red_cards.length,
@@ -134,7 +136,7 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
             'stats.$.assists': player.assists.length,
             'stats.$.minutes': player.minutes_played,
             'stats.$.wins': home_goals < away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
+            'stats.$.draws': home_goals === away_goals ? 1 : 0,
             'stats.$.losses': home_goals > away_goals ? 1 : 0,
             'stats.$.yellow_cards': player.yellow_cards.length,
             'stats.$.red_cards': player.red_cards.length,
@@ -158,7 +160,7 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
             'stats.$.assists': player.assists.length,
             'stats.$.minutes': player.minutes_played,
             'stats.$.wins': home_goals > away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
+            'stats.$.draws': home_goals === away_goals ? 1 : 0,
             'stats.$.losses': home_goals < away_goals ? 1 : 0,
             'stats.$.yellow_cards': player.yellow_cards.length,
             'stats.$.red_cards': player.red_cards.length,
@@ -182,7 +184,7 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
             'stats.$.assists': player.assists.length,
             'stats.$.minutes': player.minutes_played,
             'stats.$.wins': home_goals < away_goals ? 1 : 0,
-            'stats.$.draws': home_goals == away_goals ? 1 : 0,
+            'stats.$.draws': home_goals === away_goals ? 1 : 0,
             'stats.$.losses': home_goals > away_goals ? 1 : 0,
             'stats.$.yellow_cards': player.yellow_cards.length,
             'stats.$.red_cards': player.red_cards.length,
@@ -211,7 +213,7 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
     },
   });
 
-  this.bulkWrite(operations, {}, cb);
+   CompetitionSeason.bulkWrite(operations, {}, cb);
 };
 
 exports.updateAndReturnByZeroZeroId = function(
@@ -221,7 +223,7 @@ exports.updateAndReturnByZeroZeroId = function(
 ) {
   const query = { 'external_ids.zerozero': zerozero_id };
 
-  this.findOneAndUpdate(
+   CompetitionSeason.findOneAndUpdate(
     query,
     competition_season,
     { upsert: true, new: true, setDefaultsOnInsert: true },
@@ -230,5 +232,5 @@ exports.updateAndReturnByZeroZeroId = function(
 };
 
 exports.getById = function(id, cb) {
-  this.findById(id, cb);
+   CompetitionSeason.findById(id, cb);
 };

@@ -18,7 +18,7 @@ exports.updateTeamInfo = function (err, res, done) {
         name: '',
         full_name: '',
         external_ids: {
-            crawler: res.options.zerozeroId
+            zerozero: res.options.zerozeroId
         }
     };
 
@@ -50,10 +50,10 @@ exports.updateTeamInfo = function (err, res, done) {
 
     logger.info("Team Info:", team);
 
-    Team.updateAndReturnByZeroZeroId(res.options.zerozeroId, team, function (err, result) {
+    Team.updateAndReturnByZeroZeroId(res.options.zerozeroId, team, async function (err, result) {
         if (err) {
             logger.error(err);
-            crawler.crawler.failBack(res, done);
+            await crawler.failBack(res, done);
         }
         else {
             logger.info("Successfully updated team " + result._doc);
@@ -73,14 +73,14 @@ const updateTeamSeasonInfo = function (err, res, done) {
         name: res.options.team.name,
         avatar: res.options.team.avatar,
         external_ids: {
-            crawler: res.options.team.external_ids.crawler,
+          zerozero: res.options.team.external_ids.zerozero,
         }
     };
 
-    TeamSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, team_season, function (err, result) {
+    TeamSeason.updateAndReturnByZeroZeroId(res.options.zerozeroId, res.options.competition_season.season_id, team_season, async function (err, result) {
         if (err) {
             logger.error(err);
-            crawler.crawler.failBack(res, done);
+            await crawler.failBack(res, done);
         }
         else {
             res.options.team_season = result._doc;
@@ -94,18 +94,18 @@ const cascadeTeamUpdates = function(res, done) {
     const team_season = res.options.team_season;
     const competition_season = res.options.competition_season;
 
-    TeamSeason.addCompetitionToTeam(team_season._id, competition_season, function (err, result) {
+    TeamSeason.addCompetitionToTeam(team_season._id, competition_season, async function (err, result) {
         if (err) {
             logger.error("Error when adding competition_season to team:", err);
-            crawler.crawler.failBack(res, done);
+            await crawler.failBack(res, done);
         }
         else {
             logger.info("Successfully added competition_season " + competition_season.name + " to team " + team_season.name, result);
 
-            CompetitionSeason.addTeamToCompetition(competition_season._id, team_season, function (err, result) {
+            CompetitionSeason.addTeamToCompetition(competition_season._id, team_season, async function (err, result) {
                 if (err) {
                     logger.error("Error when adding team to competition_season:", err);
-                    crawler.crawler.failBack(res, done);
+                    await crawler.failBack(res, done);
                 }
                 else {
                     logger.info("Successfully added team " + team_season.name + " to competition_season " + competition_season.name, result);
@@ -119,28 +119,28 @@ const cascadeTeamUpdates = function(res, done) {
 const processAllTeamPlayers = function(res, done) {
     let playerIds = [];
 
-    res.$("#team_squad .staff").each(function () {
+    res.$("#team_squad .staff").each( async function () {
         let playerId = res.$(res.$(this).find(".name .micrologo_and_text .text a")[0]).attr('href').match(/\d+/g)[0];
         let playerNumber = res.$(res.$(this).find(".number")[0]).html();
 
-        crawler.crawler.queue({
+        await crawler.queue({
             uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
             priority: 3,
             callback: proxyHandler.handleProxy,
             successCallback: userInfoCrawler.updateUserInfo,
-            failBack: crawler.crawler.failBack,
+            failBack: crawler.failBack,
             zerozeroId: playerId,
             competition_season: res.options.competition_season,
             team_season: res.options.team_season,
             player_number: playerNumber
         });
 
-        crawler.crawler.queue({
+        await crawler.queue({
             uri: format(baseUris.PLAYER_INFO, {player_id: playerId}),
             priority: 4,
             callback: proxyHandler.handleProxy,
             successCallback: userInfoCrawler.updateUserInfoCurrentSeasons,
-            failBack: crawler.crawler.failBack,
+            failBack: crawler.failBack,
             competition_season: res.options.competition_season,
             team_season: res.options.team_season
         });
@@ -157,11 +157,11 @@ const processAllTeamPlayers = function(res, done) {
 const processAllTeamGames = function (err, res, done) {
     let matchIds = [];
 
-    res.$("#team_games table tr .result a").each(function () {
+    res.$("#team_games table tr .result a").each(async function () {
         let matchId = res.$(this).attr('href').match(/\d+/g)[0];
         let seasonId = res.$(this).attr('href').match(/\d+/g)[1];
 
-        crawler.crawler.queue({
+        await crawler.queue({
             uri: format(baseUris.MATCH_INFO, {match_id: matchId, season_id: seasonId}),
             priority: 9,
             callback: proxyHandler.handleProxy,
@@ -178,10 +178,10 @@ const processAllTeamGames = function (err, res, done) {
 };
 
 exports.processTeamPositionsAndSeason = function(err, res, done) {
-    CompetitionSeason.getById(res.options.competition_season._id, function (err, result) {
+    CompetitionSeason.getById(res.options.competition_season._id, async function (err, result) {
         if (err) {
             logger.error(err);
-            crawler.crawler.failBack(res, done);
+            await crawler.failBack(res, done);
         }
         else {
             let competition_season = result._doc;
@@ -194,24 +194,24 @@ exports.processTeamPositionsAndSeason = function(err, res, done) {
                 team_ids.push(team.team_id);
             });
 
-            TeamSeason.getByIds(ids, function (err, result) {
+            TeamSeason.getByIds(ids, async (err, result) => {
                 if (err) {
                     logger.error(err);
-                    crawler.crawler.failBack(res, done);
+                    await crawler.failBack(res, done);
                 }
                 else {
                     let seasons = result;
 
-                    TeamSeason.updateTeamsPositions(competition_season, seasons, function (err, result) {
+                    TeamSeason.updateTeamsPositions(competition_season, seasons, async (err, result) => {
                         if (err) {
                             logger.error(err);
-                            crawler.crawler.failBack(res, done);
+                            await crawler.failBack(res, done);
                         }
                         else {
-                            Team.updateCurrentSeasons(seasons, function (err, result) {
+                            Team.updateCurrentSeasons(seasons, async (err, result) => {
                                 if (err) {
                                     logger.error(err);
-                                    crawler.crawler.failBack(res, done);
+                                    await crawler.failBack(res, done);
                                 }
                                 else {
                                     done();

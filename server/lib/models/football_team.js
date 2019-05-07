@@ -64,10 +64,8 @@ const FootballTeamSchema = new Schema({
     ],
   },
   external_ids: {
-    crawler: { type: Number, required: true, unique: true, index: true },
+    zerozero: { type: Number, required: true, unique: true, index: true },
   },
 });
-
-FootballTeamSchema.statics = require('../api/services/football/team');
 
 module.exports = mongoose.model('football_team', FootballTeamSchema);

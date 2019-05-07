@@ -1,12 +1,14 @@
 'use strict';
 
-const FootballUserInfo = require('../../../models/football_user_info');
-const FootballTeam = require('../../../models/football_team');
+const UserInfo = require('../../../models/football_user_info');
+const Team = require('../../../models/football_team');
+const Media = require('./../../../models/football_media');
+
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
 
 exports.migrateUserInfoMediaToMediaDocument = function (cb) {
-  FootballUserInfo.find()
+  UserInfo.find()
     .populate('current_season')
     .exec(function(err, userInfos) {
       userInfos = JSON.parse(entities.decode(JSON.stringify(userInfos)));
@@ -19,7 +21,7 @@ exports.migrateUserInfoMediaToMediaDocument = function (cb) {
             m.user_info_id = userInfo._id;
             m.user_type = 'football_user_info';
             m.season_id = userInfo.current_season._id;
-            this.create(m, (err, insertedMedia) => {
+            Media.create(m, (err, insertedMedia) => {
               insertedMedia = JSON.parse(
                 entities.decode(JSON.stringify(insertedMedia))
               );
@@ -32,7 +34,7 @@ exports.migrateUserInfoMediaToMediaDocument = function (cb) {
 };
 
 exports.migrateTeamMediaToMediaDocument = function (cb) {
-  FootballTeam.find()
+  Team.find()
     .populate('current_season')
     .exec(function(err, teams) {
       if (err) return cb(err);
@@ -42,7 +44,7 @@ exports.migrateTeamMediaToMediaDocument = function (cb) {
           m.team_id = team._id;
           m.user_type = 'football_team';
           m.season_id = team.current_season._id;
-          this.create(m, (err, insertedMedia) => {
+          Media.create(m, (err, insertedMedia) => {
             cb(err, insertedMedia);
           });
         });
@@ -51,7 +53,7 @@ exports.migrateTeamMediaToMediaDocument = function (cb) {
 };
 
 exports.update = function (id, media, cb) {
-  this.findOneAndUpdate(
+  Media.findOneAndUpdate(
     { _id: id },
     media,
     { upsert: true, new: true, setDefaultsOnInsert: true },

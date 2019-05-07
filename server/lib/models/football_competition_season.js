@@ -98,11 +98,9 @@ const FootballCompetitionSeasonSchema = new Schema({
     },
   ],
   external_ids: {
-    crawler: { type: Number, required: true, unique: true, index: true },
+    zerozero: { type: Number, required: true, unique: true, index: true },
   },
 });
-
-FootballCompetitionSeasonSchema.statics = require('../api/services/football/competitionSeason');
 
 module.exports = mongoose.model(
   'football_competition_season',

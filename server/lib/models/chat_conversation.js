@@ -27,6 +27,4 @@ const ChatConversationSchema = new Schema({
   updated_at: Date,
 });
 
-ChatConversationSchema.statics = require('../api/services/chat/conversation');
-
 module.exports = mongoose.model('chat_conversation', ChatConversationSchema);
