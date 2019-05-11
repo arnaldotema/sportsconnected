@@ -58,11 +58,11 @@ const start = async function() {
   logger.info("Testing the editions...");
 
   crawler.queue({
-    uri: format(baseUris.ASSOCIATION, { competition_id: 15 }),
+    uri: format(baseUris.COMPETITION, { competition_id: 3 }),
     callback: handleProxy,
     successCallback: updateCompetition,
     failBack: failBack,
-    zerozeroId: 15
+    zerozeroId: 3
   });
 };
 
