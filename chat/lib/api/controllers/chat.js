@@ -6,7 +6,7 @@ const ChatConversation = require("../../models/chat_conversation");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-exports.loadConversations = function(req, res) {
+exports.getConversations = function(req, res) {
   // use conversation service to get conversations for this user
   // .then() get messages for each conversation
 
@@ -28,6 +28,8 @@ exports.loadConversations = function(req, res) {
 };
 
 exports.createChatConversation = function(req, res) {
+  let object = {};
+
   Object.keys(ChatConversation.schema.obj).forEach(function(key) {
     object[key] = req.body[key];
   });
@@ -47,6 +49,7 @@ exports.createChatConversation = function(req, res) {
 
 exports.createChatMessage = function(req, res) {
   // Todo : Is this really necessary or can we just use req.body... ?
+  let object = {};
 
   Object.keys(ChatMessage.schema.obj).forEach(function(key) {
     object[key] = req.body[key];
@@ -65,7 +68,11 @@ exports.createChatMessage = function(req, res) {
   });
 };
 
-exports.showChatMessage = function(req, res) {
+exports.getChatMessage = function(req, res) {
+  // use chat service
+};
+
+exports.getUnreadChatMessages = function(req, res) {
   // use chat service
 };
 
@@ -73,7 +80,7 @@ exports.editChatMessage = function(req, res) {
   // use chat service
 };
 
-exports.showChatConversation = function(req, res) {
+exports.getConversation = function(req, res) {
   // use conversation service
 };
 
