@@ -2,7 +2,7 @@
 
 const ChatMessage = require("../../models/chat_message");
 
-exports.createChatMessage = function(user, msg, cb) {
+exports.createChatMessage = async function(user, msg, cb) {
   let chatMessage = {
     sender: {
       name: user.name,
@@ -16,7 +16,7 @@ exports.createChatMessage = function(user, msg, cb) {
     archived: false
   };
 
-  ChatMessage.save(chatMessage, function(err, msg) {
+  ChatMessage.save(chatMessage, async function(err, msg) {
     if (err) {
       return cb(err);
     }
@@ -24,15 +24,15 @@ exports.createChatMessage = function(user, msg, cb) {
   });
 };
 
-exports.showChatMessage = function(id) {
-  ChatMessage.findOne({ _id: id }, function(err, message) {
+exports.getChatMessage = async function(id) {
+  await ChatMessage.findOne({ _id: id }, (err, message) => {
     if (err) {
-      return cb(err);
+      throw err;
     }
     if (!message) {
-      return cb("No such chatMessage");
+      throw `No chatMessage with id ${id}`;
     }
-    return cb(null, message);
+    return message;
   });
 };
 
@@ -45,7 +45,10 @@ exports.editChatMessage = function(msg, cb) {
   );
 };
 
-exports.loadMessagesByConversationAndUserId = function(conversationId, userId) {
+exports.getMessagesByConversationAndUserId = async function(
+  conversationId,
+  userId
+) {
   ChatMessage.find(
     {
       chat_conversation_id: conversationId,
@@ -55,17 +58,14 @@ exports.loadMessagesByConversationAndUserId = function(conversationId, userId) {
     { sort: { time_created: -1 } },
     function(err, chatMessages) {
       if (err) {
-        return cb(err);
+        throw err;
       }
-      if (!chatMessages) {
-        return cb("No messages for such chatConversationId");
-      }
-      return cb(null, chatMessages);
+      return chatMessages;
     }
   );
 };
 
-exports.deleteChatMessage = function(msg, cb) {
+exports.deleteChatMessage = async function(msg, cb) {
   msg.deleted = true;
   ChatMessage.findOneAndUpdate(
     { _id: msg._id },

@@ -3,87 +3,59 @@
 const mongoose = require("mongoose");
 const ChatConversation = require("../../models/chat_conversation");
 
-const createBulkChatConversation = function(userIds, participants, cb) {
-  let convParticipants = [];
+exports.createConversation = async conversation => {
+  let participants = [];
 
-  participants.forEach(participant => {
-    convParticipants.push({
+  await conversation.participants.forEach(participant => {
+    participants.push({
       name: participant.name,
       info_id: participant._id,
       avatar: participant.avatar
     });
   });
 
-  userIds.forEach(userId => {
-    let chatConversation = {
-      user_id: userId,
-      participants: convParticipants,
-      lastMessage: [],
-      removed: false,
-      created_at: Date.now(),
-      updated_at_: Date.now()
-    };
+  let chatConversation = {
+    user_id: conversation.userId,
+    participants: participants,
+    lastMessage: [],
+    removed: false,
+    created_at: Date.now(),
+    updated_at: Date.now()
+  };
 
-    ChatConversation.save(chatConversation, function(err, conv) {
-      if (err) {
-        return cb(err);
+  return await ChatConversation.save(chatConversation);
+};
+
+exports.getConversationByIdAndUserId = (id, userId) => {
+  ChatConversation.findOne(
+    { _id: id, user_id: userId },
+    (err, conversation) => {
+      if (!conversation) {
+        throw "No such chatConversation";
       }
-      return cb(null, conv);
-    });
-  });
-};
-
-exports.createChatConversation = function(userId, participants, cb) {
-  createBulkChatConversation([userId], participants, cb);
-};
-
-exports.showChatConversation = function(id) {
-  ChatConversation.findOne({ _id: id }, function(err, conversation) {
-    if (err) {
-      return cb(err);
+      return conversation;
     }
-    if (!conversation) {
-      return cb("No such chatConversation");
-    }
-    return cb(null, conversation);
-  });
+  );
 };
 
-exports.loadConversationsByUserId = function(userId) {
-  ChatConversation.find(
-    {
-      where: {
-        participants: mongoose.Types.ObjectId(userId)
-      },
-      removed: { $ne: userId }
+exports.getConversationByUserId = async userId =>
+  (await ChatConversation.find({
+    where: {
+      participants: mongoose.Types.ObjectId(userId)
     },
-    function(err, conversations) {
-      if (err) {
-        return cb(err);
-      }
-      if (!conversations) {
-        return cb("No such chatConversation");
-      }
-      return cb(null, conversations);
-    }
-  );
-};
+    removed: { $ne: userId }
+  })) || null;
 
-exports.editChatConversation = function(conv, cb) {
-  ChatConversation.findOneAndUpdate(
-    { _id: conv._id },
-    conv,
-    { upsert: false, new: true },
-    cb
-  );
-};
+exports.editConversation = async conv =>
+  await ChatConversation.findOneAndUpdate({ _id: conv._id }, conv, {
+    upsert: false,
+    new: true
+  });
 
-exports.deleteChatConversation = function(conv, cb) {
+exports.deleteConversation = async conv => {
   conv.deleted = true;
-  ChatConversation.findOneAndUpdate(
-    { _id: conv._id },
-    conv,
-    { upsert: false, new: true },
-    cb
-  );
+  await ChatConversation.findOneAndUpdate({ _id: conv._id }, conv, {
+    upsert: false,
+    new: true
+  });
 };

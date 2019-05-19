@@ -1,89 +1,79 @@
 "use strict";
 
-const ChatMessage = require("../../models/chat_message");
-const ChatConversation = require("../../models/chat_conversation");
+const conversationService = require("../../api/services/conversation");
+const messageService = require("../../api/services/message");
+const unreadMessageService = require("../../api/services/unread");
 
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-exports.getConversations = function(req, res) {
-  // use conversation service to get conversations for this user
-  // .then() get messages for each conversation
+exports.getConversationsByUserId = async (req, res) => {
+  const userId = req.params.userId;
 
-  let ids = req.params.id;
+  const conversations = await conversationService.getConversationByUserId(
+    userId
+  );
 
-  ChatConversation.find({ id: { $in: ids } })
-    .populate("participants")
-    .exec(function(err, Competitions) {
-      if (err) {
-        return res.status(500).json({
-          message: "Error when getting Competition.",
-          error: err
-        });
-      }
-      return res.json(
-        JSON.parse(entities.decode(JSON.stringify(Competitions)))
-      );
-    });
-};
-
-exports.createChatConversation = function(req, res) {
-  let object = {};
-
-  Object.keys(ChatConversation.schema.obj).forEach(function(key) {
-    object[key] = req.body[key];
+  await conversations.map(async c => {
+    const messages = await messageService.getMessagesByConversationAndUserId(
+      c._id,
+      userId
+    );
+    return { ...c, messages };
   });
 
-  let conversation = new ChatConversation(object);
+  const body = JSON.parse(entities.decode(JSON.stringify(conversations)));
 
-  ChatConversation.createChatConversation(conversation, (err, convo) => {
-    if (err) {
-      return res.status(500).json({
-        message: "Error when creating ChatConversation",
-        error: err
-      });
-    }
-    return res.status(201).json(convo);
-  });
+  return res.status(200).json(body);
 };
 
-exports.createChatMessage = function(req, res) {
-  // Todo : Is this really necessary or can we just use req.body... ?
-  let object = {};
-
-  Object.keys(ChatMessage.schema.obj).forEach(function(key) {
-    object[key] = req.body[key];
-  });
-
-  let message = new ChatMessage(object);
-
-  ChatMessage.createChatMessage(message, (err, msg) => {
-    if (err) {
-      return res.status(500).json({
-        message: "Error when creating ChatMessage",
-        error: err
-      });
-    }
-    return res.status(201).json(msg);
-  });
+exports.createConversation = async (req, res) => {
+  const conversation = await conversationService.createConversation(req.body);
+  return res.status(201).json(conversation);
 };
 
-exports.getChatMessage = function(req, res) {
-  // use chat service
+exports.createMessage = async (req, res) => {
+  const message = await conversationService.createConversation(req.body);
+  return res.status(201).json(message);
 };
 
-exports.getUnreadChatMessages = function(req, res) {
-  // use chat service
+exports.getMessage = async (req, res) => {
+  const msg = await messageService.getChatMessage(req.params.messageId);
+  return res.json(JSON.parse(entities.decode(JSON.stringify(msg))));
 };
 
-exports.editChatMessage = function(req, res) {
-  // use chat service
+exports.getUnreadMessagesByUserId = async (req, res) => {
+  const msgs = await unreadMessageService.getUnreadMessagesByUser(
+    req.params.userInfoId
+  );
+  return res.json(JSON.parse(entities.decode(JSON.stringify(msgs))));
 };
 
-exports.getConversation = function(req, res) {
-  // use conversation service
+exports.editMessage = async (req, res) => {
+  const message = await conversationService.editConversation(req.body);
+  return res.status(201).json(message);
 };
 
-exports.deleteChatMessage = function(req, res) {
-  // use chat service
+exports.getConversationByUserAndConversationId = async (req, res) => {
+  const conversationId = req.params.conversationId;
+  const userId = req.params.userId;
+
+  const messages = await messageService.getMessagesByConversationAndUserId(
+    conversationId,
+    userId
+  );
+  const conversation = await conversationService.getConversationByIdAndUserId(
+    conversationId,
+    userId
+  );
+
+  const body = JSON.parse(
+    entities.decode(JSON.stringify({ ...conversation, messages }))
+  );
+
+  return res.status(200).json(body);
+};
+
+exports.deleteMessage = (req, res) => {
+  // messageService.deleteChatMessage(req.params.messageId);
 };

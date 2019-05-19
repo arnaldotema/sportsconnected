@@ -7,4 +7,4 @@
 
 "use strict";
 
-exports.api = require("supertest")(require("../../lib/app").app);
+exports.api = require("supertest")(require("../../app").app);

@@ -2,67 +2,42 @@
 
 const { createChatMessage } = require("../../api/services/message");
 const { createUnreadMessage } = require("../../api/services/unread");
+const { createConversation } = require("../../api/services/conversation");
 const {
-  loadConversationsByUserId,
-  createChatConversation
+  getParticipantsByConversationId
 } = require("../../api/services/conversation");
 
 module.exports = io => {
   io.sockets
     .on("connection", () => {
-      /*Todo*/
       console.log("On connection was called.");
     })
     .on("authenticated", function(socket) {
       console.log("On authenticated was called.");
 
-      console.log("hello! " + socket.decoded_token.name);
+      console.log(`Hello ${socket.decoded_token.name}!`);
 
-      let token = socket.decoded_token.secret;
-      let userId = socket.decoded_token.secret;
-      console.log(userId);
+      const userId = socket.decoded_token.secret;
 
       console.log(`User ${userId} has connected.`);
 
       // Join the user's private room (by id)
-      // Join the chat conversation rooms where this user is a participant in
+      // User's notifications, messages and etc will be pushed into its private room
 
-      loadConversationsByUserId(userId)
-        .then(conversations => {
-          conversations.forEach(c => {
-            socket.join(c._id);
-          });
-        })
-        .then(socket.join(userId));
-
-      function client() {
-        // return worker(socket, io);
-      }
-
-      function update(message) {
-        client().update(message);
-      }
-
-      function reply(message) {
-        client().reply(message.id, (err, participants, message) => {
-          if (!err) {
-            // Todo: Also notify via email
-          }
-        });
-      }
+      socket.join(userId);
 
       socket.on("reconnect", function(socket) {
         console.log(`user ${socket.id} trying to reconnect.`);
       });
 
       socket.on("room:create", function(data) {
-        let userId = socket.decoded_token.secret;
-        let participants = data.participants;
+        const userId = socket.decoded_token.secret;
+        const participants = data.participants;
 
-        createChatConversation(userId, participants).then(room => {
-          socket.join(room._id);
-          socket.emit("room:created", room._id);
-        });
+        // todo
+        // what here? Figure it out after FE
+        const conversation = createConversation(userId, participants);
+        socket.emit("room:created", conversation._id);
       });
 
       socket.on("disconnect", function() {
@@ -70,24 +45,35 @@ module.exports = io => {
       });
 
       socket.on("message", data => {
-        let user = {
+        const user = {
           name: data.user.name,
           _id: socket.decoded_token.secret,
           avatar: data.user.avatar
         };
-        let msg = {
+        const msg = {
           text: data.text,
           chat_conversation_id: data.chat_conversation_id
         };
 
-        createChatMessage(user, msg).then(reply);
+        const participants = getParticipantsByConversationId(
+          data.chat_conversation_id
+        );
+
+        createChatMessage(user, msg).then((err, msg) => {
+          participants.forEach(participant => {
+            socket.broadcast.to(participant._id).emit("new message", msg);
+          });
+        });
       });
 
       socket.on("message:read", data => {
-        let userId = socket.decoded_token.secret;
-        let msgId = data.chat_message_id;
+        const userId = socket.decoded_token.secret;
+        const msgId = data.chat_message_id;
 
-        createUnreadMessage(userId, msgId).then(update);
+        createUnreadMessage(userId, msgId).then((err, msg) => {
+          // Todo:
+          // what here? Figure it out after FE
+        });
       });
 
       socket.on("recommendation", data => {

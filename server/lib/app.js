@@ -21,7 +21,6 @@ const ping = require("./api/routes/ping");
 const teams = require("./api/routes/team");
 const competitions = require("./api/routes/competition");
 const matches = require("./api/routes/match");
-const sockets = require("./api/routes/socket");
 const storage = require("./api/routes/storage");
 
 //Logging
@@ -41,10 +40,6 @@ app.use(formidable());
 
 //Statics
 app.use(express.static(path.join(__dirname, "dist")));
-
-//Socket
-io.use(passport.authenticate("jwt", { session: false }));
-sockets(io);
 
 //Controllers
 app.use("/api/healthcheck", ping);

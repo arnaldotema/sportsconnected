@@ -5,7 +5,7 @@ const logger = require("./logging");
 const { handleProxy, getSession } = require("./utils/proxyHandler");
 const request = require("request");
 const format = require("string-template");
-const { baseUris } = require("./config");
+const { START_COMPETITION_ID, START_LEAGUE_TYPE } = require("./config");
 const { updateCompetition } = require("./api/football/competition");
 const db = require("./db");
 
@@ -58,11 +58,11 @@ const start = async function() {
   logger.info("Testing the editions...");
 
   crawler.queue({
-    uri: format(baseUris.COMPETITION, { competition_id: 3 }),
+    uri: format(START_LEAGUE_TYPE, { competition_id: START_COMPETITION_ID }),
     callback: handleProxy,
     successCallback: updateCompetition,
     failBack: failBack,
-    zerozeroId: 3
+    zerozeroId: START_COMPETITION_ID
   });
 };
 

@@ -2,7 +2,7 @@
 
 const { assert } = require("chai");
 const { api } = require("../utils");
-const { startServer, stopServer } = require("../../lib/app");
+const { startServer, stopServer } = require("../../app");
 
 describe("Component test: GET /api/healthcheck", () => {
   before(async () => {
