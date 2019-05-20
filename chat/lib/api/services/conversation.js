@@ -26,8 +26,8 @@ exports.createConversation = async conversation => {
   return await ChatConversation.save(chatConversation);
 };
 
-exports.getConversationByIdAndUserId = (id, userId) => {
-  ChatConversation.findOne(
+exports.getConversationByIdAndUserId = async (id, userId) => {
+  await ChatConversation.findOne(
     { _id: id, user_id: userId },
     (err, conversation) => {
       if (!conversation) {

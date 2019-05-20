@@ -1,9 +1,12 @@
 "use strict";
 
 const { createChatMessage } = require("../../api/services/message");
-const { createUnreadMessage } = require("../../api/services/unread");
-const { createConversation } = require("../../api/services/conversation");
 const {
+  createUnreadMessage,
+  removeUnreadMessage
+} = require("../../api/services/unread");
+const {
+  createConversation,
   getParticipantsByConversationId
 } = require("../../api/services/conversation");
 
@@ -12,39 +15,31 @@ module.exports = io => {
     .on("connection", () => {
       console.log("On connection was called.");
     })
-    .on("authenticated", function(socket) {
-      console.log("On authenticated was called.");
-
-      console.log(`Hello ${socket.decoded_token.name}!`);
+    .on("authenticated", socket => {
+      console.log(`${socket.decoded_token.name} is authenticated.`);
+      console.log(`This is his/her id: ${socket.decoded_token.secret}.`);
 
       const userId = socket.decoded_token.secret;
 
-      console.log(`User ${userId} has connected.`);
-
-      // Join the user's private room (by id)
-      // User's notifications, messages and etc will be pushed into its private room
-
       socket.join(userId);
 
-      socket.on("reconnect", function(socket) {
+      socket.on("reconnect", socket => {
         console.log(`user ${socket.id} trying to reconnect.`);
       });
 
-      socket.on("room:create", function(data) {
-        const userId = socket.decoded_token.secret;
-        const participants = data.participants;
-
-        // todo
-        // what here? Figure it out after FE
-        const conversation = createConversation(userId, participants);
-        socket.emit("room:created", conversation._id);
-      });
-
-      socket.on("disconnect", function() {
+      socket.on("disconnect", socket => {
         console.log(`user ${socket.id} disconnected`);
       });
 
-      socket.on("message", data => {
+      socket.on("conversation:create", async data => {
+        const userId = socket.decoded_token.secret;
+        const participants = data.participants;
+        const conversation = await createConversation(userId, participants);
+
+        socket.emit("conversation:created", conversation._id);
+      });
+
+      socket.on("message", async data => {
         const user = {
           name: data.user.name,
           _id: socket.decoded_token.secret,
@@ -55,7 +50,7 @@ module.exports = io => {
           chat_conversation_id: data.chat_conversation_id
         };
 
-        const participants = getParticipantsByConversationId(
+        const participants = await getParticipantsByConversationId(
           data.chat_conversation_id
         );
 
@@ -66,26 +61,73 @@ module.exports = io => {
         });
       });
 
-      socket.on("message:read", data => {
+      socket.on("message:unread", async data => {
         const userId = socket.decoded_token.secret;
         const msgId = data.chat_message_id;
+        const msg = createUnreadMessage(userId, msgId);
 
-        createUnreadMessage(userId, msgId).then((err, msg) => {
-          // Todo:
-          // what here? Figure it out after FE
-        });
+        console.log(
+          `Message "${msg.text}" with id ${msg._id} from ${
+            msg.sender
+          } was added to unread messages`
+        );
       });
 
-      socket.on("recommendation", data => {
-        // Todo: Implement recommendation notification
+      socket.on("message:read", async data => {
+        const userId = socket.decoded_token.secret;
+        const msgId = data.chat_message_id;
+        const msg = removeUnreadMessage(userId, msgId);
+
+        console.log(
+          `Message "${msg.text}" with id ${msg._id} from ${
+            msg.sender
+          } was removed from unread messages`
+        );
+      });
+
+      // I believe this should be implemented on the client site
+      // The server doesn't need to know when the user is typing or not
+
+      socket.on("typing:started", async data => {
+        // Broadcast to the users in this conversation
+        // Conversation room must also be sent
+
+        const { conversation, userId, participants } = data;
+
+        await participants.forEach(p =>
+          socket.broadcast
+            .to(p._id)
+            .emit("started typing", {
+              userId,
+              conversationId: conversation._id
+            })
+        );
+      });
+
+      socket.on("typing:stopped", async data => {
+        // Broadcast to the users in this conversation
+        // Conversation room must also be sent
+
+        const { conversation, userId, participants } = data;
+
+        await participants.forEach(p =>
+          socket.broadcast
+            .to(p._id)
+            .emit("stopped typing", {
+              userId,
+              conversationId: conversation._id
+            })
+        );
+      });
+
+      socket.on("recommendation", async data => {
+        // todo add notification
         socket.broadcast.emit("recommendation", data);
       });
 
-      socket.on("achievement", () => {
-        // Todo: Implement achievement notification
-        socket.broadcast.emit("achievement", {
-          message: "I'm achieved!"
-        });
+      socket.on("achievement", async data => {
+        // todo add notification
+        socket.broadcast.emit("achievement", data);
       });
     });
 };
