@@ -3,7 +3,7 @@
   <div *ngIf="leagues != null">
     <h1>Escolhe a tua competição</h1>
     <mat-form-field>
-      <mat-select [(ngModel)]="chosenLeague" (change)="loadTeam()" placeholder="Competição">
+      <mat-select [(ngModel)]="chosenLeague" (selectionChange)="loadTeam()" placeholder="Competição">
         <mat-option *ngFor="let league of leagues" [value]="league">{{league.name}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -12,7 +12,7 @@
   <div *ngIf="teams != null">
     <h1>Escolhe a tua equipa</h1>
     <mat-form-field>
-      <mat-select [(ngModel)]="chosenTeam" (change)="loadPlayersByTeam()" placeholder="Equipa">
+      <mat-select [(ngModel)]="chosenTeam" (selectionChange)="loadPlayersByTeam()" placeholder="Equipa">
         <mat-option *ngFor="let team of teams" [value]="team">
           {{team.name}}
         </mat-option>
@@ -24,7 +24,7 @@
   <div *ngIf="players != null">
     <h1>Quem és?</h1>
     <mat-form-field>
-      <mat-select [(ngModel)]="chosenPlayer" (change)="createPlayer()" placeholder="Jogador">
+      <mat-select [(ngModel)]="chosenPlayer" (selectionChange)="createPlayer()" placeholder="Jogador">
         <mat-option *ngFor="let player of players" [value]="player">
           {{player.name}}
         </mat-option>
