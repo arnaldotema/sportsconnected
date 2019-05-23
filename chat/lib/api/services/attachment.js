@@ -16,7 +16,8 @@ exports.createChatMessageAttachment = function(user, msgAtt, cb) {
       size: msgAtt.file.size
     },
     text: msgAtt.text,
-    time_created: Date.now(),
+    created_at: Date.now(),
+    read_at: null,
     chat_conversation_id: msgAtt.chat_conversation_id,
     deleted: false,
     archived: false
@@ -61,7 +62,7 @@ exports.loadMessageAttachmentsByConversationAndUserId = function(
       removed: { $ne: userId }
     },
     null,
-    { sort: { time_created: -1 } },
+    { sort: { created_at: -1 } },
     function(err, chatMessageAttachments) {
       if (err) {
         return cb(err);

@@ -1,6 +1,9 @@
 "use strict";
 
-const { createChatMessage } = require("../../api/services/message");
+const {
+  createChatMessage,
+  setMessageRead
+} = require("../../api/services/message");
 const {
   createUnreadMessage,
   removeUnreadMessage
@@ -54,69 +57,78 @@ module.exports = io => {
           data.chat_conversation_id
         );
 
-        createChatMessage(user, msg).then((err, msg) => {
-          participants.forEach(participant => {
-            socket.broadcast.to(participant._id).emit("new message", msg);
-          });
+        const createdMessage = await createChatMessage(user, msg);
+
+        participants.forEach(participant => {
+          console.log(
+            `Message "${createdMessage.text}" with id ${
+              createdMessage._id
+            } from ${createdMessage.sender} 
+          was sent to ${userId} `
+          );
+
+          socket.broadcast.to(participant._id).emit("message", createdMessage);
         });
       });
 
       socket.on("message:unread", async data => {
         const userId = socket.decoded_token.secret;
         const msgId = data.chat_message_id;
-        const msg = createUnreadMessage(userId, msgId);
+        const msg = await createUnreadMessage(userId, msgId);
+        const participants = await getParticipantsByConversationId(
+          data.chat_conversation_id
+        );
 
         console.log(
           `Message "${msg.text}" with id ${msg._id} from ${
             msg.sender
           } was added to unread messages`
         );
+
+        participants.forEach(participant => {
+          socket.broadcast.to(participant._id).emit("message:unread", msg);
+        });
       });
 
       socket.on("message:read", async data => {
         const userId = socket.decoded_token.secret;
         const msgId = data.chat_message_id;
-        const msg = removeUnreadMessage(userId, msgId);
+        const msg = await removeUnreadMessage(userId, msgId);
+        await setMessageRead(msgId);
+        const participants = await getParticipantsByConversationId(
+          data.chat_conversation_id
+        );
 
         console.log(
           `Message "${msg.text}" with id ${msg._id} from ${
             msg.sender
           } was removed from unread messages`
         );
+
+        participants.forEach(participant => {
+          socket.broadcast.to(participant._id).emit("message:read", msg);
+        });
       });
 
-      // I believe this should be implemented on the client site
-      // The server doesn't need to know when the user is typing or not
-
       socket.on("typing:started", async data => {
-        // Broadcast to the users in this conversation
-        // Conversation room must also be sent
-
         const { conversation, userId, participants } = data;
 
-        await participants.forEach(p =>
-          socket.broadcast
-            .to(p._id)
-            .emit("started typing", {
-              userId,
-              conversationId: conversation._id
-            })
+        participants.forEach(p =>
+          socket.broadcast.to(p._id).emit("typing:started", {
+            userId,
+            conversationId: conversation._id
+          })
         );
       });
 
       socket.on("typing:stopped", async data => {
-        // Broadcast to the users in this conversation
-        // Conversation room must also be sent
-
         const { conversation, userId, participants } = data;
 
-        await participants.forEach(p =>
-          socket.broadcast
-            .to(p._id)
-            .emit("stopped typing", {
-              userId,
-              conversationId: conversation._id
-            })
+        participants.forEach(p =>
+          socket.broadcast.to(p._id).emit("typing:stopped", {
+            userId,
+            conversationId: conversation._id
+          })
         );
       });
 

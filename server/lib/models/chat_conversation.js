@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const USER_TYPES = require('../constants/values.js').footballUserTypes;
+const USER_TYPES = require("../constants/values.js").footballUserTypes;
 
 const ChatConversationSchema = new Schema({
   user_id: String,
@@ -9,22 +9,22 @@ const ChatConversationSchema = new Schema({
       name: String,
       _id: String,
       user_type: { type: String, enum: USER_TYPES },
-      avatar: String,
-    },
+      avatar: String
+    }
   ],
   lastMessage: [
     {
       sender: {
         name: String,
-        avatar: String,
+        avatar: String
       },
       text: String,
-      time_created: Date,
-    },
+      created_at: Date
+    }
   ],
-  removed: [{ type: Schema.Types.ObjectId, ref: 'football_user_info' }],
+  removed: [{ type: Schema.Types.ObjectId, ref: "football_user_info" }],
   created_at: Date,
-  updated_at: Date,
+  updated_at: Date
 });
 
-module.exports = mongoose.model('chat_conversation', ChatConversationSchema);
+module.exports = mongoose.model("chat_conversation", ChatConversationSchema);

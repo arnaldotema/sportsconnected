@@ -2,38 +2,30 @@
 
 const ChatMessage = require("../../models/chat_message");
 
-exports.createChatMessage = async function(user, msg, cb) {
-  let chatMessage = {
+exports.createChatMessage = async (user, msg) => {
+  const chatMessage = {
     sender: {
       name: user.name,
       info_id: user._id,
       avatar: user.avatar
     },
     text: msg.text,
-    time_created: Date.now(),
+    created_at: Date.now(),
+    read_at: null,
     chat_conversation_id: msg.chat_conversation_id,
     deleted: false,
     archived: false
   };
 
-  ChatMessage.save(chatMessage, async function(err, msg) {
-    if (err) {
-      return cb(err);
-    }
-    return cb(null, msg);
-  });
+  return await ChatMessage.save(chatMessage);
 };
 
 exports.getChatMessage = async function(id) {
-  await ChatMessage.findOne({ _id: id }, (err, message) => {
-    if (err) {
-      throw err;
-    }
-    if (!message) {
-      throw `No chatMessage with id ${id}`;
-    }
-    return message;
-  });
+  const msg = await ChatMessage.findOne({ _id: id });
+  if (!msg) {
+    throw `No chatMessage with id ${id}`;
+  }
+  return msg;
 };
 
 exports.editChatMessage = function(msg, cb) {
@@ -45,32 +37,29 @@ exports.editChatMessage = function(msg, cb) {
   );
 };
 
-exports.getMessagesByConversationAndUserId = async function(
-  conversationId,
-  userId
-) {
-  ChatMessage.find(
-    {
-      chat_conversation_id: conversationId,
-      removed: { $ne: userId }
-    },
-    null,
-    { sort: { time_created: -1 } },
-    function(err, chatMessages) {
-      if (err) {
-        throw err;
-      }
-      return chatMessages;
-    }
-  );
+exports.getMessagesByConversationAndUserId = async (conversationId, userId) => {
+  const query = {
+    chat_conversation_id: conversationId,
+    removed: { $ne: userId }
+  };
+
+  const options = { sort: { created_at: -1 } };
+
+  return await ChatMessage.find(query, null, options);
 };
 
-exports.deleteChatMessage = async function(msg, cb) {
+exports.deleteChatMessage = async msg => {
+  const query = { _id: msg._id };
+  const options = { upsert: false, new: true };
+
   msg.deleted = true;
-  ChatMessage.findOneAndUpdate(
-    { _id: msg._id },
-    msg,
-    { upsert: false, new: true },
-    cb
-  );
+  return await ChatMessage.findOneAndUpdate(query, msg, options);
+};
+
+exports.setMessageRead = async msg => {
+  const query = { _id: msg._id };
+  const options = { upsert: false, new: true };
+
+  msg.read_at = Date.now();
+  return await ChatMessage.findOneAndUpdate(query, msg, options);
 };

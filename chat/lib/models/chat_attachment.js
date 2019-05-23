@@ -15,7 +15,8 @@ const ChatMessageSchema = new Schema({
     type: String,
     size: String
   },
-  time_created: Date,
+  created_at: Date,
+  read_at: Date,
   chat_conversation_id: {
     type: Schema.Types.ObjectId,
     ref: "chat_conversation"

@@ -15,7 +15,6 @@ exports.createConversation = async conversation => {
   });
 
   let chatConversation = {
-    user_id: conversation.userId,
     participants: participants,
     lastMessage: [],
     removed: false,
@@ -28,7 +27,7 @@ exports.createConversation = async conversation => {
 
 exports.getConversationByIdAndUserId = async (id, userId) => {
   await ChatConversation.findOne(
-    { _id: id, user_id: userId },
+    { _id: id, participants: mongoose.Types.ObjectId(userId) },
     (err, conversation) => {
       if (!conversation) {
         throw "No such chatConversation";
