@@ -2,33 +2,32 @@
 
 const express = require("express");
 const router = express.Router();
-const { get, post, put, delete: del } = router;
 
 const chat = require("../controllers/chat");
 
 // Chat Messages
 
-get("/messages/:messageId", chat.getMessage);
+router.get("/messages/:messageId", chat.getMessage);
 
-post("user/:userInfoId/messages", chat.createMessage);
+router.post("user/:userInfoId/messages", chat.createMessage);
 
-put("/messages/:messageId", chat.editMessage);
+router.put("/messages/:messageId", chat.editMessage);
 
-del("/messages/:messageId", chat.deleteMessage);
+router.delete("/messages/:messageId", chat.deleteMessage);
 
 // Chat Unread Messages
 
-get("/user/:userInfoId/unread", chat.getUnreadMessagesByUserId);
+router.get("/user/:userInfoId/unread", chat.getUnreadMessagesByUserId);
 
 // Chat Conversations
 
-get(
+router.get(
   "/user/:userInfoId/conversations/:conversationId",
   chat.getConversationByUserAndConversationId
 );
 
-get("/user/:userInfoId/conversations", chat.getConversationsByUserId);
+router.get("/user/:userInfoId/conversations", chat.getConversationsByUserId);
 
-post("user/:userInfoId/conversations", chat.createConversation);
+router.post("user/:userInfoId/conversations", chat.createConversation);
 
 module.exports = router;

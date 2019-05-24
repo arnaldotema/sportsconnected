@@ -1,0 +1,2 @@
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin","level":"info"}
