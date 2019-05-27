@@ -1,13 +1,13 @@
 FROM node:11.10.0
 
-RUN mkdir /server
-WORKDIR /server
+RUN mkdir /chat
+WORKDIR /chat
 
 # install and cache app dependencies
-COPY package.json /server/package.json
+COPY package.json /chat/package.json
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 5000
 
 # add server
-COPY . /server
+COPY . /chat

@@ -7,6 +7,13 @@ const unreadMessageService = require("../../api/services/unread");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
+const validate = require("../middleware/validate");
+
+exports.getMessage = async (req, res) => {
+  const msg = await messageService.getChatMessage(req.params.messageId);
+  return res.json(JSON.parse(entities.decode(JSON.stringify(msg))));
+};
+
 exports.getConversationsByUserId = async (req, res) => {
   const userId = req.params.userId;
 
@@ -27,31 +34,11 @@ exports.getConversationsByUserId = async (req, res) => {
   return res.status(200).json(body);
 };
 
-exports.createConversation = async (req, res) => {
-  const conversation = await conversationService.createConversation(req.body);
-  return res.status(201).json(conversation);
-};
-
-exports.createMessage = async (req, res) => {
-  const message = await conversationService.createConversation(req.body);
-  return res.status(201).json(message);
-};
-
-exports.getMessage = async (req, res) => {
-  const msg = await messageService.getChatMessage(req.params.messageId);
-  return res.json(JSON.parse(entities.decode(JSON.stringify(msg))));
-};
-
 exports.getUnreadMessagesByUserId = async (req, res) => {
   const msgs = await unreadMessageService.getUnreadMessagesByUser(
     req.params.userInfoId
   );
   return res.json(JSON.parse(entities.decode(JSON.stringify(msgs))));
-};
-
-exports.editMessage = async (req, res) => {
-  const message = await conversationService.editConversation(req.body);
-  return res.status(201).json(message);
 };
 
 exports.getConversationByUserAndConversationId = async (req, res) => {
@@ -74,6 +61,37 @@ exports.getConversationByUserAndConversationId = async (req, res) => {
   return res.status(200).json(body);
 };
 
-exports.deleteMessage = (req, res) => {
+exports.createMessage = async (req, res) => {
+  validate.message(req.body);
+  const message = await messageService.createChatMessage(req.body);
+  return res.status(201).json(message);
+};
+
+exports.createConversation = async (req, res) => {
+  //validate.conversation(req.body);
+  const conversation = await conversationService.createConversation(req.body);
+  return res.status(201).json(conversation);
+};
+
+exports.editMessage = async (req, res) => {
+  validate.message(req.body);
+  const messageId = req.query.messageId;
+  const message = await messageService.editChatMessage(messageId, req.body);
+  return res.status(201).json(message);
+};
+
+exports.editConversation = async (req, res) => {
+  validate.message(req.body);
+  const conversation = await conversationService.editConversation(req.body);
+  return res.status(201).json(conversation);
+};
+
+exports.deleteMessage = async (req, res) => {
   // messageService.deleteChatMessage(req.params.messageId);
+};
+
+exports.ping = (req, res) => {
+  return res.status(200).json({
+    message: "pong"
+  });
 };

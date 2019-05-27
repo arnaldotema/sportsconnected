@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Chat Message",
+  "description": "An object representing a chat message",
+  "additionalProperties": false,
+  "required": ["sender", "text", "chat_conversation_id"],
+  "properties": {
+    "sender": {
+      "description": "The chat message's user who's sent the message",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The sender's name",
+          "type": "string"
+        },
+        "_id": {
+          "description": "The sender's unique identifier.",
+          "type": "string"
+        },
+        "user_type": {
+          "description": "The type of user.",
+          "examples": ["football_user_info", "football_team"],
+          "enum": ["football_user_info", "football_team"],
+          "type": "string"
+        },
+        "avatar": {
+          "description": "The sender's avatar image URL",
+          "type": "string"
+        }
+      },
+      "required": ["_id", "name", "avatar", "user_type"],
+      "additionalProperties": false
+    },
+    "text": {
+      "description": "The message's text",
+      "type": "string",
+      "minLength": 1
+    },
+    "chat_conversation_id": {
+      "description": "The chat message's conversation unique identifier.",
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "description": "The date the chat message was inserted into the database",
+      "type": "string"
+    },
+    "read_at": {
+      "description": "The date the chat message was read by at least one recipient",
+      "type": "string",
+      "format": "date"
+    },
+    "deleted": {
+      "description": "This will be an array of users which have deleted this message",
+      "type": "array"
+    },
+    "archived": {
+      "description": "This will be an array of users which have archived this message",
+      "type": "array"
+    }
+  }
+}

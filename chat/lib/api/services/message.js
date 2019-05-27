@@ -2,22 +2,23 @@
 
 const ChatMessage = require("../../models/chat_message");
 
-exports.createChatMessage = async (user, msg) => {
-  const chatMessage = {
+exports.createChatMessage = async msg => {
+  const chatMessage = new ChatMessage({
     sender: {
-      name: user.name,
-      info_id: user._id,
-      avatar: user.avatar
+      name: msg.sender.name,
+      _id: msg.sender._id,
+      user_type: msg.sender.user_type,
+      avatar: msg.sender.avatar
     },
     text: msg.text,
-    created_at: Date.now(),
+    created_at: msg.created_at || Date.now(),
     read_at: null,
     chat_conversation_id: msg.chat_conversation_id,
-    deleted: false,
-    archived: false
-  };
+    deleted: [],
+    archived: []
+  });
 
-  return await ChatMessage.save(chatMessage);
+  return await chatMessage.save();
 };
 
 exports.getChatMessage = async function(id) {
@@ -28,13 +29,11 @@ exports.getChatMessage = async function(id) {
   return msg;
 };
 
-exports.editChatMessage = function(msg, cb) {
-  ChatMessage.findOneAndUpdate(
-    { _id: msg._id },
-    msg,
-    { upsert: false, new: true },
-    cb
-  );
+exports.editChatMessage = async (msgId, msg) => {
+  await ChatMessage.findOneAndUpdate({ _id: msgId }, msg, {
+    upsert: false,
+    new: true
+  });
 };
 
 exports.getMessagesByConversationAndUserId = async (conversationId, userId) => {

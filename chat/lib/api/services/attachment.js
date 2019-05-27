@@ -19,8 +19,8 @@ exports.createChatMessageAttachment = function(user, msgAtt, cb) {
     created_at: Date.now(),
     read_at: null,
     chat_conversation_id: msgAtt.chat_conversation_id,
-    deleted: false,
-    archived: false
+    deleted: [],
+    archived: []
   };
 
   ChatAttachment.save(chatMessageAttachment, function(err, msg) {

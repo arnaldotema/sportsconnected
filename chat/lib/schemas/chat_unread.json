@@ -1,0 +1,5 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Chat Unread Message",
+  "description": "An object representing an unread chat message"
+}

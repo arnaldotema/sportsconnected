@@ -14,15 +14,15 @@ exports.createConversation = async conversation => {
     });
   });
 
-  let chatConversation = {
+  const chatConversation = new ChatConversation({
     participants: participants,
     lastMessage: [],
-    removed: false,
+    removed: [],
     created_at: Date.now(),
     updated_at: Date.now()
-  };
+  });
 
-  return await ChatConversation.save(chatConversation);
+  return await chatConversation.save();
 };
 
 exports.getConversationByIdAndUserId = async (id, userId) => {

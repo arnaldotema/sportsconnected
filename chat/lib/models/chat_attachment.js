@@ -22,8 +22,8 @@ const ChatMessageSchema = new Schema({
     ref: "chat_conversation"
   },
   text: String,
-  deleted: { type: Boolean, required: true, index: true },
-  archived: { type: Boolean, required: true, index: true }
+  deleted: [{ type: Schema.Types.ObjectId, ref: "football_user_info" }],
+  archived: [{ type: Schema.Types.ObjectId, ref: "football_user_info" }]
 });
 
 module.exports = mongoose.model("chat_attachment", ChatMessageSchema);

@@ -9,17 +9,32 @@ const io = require("socket.io")(http);
 const cors = require("cors");
 const db = require("./db");
 const chat = require("./lib/api/routes/chat");
-//const auth = require("./lib/api/routes/auth");
 const socket = require("./lib/api/controllers/socket");
+
+let server;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/chat", chat);
 app.use(express.static(__dirname + "/public"));
 
-socket(io);
-db.connect();
+async function startServer() {
+  await db.connect();
+  socket(io);
+  server = app.listen(port, () => {
+    console.log("Running on Port: " + port);
+  });
+}
 
-http.listen(port, () => {
-  console.log("Running on Port: " + port);
-});
+async function stopServer() {
+  await db.disconnect();
+  server.close();
+}
+
+module.exports = { app, startServer, stopServer };
+
+if (require.main === module) {
+  startServer().catch(err =>
+    logger.error(err, "There was a problem starting the server")
+  );
+}

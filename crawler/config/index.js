@@ -1,7 +1,7 @@
 module.exports = {
   database:
-    "mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin",
-  //  'mongodb://localhost:27017/sports_connected'
+    // "mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin",
+    "mongodb://localhost:27017/sports_connected",
   baseUris: {
     // COMPETITIONS
     ALL_COMPETITIONS:
@@ -22,6 +22,7 @@ module.exports = {
     //MATCHES
     MATCH_INFO: "http://www.zerozero.pt/jogo.php?id={match_id}"
   },
-  START_LEAGUE_TYPE: this.COMPETITION,
+  START_LEAGUE_TYPE:
+    "http://www.zerozero.pt/competicao.php?id_comp={competition_id}",
   START_COMPETITION_ID: 3
 };

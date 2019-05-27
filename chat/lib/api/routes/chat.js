@@ -9,7 +9,7 @@ const chat = require("../controllers/chat");
 
 router.get("/messages/:messageId", chat.getMessage);
 
-router.post("user/:userInfoId/messages", chat.createMessage);
+router.post("/messages", chat.createMessage);
 
 router.put("/messages/:messageId", chat.editMessage);
 
@@ -28,6 +28,10 @@ router.get(
 
 router.get("/user/:userInfoId/conversations", chat.getConversationsByUserId);
 
-router.post("user/:userInfoId/conversations", chat.createConversation);
+router.post("/conversations", chat.createConversation);
+
+// Health check
+
+router.get("/healthcheck", chat.ping);
 
 module.exports = router;

@@ -1,2 +1,264 @@
 {"message":"Connecting to the database","level":"info"}
 {"message":"Connected to mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Database error: MongoNetworkError: failed to connect to server [199.247.15.139:27017] on first connect [MongoNetworkError: connection 0 to 199.247.15.139:27017 timed out\n    at Socket.<anonymous> (/Repos/sportsconnected/chat/node_modules/mongodb-core/lib/connection/connection.js:259:7)\n    at Object.onceWrapper (events.js:284:20)\n    at Socket.emit (events.js:196:13)\n    at Socket._onTimeout (net.js:432:8)\n    at listOnTimeout (internal/timers.js:531:17)\n    at processTimers (internal/timers.js:475:7) {\n  name: 'MongoNetworkError',\n  errorLabels: [Array],\n  [Symbol(mongoErrorContextSymbol)]: {}\n}]","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
