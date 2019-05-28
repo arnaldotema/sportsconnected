@@ -1,0 +1,35 @@
+<div class="chat-box" #content>
+    <div class="message-wrap">
+
+        <div *ngFor="let msg of msgList" class="message" [class.left]=" msg.id == '0' " [class.right]=" msg.id == '1' ">
+            <div class="msg-detail">
+                <!-- NORMAL MESSAGE -->
+                <div *ngIf="msg.type == chatTypes.basic" class="msg-content">
+                    <p class="line-breaker ">{{msg.message}}</p>
+                </div>
+                <div class="msg-info">
+                    <p>
+                        {{msg.sentAt}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</d>
+
+<div no-border>
+    <div class="input-wrap">
+        <textarea #chat_input placeholder="Type a message" [(ngModel)]="editorMsg" (keyup.enter)="sendMsg()" (focusin)="onFocus()">
+    </textarea>
+        <div class="chat-actions-list">
+            <button ion-button icon-only class="chat-action" (click)="presentAttachmentActionSheet()">
+        <ion-icon class="attach" name="attach"></ion-icon>
+      </button>
+            <button *ngIf="editorMsg.length > 0" ion-button icon-only class="chat-action" (click)="sendMsg()">
+        <ion-icon class="send" name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+      </button>
+            <button *ngIf="editorMsg.length == 0" ion-button icon-only class="chat-action" (click)="presentSewportActionSheet()">
+        <img src="assets\img\sewport-ava-512.png">
+      </button>
+        </div>
+    </div>
+</div>

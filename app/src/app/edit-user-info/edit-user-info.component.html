@@ -97,7 +97,7 @@
 
             <mat-form-field>
               <mat-select formControlName="country" placeholder="País"
-                          (change)="changedInput('country',$event, false)">
+                          (selectionChange)="changedInput('country',$event, false)">
                 <mat-option *ngFor="let country of countries"
                             [value]="viewModel.current_season.personal_info.nationality">
                   {{country}}
@@ -107,7 +107,7 @@
 
             <mat-form-field>
               <mat-select formControlName="city" placeholder="Cidade"
-                          (change)="changedInput('city',$event, false)">
+                          (selectionChange)="changedInput('city',$event, false)">
                 <mat-option *ngFor="let city of cities" [value]="viewModel.current_season.personal_info.residence">
                   {{city}}
                 </mat-option>
@@ -116,7 +116,7 @@
 
             <mat-form-field>
               <mat-select formControlName="position" placeholder="Posição"
-                          (change)="changedInput('position',$event, false)">
+                          (selectionChange)="changedInput('position',$event, false)">
                 <mat-option *ngFor="let position of positions"
                             [value]="viewModel.current_season.personal_info.positions[0]">
                   {{position}}
@@ -126,7 +126,7 @@
 
             <mat-form-field>
               <mat-select formControlName="foot" placeholder="Pé dominante"
-                          (change)="changedInput('foot',$event, false)">
+                          (selectionChange)="changedInput('foot',$event, false)">
                 <mat-option *ngFor="let foot of feet" [value]="viewModel.current_season.personal_info.foot">
                   {{foot}}
                 </mat-option>
@@ -139,7 +139,7 @@
         <div id="top">
           <h2>Estatística</h2>
           <mat-form-field>
-            <mat-select [(ngModel)]="season.name" (change)="loadGames()" placeholder="Época">
+            <mat-select [(ngModel)]="season.name" (selectionChange)="loadGames()" placeholder="Época">
               <mat-option *ngFor="let season of seasons" [value]="season">
                 {{season.name}}
               </mat-option>
