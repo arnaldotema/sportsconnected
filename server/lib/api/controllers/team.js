@@ -1,6 +1,8 @@
 const TeamModel = require("../../models/football_team.js");
 const TeamModelSeason = require("../../models/football_team_season");
 const FootballMedia = require("../../models/football_media");
+const teamService = require("../../api/services/football/team");
+
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 /**
@@ -248,7 +250,7 @@ module.exports = {
         });
       }
 
-      TeamModel.addMedia(createdMedia, userInfoId, (err, team) => {
+      teamService.addMedia(createdMedia, userInfoId, (err, team) => {
         if (err) {
           return res.status(500).json({
             message: "Error when updating team_season",

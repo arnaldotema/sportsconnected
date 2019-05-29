@@ -1,6 +1,6 @@
 "use strict";
 
-const UserModel = require("../../models/football_user.js");
+const User = require("../../models/football_user.js");
 const UserInfo = require("../../models/football_user_info.js");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
@@ -32,7 +32,7 @@ exports.aggregate_profile = function(req, res) {
 
       user_info = JSON.parse(entities.decode(JSON.stringify(user_info)));
 
-      UserModel.findOne({ _id: id }).exec(function(err, user) {
+      User.findOne({ _id: id }).exec(function(err, user) {
         if (err) {
           return res.status(500).json({
             message: "Error when getting user",

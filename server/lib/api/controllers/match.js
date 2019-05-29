@@ -1,4 +1,5 @@
 const MatchModel = require("../../models/football_match.js");
+const matchService = require("../../api/services/football/match");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
@@ -122,7 +123,7 @@ module.exports = {
     let teamId = req.body.teamId || req.params.teamId || req.body.query.teamId;
     let nMatches =
       req.body.nMatches || req.params.nMatches || req.body.query.nMatches;
-    MatchModel.getLastPlayedMatchesByTeamId(teamId, nMatches, function(
+    matchService.getLastPlayedMatchesByTeamId(teamId, nMatches, function(
       err,
       matches
     ) {
@@ -139,7 +140,10 @@ module.exports = {
   showNextByTeam: function(req, res) {
     let teamId = req.params.teamId || req.body.query.teamId;
     let nMatches = req.params.nMatches || req.body.query.nMatches;
-    MatchModel.getNextMatchesByTeamId(teamId, nMatches, function(err, matches) {
+    matchService.getNextMatchesByTeamId(teamId, nMatches, function(
+      err,
+      matches
+    ) {
       if (err) {
         return res.status(500).json({
           message: "Error when getting match.",
