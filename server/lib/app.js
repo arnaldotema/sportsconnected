@@ -30,7 +30,8 @@ const logger = require("../logging");
 const app = express();
 const port = 3000;
 const http = require("http").Server(app);
-const io = require("socket.io")(http);
+
+let server;
 
 //Request
 app.use(cors());
@@ -63,13 +64,14 @@ async function startServer() {
     res.sendFile(path.join(__dirname, "dist/index.html"));
   });
 
-  app.listen(port, function() {
+  server = app.listen(port, function() {
     console.log("Server started on port " + port);
   });
 }
 
 async function stopServer() {
   await db.disconnect();
+  server.close();
 }
 
 module.exports = { app, startServer, stopServer };

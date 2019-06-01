@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
-const USER_TYPES = require('../constants/values.js').footballUserTypes;
+const bcrypt = require("bcrypt");
+const USER_TYPES = require("../constants/values.js").footballUserTypes;
 
 const FootballUserSchema = new Schema({
   profile_id: String, // This is not this schema's ID. It's a reference for either the player, team or other type document.
@@ -9,12 +9,10 @@ const FootballUserSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   last_login: Date,
-  subscription_expiration: Date,
+  subscription_expiration: Date
 });
 
-//This is called a pre-hook, before the user information is saved in the database
-//this function will be called, we'll get the plain text password, hash it and store it.
-FootballUserSchema.pre('save', async function(next) {
+FootballUserSchema.pre("save", async next => {
   const user = this;
 
   // TODO: Change this
@@ -24,19 +22,17 @@ FootballUserSchema.pre('save', async function(next) {
   if (user.password.length < 10) {
     //Hash the password with a salt round of 12, the higher the rounds the more secure, but the slower
     //our application becomes.
-    const hash = await bcrypt.hash(this.password, 12);
-    this.password = hash;
+    this.password = await bcrypt.hash(this.password, 12);
   }
 
   next();
 });
 
-FootballUserSchema.methods.isValidPassword = async function(password) {
+FootballUserSchema.methods.isValidPassword = async password => {
   const user = this;
   //Hashes the password sent by the user for login and checks if the hashed password stored in the
   //database matches the one sent. Returns true if it does else false.
-  const compare = await bcrypt.compare(password, user.password);
-  return compare;
+  return await bcrypt.compare(password, user.password);
 };
 
-module.exports = mongoose.model('football_user', FootballUserSchema);
+module.exports = mongoose.model("football_user", FootballUserSchema);
