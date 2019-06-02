@@ -17,6 +17,7 @@
     }
   },
   "dependencies": {
+    "bcryptjs": "*",
     "chai": "^4.2.0",
     "cheerio": "^1.0.0-rc.2",
     "crawler": "^1.2.1",

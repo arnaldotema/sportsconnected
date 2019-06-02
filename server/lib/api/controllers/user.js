@@ -35,16 +35,13 @@ exports.show = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  let User = new FootballUser({
-    email: req.body.email,
-    password: req.body.password,
-    last_login: req.body.last_login,
-    subscription_expiration: req.body.subscription_expiration,
-    profile_id: req.body.profile_id,
-    user_type: req.body.user_type
+  const user = new FootballUser({
+    ...req.body,
+    last_login: req.body.last_login || Date.now(),
+    subscription_expiration: req.body.subscription_expiration || Date.now()
   });
 
-  User.save(function(err, User) {
+  user.save(function(err, User) {
     if (err) {
       return res.status(500).json({
         message: "Error when creating User",

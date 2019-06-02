@@ -3,8 +3,9 @@
 const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
+const User = require("../../lib/models/football_user");
 
-describe("Component test: POST /messages", () => {
+describe("Component test: POST /users", () => {
   before(async () => {
     await startServer();
   });
@@ -13,35 +14,38 @@ describe("Component test: POST /messages", () => {
     await stopServer();
   });
 
+  beforeEach(async () => {
+    await User.remove({});
+    console.log("Deleted User documents");
+  });
+
   it("Should post a user and get it", async () => {
+    const mockDate = new Date().toISOString();
+
     const user = {
-      profile_id: "", // This is not this schema's ID. It's a reference for either the player, team or other type document.
+      profile_id: "",
       user_type: "football_user_info",
       email: "some@email.com",
       password: "somepasswordwithmorethan10chars",
-      last_login: new Date().getTime(),
-      subscription_expiration: new Date().getTime()
+      last_login: mockDate,
+      subscription_expiration: mockDate
     };
 
-    const { body: newConversation } = await api
-      .post("/api/user")
+    const expectedResponse = {
+      ...user,
+      last_login: mockDate,
+      subscription_expiration: mockDate
+    };
+
+    const { body: actualResponse } = await api
+      .post("/api/users")
       .set("Content-Type", "application/json")
       .send(user)
       .expect(201);
 
-    const expectedResponse = {
-      ...user,
-      __v: 0
-    };
-
-    const { body: actualResponse } = await api
-      .post("/api/chat/messages")
-      .set("Content-Type", "application/json")
-      .send(message)
-      .expect(201);
-
     assert.deepEqual(actualResponse, {
       ...expectedResponse,
+      __v: 0,
       _id: actualResponse._id
     });
   });

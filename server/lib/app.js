@@ -4,6 +4,8 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+const { port } = require("../config");
 const passport = require("passport");
 const formidable = require("./api/middleware/formidable-express");
 const db = require("./../db");
@@ -28,16 +30,17 @@ const logger = require("../logging");
 
 //Server
 const app = express();
-const port = 3000;
-const http = require("http").Server(app);
 
 let server;
+
+//Body parser
+app.use(bodyParser.json());
 
 //Request
 app.use(cors());
 
 //Uploads
-app.use(formidable());
+//app.use(formidable());
 
 //Statics
 app.use(express.static(path.join(__dirname, "dist")));

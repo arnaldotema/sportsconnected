@@ -1,3 +1,5 @@
+"use strict";
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
@@ -13,13 +15,11 @@ const FootballUserSchema = new Schema({
 });
 
 FootballUserSchema.pre("save", async next => {
-  const user = this;
-
   // TODO: Change this
   // This is checking if the password is hashed already or not.
   // We won't allow the user to pick a password bigger than 10 characters,
   // So if it's > 10 it means it's hashed
-  if (user.password.length < 10) {
+  if (this.password && this.password.length < 10) {
     //Hash the password with a salt round of 12, the higher the rounds the more secure, but the slower
     //our application becomes.
     this.password = await bcrypt.hash(this.password, 12);
