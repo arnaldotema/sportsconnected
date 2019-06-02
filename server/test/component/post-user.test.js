@@ -31,11 +31,7 @@ describe("Component test: POST /users", () => {
       subscription_expiration: mockDate
     };
 
-    const expectedResponse = {
-      ...user,
-      last_login: mockDate,
-      subscription_expiration: mockDate
-    };
+    const expectedResponse = { ...user };
 
     const { body: actualResponse } = await api
       .post("/api/users")

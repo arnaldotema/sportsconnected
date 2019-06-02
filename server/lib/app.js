@@ -17,6 +17,7 @@ require("./api/auth/index");
 //Routes
 const auth = require("./api/routes/auth");
 const users = require("./api/routes/user");
+const seasons = require("./api/routes/seasons");
 const players = require("./api/routes/player");
 const global = require("./api/routes/global");
 const ping = require("./api/routes/ping");
@@ -54,6 +55,7 @@ app.use("/api/competitions", authenticate, competitions);
 app.use("/api/matches", authenticate, matches);
 app.use("/api/storage", storage);
 app.use("/api/users", users);
+app.use("/api/seasons", seasons);
 app.use("/api/auth", auth);
 
 async function startServer() {
