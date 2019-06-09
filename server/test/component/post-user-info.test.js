@@ -1,5 +1,7 @@
 "use strict";
 
+const sinon = require("sinon");
+const passport = require("passport");
 const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
@@ -11,6 +13,8 @@ const Team = require("../../lib/models/football_team");
 describe("Component test: POST /players", () => {
   before(async () => {
     await startServer();
+    //todo: stub authenticate
+    // sinon.stub(authenticate).returns(() => {});
   });
 
   after(async () => {
@@ -21,6 +25,7 @@ describe("Component test: POST /players", () => {
     await User.remove({});
     await UserInfo.remove({});
     await UserInfoSeason.remove({});
+    await Team.remove({});
     console.log("Deleted UserInfo documents");
   });
 

@@ -14,25 +14,22 @@ const FootballUserSchema = new Schema({
   subscription_expiration: Date
 });
 
-FootballUserSchema.pre("save", async next => {
-  // TODO: Change this
-  // This is checking if the password is hashed already or not.
-  // We won't allow the user to pick a password bigger than 10 characters,
-  // So if it's > 10 it means it's hashed
+FootballUserSchema.pre("save", async function(next) {
+  // Maximum password length is 10 characters.
+  // So if it's > 10, it means it's already hashed.
+  // If it's already hashed, it means it's an update.
+  // If it's an update we don't need to hash the pw.
+
   if (this.password && this.password.length < 10) {
-    //Hash the password with a salt round of 12, the higher the rounds the more secure, but the slower
-    //our application becomes.
+    //Hash the password with a salt round of 12
     this.password = await bcrypt.hash(this.password, 12);
   }
 
   next();
 });
 
-FootballUserSchema.methods.isValidPassword = async password => {
-  const user = this;
-  //Hashes the password sent by the user for login and checks if the hashed password stored in the
-  //database matches the one sent. Returns true if it does else false.
-  return await bcrypt.compare(password, user.password);
+FootballUserSchema.methods.isValidPassword = async function(password) {
+  return await bcrypt.compare(password, this._doc.password);
 };
 
 module.exports = mongoose.model("football_user", FootballUserSchema);

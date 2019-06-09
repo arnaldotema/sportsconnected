@@ -15,6 +15,7 @@
     }
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "bcryptjs": "*",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
@@ -44,6 +45,7 @@
     "sc-hot-reboot": "^1.0.0",
     "scc-broker-client": "^6.1.0",
     "serve-static": "^1.13.2",
+    "sinon": "^7.3.2",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
     "socket.io-emitter": "^3.1.1",

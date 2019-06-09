@@ -4,7 +4,7 @@ const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 const jwt = require("jsonwebtoken");
 
-module.exports = (err, result, user) => {
+module.exports = (err, result, res, user) => {
   if (err) {
     return res.status(500).json({
       message: "Error when getting profile.",
@@ -45,17 +45,5 @@ module.exports = (err, result, user) => {
   //Sign the JWT token and populate the payload with the user email, id and etc
   const token = jwt.sign({ user: body }, "top_secret");
   //Send back the token to the user
-  return res.json({
-    token: token,
-    _id: body._id,
-    email: body.email,
-    profile_id: body.profile_id,
-    user_type: body.user_type,
-    avatar: body.avatar,
-    name: body.name,
-    team_id: body.team_id,
-    team_avatar: body.team_avatar,
-    team_acronym: body.team_acronym,
-    team_name: body.team_name
-  });
+  return res.json({ token: token, ...body });
 };

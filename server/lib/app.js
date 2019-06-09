@@ -12,7 +12,7 @@ const db = require("./../db");
 const authenticate = passport.authenticate("jwt", { session: false });
 
 //Configs
-require("./api/auth/index");
+require("./api/auth");
 
 //Routes
 const auth = require("./api/routes/auth");
@@ -45,6 +45,9 @@ app.use(cors());
 
 //Statics
 app.use(express.static(path.join(__dirname, "dist")));
+
+//Passport initialization
+app.use(passport.initialize());
 
 //Controllers
 app.use("/api/healthcheck", ping);
