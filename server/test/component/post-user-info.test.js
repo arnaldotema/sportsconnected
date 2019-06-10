@@ -91,10 +91,8 @@ describe("Component test: POST /players", () => {
 
     const userInfo = {
       user_id: nUser._id,
-      type: 1,
       followers: [],
       following: [],
-      current_season: "",
       previous_seasons: [],
       skill_set: [
         { name: "Power", endorsements: [] },
@@ -105,13 +103,27 @@ describe("Component test: POST /players", () => {
       actions_regex: "",
       created_at: mockDate,
       updated_at: mockDate,
-      external_ids: "12345678910",
+      external_ids: {
+        zerozero: 12345678910
+      },
       personal_info: personalInfo, // api requisite
       season_id: nSeason._id, // api requisite
       team: teamId // api requisite
     };
 
-    const expectedResponse = { ...userInfo };
+    const expectedResponse = {
+      user_id: userInfo.user_id,
+      followers: userInfo.followers,
+      following: userInfo.following,
+      previous_seasons: userInfo.previous_seasons,
+      skill_set: userInfo.skill_set,
+      recommendations: userInfo.recommendations,
+      achievements: userInfo.achievements,
+      actions_regex: userInfo.actions_regex,
+      created_at: userInfo.created_at,
+      updated_at: userInfo.updated_at,
+      external_ids: userInfo.external_ids
+    };
 
     const { body: actualResponse } = await api
       .post("/api/players")
@@ -122,7 +134,22 @@ describe("Component test: POST /players", () => {
     assert.deepEqual(actualResponse, {
       ...expectedResponse,
       __v: 0,
-      _id: actualResponse._id
+      _id: actualResponse._id,
+      type: actualResponse.type,
+      updated_at: actualResponse.updated_at,
+      current_season: actualResponse.current_season,
+      skill_set: [
+        {
+          _id: actualResponse.skill_set[0]._id,
+          name: "Power",
+          endorsements: []
+        },
+        {
+          _id: actualResponse.skill_set[1]._id,
+          name: "Speed",
+          endorsements: []
+        }
+      ]
     });
   });
 });

@@ -72,21 +72,20 @@ exports.show = async (req, res) => {
 };
 
 exports.create = async (req, res) => {
-  const personal_info = JSON.parse(req.body.personal_info);
-  const team = JSON.parse(req.body.team);
+  const personal_info = req.body.personal_info;
+  const team = req.body.team;
   const season_id = req.body.season_id;
 
-  const userInfo = new FootballUserInfo({
-    user_id: req.body.user_id,
-    type: 1
-  });
+  const userInfo = new FootballUserInfo({ ...req.body, type: 1 });
 
   userInfo.save(function(err, newUserInfo) {
-    if (err)
+    if (err) {
       return res.status(500).json({
         message: "Error when creating userInfo",
         error: err
       });
+    }
+
     const user_info_id = newUserInfo._id;
     userInfoSeasonService.createNew(
       user_info_id,
@@ -124,8 +123,8 @@ exports.create = async (req, res) => {
 exports.update = async (req, res) => {
   const id = req.params.id;
 
-  const team = req.body.team ? JSON.parse(req.body.team) : null;
-  const personal_info = JSON.parse(req.body.personal_info);
+  const team = req.body.team ? req.body.team : null;
+  const personal_info = req.body.personal_info;
   const avatar = req.files.avatar;
 
   if (avatar)

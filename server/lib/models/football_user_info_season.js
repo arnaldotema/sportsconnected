@@ -114,7 +114,7 @@ const FootballUserSeasonSchema = new Schema({
     }
   ],
   external_ids: {
-    zerozero: { type: Number, required: true, index: true }
+    zerozero: { type: Number, index: true }
   }
 });
 

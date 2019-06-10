@@ -1,10 +1,14 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const UserModel = require("../../models/football_user");
-const JWTstrategy = require("passport-jwt").Strategy;
 const ExtractJWT = require("passport-jwt").ExtractJwt;
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
+
+const JWTstrategy =
+  process.env.NODE_ENV === "test"
+    ? require("passport-jwt-mock").Strategy
+    : require("passport-jwt").Strategy;
 
 //Create a passport middleware to handle user registration
 passport.use(
