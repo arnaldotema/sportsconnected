@@ -1,7 +1,5 @@
 "use strict";
 
-const sinon = require("sinon");
-const passport = require("passport");
 const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
@@ -13,8 +11,6 @@ const Team = require("../../lib/models/football_team");
 describe("Component test: POST /players", () => {
   before(async () => {
     await startServer();
-    //todo: stub authenticate
-    // sinon.stub(authenticate).returns(() => {});
   });
 
   after(async () => {
@@ -64,7 +60,6 @@ describe("Component test: POST /players", () => {
     const personalInfo = {
       name: "MockName",
       age: 20,
-      // avatar: "MockAvatar"
       number: 0,
       full_name: "MockName",
       positions: ["Avançado", "Médio"],
@@ -74,7 +69,6 @@ describe("Component test: POST /players", () => {
       foot: "Direito",
       nationality: "Portugal",
       residence: "Londres"
-      // updated_at: mockDate
     };
 
     const mockTeam = new Team({
@@ -133,9 +127,7 @@ describe("Component test: POST /players", () => {
 
     assert.deepEqual(actualResponse, {
       ...expectedResponse,
-      __v: 0,
       _id: actualResponse._id,
-      type: actualResponse.type,
       updated_at: actualResponse.updated_at,
       current_season: actualResponse.current_season,
       skill_set: [

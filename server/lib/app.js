@@ -73,7 +73,7 @@ async function startServer() {
   });
 
   server = app.listen(port, function() {
-    console.log("Server started on port " + port);
+    logger.info("Server started on port " + port);
   });
 }
 

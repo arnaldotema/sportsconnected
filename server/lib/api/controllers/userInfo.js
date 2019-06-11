@@ -106,13 +106,15 @@ exports.create = async (req, res) => {
           update,
           { upsert: true, new: true, setDefaultsOnInsert: true },
           (err, userInfo) => {
+            const returnUserObject = { __v, type, ...userInfo };
+
             if (err) {
               return res.status(500).json({
                 message: "Error when creating user_info_season",
                 error: err
               });
             }
-            return res.status(201).json(userInfo);
+            return res.status(201).json(returnUserObject);
           }
         );
       }
@@ -133,8 +135,13 @@ exports.update = async (req, res) => {
 
   userInfoSeasonService.updateUserInfoSeason(id, personal_info, team, function(
     err,
-    user_info_season
+    result
   ) {
+    const userInfoSeasonDocument = JSON.parse(
+      entities.decode(JSON.stringify(result))
+    );
+    const userInfoSeason = { __v, type, ...userInfoSeasonDocument };
+
     if (err) {
       return res.status(500).json({
         message: "Error when updating user_info",
@@ -155,15 +162,11 @@ exports.update = async (req, res) => {
               error: err
             });
           }
-          return res.json(
-            JSON.parse(entities.decode(JSON.stringify(user_info_season)))
-          );
+          return res.json(userInfoSeason);
         }
       );
     } else {
-      return res.json(
-        JSON.parse(entities.decode(JSON.stringify(user_info_season)))
-      );
+      return res.json(userInfoSeason);
     }
   });
 };
