@@ -20,15 +20,11 @@ describe("Component test: POST /users", () => {
   });
 
   it("Should post a user and get it", async () => {
-    const mockDate = new Date().toISOString();
-
     const user = {
       profile_id: "",
       user_type: "football_user_info",
       email: "some@email.com",
-      password: "somepasswordwithmorethan10chars",
-      last_login: mockDate,
-      subscription_expiration: mockDate
+      password: "somepasswordwithmorethan10chars"
     };
 
     const expectedResponse = { ...user };
@@ -41,8 +37,9 @@ describe("Component test: POST /users", () => {
 
     assert.deepEqual(actualResponse, {
       ...expectedResponse,
-      __v: 0,
-      _id: actualResponse._id
+      _id: actualResponse._id,
+      last_login: actualResponse.last_login,
+      subscription_expiration: actualResponse.subscription_expiration
     });
   });
 });

@@ -26,15 +26,11 @@ describe("Component test: POST /players", () => {
   });
 
   it("Should post a userInfo and userInfoSeason and get it", async () => {
-    const mockDate = new Date().toISOString();
-
     const user = {
       profile_id: "",
       user_type: "football_user_info",
       email: "some@email.com",
-      password: "somepasswordwithmorethan10chars",
-      last_login: mockDate,
-      subscription_expiration: mockDate
+      password: "somepasswordwithmorethan10chars"
     };
 
     const { body: nUser } = await api
@@ -45,7 +41,6 @@ describe("Component test: POST /players", () => {
 
     const season = {
       name: "Mock Season",
-      updated_at: mockDate,
       external_ids: {
         zerozero: 12345678910
       }
@@ -65,7 +60,6 @@ describe("Component test: POST /players", () => {
       positions: ["Avançado", "Médio"],
       height: 185,
       weight: 75,
-      date_of_birth: mockDate,
       foot: "Direito",
       nationality: "Portugal",
       residence: "Londres"
@@ -95,8 +89,6 @@ describe("Component test: POST /players", () => {
       recommendations: { list: [], top_5: [] },
       achievements: [],
       actions_regex: "",
-      created_at: mockDate,
-      updated_at: mockDate,
       external_ids: {
         zerozero: 12345678910
       },
@@ -114,8 +106,6 @@ describe("Component test: POST /players", () => {
       recommendations: userInfo.recommendations,
       achievements: userInfo.achievements,
       actions_regex: userInfo.actions_regex,
-      created_at: userInfo.created_at,
-      updated_at: userInfo.updated_at,
       external_ids: userInfo.external_ids
     };
 
@@ -129,6 +119,7 @@ describe("Component test: POST /players", () => {
       ...expectedResponse,
       _id: actualResponse._id,
       updated_at: actualResponse.updated_at,
+      created_at: actualResponse.created_at,
       current_season: actualResponse.current_season,
       skill_set: [
         {

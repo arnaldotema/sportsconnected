@@ -10,9 +10,9 @@ const ImageStorageService = require("../services/storage/image");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-// Helpers
+const format = require("./../../utils/formatModel");
 
-function handleError(err, result, res) {
+function handleError(err, result, successCode, res) {
   if (err) {
     return res.status(500).json({
       message: "Error from the API.",
@@ -24,10 +24,8 @@ function handleError(err, result, res) {
       message: "No such object"
     });
   }
-  return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
+  return res.status(successCode).json(format(result));
 }
-
-// User
 
 exports.search = async (req, res) => {
   let select = {
@@ -51,7 +49,7 @@ exports.search = async (req, res) => {
 
   FootballUserInfoSeason.find(query)
     .select(select)
-    .exec((err, result) => handleError(err, result, res));
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
 exports.list = async (req, res) => {
@@ -59,7 +57,7 @@ exports.list = async (req, res) => {
     .populate("current_season")
     .populate("previous_seasons", "stats")
     .limit(5)
-    .exec((err, result) => handleError(err, result, res));
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
 exports.show = async (req, res) => {
@@ -68,7 +66,7 @@ exports.show = async (req, res) => {
     .populate("current_season")
     .populate("previous_seasons", "stats")
     .populate("recommendations.list")
-    .exec((err, result) => handleError(err, result, res));
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
 exports.create = async (req, res) => {
@@ -105,17 +103,7 @@ exports.create = async (req, res) => {
           { _id: user_info_id },
           update,
           { upsert: true, new: true, setDefaultsOnInsert: true },
-          (err, userInfo) => {
-            const returnUserObject = { __v, type, ...userInfo };
-
-            if (err) {
-              return res.status(500).json({
-                message: "Error when creating user_info_season",
-                error: err
-              });
-            }
-            return res.status(201).json(returnUserObject);
-          }
+          (err, result) => handleError(err, result, 201, res)
         );
       }
     );
@@ -155,7 +143,7 @@ exports.update = async (req, res) => {
         "user",
         id,
         "system/avatar",
-        function(err, result) {
+        function(err) {
           if (err) {
             return res.status(500).json({
               message: "Error when storing image.",
@@ -210,16 +198,9 @@ exports.listMedia = async (req, res) => {
 
 exports.showMedia = async (req, res) => {
   const id = req.params.id;
-
-  FootballMedia.findOne({ _id: id }).exec(function(err, media) {
-    if (err) {
-      return res.status(500).json({
-        message: "Error when getting media.",
-        error: err
-      });
-    }
-    return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
-  });
+  FootballMedia.findOne({ _id: id }).exec((err, result) =>
+    handleError(err, result, 200, res)
+  );
 };
 
 exports.createMedia = async (req, res) => {
