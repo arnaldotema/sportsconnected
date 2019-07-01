@@ -19,6 +19,7 @@ before_script:
   - sleep 10
 
 script:
+  - NODE_ENV=test
   - docker run arnaldolucientrindade/sportsconnected npm run test --
 
 deploy:
