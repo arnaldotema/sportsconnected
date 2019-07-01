@@ -18,6 +18,7 @@ before_script:
   - sleep 10
 
 script:
+  - sudo chown -R $USER /data/db
   - sudo mkdir -p /data/db
   - mongod
   - docker run arnaldolucientrindade/sportsconnected npm run test --
