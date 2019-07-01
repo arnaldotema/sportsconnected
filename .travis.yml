@@ -14,8 +14,11 @@ services:
 before_install:
   - docker build -t arnaldolucientrindade/sportsconnected ./server
 
+before_script:
+  - sleep 10
+
 script:
-  - sudo /etc/init.d/mongod start
+  - mongod
   - docker run arnaldolucientrindade/sportsconnected npm run test --
 
 deploy:
