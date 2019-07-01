@@ -7,25 +7,15 @@ cache:
   directories:
     - "node_modules"
 
-env:
-  matrix:
-    - MONGODB=3.2
-    - MONGODB=3.4
-    - MONGODB=3.6
-    - MONGODB=4.0
-
 services:
   - docker
-
-before_script:
-  - docker run -d -p 27017:27017 mongo:$MONGODB
-
-script:
-  - MONGODB_URL=mongodb://localhost/connect-mongo-test
-  - docker run arnaldolucientrindade/sportsconnected npm run test --
+  - mongodb
 
 before_install:
   - docker build -t arnaldolucientrindade/sportsconnected ./server
+
+script:
+  - docker run arnaldolucientrindade/sportsconnected npm run test --
 
 deploy:
   provider: elasticbeanstalk
@@ -35,7 +25,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-697350137372"
   bucket_path: "sports-connected"
   on:
-    branch: master-refactor
+    branch: refactor
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
