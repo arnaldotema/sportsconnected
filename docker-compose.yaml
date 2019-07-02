@@ -2,7 +2,7 @@ version: "3.3"
 services:
   mongo:
     image: mongo:3.3
-    command: mongod --fork --logpath /data/db/log/mongodb.log
+    command: mongod
 
   server:
     container_name: sc-srv

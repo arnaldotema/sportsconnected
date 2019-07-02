@@ -26,7 +26,7 @@ script:
   - sudo mkdir -p /data/db/log
   - sudo chown -R $USER /data/db/log
   - sudo service mongod stop
-  - mongod
+  - mongod --fork --logpath /data/db/log/mongodb.log
   - docker run arnaldolucientrindade/sportsconnected npm run test --
 
 deploy:
