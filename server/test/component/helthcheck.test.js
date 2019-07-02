@@ -6,6 +6,8 @@ const { startServer, stopServer } = require("../../lib/app");
 
 describe("Component test: GET /api/healthcheck", () => {
   before(async () => {
+    // Ensure it will run on the DEV database
+    process.env.NODE_ENV = "test";
     await startServer();
   });
 
