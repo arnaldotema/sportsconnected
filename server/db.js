@@ -29,8 +29,4 @@ async function disconnect() {
     );
 }
 
-async function eraseDataBase() {
-  //await mongoose.DateTime.remove({});
-}
-
-module.exports = { connect, disconnect, eraseDataBase };
+module.exports = { connect, disconnect };
