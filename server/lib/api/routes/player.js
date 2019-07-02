@@ -2,33 +2,33 @@
 
 const express = require("express");
 const router = express.Router();
-const PlayerController = require("../controllers/userInfo.js");
+const playerController = require("../controllers/userInfo.js");
 
-router.get("/", PlayerController.list);
-router.post("/", PlayerController.create);
+router.get("/", playerController.list);
+router.post("/", playerController.create);
 
-router.get("/:id", PlayerController.show);
-router.put("/:id", PlayerController.update);
-router.delete("/:id", PlayerController.remove);
+router.get("/:id", playerController.show);
+router.put("/:id", playerController.update);
+router.delete("/:id", playerController.remove);
 
-router.post("/search", PlayerController.search);
+router.post("/search", playerController.search);
 
-router.post("/:id/recommendations", PlayerController.add_recommendation);
-router.get("/:id/recommendations", PlayerController.list_recommendations);
+router.post("/:id/recommendations", playerController.add_recommendation);
+router.get("/:id/recommendations", playerController.list_recommendations);
 
-router.get("/:id/media", PlayerController.listMedia);
-router.get("/:id/media/:mediaId", PlayerController.showMedia);
-router.post("/:id/media", PlayerController.createMedia);
-router.put("/:id/media/:mediaId", PlayerController.updateMedia);
-router.delete("/:id/media/:mediaId", PlayerController.removeMedia);
+router.get("/:id/media", playerController.listMedia);
+router.get("/:id/media/:mediaId", playerController.showMedia);
+router.post("/:id/media", playerController.createMedia);
+router.put("/:id/media/:mediaId", playerController.updateMedia);
+router.delete("/:id/media/:mediaId", playerController.removeMedia);
 
-router.post("/:id/skills", PlayerController.add_skill_vote);
-router.get("/:id/skills", PlayerController.list_skills);
+router.post("/:id/skills", playerController.add_skill_vote);
+router.get("/:id/skills", playerController.list_skills);
 
-router.post("/:id/followers", PlayerController.follow);
-router.get("/:id/followers", PlayerController.list_followers);
-router.delete("/:id/followers/:follower_id", PlayerController.unfollow);
+router.post("/:id/followers", playerController.follow);
+router.get("/:id/followers", playerController.list_followers);
+router.delete("/:id/followers/:follower_id", playerController.unfollow);
 
-router.get("/:id/followed", PlayerController.list_followed);
+router.get("/:id/followed", playerController.list_followed);
 
 module.exports = router;

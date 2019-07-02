@@ -1,5 +1,9 @@
-version: "3.5"
+version: "3.3"
 services:
+  mongo:
+    image: mongo:3.3
+    command: mongod
+
   server:
     container_name: sc-srv
     build: ./server
@@ -7,6 +11,8 @@ services:
       - "3000:3000"
     expose:
       - "3000"
+    links:
+      - mongo
 
   app:
     container_name: sc-app
@@ -19,3 +25,5 @@ services:
     build: ./chat
     ports:
       - "5000:5000"
+    links:
+      - mongo

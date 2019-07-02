@@ -17,7 +17,6 @@
   "dependencies": {
     "ajv": "^6.10.0",
     "ajv-keywords": "^3.4.0",
-    "bcrypt": "^3.0.0",
     "bcryptjs": "*",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",

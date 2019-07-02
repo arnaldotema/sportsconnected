@@ -1,5 +1,5 @@
-var CompetitionModel = require("../../models/football_competition.js");
-var CompetitionSeasonModel = require("../../models/football_competition_season");
+const CompetitionModel = require("../../models/football_competition.js");
+const CompetitionSeasonModel = require("../../models/football_competition_season");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
@@ -38,7 +38,7 @@ module.exports = {
    * CompetitionController.show()
    */
   show: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     CompetitionSeasonModel.findOne({ _id: id }, function(err, Competition) {
       if (err) {
         return res.status(500).json({
@@ -65,7 +65,7 @@ module.exports = {
       object[key] = req.body[key];
     });
 
-    var Competition = new CompetitionModel(object);
+    const Competition = new CompetitionModel(object);
 
     Competition.save(function(err, Competition) {
       if (err) {
@@ -82,7 +82,7 @@ module.exports = {
    * CompetitionController.update()
    */
   update: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     CompetitionSeasonModel.findOne({ _id: id }, function(err, Competition) {
       if (err) {
         return res.status(500).json({
@@ -117,7 +117,7 @@ module.exports = {
    * CompetitionController.remove()
    */
   remove: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     CompetitionSeasonModel.findByIdAndRemove(id, function(err, Competition) {
       if (err) {
         return res.status(500).json({
@@ -130,7 +130,7 @@ module.exports = {
   },
 
   teams: function(req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     CompetitionSeasonModel.findOne({ _id: id }).exec(function(
       err,
       Competition

@@ -2,13 +2,17 @@ const FootballUserInfo = require("../../models/football_user_info");
 const FootballMedia = require("../../models/football_media");
 const FootballRecommendation = require("../../models/football_recommendation");
 const FootballUserInfoSeason = require("../../models/football_user_info_season");
+
+const userInfoService = require("../../api/services/football/userInfo");
+const userInfoSeasonService = require("../../api/services/football/userInfoSeason");
+
 const ImageStorageService = require("../services/storage/image");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-// Helpers
+const format = require("./../../utils/formatModel");
 
-function handleError(err, result, res) {
+function handleError(err, result, successCode, res) {
   if (err) {
     return res.status(500).json({
       message: "Error from the API.",
@@ -20,12 +24,10 @@ function handleError(err, result, res) {
       message: "No such object"
     });
   }
-  return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
+  return res.status(successCode).json(format(result));
 }
 
-// User
-
-exports.search = function(req, res) {
+exports.search = async (req, res) => {
   let select = {
     _id: 1,
     user_info_id: 1,
@@ -34,7 +36,7 @@ exports.search = function(req, res) {
     stats: 1
   };
 
-  let query = {};
+  const query = {};
 
   req.body.query.forEach(function(filter) {
     query[filter.search_item] = {};
@@ -47,44 +49,43 @@ exports.search = function(req, res) {
 
   FootballUserInfoSeason.find(query)
     .select(select)
-    .exec((err, result) => handleError(err, result, res));
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
-exports.list = function(req, res) {
+exports.list = async (req, res) => {
   FootballUserInfo.find()
     .populate("current_season")
     .populate("previous_seasons", "stats")
     .limit(5)
-    .exec((err, result) => handleError(err, result, res));
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
-exports.show = function(req, res) {
-  let id = req.params.id;
+exports.show = async (req, res) => {
+  const id = req.params.id;
   FootballUserInfo.findOne({ _id: id })
     .populate("current_season")
     .populate("previous_seasons", "stats")
     .populate("recommendations.list")
-    .exec((err, result) => handleError(err, result, res));
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
-exports.create = function(req, res) {
-  let personal_info = JSON.parse(req.body.personal_info);
-  let team = JSON.parse(req.body.team);
-  let season_id = req.body.season_id;
+exports.create = async (req, res) => {
+  const personal_info = req.body.personal_info;
+  const team = req.body.team;
+  const season_id = req.body.season_id;
 
-  let userInfo = new FootballUserInfo({
-    user_id: req.body.user_id,
-    type: 1
-  });
+  const userInfo = new FootballUserInfo({ ...req.body, type: 1 });
 
   userInfo.save(function(err, newUserInfo) {
-    if (err)
+    if (err) {
       return res.status(500).json({
         message: "Error when creating userInfo",
         error: err
       });
-    let user_info_id = newUserInfo._id;
-    FootballUserInfoSeason.createNew(
+    }
+
+    const user_info_id = newUserInfo._id;
+    userInfoSeasonService.createNew(
       user_info_id,
       season_id,
       personal_info,
@@ -96,42 +97,39 @@ exports.create = function(req, res) {
             error: err
           });
         }
-        let update = { current_season: user_info_season._id };
+        const update = { current_season: user_info_season._id };
 
         FootballUserInfo.findOneAndUpdate(
-          { _id: update },
-          query,
+          { _id: user_info_id },
+          update,
           { upsert: true, new: true, setDefaultsOnInsert: true },
-          (err, userInfo) => {
-            if (err) {
-              return res.status(500).json({
-                message: "Error when creating user_info_season",
-                error: err
-              });
-            }
-            return res.status(201).json(userInfo);
-          }
+          (err, result) => handleError(err, result, 201, res)
         );
       }
     );
   });
 };
 
-exports.update = function(req, res) {
-  let id = req.params.id;
+exports.update = async (req, res) => {
+  const id = req.params.id;
 
-  let team = req.body.team ? JSON.parse(req.body.team) : null;
-  let personal_info = JSON.parse(req.body.personal_info);
-  let avatar = req.files.avatar;
+  const team = req.body.team ? req.body.team : null;
+  const personal_info = req.body.personal_info;
+  const avatar = req.files.avatar;
 
   if (avatar)
     personal_info.avatar =
       "api/storage/images/user_info_season/" + id + "/system/avatar";
 
-  FootballUserInfoSeason.updateUserInfoSeason(id, personal_info, team, function(
+  userInfoSeasonService.updateUserInfoSeason(id, personal_info, team, function(
     err,
-    user_info_season
+    result
   ) {
+    const userInfoSeasonDocument = JSON.parse(
+      entities.decode(JSON.stringify(result))
+    );
+    const userInfoSeason = { __v, type, ...userInfoSeasonDocument };
+
     if (err) {
       return res.status(500).json({
         message: "Error when updating user_info",
@@ -145,27 +143,23 @@ exports.update = function(req, res) {
         "user",
         id,
         "system/avatar",
-        function(err, result) {
+        function(err) {
           if (err) {
             return res.status(500).json({
               message: "Error when storing image.",
               error: err
             });
           }
-          return res.json(
-            JSON.parse(entities.decode(JSON.stringify(user_info_season)))
-          );
+          return res.json(userInfoSeason);
         }
       );
     } else {
-      return res.json(
-        JSON.parse(entities.decode(JSON.stringify(user_info_season)))
-      );
+      return res.json(userInfoSeason);
     }
   });
 };
 
-exports.remove = function(req, res) {
+exports.remove = async (req, res) => {
   const id = req.params.id;
   FootballUserInfo.findByIdAndRemove(id, function(err, user_info) {
     if (err) {
@@ -180,11 +174,11 @@ exports.remove = function(req, res) {
 
 // Media
 
-exports.listMedia = function(req, res) {
-  let user_info__id = req.params.id;
+exports.listMedia = async (req, res) => {
+  const user_info__id = req.params.id;
 
-  let offset = parseInt(req.query.offset || "0");
-  let size = parseInt(req.query.size || "10");
+  const offset = parseInt(req.query.offset || "0");
+  const size = parseInt(req.query.size || "10");
 
   FootballMedia.find()
     .where("user_info_id")
@@ -202,23 +196,16 @@ exports.listMedia = function(req, res) {
     });
 };
 
-exports.showMedia = function(req, res) {
-  let id = req.params.id;
-
-  FootballMedia.findOne({ _id: id }).exec(function(err, media) {
-    if (err) {
-      return res.status(500).json({
-        message: "Error when getting media.",
-        error: err
-      });
-    }
-    return res.json(JSON.parse(entities.decode(JSON.stringify(media))));
-  });
+exports.showMedia = async (req, res) => {
+  const id = req.params.id;
+  FootballMedia.findOne({ _id: id }).exec((err, result) =>
+    handleError(err, result, 200, res)
+  );
 };
 
-exports.createMedia = function(req, res) {
-  let userInfoId = req.params.id;
-  let media = req.body.media;
+exports.createMedia = async (req, res) => {
+  const userInfoId = req.params.id;
+  const media = req.body.media;
 
   if (!media) {
     return res.status(404).json({
@@ -233,7 +220,7 @@ exports.createMedia = function(req, res) {
 
   media.user_info_id = user_info_id;
   media.user_type = "football_user_info";
-  let newMedia = new FootballMedia(media);
+  const newMedia = new FootballMedia(media);
 
   newMedia.save(function(err, createdMedia) {
     if (err) {
@@ -243,15 +230,15 @@ exports.createMedia = function(req, res) {
       });
     }
 
-    FootballUserInfo.addMedia(createdMedia, userInfoId, (err, user_info) =>
+    userInfoService.addMedia(createdMedia, userInfoId, (err, user_info) =>
       handleError(err, user_info, res)
     );
   });
 };
 
-exports.updateMedia = function(req, res) {
-  let mediaId = req.params.mediaId;
-  let media = req.body.media;
+exports.updateMedia = async (req, res) => {
+  const mediaId = req.params.mediaId;
+  const media = req.body.media;
 
   if (!media) {
     return res.status(404).json({
@@ -264,8 +251,8 @@ exports.updateMedia = function(req, res) {
   );
 };
 
-exports.removeMedia = function(req, res) {
-  let mediaId = req.params.mediaId;
+exports.removeMedia = async (req, res) => {
+  const mediaId = req.params.mediaId;
 
   FootballMedia.findByIdAndRemove(mediaId, err => {
     if (err) {
@@ -280,9 +267,9 @@ exports.removeMedia = function(req, res) {
 
 // Recommendation
 
-exports.list_recommendations = function(req, res) {
-  let offset = parseInt(req.query.offset || "0");
-  let size = parseInt(req.query.size || "10");
+exports.list_recommendations = async (req, res) => {
+  const offset = parseInt(req.query.offset || "0");
+  const size = parseInt(req.query.size || "10");
 
   FootballUserInfo.findOne({ _id: id })
     .populate("current_season")
@@ -292,9 +279,9 @@ exports.list_recommendations = function(req, res) {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-exports.add_recommendation = function(req, res) {
-  let user_info__id = req.params.id;
-  let recommendation = req.body.recommendation;
+exports.add_recommendation = async (req, res) => {
+  const user_info__id = req.params.id;
+  const recommendation = req.body.recommendation;
 
   if (!recommendation) {
     return res.status(404).json({
@@ -303,7 +290,7 @@ exports.add_recommendation = function(req, res) {
   }
 
   recommendation.user_id = user_info__id;
-  let new_recommendation = new FootballRecommendation(recommendation);
+  const new_recommendation = new FootballRecommendation(recommendation);
 
   FootballRecommendation.create(recommendation);
 
@@ -315,7 +302,7 @@ exports.add_recommendation = function(req, res) {
       });
     }
 
-    FootballUserInfo.addRecommendation(
+    userInfoService.addRecommendation(
       created_recommendation,
       user_info__id,
       (err, user_info) => {
@@ -331,9 +318,8 @@ exports.add_recommendation = function(req, res) {
           });
         }
 
-        FootballUserInfo.updateRecommendationRegex(
-          user_info,
-          (err, user_info) => handleError(err, user_info, res)
+        userInfoService.updateRecommendationRegex(user_info, (err, user_info) =>
+          handleError(err, user_info, res)
         );
       }
     );
@@ -342,7 +328,7 @@ exports.add_recommendation = function(req, res) {
 
 // Skills
 
-exports.list_skills = function(req, res) {
+exports.list_skills = async (req, res) => {
   FootballUserInfo.findOne({ _id: id })
     .populate("current_season")
     .populate("previous_seasons", "stats")
@@ -362,10 +348,10 @@ exports.list_skills = function(req, res) {
     });
 };
 
-exports.add_skill_vote = function(req, res) {
-  let user_info_id = req.params.id;
-  let author_user_id = req.body.author_user_id;
-  let skill_name = req.body.skill_name;
+exports.add_skill_vote = async (req, res) => {
+  const user_info_id = req.params.id;
+  const author_user_id = req.body.author_user_id;
+  const skill_name = req.body.skill_name;
 
   if (!author_user_id || !skill_name) {
     return res.status(404).json({
@@ -373,7 +359,7 @@ exports.add_skill_vote = function(req, res) {
     });
   }
 
-  FootballUserInfo.addSkillVote(
+  userInfoService.addSkillVote(
     skill_name,
     author_user_id,
     user_info_id,
@@ -396,9 +382,9 @@ exports.add_skill_vote = function(req, res) {
 
 // Followers
 
-exports.follow = function(req, res) {
-  let user_info_id = req.params.id;
-  let author_user_info_id = req.body.author_user_info_id; // ._doc
+exports.follow = async (req, res) => {
+  const user_info_id = req.params.id;
+  const author_user_info_id = req.body.author_user_info_id; // ._doc
 
   if (!author_user_info_id) {
     return res.status(404).json({
@@ -406,14 +392,14 @@ exports.follow = function(req, res) {
     });
   }
 
-  FootballUserInfo.follow(author_user_info_id, user_info_id, (err, user_info) =>
+  userInfoService.follow(author_user_info_id, user_info_id, (err, user_info) =>
     handleError(err, user_info, res)
   );
 };
 
-exports.list_followed = function(req, res) {
-  let offset = parseInt(req.query.offset || "0");
-  let size = parseInt(req.query.size || "10");
+exports.list_followed = async (req, res) => {
+  const offset = parseInt(req.query.offset || "0");
+  const size = parseInt(req.query.size || "10");
 
   FootballUserInfo.findOne({ _id: id })
     .populate("current_season")
@@ -423,9 +409,9 @@ exports.list_followed = function(req, res) {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-exports.list_followers = function(req, res) {
-  let offset = parseInt(req.query.offset || "0");
-  let size = parseInt(req.query.size || "10");
+exports.list_followers = async (req, res) => {
+  const offset = parseInt(req.query.offset || "0");
+  const size = parseInt(req.query.size || "10");
 
   FootballUserInfo.findOne({ _id: id })
     .populate("current_season")
@@ -435,9 +421,9 @@ exports.list_followers = function(req, res) {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-exports.unfollow = function(req, res) {
-  let user_info_id = req.params.id;
-  let follower_id = req.params.follower_id;
+exports.unfollow = async (req, res) => {
+  const user_info_id = req.params.id;
+  const follower_id = req.params.follower_id;
 
   if (!follower_id) {
     return res.status(404).json({
@@ -445,7 +431,7 @@ exports.unfollow = function(req, res) {
     });
   }
 
-  FootballUserInfo.unfollow(follower_id, user_info_id, (err, user_info) =>
+  userInfoService.unfollow(follower_id, user_info_id, (err, user_info) =>
     handleError(err, user_info, res)
   );
 };

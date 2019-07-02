@@ -1,4 +1,4 @@
-var FootballRecommendation = require("../../models/football_recommendation.js");
+const FootballRecommendation = require("../../models/football_recommendation.js");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
