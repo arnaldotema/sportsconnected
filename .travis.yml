@@ -14,6 +14,8 @@ before_install:
   - docker build -t arnaldolucientrindade/sportsconnected ./server
 
 before_script:
+  - sudo docker-compose stop
+  - sudo docker-compose rm -f
   - sudo docker-compose up -d mongo || exit 1
   - NODE_ENV=test
   - sleep 3
@@ -21,6 +23,8 @@ before_script:
 script:
   - sudo mkdir -p /data/db
   - sudo chown -R $USER /data/db
+  - sudo mkdir -p /data/db/log
+  - sudo chown -R $USER /data/db/log
   - sudo service mongod stop
   - mongod
   - docker run arnaldolucientrindade/sportsconnected npm run test --
