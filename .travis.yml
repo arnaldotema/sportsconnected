@@ -8,28 +8,11 @@ cache:
     - "node_modules"
 
 services:
-  - docker
   - mongodb
-
-before_install:
-  - docker build -t arnaldolucientrindade/sportsconnected ./server
 
 before_script:
   - sleep 10
 
 script:
   - NODE_ENV=test
-  - docker run arnaldolucientrindade/sportsconnected npm run test --
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-2"
-  app: "sports-connected"
-  env: "SportsConnected-env"
-  bucket_name: "elasticbeanstalk-us-east-2-697350137372"
-  bucket_path: "sports-connected"
-  on:
-    branch: refactor
-  access_key_id: "$AWS_ACCESS_KEY"
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  - npm run test --
