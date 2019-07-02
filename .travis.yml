@@ -8,11 +8,15 @@ cache:
     - "node_modules"
 
 services:
+  - docker
   - mongodb
 
+before_install:
+  - docker build -t arnaldolucientrindade/sportsconnected ./server
+
 before_script:
+  - NODE_ENV=test
   - sleep 10
 
 script:
-  - NODE_ENV=test
   - npm run test --
