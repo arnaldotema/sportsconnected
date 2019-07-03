@@ -8,7 +8,7 @@ cache:
     - "node_modules"
 
 services:
-  - docker
+  # - docker
   - mongo
 
 before_install:
