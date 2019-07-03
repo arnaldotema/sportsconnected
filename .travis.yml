@@ -19,7 +19,6 @@ before_script:
   - sudo docker-compose up -d mongo || exit 1
   - NODE_ENV=test
   - sleep 3
-  - fail
 
 script:
   - sudo mkdir -p /data/db
