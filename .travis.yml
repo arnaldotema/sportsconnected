@@ -16,6 +16,7 @@ before_install:
 
 before_script:
   - MONGO_URL=mongodb://mongo:27017/sports_connected
+  - echo MONGO_URL
   - cd server
   - npm install
   # - sudo docker-compose stop
