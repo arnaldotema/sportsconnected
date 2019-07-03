@@ -13,6 +13,7 @@ services:
 
 before_install:
   # - docker build -t arnaldolucientrindade/sportsconnected ./server
+  - mongod
 
 before_script:
   - MONGO_URL=mongodb://mongo:27017/sports_connected
