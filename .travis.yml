@@ -9,25 +9,22 @@ cache:
 
 services:
   - docker
+  - mongo
 
 before_install:
-  - docker build -t arnaldolucientrindade/sportsconnected ./server
+  # - docker build -t arnaldolucientrindade/sportsconnected ./server
 
 before_script:
-  - sudo docker-compose stop
-  - sudo docker-compose rm -f
-  - sudo docker-compose up -d mongo || exit 1
-  - docker run -d -p 27017:27017 mongo
-  - NODE_ENV=test
-  - sleep 3
+  - npm install
+  # - sudo docker-compose stop
+  # - sudo docker-compose rm -f
+  # - sudo docker-compose up -d || exit 1
+  # - NODE_ENV=test
+  # - sleep 3
 
 script:
-  - sudo mkdir -p /data/db
-  - sudo chown -R $USER /data/db
-  - sudo mkdir -p /data/db/log
-  - sudo chown -R $USER /data/db/log
-  - mongod --fork --logpath /data/db/log/mongodb.log
-  - docker run arnaldolucientrindade/sportsconnected npm run test --
+  # - docker run arnaldolucientrindade/sportsconnected npm run test --
+  - npm run test --
 
 deploy:
   provider: elasticbeanstalk
