@@ -17,6 +17,7 @@ before_script:
   - sudo docker-compose stop
   - sudo docker-compose rm -f
   - sudo docker-compose up -d mongo || exit 1
+  - docker run -d -p 27017:27017 mongo
   - NODE_ENV=test
   - sleep 3
 
@@ -26,9 +27,7 @@ script:
   - sudo mkdir -p /data/db/log
   - sudo chown -R $USER /data/db/log
   - mongod --fork --logpath /data/db/log/mongodb.log
-  - cd server
-  - npm test
-  #- docker run arnaldolucientrindade/sportsconnected npm run test --
+  - docker run arnaldolucientrindade/sportsconnected npm run test --
 
 deploy:
   provider: elasticbeanstalk
