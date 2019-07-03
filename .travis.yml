@@ -25,9 +25,9 @@ script:
   - sudo chown -R $USER /data/db
   - sudo mkdir -p /data/db/log
   - sudo chown -R $USER /data/db/log
-  - sudo service mongo stop
   - mongod --fork --logpath /data/db/log/mongodb.log
-  - docker run arnaldolucientrindade/sportsconnected npm run test --
+  - npm test
+  #- docker run arnaldolucientrindade/sportsconnected npm run test --
 
 deploy:
   provider: elasticbeanstalk
