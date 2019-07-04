@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Running server tests"
+echo "Running the server in DEV mode"
 
 export NODE_ENV=DEV
 
