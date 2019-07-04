@@ -8,11 +8,11 @@ cache:
     - "node_modules"
 
 services:
-  # - docker
+  - docker
   - mongodb
 
 before_install:
-  # - docker build -t arnaldolucientrindade/sportsconnected ./server
+  - docker build -t arnaldolucientrindade/sportsconnected ./server
 
 env:
   - NODE_ENV=test
