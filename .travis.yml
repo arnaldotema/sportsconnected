@@ -14,24 +14,22 @@ services:
 before_install:
   # - docker build -t arnaldolucientrindade/sportsconnected ./server
 
-before_script:
+env:
+  - NODE_ENV=test
   - MONGO_URL=mongodb://localhost:27017/sports_connected
+
+before_script:
   - cd server
   - npm install
-
-  - sudo mkdir -p /data/db
-  - sudo chown -R $USER /data/db
-  - mkdir ~/log
   # - mongod --fork --logpath ~/log/mongodb.log
   # - sudo docker-compose stop
   # - sudo docker-compose rm -f
   # - sudo docker-compose up -d || exit 1
-  - NODE_ENV=test
-  - sleep 3
 
 script:
   # - docker run arnaldolucientrindade/sportsconnected npm run test --
-  - npm run test --
+  - ./scipts/test.sh
+  #- npm run test --
 
 deploy:
   provider: elasticbeanstalk
