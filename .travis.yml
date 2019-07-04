@@ -15,7 +15,7 @@ before_install:
   # - docker build -t arnaldolucientrindade/sportsconnected ./server
 
 before_script:
-  - MONGO_URL=mongodb://mongo:27017/sports_connected
+  - MONGO_URL=mongodb://localhost:27017/sports_connected
   - cd server
   - npm install
 
