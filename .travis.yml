@@ -28,7 +28,7 @@ before_script:
 
 script:
   # - docker run arnaldolucientrindade/sportsconnected npm run test --
-  - ./scipts/test.sh
+  - ./scripts/test.sh
   #- npm run test --
 
 deploy:
