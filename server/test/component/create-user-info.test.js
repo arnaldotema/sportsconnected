@@ -6,6 +6,7 @@ const { startServer, stopServer } = require("./../../lib/app");
 const User = require("../../lib/models/football_user");
 const UserInfo = require("../../lib/models/football_user_info");
 const UserInfoSeason = require("../../lib/models/football_user_info_season");
+const Season = require("../../lib/models/football_season");
 const Team = require("../../lib/models/football_team");
 
 describe("Component test: POST /players", () => {
@@ -20,9 +21,13 @@ describe("Component test: POST /players", () => {
   beforeEach(async () => {
     await User.remove({});
     await UserInfo.remove({});
+    await Season.remove({});
     await UserInfoSeason.remove({});
     await Team.remove({});
     console.log("Deleted UserInfo documents");
+    console.log("Deleted UserInfoSeason documents");
+    console.log("Deleted Season documents");
+    console.log("Deleted Team documents");
   });
 
   it("Should post a userInfo and userInfoSeason and get it", async () => {
@@ -33,7 +38,7 @@ describe("Component test: POST /players", () => {
       password: "somepasswordwithmorethan10chars"
     };
 
-    const { body: nUser } = await api
+    const { body: newUser } = await api
       .post("/api/users")
       .set("Content-Type", "application/json")
       .send(user)
@@ -46,7 +51,7 @@ describe("Component test: POST /players", () => {
       }
     };
 
-    const { body: nSeason } = await api
+    const { body: newSeason } = await api
       .post("/api/seasons")
       .set("Content-Type", "application/json")
       .send(season)
@@ -78,7 +83,7 @@ describe("Component test: POST /players", () => {
     const { _id: teamId } = await mockTeam.save();
 
     const userInfo = {
-      user_id: nUser._id,
+      user_id: newUser._id,
       followers: [],
       following: [],
       previous_seasons: [],
@@ -93,20 +98,8 @@ describe("Component test: POST /players", () => {
         zerozero: 12345678910
       },
       personal_info: personalInfo, // api requisite
-      season_id: nSeason._id, // api requisite
+      season_id: newSeason._id, // api requisite
       team: teamId // api requisite
-    };
-
-    const expectedResponse = {
-      user_id: userInfo.user_id,
-      followers: userInfo.followers,
-      following: userInfo.following,
-      previous_seasons: userInfo.previous_seasons,
-      skill_set: userInfo.skill_set,
-      recommendations: userInfo.recommendations,
-      achievements: userInfo.achievements,
-      actions_regex: userInfo.actions_regex,
-      external_ids: userInfo.external_ids
     };
 
     const { body: actualResponse } = await api
@@ -115,12 +108,14 @@ describe("Component test: POST /players", () => {
       .send(userInfo)
       .expect(201);
 
-    assert.deepEqual(actualResponse, {
-      ...expectedResponse,
+    const expectedResponse = {
       _id: actualResponse._id,
       updated_at: actualResponse.updated_at,
       created_at: actualResponse.created_at,
-      current_season: actualResponse.current_season,
+      current_season: {
+        season_id: newSeason._id,
+        ...actualResponse.current_season
+      },
       skill_set: [
         {
           _id: actualResponse.skill_set[0]._id,
@@ -132,7 +127,21 @@ describe("Component test: POST /players", () => {
           name: "Speed",
           endorsements: []
         }
-      ]
+      ],
+      user_id: newUser._id,
+      followers: [],
+      following: [],
+      previous_seasons: [],
+      recommendations: { list: [], top_5: [] },
+      achievements: [],
+      actions_regex: "",
+      external_ids: {
+        zerozero: 12345678910
+      }
+    };
+
+    assert.deepEqual(actualResponse, {
+      ...expectedResponse
     });
   });
 });
