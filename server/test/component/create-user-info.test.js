@@ -112,10 +112,7 @@ describe("Component test: POST /players", () => {
       _id: actualResponse._id,
       updated_at: actualResponse.updated_at,
       created_at: actualResponse.created_at,
-      current_season: {
-        season_id: newSeason._id,
-        ...actualResponse.current_season
-      },
+      current_season: actualResponse.current_season,
       skill_set: [
         {
           _id: actualResponse.skill_set[0]._id,

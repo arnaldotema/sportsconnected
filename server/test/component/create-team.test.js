@@ -4,6 +4,7 @@ const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
 const Season = require("../../lib/models/football_season");
+const Competition = require("../../lib/models/football_competition");
 const TeamSeason = require("../../lib/models/football_team_season");
 const Team = require("../../lib/models/football_team");
 
@@ -20,12 +21,15 @@ describe("Component test: POST /teams", () => {
     await TeamSeason.remove({});
     await Team.remove({});
     await Season.remove({});
+    await Competition.remove({});
     console.log("Deleted Season documents");
     console.log("Deleted Team documents");
     console.log("Deleted TeamSeason documents");
   });
 
   it("Should post a team and teamSeason and get it", async () => {
+    // todo - complete tests
+
     const season = {
       name: "Mock Season",
       external_ids: {
@@ -39,15 +43,22 @@ describe("Component test: POST /teams", () => {
       .send(season)
       .expect(201);
 
-    const competition = {};
+    const competition = {
+      name: "Liga Portuguesa",
+      avatar: "https://avatar.com",
+      external_ids: {
+        zerozero: 12345678910
+      },
+      previous_seasons: []
+    };
 
     const { body: newCompetition } = await api
-      .post("/api/seasons")
+      .post("/api/competitions")
       .set("Content-Type", "application/json")
       .send(competition)
       .expect(201);
 
-    const match = {};
+    /*const match = {};
 
     const { body: newMatch } = await api
       .post("/api/matches")
@@ -295,6 +306,6 @@ describe("Component test: POST /teams", () => {
         season_id: newSeason._id,
         ...actualResponse.current_season
       }
-    });
+    });*/
   });
 });

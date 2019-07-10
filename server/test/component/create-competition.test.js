@@ -23,7 +23,7 @@ describe("Component test: POST /competitions", () => {
     console.log("Deleted Competition documents");
   });
 
-  it.only("Should post a competition and get it", async () => {
+  it("Should post a competition and get it", async () => {
     const competition = {
       name: "Liga Portuguesa",
       avatar: "https://avatar.com",
