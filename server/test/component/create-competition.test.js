@@ -7,7 +7,7 @@ const Competition = require("../../lib/models/football_competition");
 const CompetitionSeason = require("../../lib/models/football_competition_season");
 const Season = require("../../lib/models/football_season");
 
-describe("Component test: POST /players", () => {
+describe("Component test: POST /competitions", () => {
   before(async () => {
     await startServer();
   });
@@ -23,7 +23,7 @@ describe("Component test: POST /players", () => {
     console.log("Deleted Competition documents");
   });
 
-  it("Should post a competition and get it", async () => {
+  it.only("Should post a competition and get it", async () => {
     const competition = {
       name: "Liga Portuguesa",
       avatar: "https://avatar.com",
@@ -33,7 +33,7 @@ describe("Component test: POST /players", () => {
     };
 
     const { body: actualResponse } = await api
-      .post("/api/competition")
+      .post("/api/competitions")
       .set("Content-Type", "application/json")
       .send(competition)
       .expect(201);
