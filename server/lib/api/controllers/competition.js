@@ -65,12 +65,12 @@ module.exports = {
       object[key] = req.body[key];
     });
 
-    const Competition = new CompetitionModel(object);
+    const competition = new CompetitionModel(object);
 
-    Competition.save(function(err, Competition) {
+    competition.save(function(err, Competition) {
       if (err) {
         return res.status(500).json({
-          message: "Error when creating Competition",
+          message: "Error when creating competition",
           error: err
         });
       }
@@ -82,6 +82,11 @@ module.exports = {
    * CompetitionController.update()
    */
   update: function(req, res) {
+    // Todo:
+    // This is totally wrong or wrongly implemented in terms of sintax
+    // Because the received ID could be easily mistaken for the Competition ID when
+    // in actuality its the CompetitionSeason ID.
+
     const id = req.params.id;
     CompetitionSeasonModel.findOne({ _id: id }, function(err, Competition) {
       if (err) {
