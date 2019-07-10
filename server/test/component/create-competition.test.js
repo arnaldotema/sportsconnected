@@ -29,7 +29,8 @@ describe("Component test: POST /competitions", () => {
       avatar: "https://avatar.com",
       external_ids: {
         zerozero: 12345678910
-      }
+      },
+      previous_seasons: []
     };
 
     const { body: actualResponse } = await api
@@ -45,6 +46,7 @@ describe("Component test: POST /competitions", () => {
       external_ids: {
         zerozero: 12345678910
       },
+      previous_seasons: [],
       updated_at: actualResponse.updated_at,
       created_at: actualResponse.created_at
     };
