@@ -65,6 +65,9 @@ module.exports = {
       object[key] = req.body[key];
     });
 
+    object.created_at = Date.now();
+    object.updated_at = Date.now();
+
     const competition = new CompetitionModel(object);
 
     competition.save(function(err, Competition) {
@@ -88,27 +91,29 @@ module.exports = {
     // in actuality its the CompetitionSeason ID.
 
     const id = req.params.id;
-    CompetitionSeasonModel.findOne({ _id: id }, function(err, Competition) {
+    CompetitionSeasonModel.findOne({ _id: id }, function(err, competition) {
       if (err) {
         return res.status(500).json({
-          message: "Error when getting Competition",
+          message: "Error when getting competition",
           error: err
         });
       }
-      if (!Competition) {
+      if (!competition) {
         return res.status(404).json({
-          message: "No such Competition"
+          message: "No such competition"
         });
       }
 
       Object.keys(CompetitionModel.schema.obj).forEach(function(key) {
-        Competition[key] = req.body[key] ? req.body[key] : Competition[key];
+        competition[key] = req.body[key] ? req.body[key] : competition[key];
       });
 
-      Competition.save(function(err, Competition) {
+      competition.updated_at = Date.now();
+
+      competition.save(function(err, Competition) {
         if (err) {
           return res.status(500).json({
-            message: "Error when updating Competition.",
+            message: "Error when updating competition.",
             error: err
           });
         }
