@@ -15,16 +15,16 @@ function _updateRegex(regex) {
   return regex + "#"; //close regex
 }
 
-exports.updateRecommendationRegex = function(user_info, cb) {
-  const query = { _id: user_info._id };
+exports.updateRecommendationRegex = async function(userId, actionsRegex) {
+  const query = { _id: userId };
 
   const update = {
     $set: {
-      actions_regex: _updateRegex(user_info.actions_regex)
+      actions_regex: _updateRegex(actionsRegex)
     }
   };
 
-  UserInfo.findOneAndUpdate(query, update, { upsert: true }, cb);
+  return await UserInfo.findOneAndUpdate(query, update, { upsert: true });
 };
 
 exports.getMatchUserInfos = function(homeTeam, awayTeam, cb) {
@@ -127,7 +127,7 @@ exports.updateUserInfosCurrentSeason = function(seasons, cb) {
   UserInfo.bulkWrite(operations, {}, cb);
 };
 
-exports.addRecommendation = function(recommendation, user_info_id, cb) {
+exports.addRecommendation = async function(recommendation, user_info_id) {
   let recommendation_id = recommendation._id;
 
   const query = {
@@ -141,7 +141,7 @@ exports.addRecommendation = function(recommendation, user_info_id, cb) {
     }
   };
 
-  UserInfo.findOneAndUpdate(query, update, cb);
+  return await UserInfo.findOneAndUpdate(query, update);
 };
 
 exports.editRecommendation = function(recommendation, user_info_id, cb) {};

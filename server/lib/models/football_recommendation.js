@@ -9,7 +9,6 @@ const USER_TYPES = require("../constants/values.js").footballUserTypes;
  * */
 
 const FootballRecommendationSchema = new Schema({
-  _id: String,
   user_type: { type: String, enum: USER_TYPES },
   user_id: String,
   author: {
@@ -25,7 +24,9 @@ const FootballRecommendationSchema = new Schema({
       name: String
     }
   },
-  text: String
+  text: String,
+  created_at: Date,
+  updated_at: Date
 });
 
 module.exports = mongoose.model(

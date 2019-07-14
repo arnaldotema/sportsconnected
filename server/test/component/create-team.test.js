@@ -18,10 +18,10 @@ describe("Component test: POST /teams", () => {
   });
 
   beforeEach(async () => {
-    await TeamSeason.remove({});
-    await Team.remove({});
-    await Season.remove({});
-    await Competition.remove({});
+    await TeamSeason.deleteMany({});
+    await Team.deleteMany({});
+    await Season.deleteMany({});
+    await Competition.deleteMany({});
     console.log("Deleted Season documents");
     console.log("Deleted Team documents");
     console.log("Deleted TeamSeason documents");

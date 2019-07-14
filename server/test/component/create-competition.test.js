@@ -17,9 +17,9 @@ describe("Component test: POST /competitions", () => {
   });
 
   beforeEach(async () => {
-    await Competition.remove({});
-    await CompetitionSeason.remove({});
-    await Season.remove({});
+    await Competition.deleteMany({});
+    await CompetitionSeason.deleteMany({});
+    await Season.deleteMany({});
     console.log("Deleted Competition documents");
   });
 

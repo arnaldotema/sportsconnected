@@ -13,8 +13,8 @@ router.delete("/:id", playerController.remove);
 
 router.post("/search", playerController.search);
 
-router.post("/:id/recommendations", playerController.add_recommendation);
-router.get("/:id/recommendations", playerController.list_recommendations);
+router.post("/:id/recommendations", playerController.createRecommendation);
+router.get("/:id/recommendations", playerController.listRecommendations);
 
 router.get("/:id/media", playerController.listMedia);
 router.get("/:id/media/:mediaId", playerController.showMedia);
@@ -22,13 +22,13 @@ router.post("/:id/media", playerController.createMedia);
 router.put("/:id/media/:mediaId", playerController.updateMedia);
 router.delete("/:id/media/:mediaId", playerController.removeMedia);
 
-router.post("/:id/skills", playerController.add_skill_vote);
-router.get("/:id/skills", playerController.list_skills);
+router.post("/:id/skills", playerController.addSkillVote);
+router.get("/:id/skills", playerController.listSkills);
 
 router.post("/:id/followers", playerController.follow);
-router.get("/:id/followers", playerController.list_followers);
+router.get("/:id/followers", playerController.listFollowers);
 router.delete("/:id/followers/:follower_id", playerController.unfollow);
 
-router.get("/:id/followed", playerController.list_followed);
+router.get("/:id/followed", playerController.listFollowed);
 
 module.exports = router;
