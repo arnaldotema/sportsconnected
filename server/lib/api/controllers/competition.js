@@ -95,7 +95,7 @@ module.exports = {
    */
   update: function(req, res) {
     // Todo:
-    // This is totally wrong or wrongly implemented in terms of sintax
+    // This is wrongly implemented in terms of sintax
     // Because the received ID could be easily mistaken for the Competition ID when
     // in actuality its the CompetitionSeason ID.
 

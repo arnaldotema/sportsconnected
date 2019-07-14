@@ -284,6 +284,7 @@ exports.add_recommendation = async (req, res) => {
   const recommendation = req.body.recommendation;
 
   if (!recommendation) {
+    console.log(" GOT HERE!!!!!!!!!!!!!!!!!!!!!");
     return res.status(404).json({
       message: "Missing recommendation object"
     });
@@ -313,6 +314,7 @@ exports.add_recommendation = async (req, res) => {
           });
         }
         if (!user_info) {
+          console.log("NO USEERRRR !!!!!!!!!!!!!!!!!!!!!");
           return res.status(404).json({
             message: "No such user_info"
           });

@@ -1345,3 +1345,35 @@
 {"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
 {"message":"Server started on port 3000","level":"info"}
 {"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}
+{"message":"Connecting to the database","level":"info"}
+{"message":"Connected to mongodb://localhost:27017/sports_connected","level":"info"}
+{"message":"Server started on port 3000","level":"info"}
+{"message":"Disconnecting from the database","level":"info"}

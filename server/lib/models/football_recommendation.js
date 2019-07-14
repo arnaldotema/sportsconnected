@@ -11,6 +11,7 @@ const USER_TYPES = require("../constants/values.js").footballUserTypes;
 const FootballRecommendationSchema = new Schema({
   _id: String,
   user_type: { type: String, enum: USER_TYPES },
+  user_id: String,
   author: {
     author_type: String,
     name: String,
