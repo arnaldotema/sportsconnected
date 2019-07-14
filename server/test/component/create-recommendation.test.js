@@ -26,7 +26,7 @@ describe("Component test: POST /recommendations", () => {
     console.log("Deleted UserInfo documents");
   });
 
-  it.only("Should post a recommendation and get it", async () => {
+  it("Should post a recommendation and get it", async () => {
     const userInfoId = ObjectId("5c933f212df4c36362731110");
     const mockAuthorId = ObjectId("5c933f212df4c36362731114");
     const mockTeamId = ObjectId("5c933f212df4c36362000000");
