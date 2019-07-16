@@ -252,26 +252,23 @@ module.exports = {
       });
   },
 
-  createMedia: function(req, res) {
-    let userInfoId = req.params.id;
-    let media = req.body.media;
+  createMedia: async (req, res) => {
+    const teamId = req.params.id;
+    const media = req.body.media;
 
     if (!media) {
       return res.status(404).json({
         message: "Missing media object"
       });
     }
-    if (!media.season_id) {
-      return res.status(404).json({
-        message: "Media object requires season id."
-      });
-    }
 
-    media.user_info_id = user_info_id;
-    media.user_type = "football_team";
-    let newMedia = new FootballMedia(media);
+    media.user_info_id = teamId;
+    media.created_at = Date.now();
+    media.updated_at = Date.now();
 
-    newMedia.save(function(err, createdMedia) {
+    const newMedia = new FootballMedia(media);
+
+    newMedia.save(async function(err, createdMedia) {
       if (err) {
         return res.status(500).json({
           message: "Error when creating media",
@@ -279,19 +276,15 @@ module.exports = {
         });
       }
 
-      teamService.addMedia(createdMedia, userInfoId, (err, team) => {
-        if (err) {
-          return res.status(500).json({
-            message: "Error when updating team_season",
-            error: err
-          });
-        }
-        if (!team) {
-          return res.status(404).json({
-            message: "No such team"
-          });
-        }
-      });
+      const teamSeason = await teamService.addMedia(teamId, createdMedia);
+
+      if (!teamSeason) {
+        return res.status(404).json({
+          message: "Team Season not found when adding media."
+        });
+      }
+
+      handleError(null, createdMedia, 201, res);
     });
   },
 

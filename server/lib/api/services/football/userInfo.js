@@ -127,11 +127,11 @@ exports.updateUserInfosCurrentSeason = function(seasons, cb) {
   UserInfo.bulkWrite(operations, {}, cb);
 };
 
-exports.addRecommendation = async function(recommendation, user_info_id) {
+exports.addRecommendation = async function(id, recommendation) {
   let recommendation_id = recommendation._id;
 
   const query = {
-    _id: user_info_id
+    _id: id
   };
 
   const update = {
@@ -329,32 +329,17 @@ exports.addAchievementToUserInfo = function(achievement, user_info, cb) {
   UserInfo.findOneAndUpdate(query, update, cb);
 };
 
-exports.addMedia = function(id, media, cb) {
-  /*
-    * This is not yet implemented because the DB structure is not well done.
-    *
-    * We should have something like this "media" field in the document
-    * And then add here like this
-    *
-    * let update = {
-        $addToSet: {
-            "media": {
+exports.addMedia = async function(id, media) {
+  const query = {
+    user_info_id: id,
+    season_id: media.season_id
+  };
 
-            }
-        }
-    };
+  const update = {
+    $push: {
+      media: media
+    }
+  };
 
-    But for now, we'll just insert the media in the user's current season object.
-    * */
-
-  UserInfo.findOne({ _id: id }, (err, userInfo) => {
-    let userInfoSeasonId = userInfo.current_season._id;
-
-    UserInfoSeason.addMedia(media, userInfoSeasonId, (err, userInfoSeason) => {
-      if (err) {
-        cb(err);
-      }
-      cb(userInfoSeason);
-    });
-  });
+  return await UserInfoSeason.findOneAndUpdate(query, update);
 };

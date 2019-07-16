@@ -49,34 +49,19 @@ exports.updateCurrentSeasons = function(seasons, cb) {
   Team.bulkWrite(operations, {}, cb);
 };
 
-exports.addMedia = function(id, media, cb) {
-  /*
-    * This is not yet implemented because the DB structure is not well done.
-    *
-    * We should have something like this "media" field in the document
-    * And then add here like this
-    *
-    * let update = {
-        $addToSet: {
-            "media": {
+exports.addMedia = async function(id, media) {
+  const query = {
+    team_id: id,
+    season_id: media.season_id
+  };
 
-            }
-        }
-    };
+  const update = {
+    $push: {
+      media: media
+    }
+  };
 
-    But, for now, we'll not do anything, we'll just insert the media in the user's current season object.
-    * */
-
-  Team.findOne({ _id: id }, (err, userInfo) => {
-    let teamSeasonId = userInfo.current_season._id;
-
-    TeamSeason.addMedia(media, teamSeasonId, (err, teamSeason) => {
-      if (err) {
-        cb(err);
-      }
-      cb(teamSeason);
-    });
-  });
+  return await TeamSeason.findOneAndUpdate(query, update);
 };
 
 exports.updateRecommendationRegex = async function(userId, actionsRegex) {

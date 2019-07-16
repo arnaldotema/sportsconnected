@@ -222,17 +222,14 @@ exports.createMedia = async (req, res) => {
       message: "Missing media object"
     });
   }
-  if (!media.season_id) {
-    return res.status(404).json({
-      message: "Media object requires season id."
-    });
-  }
 
-  media.user_info_id = user_info_id;
-  media.user_type = "football_user_info";
+  media.user_info_id = userInfoId;
+  media.created_at = Date.now();
+  media.updated_at = Date.now();
+
   const newMedia = new FootballMedia(media);
 
-  newMedia.save(function(err, createdMedia) {
+  newMedia.save(async function(err, createdMedia) {
     if (err) {
       return res.status(500).json({
         message: "Error when creating media",
@@ -240,9 +237,18 @@ exports.createMedia = async (req, res) => {
       });
     }
 
-    userInfoService.addMedia(createdMedia, userInfoId, (err, user_info) =>
-      handleError(err, user_info, res)
+    const userInfoSeason = await userInfoService.addMedia(
+      userInfoId,
+      createdMedia
     );
+
+    if (!userInfoSeason) {
+      return res.status(404).json({
+        message: "User info Season not found when adding media."
+      });
+    }
+
+    handleError(null, createdMedia, 201, res);
   });
 };
 
@@ -316,8 +322,8 @@ exports.createRecommendation = async (req, res) => {
     }
 
     const userInfo = await userInfoService.addRecommendation(
-      createdRecommendation,
-      userInfoId
+      userInfoId,
+      createdRecommendation
     );
 
     if (!userInfo) {

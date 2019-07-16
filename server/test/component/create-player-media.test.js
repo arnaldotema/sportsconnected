@@ -3,8 +3,9 @@
 const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
-const Recommendation = require("../../lib/models/football_recommendation");
+const Media = require("../../lib/models/football_media");
 const UserInfo = require("../../lib/models/football_user_info");
+const UserInfoSeason = require("../../lib/models/football_user_info_season");
 const { ObjectId } = require("mongoose").mongo;
 
 describe("Component test: POST /players/:id/media", () => {
@@ -17,32 +18,43 @@ describe("Component test: POST /players/:id/media", () => {
   });
 
   beforeEach(async () => {
-    await Recommendation.deleteMany({});
+    await Media.deleteMany({});
     await UserInfo.deleteMany({});
-    console.log("Deleted Recommendations documents");
+    await UserInfoSeason.deleteMany({});
+    console.log("Deleted Media documents");
     console.log("Deleted UserInfo documents");
+    console.log("Deleted UserInfoSeason documents");
   });
 
   it("Should post a media and get it", async () => {
     const userInfoId = ObjectId("5c933f212df4c36362731110");
-    const leagueId = ObjectId("5c933f212df4c36362731122");
-    const teamId = ObjectId("5c933f212df4c36362730000");
-    const mockUserId = ObjectId("5c933f212df4c36362737777");
+    const mockUserSeasonId = ObjectId("5c933f212df4c3636273dddd");
+    const mockSeasonId = ObjectId("5c933f212df4c3636273dddd");
     const mockAuthorId = ObjectId("5c933f212df4c36362731114");
     const mockTeamId = ObjectId("5c933f212df4c36362000000");
 
     const userInfo = new UserInfo({
       _id: userInfoId,
-      external_ids: { zerozero: 12345678910 }
+      external_ids: { zerozero: 12345678910 },
+      type: 1
     });
 
     await userInfo.save();
 
+    const userInfoSeason = new UserInfoSeason({
+      user_info_id: userInfoId,
+      _id: mockUserSeasonId,
+      season_id: mockSeasonId
+    });
+
+    await userInfoSeason.save();
+
     const media = {
       user_type: "football_user_info",
-      user_id: userInfoId.toString(),
+      user_info_id: userInfoId.toString(),
+      season_id: mockUserSeasonId.toString(),
       author: {
-        type: "football_user_info",
+        user_type: "football_user_info",
         name: "John Doe",
         id: mockAuthorId.toString(),
         avatar: "https://www.avatar.com",
@@ -55,15 +67,10 @@ describe("Component test: POST /players/:id/media", () => {
       },
       text:
         "John Doe does an amazing trick and amazes everyone with this bike goal!!",
-      season_id: "",
       title: "Whatch this John Doe's amazing goal!!!",
       date: Date.now(),
       image: "https://www.avatar.com",
-      references: {
-        leagues: [{ name: "Some cool league name", id: leagueId.toString() }],
-        team: [{ name: "Team John Doe", id: teamId.toString() }],
-        user: [{ name: "Johny Doey", id: mockUserId.toString() }]
-      }
+      tags: ["Cool", "goal", "SLB", "JohnDoe"]
     };
 
     const { body: actualResponse } = await api
@@ -75,9 +82,10 @@ describe("Component test: POST /players/:id/media", () => {
     const expectedResponse = {
       _id: actualResponse._id,
       user_type: "football_user_info",
-      user_id: userInfoId.toString(),
+      user_info_id: userInfoId.toString(),
+      season_id: mockUserSeasonId.toString(),
       author: {
-        type: "football_user_info",
+        user_type: "football_user_info",
         name: "John Doe",
         id: mockAuthorId.toString(),
         avatar: "https://www.avatar.com",
@@ -90,15 +98,10 @@ describe("Component test: POST /players/:id/media", () => {
       },
       text:
         "John Doe does an amazing trick and amazes everyone with this bike goal!!",
-      season_id: "",
       title: "Whatch this John Doe's amazing goal!!!",
-      date: Date.now(),
+      date: actualResponse.date,
       image: "https://www.avatar.com",
-      references: {
-        leagues: [{ name: "Some cool league name", id: leagueId.toString() }],
-        team: [{ name: "Team John Doe", id: teamId.toString() }],
-        user: [{ name: "Johny Doey", id: mockUserId.toString() }]
-      },
+      tags: ["Cool", "goal", "SLB", "JohnDoe"],
       updated_at: actualResponse.updated_at,
       created_at: actualResponse.created_at
     };

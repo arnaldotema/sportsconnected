@@ -29,7 +29,7 @@ describe("Component test: POST /players/:id/recommendations", () => {
     const mockTeamId = ObjectId("5c933f212df4c36362000000");
     const userInfo = new UserInfo({
       _id: userInfoId,
-      type: 123,
+      type: 1,
       external_ids: { zerozero: 12345678910 }
     });
     await userInfo.save();

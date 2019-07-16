@@ -54,7 +54,7 @@ const FootballUserInfoSchema = new Schema({
         author: {
           name: String,
           relationship: String,
-          id: { type: Schema.Types.ObjectId, ref: "football_user_info" },
+          id: String, // There's no Schema reference because it can be any type of user
           avatar: String,
           team: {
             id: { type: Schema.Types.ObjectId, ref: "football_team" },
