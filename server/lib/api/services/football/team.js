@@ -3,6 +3,18 @@
 const TeamSeason = require("../../../models/football_team_season");
 const Team = require("../../../models/football_team");
 
+function _updateRegex(regex) {
+  if (!regex) {
+    regex = "##";
+  }
+
+  regex = regex.slice(0, -1); // remove the last character "#"
+
+  regex += "!"; //close game partition
+
+  return regex + "#"; //close regex
+}
+
 exports.updateByZeroZeroId = function(zerozeroId, userInfo, cb) {
   const query = { "external_ids.zerozero": zerozeroId };
 
@@ -66,3 +78,30 @@ exports.addMedia = function(id, media, cb) {
     });
   });
 };
+
+exports.updateRecommendationRegex = async function(userId, actionsRegex) {
+  const update = {
+    $set: {
+      actions_regex: _updateRegex(actionsRegex)
+    }
+  };
+
+  return await UserInfo.findOneAndUpdate({ _id: userId }, update, {
+    upsert: true
+  });
+};
+
+exports.addRecommendation = async function(recommendation, teamId) {
+  const update = {
+    $push: {
+      "recommendations.list": recommendation._id,
+      "recommendations.top_5": recommendation
+    }
+  };
+
+  return await Team.findOneAndUpdate({ _id: teamId }, update);
+};
+
+exports.editRecommendation = function(recommendation, user_info_id, cb) {};
+
+exports.deleteRecommendation = function(recommendation, user_info_id, cb) {};

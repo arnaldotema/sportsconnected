@@ -4,11 +4,10 @@ const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
 const Recommendation = require("../../lib/models/football_recommendation");
-const UserInfo = require("../../lib/models/football_user_info");
-const User = require("../../lib/models/football_user");
+const Team = require("../../lib/models/football_team");
 const { ObjectId } = require("mongoose").mongo;
 
-describe("Component test: POST /recommendations", () => {
+describe("Component test: POST /teams/:id/recommendations", () => {
   before(async () => {
     await startServer();
   });
@@ -19,69 +18,63 @@ describe("Component test: POST /recommendations", () => {
 
   beforeEach(async () => {
     await Recommendation.deleteMany({});
-    await User.deleteMany({});
-    await UserInfo.deleteMany({});
+    await Team.deleteMany({});
     console.log("Deleted Recommendations documents");
-    console.log("Deleted User documents");
-    console.log("Deleted UserInfo documents");
+    console.log("Deleted Team documents");
   });
 
   it("Should post a recommendation and get it", async () => {
-    const userInfoId = ObjectId("5c933f212df4c36362731110");
+    const teamId = ObjectId("5c933f212df4c36362731110");
     const mockAuthorId = ObjectId("5c933f212df4c36362731114");
-    const mockTeamId = ObjectId("5c933f212df4c36362000000");
-    const userInfo = new UserInfo({
-      _id: userInfoId,
-      type: 123,
+    const team = new Team({
+      _id: teamId,
       external_ids: { zerozero: 12345678910 }
     });
-    await userInfo.save();
+    await team.save();
 
     const recommendation = {
-      user_type: "football_user_info",
-      user_id: userInfoId.toString(),
+      user_type: "football_team",
+      user_id: teamId.toString(),
       author: {
-        author_type: "football_user_info",
-        name: "John Doe",
-        relationship: "Team player",
+        author_type: "football_team",
+        name: "Team John Doe",
+        relationship: "Same competition",
         id: mockAuthorId.toString(),
         avatar: "https://www.avatar.com",
         team: {
-          id: mockTeamId.toString(),
-          acronym: "SLB",
+          id: mockAuthorId.toString(),
+          acronym: "TJD",
           avatar: "https://www.avatar.com",
-          name: "Sport Lisboa e Benfica"
+          name: "Team John Doe"
         }
       },
-      text:
-        "Extremely focused individual and an amazing team player. Would love to play with him again!"
+      text: "You suck ahah!"
     };
 
     const { body: actualResponse } = await api
-      .post(`/api/players/${userInfoId.toString()}/recommendations`)
+      .post(`/api/teams/${teamId.toString()}/recommendations`)
       .set("Content-Type", "application/json")
       .send({ recommendation })
       .expect(201);
 
     const expectedResponse = {
       _id: actualResponse._id,
-      user_id: userInfoId.toString(),
-      user_type: "football_user_info",
+      user_id: teamId.toString(),
+      user_type: "football_team",
       author: {
-        author_type: "football_user_info",
-        name: "John Doe",
-        relationship: "Team player",
+        author_type: "football_team",
+        name: "Team John Doe",
+        relationship: "Same competition",
         id: mockAuthorId.toString(),
         avatar: "https://www.avatar.com",
         team: {
-          id: mockTeamId.toString(),
-          acronym: "SLB",
+          id: mockAuthorId.toString(),
+          acronym: "TJD",
           avatar: "https://www.avatar.com",
-          name: "Sport Lisboa e Benfica"
+          name: "Team John Doe"
         }
       },
-      text:
-        "Extremely focused individual and an amazing team player. Would love to play with him again!",
+      text: "You suck ahah!",
       updated_at: actualResponse.updated_at,
       created_at: actualResponse.created_at
     };

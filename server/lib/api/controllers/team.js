@@ -1,10 +1,39 @@
+"use strict";
+
 const TeamModel = require("../../models/football_team.js");
 const TeamModelSeason = require("../../models/football_team_season");
 const FootballMedia = require("../../models/football_media");
+const FootballRecommendation = require("../../models/football_recommendation");
 const teamService = require("../../api/services/football/team");
 
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
+
+const format = require("./../../utils/formatModel");
+
+function handleError(
+  err,
+  result,
+  successCode,
+  res,
+  errorCode = 500,
+  errorMessage = "Error from the API."
+) {
+  if (err) {
+    console.log(err, "There was a problem starting the server");
+    return res.status(errorCode).json({
+      message: errorMessage,
+      error: err
+    });
+  }
+  if (!result) {
+    return res.status(404).json({
+      message: "No such object"
+    });
+  }
+  return res.status(successCode).json(format(result));
+}
+
 /**
  * team.js
  *
@@ -298,6 +327,68 @@ module.exports = {
         });
       }
       return res.status(204).json();
+    });
+  },
+
+  // Recommendation
+
+  listRecommendations: async (req, res) => {
+    const offset = parseInt(req.query.offset || "0");
+    const size = parseInt(req.query.size || "10");
+
+    TeamModel.findOne({ _id: id })
+      .populate("current_season")
+      .populate("previous_seasons", "stats")
+      .skip(offset * size)
+      .limit(size)
+      .exec((err, user_info) => handleError(err, user_info, res));
+  },
+
+  createRecommendation: async (req, res) => {
+    const teamId = req.params.id;
+
+    const recommendation = req.body.recommendation;
+
+    if (!recommendation) {
+      return res.status(404).json({
+        message: "Missing recommendation object"
+      });
+    }
+
+    recommendation.user_id = teamId;
+    recommendation.created_at = Date.now();
+    recommendation.updated_at = Date.now();
+
+    const newRecommendation = new FootballRecommendation(recommendation);
+
+    newRecommendation.save(async (err, createdRecommendation) => {
+      if (err) {
+        console.log(err, "There was a problem starting the server");
+        return res.status(500).json({
+          message: "Error when saving recommendation.",
+          error: err
+        });
+      }
+
+      const team = await teamService.addRecommendation(
+        createdRecommendation,
+        teamId
+      );
+
+      if (!team) {
+        return res.status(404).json({
+          message: "Team not found when adding recommendation."
+        });
+      }
+
+      if (team.actions_regex) {
+        await teamService.updateRecommendationRegex(
+          team._id,
+          team.actions_regex
+        );
+      }
+
+      handleError(null, createdRecommendation, 201, res);
     });
   }
 };
