@@ -8,7 +8,7 @@
         <div class="col-md-2">
           <mat-form-field>
             <mat-select [(ngModel)]="personal_data_select" name="personal_data_select"
-                        (change)="changed(personal_data_select)"
+                        (selectionChange)="changed(personal_data_select)"
                         placeholder="Dados Pessoais" multiple>
               <mat-option *ngFor="let personal_field of personal_data" [value]="personal_field">
                 {{personal_field}}
@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="stats_select" (change)="changed(stats_select)" placeholder="Estatística"
+            <mat-select [(ngModel)]="stats_select" (selectionChange)="changed(stats_select)" placeholder="Estatística"
                         multiple>
               <mat-option *ngFor="let stats_field of stats" [value]="stats_field">
                 {{stats_field}}
@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="physical_atts_select" (change)="changed(physical_atts_select)"
+            <mat-select [(ngModel)]="physical_atts_select" (selectionChange)="changed(physical_atts_select)"
                         placeholder="Atributos Físicos" multiple>
               <mat-option *ngFor="let physical_atts_field of physical_atts" [value]="physical_atts_field">
                 {{physical_atts_field}}
@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="technical_atts_select" (change)="changed(technical_atts_select)"
+            <mat-select [(ngModel)]="technical_atts_select" (selectionChange)="changed(technical_atts_select)"
                         placeholder="Atributos Técnicos" multiple>
               <mat-option *ngFor="let technical_atts_field of technical_atts" [value]="technical_atts_field">
                 {{technical_atts_field}}
@@ -60,7 +60,7 @@
         -->
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="sc_atts_select" (change)="changed(sc_atts_select)" placeholder="Sports Connected"
+            <mat-select [(ngModel)]="sc_atts_select" (selectionChange)="changed(sc_atts_select)" placeholder="Sports Connected"
                         multiple>
               <mat-option *ngFor="let sc_atts_field of sc_atts" [value]="sc_atts_field">
                 {{sc_atts_field}}
@@ -70,7 +70,7 @@
         </div>
         <div class="col-md-2">
           <mat-form-field>
-            <mat-select [(ngModel)]="competition_select" (change)="changed(competition_select)" placeholder="Competição"
+            <mat-select [(ngModel)]="competition_select" (selectionChange)="changed(competition_select)" placeholder="Competição"
                         multiple>
               <mat-option *ngFor="let competition_field of competitions" [value]="competition_field">
                 {{competition_field}}

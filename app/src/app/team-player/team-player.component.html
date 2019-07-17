@@ -34,7 +34,7 @@
             <form [formGroup]="userDetailsForm">
               <mat-form-field>
                 <mat-select formControlName="position" placeholder="Posição"
-                            (change)="changedInput('position',$event)">
+                            (selectionChange)="changedInput('position',$event)">
                   <mat-option *ngFor="let position of positions"
                               [value]="viewModel.positions[0]">
                     {{position}}
@@ -63,7 +63,7 @@
 
               <mat-form-field>
                 <mat-select formControlName="country" placeholder="País"
-                            (change)="changedInput('country',$event)">
+                            (selectionChange)="changedInput('country',$event)">
                   <mat-option *ngFor="let country of countries"
                               [value]="viewModel.nationality">
                     {{country}}
@@ -73,7 +73,7 @@
 
               <mat-form-field>
                 <mat-select formControlName="city" placeholder="Cidade"
-                            (change)="changedInput('city',$event)">
+                            (selectionChange)="changedInput('city',$event)">
                   <mat-option *ngFor="let city of cities" [value]="viewModel.residence">
                     {{city}}
                   </mat-option>
@@ -88,7 +88,7 @@
 
               <mat-form-field>
                 <mat-select formControlName="foot" placeholder="Pé dominante"
-                            (change)="changedInput('foot',$event)">
+                            (selectionChange)="changedInput('foot',$event)">
                   <mat-option *ngFor="let foot of feet" [value]="viewModel.foot">
                     {{foot}}
                   </mat-option>

@@ -75,6 +75,7 @@ import {TeamProfileComponent} from './team-profile/team-profile.component';
 import {TeamStatsComponent} from './team-stats/team-stats.component';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
+import {ChatRoomComponent} from './chat-room/chat-room.component';
 import {CreateAccountComponent} from './create-account/create-account.component';
 import {HeaderComponent} from './header/header.component';
 import {EditUserInfoComponent} from './edit-user-info/edit-user-info.component';
@@ -84,11 +85,9 @@ import {UserInfoService} from './_services/user_info.service';
 import {UserService} from './_services/user.service';
 import {MatchService} from './_services/match.service';
 import {TeamService} from './_services/team.service';
-import {SocketIOService} from "./_services/socket_io.service";
 import {AuthenticationService} from './_services/authentication.service';
 import {GenericUserService} from './_services/generic_user.service';
 import {CompetitionService} from './_services/competition.service';
-import {NotificationsService} from "./_services/notifications.service";
 import { TeamMediaComponent } from './team-media/team-media.component';
 import { TeamPlayerComponent } from './team-player/team-player.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
@@ -127,7 +126,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     FilterUserInfoComponent,
     TeamMediaComponent,
     TeamPlayerComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    ChatRoomComponent
   ],
   imports: [
     ImageCropperModule,
