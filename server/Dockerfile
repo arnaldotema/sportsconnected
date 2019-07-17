@@ -4,7 +4,7 @@ RUN mkdir /server
 WORKDIR /server
 
 # install and cache app dependencies
-COPY package*.json ./server/package.json
+COPY package*.json /server/package.json
 RUN npm install
 
 EXPOSE 3000
