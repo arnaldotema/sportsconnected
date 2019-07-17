@@ -86,31 +86,23 @@ const FootballUserSeasonSchema = new Schema({
       _id: String,
       user_type: { type: String, enum: footballUserTypes },
       season_id: { type: Schema.Types.ObjectId, ref: "football_season" },
-      title: { type: String, required: true },
-      author: String,
+      title: { type: String },
+      author: {
+        name: String,
+        id: String,
+        user_type: { type: String, enum: footballUserTypes },
+        avatar: String,
+        team: {
+          id: { type: Schema.Types.ObjectId, ref: "football_team" },
+          acronym: String,
+          avatar: String,
+          name: String
+        }
+      },
       date: Date,
       image: String,
-      text: { type: String, required: true },
-      references: {
-        leagues: [
-          {
-            name: String,
-            id: { type: Schema.Types.ObjectId, ref: "football_competition" }
-          }
-        ],
-        team: [
-          {
-            name: String,
-            id: { type: Schema.Types.ObjectId, ref: "football_team" }
-          }
-        ],
-        user: [
-          {
-            name: String,
-            id: { type: Schema.Types.ObjectId, ref: "football_user_info" }
-          }
-        ]
-      }
+      text: { type: String },
+      tags: [String]
     }
   ],
   external_ids: {

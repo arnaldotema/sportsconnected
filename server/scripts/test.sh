@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Running server tests"
+echo "Running server unit tests"
 
 export NODE_ENV=test
 
-npm run test
+npm run test --

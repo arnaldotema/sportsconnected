@@ -6,9 +6,9 @@ const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 const JWTstrategy =
-  process.env.NODE_ENV === "test"
-    ? require("passport-jwt-mock").Strategy
-    : require("passport-jwt").Strategy;
+  process.env.NODE_ENV === "PROD" || process.env.NODE_ENV === "DEV"
+    ? require("passport-jwt").Strategy
+    : require("passport-jwt-mock").Strategy;
 
 //Create a passport middleware to handle user registration
 passport.use(

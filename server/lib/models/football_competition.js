@@ -13,7 +13,9 @@ const FootballCompetitionSchema = new Schema({
   ],
   external_ids: {
     zerozero: { type: Number, required: true, unique: true, index: true }
-  }
+  },
+  updated_at: Date,
+  created_at: Date
 });
 
 module.exports = mongoose.model(

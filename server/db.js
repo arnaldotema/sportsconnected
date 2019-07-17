@@ -14,7 +14,7 @@ mongoose.connection.on("error", function(err) {
 async function connect() {
   logger.info("Connecting to the database");
   await mongoose
-    .connect(database)
+    .connect(database, { useNewUrlParser: true })
     .catch(err =>
       logger.error(err, "There was a problem connecting to the database.")
     );

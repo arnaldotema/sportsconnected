@@ -15,7 +15,7 @@ describe("Component test: POST /users", () => {
   });
 
   beforeEach(async () => {
-    await User.remove({});
+    await User.deleteMany({});
     console.log("Deleted User documents");
   });
 

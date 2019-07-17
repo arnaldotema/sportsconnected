@@ -3,6 +3,8 @@ const FootballMedia = require("../../models/football_media");
 const FootballRecommendation = require("../../models/football_recommendation");
 const FootballUserInfoSeason = require("../../models/football_user_info_season");
 
+const logger = require("../../../logging");
+
 const userInfoService = require("../../api/services/football/userInfo");
 const userInfoSeasonService = require("../../api/services/football/userInfoSeason");
 
@@ -12,10 +14,18 @@ const entities = new Entities();
 
 const format = require("./../../utils/formatModel");
 
-function handleError(err, result, successCode, res) {
+function handleError(
+  err,
+  result,
+  successCode,
+  res,
+  errorCode = 500,
+  errorMessage = "Error from the API."
+) {
   if (err) {
-    return res.status(500).json({
-      message: "Error from the API.",
+    console.log(err, "There was a problem starting the server");
+    return res.status(errorCode).json({
+      message: errorMessage,
       error: err
     });
   }
@@ -212,17 +222,14 @@ exports.createMedia = async (req, res) => {
       message: "Missing media object"
     });
   }
-  if (!media.season_id) {
-    return res.status(404).json({
-      message: "Media object requires season id."
-    });
-  }
 
-  media.user_info_id = user_info_id;
-  media.user_type = "football_user_info";
+  media.user_info_id = userInfoId;
+  media.created_at = Date.now();
+  media.updated_at = Date.now();
+
   const newMedia = new FootballMedia(media);
 
-  newMedia.save(function(err, createdMedia) {
+  newMedia.save(async function(err, createdMedia) {
     if (err) {
       return res.status(500).json({
         message: "Error when creating media",
@@ -230,9 +237,18 @@ exports.createMedia = async (req, res) => {
       });
     }
 
-    userInfoService.addMedia(createdMedia, userInfoId, (err, user_info) =>
-      handleError(err, user_info, res)
+    const userInfoSeason = await userInfoService.addMedia(
+      userInfoId,
+      createdMedia
     );
+
+    if (!userInfoSeason) {
+      return res.status(404).json({
+        message: "User info Season not found when adding media."
+      });
+    }
+
+    handleError(null, createdMedia, 201, res);
   });
 };
 
@@ -267,7 +283,7 @@ exports.removeMedia = async (req, res) => {
 
 // Recommendation
 
-exports.list_recommendations = async (req, res) => {
+exports.listRecommendations = async (req, res) => {
   const offset = parseInt(req.query.offset || "0");
   const size = parseInt(req.query.size || "10");
 
@@ -279,8 +295,9 @@ exports.list_recommendations = async (req, res) => {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-exports.add_recommendation = async (req, res) => {
-  const user_info__id = req.params.id;
+exports.createRecommendation = async (req, res) => {
+  const userInfoId = req.params.id;
+
   const recommendation = req.body.recommendation;
 
   if (!recommendation) {
@@ -289,46 +306,46 @@ exports.add_recommendation = async (req, res) => {
     });
   }
 
-  recommendation.user_id = user_info__id;
-  const new_recommendation = new FootballRecommendation(recommendation);
+  recommendation.user_id = userInfoId;
+  recommendation.created_at = Date.now();
+  recommendation.updated_at = Date.now();
 
-  FootballRecommendation.create(recommendation);
+  const newRecommendation = new FootballRecommendation(recommendation);
 
-  new_recommendation.save(function(err, created_recommendation) {
+  newRecommendation.save(async (err, createdRecommendation) => {
     if (err) {
+      console.log(err, "There was a problem starting the server");
       return res.status(500).json({
-        message: "Error when creating recommendation",
+        message: "Error when saving recommendation.",
         error: err
       });
     }
 
-    userInfoService.addRecommendation(
-      created_recommendation,
-      user_info__id,
-      (err, user_info) => {
-        if (err) {
-          return res.status(500).json({
-            message: "Error when updating user_info",
-            error: err
-          });
-        }
-        if (!user_info) {
-          return res.status(404).json({
-            message: "No such user_info"
-          });
-        }
-
-        userInfoService.updateRecommendationRegex(user_info, (err, user_info) =>
-          handleError(err, user_info, res)
-        );
-      }
+    const userInfo = await userInfoService.addRecommendation(
+      userInfoId,
+      createdRecommendation
     );
+
+    if (!userInfo) {
+      return res.status(404).json({
+        message: "User info not found when adding recommendation."
+      });
+    }
+
+    if (userInfo.actions_regex) {
+      await userInfoService.updateRecommendationRegex(
+        userInfo._id,
+        userInfo.actions_regex
+      );
+    }
+
+    handleError(null, createdRecommendation, 201, res);
   });
 };
 
 // Skills
 
-exports.list_skills = async (req, res) => {
+exports.listSkills = async (req, res) => {
   FootballUserInfo.findOne({ _id: id })
     .populate("current_season")
     .populate("previous_seasons", "stats")
@@ -348,7 +365,7 @@ exports.list_skills = async (req, res) => {
     });
 };
 
-exports.add_skill_vote = async (req, res) => {
+exports.addSkillVote = async (req, res) => {
   const user_info_id = req.params.id;
   const author_user_id = req.body.author_user_id;
   const skill_name = req.body.skill_name;
@@ -397,7 +414,7 @@ exports.follow = async (req, res) => {
   );
 };
 
-exports.list_followed = async (req, res) => {
+exports.listFollowed = async (req, res) => {
   const offset = parseInt(req.query.offset || "0");
   const size = parseInt(req.query.size || "10");
 
@@ -409,7 +426,7 @@ exports.list_followed = async (req, res) => {
     .exec((err, user_info) => handleError(err, user_info, res));
 };
 
-exports.list_followers = async (req, res) => {
+exports.listFollowers = async (req, res) => {
   const offset = parseInt(req.query.offset || "0");
   const size = parseInt(req.query.size || "10");
 

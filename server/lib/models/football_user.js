@@ -18,7 +18,7 @@ FootballUserSchema.pre("save", async function(next) {
   // Maximum password length is 10 characters.
   // So if it's > 10, it means it's already hashed.
   // If it's already hashed, it means it's an update.
-  // If it's an update we don't need to hash the pw.
+  // If it's an update we don't need to hashedsh the pw.
 
   if (this.password && this.password.length < 10) {
     //Hash the password with a salt round of 12

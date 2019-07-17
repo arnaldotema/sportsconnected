@@ -15,7 +15,7 @@ describe("Component test: POST /seasons", () => {
   });
 
   beforeEach(async () => {
-    await Season.remove({});
+    await Season.deleteMany({});
     console.log("Deleted Season documents");
   });
 

@@ -11,7 +11,8 @@ module.exports = {
   database:
     process.env.NODE_ENV === "production"
       ? "mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin"
-      : "mongodb://mongo:27017/sports_connected",
-  //: "mongodb://localhost:27017/sports_connected",
+      : process.env.MONGO_URL
+      ? process.env.MONGO_URL
+      : "mongodb://localhost:27017/sports_connected",
   port: 3000
 };

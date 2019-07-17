@@ -228,7 +228,9 @@ exports.updateCompetitionStandingsAndStats = function(match, nestedMatch, cb) {
 
 exports.updateByZeroZeroId = function(zerozero_id, competition_season, cb) {
   const query = { "external_ids.zerozero": zerozero_id };
-
+  const createdAt = competition_season.created_at;
+  competition_season.created_at = createdAt || Date.now();
+  competition_season.updated_at = Date.now();
   CompetitionSeason.findOneAndUpdate(
     query,
     competition_season,

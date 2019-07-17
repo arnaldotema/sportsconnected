@@ -24,4 +24,7 @@ router.post("/:id/media", TeamController.createMedia);
 router.put("/:id/media/:mediaId", TeamController.updateMedia);
 router.delete("/:id/media/:mediaId", TeamController.removeMedia);
 
+router.post("/:id/recommendations", TeamController.createRecommendation);
+router.get("/:id/recommendations", TeamController.listRecommendations);
+
 module.exports = router;

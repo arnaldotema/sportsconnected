@@ -1,10 +1,39 @@
+"use strict";
+
 const TeamModel = require("../../models/football_team.js");
 const TeamModelSeason = require("../../models/football_team_season");
 const FootballMedia = require("../../models/football_media");
+const FootballRecommendation = require("../../models/football_recommendation");
 const teamService = require("../../api/services/football/team");
 
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
+
+const format = require("./../../utils/formatModel");
+
+function handleError(
+  err,
+  result,
+  successCode,
+  res,
+  errorCode = 500,
+  errorMessage = "Error from the API."
+) {
+  if (err) {
+    console.log(err, "There was a problem starting the server");
+    return res.status(errorCode).json({
+      message: errorMessage,
+      error: err
+    });
+  }
+  if (!result) {
+    return res.status(404).json({
+      message: "No such object"
+    });
+  }
+  return res.status(successCode).json(format(result));
+}
+
 /**
  * team.js
  *
@@ -223,26 +252,23 @@ module.exports = {
       });
   },
 
-  createMedia: function(req, res) {
-    let userInfoId = req.params.id;
-    let media = req.body.media;
+  createMedia: async (req, res) => {
+    const teamId = req.params.id;
+    const media = req.body.media;
 
     if (!media) {
       return res.status(404).json({
         message: "Missing media object"
       });
     }
-    if (!media.season_id) {
-      return res.status(404).json({
-        message: "Media object requires season id."
-      });
-    }
 
-    media.user_info_id = user_info_id;
-    media.user_type = "football_team";
-    let newMedia = new FootballMedia(media);
+    media.user_info_id = teamId;
+    media.created_at = Date.now();
+    media.updated_at = Date.now();
 
-    newMedia.save(function(err, createdMedia) {
+    const newMedia = new FootballMedia(media);
+
+    newMedia.save(async function(err, createdMedia) {
       if (err) {
         return res.status(500).json({
           message: "Error when creating media",
@@ -250,19 +276,15 @@ module.exports = {
         });
       }
 
-      teamService.addMedia(createdMedia, userInfoId, (err, team) => {
-        if (err) {
-          return res.status(500).json({
-            message: "Error when updating team_season",
-            error: err
-          });
-        }
-        if (!team) {
-          return res.status(404).json({
-            message: "No such team"
-          });
-        }
-      });
+      const teamSeason = await teamService.addMedia(teamId, createdMedia);
+
+      if (!teamSeason) {
+        return res.status(404).json({
+          message: "Team Season not found when adding media."
+        });
+      }
+
+      handleError(null, createdMedia, 201, res);
     });
   },
 
@@ -298,6 +320,68 @@ module.exports = {
         });
       }
       return res.status(204).json();
+    });
+  },
+
+  // Recommendation
+
+  listRecommendations: async (req, res) => {
+    const offset = parseInt(req.query.offset || "0");
+    const size = parseInt(req.query.size || "10");
+
+    TeamModel.findOne({ _id: id })
+      .populate("current_season")
+      .populate("previous_seasons", "stats")
+      .skip(offset * size)
+      .limit(size)
+      .exec((err, user_info) => handleError(err, user_info, res));
+  },
+
+  createRecommendation: async (req, res) => {
+    const teamId = req.params.id;
+
+    const recommendation = req.body.recommendation;
+
+    if (!recommendation) {
+      return res.status(404).json({
+        message: "Missing recommendation object"
+      });
+    }
+
+    recommendation.user_id = teamId;
+    recommendation.created_at = Date.now();
+    recommendation.updated_at = Date.now();
+
+    const newRecommendation = new FootballRecommendation(recommendation);
+
+    newRecommendation.save(async (err, createdRecommendation) => {
+      if (err) {
+        console.log(err, "There was a problem starting the server");
+        return res.status(500).json({
+          message: "Error when saving recommendation.",
+          error: err
+        });
+      }
+
+      const team = await teamService.addRecommendation(
+        createdRecommendation,
+        teamId
+      );
+
+      if (!team) {
+        return res.status(404).json({
+          message: "Team not found when adding recommendation."
+        });
+      }
+
+      if (team.actions_regex) {
+        await teamService.updateRecommendationRegex(
+          team._id,
+          team.actions_regex
+        );
+      }
+
+      handleError(null, createdRecommendation, 201, res);
     });
   }
 };
