@@ -33,10 +33,10 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-eest-2"
+  region: "us-west-2"
   app: "sports-connected"
-  env: "SportsConnected-env"
-  bucket_name: "elasticbeanstalk-us-east-2-697350137372"
+  env: "SportsConnected-stage-env"
+  bucket_name: "elasticbeanstalk-us-west-2-697350137372"
   bucket_path: "sports-connected"
   on:
     branch: master-refactor
