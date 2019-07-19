@@ -8,6 +8,11 @@
  *
  **/
 module.exports = {
+  database: process.env.MONGO_URL,
+  port: 3000
+};
+
+const old = {
   database:
     process.env.NODE_ENV === "production"
       ? "mongodb://admin:pywball12@199.247.15.139:27017/sports_connected?authSource=admin"
