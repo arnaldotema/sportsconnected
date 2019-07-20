@@ -11,7 +11,8 @@ COPY . /server
 
 EXPOSE 3000
 
-# ENV MONGO_URL "mongodb://mongo:27017/sports_connected"
 ENV MONGO_URL "mongodb://mongo:27017/sports_connected"
 
-RUN npm start
+ENTRYPOINT ["npm", "run"]
+
+CMD ["start"]

@@ -25,7 +25,7 @@ async function disconnect() {
   await mongoose
     .disconnect()
     .catch(err =>
-      logger.error(err, "There was a problem connecting to the database.")
+      logger.error(err, "There was a problem disconnecting the database.")
     );
 }
 
