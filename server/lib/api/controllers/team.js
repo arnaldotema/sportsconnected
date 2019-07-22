@@ -143,21 +143,12 @@ module.exports = {
    * TeamController.create()
    */
   create: function(req, res) {
-    const Team = new TeamModel({
-      user_id: req.body.user_id,
-      name: req.body.name,
-      admins: req.body.admins
-    });
+    const team = new TeamModel(req.body);
 
-    Team.save(function(err, Team) {
-      if (err) {
-        return res.status(500).json({
-          message: "Error when creating Team",
-          error: err
-        });
-      }
-      return res.status(201).json(Team);
-    });
+    team.created_at = Date.now();
+    team.updated_at = Date.now();
+
+    team.save((err, result) => handleError(err, result, 201, res));
   },
 
   /**
@@ -165,27 +156,27 @@ module.exports = {
    */
   update: function(req, res) {
     const id = req.params.id;
-    TeamModel.findOne({ _id: id }, function(err, Team) {
+    TeamModel.findOne({ _id: id }, function(err, team) {
       if (err) {
         return res.status(500).json({
-          message: "Error when getting Team",
+          message: "Error when getting team",
           error: err
         });
       }
-      if (!Team) {
+      if (!team) {
         return res.status(404).json({
-          message: "No such Team"
+          message: "No such team"
         });
       }
 
-      Team.user_info_id = req.body.user_id ? req.body.user_id : Team.user_id;
-      Team.name = req.body.name ? req.body.name : Team.name;
-      Team.admins = req.body.admins ? req.body.admins : Team.admins;
+      team.user_info_id = req.body.user_id ? req.body.user_id : team.user_id;
+      team.name = req.body.name ? req.body.name : team.name;
+      team.admins = req.body.admins ? req.body.admins : team.admins;
 
-      Team.save(function(err, Team) {
+      team.save(function(err, Team) {
         if (err) {
           return res.status(500).json({
-            message: "Error when updating Team.",
+            message: "Error when updating team.",
             error: err
           });
         }

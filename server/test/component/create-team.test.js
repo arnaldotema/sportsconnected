@@ -7,6 +7,7 @@ const Season = require("../../lib/models/football_season");
 const Competition = require("../../lib/models/football_competition");
 const TeamSeason = require("../../lib/models/football_team_season");
 const Team = require("../../lib/models/football_team");
+const { ObjectId } = require("mongoose").mongo;
 
 describe("Component test: POST /teams", () => {
   before(async () => {
@@ -28,52 +29,73 @@ describe("Component test: POST /teams", () => {
   });
 
   it("Should post a team and teamSeason and get it", async () => {
-    // todo - complete tests
+    const userID = ObjectId("123456789012345678901234");
 
-    const season = {
-      name: "Mock Season",
+    const team = {
+      user_id: userID.toString(), // team's user ID
+      name: "MockName",
+      full_name: "MockName",
+      acronym: "MockAcronym",
+      avatar: "MockAvatar",
+      previous_seasons: [],
+      tryouts: [
+        {
+          _id: ObjectId("123456789012345678901231").toString(),
+          address: "MockAddress",
+          age_group: "MockAddress",
+          days: "MockAddress",
+          time: "MockAddress",
+          requirements: "MockAddress"
+        },
+        {
+          _id: ObjectId("123456789012345678901232").toString(),
+          address: "MockAddress2",
+          age_group: "MockAgeGropup2",
+          days: "MockDays2",
+          time: "MockTime2",
+          requirements: "MockRequirements2"
+        }
+      ],
+      additional_info: {
+        site: "MockSite",
+        email: "MockEmail",
+        phone_Number: "MockPhoneNumber",
+        address: "MockAddress",
+        president: "MockPresident",
+        vice_president: "MockVicePresident",
+        sports_director: "MockDirector",
+        number_of_teams: 1,
+        number_of_athletes: 20,
+        number_of_coaches: 2,
+        number_of_physiotherapists: 2,
+        number_of_grass_fields: 2,
+        number_of_synthetic_fields: 1,
+        number_of_locker_rooms: 5,
+        sponsors: [
+          {
+            _id: ObjectId("123456789012345678901233").toString(),
+            link: "MockLink",
+            name: "MockName"
+          },
+          {
+            _id: ObjectId("123456789012345678901235").toString(),
+            link: "MockLink2",
+            name: "MockName2"
+          }
+        ],
+        other_sports: ["Sport1", "Sport2"]
+      },
+      followers: [],
+      following: [],
+      recommendations: { list: [], top_5: [] },
       external_ids: {
         zerozero: 12345678910
       }
-    };
+      /*
 
-    const { body: newSeason } = await api
-      .post("/api/seasons")
-      .set("Content-Type", "application/json")
-      .send(season)
-      .expect(201);
+      For PUT tests
 
-    const competition = {
-      name: "Liga Portuguesa",
-      avatar: "https://avatar.com",
-      external_ids: {
-        zerozero: 12345678910
-      },
-      previous_seasons: []
-    };
-
-    const { body: newCompetition } = await api
-      .post("/api/competitions")
-      .set("Content-Type", "application/json")
-      .send(competition)
-      .expect(201);
-
-    /*const match = {};
-
-    const { body: newMatch } = await api
-      .post("/api/matches")
-      .set("Content-Type", "application/json")
-      .send(match)
-      .expect(201);
-
-    const team = {
-      name: "MockName",
-      acronym: "MockAcronym",
-      avatar: "MockAvatar",
-      full_name: "MockName",
-      external_ids: {
-        zerozero: 12345678910
-      },
+      season_id: newSeason._id,
       standings: [
         {
           id: newSeason._id,
@@ -89,35 +111,7 @@ describe("Component test: POST /teams", () => {
           goals_taken: 2
         }
       ],
-      matches: [
-        {
-          id: newMatch._id,
-          date: Date,
-          competition_season: {
-            id: {
-              type: Schema.Types.ObjectId,
-              ref: "football_competition_season"
-            },
-            competition_id: newCompetition._id,
-            name: String,
-            avatar: String
-          },
-          home_team: {
-            id: { type: Schema.Types.ObjectId, ref: "football_team_season" },
-            team_id: { type: Schema.Types.ObjectId, ref: "football_team" },
-            name: String,
-            avatar: String,
-            goals: Number
-          },
-          away_team: {
-            id: { type: Schema.Types.ObjectId, ref: "football_team_season" },
-            team_id: { type: Schema.Types.ObjectId, ref: "football_team" },
-            name: String,
-            avatar: String,
-            goals: Number
-          }
-        }
-      ],
+      matches: [],
       players: [
         {
           id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
@@ -176,55 +170,8 @@ describe("Component test: POST /teams", () => {
             ]
           }
         }
-      ],
-      followers: [],
-      following: [],
-      tryouts: [
-        {
-          address: "MockAddress",
-          age_group: "MockAddress",
-          days: "MockAddress",
-          time: "MockAddress",
-          requirements: "MockAddress"
-        },
-        {
-          address: "MockAddress2",
-          age_group: "MockAgeGropup2",
-          days: "MockDays2",
-          time: "MockTime2",
-          requirements: "MockRequirements2"
-        }
-      ],
-      recommendations: { list: [], top_5: [] },
-      additional_info: {
-        site: "MockSite",
-        email: "MockEmail",
-        phone_Number: "MockPhoneNumber",
-        address: "MockAddress",
-        president: "MockPresident",
-        vice_president: "MockVicePresident",
-        sports_director: "MockDirector",
-        number_of_teams: 1,
-        number_of_athletes: 20,
-        number_of_coaches: 2,
-        number_of_physiotherapists: 2,
-        number_of_grass_fields: 2,
-        number_of_synthetic_fields: 1,
-        number_of_locker_rooms: 5,
-        sponsors: [
-          {
-            link: "MockLink",
-            name: "MockName"
-          },
-          {
-            link: "MockLink2",
-            name: "MockName2"
-          }
-        ],
-        other_sports: ["Sport1", "Sport2"]
-      },
-      previous_seasons: [],
-      season_id: newSeason._id // api requisite
+      ]
+      */
     };
 
     const { body: actualResponse } = await api
@@ -234,17 +181,16 @@ describe("Component test: POST /teams", () => {
       .expect(201);
 
     const expectedResponse = {
+      _id: actualResponse._id,
+      user_id: userID.toString(), // team's user ID
       name: "MockName",
+      full_name: "MockName",
       acronym: "MockAcronym",
       avatar: "MockAvatar",
-      full_name: "MockName",
-      external_ids: {
-        zerozero: 12345678910
-      },
-      followers: [],
-      following: [],
+      previous_seasons: [],
       tryouts: [
         {
+          _id: ObjectId("123456789012345678901231").toString(),
           address: "MockAddress",
           age_group: "MockAddress",
           days: "MockAddress",
@@ -252,6 +198,7 @@ describe("Component test: POST /teams", () => {
           requirements: "MockAddress"
         },
         {
+          _id: ObjectId("123456789012345678901232").toString(),
           address: "MockAddress2",
           age_group: "MockAgeGropup2",
           days: "MockDays2",
@@ -259,7 +206,6 @@ describe("Component test: POST /teams", () => {
           requirements: "MockRequirements2"
         }
       ],
-      recommendations: { list: [], top_5: [] },
       additional_info: {
         site: "MockSite",
         email: "MockEmail",
@@ -277,35 +223,61 @@ describe("Component test: POST /teams", () => {
         number_of_locker_rooms: 5,
         sponsors: [
           {
+            _id: ObjectId("123456789012345678901233").toString(),
             link: "MockLink",
             name: "MockName"
           },
           {
+            _id: ObjectId("123456789012345678901235").toString(),
             link: "MockLink2",
             name: "MockName2"
           }
         ],
         other_sports: ["Sport1", "Sport2"]
       },
-      previous_seasons: [],
-      _id: actualResponse._id,
+      followers: [],
+      following: [],
+      recommendations: { list: [], top_5: [] },
+      external_ids: {
+        zerozero: 12345678910
+      },
       updated_at: actualResponse.updated_at,
-      created_at: actualResponse.created_at,
-      current_season: {
-        season_id: newSeason._id,
-        ...actualResponse.current_season
+      created_at: actualResponse.created_at
+    };
+
+    assert.deepEqual(actualResponse, expectedResponse);
+    /*
+
+    For PUT tests
+
+    const season = {
+      name: "Mock Season",
+      external_ids: {
+        zerozero: 12345678910
       }
     };
 
-    assert.deepEqual(actualResponse, {
-      ...expectedResponse,
-      _id: actualResponse._id,
-      updated_at: actualResponse.updated_at,
-      created_at: actualResponse.created_at,
-      current_season: {
-        season_id: newSeason._id,
-        ...actualResponse.current_season
+
+    const { body: newSeason } = await api
+      .post("/api/seasons")
+      .set("Content-Type", "application/json")
+      .send(season)
+      .expect(201);
+
+    const competition = {
+      name: "Liga Portuguesa",
+      avatar: "https://avatar.com",
+      external_ids: {
+        zerozero: 12345678910
       }
-    });*/
+    };
+
+    const { body: newCompetition } = await api
+      .post("/api/competitions")
+      .set("Content-Type", "application/json")
+      .send(competition)
+      .expect(201);
+
+    */
   });
 });
