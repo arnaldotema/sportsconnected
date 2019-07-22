@@ -33,13 +33,13 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-2"
-  app: "sports-connected"
-  env: "SportsConnected-env"
-  bucket_name: "elasticbeanstalk-us-east-2-697350137372"
-  bucket_path: "sports-connected"
+  region: "eu-west-2"
+  app: "sportsconnected"
+  env: "sportsconnected-stg-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-697350137372"
+  bucket_path: "sportsconnected"
   on:
-    branch: master-refactor
+    branch: master
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key:
     secure: "$AWS_SECRET_KEY"

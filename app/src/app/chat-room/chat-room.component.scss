@@ -1,0 +1,197 @@
+$chat-message-color: #18375c;
+$chat-right-message-background: #e9e9ff;
+$chat-left-message-background: #f9f9f9;
+$chat-right-special-message: #2d72d9;
+$chat-left-special-message: #3adf7e;
+ion-content .scroll-content {
+    background-color: #f5f5f5;
+}
+
+.chat-header-info {
+    display: flex;
+    align-content: center;
+}
+
+.chat-header-info img {
+    border-radius: 100%;
+    width: 10mm;
+    height: 10mm;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+}
+
+.chat-header-info .user-info {
+    width: calc(100% - 10mm);
+    margin-left: 1mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.chat-header-info .user-info .user-name {
+    text-align: left;
+    font-size: 4.2mm;
+    font-weight: 700;
+}
+
+.chat-header-info .user-info .user-detail {
+    text-align: left;
+    color: #2d72d9;
+    font-size: 2.8mm;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line-breaker {
+    white-space: pre-line;
+}
+
+.input-wrap {
+    padding: 5px;
+    display: flex;
+}
+
+.input-wrap textarea {
+    flex: 1;
+    border: 0;
+    border-style: solid;
+}
+
+.message-wrap {
+    padding: 0 10px;
+}
+
+.message-wrap .message {
+    position: relative;
+    padding: 7px 0;
+}
+
+.message-wrap .message .msg-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-wrap .message .msg-detail p {
+    margin: 0;
+}
+
+.message-wrap .message .msg-detail .msg-info p {
+    font-weight: 700;
+    font-size: 2mm;
+    color: #576574;
+}
+
+.message-wrap .message .msg-detail .msg-content {
+    position: relative;
+    font-size: 3mm;
+    margin-top: 5px;
+    border-radius: 12px;
+    padding: 3mm;
+    color: $chat-message-color;
+    width: auto;
+    max-width: 90%;
+}
+
+.message-wrap .message .msg-detail .special-content {}
+
+.message-wrap .message .msg-detail .special-content button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 3mm;
+    font-weight: 700;
+    background-color: white;
+    margin-top: 3mm;
+}
+
+.no-action {
+    pointer-events: none;
+}
+
+.message-wrap .message .msg-detail .special-content img {
+    margin-top: 3mm;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.message-wrap .message.left .msg-detail {
+    align-items: flex-start;
+}
+
+.message-wrap .message.left .msg-detail .msg-content {
+    border-top-left-radius: 0px;
+    background-color: $chat-left-message-background;
+}
+
+.message-wrap .message.left .msg-detail .special-content {
+    background-color: $chat-left-special-message !important;
+    color: white
+}
+
+.message-wrap .message.left .msg-detail .special-content button {
+    float: right;
+    color: $chat-left-special-message !important
+}
+
+.message-wrap .message.right ion-spinner {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+}
+
+.message-wrap .message.right .msg-detail {
+    align-items: flex-end;
+}
+
+.message-wrap .message.right .msg-detail .msg-content {
+    background-color: $chat-right-message-background;
+    border-top-right-radius: 0px;
+}
+
+.message-wrap .message.right .msg-detail .special-content {
+    background-color: $chat-right-special-message !important;
+    color: white
+}
+
+.message-wrap .message.right .msg-detail .special-content button {
+    color: $chat-right-special-message !important
+}
+
+.message-wrap .message.right .msg-detail .msg-info {
+    text-align: right;
+}
+
+.chat-actions-list {
+    display: flex;
+}
+
+.chat-action {
+    width: 10mm;
+    height: 10mm;
+    margin-left: 1mm;
+    margin-right: 1mm;
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+.chat-action ion-icon {
+    font-size: 7mm;
+}
+
+.chat-action .send {
+    color: $chat-right-special-message
+}
+
+.chat-action .attach {
+    color: $chat-message-color
+}
+
+ion-footer {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.11);
+    background-color: #fff;
+    min-height: 12mm;
+}
+
+ion-footer ion-textarea {
+    min-height: 10mm;
+}

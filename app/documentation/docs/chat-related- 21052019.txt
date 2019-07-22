@@ -1,0 +1,81 @@
+the 2 main front end models:
+
+
+export class ChatMessage{
+  id: number;
+  userId: string;
+  message: string;
+  sentAt: string;
+  seenAt: string;
+}
+
+
+export class ChatRoom{
+  roomId: string;
+  user: SessionUser;
+  messages: ChatMessage[]
+}
+
+
+the websocket room of the user, will receive new messages with the code "message:sent" in the following format:
+
+{
+  roomId: string;
+  user: SessionUser;
+  messages: ChatMessage[] //desc order by sent date
+}
+
+We will always be sending only the last 50 messages (so this include pagination), and we will always be sending all of this info since the backend DB can just return what was updated when the message was inserted,
+avoiding additional requests, and we can avoid the following situation:
+
+-> received new message (only 1)
+-> Oh no, I don't have this conversation messages!
+-> asks the server the previous messages from the conversation (additional requests)
+
+This can happen easely, since the browser is a dark world where we can't make assumptions that users will keep the page (and respective data) open.
+
+
+
+
+when the user sends a message, he sends it with the code "message", this differs from the code "message:sent" since the message will only be displayed as sent (whatsapp first tick) when the user receives it's own "message:sent",
+the way the front end knows this is different from a new message, is that the embedded user is himself.
+
+
+
+The user will send a message in this format: 
+
+{
+  userId: string;
+  roomId: string;
+  message: string;
+}
+
+
+
+There is a special rule regarding the roomId's, since there will be no more than 1 conversation entity in the database for each pair of users, the actual roomId will be: "<lowest-user-id>-<highest-user-id>", this way, the front end can
+always know the roomId, making fresh conversations the exact same process as ongoing conversations (backend only needs to upsert if there is no roomId like the one sent), obviously, we will need a unique index on this field.
+
+
+Finally, there is the message:read in the following format:
+
+[{
+  userId: string;
+  roomId: string;
+  messageId: number;
+  seenDate: string;
+}]
+
+//array because u can see many at once.
+
+
+
+
+
+
+Regarding websocket rooms:
+
+All "message:sent" events are sent to each participants websocket channel (which is indentified by their ID), in exactly the same way
+
+The "message" event is user->server only
+
+The "message:seen" event can be sent to both users, but it would be more clean if it was only the the target user
