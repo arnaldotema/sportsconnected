@@ -5,8 +5,6 @@ const { footballUserTypes } = require("../constants/values.js");
 const FootballTeamSeasonSchema = new Schema({
   team_id: { type: Schema.Types.ObjectId, ref: "football_team" },
   season_id: { type: Schema.Types.ObjectId, ref: "football_season" },
-  name: String,
-  avatar: String,
   standings: [
     {
       id: { type: Schema.Types.ObjectId, ref: "football_competition_season" },
