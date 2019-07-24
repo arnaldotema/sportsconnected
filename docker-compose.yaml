@@ -1,13 +1,13 @@
-version: "3.3"
+version: "3"
 services:
   mongo:
-    container_name: sc-mongo
+    container_name: mongo
     image: mongo:3.3
     command: mongod
     ports:
       - "27017:27017"
-    volumes:
-      - "mongo:/data/db"
+    #volumes:
+    # - ./data:/data/db
 
   server:
     container_name: sc-srv
@@ -16,11 +16,8 @@ services:
       - "3000:3000"
     expose:
       - "3000"
-    environment:
-      - MONGO_URL=mongodb://mongo:27017/sports_connected
     links:
       - mongo
-
   # app:
   #  container_name: sc-app
   #  build: ./app
@@ -33,4 +30,4 @@ services:
   #   - "5000:5000"
   # links:
   #   - mongo
-volumes: mongo:
+#volumes: mongo:

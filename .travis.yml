@@ -28,6 +28,7 @@ before_script:
 
 script:
   # - docker run arnaldolucientrindade/sportsconnected npm run test --
+  # Should actually ne - docker run arnaldolucientrindade/sportsconnected test --
   - ./scripts/test.sh
   #- npm run test --
 
