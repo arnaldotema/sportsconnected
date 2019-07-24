@@ -68,8 +68,6 @@ describe("Component test: POST /teams", () => {
       })
       .expect(201);
 
-    const now = Date.now();
-
     const currentSeason = {
       season_id: newSeason._id,
       standings: [
