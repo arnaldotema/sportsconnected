@@ -10,6 +10,7 @@ const format = require("./../../utils/formatModel");
 
 function handleError(err, result, successCode, res) {
   if (err) {
+    console.log(err);
     return res.status(500).json({
       message: "Error from the API.",
       error: err
@@ -46,7 +47,18 @@ exports.create = function(req, res) {
 
 exports.update = function(req, res) {
   let id = req.params.id;
-  FootballUser.findOne({ _id: id }, function(err, user) {
+  const user = req.body;
+  FootballUser.findOneAndUpdate(
+    { _id: id },
+    { $set: { ...user } },
+    (err, result) => {
+      console.log("ERRRROOOOORRR ISSSSS ");
+      console.log(err);
+      handleError(err, result, 200, res);
+    }
+  );
+
+  /*FootballUser.findOne({ _id: id }, function(err, user) {
     if (err) {
       return res.status(500).json({
         message: "Error when getting User",
@@ -72,7 +84,7 @@ exports.update = function(req, res) {
     user.user_type = req.body.user_type ? req.body.user_type : user.user_type;
 
     user.save((err, result) => handleError(err, result, 200, res));
-  });
+  });*/
 };
 
 exports.remove = function(req, res) {
