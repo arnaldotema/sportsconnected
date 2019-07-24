@@ -9,6 +9,8 @@ const teamService = require("../../api/services/football/team");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
+const { ObjectId } = require("mongoose").mongo;
+
 const format = require("./../../utils/formatModel");
 
 function handleError(
@@ -41,9 +43,6 @@ function handleError(
  * @description :: Server-side logic for managing Teams.
  */
 module.exports = {
-  /**
-   * TeamController.search()
-   */
   search: function(req, res) {
     let select = {
       _id: 1,
@@ -77,9 +76,6 @@ module.exports = {
       });
   },
 
-  /**
-   * TeamController.list()
-   */
   list: function(req, res) {
     TeamModel.find()
       .populate("current_season")
@@ -96,28 +92,17 @@ module.exports = {
       });
   },
 
-  /**
-   * TeamController.show()
-   */
   show: function(req, res) {
     const id = req.params.id;
     TeamModel.findOne({ _id: id })
-      .populate("current_season")
+      //.populate("current_season")
+      .populate({
+        path: "current_season",
+        model: "football_team_season",
+        select: { __v: 0, team_id: 0, _id: 0 }
+      })
       .populate("previous_seasons", "standings")
-      .exec(function(err, Team) {
-        if (err) {
-          return res.status(500).json({
-            message: "Error when getting Team.",
-            error: err
-          });
-        }
-        if (!Team) {
-          return res.status(404).json({
-            message: "No such Team"
-          });
-        }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
-      });
+      .exec((err, result) => handleError(err, result, 200, res));
   },
 
   players: function(req, res) {
@@ -140,9 +125,6 @@ module.exports = {
     });
   },
 
-  /**
-   * TeamController.create()
-   */
   create: function(req, res) {
     const team = new TeamModel(req.body);
 
@@ -152,12 +134,13 @@ module.exports = {
     team.save((err, result) => handleError(err, result, 201, res));
   },
 
-  /**
-   * TeamController.update()
-   */
   update: function(req, res) {
     const id = req.params.id;
     const query = { _id: req.body.current_season._id };
+
+    if (!query._id) {
+      query._id = new ObjectId();
+    }
 
     const currentSeason = req.body.current_season;
     currentSeason.team_id = id;
@@ -180,12 +163,13 @@ module.exports = {
           });
         }
 
-        const { current_season, ...updatedTeam } = req.body;
+        const updatedTeam = req.body;
 
         updatedTeam.user_id = req.body.user_id || updatedTeam.user_id;
         updatedTeam.name = req.body.name || updatedTeam.name;
         updatedTeam.admins = req.body.admins || updatedTeam.admins;
         updatedTeam.update_at = Date.now();
+        updatedTeam.current_season = teamSeason._id;
 
         TeamModel.findOneAndUpdate(
           { _id: id },
@@ -197,9 +181,6 @@ module.exports = {
     );
   },
 
-  /**
-   * TeamController.remove()
-   */
   remove: function(req, res) {
     const id = req.params.id;
     TeamModel.findByIdAndRemove(id, function(err, team) {

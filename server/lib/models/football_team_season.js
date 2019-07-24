@@ -7,7 +7,7 @@ const FootballTeamSeasonSchema = new Schema({
   season_id: { type: Schema.Types.ObjectId, ref: "football_season" },
   standings: [
     {
-      id: { type: Schema.Types.ObjectId, ref: "football_competition_season" },
+      _id: { type: Schema.Types.ObjectId, ref: "football_competition_season" },
       competition_id: {
         type: Schema.Types.ObjectId,
         ref: "football_competition"
@@ -25,7 +25,7 @@ const FootballTeamSeasonSchema = new Schema({
   ],
   matches: [
     {
-      id: { type: Schema.Types.ObjectId, ref: "football_match" },
+      _id: { type: Schema.Types.ObjectId, ref: "football_match" },
       date: Date,
       competition_season: {
         id: { type: Schema.Types.ObjectId, ref: "football_competition_season" },
@@ -54,10 +54,10 @@ const FootballTeamSeasonSchema = new Schema({
   ],
   players: [
     {
-      id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
+      _id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
       user_info_id: { type: Schema.Types.ObjectId, ref: "football_user_info" },
       age: Number,
-      number: String,
+      number: Number,
       name: String,
       avatar: String,
       nationality: String,
@@ -66,7 +66,7 @@ const FootballTeamSeasonSchema = new Schema({
   ],
   staff: [
     {
-      id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
+      _id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
       user_info_id: { type: Schema.Types.ObjectId, ref: "football_user_info" },
       name: String,
       avatar: String,

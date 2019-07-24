@@ -28,7 +28,7 @@ describe("Component test: POST /teams", () => {
     console.log("Deleted TeamSeason documents");
   });
 
-  it.only("Should put a team and teamSeason and get it", async () => {
+  it("Should put a team and teamSeason and get it", async () => {
     const season = {
       name: "Mock Season",
       external_ids: {
@@ -67,6 +67,73 @@ describe("Component test: POST /teams", () => {
         }
       })
       .expect(201);
+
+    const now = Date.now();
+
+    const currentSeason = {
+      season_id: newSeason._id,
+      standings: [
+        {
+          _id: newSeason._id,
+          competition_id: newCompetition._id,
+          name: "MockStanding",
+          avatar: "MockAvatar",
+          position: 1,
+          matches: 3,
+          wins: 1,
+          draws: 1,
+          losses: 1,
+          goals: 2,
+          goals_taken: 2
+        }
+      ],
+      matches: [],
+      players: [
+        {
+          _id: ObjectId("123456789012345678911111").toString(),
+          user_info_id: ObjectId("123456789012345678999999").toString(),
+          age: 23,
+          number: 12,
+          name: "MockUser",
+          avatar: "MockAvatar",
+          nationality: "MockNationality",
+          positions: ["MockPosition1", "MockPosition2"]
+        }
+      ],
+      staff: [
+        {
+          _id: ObjectId("123456789012345678922444").toString(),
+          user_info_id: ObjectId("123456789012345678983902").toString(),
+          name: "MockCoach",
+          avatar: "MockAvatar",
+          nationality: "MockNationality"
+        }
+      ],
+      media: [
+        {
+          _id: ObjectId("123456789012345678909090").toString(),
+          user_type: "football_team",
+          season_id: newSeason._id,
+          author: {
+            user_type: "football_user_info",
+            name: "John Doe",
+            id: ObjectId("123456789012345678900111").toString(),
+            avatar: "https://www.avatar.com",
+            team: {
+              id: ObjectId("123456789012345678990222").toString(),
+              acronym: "SLB",
+              avatar: "https://www.avatar.com",
+              name: "Sport Lisboa e Benfica"
+            }
+          },
+          text:
+            "John Doe does an amazing trick and amazes everyone with this bike goal!!",
+          title: "Whatch this John Doe's amazing goal!!!",
+          image: "https://www.avatar.com",
+          tags: ["Cool", "goal", "SLB", "JohnDoe"]
+        }
+      ]
+    };
 
     const team = {
       user_id: userID.toString(), // team's user ID
@@ -128,71 +195,7 @@ describe("Component test: POST /teams", () => {
       external_ids: {
         zerozero: 12345678910
       },
-      current_season: {
-        season_id: newSeason._id,
-        standings: [
-          {
-            id: newSeason._id,
-            competition_id: newCompetition._id,
-            name: "MockStanding",
-            avatar: "MockAvatar",
-            position: 1,
-            matches: 3,
-            wins: 1,
-            draws: 1,
-            losses: 1,
-            goals: 2,
-            goals_taken: 2
-          }
-        ],
-        matches: [],
-        players: [
-          {
-            id: ObjectId("123456789012345678911111").toString(),
-            user_info_id: ObjectId("123456789012345678999999").toString(),
-            age: 23,
-            number: 12,
-            name: "MockUser",
-            avatar: "MockAvatar",
-            nationality: "MockNationality",
-            positions: ["MockPosition1", "MockPosition2"]
-          }
-        ],
-        staff: [
-          {
-            id: ObjectId("123456789012345678922444").toString(),
-            user_info_id: ObjectId("123456789012345678983902").toString(),
-            name: "MockCoach",
-            avatar: "MockAvatar",
-            nationality: "MockNationality"
-          }
-        ],
-        media: [
-          {
-            _id: ObjectId("123456789012345678909090").toString(),
-            user_type: "football_team",
-            season_id: newSeason._id,
-            author: {
-              user_type: "football_user_info",
-              name: "John Doe",
-              id: ObjectId("123456789012345678900111").toString(),
-              avatar: "https://www.avatar.com",
-              team: {
-                id: ObjectId("123456789012345678990222").toString(),
-                acronym: "SLB",
-                avatar: "https://www.avatar.com",
-                name: "Sport Lisboa e Benfica"
-              }
-            },
-            text:
-              "John Doe does an amazing trick and amazes everyone with this bike goal!!",
-            title: "Whatch this John Doe's amazing goal!!!",
-            date: Date.now(),
-            image: "https://www.avatar.com",
-            tags: ["Cool", "goal", "SLB", "JohnDoe"]
-          }
-        ]
-      }
+      current_season: currentSeason
     };
 
     const { body: actualResponse } = await api
@@ -263,71 +266,20 @@ describe("Component test: POST /teams", () => {
         zerozero: 12345678910
       },
       updated_at: actualResponse.updated_at,
-      created_at: actualResponse.created_at
+      created_at: actualResponse.created_at,
+      current_season: actualResponse.current_season
     };
 
     assert.deepEqual(actualResponse, expectedResponse);
 
-    // Todo Ensure that the added teamSeason is as expected
+    const { body: actualNewTeam } = await api
+      .get(`/api/teams/${newTeam._id}`)
+      .set("Content-Type", "application/json")
+      .expect(200);
 
-    // const teamSeason = await TeamSeason.findOne({team_id: newTeam._id});
-    // assert.deepEqual(teamSeason._doc, team.current_season);
+    assert.deepEqual(actualNewTeam, {
+      ...expectedResponse,
+      current_season: currentSeason
+    });
   });
 });
-
-const actual = {
-  user_id: "123456789012345678901234",
-  name: "MockName",
-  full_name: "MockName",
-  acronym: "MockAcronym",
-  avatar: "MockAvatar",
-  previous_seasons: [],
-  tryouts: [
-    {
-      _id: "123456789012345678901231",
-      address: "MockAddress",
-      age_group: "MockAddress",
-      days: "MockAddress",
-      time: "MockAddress",
-      requirements: "MockAddress"
-    },
-    {
-      _id: "123456789012345678901232",
-      address: "MockAddress2",
-      age_group: "MockAgeGropup2",
-      days: "MockDays2",
-      time: "MockTime2",
-      requirements: "MockRequirements2"
-    }
-  ],
-  additional_info: {
-    site: "MockSite",
-    email: "MockEmail",
-    phone_Number: "MockPhoneNumber",
-    address: "MockAddress",
-    president: "MockPresident",
-    vice_president: "MockVicePresident",
-    sports_director: "MockDirector",
-    number_of_teams: 1,
-    number_of_athletes: 20,
-    number_of_coaches: 2,
-    number_of_physiotherapists: 2,
-    number_of_grass_fields: 2,
-    number_of_synthetic_fields: 1,
-    number_of_locker_rooms: 5,
-    sponsors: [
-      {
-        _id: "123456789012345678901233",
-        link: "MockLink",
-        name: "MockName"
-      },
-      { _id: "123456789012345678901235", link: "MockLink2", name: "MockName2" }
-    ],
-    other_sports: ["Sport1", "Sport2"]
-  },
-  followers: [],
-  following: [],
-  recommendations: { list: [], top_5: [] },
-  external_ids: { zerozero: 12345678910 },
-  update_at: 1563831509039
-};
