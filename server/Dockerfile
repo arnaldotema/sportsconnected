@@ -16,3 +16,5 @@ ENV MONGO_URL "mongodb://mongo:27017/sports_connected"
 ENTRYPOINT ["npm", "run"]
 
 CMD ["start"]
+
+# To run test is: docker-compose run server test

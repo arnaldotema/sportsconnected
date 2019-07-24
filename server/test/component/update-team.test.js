@@ -28,8 +28,110 @@ describe("Component test: POST /teams", () => {
     console.log("Deleted TeamSeason documents");
   });
 
-  it("Should post a team and teamSeason and get it", async () => {
+  it("Should put a team and teamSeason and get it", async () => {
+    const season = {
+      name: "Mock Season",
+      external_ids: {
+        zerozero: 12345678910
+      }
+    };
+
+    const { body: newSeason } = await api
+      .post("/api/seasons")
+      .set("Content-Type", "application/json")
+      .send(season)
+      .expect(201);
+
+    const competition = {
+      name: "Liga Portuguesa",
+      avatar: "https://avatar.com",
+      external_ids: {
+        zerozero: 12345678910
+      }
+    };
+
+    const { body: newCompetition } = await api
+      .post("/api/competitions")
+      .set("Content-Type", "application/json")
+      .send(competition)
+      .expect(201);
+
     const userID = ObjectId("123456789012345678901234");
+
+    const { body: newTeam } = await api
+      .post(`/api/teams`)
+      .set("Content-Type", "application/json")
+      .send({
+        external_ids: {
+          zerozero: 12345678910
+        }
+      })
+      .expect(201);
+
+    const currentSeason = {
+      season_id: newSeason._id,
+      standings: [
+        {
+          _id: newSeason._id,
+          competition_id: newCompetition._id,
+          name: "MockStanding",
+          avatar: "MockAvatar",
+          position: 1,
+          matches: 3,
+          wins: 1,
+          draws: 1,
+          losses: 1,
+          goals: 2,
+          goals_taken: 2
+        }
+      ],
+      matches: [],
+      players: [
+        {
+          _id: ObjectId("123456789012345678911111").toString(),
+          user_info_id: ObjectId("123456789012345678999999").toString(),
+          age: 23,
+          number: 12,
+          name: "MockUser",
+          avatar: "MockAvatar",
+          nationality: "MockNationality",
+          positions: ["MockPosition1", "MockPosition2"]
+        }
+      ],
+      staff: [
+        {
+          _id: ObjectId("123456789012345678922444").toString(),
+          user_info_id: ObjectId("123456789012345678983902").toString(),
+          name: "MockCoach",
+          avatar: "MockAvatar",
+          nationality: "MockNationality"
+        }
+      ],
+      media: [
+        {
+          _id: ObjectId("123456789012345678909090").toString(),
+          user_type: "football_team",
+          season_id: newSeason._id,
+          author: {
+            user_type: "football_user_info",
+            name: "John Doe",
+            id: ObjectId("123456789012345678900111").toString(),
+            avatar: "https://www.avatar.com",
+            team: {
+              id: ObjectId("123456789012345678990222").toString(),
+              acronym: "SLB",
+              avatar: "https://www.avatar.com",
+              name: "Sport Lisboa e Benfica"
+            }
+          },
+          text:
+            "John Doe does an amazing trick and amazes everyone with this bike goal!!",
+          title: "Whatch this John Doe's amazing goal!!!",
+          image: "https://www.avatar.com",
+          tags: ["Cool", "goal", "SLB", "JohnDoe"]
+        }
+      ]
+    };
 
     const team = {
       user_id: userID.toString(), // team's user ID
@@ -90,99 +192,19 @@ describe("Component test: POST /teams", () => {
       recommendations: { list: [], top_5: [] },
       external_ids: {
         zerozero: 12345678910
-      }
-      /*
-
-      For PUT tests
-
-      season_id: newSeason._id,
-      standings: [
-        {
-          id: newSeason._id,
-          competition_id: newCompetition._id,
-          name: "MockStanding",
-          avatar: "MockAvatar",
-          position: 1,
-          matches: 3,
-          wins: 1,
-          draws: 1,
-          losses: 1,
-          goals: 2,
-          goals_taken: 2
-        }
-      ],
-      matches: [],
-      players: [
-        {
-          id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
-          user_info_id: {
-            type: Schema.Types.ObjectId,
-            ref: "football_user_info"
-          },
-          age: Number,
-          number: String,
-          name: String,
-          avatar: String,
-          nationality: String,
-          positions: [String]
-        }
-      ],
-      staff: [
-        {
-          id: { type: Schema.Types.ObjectId, ref: "football_user_info_season" },
-          user_info_id: {
-            type: Schema.Types.ObjectId,
-            ref: "football_user_info"
-          },
-          name: String,
-          avatar: String,
-          nationality: String
-        }
-      ],
-      media: [
-        {
-          _id: String,
-          user_type: { type: String, enum: USER_TYPES },
-          season_id: { type: Schema.Types.ObjectId, ref: "football_season" },
-          title: { type: String, required: true },
-          author: String,
-          date: Date,
-          image: String,
-          text: { type: String, required: true },
-          references: {
-            leagues: [
-              {
-                name: String,
-                id: { type: Schema.Types.ObjectId, ref: "football_competition" }
-              }
-            ],
-            team: [
-              {
-                name: String,
-                id: { type: Schema.Types.ObjectId, ref: "football_team" }
-              }
-            ],
-            user: [
-              {
-                name: String,
-                id: { type: Schema.Types.ObjectId, ref: "football_user_info" }
-              }
-            ]
-          }
-        }
-      ]
-      */
+      },
+      current_season: currentSeason
     };
 
     const { body: actualResponse } = await api
-      .post("/api/teams")
+      .put(`/api/teams/${newTeam._id}`)
       .set("Content-Type", "application/json")
       .send(team)
-      .expect(201);
+      .expect(200);
 
     const expectedResponse = {
-      _id: actualResponse._id,
-      user_id: userID.toString(), // team's user ID
+      _id: newTeam._id,
+      user_id: userID.toString(),
       name: "MockName",
       full_name: "MockName",
       acronym: "MockAcronym",
@@ -242,42 +264,20 @@ describe("Component test: POST /teams", () => {
         zerozero: 12345678910
       },
       updated_at: actualResponse.updated_at,
-      created_at: actualResponse.created_at
+      created_at: actualResponse.created_at,
+      current_season: actualResponse.current_season
     };
 
     assert.deepEqual(actualResponse, expectedResponse);
-    /*
 
-    For PUT tests
-
-    const season = {
-      name: "Mock Season",
-      external_ids: {
-        zerozero: 12345678910
-      }
-    };
-
-
-    const { body: newSeason } = await api
-      .post("/api/seasons")
+    const { body: actualNewTeam } = await api
+      .get(`/api/teams/${newTeam._id}`)
       .set("Content-Type", "application/json")
-      .send(season)
-      .expect(201);
+      .expect(200);
 
-    const competition = {
-      name: "Liga Portuguesa",
-      avatar: "https://avatar.com",
-      external_ids: {
-        zerozero: 12345678910
-      }
-    };
-
-    const { body: newCompetition } = await api
-      .post("/api/competitions")
-      .set("Content-Type", "application/json")
-      .send(competition)
-      .expect(201);
-
-    */
+    assert.deepEqual(actualNewTeam, {
+      ...expectedResponse,
+      current_season: currentSeason
+    });
   });
 });

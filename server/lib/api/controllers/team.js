@@ -1,13 +1,15 @@
 "use strict";
 
 const TeamModel = require("../../models/football_team.js");
-const TeamModelSeason = require("../../models/football_team_season");
+const TeamSeasonModel = require("../../models/football_team_season");
 const FootballMedia = require("../../models/football_media");
 const FootballRecommendation = require("../../models/football_recommendation");
 const teamService = require("../../api/services/football/team");
 
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
+
+const { ObjectId } = require("mongoose").mongo;
 
 const format = require("./../../utils/formatModel");
 
@@ -31,6 +33,7 @@ function handleError(
       message: "No such object"
     });
   }
+
   return res.status(successCode).json(format(result));
 }
 
@@ -40,9 +43,6 @@ function handleError(
  * @description :: Server-side logic for managing Teams.
  */
 module.exports = {
-  /**
-   * TeamController.search()
-   */
   search: function(req, res) {
     let select = {
       _id: 1,
@@ -76,9 +76,6 @@ module.exports = {
       });
   },
 
-  /**
-   * TeamController.list()
-   */
   list: function(req, res) {
     TeamModel.find()
       .populate("current_season")
@@ -95,33 +92,22 @@ module.exports = {
       });
   },
 
-  /**
-   * TeamController.show()
-   */
   show: function(req, res) {
     const id = req.params.id;
     TeamModel.findOne({ _id: id })
-      .populate("current_season")
+      //.populate("current_season")
+      .populate({
+        path: "current_season",
+        model: "football_team_season",
+        select: { __v: 0, team_id: 0, _id: 0 }
+      })
       .populate("previous_seasons", "standings")
-      .exec(function(err, Team) {
-        if (err) {
-          return res.status(500).json({
-            message: "Error when getting Team.",
-            error: err
-          });
-        }
-        if (!Team) {
-          return res.status(404).json({
-            message: "No such Team"
-          });
-        }
-        return res.json(JSON.parse(entities.decode(JSON.stringify(Team))));
-      });
+      .exec((err, result) => handleError(err, result, 200, res));
   },
 
   players: function(req, res) {
     const id = req.params.id;
-    TeamModelSeason.findOne({ _id: id }).exec(function(err, Team) {
+    TeamSeasonModel.findOne({ _id: id }).exec(function(err, Team) {
       if (err) {
         return res.status(500).json({
           message: "Error when getting Team.",
@@ -139,71 +125,68 @@ module.exports = {
     });
   },
 
-  /**
-   * TeamController.create()
-   */
   create: function(req, res) {
-    const Team = new TeamModel({
-      user_id: req.body.user_id,
-      name: req.body.name,
-      admins: req.body.admins
-    });
+    const team = new TeamModel(req.body);
 
-    Team.save(function(err, Team) {
-      if (err) {
-        return res.status(500).json({
-          message: "Error when creating Team",
-          error: err
-        });
-      }
-      return res.status(201).json(Team);
-    });
+    team.created_at = Date.now();
+    team.updated_at = Date.now();
+
+    team.save((err, result) => handleError(err, result, 201, res));
   },
 
-  /**
-   * TeamController.update()
-   */
   update: function(req, res) {
     const id = req.params.id;
-    TeamModel.findOne({ _id: id }, function(err, Team) {
-      if (err) {
-        return res.status(500).json({
-          message: "Error when getting Team",
-          error: err
-        });
-      }
-      if (!Team) {
-        return res.status(404).json({
-          message: "No such Team"
-        });
-      }
+    const query = { _id: req.body.current_season._id };
 
-      Team.user_info_id = req.body.user_id ? req.body.user_id : Team.user_id;
-      Team.name = req.body.name ? req.body.name : Team.name;
-      Team.admins = req.body.admins ? req.body.admins : Team.admins;
+    if (!query._id) {
+      query._id = new ObjectId();
+    }
 
-      Team.save(function(err, Team) {
+    const currentSeason = req.body.current_season;
+    currentSeason.team_id = id;
+
+    TeamSeasonModel.findOneAndUpdate(
+      query,
+      currentSeason,
+      { upsert: true, new: true, setDefaultsOnInsert: true },
+      (err, teamSeason) => {
         if (err) {
+          console.log(err);
           return res.status(500).json({
-            message: "Error when updating Team.",
+            message: `Error when updating the teamSeason of team ${id}`,
             error: err
           });
         }
+        if (!teamSeason) {
+          return res.status(404).json({
+            message: `No teamSeason with ID ${req.body.current_season._id}`
+          });
+        }
 
-        return res.json(Team);
-      });
-    });
+        const updatedTeam = req.body;
+
+        updatedTeam.user_id = req.body.user_id || updatedTeam.user_id;
+        updatedTeam.name = req.body.name || updatedTeam.name;
+        updatedTeam.admins = req.body.admins || updatedTeam.admins;
+        updatedTeam.update_at = Date.now();
+        updatedTeam.current_season = teamSeason._id;
+
+        TeamModel.findOneAndUpdate(
+          { _id: id },
+          updatedTeam,
+          { upsert: true, new: true, setDefaultsOnInsert: true },
+          (err, result) => handleError(err, result, 200, res)
+        );
+      }
+    );
   },
 
-  /**
-   * TeamController.remove()
-   */
   remove: function(req, res) {
     const id = req.params.id;
-    TeamModel.findByIdAndRemove(id, function(err, Team) {
+    TeamModel.findByIdAndRemove(id, function(err, team) {
       if (err) {
         return res.status(500).json({
-          message: "Error when deleting the Team.",
+          message: "Error when deleting the team.",
           error: err
         });
       }

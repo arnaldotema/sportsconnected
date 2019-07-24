@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const FootballTeamSchema = new Schema({
+  user_id: String,
   acronym: String,
   avatar: String,
   name: String,
@@ -63,6 +64,8 @@ const FootballTeamSchema = new Schema({
       }
     ]
   },
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
   external_ids: {
     zerozero: { type: Number, required: true, unique: true, index: true }
   }
