@@ -11,31 +11,7 @@ const entities = new Entities();
 
 const { ObjectId } = require("mongoose").mongo;
 
-const format = require("./../../utils/formatModel");
-
-function handleError(
-  err,
-  result,
-  successCode,
-  res,
-  errorCode = 500,
-  errorMessage = "Error from the API."
-) {
-  if (err) {
-    console.log(err, "There was a problem starting the server");
-    return res.status(errorCode).json({
-      message: errorMessage,
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-
-  return res.status(successCode).json(format(result));
-}
+const handleError = require("./../../utils/handleApiResponse");
 
 /**
  * team.js

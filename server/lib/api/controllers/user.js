@@ -6,26 +6,16 @@ const FootballUser = require("../../models/football_user.js");
  * @description :: Server-side logic for managing Users.
  */
 
-const format = require("./../../utils/formatModel");
-
-function handleError(err, result, successCode, res) {
-  if (err) {
-    console.log(err);
-    return res.status(500).json({
-      message: "Error from the API.",
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-  return res.status(successCode).json(format(result));
-}
+const handleError = require("./../../utils/handleApiResponse");
 
 exports.list = function(req, res) {
-  FootballUser.find().exec((err, result) => handleError(err, result, 200, res));
+  const offset = parseInt(req.query.offset || "0");
+  const size = parseInt(req.query.size || "25");
+
+  FootballUser.find()
+    .skip(offset * size)
+    .limit(size)
+    .exec((err, result) => handleError(err, result, 200, res));
 };
 
 exports.show = function(req, res) {

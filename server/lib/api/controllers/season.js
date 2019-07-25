@@ -8,20 +8,7 @@ const entities = new Entities();
  * @description :: Server-side logic for managing Users.
  */
 
-function handleError(err, result, res) {
-  if (err) {
-    return res.status(500).json({
-      message: "Error from the API.",
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-  return res.json(JSON.parse(entities.decode(JSON.stringify(result))));
-}
+const handleError = require("./../../utils/handleApiResponse");
 
 exports.list = function(req, res) {
   FootballSeason.find().exec((err, result) => handleError(err, result, res));
@@ -30,7 +17,7 @@ exports.list = function(req, res) {
 exports.show = function(req, res) {
   let id = req.params.id;
   FootballSeason.findOne({ _id: id }).exec((err, result) =>
-    handleError(err, result, res)
+    handleError(err, result, 200, res)
   );
 };
 

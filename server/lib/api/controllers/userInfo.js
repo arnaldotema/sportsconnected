@@ -3,8 +3,6 @@ const FootballMedia = require("../../models/football_media");
 const FootballRecommendation = require("../../models/football_recommendation");
 const FootballUserInfoSeason = require("../../models/football_user_info_season");
 
-const logger = require("../../../logging");
-
 const userInfoService = require("../../api/services/football/userInfo");
 const userInfoSeasonService = require("../../api/services/football/userInfoSeason");
 
@@ -12,30 +10,7 @@ const ImageStorageService = require("../services/storage/image");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const format = require("./../../utils/formatModel");
-
-function handleError(
-  err,
-  result,
-  successCode,
-  res,
-  errorCode = 500,
-  errorMessage = "Error from the API."
-) {
-  if (err) {
-    console.log(err, "There was a problem starting the server");
-    return res.status(errorCode).json({
-      message: errorMessage,
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-  return res.status(successCode).json(format(result));
-}
+const handleError = require("./../../utils/handleApiResponse");
 
 exports.search = async (req, res) => {
   let select = {
