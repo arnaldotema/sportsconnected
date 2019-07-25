@@ -48,43 +48,15 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   let id = req.params.id;
   const user = req.body;
+
   FootballUser.findOneAndUpdate(
     { _id: id },
-    { $set: { ...user } },
+    { $set: user },
+    { upsert: true, new: true },
     (err, result) => {
-      console.log("ERRRROOOOORRR ISSSSS ");
-      console.log(err);
       handleError(err, result, 200, res);
     }
   );
-
-  /*FootballUser.findOne({ _id: id }, function(err, user) {
-    if (err) {
-      return res.status(500).json({
-        message: "Error when getting User",
-        error: err
-      });
-    }
-    if (!user) {
-      return res.status(404).json({
-        message: "No such User"
-      });
-    }
-
-    // upsert logic
-    user.email = req.body.email ? req.body.email : user.email;
-    user.password = req.body.password ? req.body.password : user.password;
-    user.last_login = req.body.last_login
-      ? req.body.last_login
-      : user.last_login;
-    user.subscription_expiration = req.body.subscription_expiration
-      ? req.body.subscription_expiration
-      : user.subscription_expiration;
-    user.profile_id = req.body.profile_id ? req.profile_id : user.profile_id;
-    user.user_type = req.body.user_type ? req.body.user_type : user.user_type;
-
-    user.save((err, result) => handleError(err, result, 200, res));
-  });*/
 };
 
 exports.remove = function(req, res) {

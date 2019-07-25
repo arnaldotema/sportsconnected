@@ -47,9 +47,8 @@ describe("Component test: /users", () => {
     });
   });
 
-  it("Should update a user and get it", async () => {
+  it.only("Should update a user and get it", async () => {
     const id = chance.string({ length: 24, pool: "1" });
-
     const user = {
       _id: id,
       profile_id: "",
@@ -64,16 +63,35 @@ describe("Component test: /users", () => {
     const { body: actualResponse } = await api
       .put(`/api/users/${id}`)
       .set("Content-Type", "application/json")
-      .send({ ...user, email: "someNewemail@email.com" })
+      .send({ email: "someNewemail@email.com" })
       .expect(200);
 
-    const expectedResponse = { ...user };
+    const expectedResponse = { ...user, email: "someNewemail@email.com" };
 
     assert.deepEqual(actualResponse, expectedResponse);
   });
 
   it("Should get a user by id", async () => {
-    // todo
+    const id = chance.string({ length: 24, pool: "1" });
+    const user = {
+      _id: id,
+      profile_id: "",
+      user_type: "football_user_info",
+      email: "some@email.com",
+      password: "somepasswordwithmorethan10chars"
+    };
+    const userDocument = new User(user);
+
+    await userDocument.save();
+
+    const { body: actualResponse } = await api
+      .get(`/api/users/${id}`)
+      .set("Content-Type", "application/json")
+      .expect(200);
+
+    const expectedResponse = user;
+
+    assert.deepEqual(actualResponse, expectedResponse);
   });
 
   it("Should list users", async () => {
