@@ -12,13 +12,15 @@ const format = require("./formatModel");
  * */
 module.exports = async (err, result, successCode, res) => {
   if (err) {
+    console.log(`GOT HERE!`);
     console.log(err);
     return res.status(500).json({
       message: "Error from the API.",
       error: err
     });
   }
-  if (!result) {
+  if (!result || result === undefined) {
+    console.log(`GOT HERE!`);
     return res.status(404).json({
       message: "No such object"
     });

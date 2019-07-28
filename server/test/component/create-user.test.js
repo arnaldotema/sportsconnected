@@ -5,7 +5,6 @@ const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
 const User = require("../../lib/models/football_user");
-const { ObjectID } = require("mongoose").mongo;
 
 const chance = new Chance();
 
