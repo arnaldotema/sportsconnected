@@ -11,7 +11,7 @@ const entities = new Entities();
 
 const { ObjectId } = require("mongoose").mongo;
 
-const handleError = require("./../../utils/handleApiResponse");
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 /**
  * team.js
@@ -78,7 +78,7 @@ module.exports = {
         select: { __v: 0, team_id: 0, _id: 0 }
       })
       .populate("previous_seasons", "standings")
-      .exec((err, result) => handleError(err, result, 200, res));
+      .exec((err, result) => handleResponse(err, result, 200, res));
   },
 
   players: function(req, res) {
@@ -107,7 +107,7 @@ module.exports = {
     team.created_at = Date.now();
     team.updated_at = Date.now();
 
-    team.save((err, result) => handleError(err, result, 201, res));
+    team.save((err, result) => handleResponse(err, result, 201, res));
   },
 
   update: function(req, res) {
@@ -151,7 +151,7 @@ module.exports = {
           { _id: id },
           updatedTeam,
           { upsert: true, new: true, setDefaultsOnInsert: true },
-          (err, result) => handleError(err, result, 200, res)
+          (err, result) => handleResponse(err, result, 200, res)
         );
       }
     );
@@ -243,7 +243,7 @@ module.exports = {
         });
       }
 
-      handleError(null, createdMedia, 201, res);
+      handleResponse(null, createdMedia, 201, res);
     });
   },
 
@@ -293,7 +293,7 @@ module.exports = {
       .populate("previous_seasons", "stats")
       .skip(offset * size)
       .limit(size)
-      .exec((err, user_info) => handleError(err, user_info, res));
+      .exec((err, user_info) => handleResponse(err, user_info, res));
   },
 
   createRecommendation: async (req, res) => {
@@ -340,7 +340,7 @@ module.exports = {
         );
       }
 
-      handleError(null, createdRecommendation, 201, res);
+      handleResponse(null, createdRecommendation, 201, res);
     });
   }
 };

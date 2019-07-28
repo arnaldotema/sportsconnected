@@ -6,7 +6,7 @@ const FootballUser = require("../../models/football_user.js");
  * @description :: Server-side logic for managing Users.
  */
 
-const handleError = require("./../../utils/handleApiResponse");
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 exports.list = function(req, res) {
   const offset = parseInt(req.query.offset || "0");
@@ -15,13 +15,13 @@ exports.list = function(req, res) {
   FootballUser.find()
     .skip(offset * size)
     .limit(size)
-    .exec((err, result) => handleError(err, result, 200, res));
+    .exec((err, result) => handleResponse(err, result, 200, res));
 };
 
 exports.show = function(req, res) {
   let id = req.params.id;
   FootballUser.findOne({ _id: id }).exec((err, result) =>
-    handleError(err, result, 200, res)
+    handleResponse(err, result, 200, res)
   );
 };
 
@@ -32,7 +32,7 @@ exports.create = function(req, res) {
     subscription_expiration: Date.now()
   });
 
-  user.save((err, result) => handleError(err, result, 201, res));
+  user.save((err, result) => handleResponse(err, result, 201, res));
 };
 
 exports.update = function(req, res) {
@@ -44,7 +44,7 @@ exports.update = function(req, res) {
     { $set: user },
     { upsert: true, new: true },
     (err, result) => {
-      handleError(err, result, 200, res);
+      handleResponse(err, result, 200, res);
     }
   );
 };

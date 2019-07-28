@@ -6,7 +6,7 @@ const FootballSeason = require("../../models/football_season.js");
  * @description :: Server-side logic for managing Users.
  */
 
-const handleError = require("./../../utils/handleApiResponse");
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 exports.list = function(req, res) {
   const offset = parseInt(req.query.offset || "0");
@@ -15,13 +15,13 @@ exports.list = function(req, res) {
   FootballSeason.find()
     .skip(offset * size)
     .limit(size)
-    .exec((err, result) => handleError(err, result, 200, res));
+    .exec((err, result) => handleResponse(err, result, 200, res));
 };
 
 exports.show = function(req, res) {
   const id = req.params.id;
   FootballSeason.findOne({ _id: id }).exec((err, result) =>
-    handleError(err, result, 200, res)
+    handleResponse(err, result, 200, res)
   );
 };
 
@@ -32,7 +32,7 @@ exports.create = function(req, res) {
   });
 
   season.save((err, result) => {
-    handleError(err, result, 201, res);
+    handleResponse(err, result, 201, res);
   });
 };
 
@@ -47,7 +47,7 @@ exports.update = function(req, res) {
     { $set: season },
     { upsert: true, new: true },
     (err, result) => {
-      handleError(err, result, 200, res);
+      handleResponse(err, result, 200, res);
     }
   );
 };
@@ -55,6 +55,6 @@ exports.update = function(req, res) {
 exports.remove = function(req, res) {
   const id = req.params.id;
   FootballSeason.findByIdAndRemove(id).exec((err, result) => {
-    handleError(err, result, 204, res);
+    handleResponse(err, result, 204, res);
   });
 };

@@ -3,7 +3,7 @@ const CompetitionSeasonModel = require("../../models/football_competition_season
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const handleError = require("./../../utils/handleApiResponse");
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 /**
  * competition.js
@@ -72,7 +72,7 @@ module.exports = {
 
     const competition = new CompetitionModel(object);
 
-    competition.save((err, result) => handleError(err, result, 201, res));
+    competition.save((err, result) => handleResponse(err, result, 201, res));
   },
 
   /**

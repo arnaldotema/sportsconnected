@@ -3,7 +3,7 @@ const FootballTeam = require("../../models/football_team");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const handleError = require("./../../utils/handleApiResponse");
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 // User DB Interactions
 

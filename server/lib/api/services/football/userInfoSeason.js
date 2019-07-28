@@ -53,24 +53,16 @@ exports.addCompetitionToUserInfo = function(id, competition_season, cb) {
   );
 };
 
-exports.updateUserInfoSeason = function(id, personal_info, team, cb) {
-  let query = { _id: id };
-  let update;
+exports.updateUserInfoSeason = async (id, personal_info, team) => {
+  const update = {};
 
-  if (team)
-    update = {
-      $set: {
-        personal_info: personal_info,
-        team: team
-      }
-    };
-  else update = { $set: { personal_info: personal_info } };
+  if (team) update.team = team;
+  if (personal_info) update.personal_info = personal_info;
 
-  UserInfoSeason.findOneAndUpdate(
-    query,
-    update,
-    { setDefaultsOnInsert: true },
-    cb
+  return await UserInfoSeason.findOneAndUpdate(
+    { _id: id },
+    { $set: update },
+    { setDefaultsOnInsert: true }
   );
 };
 

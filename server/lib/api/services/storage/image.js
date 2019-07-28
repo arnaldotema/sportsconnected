@@ -3,12 +3,12 @@ const fs = require("fs");
 const request = require("request");
 const imagePath = "./storage/images";
 
-exports.save_from_uri = function(uri, info_type, info_id, image_name, cb) {
-  request.head(function(err, res, body) {
+exports.saveFromUri = async function(uri, infoType, infoId, imageName, cb) {
+  request.head((err, res, body) => {
     console.log("content-type:", res.headers["content-type"]);
     console.log("content-length:", res.headers["content-length"]);
 
-    const path = _create_storage_path(info_type, info_id, image_name);
+    const path = createStoragePath(infoType, infoId, imageName);
 
     request(uri)
       .pipe(fs.createWriteStream(path))
@@ -16,20 +16,30 @@ exports.save_from_uri = function(uri, info_type, info_id, image_name, cb) {
   }, uri);
 };
 
-exports.save_from_file = function(file, info_type, info_id, image_name, cb) {
-  const path = _create_storage_path(info_type, info_id, image_name);
+exports.saveFromFile = async function(file, infoType, infoId, imageName) {
+  const path = createStoragePath(infoType, infoId, imageName);
 
-  mkdirp(path + "/system", function(err) {
-    if (err) console.error(err);
-    else {
-      fs.createReadStream(file.path)
-        .pipe(fs.createWriteStream(path + "/" + image_name))
-        .on("close", cb);
-    }
+  const dir = mkdirp.sync(path + "/system");
+
+  if (!dir)
+    throw Error(
+      `Not able to create a directory for file ${file}, infoType ${infoType}, infoId ${infoId}, imageName ${imageName}`
+    );
+
+  const rStream = fs
+    .createReadStream(file.path)
+    .pipe(fs.createWriteStream(path + "/" + imageName));
+
+  rStream.on("error", err => {
+    throw err;
+  });
+
+  rStream.on("close", () => {
+    return null;
   });
 };
 
-_create_storage_path = function(info_type, info_id) {
+createStoragePath = function(info_type, info_id) {
   let path;
 
   switch (info_type) {

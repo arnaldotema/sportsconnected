@@ -2,7 +2,7 @@ const FootballRecommendation = require("../../models/football_recommendation.js"
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const handleError = require("./../../utils/handleApiResponse");
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 // Recommendation DB Interactions
 
@@ -83,7 +83,7 @@ exports.create = function(req, res) {
   const recommendation = new FootballRecommendation(req.body);
   recommendation.created_at = Date.now();
   recommendation.updated_at = Date.now();
-  recommendation.save((err, result) => handleError(err, result, 201, res));
+  recommendation.save((err, result) => handleResponse(err, result, 201, res));
 };
 
 exports.update = function(req, res) {
