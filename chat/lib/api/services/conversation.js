@@ -37,6 +37,10 @@ exports.getConversationByIdAndUserId = async (id, userId) => {
   );
 };
 
+exports.getParticipantsByConversationId = async id => {
+  // todo
+};
+
 exports.getConversationByUserId = async userId =>
   (await ChatConversation.find({
     where: {

@@ -16,14 +16,19 @@ let server;
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/chat", chat);
+app.use("/", chat);
 app.use(express.static(__dirname + "/public"));
 
 async function startServer() {
   await db.connect();
-  socket(io);
+
   server = app.listen(port, () => {
     console.log("Running on Port: " + port);
   });
+
+  io.listen(server);
+
+  socket(io);
 }
 
 async function stopServer() {
@@ -31,7 +36,7 @@ async function stopServer() {
   server.close();
 }
 
-module.exports = { app, startServer, stopServer };
+module.exports = { app, startServer, stopServer, io };
 
 if (require.main === module) {
   startServer().catch(err =>

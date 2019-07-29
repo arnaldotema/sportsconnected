@@ -14,6 +14,8 @@ const {
 } = require("../../api/services/conversation");
 
 module.exports = io => {
+  console.log("info: Socket is open and awaiting connections.");
+
   io.sockets
     .on("connection", () => {
       console.log("On connection was called.");
