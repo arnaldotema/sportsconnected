@@ -2,22 +2,7 @@ const FootballRecommendation = require("../../models/football_recommendation.js"
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const format = require("./../../utils/formatModel");
-
-function handleError(err, result, successCode, res) {
-  if (err) {
-    return res.status(500).json({
-      message: "Error from the API.",
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-  return res.status(successCode).json(format(result));
-}
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 // Recommendation DB Interactions
 
@@ -98,7 +83,7 @@ exports.create = function(req, res) {
   const recommendation = new FootballRecommendation(req.body);
   recommendation.created_at = Date.now();
   recommendation.updated_at = Date.now();
-  recommendation.save((err, result) => handleError(err, result, 201, res));
+  recommendation.save((err, result) => handleResponse(err, result, 201, res));
 };
 
 exports.update = function(req, res) {

@@ -3,8 +3,6 @@ const FootballMedia = require("../../models/football_media");
 const FootballRecommendation = require("../../models/football_recommendation");
 const FootballUserInfoSeason = require("../../models/football_user_info_season");
 
-const logger = require("../../../logging");
-
 const userInfoService = require("../../api/services/football/userInfo");
 const userInfoSeasonService = require("../../api/services/football/userInfoSeason");
 
@@ -12,30 +10,11 @@ const ImageStorageService = require("../services/storage/image");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const format = require("./../../utils/formatModel");
-
-function handleError(
-  err,
-  result,
-  successCode,
-  res,
-  errorCode = 500,
-  errorMessage = "Error from the API."
-) {
-  if (err) {
-    console.log(err, "There was a problem starting the server");
-    return res.status(errorCode).json({
-      message: errorMessage,
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-  return res.status(successCode).json(format(result));
-}
+const {
+  handleResponse,
+  handleError
+} = require("./../../utils/handleApiResponse");
+const { buildAvatarFilePath } = require("./../../utils/imageFilePath");
 
 exports.search = async (req, res) => {
   let select = {
@@ -59,31 +38,34 @@ exports.search = async (req, res) => {
 
   FootballUserInfoSeason.find(query)
     .select(select)
-    .exec((err, result) => handleError(err, result, 200, res));
+    .exec((err, result) => handleResponse(err, result, 200, res));
 };
 
 exports.list = async (req, res) => {
+  const offset = parseInt(req.query.offset || "0");
+  const size = parseInt(req.query.size || "25");
+
   FootballUserInfo.find()
-    .populate("current_season")
+    .populate("current_season", "-_id -__v -updated_at -user_info_id")
     .populate("previous_seasons", "stats")
-    .limit(5)
-    .exec((err, result) => handleError(err, result, 200, res));
+    .skip(offset * size)
+    .limit(size)
+    .exec((err, result) => handleResponse(err, result, 200, res));
 };
 
 exports.show = async (req, res) => {
   const id = req.params.id;
   FootballUserInfo.findOne({ _id: id })
-    .populate("current_season")
+    .populate("current_season", "-_id -__v -updated_at -user_info_id")
     .populate("previous_seasons", "stats")
     .populate("recommendations.list")
-    .exec((err, result) => handleError(err, result, 200, res));
+    .exec((err, result) => handleResponse(err, result, 200, res));
 };
 
 exports.create = async (req, res) => {
   const personal_info = req.body.personal_info;
   const team = req.body.team;
   const season_id = req.body.season_id;
-
   const userInfo = new FootballUserInfo({ ...req.body, type: 1 });
 
   userInfo.save(function(err, newUserInfo) {
@@ -113,7 +95,7 @@ exports.create = async (req, res) => {
           { _id: user_info_id },
           update,
           { upsert: true, new: true, setDefaultsOnInsert: true },
-          (err, result) => handleError(err, result, 201, res)
+          (err, result) => handleResponse(err, result, 201, res)
         );
       }
     );
@@ -121,52 +103,50 @@ exports.create = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
-  const id = req.params.id;
-
-  const team = req.body.team ? req.body.team : null;
+  const { id } = req.params;
+  const team = req.body.team;
   const personal_info = req.body.personal_info;
-  const avatar = req.files.avatar;
+  const files = req.files;
 
-  if (avatar)
-    personal_info.avatar =
-      "api/storage/images/user_info_season/" + id + "/system/avatar";
+  const userInfo = await FootballUserInfo.findOne({ _id: id });
+  const { current_season: userInfoSeasonId } = userInfo._doc;
 
-  userInfoSeasonService.updateUserInfoSeason(id, personal_info, team, function(
-    err,
-    result
-  ) {
-    const userInfoSeasonDocument = JSON.parse(
-      entities.decode(JSON.stringify(result))
+  if (!userInfoSeasonId)
+    return handleError(
+      "Not found",
+      res,
+      404,
+      `getting user info ${id} current season`
     );
-    const userInfoSeason = { __v, type, ...userInfoSeasonDocument };
 
-    if (err) {
-      return res.status(500).json({
-        message: "Error when updating user_info",
-        error: err
-      });
-    }
+  if (files && files.avatar) {
+    await ImageStorageService.saveFromFile(
+      files.avatar,
+      "userInfo",
+      id,
+      "system/avatar"
+    );
+    personal_info.avatar = buildAvatarFilePath(id);
+  }
 
-    if (avatar) {
-      ImageStorageService.save_from_file(
-        avatar,
-        "user",
-        id,
-        "system/avatar",
-        function(err) {
-          if (err) {
-            return res.status(500).json({
-              message: "Error when storing image.",
-              error: err
-            });
-          }
-          return res.json(userInfoSeason);
-        }
-      );
-    } else {
-      return res.json(userInfoSeason);
-    }
-  });
+  const userInfoSeason = await userInfoSeasonService.updateUserInfoSeason(
+    userInfoSeasonId,
+    personal_info,
+    team
+  );
+  if (!userInfoSeason)
+    return handleError(
+      "Internal error",
+      res,
+      500,
+      `updating user info season ${userInfoSeasonId}`
+    );
+
+  FootballUserInfo.findOne({ _id: id })
+    .populate("current_season", "-_id -__v -updated_at")
+    .populate("previous_seasons", "stats")
+    .populate("recommendations.list")
+    .exec((err, result) => handleResponse(err, result, 200, res));
 };
 
 exports.remove = async (req, res) => {
@@ -209,7 +189,7 @@ exports.listMedia = async (req, res) => {
 exports.showMedia = async (req, res) => {
   const id = req.params.id;
   FootballMedia.findOne({ _id: id }).exec((err, result) =>
-    handleError(err, result, 200, res)
+    handleResponse(err, result, 200, res)
   );
 };
 
@@ -248,7 +228,7 @@ exports.createMedia = async (req, res) => {
       });
     }
 
-    handleError(null, createdMedia, 201, res);
+    handleResponse(null, createdMedia, 201, res);
   });
 };
 
@@ -263,7 +243,7 @@ exports.updateMedia = async (req, res) => {
   }
 
   FootballMedia.update(mediaId, media, (err, media) =>
-    handleError(err, media, res)
+    handleResponse(err, media, res)
   );
 };
 
@@ -292,7 +272,7 @@ exports.listRecommendations = async (req, res) => {
     .populate("previous_seasons", "stats")
     .skip(offset * size)
     .limit(size)
-    .exec((err, user_info) => handleError(err, user_info, res));
+    .exec((err, user_info) => handleResponse(err, user_info, res));
 };
 
 exports.createRecommendation = async (req, res) => {
@@ -339,7 +319,7 @@ exports.createRecommendation = async (req, res) => {
       );
     }
 
-    handleError(null, createdRecommendation, 201, res);
+    handleResponse(null, createdRecommendation, 201, res);
   });
 };
 
@@ -410,7 +390,7 @@ exports.follow = async (req, res) => {
   }
 
   userInfoService.follow(author_user_info_id, user_info_id, (err, user_info) =>
-    handleError(err, user_info, res)
+    handleResponse(err, user_info, res)
   );
 };
 
@@ -423,7 +403,7 @@ exports.listFollowed = async (req, res) => {
     .populate("previous_seasons", "stats")
     .skip(offset * size)
     .limit(size)
-    .exec((err, user_info) => handleError(err, user_info, res));
+    .exec((err, user_info) => handleResponse(err, user_info, res));
 };
 
 exports.listFollowers = async (req, res) => {
@@ -435,7 +415,7 @@ exports.listFollowers = async (req, res) => {
     .populate("previous_seasons", "stats")
     .skip(offset * size)
     .limit(size)
-    .exec((err, user_info) => handleError(err, user_info, res));
+    .exec((err, user_info) => handleResponse(err, user_info, res));
 };
 
 exports.unfollow = async (req, res) => {
@@ -449,6 +429,6 @@ exports.unfollow = async (req, res) => {
   }
 
   userInfoService.unfollow(follower_id, user_info_id, (err, user_info) =>
-    handleError(err, user_info, res)
+    handleResponse(err, user_info, res)
   );
 };

@@ -3,22 +3,7 @@ const CompetitionSeasonModel = require("../../models/football_competition_season
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-const format = require("./../../utils/formatModel");
-
-function handleError(err, result, successCode, res) {
-  if (err) {
-    return res.status(500).json({
-      message: "Error from the API.",
-      error: err
-    });
-  }
-  if (!result) {
-    return res.status(404).json({
-      message: "No such object"
-    });
-  }
-  return res.status(successCode).json(format(result));
-}
+const { handleResponse } = require("./../../utils/handleApiResponse");
 
 /**
  * competition.js
@@ -87,7 +72,7 @@ module.exports = {
 
     const competition = new CompetitionModel(object);
 
-    competition.save((err, result) => handleError(err, result, 201, res));
+    competition.save((err, result) => handleResponse(err, result, 201, res));
   },
 
   /**

@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const USER_TYPES = require("../constants/values.js").footballUserTypes;
+const { footballUserTypes } = require("../constants/values.js");
 
 const ChatConversationSchema = new Schema({
   participants: [
     {
       name: String,
       _id: String,
-      user_type: { type: String, enum: USER_TYPES },
+      user_type: { type: String, enum: footballUserTypes },
       avatar: String
     }
   ],

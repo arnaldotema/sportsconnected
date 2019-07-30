@@ -4,7 +4,7 @@ const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 const FootballNotification = require("../../models/football_notification");
 
-function handleError(err, result, res) {
+function handleResponse(err, result, res) {
   if (err) {
     return res.status(500).json({
       message: "Error from the API.",
@@ -23,7 +23,7 @@ exports.show = function(req, res) {
   let id = req.params.id;
 
   FootballNotification.findOne({ _id: id }).exec((err, notification) =>
-    handleError(err, notification, res)
+    handleResponse(err, notification, res)
   );
 };
 
@@ -40,7 +40,7 @@ exports.listPlayerNotifications = function(req, res) {
     .equals("football_user_info")
     .skip(offset * size)
     .limit(size)
-    .exec((err, notifications) => handleError(err, notifications, res));
+    .exec((err, notifications) => handleResponse(err, notifications, res));
 };
 
 exports.listTeamNotifications = function(req, res) {
@@ -56,7 +56,7 @@ exports.listTeamNotifications = function(req, res) {
     .equals("football_team")
     .skip(offset * size)
     .limit(size)
-    .exec((err, notifications) => handleError(err, notifications, res));
+    .exec((err, notifications) => handleResponse(err, notifications, res));
 };
 
 exports.removeNotification = function(req, res) {
@@ -84,7 +84,7 @@ exports.updateNotification = function(req, res) {
   }
 
   FootballNotification.update(notificationId, notification, (err, media) =>
-    handleError(err, media, res)
+    handleResponse(err, media, res)
   );
 };
 
@@ -102,7 +102,7 @@ exports.createPlayerNotification = function(req, res) {
   notification.user_type = "football_user_info";
   let newNotification = new FootballNotification(notification);
 
-  newNotification.save((err, n) => handleError(err, n, res));
+  newNotification.save((err, n) => handleResponse(err, n, res));
 
   // Todo Socket emit the notification to its listeners
 };
@@ -121,7 +121,7 @@ exports.createTeamNotification = function(req, res) {
   notification.user_type = "football_team";
   let newNotification = new FootballNotification(notification);
 
-  newNotification.save((err, n) => handleError(err, n, res));
+  newNotification.save((err, n) => handleResponse(err, n, res));
 
   // Todo Socket emit the notification to its listeners
 };

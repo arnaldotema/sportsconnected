@@ -5,7 +5,6 @@ const { assert } = require("chai");
 const { api } = require("../utils");
 const { startServer, stopServer } = require("./../../lib/app");
 const User = require("../../lib/models/football_user");
-const { ObjectID } = require("mongoose").mongo;
 
 const chance = new Chance();
 
@@ -49,7 +48,6 @@ describe("Component test: /users", () => {
 
   it("Should update a user and get it", async () => {
     const id = chance.string({ length: 24, pool: "1" });
-
     const user = {
       _id: id,
       profile_id: "",
@@ -64,19 +62,91 @@ describe("Component test: /users", () => {
     const { body: actualResponse } = await api
       .put(`/api/users/${id}`)
       .set("Content-Type", "application/json")
-      .send({ ...user, email: "someNewemail@email.com" })
+      .send({ email: "someNewemail@email.com" })
       .expect(200);
 
-    const expectedResponse = { ...user };
+    const expectedResponse = { ...user, email: "someNewemail@email.com" };
 
     assert.deepEqual(actualResponse, expectedResponse);
   });
 
   it("Should get a user by id", async () => {
-    // todo
+    const id = chance.string({ length: 24, pool: "1" });
+    const user = {
+      _id: id,
+      profile_id: "",
+      user_type: "football_user_info",
+      email: "some@email.com",
+      password: "somepasswordwithmorethan10chars"
+    };
+    const userDocument = new User(user);
+
+    await userDocument.save();
+
+    const { body: actualResponse } = await api
+      .get(`/api/users/${id}`)
+      .set("Content-Type", "application/json")
+      .expect(200);
+
+    const expectedResponse = user;
+
+    assert.deepEqual(actualResponse, expectedResponse);
   });
 
   it("Should list users", async () => {
-    // todo
+    const user1Id = chance.string({ length: 24, pool: "1" });
+    const user1 = {
+      _id: user1Id,
+      profile_id: "",
+      user_type: "football_user_info",
+      email: "some@email.com",
+      password: "somepasswordwithmorethan10chars"
+    };
+    const user1Document = new User(user1);
+    await user1Document.save();
+
+    const user2Id = chance.string({ length: 24, pool: "2" });
+    const user2 = {
+      _id: user2Id,
+      profile_id: "",
+      user_type: "football_user_info",
+      email: "another@email.com",
+      password: "anotherpasswordwithmorethan10chars"
+    };
+    const user2Document = new User(user2);
+    await user2Document.save();
+
+    const user3Id = chance.string({ length: 24, pool: "3" });
+    const user3 = {
+      _id: user3Id,
+      profile_id: "",
+      user_type: "football_user_info",
+      email: "yetanother@email.com",
+      password: "yetanotherpasswordwithmorethan10chars"
+    };
+    const user3Document = new User(user3);
+    await user3Document.save();
+
+    const user4Id = chance.string({ length: 24, pool: "4" });
+    const user4 = {
+      _id: user4Id,
+      profile_id: "",
+      user_type: "football_user_info",
+      email: "yetagainanother@email.com",
+      password: "yetagainanotherpasswordwithmorethan10chars"
+    };
+    const user4Document = new User(user4);
+    await user4Document.save();
+
+    const expectedResponse = [user1, user2, user3, user4];
+
+    const { body: actualResponse } = await api
+      .get(`/api/users`)
+      .set("Content-Type", "application/json")
+      .expect(200);
+
+    assert.isArray(actualResponse);
+    assert.lengthOf(actualResponse, 4);
+    assert.sameDeepMembers(expectedResponse, actualResponse);
   });
 });

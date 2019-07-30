@@ -3,6 +3,8 @@ const matchService = require("../../api/services/football/match");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
+const { handleResponse } = require("./../../utils/handleApiResponse");
+
 /**
  * match.js
  *

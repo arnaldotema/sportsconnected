@@ -69,7 +69,10 @@ exports.createMessage = async (req, res) => {
 
 exports.createConversation = async (req, res) => {
   //validate.conversation(req.body);
-  const conversation = await conversationService.createConversation(req.body);
+  const participants = req.body.participants;
+  const conversation = await conversationService.createConversation(
+    participants
+  );
   return res.status(201).json(conversation);
 };
 

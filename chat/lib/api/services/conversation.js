@@ -3,10 +3,8 @@
 const mongoose = require("mongoose");
 const ChatConversation = require("../../models/chat_conversation");
 
-exports.createConversation = async conversation => {
-  let participants = [];
-
-  await conversation.participants.forEach(participant => {
+exports.createConversation = async participants => {
+  await participants.forEach(participant => {
     participants.push({
       name: participant.name,
       info_id: participant._id,
@@ -37,12 +35,17 @@ exports.getConversationByIdAndUserId = async (id, userId) => {
   );
 };
 
+exports.getParticipantsByConversationId = async id => {
+  const conv = await ChatConversation.findOne({ _id: id });
+  return conv.participants || [];
+};
+
 exports.getConversationByUserId = async userId =>
   (await ChatConversation.find({
     where: {
-      participants: mongoose.Types.ObjectId(userId)
-    },
-    removed: { $ne: userId }
+      participants: mongoose.Types.ObjectId(userId),
+      removed: { $ne: userId }
+    }
   })) || null;
 
 exports.editConversation = async conv =>
