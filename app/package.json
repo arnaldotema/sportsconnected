@@ -39,7 +39,7 @@
     "cuint": "^0.2.2",
     "express-formidable": "^1.2.0",
     "formidable": "^1.2.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
     "moment-business": "^3.0.1",
