@@ -15,7 +15,7 @@
     }
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "*",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
