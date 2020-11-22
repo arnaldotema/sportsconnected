@@ -104,7 +104,7 @@ describe("Component test: socket connections to chat messages", () => {
     });
   });
 
-  it("should emit a conversation:create event", async () => {
+  it("should emit a conversation:create event and receive it back", async () => {
     let mockConversationId = "";
     const serverResponse = new Promise((resolve, reject) => {
       // define a handler for the test event
@@ -129,7 +129,7 @@ describe("Component test: socket connections to chat messages", () => {
     assert.deepEqual(response, mockConversationId);
   });
 
-  it("should emit a message event", async () => {
+  it("should emit a message event and receive it back", async () => {
     const conversationId = chance.string({ length: 24, pool: "3" });
     const conversationDocument = new ChatConversation({
       _id: conversationId,
