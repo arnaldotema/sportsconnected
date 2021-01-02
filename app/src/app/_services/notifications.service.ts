@@ -1,23 +1,24 @@
-import {Injectable} from '@angular/core';
-import {SocketIOService} from "./socket_io.service";
-import {Observable, Subject} from 'rxjs/Rx';
-import {NotificationViewModel} from "../_models/notification_viewmodel";
-import {AuthenticationService} from "./authentication.service";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { SocketIOService } from "./socket_io.service";
+import { Observable, Subject } from "rxjs";
+import { NotificationViewModel } from "../_models/notification_viewmodel";
+import { AuthenticationService } from "./authentication.service";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable()
 export class NotificationsService {
-
   notifications: Subject<NotificationViewModel>;
   requestOptions;
 
   // Our constructor calls our wsService connect method
-  constructor(private socketService: SocketIOService, private authenticationService: AuthenticationService) {
-
+  constructor(
+    private socketService: SocketIOService,
+    private authenticationService: AuthenticationService
+  ) {
     this.requestOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'jwt': authenticationService.token
+        "Content-Type": "application/json",
+        jwt: authenticationService.token
       })
     };
 
@@ -29,7 +30,6 @@ export class NotificationsService {
         return response;
       })
     */
-
   }
 
   // Our simplified interface for sending
@@ -37,5 +37,4 @@ export class NotificationsService {
   sendMsg(msg) {
     this.notifications.next(msg);
   }
-
 }
