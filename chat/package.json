@@ -53,7 +53,7 @@
     "socketcluster": "^14.3.3",
     "string-template": "^1.0.0",
     "supertest": "^4.0.2",
-    "underscore": "^1.9.0",
+    "underscore": "^1.12.1",
     "utf8": "^3.0.0",
     "winston": "^3.0.0-rc5"
   },
