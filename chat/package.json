@@ -15,7 +15,7 @@
     }
   },
   "dependencies": {
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "ajv-keywords": "^3.4.0",
     "bcryptjs": "*",
     "body-parser": "^1.18.3",
