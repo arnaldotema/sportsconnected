@@ -23,7 +23,7 @@
     "cheerio": "^1.0.0-rc.2",
     "cors": "*",
     "crawler": "^1.2.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-formidable": "^1.0.0",
     "html-entities": "^1.2.1",
     "husky": "^2.2.0",
